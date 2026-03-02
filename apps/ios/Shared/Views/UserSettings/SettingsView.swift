@@ -399,7 +399,7 @@ struct SettingsView: View {
                         .frame(width: 24, height: 24)
                         .opacity(0.5)
                         .colorMultiply(theme.colors.secondary)
-                    Text("[Star on GitHub](https://github.com/simplex-chat/simplex-chat)")
+                    Text("[Star on GitHub](https://github.com/TheHealer28/Inqalaab)")
                         .padding(.leading, indent)
                 }
             }
