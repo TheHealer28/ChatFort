@@ -30,7 +30,7 @@ fun HowItWorks(user: User?, onboardingStage: SharedPreference<OnboardingStage>? 
     ReadableText(MR.strings.only_client_devices_store_contacts_groups_e2e_encrypted_messages)
     ReadableText(MR.strings.all_message_and_files_e2e_encrypted)
     if (onboardingStage == null) {
-      ReadableTextWithLink(MR.strings.read_more_in_github_with_link, "https://github.com/simplex-chat/simplex-chat#readme")
+      ReadableTextWithLink(MR.strings.read_more_in_github_with_link, "https://github.com/TheHealer28/Inqalaab#readme")
     }
 
     Spacer(Modifier.fillMaxHeight().weight(1f))
