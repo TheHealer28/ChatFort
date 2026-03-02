@@ -188,7 +188,7 @@ struct UserAddressView: View {
         Button {
             createAddress()
         } label: {
-            Label("Create SimpleX address", systemImage: "qrcode")
+            Label("Create Inqalaab address", systemImage: "qrcode")
         }
     }
 
@@ -306,7 +306,7 @@ struct UserAddressView: View {
                 .navigationBarTitleDisplayMode(.inline)
         } label: {
             settingsRow("info.circle", color: theme.colors.secondary) {
-                Text("SimpleX address or 1-time link?")
+                Text("Inqalaab address or 1-time link?")
             }
         }
     }
@@ -442,7 +442,7 @@ struct UserAddressSettingsView: View {
                     .onDisappear {
                         if savedSettings != settings {
                             showAlert(
-                                title: NSLocalizedString("SimpleX address settings", comment: "alert title"),
+                                title: NSLocalizedString("Inqalaab address settings", comment: "alert title"),
                                 message: NSLocalizedString("Settings were changed.", comment: "alert message"),
                                 buttonTitle: NSLocalizedString("Save", comment: "alert button"),
                                 buttonAction: { saveAddressSettings(settings, $savedSettings) },

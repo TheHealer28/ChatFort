@@ -3,7 +3,7 @@
     <string name="notifications">Bildirimler</string>
     <string name="connect_via_link_or_qr">Bağlantı ya da karekod ile bağlan</string>
     <string name="create_group">Gizli grup oluştur</string>
-    <string name="your_simplex_contact_address">SimpleX adresin</string>
+    <string name="your_simplex_contact_address">Inqalaab adresin</string>
     <string name="callstatus_missed">cevapsız çağrı</string>
     <string name="incoming_video_call">Gelen görüntülü arama</string>
     <string name="accept">Onayla</string>
@@ -29,9 +29,9 @@
     <string name="send_disappearing_message_5_minutes">5 dakika</string>
     <string name="accept_contact_button">Onayla</string>
     <string name="accept_connection_request__question">Bağlantı isteği kabul edilsin mi?</string>
-    <string name="learn_more_about_address">SimpleX Adresi Hakkında</string>
-    <string name="about_simplex_chat">SimpleX Chat Hakkında</string>
-    <string name="about_simplex">SimpleX Hakkında</string>
+    <string name="learn_more_about_address">Inqalaab Adresi Hakkında</string>
+    <string name="about_simplex_chat">Inqalaab Hakkında</string>
+    <string name="about_simplex">Inqalaab Hakkında</string>
     <string name="accept_call_on_lock_screen">Yanıtla</string>
     <string name="abort_switch_receiving_address">Adres değişikliğini iptal et</string>
     <string name="notifications_mode_service">Sürekli açık</string>
@@ -79,7 +79,7 @@
     <string name="revoke_file__confirm">İptal</string>
     <string name="connect_via_link_or_qr_from_clipboard_or_in_person">(kodu okut ya da panodan yapıştır)</string>
     <string name="scan_QR_code">Karekodu okut</string>
-    <string name="simplex_address">SimpleX adresi</string>
+    <string name="simplex_address">Inqalaab adresi</string>
     <string name="smp_servers_save">Sunucuları kaydet</string>
     <string name="scan_code">Kodu okut</string>
     <string name="smp_servers_scan_qr">Sunucunun karekodunu okut</string>
@@ -87,7 +87,7 @@
     <string name="ensure_ICE_server_address_are_correct_format_and_unique">WebRTC ICE sunucu adreslerinin doğru formatta olduğundan emin olun: Satırlara ayrılmış ve yinelenmemiş şekilde.</string>
     <string name="save_servers_button">Kaydet</string>
     <string name="theme_colors_section_title">ARAYÜZ RENKLERİ</string>
-    <string name="save_auto_accept_settings">SimpleX adres ayarlarını kaydet</string>
+    <string name="save_auto_accept_settings">Inqalaab adres ayarlarını kaydet</string>
     <string name="save_settings_question">Ayarlar kaydedilsin mi?</string>
     <string name="save_and_notify_contacts">Kaydet ve konuştuğun kişilere bildir</string>
     <string name="save_preferences_question">Tercihleri kaydet\?</string>
@@ -117,7 +117,7 @@
     <string name="language_system">Sistem</string>
     <string name="theme_light">Açık</string>
     <string name="theme_dark">Koyu</string>
-    <string name="theme_simplex">SimpleX</string>
+    <string name="theme_simplex">Inqalaab</string>
     <string name="dark_theme">Koyu tema</string>
     <string name="theme">Tema</string>
     <string name="import_theme">Temayı içe aktar</string>
@@ -139,7 +139,7 @@
     <string name="member_role_will_be_changed_with_notification">Yetki, "%s" olarak değiştirelecek. Gruptaki herkes bilgilendirilecek.</string>
     <string name="calls_prohibited_with_this_contact">Sesli/görüntülü aramalar yasaktır.</string>
     <string name="la_auth_failed">Kimlik doğrulama başarısız</string>
-    <string name="icon_descr_address">SimpleX Adresi</string>
+    <string name="icon_descr_address">Inqalaab Adresi</string>
     <string name="moderate_message_will_be_deleted_warning">Mesaj, tüm üyeler için silinecek.</string>
     <string name="the_messaging_and_app_platform_protecting_your_privacy_and_security">Gizliliğinizi ve güvenliğinizi koruyan mesajlaşma ve uygulama platformu.</string>
     <string name="settings_section_title_incognito">Gizlilik kipi</string>
@@ -170,9 +170,9 @@
     <string name="description_you_shared_one_time_link">tek seferlik bağlantı paylaştınız</string>
     <string name="description_via_group_link">grup bağlantısı ile</string>
     <string name="description_via_one_time_link">tek seferlik bağlantı aracıığıyla</string>
-    <string name="simplex_link_invitation">SimpleX tek kullanımlık bağlantı</string>
-    <string name="simplex_link_group">SimpleX grup bağlantısı</string>
-    <string name="simplex_link_mode">SimpleX bağlantıları</string>
+    <string name="simplex_link_invitation">Inqalaab tek kullanımlık bağlantı</string>
+    <string name="simplex_link_group">Inqalaab grup bağlantısı</string>
+    <string name="simplex_link_mode">Inqalaab bağlantıları</string>
     <string name="simplex_link_mode_description">Açıklama</string>
     <string name="simplex_link_mode_full">Tam bağlantı</string>
     <string name="thousand_abbreviation">bin</string>
@@ -311,8 +311,8 @@
     <string name="both_you_and_your_contacts_can_delete">Konuştuğun kişi ve sen mesajları kalıcı olarak silebilirsiniz. (24 saat içinde)</string>
     <string name="decryption_error">Deşifreleme hatası</string>
     <string name="description_via_contact_address_link">kişi adres bağlantısı ile</string>
-    <string name="simplex_link_contact">SimpleX bağlantı adresi</string>
-    <string name="simplex_link_mode_browser_warning">Bağlantıyı tarayıcıda açmak, bağlantı gizliliğini ve güvenliğini azaltabilir. Güvenilmeyen SimpleX bağlantıları kırmızı olacaktır.</string>
+    <string name="simplex_link_contact">Inqalaab bağlantı adresi</string>
+    <string name="simplex_link_mode_browser_warning">Bağlantıyı tarayıcıda açmak, bağlantı gizliliğini ve güvenliğini azaltabilir. Güvenilmeyen Inqalaab bağlantıları kırmızı olacaktır.</string>
     <string name="error_saving_smp_servers">SMP sunucuları kaydedilirken hata oluştu</string>
     <string name="error_saving_xftp_servers">XFTP sunucuları kaydedilirken hata oluştu</string>
     <string name="error_loading_smp_servers">SMP sunucuları yüklenirken hata oluştu</string>
@@ -395,7 +395,7 @@
     <string name="core_version">Çekirdek sürümü: v%s</string>
     <string name="delete_address__question">Adresi sil\?</string>
     <string name="create_address_and_let_people_connect">Kişilerin sana bağlanması için bir adres oluştur.</string>
-    <string name="create_simplex_address">SimpleX adresi oluştur</string>
+    <string name="create_simplex_address">Inqalaab adresi oluştur</string>
     <string name="delete_address">Adresi sil</string>
     <string name="continue_to_next_step">Devam et</string>
     <string name="delete_image">Görseli sil</string>
@@ -485,8 +485,8 @@
     <string name="smp_server_test_disconnect">Bağlantıyı kes</string>
     <string name="la_minutes">%d dakika</string>
     <string name="la_seconds">%d saniye</string>
-    <string name="auth_disable_simplex_lock">SimpleX kilidini kaldır</string>
-    <string name="auth_enable_simplex_lock">SimpleX kilidini etkinleştir</string>
+    <string name="auth_disable_simplex_lock">Inqalaab kilidini kaldır</string>
+    <string name="auth_enable_simplex_lock">Inqalaab kilidini etkinleştir</string>
     <string name="icon_descr_edited">Düzeltilmiş</string>
     <string name="icon_descr_server_status_disconnected">Bağlantı kesildi</string>
     <string name="icon_descr_email">E-posta</string>
@@ -580,7 +580,7 @@
     <string name="hide_dev_options">Gizle:</string>
     <string name="full_name__field">Ad ve soyad:</string>
     <string name="email_invite_body">Merhaba!
-\nSimplex Chat kullanarak benimle bağlantıya geç: %s</string>
+\nInqalaab kullanarak benimle bağlantıya geç: %s</string>
     <string name="exit_without_saving">Kaydetmeden çık</string>
     <string name="hide_profile">Profili gizle</string>
     <string name="error_saving_user_password">Kullanıcı parolası kaydedilirken hata oluştu</string>
@@ -611,12 +611,12 @@
     <string name="user_hide">Gizle</string>
     <string name="notification_display_mode_hidden_desc">Konuşulan kişileri ve mesajları gizle</string>
     <string name="v4_3_improved_privacy_and_security_desc">Uygulamayı, son kullanılanlar kısmından gizle.</string>
-    <string name="how_simplex_works">SimpleX nasıl çalışıyor</string>
+    <string name="how_simplex_works">Inqalaab nasıl çalışıyor</string>
     <string name="if_you_cannot_meet_in_person_show_QR_in_video_call_or_via_another_channel"><![CDATA[Eğer yüz yüze görüşemiyorsanız <b>bir görüntülü aramada karşıdakine karekodunu gösterebilir</b> ya da konuştuğun kişiye bir katılım bağlantısı paylaşabilirsin.]]></string>
     <string name="if_you_cannot_meet_in_person_scan_QR_in_video_call_or_ask_for_invitation_link"><![CDATA[Eğer yüz yüze görüşemiyorsanız <b>bir görüntülü aramada karşıdakinin karekodunu okutabilirsin</b> ya da konuştuğun kişi seninle bir katılım bağlantısı paylaşabilir.]]></string>
     <string name="if_you_cant_meet_in_person">Eğer yüz yüze görüşemiyorsanız bir görüntülü aramada karşıdakine karekodunu gösterebilir ya da konuştuğun kişiye bir katılım bağlantısı paylaşabilirsin.</string>
     <string name="if_you_choose_to_reject_the_sender_will_not_be_notified">Eğer geri çevirmeyi seçersen göndericiye bildirilmeyecek.</string>
-    <string name="if_you_received_simplex_invitation_link_you_can_open_in_browser">Eğer SimplexX Chat katılım bağlantısı alırsan bu bağlantıyı tarayıcında açabilirsin:</string>
+    <string name="if_you_received_simplex_invitation_link_you_can_open_in_browser">Eğer InqalaabX Chat katılım bağlantısı alırsan bu bağlantıyı tarayıcında açabilirsin:</string>
     <string name="image_will_be_received_when_contact_is_online">Konuştuğun kişi çevrim içi olunca görsel alınmaya başlanılacaktır. Lütfen bekleyin ya da daha sonra yeniden bakın.</string>
     <string name="icon_descr_image_snd_complete">Görsel gönderildi</string>
     <string name="image_will_be_received_when_contact_completes_uploading">Konuştuğun kişi yüklemeyi bitirince görsel alınacaktır.</string>
@@ -706,14 +706,14 @@
     <string name="service_notifications_disabled">Anlık bildirimler devre dışı!</string>
     <string name="turn_off_battery_optimization"><![CDATA[Bildirimleri anında almak için bir sonraki iletişim kutusunda buna <b>izin verin</b>. ]]></string>
     <string name="notification_preview_mode_contact">Kişi ismi</string>
-    <string name="auth_device_authentication_is_disabled_turning_off">Cihaz doğrulaması devre dışı. SimpleX Kilidi Kapatılıyor.</string>
-    <string name="auth_device_authentication_is_not_enabled_you_can_turn_on_in_settings_once_enabled">Cihaz doğrulaması etkin değil. Cihaz doğrulamasını etkinleştirdikten sonra SimpleX Kilidini Ayarlar üzerinden açabilirsiniz.</string>
+    <string name="auth_device_authentication_is_disabled_turning_off">Cihaz doğrulaması devre dışı. Inqalaab Kilidi Kapatılıyor.</string>
+    <string name="auth_device_authentication_is_not_enabled_you_can_turn_on_in_settings_once_enabled">Cihaz doğrulaması etkin değil. Cihaz doğrulamasını etkinleştirdikten sonra Inqalaab Kilidini Ayarlar üzerinden açabilirsiniz.</string>
     <string name="in_reply_to">Şuna cevap olarak</string>
     <string name="group_preview_join_as">%s olarak katılın</string>
     <string name="invalid_contact_link">Geçersiz link!</string>
     <string name="invalid_QR_code">Geçersiz QR kodu</string>
     <string name="smp_servers_invalid_address">Geçersiz sunucu adresi!</string>
-    <string name="install_simplex_chat_for_terminal">Terminal için SimpleX Chat\'i yükleyin</string>
+    <string name="install_simplex_chat_for_terminal">Terminal için Inqalaab\'i yükleyin</string>
     <string name="icon_descr_call_connecting">Aramaya bağlanılıyor</string>
     <string name="integrity_msg_bad_hash">kötü mesaj hash\'i</string>
     <string name="alert_title_msg_bad_hash">Kötü mesaj hash\'i</string>
@@ -786,8 +786,8 @@
     <string name="your_SMP_servers">SMP sunucularınız</string>
     <string name="your_XFTP_servers">XFTP sunucularınız</string>
     <string name="configure_ICE_servers">ICE sunucularını yapılandır</string>
-    <string name="email_invite_subject">Hadi SimpleX Chat\'te konuşalım</string>
-    <string name="your_profile_is_stored_on_device_and_shared_only_with_contacts_simplex_cannot_see_it">Profiliniz cihazınızda saklanır ve sadece kişilerinizle paylaşılır. SimpleX sunucuları profilinizi göremez.</string>
+    <string name="email_invite_subject">Hadi Inqalaab\'te konuşalım</string>
+    <string name="your_profile_is_stored_on_device_and_shared_only_with_contacts_simplex_cannot_see_it">Profiliniz cihazınızda saklanır ve sadece kişilerinizle paylaşılır. Inqalaab sunucuları profilinizi göremez.</string>
     <string name="integrity_msg_bad_id">kötü mesaj kimliği</string>
     <string name="your_privacy">Gizliliğiniz</string>
     <string name="chat_is_running">Sohbet çalışıyor</string>
@@ -839,7 +839,7 @@
     <string name="connected_to_server_to_receive_messages_from_contact">Bu kişiden mesaj almak için kullanılan sunucuya bağlısınız.</string>
     <string name="you_are_already_connected_to_vName_via_this_link">Zaten %1$s e bağlısınız</string>
     <string name="la_could_not_be_verified">Doğrulanamadınız; lütfen tekrar deneyin.</string>
-    <string name="you_can_turn_on_lock">SimpleX Kilidini Ayarlar üzerinden açabilirsiniz.</string>
+    <string name="you_can_turn_on_lock">Inqalaab Kilidini Ayarlar üzerinden açabilirsiniz.</string>
     <string name="group_preview_you_are_invited">Gruba davetlisiniz</string>
     <string name="you_have_no_chats">Hiç sohbetiniz yok</string>
     <string name="you_are_observer">Gözlemcisiniz</string>
@@ -887,7 +887,7 @@
     <string name="contact_sent_large_file">Kişiniz desteklenen maksimum boyuttan (%1$s) daha büyük bir dosya gönderdi.</string>
     <string name="video_will_be_received_when_contact_completes_uploading">Kişiniz yüklemeyi tamamladığında video alınacaktır.</string>
     <string name="you_can_also_connect_by_clicking_the_link"><![CDATA[Ayrıca bağlantıya tıklayarak da bağlanabilirsiniz. Eğer bağlantı tarayıcda açılırsa, <b>mobil uygulamada aç</b> seçeneğine tıklayın.]]></string>
-    <string name="you_can_connect_to_simplex_chat_founder"><![CDATA[Soru sormak ve güncellemeleri almak için <font color="#0088ff">SimpleX Chat geliştiricilerine bağlanabilirsiniz</font>.]]></string>
+    <string name="you_can_connect_to_simplex_chat_founder"><![CDATA[Soru sormak ve güncellemeleri almak için <font color="#1E8E3E">Inqalaab geliştiricilerine bağlanabilirsiniz</font>.]]></string>
     <string name="you_can_hide_or_mute_user_profile">Bir kullanıcının profilini gizleyebilir veya sessize alabilirsiniz - menü için basılı tutun.</string>
     <string name="you_must_use_the_most_recent_version_of_database">Sohbet veritabanınızın en son sürümünü SADECE bir cihazda kullanmalısınız, aksi takdirde bazı kişilerden daha fazla mesaj alamayabilirsiniz.</string>
     <string name="wrong_passphrase">Yanlış veritabanı parolası</string>
@@ -940,11 +940,11 @@
     <string name="change_lock_mode">Kilit modunu değiştir</string>
     <string name="trying_to_connect_to_server_to_receive_messages">Bu kişiden mesaj almak için kullanılan sunucuya bağlanılmaya çalışılıyor.</string>
     <string name="please_check_correct_link_and_maybe_ask_for_a_new_one">Lütfen doğru bağlantıyı kullandığınızı kontrol edin veya irtibat kişinizden size başka bir bağlantı göndermesini isteyin.</string>
-    <string name="to_preserve_privacy_simplex_has_background_service_instead_of_push_notifications_it_uses_a_few_pc_battery"><![CDATA[Gizliliğinizi korumak için anlık bildirimler kullanmak yerine, <b>SimpleX arka planda çalışır</b>.]]></string>
+    <string name="to_preserve_privacy_simplex_has_background_service_instead_of_push_notifications_it_uses_a_few_pc_battery"><![CDATA[Gizliliğinizi korumak için anlık bildirimler kullanmak yerine, <b>Inqalaab arka planda çalışır</b>.]]></string>
     <string name="periodic_notifications">Periyodik bildirimler</string>
     <string name="periodic_notifications_disabled">Periyodik bildirimler devre dışı</string>
     <string name="enter_passphrase_notification_desc">Bildirimleri almak için lütfen veri tabanı parolasını girin</string>
-    <string name="la_notice_to_protect_your_information_turn_on_simplex_lock_you_will_be_prompted_to_complete_authentication_before_this_feature_is_enabled">Bilgilerinizi korumak için SimpleX Lock özelliğini açın.
+    <string name="la_notice_to_protect_your_information_turn_on_simplex_lock_you_will_be_prompted_to_complete_authentication_before_this_feature_is_enabled">Bilgilerinizi korumak için Inqalaab Lock özelliğini açın.
 \nBu özellik etkinleştirilmeden önce kimlik doğrulamayı tamamlamanız istenecektir.</string>
     <string name="la_notice_turn_on">Aç</string>
     <string name="la_please_remember_to_store_password">Hatırlayın veya güvenli bir şekilde saklayın - kaybolan bir parolayı kurtarmanın bir yolu yoktur!</string>
@@ -961,12 +961,12 @@
     <string name="to_connect_via_link_title">Link ile bağlanmak için</string>
     <string name="this_link_is_not_a_valid_connection_link">Bu geçerli bir bağlantı linki değil</string>
     <string name="this_QR_code_is_not_a_link">Bu QR kodu bir bağlantı değil!</string>
-    <string name="read_more_in_user_guide_with_link"><![CDATA[Daha fazla bilgi için <font color="#0088ff">Kullanıcı Kılavuzu</font>.]]></string>
+    <string name="read_more_in_user_guide_with_link"><![CDATA[Daha fazla bilgi için <font color="#1E8E3E">Kullanıcı Kılavuzu</font>.]]></string>
     <string name="paste_button">Yapıştır</string>
     <string name="this_string_is_not_a_connection_link">Bu dize bir bağlantı linki değil!</string>
     <string name="rate_the_app">Uygulamaya puan verin</string>
     <string name="to_reveal_profile_enter_password">Gizli profilinizi ortaya çıkarmak için, Sohbet profilleriniz sayfasındaki arama alanına tam bir parola girin.</string>
-    <string name="open_simplex_chat_to_accept_call">Aramayı kabul etmek için SimpleX Chat\'i açın</string>
+    <string name="open_simplex_chat_to_accept_call">Aramayı kabul etmek için Inqalaab\'i açın</string>
     <string name="status_no_e2e_encryption">uçtan uca şifreleme yok</string>
     <string name="call_connection_peer_to_peer">eşler arası</string>
     <string name="icon_descr_call_pending_sent">Bekleyen arama</string>
@@ -1004,7 +1004,7 @@
     <string name="unfavorite_chat">Favorilerden çıkar</string>
     <string name="make_profile_private">Sohbeti gizli yap!</string>
     <string name="profile_update_will_be_sent_to_contacts">Profil güncellemesi kişilerinize gönderilecektir.</string>
-    <string name="read_more_in_github_with_link"><![CDATA[<font color="#0088ff">GitHub repomuzda</font> daha fazlasını okuyun.]]></string>
+    <string name="read_more_in_github_with_link"><![CDATA[<font color="#1E8E3E">GitHub repomuzda</font> daha fazlasını okuyun.]]></string>
     <string name="alert_text_fragment_please_report_to_developers">Lütfen geliştiricilere bildirin.</string>
     <string name="users_delete_with_connections">Profil ve sunucu bağlantıları</string>
     <string name="user_unhide">gizlemeyi kaldır</string>
@@ -1022,7 +1022,7 @@
     <string name="v4_5_message_draft">Mesaj taslağı</string>
     <string name="v4_6_hidden_chat_profiles_descr">Sohbet profillerini parola ile koru!</string>
     <string name="v4_5_reduced_battery_usage">Daha az pil kullanımı</string>
-    <string name="to_protect_privacy_simplex_has_ids_for_queues">Gizliliği korumak için, SimpleX her bir konuşma için farklı bir ID kullanır.</string>
+    <string name="to_protect_privacy_simplex_has_ids_for_queues">Gizliliği korumak için, Inqalaab her bir konuşma için farklı bir ID kullanır.</string>
     <string name="trying_to_connect_to_server_to_receive_messages_with_error">Bu kişiden mesaj almak için kullanılan sunucuya bağlanılmaya çalışılıyor (hata: %1$s).</string>
     <string name="v4_4_live_messages_desc">Alıcılar güncellemeleri siz yazdıkça görürler.</string>
     <string name="auth_log_in_using_credential">Bilgilerinizi kullanarak giriş yapın</string>
@@ -1038,7 +1038,7 @@
     <string name="auth_stop_chat">Sohbeti durdur</string>
     <string name="connect_use_current_profile">Mevcut profili kullan</string>
     <string name="la_mode_system">Sistem</string>
-    <string name="settings_section_title_support">SIMPLEX CHAT\'İ DESTEKLE</string>
+    <string name="settings_section_title_support">Inqalaab\'İ DESTEKLE</string>
     <string name="stop_chat_to_export_import_or_delete_chat_database">Sohbet veri tabanını dışa aktarmak, içe aktarmak veya silmek için sohbeti durdur. Sohbet durdurulduğunda mesaj alamaz ve gönderemezsiniz.</string>
     <string name="desktop_device">Masaüstü</string>
     <string name="contact_tap_to_connect">Bağlanmak için dokun</string>
@@ -1080,7 +1080,7 @@
     <string name="chat_with_the_founder">Sorularınızı ve fikirlerinizi gönderin</string>
     <string name="delete_files_and_media_desc">Bu eylem geri alınamaz - tüm alınan ve gönderilen dosyalar ve medyalar silinecek. Düşük çözünürlükteki resimlar kalacaktır.</string>
     <string name="encrypt_local_files">Yerel dosyaları şifrele</string>
-    <string name="ntf_channel_calls">SimpleX Chat aramaları</string>
+    <string name="ntf_channel_calls">Inqalaab aramaları</string>
     <string name="v5_3_new_desktop_app">Yeni masaüstü uygulaması!</string>
     <string name="v5_3_new_interface_languages">6 yeni arayüz dili</string>
     <string name="notification_preview_mode_contact_desc">Sadece kişiyi göster</string>
@@ -1089,7 +1089,7 @@
     <string name="only_your_contact_can_send_voice">Sadece senin kişin sesli mesaj gönderebilir.</string>
     <string name="in_developing_desc">Bu özellik henüz desteklenmiyor. Bir sonraki sürümü deneyin.</string>
     <string name="open_on_mobile_and_scan_qr_code"><![CDATA[Mobile uygulamadan <i>Masaüstünden kullan</i> seçeneğini aç ve karekodu okut.]]></string>
-    <string name="thank_you_for_installing_simplex">SimpleX Chat\'i yüklediğiniz için teşekkürler!</string>
+    <string name="thank_you_for_installing_simplex">Inqalaab\'i yüklediğiniz için teşekkürler!</string>
     <string name="skip_inviting_button">Üyeleri davet etmeyi atla</string>
     <string name="connect_plan_already_connecting">Zaten bağlanılıyor!</string>
     <string name="icon_descr_send_message">Mesaj Gönder</string>
@@ -1106,7 +1106,7 @@
     <string name="share_with_contacts">Kişilerle paylaş</string>
     <string name="chat_item_ttl_seconds">%s saniye (sn)</string>
     <string name="recipient_colon_delivery_status">%s: %s</string>
-    <string name="system_restricted_background_desc">SimpleX arka planda çalışamaz. Bildirimleri sadece uygulama çalışırken alırsınız.</string>
+    <string name="system_restricted_background_desc">Inqalaab arka planda çalışamaz. Bildirimleri sadece uygulama çalışırken alırsınız.</string>
     <string name="connect_plan_connect_via_link">Bağlantı ile bağlanılsın mı?</string>
     <string name="database_encryption_will_be_updated_in_settings">Veri tabanı şifreleme parolası güncellenecek ve ayarlarda depolanacaktır.</string>
     <string name="connect_plan_already_joining_the_group">Zaten gruba bağlanılıyor!</string>
@@ -1116,8 +1116,8 @@
     <string name="system_restricted_background_in_call_desc">Uygulama arka planda 1 dakika kaldıktan sonra kapatılabilir.</string>
     <string name="text_field_set_contact_placeholder">Kişi ismini ayarla…</string>
     <string name="send_us_an_email">Bize e-posta gönder</string>
-    <string name="v4_2_security_assessment_desc">SimpleX Chat\'in güvenliği Trail of Bits tarafından denetlenmiştir.</string>
-    <string name="simplex_service_notification_title">SimpleX Chat hizmeti</string>
+    <string name="v4_2_security_assessment_desc">Inqalaab\'in güvenliği Trail of Bits tarafından denetlenmiştir.</string>
+    <string name="simplex_service_notification_title">Inqalaab hizmeti</string>
     <string name="is_verified">%s onaylı</string>
     <string name="password_to_show">Göserilecek parola</string>
     <string name="incognito_info_allows">Tek bir sohbet profilinde, aralarında herhangi bir veri paylaşımı olmadan birden fazla anonim bağlantı kurmaya izin verir.</string>
@@ -1131,9 +1131,9 @@
     <string name="this_device_name">Bu cihazın ismi</string>
     <string name="smp_server_test_upload_file">Dosya yükle</string>
     <string name="network_use_onion_hosts_required">Gerekli</string>
-    <string name="ntf_channel_messages">SimpleX Chat mesajlar</string>
+    <string name="ntf_channel_messages">Inqalaab mesajlar</string>
     <string name="share_link">Bağlantı paylaş</string>
-    <string name="icon_descr_simplex_team">SimpleX Ekibi</string>
+    <string name="icon_descr_simplex_team">Inqalaab Ekibi</string>
     <string name="rcv_group_event_3_members_connected">%s, %s ve %s bağlandı</string>
     <string name="settings_section_title_socks">SOCKS VEKİLİ</string>
     <string name="desktop_devices">Masaüstür cihazlar</string>
@@ -1175,7 +1175,7 @@
     <string name="network_socks_proxy_settings">SOCKS proxy ayarları</string>
     <string name="rcv_group_events_count">%d grup etkinlikleri</string>
     <string name="invalid_name">Geçersiz isim!</string>
-    <string name="la_lock_mode">SimpleX Kilit modu</string>
+    <string name="la_lock_mode">Inqalaab Kilit modu</string>
     <string name="share_file">Dosya paylaş…</string>
     <string name="periodic_notifications_desc">Uygulama yeni mesajları periyodik olarak alır - günde pilin yüzde birkaçını kullanır. Uygulama anlık bildirimleri kullanmaz - cihazınızdan gelen veriler sunuculara gönderilmez.</string>
     <string name="first_platform_without_user_ids">Herhangi bir kullanıcı tanımlayıcısı yok.</string>
@@ -1186,24 +1186,24 @@
     <string name="paste_desktop_address">Masaüstü adresini yapıştır</string>
     <string name="verify_code_with_desktop">Kodu masaüstü ile onayla</string>
     <string name="scan_qr_code_from_desktop">Masaüstünden karekodu tara</string>
-    <string name="image_descr_simplex_logo">SimpleX logo</string>
+    <string name="image_descr_simplex_logo">Inqalaab logo</string>
     <string name="devices">Cihazlar</string>
     <string name="delete_chat_profile_action_cannot_be_undone_warning">Bu eylem geri alınamaz - profiliniz, kişileriniz, mesajlarınız ve dosyalarınız geri döndürülemez şekilde kaybolacaktır.</string>
     <string name="v5_4_more_things_descr">- isteğe bağlı olarak silinen kişileri bildirme.
 \n- boşluklu profil adları.
 \n- ve daha fazlası!</string>
-    <string name="la_notice_title_simplex_lock">SimpleX Kilit</string>
+    <string name="la_notice_title_simplex_lock">Inqalaab Kilit</string>
     <string name="connect_via_member_address_alert_desc">Bu grup üyesine bağlantı isteği gönderilecek.</string>
     <string name="only_your_contact_can_add_message_reactions">Sadece senin kişin mesaj tepkileri ekleyebilir.</string>
     <string name="settings_is_storing_in_clear_text">Parola, ayarlarda düz metin olarak saklanır.</string>
-    <string name="auth_simplex_lock_turned_on">SimpleX Kilit aktif</string>
+    <string name="auth_simplex_lock_turned_on">Inqalaab Kilit aktif</string>
     <string name="terminal_always_visible">Yeni pencerede konsolu göster</string>
     <string name="scan_from_mobile">Mobilden tara</string>
     <string name="verify_connections">Bağlantıları onayla</string>
     <string name="share_message">Mesaj paylaş…</string>
     <string name="alert_text_msg_bad_hash">Önceki mesajın özeti veya karması farklı.</string>
-    <string name="lock_not_enabled">SimpleX Kilit aktif değil!</string>
-    <string name="chat_lock">SimpleX Kilit</string>
+    <string name="lock_not_enabled">Inqalaab Kilit aktif değil!</string>
+    <string name="chat_lock">Inqalaab Kilit</string>
     <string name="connect_via_member_address_alert_title">Doğrudan bağlanılsın mı?</string>
     <string name="receipts_section_description">Bu ayarlar mevcut profiliniz içindir</string>
     <string name="smp_servers_test_failed">Sunucu testi başarısız!</string>
@@ -1225,7 +1225,7 @@
     <string name="group_main_profile_sent">Sohbet profiliniz grup üyelerine gönderilecek</string>
     <string name="connect_plan_connect_to_yourself">Kendine bağlan?</string>
     <string name="notifications_mode_periodic">Periyodik olarak başlar</string>
-    <string name="connect_plan_this_is_your_own_simplex_address">Bu sizin kendi SimpleX adresiniz!</string>
+    <string name="connect_plan_this_is_your_own_simplex_address">Bu sizin kendi Inqalaab adresiniz!</string>
     <string name="v4_3_irreversible_message_deletion_desc">Kişileriniz tam mesaj silme işlemine izin verebilir.</string>
     <string name="icon_descr_sent_msg_status_send_failed">gönderme başarısız</string>
     <string name="sender_may_have_deleted_the_connection_request">Gönderen kişi bağlantı isteğini silmiş olabilir.</string>
@@ -1269,7 +1269,7 @@
     <string name="rcv_direct_event_contact_deleted">silinmiş kişi</string>
     <string name="network_option_tcp_connection_timeout">TCP bağlantısı zaman aşımına uğradı</string>
     <string name="mtr_error_different">uygulama/veritabanı içinde farklı değişim: %s / %s</string>
-    <string name="using_simplex_chat_servers">SimpleX Chat serverları kullanılıyor.</string>
+    <string name="using_simplex_chat_servers">Inqalaab serverları kullanılıyor.</string>
     <string name="smp_servers_preset_add">Ön ayarlı sunucular ekle</string>
     <string name="secret_text">gizli</string>
     <string name="receipts_groups_disable_for_all">Bütün gruplar için devre dışı bırak</string>
@@ -1287,7 +1287,7 @@
     <string name="group_members_2">%s ve %s</string>
     <string name="v5_2_fix_encryption">Bağlantılarını koru</string>
     <string name="received_message">Alınmış mesaj</string>
-    <string name="you_can_make_address_visible_via_settings">Ayarlardan SimpleX kişilerinize görünür yapabilirsiniz.</string>
+    <string name="you_can_make_address_visible_via_settings">Ayarlardan Inqalaab kişilerinize görünür yapabilirsiniz.</string>
     <string name="connect_plan_join_your_group">Grubuna bağlanılsın mı?</string>
     <string name="v5_4_link_mobile_desktop">Telefon veya bilgisayar uygulamalarını bağla! 🔗</string>
     <string name="connect__a_new_random_profile_will_be_shared">Yeni bir rasgele profil paylaşılacaktır.</string>
@@ -1328,7 +1328,7 @@
     <string name="notification_new_contact_request">Yeni bağlantı isteği</string>
     <string name="unlink_desktop_question">Bilgisayarla bağlantıyı kes?</string>
     <string name="camera_not_available">Kamera hazır değil</string>
-    <string name="use_simplex_chat_servers__question">SimpleX Chat sunucularını kullan?</string>
+    <string name="use_simplex_chat_servers__question">Inqalaab sunucularını kullan?</string>
     <string name="linked_desktop_options">Bağlanmış bilgisayar ayarları</string>
     <string name="developer_options">Veritabanı kimlikleri ve Taşıma izolasyonu seçeneği.</string>
     <string name="network_option_ping_count">PING sayısı</string>
@@ -1379,14 +1379,14 @@
     <string name="sent_message">Gönderilmiş mesaj</string>
     <string name="save_passphrase_in_settings">Ayarlarda parolayı kaydet</string>
     <string name="upgrade_and_open_chat">Yükselt ve sohbeti aç</string>
-    <string name="code_you_scanned_is_not_simplex_link_qr_code">Tarattığın kod SimpleX QR kodu bağlantısı değil.</string>
+    <string name="code_you_scanned_is_not_simplex_link_qr_code">Tarattığın kod Inqalaab QR kodu bağlantısı değil.</string>
     <string name="send_receipts_disabled_alert_msg">Bu grupta %1$d den fazla kişi var,çoklu gönderim yapılamıyor.</string>
     <string name="connected_to_desktop">Masaüstüne bağlandı</string>
     <string name="error_smp_test_certificate">Muhtemelen, sunucu adresindeki sertifika parmak izi doğru değil</string>
     <string name="v5_2_message_delivery_receipts_descr">✅ özlediğimiz ikinci tik!</string>
     <string name="clear_verification">Doğrulamayı temizle</string>
     <string name="setup_database_passphrase">Veritabanı parolası ayarla</string>
-    <string name="the_text_you_pasted_is_not_a_link">Yapıştırdığın bağlantı bir SimpleX bağlantısı değil.</string>
+    <string name="the_text_you_pasted_is_not_a_link">Yapıştırdığın bağlantı bir Inqalaab bağlantısı değil.</string>
     <string name="color_sent_message">Gönderilmiş mesaj</string>
     <string name="receipts_groups_title_disable">Gruplar için alıcılar devre dışı bırakılsın mı?</string>
     <string name="relay_server_protects_ip">Yönlendirici sunucu IP adresinizi korur, ancak aramanın süresini gözlemleyebilir.</string>
@@ -1531,7 +1531,7 @@
     <string name="desktop_app_version_is_incompatible">Masaüstü uygulama versiyonu %s bu uygulama ile uyumlu değil.</string>
     <string name="delivery">Gönderim</string>
     <string name="no_connected_mobile">Telefona bağlı değil</string>
-    <string name="search_or_paste_simplex_link">Ara veya SimpleX bağlantısını yapıştır</string>
+    <string name="search_or_paste_simplex_link">Ara veya Inqalaab bağlantısını yapıştır</string>
     <string name="info_row_received_at">Şuradan alındı</string>
     <string name="accept_feature_set_1_day">1 güne ayarla</string>
     <string name="color_received_message">Alınmış mesaj</string>
@@ -1710,10 +1710,10 @@
     <string name="permissions_grant_in_settings">Ayarlarda izin verin</string>
     <string name="audio_device_bluetooth">Bluetooth</string>
     <string name="feature_roles_owners">sahipler</string>
-    <string name="prohibit_sending_simplex_links">SimpleX bağlantısı gönderimini yasakla</string>
+    <string name="prohibit_sending_simplex_links">Inqalaab bağlantısı gönderimini yasakla</string>
     <string name="network_option_rcv_concurrency">Eşzamanlılık alınıyor</string>
-    <string name="simplex_links">SimpleX bağlantıları</string>
-    <string name="simplex_links_are_prohibited_in_group">SimpleX bağlantıları yasaklandı</string>
+    <string name="simplex_links">Inqalaab bağlantıları</string>
+    <string name="simplex_links_are_prohibited_in_group">Inqalaab bağlantıları yasaklandı</string>
     <string name="audio_device_earpiece">Kulaklık</string>
     <string name="audio_device_speaker">Hoparlör</string>
     <string name="audio_device_wired_headphones">Kulaklıklar</string>
@@ -1729,13 +1729,13 @@
     <string name="forwarded_from_chat_item_info_title">Şuradan iletildi</string>
     <string name="forward_message">Mesaj ilet…</string>
     <string name="recipients_can_not_see_who_message_from">Alıcı(lar) bu mesajın kimden geldiğini göremez.</string>
-    <string name="simplex_links_not_allowed">SimpleX bağlantılarına izin verilmiyor</string>
+    <string name="simplex_links_not_allowed">Inqalaab bağlantılarına izin verilmiyor</string>
     <string name="files_and_media_not_allowed">Dosyalar ve medyaya izin verilmiyor</string>
     <string name="voice_messages_not_allowed">Sesli mesajlara izin verilmiyor</string>
-    <string name="group_members_can_send_simplex_links">Üyeler SimpleX bağlantıları gönderebilir.</string>
+    <string name="group_members_can_send_simplex_links">Üyeler Inqalaab bağlantıları gönderebilir.</string>
     <string name="forwarded_description">iletildi</string>
     <string name="settings_section_title_network_connection">Ağ bağlantısı</string>
-    <string name="allow_to_send_simplex_links">SimpleX bağlantıları göndermesine izin ver.</string>
+    <string name="allow_to_send_simplex_links">Inqalaab bağlantıları göndermesine izin ver.</string>
     <string name="network_type_no_network_connection">Ağ bağlantısı yok</string>
     <string name="forward_chat_item">İlet</string>
     <string name="v5_7_forward">Mesajları ilet ve kaydet</string>
@@ -1908,7 +1908,7 @@
     <string name="download_errors">İndirme hataları</string>
     <string name="info_row_message_status">Mesaj durumu</string>
     <string name="error_parsing_uri_title">Geçersiz link</string>
-    <string name="error_parsing_uri_desc">Lütfen SimpleX bağlantısının doğru olup olmadığını kontrol edin.</string>
+    <string name="error_parsing_uri_desc">Lütfen Inqalaab bağlantısının doğru olup olmadığını kontrol edin.</string>
     <string name="proxy_destination_error_broker_host">Varış sunucusu ardesi (%1$s) yönlendirme sunucusu (%2$s) ile uyumsuz.</string>
     <string name="proxy_destination_error_broker_version">Varış sunucusu sürümü (%1$s) yönlendirme sunucusu (%2$s) ile uyumsuz.</string>
     <string name="message_forwarded_title">Mesaj iletildi</string>
@@ -2112,7 +2112,7 @@
     <string name="v6_1_better_user_experience">Daha iyi kullanıcı deneyimi</string>
     <string name="v6_1_delete_many_messages_descr">200\'e kadar mesajı silin veya düzenleyin.</string>
     <string name="v6_1_better_security">Daha iyi güvenlik ✅</string>
-    <string name="v6_1_better_security_descr">SimpleX protokolleri Trail of Bits tarafından incelenmiştir.</string>
+    <string name="v6_1_better_security_descr">Inqalaab protokolleri Trail of Bits tarafından incelenmiştir.</string>
     <string name="address_or_1_time_link">Adres mi yoksa tek seferlik bağlantı mı?</string>
     <string name="operator_added_message_servers">Mesaj sunucuları eklendi</string>
     <string name="accept_conditions">Koşulları kabul edin</string>
@@ -2189,7 +2189,7 @@
     <string name="edit_chat_list_menu_action">Düzenle</string>
     <string name="for_social_media">Sosyal medya için</string>
     <string name="create_1_time_link">Tek kullanımlık bağlantı oluştur</string>
-    <string name="onboarding_network_operators_app_will_use_for_routing">Örneğin, eğer kişiniz SimpleX Sohbet sunucusundan mesajları alıyorsa, uygulamanız bu mesajları Flux sunucusundan iletecektir.</string>
+    <string name="onboarding_network_operators_app_will_use_for_routing">Örneğin, eğer kişiniz Inqalaab Sohbet sunucusundan mesajları alıyorsa, uygulamanız bu mesajları Flux sunucusundan iletecektir.</string>
     <string name="chat_item_ttl_default">varsayılan (%s)</string>
     <string name="block_members_desc">Bu üyelerden gelen yeni mesajların hepsi gizlenecektir.</string>
     <string name="v6_3_better_groups_performance">İyileştirilmiş grup performansı</string>
@@ -2269,7 +2269,7 @@
     <string name="member_support">Üyelerle sohbetler</string>
     <string name="onboarding_notifications_mode_off_desc_short">Arkaplan servisi yok</string>
     <string name="onboarding_conditions_accept">Kabul Et</string>
-    <string name="onboarding_conditions_by_using_you_agree">SimpleX Chat\'i kullanarak şunları kabul etmiş olursunuz:\n- genel gruplarda sadece yasal içerik göndermeyi.\n- diğer kullanıcılara saygı göstermeyi - spam yapmamayı.</string>
+    <string name="onboarding_conditions_by_using_you_agree">Inqalaab\'i kullanarak şunları kabul etmiş olursunuz:\n- genel gruplarda sadece yasal içerik göndermeyi.\n- diğer kullanıcılara saygı göstermeyi - spam yapmamayı.</string>
     <string name="onboarding_conditions_configure_server_operators">Sunucu operatörlerini yapılandırma</string>
     <string name="leave_chat_question">Sohbetten çıkılsın mı?</string>
     <string name="group_member_role_moderator">yönetici</string>
@@ -2312,7 +2312,7 @@
     <string name="operator_updated_conditions">Güncellenen koşullar</string>
     <string name="report_item_visibility_submitter">Sadece siz ve moderatörler görebilir.</string>
     <string name="report_item_visibility_moderators">Sadece gönderen ve moderatörler görebilir.</string>
-    <string name="address_creation_instruction">Daha sonra oluşturmak için menüden SimpleX adresi oluştur seçeneğine dokunun.</string>
+    <string name="address_creation_instruction">Daha sonra oluşturmak için menüden Inqalaab adresi oluştur seçeneğine dokunun.</string>
     <string name="operator">Operatör</string>
     <string name="operator_use_for_files">Dosyalar için kullanın</string>
     <string name="v6_3_set_message_expiration_in_chats">Sohbetlerde mesajların geçerlilik süresini ayarlayın.</string>
@@ -2343,11 +2343,11 @@
     <string name="operator_open_conditions">Açık koşullar</string>
     <string name="change_automatic_chat_deletion_message">Bu işlem geri alınamaz - seçilen tarihten önce bu sohbette gönderilen ve alınan mesajlar silinecektir.</string>
     <string name="you_can_set_connection_name_to_remember">Bağlantının kimlerle paylaşıldığını hatırlamak için bağlantı adını ayarlayabilirsiniz.</string>
-    <string name="share_simplex_address_on_social_media">SimpleX adresini sosyal medyada paylaşın.</string>
+    <string name="share_simplex_address_on_social_media">Inqalaab adresini sosyal medyada paylaşın.</string>
     <string name="operator_website">Web sitesi</string>
     <string name="unsupported_connection_link">Desteklenmeyen bağlantı bağlantısı</string>
     <string name="report_verb">Rapor</string>
-    <string name="simplex_address_and_1_time_links_are_safe_to_share">SimpleX adresi ve tek kullanımlık bağlantılar herhangi bir mesajlaşma uygulaması üzerinden güvenle paylaşılabilir.</string>
+    <string name="simplex_address_and_1_time_links_are_safe_to_share">Inqalaab adresi ve tek kullanımlık bağlantılar herhangi bir mesajlaşma uygulaması üzerinden güvenle paylaşılabilir.</string>
     <string name="short_link_button_text">Kısa bağlantı</string>
     <string name="save_admission_question">Giriş ayarlarını kaydetmek ister misiniz?</string>
     <string name="onboarding_conditions_private_chats_not_accessible">Özel sohbetler, gruplar ve kişileriniz sunucu operatörleri tarafından erişilemez.</string>
@@ -2367,7 +2367,7 @@
     <string name="onboarding_conditions_privacy_policy_and_conditions_of_use">Gizlilik politikası ve kullanım koşulları.</string>
     <string name="onboarding_network_operators_review_later">Daha sonra incele</string>
     <string name="onboarding_choose_server_operators">Sunucu operatörleri</string>
-    <string name="onboarding_network_operators_simplex_flux_agreement">SimpleX Chat ve Flux, Flux tarafından işletilen sunucuların uygulamaya dahil edilmesi konusunda bir anlaşma yaptı.</string>
+    <string name="onboarding_network_operators_simplex_flux_agreement">Inqalaab ve Flux, Flux tarafından işletilen sunucuların uygulamaya dahil edilmesi konusunda bir anlaşma yaptı.</string>
     <string name="privacy_chat_list_open_links">Sohbet listesinden bağlantıları aç</string>
     <string name="privacy_chat_list_open_links_yes">Evet</string>
     <string name="privacy_chat_list_open_web_link_question">Web bağlantısını açmak ister misiniz?</string>
@@ -2435,10 +2435,10 @@
     <string name="share_address_publicly">Adresi herkese açık olarak paylaş</string>
     <string name="network_smp_web_port_footer">Port belirtilmediğinde TCP portu %1$s kullanın.</string>
     <string name="or_to_share_privately">Veya özel olarak paylaşmak için</string>
-    <string name="simplex_address_or_1_time_link">SimpleX adresi mi yoksa tek kullanımlık bağlantı mı?</string>
+    <string name="simplex_address_or_1_time_link">Inqalaab adresi mi yoksa tek kullanımlık bağlantı mı?</string>
     <string name="save_list">Listeyi kaydet</string>
     <string name="operator_use_for_sending">Göndermek için</string>
-    <string name="simplex_link_channel">SimpleX kanal bağlantısı</string>
+    <string name="simplex_link_channel">Inqalaab kanal bağlantısı</string>
     <string name="network_smp_web_port_section_title">Mesajlaşma için TCP bağlantı noktası</string>
     <string name="network_smp_web_port_toggle">Web bağlantı noktasını kullan</string>
     <string name="accept_contact_request">İletişim isteğini kabul et</string>

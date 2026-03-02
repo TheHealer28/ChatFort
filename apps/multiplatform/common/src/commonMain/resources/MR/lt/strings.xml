@@ -2,10 +2,10 @@
 <resources>
     <string name="chat_item_ttl_month">1 mėnuo</string>
     <string name="chat_item_ttl_week">1 savaitė</string>
-    <string name="about_simplex_chat">Apie SimpleX Chat</string>
+    <string name="about_simplex_chat">Apie Inqalaab</string>
     <string name="chat_item_ttl_day">1 diena</string>
     <string name="a_plus_b">a + b</string>
-    <string name="about_simplex">Apie SimpleX</string>
+    <string name="about_simplex">Apie Inqalaab</string>
     <string name="smp_servers_add">Pridėti serverį</string>
     <string name="v4_3_improved_server_configuration_desc">Pridėti serverius nuskanuojant QR kodus.</string>
     <string name="appearance_settings">Išvaizda</string>
@@ -214,7 +214,7 @@
     <string name="delete_link">Ištrinti nuorodą</string>
     <string name="delete_link_question">Ištrinti nuorodą\?</string>
     <string name="error_creating_link_for_group">Klaida kuriant grupės nuorodą</string>
-    <string name="how_simplex_works">Kaip SimpleX veikia</string>
+    <string name="how_simplex_works">Kaip Inqalaab veikia</string>
     <string name="database_encrypted">Duomenų bazė šifruota!</string>
     <string name="group_member_status_creator">kūrėjas</string>
     <string name="delete_group_question">Ištrinti grupę\?</string>
@@ -245,10 +245,10 @@
     <string name="settings_section_title_settings">NUSTATYMAI</string>
     <string name="theme_system">Sistemos</string>
     <string name="unknown_message_format">nežinomas žinutės formatas</string>
-    <string name="simplex_link_contact">SimpleX kontakto adresas</string>
-    <string name="simplex_link_group">SimpleX grupės nuoroda</string>
-    <string name="simplex_link_invitation">SimpleX vienkartinis pakvietimas</string>
-    <string name="simplex_link_mode">SimpleX nuorodos</string>
+    <string name="simplex_link_contact">Inqalaab kontakto adresas</string>
+    <string name="simplex_link_group">Inqalaab grupės nuoroda</string>
+    <string name="simplex_link_invitation">Inqalaab vienkartinis pakvietimas</string>
+    <string name="simplex_link_mode">Inqalaab nuorodos</string>
     <string name="settings_notification_preview_mode_title">Rodyti peržiūrą</string>
     <string name="auth_unlock">Atrakinti</string>
     <string name="share_verb">Bendrinti</string>
@@ -258,18 +258,18 @@
     <string name="show_QR_code">Rodyti QR kodą</string>
     <string name="share_invitation_link">Bendrinti pakvietimo nuorodą</string>
     <string name="smp_servers">SMP serveriai</string>
-    <string name="use_simplex_chat_servers__question">Naudoti SimpleX Chat serverius\?</string>
+    <string name="use_simplex_chat_servers__question">Naudoti Inqalaab serverius\?</string>
     <string name="network_disable_socks">Naudoti tiesioginį interneto ryšį\?</string>
     <string name="update_network_settings_confirmation">Atnaujinti</string>
     <string name="update_network_settings_question">Atnaujinti tinklo nustatymus\?</string>
-    <string name="ntf_channel_messages">SimpleX Chat žinutės</string>
-    <string name="ntf_channel_calls">SimpleX Chat skambučiai</string>
+    <string name="ntf_channel_messages">Inqalaab žinutės</string>
+    <string name="ntf_channel_calls">Inqalaab skambučiai</string>
     <string name="notification_preview_mode_message_desc">Rodyti kontaktą ir žinutę</string>
     <string name="notification_preview_mode_contact_desc">Rodyti tik kontaktą</string>
     <string name="auth_stop_chat">Sustabdyti pokalbius</string>
     <string name="share_message">Bendrinti žinutę…</string>
     <string name="use_camera_button">Fotoaparatas</string>
-    <string name="thank_you_for_installing_simplex">Dėkojame, kad įdiegėte SimpleX Chat!</string>
+    <string name="thank_you_for_installing_simplex">Dėkojame, kad įdiegėte Inqalaab!</string>
     <string name="smp_servers_use_server">Naudoti serverį</string>
     <string name="network_enable_socks">Naudoti SOCKS įgaliotąjį serverį\?</string>
     <string name="core_simplexmq_version">simplexmq: v%s (%2s)</string>
@@ -295,7 +295,7 @@
     <string name="your_privacy">Jūsų privatumas</string>
     <string name="settings_section_title_you">JŪS</string>
     <string name="wrong_passphrase_title">Neteisinga slaptafrazė!</string>
-    <string name="app_name">SimpleX</string>
+    <string name="app_name">Inqalaab</string>
     <string name="sender_you_pronoun">jūs</string>
     <string name="description_via_group_link">per grupės nuorodą</string>
     <string name="description_via_contact_address_link">per kontakto adreso nuorodą</string>
@@ -306,7 +306,7 @@
     <string name="voice_message_with_duration">Balso žinutė (%1$s)</string>
     <string name="voice_message_send_text">Balso žinutė…</string>
     <string name="view_security_code">Rodyti saugumo kodą</string>
-    <string name="icon_descr_address">SimpleX adresas</string>
+    <string name="icon_descr_address">Inqalaab adresas</string>
     <string name="your_SMP_servers">Jūsų SMP serveriai</string>
     <string name="your_ICE_servers">Jūsų ICE serveriai</string>
     <string name="users_add">Pridėti profilį</string>
@@ -314,15 +314,15 @@
     <string name="welcome">Sveiki!</string>
     <string name="attach">Pridėti</string>
     <string name="observer_cant_send_message_title">Jūs negalite siųsti žinučių!</string>
-    <string name="image_descr_simplex_logo">SimpleX logotipas</string>
+    <string name="image_descr_simplex_logo">Inqalaab logotipas</string>
     <string name="your_settings">Jūsų nustatymai</string>
     <string name="smp_servers_your_server">Jūsų serveris</string>
     <string name="smp_servers_your_server_address">Jūsų serverio adresas</string>
     <string name="smp_servers_add_to_another_device">Pridėti į kitą įrenginį</string>
-    <string name="using_simplex_chat_servers">Naudojami SimpleX Chat serveriai.</string>
+    <string name="using_simplex_chat_servers">Naudojami Inqalaab serveriai.</string>
     <string name="network_settings">Išplėstiniai tinklo nustatymai</string>
     <string name="your_current_profile">Jūsų dabartinis profilis</string>
-    <string name="your_profile_is_stored_on_device_and_shared_only_with_contacts_simplex_cannot_see_it">Jūsų profilis yra saugomas jūsų įrenginyje ir bendrinamas tik su jūsų kontaktais. SimpleX serveriai negali matyti jūsų profilio.</string>
+    <string name="your_profile_is_stored_on_device_and_shared_only_with_contacts_simplex_cannot_see_it">Jūsų profilis yra saugomas jūsų įrenginyje ir bendrinamas tik su jūsų kontaktais. Inqalaab serveriai negali matyti jūsų profilio.</string>
     <string name="icon_descr_video_call">vaizdo skambutis</string>
     <string name="your_calls">Jūsų skambučiai</string>
     <string name="webrtc_ice_servers">WebRTC ICE serveriai</string>
@@ -344,7 +344,7 @@
     <string name="wrong_passphrase">Neteisinga duomenų bazės slaptafrazė</string>
     <string name="icon_descr_video_snd_complete">Vaizdo įrašas išsiųstas</string>
     <string name="voice_message">Balso žinutė</string>
-    <string name="icon_descr_simplex_team">SimpleX komanda</string>
+    <string name="icon_descr_simplex_team">Inqalaab komanda</string>
     <string name="whats_new">Kas naujo</string>
     <string name="save_and_notify_group_members">Įrašyti ir pranešti grupės nariams</string>
     <string name="callstate_received_confirmation">gautas patvirtinimas…</string>
@@ -388,7 +388,7 @@
     <string name="connect_via_link">Prisijungti per nuorodą</string>
     <string name="security_code">Saugumo kodas</string>
     <string name="mark_code_verified">Žymėti kaip patvirtintą</string>
-    <string name="chat_lock">SimpleX užraktas</string>
+    <string name="chat_lock">Inqalaab užraktas</string>
     <string name="saved_ICE_servers_will_be_removed">Įrašyti WebRTC ICE serveriai bus pašalinti.</string>
     <string name="button_send_direct_message">Siųsti tiesioginę žinutę</string>
     <string name="button_remove_member">Šalinti narį</string>
@@ -396,17 +396,17 @@
     <string name="feature_enabled_for_you">įjungta jums</string>
     <string name="both_you_and_your_contact_can_send_disappearing">Tiek jūs, tiek ir jūsų kontaktas gali siųsti išnykstančias žinutes.</string>
     <string name="group_members_can_send_voice">Grupės nariai gali siųsti balso žinutes.</string>
-    <string name="v4_2_security_assessment_desc">SimpleX Chat saugumo auditą atliko „Trail of Bits“.</string>
+    <string name="v4_2_security_assessment_desc">Inqalaab saugumo auditą atliko „Trail of Bits“.</string>
     <string name="v4_2_security_assessment">Saugumo įvertinimas</string>
     <string name="save_group_profile">Įrašyti grupės profilį</string>
     <string name="both_you_and_your_contacts_can_delete">Tiek jūs, tiek ir jūsų kontaktas gali negrįžtamai ištrinti išsiųstas žinutes. (24 valandas)</string>
     <string name="both_you_and_your_contact_can_send_voice">Tiek jūs, tiek ir jūsų kontaktas gali siųsti balso žinutes.</string>
     <string name="enter_passphrase_notification_desc">Norėdami gauti pranešimus, įveskite duomenų bazės slaptafrazę</string>
     <string name="notification_preview_mode_contact">Kontakto vardas</string>
-    <string name="la_notice_title_simplex_lock">SimpleX užraktas</string>
+    <string name="la_notice_title_simplex_lock">Inqalaab užraktas</string>
     <string name="la_notice_turn_on">Įjungti</string>
-    <string name="auth_simplex_lock_turned_on">SimpleX užraktas įjungtas</string>
-    <string name="auth_enable_simplex_lock">Įjungti SimpleX užraktą</string>
+    <string name="auth_simplex_lock_turned_on">Inqalaab užraktas įjungtas</string>
+    <string name="auth_enable_simplex_lock">Įjungti Inqalaab užraktą</string>
     <string name="message_delivery_error_title">Žinutės pristatymo klaida</string>
     <string name="moderate_message_will_be_deleted_warning">Žinutė bus ištrinta visiems nariams.</string>
     <string name="icon_descr_sent_msg_status_sent">išsiųsta</string>
@@ -420,7 +420,7 @@
     <string name="smp_servers_invalid_address">Neteisingas serverio adresas!</string>
     <string name="network_session_mode_user">Pokalbio profilis</string>
     <string name="profile_is_only_shared_with_your_contacts">Profilis yra bendrinamas tik su jūsų kontaktais.</string>
-    <string name="read_more_in_github_with_link"><![CDATA[Išsamiau skaitykite mūsų <font color="#0088ff">„GitHub“ saugykloje</font>.]]></string>
+    <string name="read_more_in_github_with_link"><![CDATA[Išsamiau skaitykite mūsų <font color="#1E8E3E">„GitHub“ saugykloje</font>.]]></string>
     <string name="settings_section_title_socks">SOCKS ĮGALIOTASIS SERVERIS</string>
     <string name="save_passphrase_and_open_chat">Įrašyti slaptafrazę ir atverti pokalbį</string>
     <string name="restore_database">Atkurti atsarginę duomenų bazės kopiją</string>
@@ -445,7 +445,7 @@
     <string name="voice_prohibited_in_this_chat">Balso žinutės šiame pokalbyje yra uždraustos.</string>
     <string name="v4_4_disappearing_messages_desc">Išsiųstos žinutės bus ištrintos po nustatyto laiko.</string>
     <string name="user_unhide">Nebeslėpti</string>
-    <string name="la_lock_mode">SimpleX užrakto veiksena</string>
+    <string name="la_lock_mode">Inqalaab užrakto veiksena</string>
     <string name="host_verb">Serveris</string>
     <string name="callstatus_missed">praleistas skambutis</string>
     <string name="enable_lock">Įjungti užraktą</string>
@@ -469,7 +469,7 @@
     <string name="decryption_error">Iššifravimo klaida</string>
     <string name="description_via_group_link_incognito">inkognito per grupės nuorodą</string>
     <string name="smp_server_test_create_file">Sukurti failą</string>
-    <string name="lock_not_enabled">SimpleX užraktas neįjungtas!</string>
+    <string name="lock_not_enabled">Inqalaab užraktas neįjungtas!</string>
     <string name="icon_descr_send_message">Siųsti žinutę</string>
     <string name="alert_title_msg_bad_hash">Bloga žinutės maiša</string>
     <string name="messages_section_title">Žinutės</string>
@@ -564,7 +564,7 @@
     <string name="color_background">Fonas</string>
     <string name="send_disappearing_message_30_seconds">30 sekundžių</string>
     <string name="allow_message_reactions_only_if">Leisti reaguoti į žinutes tik tuo atveju, jeigu tai leidžia jūsų kontaktas.</string>
-    <string name="learn_more_about_address">Apie SimpleX adresą</string>
+    <string name="learn_more_about_address">Apie Inqalaab adresą</string>
     <string name="network_enable_socks_info">Ar gauti prieigą prie serverių per SOCKS įgaliotąjį serverį naudojant prievadą %d? Prieš įjungiant šią parinktį, privalo būti paleistas įgaliotasis serveris.</string>
     <string name="all_your_contacts_will_remain_connected_update_sent">Jūsų kontaktai išliks prisijungę prie jūsų. Apie profilio atnaujinimą bus pranešta jūsų kontaktams.</string>
     <string name="audio_call_no_encryption">garso skambutis (nėra užšifruotas visapusiškai)</string>
@@ -632,7 +632,7 @@
     <string name="colored_text">spalvotas</string>
     <string name="connect_plan_already_joining_the_group">Jau prisijungiama prie grupės!</string>
     <string name="connect_plan_connect_via_link">Prisijungti per nuorodą?</string>
-    <string name="create_simplex_address">Sukurti SimpleX adresą</string>
+    <string name="create_simplex_address">Sukurti Inqalaab adresą</string>
     <string name="ttl_h">%dval.</string>
     <string name="agent_critical_error_title">Kritinė klaida</string>
     <string name="create_group_button_to_create_new_group"><![CDATA[<b>Sukurti grupę</b>: sukurti naują grupę.]]></string>
@@ -641,7 +641,7 @@
     <string name="chat_database_section">POKALBIO DUOMENŲ BAZĖ</string>
     <string name="v4_6_chinese_spanish_interface">Naudotojo sąsaja kinų ir ispanų kalbomis</string>
     <string name="delivery_receipts_title">Pranešimai apie pristatymą!</string>
-    <string name="auth_disable_simplex_lock">Išjungti SimpleX užraktą</string>
+    <string name="auth_disable_simplex_lock">Išjungti Inqalaab užraktą</string>
     <string name="delivery">Pristatymas</string>
     <string name="change_lock_mode">Keisti užrakto veikseną</string>
     <string name="ttl_d">%dd.</string>
@@ -666,7 +666,7 @@
     <string name="settings_notification_preview_title">Pranešimo peržiūra</string>
     <string name="loading_remote_file_title">Įkeliamas failas</string>
     <string name="notifications">Pranešimai</string>
-    <string name="if_you_received_simplex_invitation_link_you_can_open_in_browser">Jei gavote SimpleX Chat pakvietimo nuorodą, galite ją atverti naršyklėje:</string>
+    <string name="if_you_received_simplex_invitation_link_you_can_open_in_browser">Jei gavote Inqalaab pakvietimo nuorodą, galite ją atverti naršyklėje:</string>
     <string name="icon_descr_more_button">Daugiau</string>
     <string name="paste_the_link_you_received">Įdėkite gautą nuorodą</string>
     <string name="invalid_qr_code">Neteisingas QR kodas</string>
@@ -694,7 +694,7 @@
     <string name="ok">Gerai</string>
     <string name="v4_5_private_filenames">Privatūs failų pavadinimai</string>
     <string name="info_menu">Informacija</string>
-    <string name="open_simplex_chat_to_accept_call">Atverkite SimpleX Chat norėdami atsiliepti</string>
+    <string name="open_simplex_chat_to_accept_call">Atverkite Inqalaab norėdami atsiliepti</string>
     <string name="desktop_incompatible_version">Nesuderinama versija</string>
     <string name="non_content_uri_alert_title">Neteisingas failo kelias</string>
     <string name="settings_notifications_mode_title">Pranešimų tarnyba</string>
@@ -722,7 +722,7 @@
     <string name="rcv_group_event_open_chat">Atverti</string>
     <string name="open_chat">Atverti pokalbį</string>
     <string name="network_status">Tinklo būsena</string>
-    <string name="email_invite_subject">Bendraukime per Simplex Chat</string>
+    <string name="email_invite_subject">Bendraukime per Inqalaab</string>
     <string name="message_too_large">Žinutė per didelė</string>
     <string name="new_in_version">Štai kas naujo %s versijoje</string>
     <string name="only_your_contact_can_send_voice">Tik jūsų kontaktas gali siųsti balso žinutes.</string>
@@ -754,7 +754,7 @@
     <string name="periodic_notifications">Periodiniai pranešimai</string>
     <string name="periodic_notifications_disabled">Periodiniai pranešimai yra išjungti!</string>
     <string name="notification_preview_mode_hidden">Paslėptas</string>
-    <string name="auth_device_authentication_is_not_enabled_you_can_turn_on_in_settings_once_enabled">Įrenginio autentifikacija neįjungta. Galite įjungti SimpleX užraktą nustatymuose, įjungus įrenginio autentifikaciją.</string>
+    <string name="auth_device_authentication_is_not_enabled_you_can_turn_on_in_settings_once_enabled">Įrenginio autentifikacija neįjungta. Galite įjungti Inqalaab užraktą nustatymuose, įjungus įrenginio autentifikaciją.</string>
     <string name="auth_open_migration_to_another_device">Atidaryti perkėlimo ekraną</string>
     <string name="delete_member_message__question">Ištrinti nario žinutę?</string>
     <string name="chat_with_developers">Kalbėti su kūrėjais</string>
@@ -851,7 +851,7 @@
     <string name="delete_messages__question">Ištrinti %d žinutes?</string>
     <string name="confirm_password">Patvirtinti slaptažodį</string>
     <string name="icon_descr_hang_up">Padėti ragelį</string>
-    <string name="auth_device_authentication_is_disabled_turning_off">Įrenginio autentifikacija išjungta. Išjungiamas SimpleX užraktas.</string>
+    <string name="auth_device_authentication_is_disabled_turning_off">Įrenginio autentifikacija išjungta. Išjungiamas Inqalaab užraktas.</string>
     <string name="total_files_count_and_size">%d failas (-ai), kurių bendras dydis yra %s</string>
     <string name="ttl_hours">%d valandos</string>
     <string name="connect_via_link_incognito">Prisijungti inkognito režimu</string>
@@ -866,7 +866,7 @@
     <string name="group_profile_is_stored_on_members_devices">Grupės profilis yra saugomas narių įrenginiuose, ne serveriuose.</string>
     <string name="icon_descr_video_asked_to_receive">Paprašyta gauti vaizdo įrašą</string>
     <string name="email_invite_body">Labas!
-\nPrisijunk prie manęs per SimpleX Chat: %s</string>
+\nPrisijunk prie manęs per Inqalaab: %s</string>
     <string name="privacy_redefined">Privatumas apibrėžtas iš naujo</string>
     <string name="share_text_created_at">Sukurta: %s</string>
     <string name="group_member_status_intro_invitation">jungiamasi (supažindinimo pakvietimas)</string>
@@ -921,7 +921,7 @@
     <string name="blocked_item_description">užblokuotas</string>
     <string name="display_name_invited_to_connect">pakviestas prisijungti</string>
     <string name="description_via_contact_address_link_incognito">Inkognito per kontakto adreso nuorodą</string>
-    <string name="simplex_link_mode_browser_warning">Nuorodos atidarymas naršyklėje gali sumažinti ryšio privatumą ir saugumą. Nepatikimos SimpleX nuorodos bus raudonos.</string>
+    <string name="simplex_link_mode_browser_warning">Nuorodos atidarymas naršyklėje gali sumažinti ryšio privatumą ir saugumą. Nepatikimos Inqalaab nuorodos bus raudonos.</string>
     <string name="please_check_correct_link_and_maybe_ask_for_a_new_one">Prašome pasitikrinti, ar naudojate tinkamą nuorodą, arba paprašykite savo kontakto, kad atsiųstų jums dar vieną.</string>
     <string name="la_lock_mode_passcode">Prieigos kodo įvedimas</string>
     <string name="la_please_remember_to_store_password">Prašome prisiminti arba saugoti tai saugiai - čia nėra būdo atkurti prarastą slaptažodį!</string>
@@ -953,7 +953,7 @@
     <string name="if_you_cannot_meet_in_person_scan_QR_in_video_call_or_ask_for_invitation_link"><![CDATA[Jei negalite susitikti asmeniškai, galite <b>nuskanuoti QR kodą vaizdo skambutyje</b>, arba jūsų kontaktas gali pasidalinti pakvietimo nuoroda.]]></string>
     <string name="or_show_this_qr_code">Arba parodykite šį kodą</string>
     <string name="enter_one_ICE_server_per_line">ICE serveriai (vienas per liniją)</string>
-    <string name="install_simplex_chat_for_terminal">Įdiegti SimpleX Chat terminalui</string>
+    <string name="install_simplex_chat_for_terminal">Įdiegti Inqalaab terminalui</string>
     <string name="delete_image">Ištrinti nuotrauką</string>
     <string name="password_to_show">Rodyti slaptažodį</string>
     <string name="passcode_set">Prieigos kodas nustatytas!</string>
@@ -989,7 +989,7 @@
     <string name="service_notifications_disabled">Momentiniai pranešimai yra išjungti!</string>
     <string name="icon_descr_profile_image_placeholder">profilio nuotraukos vietos ženklas</string>
     <string name="if_you_cannot_meet_in_person_show_QR_in_video_call_or_via_another_channel"><![CDATA[Jei negalite susitkti asmeniškai, <b>parodykite QR kodą vaizdo skambutyje</b>, arba pasidalinkite nuoroda.]]></string>
-    <string name="read_more_in_user_guide_with_link"><![CDATA[Skaitykite daugiau <font color="#0088ff">naudotojo vadove</font>.]]></string>
+    <string name="read_more_in_user_guide_with_link"><![CDATA[Skaitykite daugiau <font color="#1E8E3E">naudotojo vadove</font>.]]></string>
     <string name="if_you_cant_meet_in_person">Jei negalite susitikti asmeniškai, parodykite QR kodą vaizdo skambutyje, arba pasidalinkite nuoroda.</string>
     <string name="paste_the_link_you_received_to_connect_with_your_contact">Įklijuokite nuorodą, kurią gavote prisijungimui prie savo kontakto…</string>
     <string name="callstate_received_answer">gautas atsakas…</string>
@@ -1125,20 +1125,20 @@
     <string name="v4_5_italian_interface_descr">Dėkojame naudotojams - prisidėkite per Weblate!</string>
     <string name="is_not_verified">%s nėra patvirtintas</string>
     <string name="possible_slow_function_title">Lėta funkcija</string>
-    <string name="system_restricted_background_desc">SimpleX negali veikti fone. Jūs gausite pranešimus tik kai programėlė yra paleista.</string>
+    <string name="system_restricted_background_desc">Inqalaab negali veikti fone. Jūs gausite pranešimus tik kai programėlė yra paleista.</string>
     <string name="database_initialization_error_desc">Duomenų bazė neveikia tinkamai. Bakstelėkite, kad sužinotumėte daugiau</string>
-    <string name="simplex_service_notification_title">SimpleX Chat tarnyba</string>
+    <string name="simplex_service_notification_title">Inqalaab tarnyba</string>
     <string name="stop_sharing">Nustoti bendrinti</string>
     <string name="share_with_contacts">Bendrinti su kontaktais</string>
     <string name="next_generation_of_private_messaging">Naujos kartos privatus susirašinėjimas</string>
     <string name="chat_item_ttl_seconds">%s sekundė(s)</string>
-    <string name="code_you_scanned_is_not_simplex_link_qr_code">Kodas kurį nuskanavote, nėra SimpleX nuorodos QR kodas.</string>
+    <string name="code_you_scanned_is_not_simplex_link_qr_code">Kodas kurį nuskanavote, nėra Inqalaab nuorodos QR kodas.</string>
     <string name="contact_you_shared_link_with_wont_be_able_to_connect">Kontaktas su kurio pasidalinote šia nuoroda NEGALĖS prisijungti!</string>
     <string name="this_device_name_shared_with_mobile">Įrenginio vardas bus bendrinamas su susietu mobiliuoju klientu.</string>
     <string name="moderate_message_will_be_marked_warning">Ši žinutė bus pažymėta visiems nariams kaip moderuota.</string>
     <string name="passphrase_will_be_saved_in_settings">Slaptafrazė bus saugoma nustatymuose kaip paprastas tekstas po jos pakeitimo arba programėlės paleidimo iš naujo.</string>
     <string name="smp_servers_per_user">Serveriai naujiems prisijungimams jūsų dabartiniame pokalbių profilyje</string>
-    <string name="the_text_you_pasted_is_not_a_link">Tekstas kurį įklijavote nėra SimpleX nuoroda.</string>
+    <string name="the_text_you_pasted_is_not_a_link">Tekstas kurį įklijavote nėra Inqalaab nuoroda.</string>
     <string name="delete_files_and_media_desc">Šis veiksmas negali būti atšauktas - visi gauti ir siųsti failai ir medija bus ištrinti. Mažos rezoliucijos nuotraukos išliks.</string>
     <string name="v5_6_quantum_resistant_encryption_descr">Įjunkite tiesioginiuose pokalbiuose (BETA)!</string>
     <string name="this_string_is_not_a_connection_link">Ši eilutė nėra prisijungimo nuoroda!</string>
@@ -1184,7 +1184,7 @@
     <string name="sending_via">Siunčiama per</string>
     <string name="color_sent_message">Nusiųsta žinutė</string>
     <string name="v5_2_message_delivery_receipts_descr">Antra varnelė kurios mums trūko! ✅</string>
-    <string name="simplex_address">SimpleX adresas</string>
+    <string name="simplex_address">Inqalaab adresas</string>
     <string name="chat_with_the_founder">Siųsti klausimus ir idėjas</string>
     <string name="send_us_an_email">Siųsti mums el. laišką</string>
     <string name="terminal_always_visible">Rodyti konsolę naujame lange</string>
@@ -1192,7 +1192,7 @@
     <string name="alert_text_msg_bad_id">Sekančios žinutės ID yra neteisingas (mažesnis arba lygus ankstesniam).
 \nTaip gali nutikti dėl tam tikros klaidos arba kai ryšys yra sukompromisuotas.</string>
     <string name="settings_shutdown">Išjungti</string>
-    <string name="theme_simplex">SimpleX</string>
+    <string name="theme_simplex">Inqalaab</string>
     <string name="accept_feature_set_1_day">Nustatyti 1 dieną</string>
     <string name="v4_4_french_interface_descr">Dėkojame naudotojams - prisidėkite per Weblate!</string>
     <string name="remote_ctrl_error_timeout">Baigėsi skirtasis laikas jungiantis prie darbastalio</string>
@@ -1208,7 +1208,7 @@
     <string name="v5_4_link_mobile_desktop_descr">Su saugiu kvantiškai atspariu protokolu.</string>
     <string name="this_device_name">Šio įrenginio pavadinimas</string>
     <string name="v5_3_simpler_incognito_mode">Supaprastintas inkognito režimas</string>
-    <string name="connect_plan_this_is_your_own_simplex_address">Tai yra jūsų SimpleX adresas!</string>
+    <string name="connect_plan_this_is_your_own_simplex_address">Tai yra jūsų Inqalaab adresas!</string>
     <string name="group_members_n">%s, %s ir %d nariai</string>
     <string name="contact_tap_to_connect">Bakstelėkite, kad prisijungti</string>
     <string name="skip_inviting_button">Praleisti narių kvietimą</string>
@@ -1219,7 +1219,7 @@
     <string name="set_database_passphrase">Nustatyti duomenų slaptafrazę</string>
     <string name="set_passphrase">Nustatyti slaptafrazę</string>
     <string name="privacy_show_last_messages">Rodyti paskutines žinutes</string>
-    <string name="settings_section_title_support">PALAIKYKITE SIMPLEX CHAT</string>
+    <string name="settings_section_title_support">PALAIKYKITE Inqalaab</string>
     <string name="receipts_section_description_1">Jų galima nepaisyti kontaktų ir grupių nustatymuose.</string>
     <string name="enable_automatic_deletion_message">Šis veiksmas negali būti atšauktas - žinutės išsiųstos ir gautos anksčiau nei pasirinkta bus ištrintos. Tai gali užtrukti kelias minutes.</string>
     <string name="rcv_group_event_n_members_connected">%s, %s ir %d kiti nariai prisijungė</string>
@@ -1350,16 +1350,16 @@
     <string name="error_synchronizing_connection">Įvyko klaida sinchronizuojant prisijungimą</string>
     <string name="sender_may_have_deleted_the_connection_request">Siuntėjas gali būti ištrynęs prisijungimo užklausą.</string>
     <string name="smp_server_test_secure_queue">Saugi eilė</string>
-    <string name="turn_off_battery_optimization"><![CDATA[Kad tai naudoti, prašome <b>leisti SimpleX veikti fone</b> sekančiame dialoge. Kitaip, pranešimai bus išjungti.]]></string>
+    <string name="turn_off_battery_optimization"><![CDATA[Kad tai naudoti, prašome <b>leisti Inqalaab veikti fone</b> sekančiame dialoge. Kitaip, pranešimai bus išjungti.]]></string>
     <string name="smp_server_test_upload_file">Įkelti failą</string>
     <string name="notifications_mode_off">Veikia kai programėlė yra atidaryta</string>
     <string name="la_could_not_be_verified">Negalėjote būti patvirtintas; bandykite vėl.</string>
-    <string name="you_can_turn_on_lock">Galite įjungti SimpleX užraktą per nustatymus.</string>
+    <string name="you_can_turn_on_lock">Galite įjungti Inqalaab užraktą per nustatymus.</string>
     <string name="expand_verb">Išplėsti</string>
     <string name="revoke_file__action">Atšaukti failą</string>
     <string name="revoke_file__title">Atšaukti failą?</string>
     <string name="icon_descr_sent_msg_status_unauthorized_send">neteisėtas siuntimas</string>
-    <string name="search_or_paste_simplex_link">Ieškoti ar įklijuoti SimpleX nuorodą</string>
+    <string name="search_or_paste_simplex_link">Ieškoti ar įklijuoti Inqalaab nuorodą</string>
     <string name="you_need_to_allow_to_send_voice">Jūs turite leisti savo kontaktui siųsti balso žinutes, kad galėtumėte siųsti jas.</string>
     <string name="connect_via_link_or_qr_from_clipboard_or_in_person">(nuskanuokite ar įklijuokite iš iškarpinės)</string>
     <string name="you_accepted_connection">Priėmėte prisijungimą</string>
@@ -1407,7 +1407,7 @@
     <string name="trying_to_connect_to_server_to_receive_messages_with_error">Bandoma prisijungti prie serverio skirto žinučių gavimui iš šio kontakto (klaida: %1$s).</string>
     <string name="trying_to_connect_to_server_to_receive_messages">Bandoma prisijungti prie serverio skirto žinučių gavimui iš šio kontakto.</string>
     <string name="no_details">nėra detalių</string>
-    <string name="to_preserve_privacy_simplex_has_background_service_instead_of_push_notifications_it_uses_a_few_pc_battery"><![CDATA[Kad išlaikyti jūsų privatumą, vietoj tiesioginių pranešimų, programėlė turi <b>SimpleX fono tarnybą</b> - ji naudoja kelis procentus akumuliatoriaus per dieną.]]></string>
+    <string name="to_preserve_privacy_simplex_has_background_service_instead_of_push_notifications_it_uses_a_few_pc_battery"><![CDATA[Kad išlaikyti jūsų privatumą, vietoj tiesioginių pranešimų, programėlė turi <b>Inqalaab fono tarnybą</b> - ji naudoja kelis procentus akumuliatoriaus per dieną.]]></string>
     <string name="periodic_notifications_desc">Programėlė periodiškai gauna naujas žinutes — ji sunaudoja kelis procentus baterijos per dieną. Programa nenaudoja tiesioginių pranešimų — duomenys iš jūsų įrenginio į serverius nesiunčiami.</string>
     <string name="one_time_link">Vienkartinė pakvietimo nuoroda</string>
     <string name="you_wont_lose_your_contacts_if_delete_address">Neprarasite savo kontaktų, jei vėliau ištrinsite savo adresą.</string>
@@ -1485,8 +1485,8 @@
     <string name="v4_2_auto_accept_contact_requests_desc">Su nebūtina sveikinimo žinute.</string>
     <string name="v5_5_message_delivery_descr">Su sumažintu akumuliatoriaus naudojimu.</string>
     <string name="you_are_invited_to_group">Esate kviečiami į grupę</string>
-    <string name="you_can_connect_to_simplex_chat_founder"><![CDATA[Galite <font color="#0088ff">prisijungti prie SimpleX Chat kūrėjų, kad klausti klausimus ir gauti atnaujinimus</font>.]]></string>
-    <string name="you_can_make_address_visible_via_settings">Galite padaryti tai matomą savo SimpleX kontaktams per nustatymus.</string>
+    <string name="you_can_connect_to_simplex_chat_founder"><![CDATA[Galite <font color="#1E8E3E">prisijungti prie Inqalaab kūrėjų, kad klausti klausimus ir gauti atnaujinimus</font>.]]></string>
+    <string name="you_can_make_address_visible_via_settings">Galite padaryti tai matomą savo Inqalaab kontaktams per nustatymus.</string>
     <string name="linked_desktop_options">Susieto darbastalio parinktys</string>
     <string name="connect_plan_you_are_already_in_group_vName"><![CDATA[Jau esate grupėje <b>%1$s</b>.]]></string>
     <string name="user_unmute">Pašalinti nutildymą</string>
@@ -1551,7 +1551,7 @@
     <string name="no_history">Nėra istorijos</string>
     <string name="you_are_observer">esate stebėtojas</string>
     <string name="only_stored_on_members_devices">(saugo tik grupės nariai)</string>
-    <string name="your_simplex_contact_address">Jūsų SimpleX adresas</string>
+    <string name="your_simplex_contact_address">Jūsų Inqalaab adresas</string>
     <string name="smp_servers_scan_qr">Nuskanuoti serverio QR kodą</string>
     <string name="network_use_onion_hosts_required">Reikalingi</string>
     <string name="network_use_onion_hosts_no_desc">Onion serveriai nebus naudojami.</string>
@@ -1575,7 +1575,7 @@
     <string name="app_was_crashed">Rodinys sudužo</string>
     <string name="description_you_shared_one_time_link">pasidalinote vienkartine nuoroda</string>
     <string name="description_you_shared_one_time_link_incognito">pasidalinote vienkartine nuoroda inkognito režimu</string>
-    <string name="la_notice_to_protect_your_information_turn_on_simplex_lock_you_will_be_prompted_to_complete_authentication_before_this_feature_is_enabled">Kad apsaugoti savo informaciją, įjunkite SimpleX užraktą.
+    <string name="la_notice_to_protect_your_information_turn_on_simplex_lock_you_will_be_prompted_to_complete_authentication_before_this_feature_is_enabled">Kad apsaugoti savo informaciją, įjunkite Inqalaab užraktą.
 \nJūs būsite prašomi užbaigti autentifikaciją prieš įjungiant šią galimybę.</string>
     <string name="icon_descr_waiting_for_image">Laukiama nuotraukos</string>
     <string name="compose_send_direct_message_to_connect">Siųsti tiesioginę žinutę, kad prisijungti</string>
@@ -1598,7 +1598,7 @@
     <string name="icon_descr_expand_role">Išplėsti rolių pasirinkimą</string>
     <string name="connect_plan_you_are_already_joining_the_group_vName"><![CDATA[Jau jungiatės prie grupės <b>%1$s</b>.]]></string>
     <string name="only_client_devices_store_contacts_groups_e2e_encrypted_messages"><![CDATA[Tik klientų įrenginiai saugo naudotojų profilius, kontaktus, grupes ir išsiųstas žinutes su <b>dviejų sluoksnių visapusiu šifravimu</b>.]]></string>
-    <string name="to_protect_privacy_simplex_has_ids_for_queues">Kad apsaugoti privatumą, vietoj naudotojų ID naudojamų visose kitose platformose, SimpleX turi identifikatorius žinučių eilėms, skirtingus kiekvienam jūsų kontaktui.</string>
+    <string name="to_protect_privacy_simplex_has_ids_for_queues">Kad apsaugoti privatumą, vietoj naudotojų ID naudojamų visose kitose platformose, Inqalaab turi identifikatorius žinučių eilėms, skirtingus kiekvienam jūsų kontaktui.</string>
     <string name="privacy_message_draft">Žinutės juodraštis</string>
     <string name="settings_restart_app">Paleisti iš naujo</string>
     <string name="group_member_role_member">narys</string>
@@ -1716,8 +1716,8 @@
     <string name="forward_chat_item">Persiųsti</string>
     <string name="files_and_media_not_allowed">Failai ir medija neleidžiami</string>
     <string name="forwarded_description">persiųsta</string>
-    <string name="allow_to_send_simplex_links">Leisti siųsti SimpleX nuorodas</string>
-    <string name="group_members_can_send_simplex_links">Grupės nariai gali siųsti SimpleX nuorodas.</string>
+    <string name="allow_to_send_simplex_links">Leisti siųsti Inqalaab nuorodas</string>
+    <string name="group_members_can_send_simplex_links">Grupės nariai gali siųsti Inqalaab nuorodas.</string>
     <string name="feature_enabled_for">Įjungta:</string>
     <string name="network_type_cellular">Mobilusis</string>
     <string name="v5_7_forward">Persiųskite ir išsaugokite žinutes</string>
@@ -1736,16 +1736,16 @@
     <string name="saved_chat_item_info_tab">Išsaugota</string>
     <string name="voice_messages_not_allowed">Balso žinutės neleidžiamos</string>
     <string name="network_type_network_wifi">WiFi</string>
-    <string name="simplex_links">SimpleX nuorodos</string>
-    <string name="prohibit_sending_simplex_links">Drausti SimpleX nuorodų siuntimą</string>
-    <string name="simplex_links_are_prohibited_in_group">SimpleX nuorodos yra uždraustos šioje grupėje.</string>
+    <string name="simplex_links">Inqalaab nuorodos</string>
+    <string name="prohibit_sending_simplex_links">Drausti Inqalaab nuorodų siuntimą</string>
+    <string name="simplex_links_are_prohibited_in_group">Inqalaab nuorodos yra uždraustos šioje grupėje.</string>
     <string name="feature_roles_owners">savininkai</string>
     <string name="network_type_ethernet">Laidinis internetas</string>
     <string name="network_type_other">Kitas</string>
     <string name="network_type_no_network_connection">Nėra interneto ryšio</string>
     <string name="saved_from_chat_item_info_title">Išsaugota iš</string>
     <string name="recipients_can_not_see_who_message_from">Gavėjas(-ai) negali matyti kas šią žinutę išsiuntė.</string>
-    <string name="simplex_links_not_allowed">SimpleX nuorodos neleidžiamos</string>
+    <string name="simplex_links_not_allowed">Inqalaab nuorodos neleidžiamos</string>
     <string name="v5_7_call_sounds_descr">Kai jungiami garso ir vaizdo skambučiai.</string>
     <string name="v5_7_quantum_resistant_encryption_descr">Bus įjungta tiesioginiuose pokalbiuose!</string>
     <string name="dark_mode_colors">Juodo režimo spalvos</string>

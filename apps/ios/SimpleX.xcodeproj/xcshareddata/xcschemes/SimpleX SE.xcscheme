@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1540"
+   LastUpgradeVersion = "2620"
    wasCreatedForAppExtension = "YES"
    version = "2.0">
    <BuildAction
@@ -31,7 +31,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "5CA059C9279559F40002BEB4"
-               BuildableName = "SimpleX.app"
+               BuildableName = "Inqalaab.app"
                BlueprintName = "SimpleX (iOS)"
                ReferencedContainer = "container:SimpleX.xcodeproj">
             </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5CA059C9279559F40002BEB4"
-            BuildableName = "SimpleX.app"
+            BuildableName = "Inqalaab.app"
             BlueprintName = "SimpleX (iOS)"
             ReferencedContainer = "container:SimpleX.xcodeproj">
          </BuildableReference>
@@ -81,7 +81,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5CA059C9279559F40002BEB4"
-            BuildableName = "SimpleX.app"
+            BuildableName = "Inqalaab.app"
             BlueprintName = "SimpleX (iOS)"
             ReferencedContainer = "container:SimpleX.xcodeproj">
          </BuildableReference>

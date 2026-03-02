@@ -393,7 +393,7 @@ struct ComposeView: View {
             let voiceProhibited = composeState.voicePreview && !chat.chatInfo.featureEnabled(.voice)
             let disableSendButton = simplexLinkProhibited || fileProhibited || voiceProhibited
             if simplexLinkProhibited {
-                msgNotAllowedView("SimpleX links not allowed", icon: "link")
+                msgNotAllowedView("Inqalaab links not allowed", icon: "link")
                 Divider()
             } else if fileProhibited {
                 msgNotAllowedView("Files and media not allowed", icon: "doc")

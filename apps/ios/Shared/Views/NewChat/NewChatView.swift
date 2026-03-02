@@ -622,8 +622,8 @@ private struct ConnectView: View {
                             connect(pastedLink)
                         } else {
                             alert = .newChatSomeAlert(alert: SomeAlert(
-                                alert: mkAlert(title: "Invalid link", message: "The text you pasted is not a SimpleX link."),
-                                id: "pasteLinkView: code is not a SimpleX link"
+                                alert: mkAlert(title: "Invalid link", message: "The text you pasted is not an Inqalaab link."),
+                                id: "pasteLinkView: code is not an Inqalaab link"
                             ))
                         }
                     }
@@ -654,8 +654,8 @@ private struct ConnectView: View {
                 connect(link)
             } else {
                 alert = .newChatSomeAlert(alert: SomeAlert(
-                    alert: mkAlert(title: "Invalid QR code", message: "The code you scanned is not a SimpleX link QR code."),
-                    id: "processQRCode: code is not a SimpleX link"
+                    alert: mkAlert(title: "Invalid QR code", message: "The code you scanned is not an Inqalaab link QR code."),
+                    id: "processQRCode: code is not an Inqalaab link"
                 ))
             }
         case let .failure(e):
@@ -1252,34 +1252,17 @@ func planAndConnect(
                 case let .contactAddress(cap):
                     switch cap {
                     case let .ok(contactSLinkData_):
-                        if let contactSLinkData = contactSLinkData_ {
-                            logger.debug("planAndConnect, .contactAddress, .ok, short link data present")
-                            await MainActor.run {
-                                showPrepareContactAlert(
-                                    connectionLink: connectionLink,
-                                    contactShortLinkData: contactSLinkData,
-                                    theme: theme,
-                                    dismiss: dismiss,
-                                    cleanup: cleanup
-                                )
-                            }
-                        } else {
-                            logger.debug("planAndConnect, .contactAddress, .ok, no short link data")
-                            await MainActor.run {
-                                showAskCurrentOrIncognitoProfileSheet(
-                                    title: NSLocalizedString("Connect via contact address", comment: "new chat sheet title"),
-                                    connectionLink: connectionLink,
-                                    connectionPlan: connectionPlan,
-                                    dismiss: dismiss,
-                                    cleanup: cleanup
-                                )
-                            }
-                        }
+                        // Inqalaab: skip the "prepare contact card" step and directly connect.
+                        // The original SimpleX shows a contact card first, requiring the user
+                        // to manually tap "Connect". For activists, we want instant connections.
+                        logger.debug("planAndConnect, .contactAddress, .ok, connecting directly")
+                        connectViaLink(connectionLink, connectionPlan: connectionPlan, dismiss: dismiss, incognito: false, cleanup: cleanup)
+                        let _ = contactSLinkData_ // suppress unused warning
                     case .ownLink:
                         logger.debug("planAndConnect, .contactAddress, .ownLink")
                         await MainActor.run {
                             showAskCurrentOrIncognitoProfileSheet(
-                                title: NSLocalizedString("Connect to yourself?\nThis is your own SimpleX address!", comment: "new chat sheet title"),
+                                title: NSLocalizedString("Connect to yourself?\nThis is your own Inqalaab address!", comment: "new chat sheet title"),
                                 actionStyle: .destructive,
                                 connectionLink: connectionLink,
                                 connectionPlan: connectionPlan,

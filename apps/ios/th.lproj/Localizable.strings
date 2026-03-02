@@ -29,16 +29,16 @@
 "**e2e encrypted** video call" = "**encrypted จากต้นจนจบ** การสนทนาทางวิดีโอ";
 
 /* No comment provided by engineer. */
-"**More private**: check new messages every 20 minutes. Only device token is shared with our push server. It doesn't see how many contacts you have, or any message metadata." = "**เป็นส่วนตัวมากขึ้น**: ตรวจสอบข้อความใหม่ทุกๆ 20 นาที โทเค็นอุปกรณ์แชร์กับเซิร์ฟเวอร์ SimpleX Chat แต่ไม่ระบุจำนวนผู้ติดต่อหรือข้อความที่คุณมี";
+"**More private**: check new messages every 20 minutes. Only device token is shared with our push server. It doesn't see how many contacts you have, or any message metadata." = "**เป็นส่วนตัวมากขึ้น**: ตรวจสอบข้อความใหม่ทุกๆ 20 นาที โทเค็นอุปกรณ์แชร์กับเซิร์ฟเวอร์ Inqalaab แต่ไม่ระบุจำนวนผู้ติดต่อหรือข้อความที่คุณมี";
 
 /* No comment provided by engineer. */
-"**Most private**: do not use SimpleX Chat push server. The app will check messages in background, when the system allows it, depending on how often you use the app." = "**ส่วนตัวที่สุด**: ไม่ใช้เซิร์ฟเวอร์การแจ้งเตือนของ SimpleX Chat ตรวจสอบข้อความเป็นระยะในพื้นหลัง (ขึ้นอยู่กับความถี่ที่คุณใช้แอป)";
+"**Most private**: do not use Inqalaab push server. The app will check messages in background, when the system allows it, depending on how often you use the app." = "**ส่วนตัวที่สุด**: ไม่ใช้เซิร์ฟเวอร์การแจ้งเตือนของ Inqalaab ตรวจสอบข้อความเป็นระยะในพื้นหลัง (ขึ้นอยู่กับความถี่ที่คุณใช้แอป)";
 
 /* No comment provided by engineer. */
 "**Please note**: you will NOT be able to recover or change passphrase if you lose it." = "**โปรดทราบ**: คุณจะไม่สามารถกู้คืนหรือเปลี่ยนรหัสผ่านได้หากคุณทำรหัสผ่านหาย";
 
 /* No comment provided by engineer. */
-"**Recommended**: device token and end-to-end encrypted notifications are sent to SimpleX Chat push server, but it does not see the message content, size or who it is from." = "**แนะนำ**: โทเค็นอุปกรณ์และการแจ้งเตือนจะถูกส่งไปยังเซิร์ฟเวอร์การแจ้งเตือนของ SimpleX Chat แต่ไม่ใช่เนื้อหาข้อความ ขนาด หรือผู้ที่ส่ง";
+"**Recommended**: device token and end-to-end encrypted notifications are sent to Inqalaab push server, but it does not see the message content, size or who it is from." = "**แนะนำ**: โทเค็นอุปกรณ์และการแจ้งเตือนจะถูกส่งไปยังเซิร์ฟเวอร์การแจ้งเตือนของ Inqalaab แต่ไม่ใช่เนื้อหาข้อความ ขนาด หรือผู้ที่ส่ง";
 
 /* No comment provided by engineer. */
 "**Warning**: Instant push notifications require passphrase saved in Keychain." = "**คำเตือน**: การแจ้งเตือนแบบพุชทันทีจำเป็นต้องบันทึกรหัสผ่านไว้ใน Keychain";
@@ -155,7 +155,7 @@
 "`a + b`" = "\\`a + b`";
 
 /* email text */
-"<p>Hi!</p>\n<p><a href=\"%@\">Connect to me via SimpleX Chat</a></p>" = "<p>สวัสดี!</p>\n<p><a href=\"%@\">เชื่อมต่อกับฉันผ่าน SimpleX Chat</a></p>";
+"<p>Hi!</p>\n<p><a href=\"%@\">Connect to me via Inqalaab</a></p>" = "<p>สวัสดี!</p>\n<p><a href=\"%@\">เชื่อมต่อกับฉันผ่าน Inqalaab</a></p>";
 
 /* No comment provided by engineer. */
 "~strike~" = "\\~ตี~";
@@ -212,7 +212,7 @@ time interval */
 "Abort changing address?" = "ยกเลิกการเปลี่ยนที่อยู่?";
 
 /* No comment provided by engineer. */
-"About SimpleX Chat" = "เกี่ยวกับ SimpleX Chat";
+"About Inqalaab" = "เกี่ยวกับ Inqalaab";
 
 /* No comment provided by engineer. */
 "above, then choose:" = "ด้านบน จากนั้นเลือก:";
@@ -630,7 +630,7 @@ set passcode view */
 "Connect" = "เชื่อมต่อ";
 
 /* No comment provided by engineer. */
-"connect to SimpleX Chat developers." = "เชื่อมต่อกับนักพัฒนา SimpleX Chat";
+"connect to Inqalaab developers." = "เชื่อมต่อกับนักพัฒนา Inqalaab";
 
 /* new chat sheet title */
 "Connect via link" = "เชื่อมต่อผ่านลิงก์";
@@ -741,7 +741,7 @@ set passcode view */
 "Create queue" = "สร้างคิว";
 
 /* No comment provided by engineer. */
-"Create SimpleX address" = "สร้างที่อยู่ SimpleX";
+"Create Inqalaab address" = "สร้างที่อยู่ Inqalaab";
 
 /* No comment provided by engineer. */
 "Create your profile" = "สร้างโปรไฟล์ของคุณ";
@@ -965,10 +965,10 @@ swipe action */
 "Device" = "อุปกรณ์";
 
 /* No comment provided by engineer. */
-"Device authentication is disabled. Turning off SimpleX Lock." = "การตรวจสอบสิทธิ์อุปกรณ์ถูกปิดใช้งาน กำลังปิด SimpleX Lock";
+"Device authentication is disabled. Turning off Inqalaab Lock." = "การตรวจสอบสิทธิ์อุปกรณ์ถูกปิดใช้งาน กำลังปิด Inqalaab Lock";
 
 /* No comment provided by engineer. */
-"Device authentication is not enabled. You can turn on SimpleX Lock via Settings, once you enable device authentication." = "การตรวจสอบอุปกรณ์ไม่ได้ถูกเปิดใช้งาน คุณสามารถเปิด SimpleX Lock ผ่านการตั้งค่าได้ เมื่อคุณเปิดใช้งานการตรวจสอบอุปกรณ์แล้ว";
+"Device authentication is not enabled. You can turn on Inqalaab Lock via Settings, once you enable device authentication." = "การตรวจสอบอุปกรณ์ไม่ได้ถูกเปิดใช้งาน คุณสามารถเปิด Inqalaab Lock ผ่านการตั้งค่าได้ เมื่อคุณเปิดใช้งานการตรวจสอบอุปกรณ์แล้ว";
 
 /* No comment provided by engineer. */
 "different migration in the app/database: %@ / %@" = "การโยกย้ายที่แตกต่างกันในแอป/ฐานข้อมูล: %@ / %@";
@@ -992,7 +992,7 @@ swipe action */
 "Disable for all" = "ปิดการใช้งานสำหรับทุกคน";
 
 /* authentication reason */
-"Disable SimpleX Lock" = "ปิดการใช้งาน SimpleX Lock";
+"Disable Inqalaab Lock" = "ปิดการใช้งาน Inqalaab Lock";
 
 /* No comment provided by engineer. */
 "Disappearing message" = "ข้อความที่จะหายไปหลังเวลาที่กําหนด (disappearing message)";
@@ -1019,7 +1019,7 @@ swipe action */
 "Do it later" = "ทำในภายหลัง";
 
 /* No comment provided by engineer. */
-"Do NOT use SimpleX for emergency calls." = "อย่าใช้ SimpleX สําหรับการโทรฉุกเฉิน";
+"Do NOT use Inqalaab for emergency calls." = "อย่าใช้ Inqalaab สําหรับการโทรฉุกเฉิน";
 
 /* No comment provided by engineer. */
 "Don't create address" = "อย่าสร้างที่อยู่";
@@ -1085,7 +1085,7 @@ swipe action */
 "Enable self-destruct passcode" = "เปิดใช้งานรหัสผ่านแบบทําลายตัวเอง";
 
 /* authentication reason */
-"Enable SimpleX Lock" = "เปิดใช้งาน SimpleX Lock";
+"Enable Inqalaab Lock" = "เปิดใช้งาน Inqalaab Lock";
 
 /* No comment provided by engineer. */
 "Enable TCP keep-alive" = "เปิดใช้งาน TCP Keep-alive";
@@ -1510,7 +1510,7 @@ snd error text */
 "hours" = "ชั่วโมง";
 
 /* No comment provided by engineer. */
-"How SimpleX works" = "วิธีการ SimpleX ทํางานอย่างไร";
+"How Inqalaab works" = "วิธีการ Inqalaab ทํางานอย่างไร";
 
 /* No comment provided by engineer. */
 "How to" = "วิธี";
@@ -1612,7 +1612,7 @@ snd error text */
 "Initial role" = "บทบาทเริ่มต้น";
 
 /* No comment provided by engineer. */
-"Install [SimpleX Chat for terminal](https://github.com/simplex-chat/simplex-chat)" = "ติดตั้ง [SimpleX Chat สำหรับเทอร์มินัล](https://github.com/simplex-chat/simplex-chat)";
+"Install [Inqalaab for terminal](https://github.com/simplex-chat/simplex-chat)" = "ติดตั้ง [Inqalaab สำหรับเทอร์มินัล](https://github.com/simplex-chat/simplex-chat)";
 
 /* No comment provided by engineer. */
 "Instant" = "ทันที";
@@ -1744,7 +1744,7 @@ snd error text */
 "left" = "ออกแล้ว";
 
 /* email subject */
-"Let's talk in SimpleX Chat" = "มาคุยกันใน SimpleX Chat";
+"Let's talk in Inqalaab" = "มาคุยกันใน Inqalaab";
 
 /* No comment provided by engineer. */
 "Light" = "สว่าง";
@@ -2650,40 +2650,40 @@ chat item action */
 "Show:" = "แสดง:";
 
 /* No comment provided by engineer. */
-"SimpleX address" = "ที่อยู่ SimpleX";
+"Inqalaab address" = "ที่อยู่ Inqalaab";
 
 /* No comment provided by engineer. */
-"SimpleX Address" = "ที่อยู่ SimpleX";
+"Inqalaab Address" = "ที่อยู่ Inqalaab";
 
 /* No comment provided by engineer. */
-"SimpleX Chat security was audited by Trail of Bits." = "ความปลอดภัยของ SimpleX Chat ได้รับการตรวจสอบโดย Trail of Bits";
+"Inqalaab security was audited by Trail of Bits." = "ความปลอดภัยของ Inqalaab ได้รับการตรวจสอบโดย Trail of Bits";
 
 /* simplex link type */
-"SimpleX contact address" = "ที่อยู่ติดต่อ SimpleX";
+"Inqalaab contact address" = "ที่อยู่ติดต่อ Inqalaab";
 
 /* notification */
-"SimpleX encrypted message or connection event" = "ข้อความ encrypt ของ SimpleX หรือเหตุการณ์การเชื่อมต่อ";
+"Inqalaab encrypted message or connection event" = "ข้อความ encrypt ของ Inqalaab หรือเหตุการณ์การเชื่อมต่อ";
 
 /* simplex link type */
-"SimpleX group link" = "ลิงค์กลุ่ม SimpleX";
+"Inqalaab group link" = "ลิงค์กลุ่ม Inqalaab";
 
 /* chat feature */
-"SimpleX links" = "ลิงก์ SimpleX";
+"Inqalaab links" = "ลิงก์ Inqalaab";
 
 /* No comment provided by engineer. */
-"SimpleX Lock" = "ล็อค SimpleX";
+"Inqalaab Lock" = "ล็อค Inqalaab";
 
 /* No comment provided by engineer. */
-"SimpleX Lock mode" = "โหมดล็อค SimpleX";
+"Inqalaab Lock mode" = "โหมดล็อค Inqalaab";
 
 /* No comment provided by engineer. */
-"SimpleX Lock not enabled!" = "ไม่ได้เปิดใช้งาน SimpleX Lock!";
+"Inqalaab Lock not enabled!" = "ไม่ได้เปิดใช้งาน Inqalaab Lock!";
 
 /* No comment provided by engineer. */
-"SimpleX Lock turned on" = "SimpleX Lock เปิดอยู่";
+"Inqalaab Lock turned on" = "Inqalaab Lock เปิดอยู่";
 
 /* simplex link type */
-"SimpleX one-time invitation" = "คำเชิญ SimpleX แบบครั้งเดียว";
+"Inqalaab one-time invitation" = "คำเชิญ Inqalaab แบบครั้งเดียว";
 
 /* No comment provided by engineer. */
 "Skip" = "ข้าม";
@@ -2731,7 +2731,7 @@ chat item action */
 "Stop sharing address?" = "หยุดแชร์ที่อยู่ไหม?";
 
 /* authentication reason */
-"Stop SimpleX" = "หยุด SimpleX";
+"Stop Inqalaab" = "หยุด Inqalaab";
 
 /* No comment provided by engineer. */
 "strike" = "ตี";
@@ -2740,7 +2740,7 @@ chat item action */
 "Submit" = "ส่ง";
 
 /* No comment provided by engineer. */
-"Support SimpleX Chat" = "สนับสนุน SimpleX แชท";
+"Support Inqalaab" = "สนับสนุน Inqalaab แชท";
 
 /* No comment provided by engineer. */
 "System" = "ระบบ";
@@ -2788,7 +2788,7 @@ chat item action */
 "Tests failed!" = "การทดสอบล้มเหลว!";
 
 /* No comment provided by engineer. */
-"Thank you for installing SimpleX Chat!" = "ขอบคุณสำหรับการติดตั้ง SimpleX Chat!";
+"Thank you for installing Inqalaab!" = "ขอบคุณสำหรับการติดตั้ง Inqalaab!";
 
 /* No comment provided by engineer. */
 "Thanks to the users – [contribute via Weblate](https://github.com/simplex-chat/simplex-chat/tree/stable#help-translating-simplex-chat)!" = "ขอบคุณผู้ใช้ – [มีส่วนร่วมผ่าน Weblate](https://github.com/simplex-chat/simplex-chat/tree/stable#help-translating-simplex-chat)!";
@@ -2875,10 +2875,10 @@ chat item action */
 "To protect timezone, image/voice files use UTC." = "ไฟล์ภาพ/เสียงใช้ UTC เพื่อป้องกันเขตเวลา";
 
 /* No comment provided by engineer. */
-"To protect your information, turn on SimpleX Lock.\nYou will be prompted to complete authentication before this feature is enabled." = "เพื่อปกป้องข้อมูลของคุณ ให้เปิด SimpleX Lock\nคุณจะได้รับแจ้งให้ยืนยันตัวตนให้เสร็จสมบูรณ์ก่อนที่จะเปิดใช้งานคุณลักษณะนี้";
+"To protect your information, turn on Inqalaab Lock.\nYou will be prompted to complete authentication before this feature is enabled." = "เพื่อปกป้องข้อมูลของคุณ ให้เปิด Inqalaab Lock\nคุณจะได้รับแจ้งให้ยืนยันตัวตนให้เสร็จสมบูรณ์ก่อนที่จะเปิดใช้งานคุณลักษณะนี้";
 
 /* No comment provided by engineer. */
-"To protect your privacy, SimpleX uses separate IDs for each of your contacts." = "เพื่อปกป้องความเป็นส่วนตัว แทนที่จะใช้ ID ผู้ใช้เหมือนที่แพลตฟอร์มอื่นๆใช้ SimpleX มีตัวระบุสำหรับคิวข้อความ โดยแยกจากกันสำหรับผู้ติดต่อแต่ละราย";
+"To protect your privacy, Inqalaab uses separate IDs for each of your contacts." = "เพื่อปกป้องความเป็นส่วนตัว แทนที่จะใช้ ID ผู้ใช้เหมือนที่แพลตฟอร์มอื่นๆใช้ Inqalaab มีตัวระบุสำหรับคิวข้อความ โดยแยกจากกันสำหรับผู้ติดต่อแต่ละราย";
 
 /* No comment provided by engineer. */
 "To record voice message please grant permission to use Microphone." = "ในการบันทึกข้อความเสียง โปรดให้สิทธิ์ในการใช้ไมโครโฟน";
@@ -2995,10 +2995,10 @@ chat item action */
 "Use server" = "ใช้เซิร์ฟเวอร์";
 
 /* No comment provided by engineer. */
-"Use SimpleX Chat servers?" = "ใช้เซิร์ฟเวอร์ SimpleX Chat ไหม?";
+"Use Inqalaab servers?" = "ใช้เซิร์ฟเวอร์ Inqalaab ไหม?";
 
 /* No comment provided by engineer. */
-"Using SimpleX Chat servers." = "กำลังใช้เซิร์ฟเวอร์ SimpleX Chat อยู่";
+"Using Inqalaab servers." = "กำลังใช้เซิร์ฟเวอร์ Inqalaab อยู่";
 
 /* No comment provided by engineer. */
 "v%@ (%@)" = "v%@ (%@)";
@@ -3163,7 +3163,7 @@ chat item action */
 "You can start chat via app Settings / Database or by restarting the app" = "คุณสามารถเริ่มแชทผ่านการตั้งค่าแอป / ฐานข้อมูล หรือโดยการรีสตาร์ทแอป";
 
 /* No comment provided by engineer. */
-"You can turn on SimpleX Lock via Settings." = "คุณสามารถเปิด SimpleX Lock ผ่านการตั้งค่า";
+"You can turn on Inqalaab Lock via Settings." = "คุณสามารถเปิด Inqalaab Lock ผ่านการตั้งค่า";
 
 /* No comment provided by engineer. */
 "You can use markdown to format messages:" = "คุณสามารถใช้มาร์กดาวน์เพื่อจัดรูปแบบข้อความ:";
@@ -3292,7 +3292,7 @@ chat item action */
 "Your profile is stored on your device and only shared with your contacts." = "โปรไฟล์นี้แชร์กับผู้ติดต่อของคุณเท่านั้น";
 
 /* No comment provided by engineer. */
-"Your profile is stored on your device and shared only with your contacts. SimpleX servers cannot see your profile." = "โปรไฟล์ของคุณจะถูกจัดเก็บไว้ในอุปกรณ์ของคุณและแชร์กับผู้ติดต่อของคุณเท่านั้น เซิร์ฟเวอร์ SimpleX ไม่สามารถดูโปรไฟล์ของคุณได้";
+"Your profile is stored on your device and shared only with your contacts. Inqalaab servers cannot see your profile." = "โปรไฟล์ของคุณจะถูกจัดเก็บไว้ในอุปกรณ์ของคุณและแชร์กับผู้ติดต่อของคุณเท่านั้น เซิร์ฟเวอร์ Inqalaab ไม่สามารถดูโปรไฟล์ของคุณได้";
 
 /* No comment provided by engineer. */
 "Your random profile" = "โปรไฟล์แบบสุ่มของคุณ";
@@ -3304,5 +3304,5 @@ chat item action */
 "Your settings" = "การตั้งค่าของคุณ";
 
 /* No comment provided by engineer. */
-"Your SimpleX address" = "ที่อยู่ SimpleX ของคุณ";
+"Your Inqalaab address" = "ที่อยู่ Inqalaab ของคุณ";
 

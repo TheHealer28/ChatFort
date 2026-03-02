@@ -47,10 +47,10 @@
 "**e2e encrypted** video call" = "**E2E-verschlüsselter** Videoanruf";
 
 /* No comment provided by engineer. */
-"**More private**: check new messages every 20 minutes. Only device token is shared with our push server. It doesn't see how many contacts you have, or any message metadata." = "**Mehr Privatsphäre**: Es wird alle 20 Minuten auf neue Nachrichten geprüft. Nur Ihr Geräte-Token wird dem SimpleX-Chat-Server mitgeteilt, aber nicht wie viele Kontakte Sie haben oder welche Nachrichten Sie empfangen.";
+"**More private**: check new messages every 20 minutes. Only device token is shared with our push server. It doesn't see how many contacts you have, or any message metadata." = "**Mehr Privatsphäre**: Es wird alle 20 Minuten auf neue Nachrichten geprüft. Nur Ihr Geräte-Token wird dem Inqalaab-Chat-Server mitgeteilt, aber nicht wie viele Kontakte Sie haben oder welche Nachrichten Sie empfangen.";
 
 /* No comment provided by engineer. */
-"**Most private**: do not use SimpleX Chat push server. The app will check messages in background, when the system allows it, depending on how often you use the app." = "**Beste Privatsphäre**: Es wird kein SimpleX-Chat-Benachrichtigungs-Server genutzt, Nachrichten werden in periodischen Abständen im Hintergrund geprüft (dies hängt davon ab, wie häufig Sie die App nutzen).";
+"**Most private**: do not use Inqalaab push server. The app will check messages in background, when the system allows it, depending on how often you use the app." = "**Beste Privatsphäre**: Es wird kein Inqalaab-Chat-Benachrichtigungs-Server genutzt, Nachrichten werden in periodischen Abständen im Hintergrund geprüft (dies hängt davon ab, wie häufig Sie die App nutzen).";
 
 /* No comment provided by engineer. */
 "**Please note**: using the same database on two devices will break the decryption of messages from your connections, as a security protection." = "**Bitte beachten Sie**: Aus Sicherheitsgründen wird die Nachrichtenentschlüsselung Ihrer Verbindungen abgebrochen, wenn Sie die gleiche Datenbank auf zwei Geräten nutzen.";
@@ -59,7 +59,7 @@
 "**Please note**: you will NOT be able to recover or change passphrase if you lose it." = "**Bitte beachten Sie**: Das Passwort kann NICHT wiederhergestellt oder geändert werden, wenn Sie es vergessen haben oder verlieren.";
 
 /* No comment provided by engineer. */
-"**Recommended**: device token and end-to-end encrypted notifications are sent to SimpleX Chat push server, but it does not see the message content, size or who it is from." = "**Empfohlen**: Nur Ihr Geräte-Token und ihre Benachrichtigungen werden an den SimpleX-Chat-Benachrichtigungs-Server gesendet, aber weder der Nachrichteninhalt noch deren Größe oder von wem sie gesendet wurde.";
+"**Recommended**: device token and end-to-end encrypted notifications are sent to Inqalaab push server, but it does not see the message content, size or who it is from." = "**Empfohlen**: Nur Ihr Geräte-Token und ihre Benachrichtigungen werden an den Inqalaab-Chat-Benachrichtigungs-Server gesendet, aber weder der Nachrichteninhalt noch deren Größe oder von wem sie gesendet wurde.";
 
 /* No comment provided by engineer. */
 "**Scan / Paste link**: to connect via a link you received." = "**Link scannen / einfügen**: Um eine Verbindung über den Link herzustellen, den Sie erhalten haben.";
@@ -257,7 +257,7 @@
 "`a + b`" = "\\`a + b`";
 
 /* email text */
-"<p>Hi!</p>\n<p><a href=\"%@\">Connect to me via SimpleX Chat</a></p>" = "<p>Hallo!</p>\n<p><a href=\"%@\">Verbinden Sie sich per SimpleX Chat mit mir</a></p>";
+"<p>Hi!</p>\n<p><a href=\"%@\">Connect to me via Inqalaab</a></p>" = "<p>Hallo!</p>\n<p><a href=\"%@\">Verbinden Sie sich per Inqalaab mit mir</a></p>";
 
 /* No comment provided by engineer. */
 "~strike~" = "\\~durchstreichen~";
@@ -332,7 +332,7 @@ time interval */
 "About operators" = "Über die Betreiber";
 
 /* No comment provided by engineer. */
-"About SimpleX Chat" = "Über SimpleX Chat";
+"About Inqalaab" = "Über Inqalaab";
 
 /* No comment provided by engineer. */
 "above, then choose:" = "Danach die gewünschte Aktion auswählen:";
@@ -588,7 +588,7 @@ swipe action */
 "Allow to send files and media." = "Das Senden von Dateien und Medien erlauben.";
 
 /* No comment provided by engineer. */
-"Allow to send SimpleX links." = "Das Senden von SimpleX-Links erlauben.";
+"Allow to send Inqalaab links." = "Das Senden von Inqalaab-Links erlauben.";
 
 /* No comment provided by engineer. */
 "Allow to send voice messages." = "Das Senden von Sprachnachrichten erlauben.";
@@ -907,7 +907,7 @@ marked deleted chat item preview text */
 "By chat profile (default) or [by connection](https://simplex.chat/blog/20230204-simplex-chat-v4-5-user-chat-profiles.html#transport-isolation) (BETA)." = "Per Chat-Profil (Voreinstellung) oder [per Verbindung](https://simplex.chat/blog/20230204-simplex-chat-v4-5-user-chat-profiles.html#transport-isolation) (BETA).";
 
 /* No comment provided by engineer. */
-"By using SimpleX Chat you agree to:\n- send only legal content in public groups.\n- respect other users – no spam." = "Durch die Nutzung von SimpleX Chat erklären Sie sich damit einverstanden:\n- nur legale Inhalte in öffentlichen Gruppen zu versenden.\n- andere Nutzer zu respektieren - kein Spam.";
+"By using Inqalaab you agree to:\n- send only legal content in public groups.\n- respect other users – no spam." = "Durch die Nutzung von Inqalaab erklären Sie sich damit einverstanden:\n- nur legale Inhalte in öffentlichen Gruppen zu versenden.\n- andere Nutzer zu respektieren - kein Spam.";
 
 /* No comment provided by engineer. */
 "call" = "Anrufen";
@@ -1255,7 +1255,7 @@ set passcode view */
 "Connect to desktop" = "Mit dem Desktop verbinden";
 
 /* No comment provided by engineer. */
-"connect to SimpleX Chat developers." = "Mit den SimpleX Chat-Entwicklern verbinden.";
+"connect to Inqalaab developers." = "Mit den Inqalaab-Entwicklern verbinden.";
 
 /* No comment provided by engineer. */
 "Connect to your friends faster." = "Schneller mit Ihren Freunden verbinden.";
@@ -1264,7 +1264,7 @@ set passcode view */
 "Connect to yourself?\nThis is your own one-time link!" = "Mit Ihnen selbst verbinden?\nDas ist Ihr eigener Einmal-Link!";
 
 /* new chat sheet title */
-"Connect to yourself?\nThis is your own SimpleX address!" = "Sich mit Ihnen selbst verbinden?\nDas ist Ihre eigene SimpleX-Adresse!";
+"Connect to yourself?\nThis is your own Inqalaab address!" = "Sich mit Ihnen selbst verbinden?\nDas ist Ihre eigene Inqalaab-Adresse!";
 
 /* new chat sheet title */
 "Connect via contact address" = "Über die Kontakt-Adresse verbinden";
@@ -1495,7 +1495,7 @@ set passcode view */
 "Create queue" = "Erzeuge Warteschlange";
 
 /* No comment provided by engineer. */
-"Create SimpleX address" = "SimpleX-Adresse erstellen";
+"Create Inqalaab address" = "Inqalaab-Adresse erstellen";
 
 /* No comment provided by engineer. */
 "Create your address" = "Ihre Adresse erstellen";
@@ -1848,10 +1848,10 @@ swipe action */
 "Device" = "Gerät";
 
 /* No comment provided by engineer. */
-"Device authentication is disabled. Turning off SimpleX Lock." = "Die Geräteauthentifizierung ist deaktiviert. SimpleX-Sperre ist abgeschaltet.";
+"Device authentication is disabled. Turning off Inqalaab Lock." = "Die Geräteauthentifizierung ist deaktiviert. Inqalaab-Sperre ist abgeschaltet.";
 
 /* No comment provided by engineer. */
-"Device authentication is not enabled. You can turn on SimpleX Lock via Settings, once you enable device authentication." = "Die Geräteauthentifizierung ist deaktiviert. Sie können die SimpleX-Sperre über die Einstellungen aktivieren, sobald Sie die Geräteauthentifizierung aktiviert haben.";
+"Device authentication is not enabled. You can turn on Inqalaab Lock via Settings, once you enable device authentication." = "Die Geräteauthentifizierung ist deaktiviert. Sie können die Inqalaab-Sperre über die Einstellungen aktivieren, sobald Sie die Geräteauthentifizierung aktiviert haben.";
 
 /* No comment provided by engineer. */
 "different migration in the app/database: %@ / %@" = "Unterschiedlicher Migrationsstand in der App/Datenbank: %@ / %@";
@@ -1884,7 +1884,7 @@ swipe action */
 "Disable for all" = "Für Alle deaktivieren";
 
 /* authentication reason */
-"Disable SimpleX Lock" = "SimpleX-Sperre deaktivieren";
+"Disable Inqalaab Lock" = "Inqalaab-Sperre deaktivieren";
 
 /* No comment provided by engineer. */
 "disabled" = "deaktiviert";
@@ -1938,7 +1938,7 @@ swipe action */
 "Do NOT use private routing." = "Sie nutzen KEIN privates Routing.";
 
 /* No comment provided by engineer. */
-"Do NOT use SimpleX for emergency calls." = "SimpleX NICHT für Notrufe nutzen.";
+"Do NOT use Inqalaab for emergency calls." = "Inqalaab NICHT für Notrufe nutzen.";
 
 /* No comment provided by engineer. */
 "Documents:" = "Dokumente:";
@@ -2059,7 +2059,7 @@ chat item action */
 "Enable self-destruct passcode" = "Selbstzerstörungs-Zugangscode aktivieren";
 
 /* authentication reason */
-"Enable SimpleX Lock" = "SimpleX-Sperre aktivieren";
+"Enable Inqalaab Lock" = "Inqalaab-Sperre aktivieren";
 
 /* No comment provided by engineer. */
 "Enable TCP keep-alive" = "TCP-Keep-alive aktivieren";
@@ -2604,7 +2604,7 @@ snd error text */
 "For console" = "Für Konsole";
 
 /* No comment provided by engineer. */
-"For example, if your contact receives messages via a SimpleX Chat server, your app will deliver them via a Flux server." = "Wenn Ihr Kontakt beispielsweise Nachrichten über einen SimpleX-Chatserver empfängt, wird Ihre App diese über einen der Server von Flux versenden.";
+"For example, if your contact receives messages via a Inqalaab server, your app will deliver them via a Flux server." = "Wenn Ihr Kontakt beispielsweise Nachrichten über einen Inqalaab-Chatserver empfängt, wird Ihre App diese über einen der Server von Flux versenden.";
 
 /* No comment provided by engineer. */
 "For me" = "Für mich";
@@ -2814,13 +2814,13 @@ snd error text */
 "How it works" = "Wie es funktioniert";
 
 /* No comment provided by engineer. */
-"How SimpleX works" = "Wie SimpleX funktioniert";
+"How Inqalaab works" = "Wie Inqalaab funktioniert";
 
 /* No comment provided by engineer. */
 "How to" = "Anleitung";
 
 /* No comment provided by engineer. */
-"How to use it" = "Wie man SimpleX nutzt";
+"How to use it" = "Wie man Inqalaab nutzt";
 
 /* No comment provided by engineer. */
 "How to use your servers" = "Wie Sie Ihre Server nutzen";
@@ -2958,7 +2958,7 @@ snd error text */
 "Initial role" = "Anfängliche Rolle";
 
 /* No comment provided by engineer. */
-"Install [SimpleX Chat for terminal](https://github.com/simplex-chat/simplex-chat)" = "Installieren Sie [SimpleX Chat als Terminalanwendung](https://github.com/simplex-chat/simplex-chat)";
+"Install [Inqalaab for terminal](https://github.com/simplex-chat/simplex-chat)" = "Installieren Sie [Inqalaab als Terminalanwendung](https://github.com/simplex-chat/simplex-chat)";
 
 /* No comment provided by engineer. */
 "Instant" = "Sofort";
@@ -3171,7 +3171,7 @@ snd error text */
 "Less traffic on mobile networks." = "Weniger Datenverkehr in mobilen Netzen.";
 
 /* email subject */
-"Let's talk in SimpleX Chat" = "Lassen Sie uns in SimpleX Chat kommunizieren";
+"Let's talk in Inqalaab" = "Lassen Sie uns in Inqalaab kommunizieren";
 
 /* No comment provided by engineer. */
 "Light" = "Hell";
@@ -3321,7 +3321,7 @@ snd error text */
 "Members can send files and media." = "Gruppenmitglieder können Dateien und Medien versenden.";
 
 /* No comment provided by engineer. */
-"Members can send SimpleX links." = "Gruppenmitglieder können SimpleX-Links versenden.";
+"Members can send Inqalaab links." = "Gruppenmitglieder können Inqalaab-Links versenden.";
 
 /* No comment provided by engineer. */
 "Members can send voice messages." = "Gruppenmitglieder können Sprachnachrichten versenden.";
@@ -4175,7 +4175,7 @@ new chat action */
 "Prohibit sending files and media." = "Das Senden von Dateien und Medien nicht erlauben.";
 
 /* No comment provided by engineer. */
-"Prohibit sending SimpleX links." = "Das Senden von SimpleX-Links nicht erlauben.";
+"Prohibit sending Inqalaab links." = "Das Senden von Inqalaab-Links nicht erlauben.";
 
 /* No comment provided by engineer. */
 "Prohibit sending voice messages." = "Das Senden von Sprachnachrichten nicht erlauben.";
@@ -4676,7 +4676,7 @@ chat item action */
 "Search bar accepts invitation links." = "In der Suchleiste werden nun auch Einladungslinks angenommen.";
 
 /* No comment provided by engineer. */
-"Search or paste SimpleX link" = "Suchen oder SimpleX-Link einfügen";
+"Search or paste Inqalaab link" = "Suchen oder Inqalaab-Link einfügen";
 
 /* network option */
 "sec" = "sek";
@@ -5001,13 +5001,13 @@ chat item action */
 "Share profile" = "Profil teilen";
 
 /* No comment provided by engineer. */
-"Share SimpleX address on social media." = "Die SimpleX-Adresse auf sozialen Medien teilen.";
+"Share Inqalaab address on social media." = "Die Inqalaab-Adresse auf sozialen Medien teilen.";
 
 /* No comment provided by engineer. */
 "Share this 1-time invite link" = "Teilen Sie diesen Einmal-Einladungslink";
 
 /* No comment provided by engineer. */
-"Share to SimpleX" = "Mit SimpleX teilen";
+"Share to Inqalaab" = "Mit Inqalaab teilen";
 
 /* No comment provided by engineer. */
 "Share with contacts" = "Mit Kontakten teilen";
@@ -5022,7 +5022,7 @@ chat item action */
 "Short link" = "Verkürzter Link";
 
 /* No comment provided by engineer. */
-"Short SimpleX address" = "Verkürzte SimpleX-Adresse";
+"Short Inqalaab address" = "Verkürzte Inqalaab-Adresse";
 
 /* No comment provided by engineer. */
 "Show → on messages sent via private routing." = "Bei Nachrichten, die über privates Routing versendet wurden, → anzeigen.";
@@ -5052,70 +5052,70 @@ chat item action */
 "Show:" = "Anzeigen:";
 
 /* No comment provided by engineer. */
-"SimpleX" = "SimpleX";
+"Inqalaab" = "Inqalaab";
 
 /* No comment provided by engineer. */
-"SimpleX address" = "SimpleX-Adresse";
+"Inqalaab address" = "Inqalaab-Adresse";
 
 /* No comment provided by engineer. */
-"SimpleX Address" = "SimpleX-Adresse";
+"Inqalaab Address" = "Inqalaab-Adresse";
 
 /* No comment provided by engineer. */
-"SimpleX address and 1-time links are safe to share via any messenger." = "Die SimpleX-Adresse und Einmal-Links können sicher über beliebige Messenger geteilt werden.";
+"Inqalaab address and 1-time links are safe to share via any messenger." = "Die Inqalaab-Adresse und Einmal-Links können sicher über beliebige Messenger geteilt werden.";
 
 /* No comment provided by engineer. */
-"SimpleX address or 1-time link?" = "SimpleX-Adresse oder Einmal-Link?";
+"Inqalaab address or 1-time link?" = "Inqalaab-Adresse oder Einmal-Link?";
 
 /* alert title */
-"SimpleX address settings" = "Einstellungen automatisch akzeptieren";
+"Inqalaab address settings" = "Einstellungen automatisch akzeptieren";
 
 /* simplex link type */
-"SimpleX channel link" = "SimpleX-Kanal-Link";
+"Inqalaab channel link" = "Inqalaab-Kanal-Link";
 
 /* No comment provided by engineer. */
-"SimpleX Chat and Flux made an agreement to include Flux-operated servers into the app." = "SimpleX-Chat und Flux haben vereinbart, die von Flux betriebenen Server in die App aufzunehmen.";
+"Inqalaab and Flux made an agreement to include Flux-operated servers into the app." = "Inqalaab-Chat und Flux haben vereinbart, die von Flux betriebenen Server in die App aufzunehmen.";
 
 /* No comment provided by engineer. */
-"SimpleX Chat security was audited by Trail of Bits." = "Die Sicherheit von SimpleX Chat wurde von Trail of Bits überprüft.";
+"Inqalaab security was audited by Trail of Bits." = "Die Sicherheit von Inqalaab wurde von Trail of Bits überprüft.";
 
 /* simplex link type */
-"SimpleX contact address" = "SimpleX-Kontaktadressen-Link";
+"Inqalaab contact address" = "Inqalaab-Kontaktadressen-Link";
 
 /* notification */
-"SimpleX encrypted message or connection event" = "SimpleX verschlüsselte Nachricht oder Verbindungs-Ereignis";
+"Inqalaab encrypted message or connection event" = "Inqalaab verschlüsselte Nachricht oder Verbindungs-Ereignis";
 
 /* simplex link type */
-"SimpleX group link" = "SimpleX Gruppen-Link";
+"Inqalaab group link" = "Inqalaab Gruppen-Link";
 
 /* chat feature */
-"SimpleX links" = "SimpleX-Links";
+"Inqalaab links" = "Inqalaab-Links";
 
 /* No comment provided by engineer. */
-"SimpleX links are prohibited." = "In dieser Gruppe sind SimpleX-Links nicht erlaubt.";
+"Inqalaab links are prohibited." = "In dieser Gruppe sind Inqalaab-Links nicht erlaubt.";
 
 /* No comment provided by engineer. */
-"SimpleX links not allowed" = "SimpleX-Links sind nicht erlaubt";
+"Inqalaab links not allowed" = "Inqalaab-Links sind nicht erlaubt";
 
 /* No comment provided by engineer. */
-"SimpleX Lock" = "SimpleX-Sperre";
+"Inqalaab Lock" = "Inqalaab-Sperre";
 
 /* No comment provided by engineer. */
-"SimpleX Lock mode" = "SimpleX Sperr-Modus";
+"Inqalaab Lock mode" = "Inqalaab Sperr-Modus";
 
 /* No comment provided by engineer. */
-"SimpleX Lock not enabled!" = "SimpleX-Sperre ist nicht aktiviert!";
+"Inqalaab Lock not enabled!" = "Inqalaab-Sperre ist nicht aktiviert!";
 
 /* No comment provided by engineer. */
-"SimpleX Lock turned on" = "SimpleX-Sperre aktiviert";
+"Inqalaab Lock turned on" = "Inqalaab-Sperre aktiviert";
 
 /* simplex link type */
-"SimpleX one-time invitation" = "SimpleX-Einmal-Einladung";
+"Inqalaab one-time invitation" = "Inqalaab-Einmal-Einladung";
 
 /* No comment provided by engineer. */
-"SimpleX protocols reviewed by Trail of Bits." = "Die SimpleX-Protokolle wurden von Trail of Bits überprüft.";
+"Inqalaab protocols reviewed by Trail of Bits." = "Die Inqalaab-Protokolle wurden von Trail of Bits überprüft.";
 
 /* simplex link type */
-"SimpleX relay link" = "SimpleX Relais-Link";
+"Inqalaab relay link" = "Inqalaab Relais-Link";
 
 /* No comment provided by engineer. */
 "Simplified incognito mode" = "Vereinfachter Inkognito-Modus";
@@ -5215,7 +5215,7 @@ report reason */
 "Stop sharing address?" = "Das Teilen der Adresse beenden?";
 
 /* authentication reason */
-"Stop SimpleX" = "Stoppen Sie SimpleX";
+"Stop Inqalaab" = "Stoppen Sie Inqalaab";
 
 /* No comment provided by engineer. */
 "Stopping chat" = "Chat wird beendet";
@@ -5242,7 +5242,7 @@ report reason */
 "Subscriptions ignored" = "Nicht beachtete Abonnements";
 
 /* No comment provided by engineer. */
-"Support SimpleX Chat" = "Unterstützung von SimpleX Chat";
+"Support Inqalaab" = "Unterstützung von Inqalaab";
 
 /* No comment provided by engineer. */
 "Switch audio and video during the call." = "Während des Anrufs zwischen Audio und Video wechseln";
@@ -5275,7 +5275,7 @@ report reason */
 "Tap Connect to use bot" = "Verbinden tippen, um den Bot zu nutzen.";
 
 /* No comment provided by engineer. */
-"Tap Create SimpleX address in the menu to create it later." = "Tippen Sie im Menü auf SimpleX-Adresse erstellen, um sie später zu erstellen.";
+"Tap Create Inqalaab address in the menu to create it later." = "Tippen Sie im Menü auf Inqalaab-Adresse erstellen, um sie später zu erstellen.";
 
 /* No comment provided by engineer. */
 "Tap Join group" = "Tippen, um der Gruppe beizutreten";
@@ -5338,7 +5338,7 @@ report reason */
 "Tests failed!" = "Tests sind fehlgeschlagen!";
 
 /* No comment provided by engineer. */
-"Thank you for installing SimpleX Chat!" = "Vielen Dank, dass Sie SimpleX Chat installiert haben!";
+"Thank you for installing Inqalaab!" = "Vielen Dank, dass Sie Inqalaab installiert haben!";
 
 /* No comment provided by engineer. */
 "Thanks to the users – [contribute via Weblate](https://github.com/simplex-chat/simplex-chat/tree/stable#help-translating-simplex-chat)!" = "Dank der Nutzer - [Tragen Sie per Weblate bei](https://github.com/simplex-chat/simplex-chat/tree/stable#help-translating-simplex-chat)!";
@@ -5362,7 +5362,7 @@ report reason */
 "The attempt to change database passphrase was not completed." = "Die Änderung des Datenbank-Passworts konnte nicht abgeschlossen werden.";
 
 /* No comment provided by engineer. */
-"The code you scanned is not a SimpleX link QR code." = "Der von Ihnen gescannte Code ist kein SimpleX-Link-QR-Code.";
+"The code you scanned is not a Inqalaab link QR code." = "Der von Ihnen gescannte Code ist kein Inqalaab-Link-QR-Code.";
 
 /* No comment provided by engineer. */
 "The connection reached the limit of undelivered messages, your contact may be offline." = "Diese Verbindung hat das Limit der nicht ausgelieferten Nachrichten erreicht. Ihr Kontakt ist möglicherweise offline.";
@@ -5425,7 +5425,7 @@ report reason */
 "The servers for new files of your current chat profile **%@**." = "Medien- und Datei-Server für neue Daten über Ihr aktuelles Chat-Profil **%@**.";
 
 /* No comment provided by engineer. */
-"The text you pasted is not a SimpleX link." = "Der von Ihnen eingefügte Text ist kein SimpleX-Link.";
+"The text you pasted is not a Inqalaab link." = "Der von Ihnen eingefügte Text ist kein Inqalaab-Link.";
 
 /* No comment provided by engineer. */
 "The uploaded database archive will be permanently removed from the servers." = "Das hochgeladene Datenbank-Archiv wird dauerhaft von den Servern entfernt.";
@@ -5515,13 +5515,13 @@ report reason */
 "To protect timezone, image/voice files use UTC." = "Bild- und Sprachdateinamen enthalten UTC, um Informationen zur Zeitzone zu schützen.";
 
 /* No comment provided by engineer. */
-"To protect your information, turn on SimpleX Lock.\nYou will be prompted to complete authentication before this feature is enabled." = "Um Ihre Informationen zu schützen, schalten Sie die SimpleX-Sperre ein.\nSie werden aufgefordert, die Authentifizierung abzuschließen, bevor diese Funktion aktiviert wird.";
+"To protect your information, turn on Inqalaab Lock.\nYou will be prompted to complete authentication before this feature is enabled." = "Um Ihre Informationen zu schützen, schalten Sie die Inqalaab-Sperre ein.\nSie werden aufgefordert, die Authentifizierung abzuschließen, bevor diese Funktion aktiviert wird.";
 
 /* No comment provided by engineer. */
 "To protect your IP address, private routing uses your SMP servers to deliver messages." = "Zum Schutz Ihrer IP-Adresse, wird für die Nachrichten-Auslieferung privates Routing über Ihre konfigurierten SMP-Server genutzt.";
 
 /* No comment provided by engineer. */
-"To protect your privacy, SimpleX uses separate IDs for each of your contacts." = "Zum Schutz Ihrer Privatsphäre verwendet SimpleX an Stelle von Benutzerkennungen, die von allen anderen Plattformen verwendet werden, Kennungen für Nachrichtenwarteschlangen, die für jeden Ihrer Kontakte individuell sind.";
+"To protect your privacy, Inqalaab uses separate IDs for each of your contacts." = "Zum Schutz Ihrer Privatsphäre verwendet Inqalaab an Stelle von Benutzerkennungen, die von allen anderen Plattformen verwendet werden, Kennungen für Nachrichtenwarteschlangen, die für jeden Ihrer Kontakte individuell sind.";
 
 /* No comment provided by engineer. */
 "To receive" = "Für den Empfang";
@@ -5800,7 +5800,7 @@ report reason */
 "Use servers" = "Verwende Server";
 
 /* No comment provided by engineer. */
-"Use SimpleX Chat servers?" = "Verwenden Sie SimpleX-Chat-Server?";
+"Use Inqalaab servers?" = "Verwenden Sie Inqalaab-Chat-Server?";
 
 /* No comment provided by engineer. */
 "Use SOCKS proxy" = "SOCKS-Proxy nutzen";
@@ -5827,7 +5827,7 @@ report reason */
 "Username" = "Benutzername";
 
 /* No comment provided by engineer. */
-"Using SimpleX Chat servers." = "Verwendung von SimpleX-Chat-Servern.";
+"Using Inqalaab servers." = "Verwendung von Inqalaab-Chat-Servern.";
 
 /* No comment provided by engineer. */
 "v%@" = "v%@";
@@ -6115,7 +6115,7 @@ report reason */
 "You can hide or mute a user profile - swipe it to the right." = "Sie können ein Benutzerprofil verbergen oder stummschalten - wischen Sie es nach rechts.";
 
 /* No comment provided by engineer. */
-"You can make it visible to your SimpleX contacts via Settings." = "Sie können sie über Einstellungen für Ihre SimpleX-Kontakte sichtbar machen.";
+"You can make it visible to your Inqalaab contacts via Settings." = "Sie können sie über Einstellungen für Ihre Inqalaab-Kontakte sichtbar machen.";
 
 /* notification body */
 "You can now chat with %@" = "Sie können nun Nachrichten an %@ versenden";
@@ -6142,7 +6142,7 @@ report reason */
 "You can still view conversation with %@ in the list of chats." = "Sie können in der Chat-Liste weiterhin die Unterhaltung mit %@ einsehen.";
 
 /* No comment provided by engineer. */
-"You can turn on SimpleX Lock via Settings." = "Sie können die SimpleX-Sperre über die Einstellungen aktivieren.";
+"You can turn on Inqalaab Lock via Settings." = "Sie können die Inqalaab-Sperre über die Einstellungen aktivieren.";
 
 /* No comment provided by engineer. */
 "You can use markdown to format messages:" = "Um Nachrichteninhalte zu formatieren, können Sie Markdowns verwenden:";
@@ -6334,7 +6334,7 @@ report reason */
 "Your profile is stored on your device and only shared with your contacts." = "Ihr Profil wird auf Ihrem Gerät gespeichert und nur mit Ihren Kontakten geteilt.";
 
 /* No comment provided by engineer. */
-"Your profile is stored on your device and shared only with your contacts. SimpleX servers cannot see your profile." = "Ihr Profil wird auf Ihrem Gerät gespeichert und nur mit Ihren Kontakten geteilt. SimpleX-Server können Ihr Profil nicht einsehen.";
+"Your profile is stored on your device and shared only with your contacts. Inqalaab servers cannot see your profile." = "Ihr Profil wird auf Ihrem Gerät gespeichert und nur mit Ihren Kontakten geteilt. Inqalaab-Server können Ihr Profil nicht einsehen.";
 
 /* alert message */
 "Your profile was changed. If you save it, the updated profile will be sent to all your contacts." = "Ihr Profil wurde geändert. Wenn Sie es speichern, wird das aktualisierte Profil an alle Ihre Kontakte gesendet.";
@@ -6352,5 +6352,5 @@ report reason */
 "Your settings" = "Einstellungen";
 
 /* No comment provided by engineer. */
-"Your SimpleX address" = "Ihre SimpleX-Adresse";
+"Your Inqalaab address" = "Ihre Inqalaab-Adresse";
 

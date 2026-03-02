@@ -126,12 +126,12 @@
     <string name="v4_5_transport_isolation_descr">채팅 프로필(기본값) 또는 연결(베타).</string>
     <string name="v4_4_verify_connection_security_desc">대화 상대와 보안 코드를 비교해 보세요.</string>
     <string name="v4_6_chinese_spanish_interface">중국어 및 스페인어 인터페이스</string>
-    <string name="about_simplex">SimpleX에 대하여</string>
+    <string name="about_simplex">Inqalaab에 대하여</string>
     <string name="accept">수락</string>
     <string name="share_one_time_link">일회용 초대 링크 생성</string>
     <string name="create_address">주소 생성</string>
     <string name="chat_item_ttl_day">1일</string>
-    <string name="about_simplex_chat">SimpleX Chat에 대하여</string>
+    <string name="about_simplex_chat">Inqalaab에 대하여</string>
     <string name="color_primary">강조</string>
     <string name="accept_call_on_lock_screen">응답</string>
     <string name="accept_connection_request__question">연결 요청을 수락하시겠습니까\?</string>
@@ -263,8 +263,8 @@
     <string name="delete_group_question">그룹을 삭제할까요\?</string>
     <string name="failed_to_create_user_duplicate_title">표시 이름이 중복됩니다!</string>
     <string name="smp_server_test_disconnect">연결 끊기</string>
-    <string name="auth_device_authentication_is_disabled_turning_off">기기 인증이 비활성화되어 SimpleX 잠금 기능이 작동하지 않아요.</string>
-    <string name="auth_disable_simplex_lock">SimpleX 잠금 비활성화</string>
+    <string name="auth_device_authentication_is_disabled_turning_off">기기 인증이 비활성화되어 Inqalaab 잠금 기능이 작동하지 않아요.</string>
+    <string name="auth_disable_simplex_lock">Inqalaab 잠금 비활성화</string>
     <string name="icon_descr_server_status_disconnected">연결 끊김</string>
     <string name="add_contact">일회용 초대 링크</string>
     <string name="add_contact_or_create_group">새로운 채팅 시작</string>
@@ -298,18 +298,18 @@
     <string name="ttl_w">%d주</string>
     <string name="ttl_weeks">%d 주</string>
     <string name="confirm_database_upgrades">데이터베이스 업그레이드 확인</string>
-    <string name="auth_device_authentication_is_not_enabled_you_can_turn_on_in_settings_once_enabled">기기 인증을 하고 있지 않아요. 기기 인증을 켜면 설정에서 SimpleX 잠금 기능을 사용할 수 있어요.</string>
+    <string name="auth_device_authentication_is_not_enabled_you_can_turn_on_in_settings_once_enabled">기기 인증을 하고 있지 않아요. 기기 인증을 켜면 설정에서 Inqalaab 잠금 기능을 사용할 수 있어요.</string>
     <string name="ttl_hour">%d 시간</string>
     <string name="ttl_hours">%d 시간</string>
     <string name="mtr_error_different">앱/데이터베이스의 다른 이전: %s / %s</string>
     <string name="v4_5_multiple_chat_profiles_descr">다른 이름, 아바타 그리고 전송 격리.</string>
     <string name="dont_show_again">다시 보지 않기</string>
     <string name="connected_to_server_to_receive_messages_from_contact">이 대화 상대로부터의 메시지를 수신할 서버와 연결되었어요.</string>
-    <string name="app_name">SimpleX</string>
+    <string name="app_name">Inqalaab</string>
     <string name="contact_developers">앱 업데이트 후 개발자에게 연락해 주세요.</string>
     <string name="connection_error_auth_desc">대화 상대가 나갔거나 초대 링크가 이미 사용된 경우가 아니면 버그일 수 있어요. 이 경우 개발자에게 알려주세요.
 \n대화 상대에게 다른 초대 링크 만들도록 부탁하고 네트워크 연결이 안정적인지 확인하세요.</string>
-    <string name="auth_enable_simplex_lock">SimpleX 잠금 활성화</string>
+    <string name="auth_enable_simplex_lock">Inqalaab 잠금 활성화</string>
     <string name="auth_log_in_using_credential">자격 증명으로 로그인</string>
     <string name="auth_open_chat_console">채팅 콘솔 열기</string>
     <string name="auth_stop_chat">채팅 기능 중지하기</string>
@@ -340,7 +340,7 @@
     <string name="ask_your_contact_to_enable_voice">대화 상대에게 음성 메시지 기능을 활성화 해달라고 부탁해보세요.</string>
     <string name="chat_help_tap_button">탭 버튼</string>
     <string name="connection_you_accepted_will_be_cancelled">수락한 연결이 취소됩니다!</string>
-    <string name="chat_lock">SimpleX 잠금</string>
+    <string name="chat_lock">Inqalaab 잠금</string>
     <string name="callstatus_rejected">거절된 전화</string>
     <string name="callstate_ended">종료됨</string>
     <string name="call_connection_peer_to_peer">P2P</string>
@@ -352,7 +352,7 @@
     <string name="alert_text_connection_pending_they_need_to_be_online_can_delete_and_retry">연결을 완료하려면 대화 상대가 온라인 상태여야 해요.
 \n연결 요청을 취소하고 대화 상대를 삭제할 수 있어요 (그리고 새 링크로 재시도).</string>
     <string name="alert_text_skipped_messages_it_can_happen_when">다음과 같은 경우에 발생할 수 있습니다. \n1. 대화 상대가 메시지를 보낸 지 30일 지나서 서버에서 삭제된 경우 \n2. 메시지를 수신하는 데 사용된 서버가 업데이트되고 재부팅된 경우 \n3. 침해된 연결의 경우</string>
-    <string name="auth_simplex_lock_turned_on">SimpleX 잠금 켜짐</string>
+    <string name="auth_simplex_lock_turned_on">Inqalaab 잠금 켜짐</string>
     <string name="callstate_received_answer">응답됨…</string>
     <string name="callstate_received_confirmation">확인 받음…</string>
     <string name="callstatus_missed">부재 중 전화</string>
@@ -496,11 +496,11 @@
     <string name="icon_descr_record_voice_message">음성 메시지 녹화하기</string>
     <string name="from_gallery_button">갤러리에서</string>
     <string name="icon_descr_profile_image_placeholder">프로필 이미지 플레이스 홀더</string>
-    <string name="icon_descr_address">SimpleX 주소</string>
+    <string name="icon_descr_address">Inqalaab 주소</string>
     <string name="how_to">설명서</string>
     <string name="how_to_use_your_servers">내 서버 사용법</string>
     <string name="how_to_use_markdown">마크다운 사용법</string>
-    <string name="how_simplex_works">SimpleX 작동 방식</string>
+    <string name="how_simplex_works">Inqalaab 작동 방식</string>
     <string name="group_invitation_expired">그룹 초대가 만료되었어요.</string>
     <string name="group_members_can_delete">그룹 멤버는 보낸 메시지를 영구 삭제할 수 있습니다. (24 시간)</string>
     <string name="group_members_can_send_voice">그룹 멤버는 음성 메시지를 보낼 수 있어요.</string>
@@ -547,15 +547,15 @@
     <string name="incognito_info_allows">하나의 프로필로 여러 사람과 연락할 필요 없이 무수히 많은 익명 프로필로 연락할 수 있어요.</string>
     <string name="immune_to_spam_and_abuse">스팸 방지</string>
     <string name="ignore">무시하기</string>
-    <string name="if_you_received_simplex_invitation_link_you_can_open_in_browser">SimpleX Chat 초대 링크를 받으면 브라우저에서 참여할 수 있어요 :</string>
+    <string name="if_you_received_simplex_invitation_link_you_can_open_in_browser">Inqalaab 초대 링크를 받으면 브라우저에서 참여할 수 있어요 :</string>
     <string name="image_descr_link_preview">링크 미리보기 이미지</string>
     <string name="image_descr_qr_code">QR 코드</string>
-    <string name="icon_descr_simplex_team">SimpleX 팀</string>
+    <string name="icon_descr_simplex_team">Inqalaab 팀</string>
     <string name="if_you_cannot_meet_in_person_scan_QR_in_video_call_or_ask_for_invitation_link"><![CDATA[직접 만날 수 없다면 <b>영상 통화에서 QR 코드를 스캔</b>하거나 상대에게 초대 링크를 공유할 수 있어요.]]></string>
     <string name="icon_descr_video_snd_complete">동영상 보내짐</string>
     <string name="icon_descr_video_asked_to_receive">동영상 수신 요청됨</string>
     <string name="icon_descr_waiting_for_video">동영상 기다리는 중</string>
-    <string name="image_descr_simplex_logo">SimpleX 로고</string>
+    <string name="image_descr_simplex_logo">Inqalaab 로고</string>
     <string name="image_will_be_received_when_contact_is_online">대화 상대가 온라인 상태일 때 이미지가 수신될 거예요. 기다리거나 나중에 확인하세요!</string>
     <string name="import_database_question">채팅 데이터베이스를 가져올까요\?</string>
     <string name="server_error">오류</string>
@@ -582,7 +582,7 @@
     <string name="incognito_random_profile">내 무작위 프로필</string>
     <string name="incoming_audio_call">음성 전화 옴</string>
     <string name="is_not_verified">%s은(는) 인증되지 않았어요.</string>
-    <string name="install_simplex_chat_for_terminal">터미널용 SimpleX Chat를 설치하세요</string>
+    <string name="install_simplex_chat_for_terminal">터미널용 Inqalaab를 설치하세요</string>
     <string name="incoming_video_call">영상 통화 옴</string>
     <string name="invalid_migration_confirmation">잘못된 이전 확인</string>
     <string name="join_group_incognito_button">익명 모드로 참여</string>
@@ -594,8 +594,8 @@
     <string name="live">라이브</string>
     <string name="moderated_description">조정됨</string>
     <string name="network_error_desc">%1$s 에서 네트워크 연결 상태를 확인한 후 다시 시도하세요.</string>
-    <string name="la_notice_title_simplex_lock">SimpleX 잠금</string>
-    <string name="la_notice_to_protect_your_information_turn_on_simplex_lock_you_will_be_prompted_to_complete_authentication_before_this_feature_is_enabled">정보를 보호하려면 SimpleX 잠금을 켜세요.
+    <string name="la_notice_title_simplex_lock">Inqalaab 잠금</string>
+    <string name="la_notice_to_protect_your_information_turn_on_simplex_lock_you_will_be_prompted_to_complete_authentication_before_this_feature_is_enabled">정보를 보호하려면 Inqalaab 잠금을 켜세요.
 \n이 기능이 활성화하기 전에 인증을 완료하라는 메시지가 표시될 거예요.</string>
     <string name="notification_new_contact_request">새로운 대화 요청</string>
     <string name="notification_preview_mode_hidden">숨겨짐</string>
@@ -674,8 +674,8 @@
     <string name="periodic_notifications">주기적 알림</string>
     <string name="periodic_notifications_desc">주기적으로 새 메시지를 확인해요 — 하루에 몇 퍼센트의 배터리를 사용할 거예요. 푸시 알림을 사용하지 않아요 — 기기의 데이터가 서버로 전송되지 않아요.</string>
     <string name="periodic_notifications_disabled">주기적 알림이 비활성화되었어요.</string>
-    <string name="ntf_channel_calls">SimpleX Chat 통화</string>
-    <string name="ntf_channel_messages">SimpleX Chat 메시지</string>
+    <string name="ntf_channel_calls">Inqalaab 통화</string>
+    <string name="ntf_channel_messages">Inqalaab 메시지</string>
     <string name="observer_cant_send_message_desc">그룹 관리자에게 문의해 주세요.</string>
     <string name="observer_cant_send_message_title">메시지를 보낼 수 없습니다!</string>
     <string name="ok">OK</string>
@@ -709,13 +709,13 @@
     <string name="privacy_redefined">프라이버시의 재정의</string>
     <string name="opensource_protocol_and_code_anybody_can_run_servers">누구나 서버를 호스팅할 수 있습니다.</string>
     <string name="onboarding_notifications_mode_off">앱이 실행 중일 때</string>
-    <string name="read_more_in_github_with_link"><![CDATA[자세한 내용은 <font color="#0088ff">GitHub</font> 에서 확인해 주세요.]]></string>
+    <string name="read_more_in_github_with_link"><![CDATA[자세한 내용은 <font color="#1E8E3E">GitHub</font> 에서 확인해 주세요.]]></string>
     <string name="relay_server_protects_ip">릴레이 서버는 IP 주소를 숨겨주지만, 통화 시간을 관찰 할 수 있어요.</string>
     <string name="rcv_group_event_invited_via_your_group_link">그룹 링크로 초대</string>
     <string name="onboarding_notifications_mode_subtitle">설정을 통해 나중에 변경할 수 있어요.</string>
     <string name="onboarding_notifications_mode_title">비공개 알림</string>
     <string name="reject">거절</string>
-    <string name="open_simplex_chat_to_accept_call">SimpleX Chat을 열어 전화 받기</string>
+    <string name="open_simplex_chat_to_accept_call">Inqalaab을 열어 전화 받기</string>
     <string name="open_verb">열기</string>
     <string name="protect_app_screen">앱 잠금</string>
     <string name="personal_welcome">%1$s님, 환영합니다!</string>
@@ -774,12 +774,12 @@
     <string name="sender_you_pronoun">나</string>
     <string name="sending_files_not_yet_supported">파일 보내기는 아직 지원되지 않아요.</string>
     <string name="simplex_link_connection">%1$s를 통해</string>
-    <string name="simplex_link_contact">SimpleX 연락처 주소</string>
-    <string name="simplex_link_group">SimpleX 그룹 링크</string>
-    <string name="simplex_link_invitation">SimpleX 일회용 초대 링크</string>
-    <string name="simplex_link_mode">SimpleX 링크</string>
+    <string name="simplex_link_contact">Inqalaab 연락처 주소</string>
+    <string name="simplex_link_group">Inqalaab 그룹 링크</string>
+    <string name="simplex_link_invitation">Inqalaab 일회용 초대 링크</string>
+    <string name="simplex_link_mode">Inqalaab 링크</string>
     <string name="simplex_link_mode_browser">브라우저를 통해</string>
-    <string name="simplex_link_mode_browser_warning">브라우저에서 링크를 열면 익명성 또는 보안에 문제가 생길 수 있어요. 신뢰할 수 없는 SimpleX 링크는 빨간색으로 표시되어요.</string>
+    <string name="simplex_link_mode_browser_warning">브라우저에서 링크를 열면 익명성 또는 보안에 문제가 생길 수 있어요. 신뢰할 수 없는 Inqalaab 링크는 빨간색으로 표시되어요.</string>
     <string name="simplex_link_mode_full">링크 전체</string>
     <string name="sender_may_have_deleted_the_connection_request">보낸 사람이 연결 요청을 삭제했을 수 있어요.</string>
     <string name="service_notifications_disabled">즉각적인 알림이 비활성화되었어요!</string>
@@ -787,7 +787,7 @@
     <string name="settings_notification_preview_title">알림 미리보기</string>
     <string name="settings_notifications_mode_title">알림 서비스</string>
     <string name="simplex_service_notification_text">메시지 받는 중…</string>
-    <string name="simplex_service_notification_title">SimpleX 채팅 서비스</string>
+    <string name="simplex_service_notification_title">Inqalaab 채팅 서비스</string>
     <string name="share_file">파일 공유…</string>
     <string name="share_image">이미지 공유…</string>
     <string name="share_message">메시지 공유…</string>
@@ -823,7 +823,7 @@
     <string name="settings_section_title_settings">설정</string>
     <string name="send_link_previews">링크 미리보기 보내기</string>
     <string name="settings_section_title_socks">SOCKS 프록시</string>
-    <string name="settings_section_title_support">SIMPLEX CHAT 도와주기</string>
+    <string name="settings_section_title_support">Inqalaab 도와주기</string>
     <string name="settings_section_title_you">나</string>
     <string name="settings_experimental_features">실험적 기능</string>
     <string name="show_dev_options">표시 :</string>
@@ -855,7 +855,7 @@
     <string name="decryption_error">복호화 오류</string>
     <string name="confirm_passcode">패스코드 확인</string>
     <string name="v5_1_custom_themes">커스텀 테마</string>
-    <string name="create_simplex_address">SimpleX 주소 생성</string>
+    <string name="create_simplex_address">Inqalaab 주소 생성</string>
     <string name="continue_to_next_step">계속</string>
     <string name="empty_chat_profile_is_created">제공된 이름을 가진 빈 채팅 프로필이 생성되고, 앱이 정상적으로 열립니다.</string>
     <string name="share_text_database_id">데이터베이스 ID: %d</string>
@@ -889,7 +889,7 @@
     <string name="both_you_and_your_contact_can_add_message_reactions">당신과 대화 상대 모두 메시지 반응을 추가할 수 있습니다.</string>
     <string name="allow_your_contacts_to_call">대화 상대가 당신에게 통화할 수 있도록 허용합니다.</string>
     <string name="la_current_app_passcode">현재 패스코드</string>
-    <string name="learn_more_about_address">SimpleX 주소에 대하여</string>
+    <string name="learn_more_about_address">Inqalaab 주소에 대하여</string>
     <string name="authentication_cancelled">인증 취소됨</string>
     <string name="change_lock_mode">잠금 모드 변경</string>
     <string name="address_section_title">주소</string>
@@ -947,7 +947,7 @@
     <string name="whats_new">새로운 기능</string>
     <string name="whats_new_read_more">더 보기</string>
     <string name="v4_2_security_assessment">보안 평가</string>
-    <string name="v4_2_security_assessment_desc">SimpleX Chat 보안은 Trail of Bits에 의해 감사되었습니다.</string>
+    <string name="v4_2_security_assessment_desc">Inqalaab 보안은 Trail of Bits에 의해 감사되었습니다.</string>
     <string name="connect_plan_already_connecting">이미 연결 중입니다!</string>
     <string name="n_other_file_errors">%1$d개 기타 파일 오류.</string>
     <string name="forward_files_not_accepted_desc">%1$d개 파일이 다운로드되지 않았습니다.</string>
@@ -960,7 +960,7 @@
     <string name="forward_files_missing_desc">%1$d개 파일이 삭제되었습니다.</string>
     <string name="acknowledged">확인됨</string>
     <string name="acknowledgement_errors">승인 오류</string>
-    <string name="allow_to_send_simplex_links">SimpleX 링크 전송을 허용합니다.</string>
+    <string name="allow_to_send_simplex_links">Inqalaab 링크 전송을 허용합니다.</string>
     <string name="v5_6_app_data_migration">앱 데이터 이전</string>
     <string name="migrate_from_device_all_data_will_be_uploaded">모든 연락처, 대화 및 파일은 안전하게 암호화되어 구성된 XFTP 릴레이에 일괄 업로드됩니다.</string>
     <string name="servers_info_subscriptions_connections_subscribed">활성 연결</string>
@@ -1389,12 +1389,12 @@
     <string name="unblock_member_desc">%s에서 보낸 메시지가 표시됩니다!</string>
     <string name="recent_history_is_not_sent_to_new_members">내역이 새 멤버에게 전송되지 않습니다.</string>
     <string name="message_reactions_are_prohibited">이 그룹에서는 메시지 반응이 금지됩니다.</string>
-    <string name="group_members_can_send_simplex_links">그룹 멤버가 SimpleX 링크를 보낼 수 있습니다.</string>
+    <string name="group_members_can_send_simplex_links">그룹 멤버가 Inqalaab 링크를 보낼 수 있습니다.</string>
     <string name="v4_3_improved_server_configuration">향상된 서버 구성</string>
     <string name="compose_message_placeholder">메시지</string>
     <string name="message_servers">메시지 서버</string>
     <string name="update_network_smp_proxy_mode_question">메시지 라우팅 모드</string>
-    <string name="email_invite_body">안녕하세요!\nSimpleX Chat 초대장이 도착했습니다: %s</string>
+    <string name="email_invite_body">안녕하세요!\nInqalaab 초대장이 도착했습니다: %s</string>
     <string name="agent_internal_error_title">내부 오류</string>
     <string name="invalid_name">잘못된 이름입니다!</string>
     <string name="invalid_file_link">유효하지 않은 링크</string>
@@ -1423,7 +1423,7 @@
     <string name="remote_host_error_disconnected"><![CDATA[모바일 <b>%s</b> 이 연결 끊김]]></string>
     <string name="connect_plan_this_is_your_link_for_group_vName"><![CDATA[그룹 링크입니다 <b>%1$s</b>!]]></string>
     <string name="migrate_from_device_you_must_not_start_database_on_two_device"><![CDATA[두 기기에서 동일한 데이터베이스를<b> 사용해서는 안 됩니다</b>.]]></string>
-    <string name="read_more_in_user_guide_with_link"><![CDATA[<font color="#0088ff">사용자 가이드</font>에서 확인하세요.]]></string>
+    <string name="read_more_in_user_guide_with_link"><![CDATA[<font color="#1E8E3E">사용자 가이드</font>에서 확인하세요.]]></string>
     <string name="you_can_also_connect_by_clicking_the_link"><![CDATA[링크를 클릭하여 연결할 수도 있습니다. 브라우저에서 열리면<b> 모바일 앱에서 열기 </b>버튼을 클릭합니다.]]></string>
     <string name="operator">운영자</string>
     <string name="operators_conditions_will_be_accepted_for"><![CDATA[운영자(들)의 이용 약관이 수락될 것입니다: <b>%s</b>.]]></string>
@@ -1444,13 +1444,13 @@
     <string name="operator_conditions_accepted_for_some"><![CDATA[다음 운영자(들)의 이용 약관이 이미 수락되었습니다: <b>%s</b>.]]></string>
     <string name="remote_host_error_busy"><![CDATA[모바일 <b>%s</b> 이 현재 사용 중]]></string>
     <string name="operators_conditions_will_also_apply"><![CDATA[이러한 약관은 다음에도 적용됩니다: <b>%s</b>.]]></string>
-    <string name="to_preserve_privacy_simplex_has_background_service_instead_of_push_notifications_it_uses_a_few_pc_battery"><![CDATA[To improve privacy, <b>개인 정보를 보호하기 위해 SimpleX는 푸시 알림을 사용하는 대신 백그라운드</b>에서 실행됩니다.]]></string>
+    <string name="to_preserve_privacy_simplex_has_background_service_instead_of_push_notifications_it_uses_a_few_pc_battery"><![CDATA[To improve privacy, <b>개인 정보를 보호하기 위해 Inqalaab는 푸시 알림을 사용하는 대신 백그라운드</b>에서 실행됩니다.]]></string>
     <string name="operator_in_order_to_use_accept_conditions"><![CDATA[<b>%s</b> 의 서버를 사용하려면 사용 약관에 동의하십시오.]]></string>
     <string name="connect_plan_you_are_already_connecting_to_vName"><![CDATA[이미 <b>%1$s</b> 에 연결 중입니다.]]></string>
     <string name="turn_off_battery_optimization"><![CDATA[다음 대화 상자에서 <b>허용</b>을 선택하면 알림을 즉시 받을 수 있습니다.]]></string>
     <string name="system_restricted_background_warn"><![CDATA[알림을 활성화하려면 <b>앱 설정에서 앱 배터리 사용량</b> / <b>제한 없음</b> 을 선택하십시오.]]></string>
     <string name="remote_host_error_inactive"><![CDATA[모바일 <b>%s</b> 이 현재 비활성화됨]]></string>
-    <string name="you_can_connect_to_simplex_chat_founder"><![CDATA[<font color="#0088ff">SimpleX Chat 개발자에게 연결하여 질문하고 업데이트를 받을 수 있습니다</font>.]]></string>
+    <string name="you_can_connect_to_simplex_chat_founder"><![CDATA[<font color="#1E8E3E">Inqalaab 개발자에게 연결하여 질문하고 업데이트를 받을 수 있습니다</font>.]]></string>
     <string name="remote_host_was_disconnected_toast"><![CDATA[모바일 <b>%s</b> 이 연결 끊김]]></string>
     <string name="open_on_mobile_and_scan_qr_code"><![CDATA[모바일 앱 <i>에서 데스크톱에서</i> 사용을 열고 QR 코드를 스캔합니다.]]></string>
     <string name="remote_host_error_timeout"><![CDATA[모바일에 연결하는 동안 시간이 초과했습니다 <b>%s</b>]]></string>

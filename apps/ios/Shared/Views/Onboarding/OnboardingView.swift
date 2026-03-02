@@ -17,6 +17,12 @@ struct OnboardingView: View {
             case .step1_SimpleXInfo:
                 SimpleXInfo(onboarding: true)
                     .modifier(ThemedBackground())
+            case .step1b_InqalaabMission:
+                InqalaabMissionView()
+                    .modifier(ThemedBackground())
+            case .step1c_SecurityPledge:
+                InqalaabSecurityPledgeView()
+                    .modifier(ThemedBackground())
             case .step2_CreateProfile: // deprecated
                 CreateFirstProfile()
                     .modifier(ThemedBackground())
@@ -41,10 +47,12 @@ func onboardingButtonPlaceholder() -> some View {
 }
 
 enum OnboardingStage: String, Identifiable {
-    case step1_SimpleXInfo
-    case step2_CreateProfile // deprecated
+    case step1_SimpleXInfo          // Inqalaab: Welcome screen
+    case step1b_InqalaabMission     // Inqalaab: Mission statement (NEW)
+    case step1c_SecurityPledge      // Inqalaab: Security pledge (NEW)
+    case step2_CreateProfile        // deprecated
     case step3_CreateSimpleXAddress // deprecated
-    case step3_ChooseServerOperators // changed to simplified conditions
+    case step3_ChooseServerOperators // simplified conditions
     case step4_SetNotificationsMode
     case onboardingComplete
 

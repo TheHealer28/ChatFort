@@ -8,13 +8,13 @@ import androidx.compose.ui.graphics.*
 import chat.simplex.common.views.helpers.mixWith
 import kotlin.math.min
 
-val Purple200 = Color(0xFFBB86FC)
-val Purple500 = Color(0xFF6200EE)
-val Purple700 = Color(0xFF3700B3)
-val Teal200 = Color(0xFF03DAC5)
+val Purple200 = Color(0xFFA5D6A7)
+val Purple500 = Color(0xFF2E7D32)
+val Purple700 = Color(0xFF1B5E20)
+val Teal200 = Color(0xFF69F0AE)
 val Gray = Color(0x22222222)
-val Indigo = Color(0xFF9966FF)
-val SimplexBlue = Color(0, 136, 255, 255)  // If this value changes also need to update #0088ff in string resource files
+val Indigo = Color(0xFF43A047)
+val SimplexBlue = Color(30, 142, 62, 255)  // Inqalaab Green - primary brand colour
 val SimplexGreen = Color(77, 218, 103, 255)
 val SecretColor = Color(0x40808080)
 val LightGray = Color(241, 242, 246, 255)

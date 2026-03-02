@@ -613,7 +613,7 @@ struct MigrateToDevice: View {
                 appSettings.importIntoApp()
             }
             do {
-                try SimpleX.startChat(refreshInvitations: true)
+                try Inqalaab.startChat(refreshInvitations: true)
                 AlertManager.shared.showAlertMsg(title: "Chat migrated!", message: "Finalize migration on another device.")
             } catch let error {
                 AlertManager.shared.showAlert(Alert(title: Text("Error starting chat"), message: Text(responseError(error))))

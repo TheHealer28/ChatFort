@@ -16,6 +16,40 @@
         "type": "github"
       }
     },
+    "aeson-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1696672841,
+        "narHash": "sha256-OTuJENv5I+9bWy6crllDm1lhkncmye33SCiqh1Sb50s=",
+        "owner": "simplex-chat",
+        "repo": "aeson",
+        "rev": "aab7b5a14d6c5ea64c64dcaee418de1bb00dcc2b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "simplex-chat",
+        "repo": "aeson",
+        "rev": "aab7b5a14d6c5ea64c64dcaee418de1bb00dcc2b",
+        "type": "github"
+      }
+    },
+    "android-support-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1692778271,
+        "narHash": "sha256-Fl9Q2i7dY+F9vBlhvWsEWw4Y3AjZnjTil1PsEdwVbl0=",
+        "owner": "simplex-chat",
+        "repo": "android-support",
+        "rev": "9aa09f148089d6752ce563b14c2df1895718d806",
+        "type": "github"
+      },
+      "original": {
+        "owner": "simplex-chat",
+        "repo": "android-support",
+        "rev": "9aa09f148089d6752ce563b14c2df1895718d806",
+        "type": "github"
+      }
+    },
     "cabal-32": {
       "flake": false,
       "locked": {
@@ -80,6 +114,23 @@
       "original": {
         "owner": "input-output-hk",
         "repo": "cardano-shell",
+        "type": "github"
+      }
+    },
+    "direct-sqlcipher-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1692784604,
+        "narHash": "sha256-9/K1pnUnUTLj6OV5neQF6bDrQvtgi0a4VekJQuuGPE4=",
+        "owner": "simplex-chat",
+        "repo": "direct-sqlcipher",
+        "rev": "f814ee68b16a9447fbb467ccc8f29bdd3546bfd9",
+        "type": "github"
+      },
+      "original": {
+        "owner": "simplex-chat",
+        "repo": "direct-sqlcipher",
+        "rev": "f814ee68b16a9447fbb467ccc8f29bdd3546bfd9",
         "type": "github"
       }
     },
@@ -203,6 +254,23 @@
       "original": {
         "owner": "input-output-hk",
         "repo": "hackage.nix",
+        "type": "github"
+      }
+    },
+    "haskell-terminal-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1642707774,
+        "narHash": "sha256-UsYatiz9pqdH+kY5RSxC8ajlh0nlHfIAGRVN7So9uH4=",
+        "owner": "simplex-chat",
+        "repo": "haskell-terminal",
+        "rev": "f708b00009b54890172068f168bf98508ffcd495",
+        "type": "github"
+      },
+      "original": {
+        "owner": "simplex-chat",
+        "repo": "haskell-terminal",
+        "rev": "f708b00009b54890172068f168bf98508ffcd495",
         "type": "github"
       }
     },
@@ -392,6 +460,23 @@
       "original": {
         "owner": "sevanspowell",
         "repo": "hpc-coveralls",
+        "type": "github"
+      }
+    },
+    "hs-socks-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1673127458,
+        "narHash": "sha256-aEgouR5om+yElV5efcsLi+4plvq7qimrOTOkd7LdWnk=",
+        "owner": "simplex-chat",
+        "repo": "hs-socks",
+        "rev": "a30cc7a79a08d8108316094f8f2f82a0c5e1ac51",
+        "type": "github"
+      },
+      "original": {
+        "owner": "simplex-chat",
+        "repo": "hs-socks",
+        "rev": "a30cc7a79a08d8108316094f8f2f82a0c5e1ac51",
         "type": "github"
       }
     },
@@ -704,14 +789,58 @@
     },
     "root": {
       "inputs": {
+        "aeson-src": "aeson-src",
+        "android-support-src": "android-support-src",
+        "direct-sqlcipher-src": "direct-sqlcipher-src",
         "flake-utils": "flake-utils",
         "hackage": "hackage",
+        "haskell-terminal-src": "haskell-terminal-src",
         "haskellNix": "haskellNix",
+        "hs-socks-src": "hs-socks-src",
         "mac2ios": "mac2ios",
         "nixpkgs": [
           "haskellNix",
           "nixpkgs-2305"
-        ]
+        ],
+        "simplexmq-src": "simplexmq-src",
+        "sqlcipher-simple-src": "sqlcipher-simple-src",
+        "wai-simplex-src": "wai-simplex-src",
+        "wai-yesod-src": "wai-yesod-src",
+        "zip-src": "zip-src"
+      }
+    },
+    "simplexmq-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1769637512,
+        "narHash": "sha256-XIupF+N24hV8vy0nbGrTNSvCxtnSfkGcGY9InomRHQQ=",
+        "owner": "simplex-chat",
+        "repo": "simplexmq",
+        "rev": "9346b85c3f34f8b12fefef4631ba21087cf5f0e3",
+        "type": "github"
+      },
+      "original": {
+        "owner": "simplex-chat",
+        "repo": "simplexmq",
+        "rev": "9346b85c3f34f8b12fefef4631ba21087cf5f0e3",
+        "type": "github"
+      }
+    },
+    "sqlcipher-simple-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1692735557,
+        "narHash": "sha256-9JV2odagCkUWUGEe8dWmqHfjcBmn6rf6FAEBhxo6Gfw=",
+        "owner": "simplex-chat",
+        "repo": "sqlcipher-simple",
+        "rev": "a46bd361a19376c5211f1058908fc0ae6bf42446",
+        "type": "github"
+      },
+      "original": {
+        "owner": "simplex-chat",
+        "repo": "sqlcipher-simple",
+        "rev": "a46bd361a19376c5211f1058908fc0ae6bf42446",
+        "type": "github"
       }
     },
     "stackage": {
@@ -742,6 +871,57 @@
       "original": {
         "owner": "nix-systems",
         "repo": "default",
+        "type": "github"
+      }
+    },
+    "wai-simplex-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1726601898,
+        "narHash": "sha256-xKvzAZBnynDAAB1jIsir0AwYstcNW8SZC/cH12QmL6U=",
+        "owner": "simplex-chat",
+        "repo": "wai",
+        "rev": "2f6e5aa5f05ba9140ac99e195ee647b4f7d926b0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "simplex-chat",
+        "repo": "wai",
+        "rev": "2f6e5aa5f05ba9140ac99e195ee647b4f7d926b0",
+        "type": "github"
+      }
+    },
+    "wai-yesod-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1727142608,
+        "narHash": "sha256-fQmWamDI1OHmnWZKsROukFh6JAUCi7IyjjJ5J2+9bLI=",
+        "owner": "yesodweb",
+        "repo": "wai",
+        "rev": "ec5e017d896a78e787a5acea62b37a4e677dec2e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "yesodweb",
+        "repo": "wai",
+        "rev": "ec5e017d896a78e787a5acea62b37a4e677dec2e",
+        "type": "github"
+      }
+    },
+    "zip-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1762030212,
+        "narHash": "sha256-12SibQlWnOWd+lAeLYVlXgUjIjDUrCy/sp2SVhpUWxQ=",
+        "owner": "simplex-chat",
+        "repo": "zip",
+        "rev": "2eff156c3aac389e35d38bf10a52733d7061640a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "simplex-chat",
+        "repo": "zip",
+        "rev": "2eff156c3aac389e35d38bf10a52733d7061640a",
         "type": "github"
       }
     }

@@ -43,13 +43,16 @@ struct NetworkAndServers: View {
         VStack {
             List {
                 let conditionsAction = m.conditions.conditionsAction
-                let anyOperatorEnabled = ss.servers.userServers.contains(where: { $0.operator?.enabled ?? false })
+                let servers = ss.servers.userServers
+                let anyOperatorEnabled = servers.contains(where: { $0.operator?.enabled ?? false })
                 Section {
-                    ForEach(ss.servers.userServers.enumerated().map { $0 }, id: \.element.id) { idx, userOperatorServers in
-                        if let serverOperator = userOperatorServers.operator {
-                            serverOperatorView(idx, serverOperator)
-                        } else {
-                            EmptyView()
+                    if !servers.isEmpty {
+                        ForEach(servers.enumerated().map { $0 }, id: \.element.id) { idx, userOperatorServers in
+                            if let serverOperator = userOperatorServers.operator, serverOperator.enabled {
+                                serverOperatorView(idx, serverOperator)
+                            } else {
+                                EmptyView()
+                            }
                         }
                     }
 
@@ -139,9 +142,16 @@ struct NetworkAndServers: View {
             // this condition is needed to prevent re-setting the servers when exiting single server view
             if justOpened {
                 do {
-                    ss.servers.currUserServers = try await getUserServers()
-                    ss.servers.userServers = ss.servers.currUserServers
-                    ss.servers.serverErrors = []
+                    guard m.chatRunning == true else {
+                        justOpened = false
+                        return
+                    }
+                    let servers = try await getUserServers()
+                    await MainActor.run {
+                        ss.servers.currUserServers = servers
+                        ss.servers.userServers = servers
+                        ss.servers.serverErrors = []
+                    }
                 } catch let error {
                     await MainActor.run {
                         showAlert(

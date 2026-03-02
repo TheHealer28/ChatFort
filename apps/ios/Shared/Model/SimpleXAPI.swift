@@ -1012,22 +1012,28 @@ func apiConnect(incognito: Bool, connLink: CreatedConnLink) async -> (ConnReqTyp
 func apiConnect_(incognito: Bool, connLink: CreatedConnLink) async -> ((ConnReqType, PendingContactConnection)?, Alert?) {
     guard let userId = ChatModel.shared.currentUser?.userId else {
         logger.error("apiConnect: no current user")
+        print("Inqalaab apiConnect: no current user!")
         return (nil, nil)
     }
+    print("Inqalaab apiConnect: calling with userId=\(userId)")
     let r: APIResult<ChatResponse1>? = await chatApiSendCmdWithRetry(.apiConnect(userId: userId, incognito: incognito, connLink: connLink))
     let m = ChatModel.shared
     switch r {
     case let .result(.sentConfirmation(_, connection)):
+        print("Inqalaab apiConnect: sentConfirmation connId=\(connection.pccConnId)")
         return ((.invitation, connection), nil)
     case let .result(.sentInvitation(_, connection)):
+        print("Inqalaab apiConnect: sentInvitation connId=\(connection.pccConnId)")
         return ((.contact, connection), nil)
     case let .result(.contactAlreadyExists(_, contact)):
+        print("Inqalaab apiConnect: contactAlreadyExists name=\(contact.displayName)")
         if let c = m.getContactChat(contact.contactId) {
             ItemsModel.shared.loadOpenChat(c.id)
         }
         let alert = contactAlreadyExistsAlert(contact)
         return (nil, alert)
-    default: ()
+    default:
+        print("Inqalaab apiConnect: unexpected result=\(String(describing: r))")
     }
     let alert: Alert? = if let r { apiConnectResponseAlert(r) } else { nil }
     return (nil, alert)
@@ -2242,6 +2248,7 @@ class ChatReceiver {
 func processReceivedMsg(_ res: ChatEvent) async {
     let m = ChatModel.shared
     let n = NetworkModel.shared
+    print("Inqalaab RECV: \(res.responseType)")
     logger.debug("processReceivedMsg: \(res.responseType)")
     switch res {
     case let .contactDeletedByContact(user, contact):
@@ -2251,6 +2258,7 @@ func processReceivedMsg(_ res: ChatEvent) async {
             }
         }
     case let .contactConnected(user, contact, _):
+        print("Inqalaab EVENT: contactConnected name=\(contact.displayName) directOrUsed=\(contact.directOrUsed) active=\(active(user))")
         if active(user) && contact.directOrUsed {
             await MainActor.run {
                 m.updateContact(contact)
@@ -2258,6 +2266,7 @@ func processReceivedMsg(_ res: ChatEvent) async {
                     m.dismissConnReqView(conn.id)
                     m.removeChat(conn.id)
                 }
+                print("Inqalaab EVENT: contactConnected - chats count=\(m.chats.count)")
             }
         }
         if contact.directOrUsed {
@@ -2267,6 +2276,7 @@ func processReceivedMsg(_ res: ChatEvent) async {
             n.setContactNetworkStatus(contact, .connected)
         }
     case let .contactConnecting(user, contact):
+        print("Inqalaab EVENT: contactConnecting name=\(contact.displayName)")
         if active(user) && contact.directOrUsed {
             await MainActor.run {
                 m.updateContact(contact)
@@ -2290,6 +2300,7 @@ func processReceivedMsg(_ res: ChatEvent) async {
             n.setContactNetworkStatus(contact, .connected)
         }
     case let .receivedContactRequest(user, contactRequest, chat_):
+        print("Inqalaab EVENT: receivedContactRequest name=\(contactRequest.displayName) active=\(active(user)) hasChat=\(chat_ != nil)")
         if active(user) {
             await MainActor.run {
                 if let chat = chat_ { // means contact request was created with contact, so we need to add/update contact chat
@@ -2369,6 +2380,7 @@ func processReceivedMsg(_ res: ChatEvent) async {
             }
         }
     case let .newChatItems(user, chatItems):
+        print("Inqalaab EVENT: newChatItems count=\(chatItems.count) active=\(active(user))")
         for chatItem in chatItems {
             let cInfo = chatItem.chatInfo
             let cItem = chatItem.chatItem

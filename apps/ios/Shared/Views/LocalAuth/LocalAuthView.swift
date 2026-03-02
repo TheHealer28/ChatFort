@@ -93,6 +93,10 @@ struct LocalAuthView: View {
                 onboardingStageDefault.set(.onboardingComplete)
                 m.onboardingStage = .onboardingComplete
                 try startChat()
+                // Inqalaab: Configure servers after onboarding
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                    InqalaabServers.shared.configureIfNeeded()
+                }
                 completed(.success)
             } catch {
                 completed(.failed(authError: NSLocalizedString("Incorrect passcode", comment: "PIN entry")))

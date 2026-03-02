@@ -119,6 +119,10 @@ struct CreateProfile: View {
             } else {
                 onboardingStageDefault.set(.onboardingComplete)
                 m.onboardingStage = .onboardingComplete
+                // Inqalaab: Configure servers after onboarding
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                    InqalaabServers.shared.configureIfNeeded()
+                }
                 dismiss()
                 m.users = try listUsers()
                 try getUserChatData()

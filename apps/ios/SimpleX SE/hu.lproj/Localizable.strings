@@ -77,7 +77,7 @@
 "Passphrase" = "Jelmondat";
 
 /* No comment provided by engineer. */
-"Please create a profile in the SimpleX app" = "Hozzon létre egy profilt a SimpleX alkalmazásban";
+"Please create a profile in the Inqalaab app" = "Hozzon létre egy profilt a Inqalaab alkalmazásban";
 
 /* No comment provided by engineer. */
 "Selected chat preferences prohibit this message." = "A kijelölt csevegési beállítások tiltják ezt az üzenetet.";
@@ -107,5 +107,5 @@
 "Wrong database passphrase" = "Érvénytelen adatbázis-jelmondat";
 
 /* No comment provided by engineer. */
-"You can allow sharing in Privacy & Security / SimpleX Lock settings." = "A megosztást az Adatvédelem és biztonság / SimpleX-zár menüben engedélyezheti.";
+"You can allow sharing in Privacy & Security / Inqalaab Lock settings." = "A megosztást az Adatvédelem és biztonság / Inqalaab-zár menüben engedélyezheti.";
 

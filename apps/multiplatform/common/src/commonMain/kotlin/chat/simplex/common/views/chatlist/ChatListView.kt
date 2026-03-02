@@ -291,12 +291,44 @@ private fun BoxScope.ChatListWithLoadingScreen(searchText: MutableState<TextFiel
   if (!chatModel.desktopNoUserNoRemote) {
     ChatList(searchText = searchText, listState)
   }
-  if (chatModel.chats.value.isEmpty() && !chatModel.switchingUsersAndHosts.value && !chatModel.desktopNoUserNoRemote) {
-    Text(
-      stringResource(
-        if (chatModel.chatRunning.value == null) MR.strings.loading_chats else MR.strings.you_have_no_chats
-      ), Modifier.align(Alignment.Center), color = MaterialTheme.colors.secondary
-    )
+  if (chatModel.chats.value.size <= 2 && !chatModel.switchingUsersAndHosts.value && !chatModel.desktopNoUserNoRemote) {
+    if (chatModel.chatRunning.value == null) {
+      Text(
+        stringResource(MR.strings.loading_chats),
+        Modifier.align(Alignment.Center),
+        color = MaterialTheme.colors.secondary
+      )
+    } else {
+      val userAddress = remember { chatModel.userAddress }.value
+      if (userAddress != null) {
+        Column(
+          Modifier.align(Alignment.Center).offset(y = (-60).dp).padding(horizontal = DEFAULT_PADDING),
+          horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+          Text(
+            "Your Inqalaab QR Code",
+            style = MaterialTheme.typography.h6,
+            fontWeight = androidx.compose.ui.text.font.FontWeight.Bold,
+            color = MaterialTheme.colors.primary
+          )
+          Spacer(Modifier.height(8.dp))
+          Text(
+            "Show this to connect",
+            color = MaterialTheme.colors.secondary
+          )
+          SimpleXCreatedLinkQRCode(
+            connLink = userAddress.connLinkContact,
+            short = true
+          )
+        }
+      } else if (chatModel.chats.value.isEmpty()) {
+        Text(
+          stringResource(MR.strings.you_have_no_chats),
+          Modifier.align(Alignment.Center),
+          color = MaterialTheme.colors.secondary
+        )
+      }
+    }
   }
 }
 

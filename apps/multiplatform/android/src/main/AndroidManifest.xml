@@ -36,7 +36,7 @@
   </queries>
 
   <application
-      android:name="SimplexApp"
+      android:name="chat.simplex.app.SimplexApp"
       android:allowBackup="false"
       android:fullBackupOnly="false"
       android:icon="@mipmap/icon"
@@ -44,18 +44,18 @@
       android:largeHeap="true"
       android:extractNativeLibs="${extract_native_libs}"
       android:supportsRtl="true"
-      android:theme="@style/Theme.SimpleX">
+      android:theme="@style/Theme.Inqalaab">
     <!--      android:localeConfig="@xml/locales_config"-->
 
     <!-- Main activity -->
     <activity
-        android:name=".MainActivity"
+        android:name="chat.simplex.app.MainActivity"
         android:launchMode="singleTask"
         android:exported="true"
         android:label="${app_name}"
         android:windowSoftInputMode="adjustResize"
         android:configChanges="uiMode"
-        android:theme="@style/Theme.SimpleX">
+        android:theme="@style/Theme.Inqalaab">
       <intent-filter>
         <category android:name="android.intent.category.LAUNCHER" />
       </intent-filter>
@@ -120,11 +120,11 @@
     </activity>
 
     <activity-alias
-        android:name=".MainActivity_default"
+        android:name="chat.simplex.app.MainActivity_default"
         android:exported="true"
         android:icon="@mipmap/icon"
         android:enabled="true"
-        android:targetActivity=".MainActivity">
+        android:targetActivity="chat.simplex.app.MainActivity">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
         <category android:name="android.intent.category.LAUNCHER" />
@@ -132,18 +132,18 @@
     </activity-alias>
 
     <activity-alias
-        android:name=".MainActivity_dark_blue"
+        android:name="chat.simplex.app.MainActivity_dark_blue"
         android:exported="true"
         android:icon="@mipmap/icon_dark_blue"
         android:enabled="false"
-        android:targetActivity=".MainActivity">
+        android:targetActivity="chat.simplex.app.MainActivity">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
         <category android:name="android.intent.category.LAUNCHER" />
       </intent-filter>
     </activity-alias>
 
-    <activity android:name=".views.call.CallActivity"
+    <activity android:name="chat.simplex.app.views.call.CallActivity"
         android:showOnLockScreen="true"
         android:exported="false"
         android:launchMode="singleInstance"
@@ -163,13 +163,13 @@
 
     <!-- NtfManager action processing (buttons in notifications) -->
     <receiver
-        android:name=".model.NtfManager$NtfActionReceiver"
+        android:name="chat.simplex.app.model.NtfManager$NtfActionReceiver"
         android:enabled="true"
         android:exported="false" />
 
     <!-- SimplexService foreground service -->
     <service
-        android:name=".SimplexService"
+        android:name="chat.simplex.app.SimplexService"
         android:enabled="true"
         android:exported="false"
         android:stopWithTask="false"
@@ -179,7 +179,7 @@
     <!-- SimplexService restart on reboot -->
 
     <service
-        android:name=".CallService"
+        android:name="chat.simplex.app.CallService"
         android:enabled="true"
         android:exported="false"
         android:stopWithTask="false"
@@ -187,12 +187,12 @@
     />
 
     <receiver
-        android:name=".CallService$CallActionReceiver"
+        android:name="chat.simplex.app.CallService$CallActionReceiver"
         android:enabled="true"
         android:exported="false" />
 
     <receiver
-        android:name=".SimplexService$StartReceiver"
+        android:name="chat.simplex.app.SimplexService$StartReceiver"
         android:enabled="true"
         android:exported="true">
       <intent-filter>
@@ -202,13 +202,13 @@
 
     <!-- SimplexService restart on destruction -->
     <receiver
-        android:name=".SimplexService$AutoRestartReceiver"
+        android:name="chat.simplex.app.SimplexService$AutoRestartReceiver"
         android:enabled="true"
         android:exported="false" />
 
     <!-- SimplexService restart on app update -->
     <receiver
-        android:name=".SimplexService$AppUpdateReceiver"
+        android:name="chat.simplex.app.SimplexService$AppUpdateReceiver"
         android:enabled="true"
         android:exported="false">
       <intent-filter>

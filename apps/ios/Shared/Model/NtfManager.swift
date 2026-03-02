@@ -196,7 +196,7 @@ class NtfManager: NSObject, UNUserNotificationCenterDelegate, ObservableObject {
                 identifier: ntfCategoryConnectionEvent,
                 actions: [],
                 intentIdentifiers: [],
-                hiddenPreviewsBodyPlaceholder: NSLocalizedString("SimpleX encrypted message or connection event", comment: "notification")
+                hiddenPreviewsBodyPlaceholder: NSLocalizedString("Inqalaab encrypted message or connection event", comment: "notification")
             ),
             UNNotificationCategory(
                 identifier: ntfCategoryManyEvents,

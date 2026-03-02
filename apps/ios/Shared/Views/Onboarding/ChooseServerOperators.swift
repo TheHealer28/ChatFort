@@ -64,76 +64,60 @@ struct OnboardingConditionsView: View {
     @State private var justOpened = true
 
     var body: some View {
-        GeometryReader { g in
-            let v = ScrollView {
-                VStack(alignment: .leading, spacing: 20) {
-                    Text("Conditions of use")
-                        .font(.largeTitle)
-                        .bold()
-                        .frame(maxWidth: .infinity, alignment: .center)
-                        .padding(.top, 25)
-
-                    Spacer()
-
-                    VStack(alignment: .leading, spacing: 20) {
-                        Text("Private chats, groups and your contacts are not accessible to server operators.")
-                            .lineSpacing(2)
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                        Text("""
-                        By using SimpleX Chat you agree to:
-                        - send only legal content in public groups.
-                        - respect other users – no spam.
-                        """)
-                        .lineSpacing(2)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-
-                        Button("Privacy policy and conditions of use.") {
-                            sheetItem = .showConditions
-                        }
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                    }
-                    .padding(.horizontal, 4)
-
-                    Spacer()
-
-                    VStack(spacing: 12) {
-                        acceptConditionsButton()
-
-                        Button("Configure server operators") {
-                            sheetItem = .configureOperators
-                        }
-                        .frame(minHeight: 40)
-                    }
-                }
-                .padding(25)
-                .frame(minHeight: g.size.height)
-            }
-            .onAppear {
-                if justOpened {
-                    serverOperators = ChatModel.shared.conditions.serverOperators
-                    selectedOperatorIds = Set(serverOperators.filter { $0.enabled }.map { $0.operatorId })
-                    justOpened = false
-                }
-            }
-            .sheet(item: $sheetItem) { item in
-                switch item {
-                case .showConditions:
-                    SimpleConditionsView()
-                        .modifier(ThemedBackground(grouped: true))
-                case .configureOperators:
-                    ChooseServerOperators(serverOperators: serverOperators, selectedOperatorIds: $selectedOperatorIds)
-                        .modifier(ThemedBackground())
-                }
-            }
-            .frame(maxHeight: .infinity, alignment: .top)
-            if #available(iOS 16.4, *) {
-                v.scrollBounceBehavior(.basedOnSize)
-            } else {
-                v
+        // Inqalaab: Auto-accept conditions and skip to next step
+        VStack {
+            Spacer()
+            ProgressView()
+                .scaleEffect(1.5)
+            Spacer()
+        }
+        .onAppear {
+            if justOpened {
+                justOpened = false
+                serverOperators = ChatModel.shared.conditions.serverOperators
+                selectedOperatorIds = Set(serverOperators.map { $0.operatorId })
+                autoAcceptAndContinue()
             }
         }
-        .frame(maxHeight: .infinity, alignment: .top)
-        .navigationBarHidden(true) // necessary on iOS 15
+        .background(
+            NavigationLink(isActive: $notificationsModeNavLinkActive) {
+                SetNotificationsMode()
+                    .navigationBarBackButtonHidden(true)
+                    .modifier(ThemedBackground())
+            } label: {
+                EmptyView()
+            }
+            .hidden()
+        )
+        .navigationBarHidden(true)
+    }
+
+    private func autoAcceptAndContinue() {
+        Task {
+            do {
+                let conditionsId = ChatModel.shared.conditions.currentConditions.conditionsId
+                let r = try await acceptConditions(conditionsId: conditionsId, operatorIds: Array(selectedOperatorIds))
+                await MainActor.run {
+                    ChatModel.shared.conditions = r
+                }
+                if let enabledOperators = enabledOperators(r.serverOperators) {
+                    let r2 = try await setServerOperators(operators: enabledOperators)
+                    await MainActor.run {
+                        ChatModel.shared.conditions = r2
+                        continueToNextStep()
+                    }
+                } else {
+                    await MainActor.run {
+                        continueToNextStep()
+                    }
+                }
+            } catch {
+                await MainActor.run {
+                    // If auto-accept fails, still proceed
+                    continueToNextStep()
+                }
+            }
+        }
     }
 
     private func continueToNextStep() {

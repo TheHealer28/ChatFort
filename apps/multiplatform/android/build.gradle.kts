@@ -12,7 +12,7 @@ android {
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "chat.simplex.app"
+        applicationId = "com.inqalaab.app"
         namespace = "chat.simplex.app"
         minSdk = 26
         targetSdk = 35
@@ -31,7 +31,7 @@ android {
             }
         }
         manifestPlaceholders["app_name"] = "@string/app_name"
-        manifestPlaceholders["provider_authorities"] = "chat.simplex.app.provider"
+        manifestPlaceholders["provider_authorities"] = "com.inqalaab.app.provider"
         manifestPlaceholders["extract_native_libs"] = rootProject.extra["compression.level"] as Int != 0
     }
 

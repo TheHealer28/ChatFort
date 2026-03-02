@@ -1,9 +1,9 @@
 /* Bundle display name */
-"CFBundleDisplayName" = "SimpleX NSE";
+"CFBundleDisplayName" = "Inqalaab NSE";
 
 /* Bundle name */
-"CFBundleName" = "SimpleX NSE";
+"CFBundleName" = "Inqalaab NSE";
 
 /* Copyright (human-readable) */
-"NSHumanReadableCopyright" = "版权所有 © 2022 SimpleX Chat。保留所有权利。";
+"NSHumanReadableCopyright" = "版权所有 © 2022 Inqalaab。保留所有权利。";
 

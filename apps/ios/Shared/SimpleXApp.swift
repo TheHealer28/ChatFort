@@ -31,6 +31,8 @@ struct SimpleXApp: App {
         setDbContainer()
         BGManager.shared.register()
         NtfManager.shared.registerCategories()
+        // Inqalaab: Start shake detector for panic mode
+        InqalaabShakeDetector.shared.start()
     }
 
     var body: some Scene {
@@ -87,6 +89,12 @@ struct SimpleXApp: App {
                         if appState != .stopped {
                             startChatAndActivate {
                                 if chatModel.chatRunning == true {
+                                    // Inqalaab: Configure servers after chat is running
+                                    DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+                                        if chatModel.chatRunning == true && chatModel.currentUser != nil {
+                                            InqalaabServers.shared.configureIfNeeded()
+                                        }
+                                    }
                                     if let ntfResponse = chatModel.notificationResponse {
                                         chatModel.notificationResponse = nil
                                         NtfManager.shared.processNotificationResponse(ntfResponse)

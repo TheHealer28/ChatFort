@@ -2,13 +2,13 @@
 <resources>
     <string name="chat_item_ttl_week">1 個星期</string>
     <string name="a_plus_b">a + b</string>
-    <string name="about_simplex">關於 SimpleX</string>
+    <string name="about_simplex">關於 Inqalaab</string>
     <string name="accept_call_on_lock_screen">接受</string>
     <string name="accept_feature">接受</string>
     <string name="chat_item_ttl_day">1 天</string>
     <string name="chat_item_ttl_month">1 個月</string>
     <string name="accept_contact_button">接受</string>
-    <string name="about_simplex_chat">關於 SimpleX Chat</string>
+    <string name="about_simplex_chat">關於 Inqalaab</string>
     <string name="accept_connection_request__question">接受連接請求？</string>
     <string name="callstatus_accepted">已接受通話</string>
     <string name="network_enable_socks_info">要在端口啟用 SOCKS 代理伺服器嗎 %d？在啟用這個選項之前，必須先啟用代理伺服器。</string>
@@ -33,8 +33,8 @@
     <string name="allow_to_send_disappearing">允許傳送自動銷毀的訊息。</string>
     <string name="database_initialization_error_title">無法初始化資料庫</string>
     <string name="notifications_mode_service">總是開啟</string>
-    <string name="auth_disable_simplex_lock">關閉 SimpleX 鎖定</string>
-    <string name="auth_enable_simplex_lock">啟用 SimpleX 鎖定</string>
+    <string name="auth_disable_simplex_lock">關閉 Inqalaab 鎖定</string>
+    <string name="auth_enable_simplex_lock">啟用 Inqalaab 鎖定</string>
     <string name="copy_verb">複製</string>
     <string name="reply_verb">回覆</string>
     <string name="share_verb">分享</string>
@@ -60,7 +60,7 @@
     <string name="share_invitation_link">分享一次性連結</string>
     <string name="chat_with_the_founder">傳送問題和想法給開發者</string>
     <string name="how_to_use_simplex_chat">如何使用</string>
-    <string name="install_simplex_chat_for_terminal">使用終端機安裝 SimpleX Chat</string>
+    <string name="install_simplex_chat_for_terminal">使用終端機安裝 Inqalaab</string>
     <string name="app_version_title">應用程式版本</string>
     <string name="all_your_contacts_will_remain_connected">你的所有聯絡人會保持連接。</string>
     <string name="app_version_code">應用程式建構：%s</string>
@@ -169,7 +169,7 @@
     <string name="share_one_time_link">建立一次性邀請連結</string>
     <string name="to_share_with_your_contact">（分享給你的聯絡人）</string>
     <string name="chat_help_tap_button">點擊按鈕</string>
-    <string name="thank_you_for_installing_simplex">感謝你安裝 SimpleX Chat！</string>
+    <string name="thank_you_for_installing_simplex">感謝你安裝 Inqalaab！</string>
     <string name="mute_chat">靜音</string>
     <string name="unmute_chat">解除靜音</string>
     <string name="your_settings">你的設定</string>
@@ -189,7 +189,7 @@
     <string name="all_group_members_will_remain_connected">群組內所有成員會保持連接。</string>
     <string name="color_primary">輔色</string>
     <string name="moderated_description">已被審查</string>
-    <string name="simplex_link_group">SimpleX 群組連結</string>
+    <string name="simplex_link_group">Inqalaab 群組連結</string>
     <string name="v4_5_private_filenames">私人檔案名稱</string>
     <string name="error_adding_members">加入成員(s)時出錯</string>
     <string name="failed_to_create_user_title">個人檔案建立失敗！</string>
@@ -214,9 +214,9 @@
     <string name="display_name_connecting">連接中…</string>
     <string name="description_you_shared_one_time_link">你分享了一個一次性連結</string>
     <string name="description_you_shared_one_time_link_incognito">你分享了一個匿名聊天模式的一次性連結</string>
-    <string name="simplex_link_contact">SimpleX 聯絡人地址</string>
-    <string name="simplex_link_invitation">SimpleX 一次性邀請連結</string>
-    <string name="simplex_link_mode">SimpleX 連結</string>
+    <string name="simplex_link_contact">Inqalaab 聯絡人地址</string>
+    <string name="simplex_link_invitation">Inqalaab 一次性邀請連結</string>
+    <string name="simplex_link_mode">Inqalaab 連結</string>
     <string name="simplex_link_connection">透過 %1$s</string>
     <string name="simplex_link_mode_browser">透過瀏覽器</string>
     <string name="error_sending_message">傳送訊息時出錯</string>
@@ -227,7 +227,7 @@
     <string name="v4_5_reduced_battery_usage_descr">更多改進即將推出！</string>
     <string name="v4_5_italian_interface">意大利語言界面</string>
     <string name="v4_5_italian_interface_descr">感謝用戶 - 使用 Weblate 的翻譯貢獻！</string>
-    <string name="app_name">SimpleX</string>
+    <string name="app_name">Inqalaab</string>
     <string name="thousand_abbreviation">k</string>
     <string name="connect_via_contact_link">透過聯絡人地址連接？</string>
     <string name="connect_via_invitation_link">透過一次性連結連接？</string>
@@ -242,7 +242,7 @@
     <string name="trying_to_connect_to_server_to_receive_messages">正在嘗試連接到用於接收此聯絡人訊息伺服器。</string>
     <string name="deleted_description">已刪除</string>
     <string name="marked_deleted_description">已標記為已刪除</string>
-    <string name="simplex_link_mode_browser_warning">在瀏覽器中開啟連結可能會有隱私疑慮和不確定性。不受 SimpleX 信任的連結會顯示紅色。</string>
+    <string name="simplex_link_mode_browser_warning">在瀏覽器中開啟連結可能會有隱私疑慮和不確定性。不受 Inqalaab 信任的連結會顯示紅色。</string>
     <string name="error_saving_smp_servers">儲存 SMP 伺服器時出錯</string>
     <string name="ensure_smp_server_address_are_correct_format_and_unique">請確保 SMP 伺服器連結是正確的格式，每行也分隔且不重複。</string>
     <string name="error_setting_network_config">更新網路配置時出錯</string>
@@ -256,7 +256,7 @@
     <string name="periodic_notifications_disabled">定期通知已禁用！</string>
     <string name="enter_passphrase_notification_title">需要使用密碼</string>
     <string name="notification_preview_mode_contact_desc">只顯示聯絡人名稱</string>
-    <string name="auth_device_authentication_is_disabled_turning_off">裝置內的螢幕鎖定已關閉。正在關閉 SimpleX 鎖定。</string>
+    <string name="auth_device_authentication_is_disabled_turning_off">裝置內的螢幕鎖定已關閉。正在關閉 Inqalaab 鎖定。</string>
     <string name="save_verb">儲存</string>
     <string name="images_limit_title">太多圖片！</string>
     <string name="error_saving_file">儲存檔案的時候出錯</string>
@@ -276,7 +276,7 @@
     <string name="service_notifications">即時通知！</string>
     <string name="service_notifications_disabled">已禁用即時通知功能！</string>
     <string name="database_initialization_error_desc">資料庫目前沒有正常運作。點擊查看更多</string>
-    <string name="ntf_channel_calls">SimpleX Chat 通話來電</string>
+    <string name="ntf_channel_calls">Inqalaab 通話來電</string>
     <string name="settings_notifications_mode_title">通知服務</string>
     <string name="settings_notification_preview_mode_title">顯示預覽</string>
     <string name="settings_notification_preview_title">通知預覽</string>
@@ -323,10 +323,10 @@
     <string name="turn_off_battery_optimization"><![CDATA[在下一個對話框中<b>允許它</b>以接收實時通知。]]></string>
     <string name="enter_passphrase_notification_desc">在接收通知之前，請你輸入資料庫的密碼</string>
     <string name="periodic_notifications_desc">應用程式會定期取得新的訊息 — 它每天會消耗百分之幾的電量。應用程式將不使用推送通知 — 你裝置中的數據不會傳送至伺服器。</string>
-    <string name="simplex_service_notification_title">SimpleX Chat 服務</string>
+    <string name="simplex_service_notification_title">Inqalaab 服務</string>
     <string name="simplex_service_notification_text">正在接收訊息…</string>
     <string name="hide_notification">隱藏</string>
-    <string name="ntf_channel_messages">SimpleX Chat 訊息</string>
+    <string name="ntf_channel_messages">Inqalaab 訊息</string>
     <string name="notifications_mode_off">當應用程式是開啟</string>
     <string name="notifications_mode_periodic">定期啟動</string>
     <string name="notification_preview_mode_message_desc">顯示聯絡人名稱和訊息內容</string>
@@ -334,12 +334,12 @@
     <string name="notification_preview_somebody">隱藏聯絡人：</string>
     <string name="notification_preview_new_message">新訊息</string>
     <string name="notification_contact_connected">已連接</string>
-    <string name="la_notice_title_simplex_lock">SimpleX 鎖定</string>
-    <string name="la_notice_to_protect_your_information_turn_on_simplex_lock_you_will_be_prompted_to_complete_authentication_before_this_feature_is_enabled">為了保護你的個人訊息，開啟 SimpleX 鎖定。
+    <string name="la_notice_title_simplex_lock">Inqalaab 鎖定</string>
+    <string name="la_notice_to_protect_your_information_turn_on_simplex_lock_you_will_be_prompted_to_complete_authentication_before_this_feature_is_enabled">為了保護你的個人訊息，開啟 Inqalaab 鎖定。
 \n在啟用此功能之前，系統將提示你完成螢幕鎖定的功能。</string>
     <string name="la_notice_turn_on">開啟</string>
-    <string name="auth_simplex_lock_turned_on">已開啟SimpleX 鎖定</string>
-    <string name="auth_device_authentication_is_not_enabled_you_can_turn_on_in_settings_once_enabled">你的裝置沒有啟用螢幕鎖定。你可以通過設定內啟用螢幕鎖定，當你啟用後就可以使用 SimpleX 鎖定。</string>
+    <string name="auth_simplex_lock_turned_on">已開啟Inqalaab 鎖定</string>
+    <string name="auth_device_authentication_is_not_enabled_you_can_turn_on_in_settings_once_enabled">你的裝置沒有啟用螢幕鎖定。你可以通過設定內啟用螢幕鎖定，當你啟用後就可以使用 Inqalaab 鎖定。</string>
     <string name="edit_verb">編輯</string>
     <string name="delete_verb">刪除</string>
     <string name="reveal_verb">展露</string>
@@ -359,7 +359,7 @@
     <string name="send_live_message_desc">傳送實況訊息 - 這會即時顯示你在輸入中的文字</string>
     <string name="connect_via_link_or_qr_from_clipboard_or_in_person">（掃描或使用剪貼薄貼上）</string>
     <string name="toast_permission_denied">權限被拒絕！</string>
-    <string name="to_preserve_privacy_simplex_has_background_service_instead_of_push_notifications_it_uses_a_few_pc_battery"><![CDATA[為了保護隱私，<b>SimpleX 在背景運作</b>而不是使用推送通知。]]></string>
+    <string name="to_preserve_privacy_simplex_has_background_service_instead_of_push_notifications_it_uses_a_few_pc_battery"><![CDATA[為了保護隱私，<b>Inqalaab 在背景運作</b>而不是使用推送通知。]]></string>
     <string name="periodic_notifications">定期通知</string>
     <string name="notifications_mode_periodic_desc">每十分鐘會檢查一次訊息，最快可設為每分鐘檢查一次</string>
     <string name="notification_preview_mode_message">訊息文字</string>
@@ -401,7 +401,7 @@
     <string name="scan_QR_code">掃描二維碼</string>
     <string name="only_stored_on_members_devices">(僅由群組成員儲存)</string>
     <string name="contact_wants_to_connect_with_you">想和你對話！</string>
-    <string name="image_descr_simplex_logo">SimpleX 徽標</string>
+    <string name="image_descr_simplex_logo">Inqalaab 徽標</string>
     <string name="connect_via_link">透過連結連接</string>
     <string name="smp_servers_preset_server">預設伺服器</string>
     <string name="smp_servers_your_server_address">你的伺服器地址</string>
@@ -449,9 +449,9 @@
     <string name="image_descr_qr_code">QR 圖碼</string>
     <string name="image_descr_profile_image">個人檔案頭像</string>
     <string name="image_descr_link_preview">預覧連結圖片</string>
-    <string name="icon_descr_address">SimpleX 地址</string>
+    <string name="icon_descr_address">Inqalaab 地址</string>
     <string name="icon_descr_help">幫助</string>
-    <string name="icon_descr_simplex_team">SimpleX 團隊</string>
+    <string name="icon_descr_simplex_team">Inqalaab 團隊</string>
     <string name="icon_descr_email">電郵</string>
     <string name="icon_descr_more_button">更多</string>
     <string name="show_QR_code">顯示二維碼</string>
@@ -481,9 +481,9 @@
     <string name="smp_servers_use_server_for_new_conn">用於新的連接</string>
     <string name="smp_servers_invalid_address">無效的伺服器地址！</string>
     <string name="smp_servers_per_user">此伺服器用於你目前的個人檔案</string>
-    <string name="use_simplex_chat_servers__question">使用 SimpleX Chat 伺服器？</string>
+    <string name="use_simplex_chat_servers__question">使用 Inqalaab 伺服器？</string>
     <string name="your_SMP_servers">你的 SMP 伺服器</string>
-    <string name="using_simplex_chat_servers">目前使用 SimpleX Chat 伺服器。</string>
+    <string name="using_simplex_chat_servers">目前使用 Inqalaab 伺服器。</string>
     <string name="how_to">如何</string>
     <string name="configure_ICE_servers">配置 ICE 伺服器</string>
     <string name="saved_ICE_servers_will_be_removed">已儲存的 WebRTC ICE 伺服器將移除。</string>
@@ -492,7 +492,7 @@
     <string name="network_use_onion_hosts_required">需要</string>
     <string name="network_use_onion_hosts_prefer_desc">Onion 主機會在可用時啟用。</string>
     <string name="delete_address__question">刪除地址？</string>
-    <string name="your_profile_is_stored_on_device_and_shared_only_with_contacts_simplex_cannot_see_it">你的個人檔案只會儲存於你的裝置和只會分享給你的聯絡人。 SimpleX 伺服器並不會看到你的個人檔案。</string>
+    <string name="your_profile_is_stored_on_device_and_shared_only_with_contacts_simplex_cannot_see_it">你的個人檔案只會儲存於你的裝置和只會分享給你的聯絡人。 Inqalaab 伺服器並不會看到你的個人檔案。</string>
     <string name="save_and_notify_contact">儲存並通知你的聯絡人</string>
     <string name="save_and_notify_contacts">儲存並通知你的多個聯絡人</string>
     <string name="your_profile_is_stored_on_your_device">你的個人檔案，聯絡人和傳送的訊息只會儲存於你的個人裝置內。</string>
@@ -516,7 +516,7 @@
     <string name="we_do_not_store_contacts_or_messages_on_servers">我們不會在伺服器內儲存你的任何聯絡人和訊息（一旦傳送）。</string>
     <string name="create_profile">建立個人檔案</string>
     <string name="callstate_received_confirmation">已確認回應…</string>
-    <string name="you_can_connect_to_simplex_chat_founder"><![CDATA[你可以透過 <font color="#0088ff">連接到 SimpleX Chat 開發人員提出任何問題並同意更新</font>。]]></string>
+    <string name="you_can_connect_to_simplex_chat_founder"><![CDATA[你可以透過 <font color="#1E8E3E">連接到 Inqalaab 開發人員提出任何問題並同意更新</font>。]]></string>
     <string name="to_start_a_new_chat_help_header">開啟新的對話</string>
     <string name="set_contact_name">設定聯絡人名稱</string>
     <string name="you_invited_a_contact">你已邀請了你的聯絡人</string>
@@ -531,11 +531,11 @@
     <string name="to_verify_compare">為了和你的聯絡人驗認端對端加密，請比較（或掃描）你本機上的代碼。</string>
     <string name="is_verified">%s 已驗證</string>
     <string name="is_not_verified">%s 並未驗證</string>
-    <string name="your_simplex_contact_address">你的 SimpleX 聯絡地址</string>
+    <string name="your_simplex_contact_address">你的 Inqalaab 聯絡地址</string>
     <string name="your_chat_profiles">你的個人檔案</string>
     <string name="database_passphrase_and_export">資料庫密碼和匯出</string>
     <string name="send_us_an_email">傳送電郵</string>
-    <string name="chat_lock">SimpleX 鎖定</string>
+    <string name="chat_lock">Inqalaab 鎖定</string>
     <string name="smp_servers">SMP 伺服器</string>
     <string name="smp_servers_preset_address">預設伺服器地址</string>
     <string name="smp_servers_test_server">測試伺服器</string>
@@ -556,7 +556,7 @@
     <string name="no_call_on_lock_screen">停用</string>
     <string name="icon_descr_call_missed">已錯過通話</string>
     <string name="open_verb">開啟</string>
-    <string name="open_simplex_chat_to_accept_call">開啟  SimpleX Chat 以接受通話</string>
+    <string name="open_simplex_chat_to_accept_call">開啟  Inqalaab 以接受通話</string>
     <string name="icon_descr_call_rejected">已拒絕通話</string>
     <string name="show_call_on_lock_screen">顯示</string>
     <string name="icon_descr_call_connecting">連接通話中</string>
@@ -605,7 +605,7 @@
     <string name="voice_messages">語音訊息</string>
     <string name="feature_offered_item_with_param">已提供 %s: %2s</string>
     <string name="v4_2_security_assessment">安全性評估</string>
-    <string name="v4_2_security_assessment_desc">SimpleX Chat 的安全性由 Trail of Bits 審核。</string>
+    <string name="v4_2_security_assessment_desc">Inqalaab 的安全性由 Trail of Bits 審核。</string>
     <string name="v4_2_group_links">群組連結</string>
     <string name="v4_5_multiple_chat_profiles">多個個人檔案</string>
     <string name="v4_5_multiple_chat_profiles_descr">不同的名稱、頭像和傳輸隔離。</string>
@@ -668,7 +668,7 @@
     <string name="settings_section_title_device">裝置</string>
     <string name="settings_section_title_help">幫助</string>
     <string name="settings_section_title_settings">設定</string>
-    <string name="settings_section_title_support">幫助 SIMPLEX CHAT</string>
+    <string name="settings_section_title_support">幫助 Inqalaab</string>
     <string name="settings_section_title_chats">聊天</string>
     <string name="settings_developer_tools">開發者工具</string>
     <string name="settings_section_title_socks">SOCKS 代理伺服器</string>
@@ -782,7 +782,7 @@
     <string name="chat_preferences_contact_allows">聯絡人允許</string>
     <string name="ttl_s">%ds</string>
     <string name="onboarding_notifications_mode_title">私人通知</string>
-    <string name="read_more_in_github_with_link"><![CDATA[可在 <font color="#0088ff">GitHub</font>內查看更多。]]></string>
+    <string name="read_more_in_github_with_link"><![CDATA[可在 <font color="#1E8E3E">GitHub</font>內查看更多。]]></string>
     <string name="incoming_video_call">視訊通話來電</string>
     <string name="icon_descr_hang_up">掛斷</string>
     <string name="call_connection_peer_to_peer">點對點</string>
@@ -847,7 +847,7 @@
     <string name="v4_4_french_interface_descr">感謝用戶 - 使用 Weblate 的翻譯貢獻！</string>
     <string name="snd_conn_event_switch_queue_phase_changing_for_member">正在修改聯絡地址為 %s …</string>
     <string name="database_encryption_will_be_updated">受加密的資料庫密碼會再次更新和儲存於金鑰庫。</string>
-    <string name="how_simplex_works">SimpleX 是怎樣運作</string>
+    <string name="how_simplex_works">Inqalaab 是怎樣運作</string>
     <string name="alert_text_skipped_messages_it_can_happen_when">當發生： \n1. 訊息將在傳送至客戶端後兩天或在伺服器內三十天時過時。 \n2. 訊息解密失敗，因為你或你的聯絡人用了舊的資料庫備份 \n3. 連接被破壞。</string>
     <string name="only_client_devices_store_contacts_groups_e2e_encrypted_messages">只有客戶端裝置儲存個人檔案、聯絡人、群組，和訊息。</string>
     <string name="store_passphrase_securely">請放置你的密碼於安全的地方，如果你遺失了密碼，將不可能修改你的密碼。</string>
@@ -863,7 +863,7 @@
     <string name="description_via_one_time_link">透過一次性連結連接</string>
     <string name="network_session_mode_transport_isolation">傳輸隔離</string>
     <string name="update_network_session_mode_question">更新傳輸隔離模式？</string>
-    <string name="to_protect_privacy_simplex_has_ids_for_queues">為了保護你的隱私，SimpleX 對你的每個聯絡人使用不同的 ID。</string>
+    <string name="to_protect_privacy_simplex_has_ids_for_queues">為了保護你的隱私，Inqalaab 對你的每個聯絡人使用不同的 ID。</string>
     <string name="onboarding_notifications_mode_off">當應用程式是運行中</string>
     <string name="allow_accepting_calls_from_lock_screen">透過設定啟用於上鎖畫面顯示來電通知。</string>
     <string name="delete_chat_profile_action_cannot_be_undone_warning">這操作不能還原 - 你目前的個人檔案，聯絡人，訊息和檔案將不可逆地遺失。</string>
@@ -1020,8 +1020,8 @@
     <string name="la_enter_app_passcode">輸入密碼</string>
     <string name="la_no_app_password">沒有應用程式密碼</string>
     <string name="la_lock_mode_passcode">輸入密碼</string>
-    <string name="la_lock_mode">SimpleX 鎖定模式</string>
-    <string name="lock_not_enabled">未啟用 SimpleX 鎖定！</string>
+    <string name="la_lock_mode">Inqalaab 鎖定模式</string>
+    <string name="lock_not_enabled">未啟用 Inqalaab 鎖定！</string>
     <string name="host_verb">主機</string>
     <string name="disable_onion_hosts_when_not_supported"><![CDATA[如果SOCKS 代理不支援它們，請設定 <i>Use .onion hosts</i>為否。]]></string>
     <string name="lock_mode">鎖定模式</string>
@@ -1081,7 +1081,7 @@
     <string name="xftp_servers">XFTP 伺服器</string>
     <string name="la_lock_mode_system">系統認證</string>
     <string name="la_could_not_be_verified">你未能通過認證；請再試一次。</string>
-    <string name="you_can_turn_on_lock">你可以透過設定啟用 SimpleX 鎖定。</string>
+    <string name="you_can_turn_on_lock">你可以透過設定啟用 Inqalaab 鎖定。</string>
     <string name="la_mode_system">系統</string>
     <string name="alert_text_msg_bad_id">此ID的下一則訊息是錯誤（小於或等於上一則的）。
 \n當一些錯誤出現或你的連結被破壞時會發生。</string>
@@ -1094,10 +1094,10 @@
     <string name="submit_passcode">提交</string>
     <string name="opening_database">開啟資料庫中…</string>
     <string name="learn_more">查看更多</string>
-    <string name="simplex_address">SimpleX 聯絡地址</string>
+    <string name="simplex_address">Inqalaab 聯絡地址</string>
     <string name="one_time_link_short">一次性連結</string>
     <string name="theme_colors_section_title">介面顏色</string>
-    <string name="create_simplex_address">建立 SimpleX 的聯絡地址</string>
+    <string name="create_simplex_address">建立 Inqalaab 的聯絡地址</string>
     <string name="profile_update_will_be_sent_to_contacts">更新了的個人檔案將傳送給你的聯絡人。</string>
     <string name="share_address_with_contacts_question">與你的聯絡人分享聯絡地址？</string>
     <string name="share_with_contacts">與你的聯絡人分享</string>
@@ -1108,7 +1108,7 @@
     <string name="dont_create_address">不用建立聯絡地址</string>
     <string name="enter_welcome_message_optional">輸入歡迎訊息… （可選擇的）</string>
     <string name="email_invite_body">你好！ 
-\n透過 SimpleX Chat 來和我連接吧：%s</string>
+\n透過 Inqalaab 來和我連接吧：%s</string>
     <string name="save_auto_accept_settings">儲存自動接受的設定</string>
     <string name="save_settings_question">儲存設定？</string>
     <string name="invite_friends">邀請朋友</string>
@@ -1116,7 +1116,7 @@
     <string name="enter_welcome_message">輸入歡迎訊息…</string>
     <string name="group_welcome_preview">預覽</string>
     <string name="import_theme">匯入主題</string>
-    <string name="theme_simplex">SimpleX</string>
+    <string name="theme_simplex">Inqalaab</string>
     <string name="export_theme">匯出主題</string>
     <string name="import_theme_error">匯入主題時出錯</string>
     <string name="color_secondary">輔助</string>
@@ -1124,7 +1124,7 @@
     <string name="color_received_message">已接收訊息</string>
     <string name="color_sent_message">已傳送訊息</string>
     <string name="color_title">標題</string>
-    <string name="learn_more_about_address">關於 SimpleX 的聯絡地址</string>
+    <string name="learn_more_about_address">關於 Inqalaab 的聯絡地址</string>
     <string name="color_primary_variant">額外的輔色</string>
     <string name="color_secondary_variant">外加的輔助</string>
     <string name="address_section_title">地址</string>
@@ -1134,7 +1134,7 @@
     <string name="dark_theme">黑暗主題</string>
     <string name="error_setting_address">設定聯絡地址時出錯</string>
     <string name="auth_open_chat_profiles">變更聊天個人檔案</string>
-    <string name="read_more_in_user_guide_with_link"><![CDATA[可在 <font color="#0088ff"> 內查看更多關於用戶指南的資料</font>。]]></string>
+    <string name="read_more_in_user_guide_with_link"><![CDATA[可在 <font color="#1E8E3E"> 內查看更多關於用戶指南的資料</font>。]]></string>
     <string name="self_destruct">自毁</string>
     <string name="enabled_self_destruct_passcode">啟用自毀密碼</string>
     <string name="change_self_destruct_passcode">修改自毀密碼</string>
@@ -1160,7 +1160,7 @@
     <string name="your_contacts_will_remain_connected">你的聯絡人會保持連接。</string>
     <string name="all_your_contacts_will_remain_connected_update_sent">你的所有聯絡人會保持連接。更新了的個人檔案將傳送給你的聯絡人。</string>
     <string name="add_address_to_your_profile">新增地址至你的個人檔案，以便你的聯絡人可以與其他人分享。更新了的個人檔案將傳送給你的聯絡人。</string>
-    <string name="email_invite_subject">讓我們在 SimpleX Chat中聊天</string>
+    <string name="email_invite_subject">讓我們在 Inqalaab中聊天</string>
     <string name="import_theme_error_desc">確保檔案具有正確的 YAML 語法。匯出主題以獲得主題檔案結構的範例。</string>
     <string name="message_reactions">訊息反應</string>
     <string name="allow_your_contacts_adding_message_reactions">允許你的聯絡人新增訊息互動。</string>
@@ -1288,7 +1288,7 @@
     <string name="network_smp_proxy_mode_always">總是</string>
     <string name="conn_event_ratchet_sync_started">協調加密中…</string>
     <string name="allow_to_send_files">允許傳送檔案和媒體</string>
-    <string name="allow_to_send_simplex_links">允許傳送 SimpleX 連結</string>
+    <string name="allow_to_send_simplex_links">允許傳送 Inqalaab 連結</string>
     <string name="v5_2_more_things">其他</string>
     <string name="connect_plan_already_connecting">已連接！</string>
     <string name="abort_switch_receiving_address">中止更改地址</string>
@@ -1368,7 +1368,7 @@
     <string name="receipts_groups_enable_keep_overrides">啟用（保留組覆蓋）</string>
     <string name="color_mode_light">淺色</string>
     <string name="chat_theme_apply_to_light_mode">淺色模式</string>
-    <string name="group_members_can_send_simplex_links">成員可以傳送 SimpleX 連結。</string>
+    <string name="group_members_can_send_simplex_links">成員可以傳送 Inqalaab 連結。</string>
     <string name="color_mode_dark">深色</string>
     <string name="servers_info_details">詳情</string>
     <string name="servers_info_subscriptions_section_header">訊息接收</string>
@@ -1702,7 +1702,7 @@
 \n建議重啟應用。</string>
     <string name="loading_remote_file_desc">從已連接行動裝置加載檔案時請稍候片刻</string>
     <string name="or_scan_qr_code">或者掃描QR code</string>
-    <string name="prohibit_sending_simplex_links">禁止傳送 SimpleX 連結</string>
+    <string name="prohibit_sending_simplex_links">禁止傳送 Inqalaab 連結</string>
     <string name="no_selected_chat">沒有已選擇的聊天</string>
     <string name="permissions_open_settings">打開設定</string>
     <string name="settings_section_title_user_theme">這人資料主題</string>
@@ -1840,7 +1840,7 @@
     <string name="chat_item_ttl_year">1 年</string>
     <string name="accept_pending_member_button">接受</string>
     <string name="subscribed">已訂閱</string>
-    <string name="simplex_link_channel">SimpleX 頻道連結</string>
+    <string name="simplex_link_channel">Inqalaab 頻道連結</string>
     <string name="group_members_n">%s、%s，和 %d 名成員</string>
     <string name="group_member_status_pending_approval_short">待處理</string>
     <string name="unlink_desktop">解除連結</string>
@@ -1915,7 +1915,7 @@
     <string name="button_add_team_members">新增團隊成員</string>
     <string name="accept_pending_member_alert_title">接受成員</string>
     <string name="chat_list_add_list">新增清單</string>
-    <string name="system_restricted_background_desc">SimpleX 無法在背景執行。你只有在應用程式執行時才會收到通知。</string>
+    <string name="system_restricted_background_desc">Inqalaab 無法在背景執行。你只有在應用程式執行時才會收到通知。</string>
     <string name="network_session_mode_session">應用程式工作階段</string>
     <string name="display_name_accepted_invitation">已接受邀請</string>
     <string name="failed_to_create_user_invalid_desc">此顯示名稱無效。請選擇另一個名稱。</string>
@@ -1988,7 +1988,7 @@
     <string name="operator_use_operator_toggle_description">使用伺服器</string>
     <string name="network_option_tcp_connection">TCP 連接</string>
     <string name="operator_use_for_sending">用於傳送</string>
-    <string name="simplex_links">SimpleX 連結</string>
+    <string name="simplex_links">Inqalaab 連結</string>
     <string name="admission_stage_review">審核成員</string>
     <string name="delete_member_support_chat_button">刪除聊天</string>
     <string name="reject_pending_member_alert_title">拒絕成員？</string>

@@ -1,0 +1,83 @@
+/* Urdu Localization for Inqalaab - انقلاب */
+
+/* Tab Bar */
+"Chats" = "بات چیت";
+"Safety Hub" = "حفاظتی مرکز";
+"Settings" = "ترتیبات";
+
+/* Onboarding */
+"Welcome to Inqalaab" = "انقلاب میں خوش آمدید";
+"Secure communication for the resistance" = "مزاحمت کے لیے محفوظ مواصلات";
+"Built for Activists" = "سرگرم کارکنوں کے لیے بنایا گیا";
+"Built for activists and journalists facing surveillance" = "نگرانی کا سامنا کرنے والے کارکنوں اور صحافیوں کے لیے بنایا گیا";
+"Community-run servers" = "کمیونٹی سرورز";
+"Your messages never touch corporate infrastructure" = "آپ کے پیغامات کبھی کارپوریٹ انفراسٹرکچر کو نہیں چھوتے";
+"Zero data collection" = "صفر ڈیٹا جمع";
+"We collect absolutely no user data" = "ہم بالکل کوئی صارف ڈیٹا جمع نہیں کرتے";
+"End-to-end encrypted" = "اینڈ ٹو اینڈ انکرپٹڈ";
+"Every message is protected" = "ہر پیغام محفوظ ہے";
+"Our Security Pledge" = "ہمارا حفاظتی عہد";
+"Panic mode for emergencies" = "ایمرجنسی کے لیے پینک موڈ";
+"I Understand" = "میں سمجھتا/سمجھتی ہوں";
+"Continue" = "جاری رکھیں";
+"Get Started" = "شروع کریں";
+
+/* Safety Hub */
+"Server Connection" = "سرور کنکشن";
+"Connected" = "منسلک";
+"Connecting" = "منسلک ہو رہا ہے";
+"Disconnected" = "منقطع";
+"Security Checklist" = "حفاظتی چیک لسٹ";
+"App Lock" = "ایپ لاک";
+"Enabled" = "فعال";
+"Disabled" = "غیر فعال";
+"Screen Protection" = "سکرین تحفظ";
+"Notification Privacy" = "اطلاع رازداری";
+"Disappearing Messages" = "غائب ہونے والے پیغامات";
+"Safety Resources" = "حفاظتی وسائل";
+"Digital Security Guide" = "ڈیجیٹل سیکیورٹی گائیڈ";
+"Anti-Surveillance Tips" = "نگرانی مخالف تجاویز";
+"Emergency Contacts for Activists" = "کارکنوں کے لیے ایمرجنسی رابطے";
+
+/* Panic Mode */
+"Panic Mode" = "پینک موڈ";
+"Configure Panic Mode" = "پینک موڈ ترتیب دیں";
+"Shake device 5 times to activate" = "فعال کرنے کے لیے ڈیوائس کو 5 بار ہلائیں";
+"Delete all data in emergency" = "ایمرجنسی میں تمام ڈیٹا حذف کریں";
+"Panic Trigger" = "پینک ٹرگر";
+"Shake Gesture" = "ہلانے کا اشارہ";
+"Panic Passcode" = "پینک پاس کوڈ";
+"Test Panic Mode" = "پینک موڈ ٹیسٹ کریں";
+
+/* Chat List */
+"Start a secure conversation" = "ایک محفوظ بات چیت شروع کریں";
+"Your conversations are protected with end-to-end encryption" = "آپ کی بات چیت اینڈ ٹو اینڈ انکرپشن سے محفوظ ہے";
+
+/* Common */
+"New chat" = "نئی بات چیت";
+"Contacts" = "رابطے";
+"Profile" = "پروفائل";
+"Delete" = "حذف کریں";
+"Cancel" = "منسوخ کریں";
+"OK" = "ٹھیک ہے";
+"Done" = "ہو گیا";
+"Save" = "محفوظ کریں";
+"Error" = "خرابی";
+"Warning" = "انتباہ";
+"Search" = "تلاش";
+"Share" = "شیئر کریں";
+
+/* call status */
+"connecting call" = "کال سے جڑ رہا ہے…";
+
+/* No comment provided by engineer. */
+"Connecting server…" = "سرور سے جڑ رہا ہے…";
+
+/* No comment provided by engineer. */
+"Connecting server… (error: %@)" = "سرور سے جڑ رہا ہے… (خرابی: %@)";
+
+/* rcv group event chat item */
+"member connected" = "منسلک ہو گیا";
+
+/* No comment provided by engineer. */
+"No group!" = "گروپ نہیں ملا!";

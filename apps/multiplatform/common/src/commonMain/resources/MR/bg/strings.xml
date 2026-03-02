@@ -9,7 +9,7 @@
     <string name="button_add_welcome_message">Добави съобщение при посрещане</string>
     <string name="v5_1_self_destruct_passcode_descr">Всички данни се изтриват при въвеждане.</string>
     <string name="abort_switch_receiving_address">Откажи смяна на адрес</string>
-    <string name="learn_more_about_address">Повече за SimpleX адреса</string>
+    <string name="learn_more_about_address">Повече за Inqalaab адреса</string>
     <string name="users_delete_all_chats_deleted">Всички чатове и съобщения ще бъдат изтрити - това не може да бъде отменено!</string>
     <string name="above_then_preposition_continuation">по-горе, тогава:</string>
     <string name="color_primary">Акцент</string>
@@ -32,11 +32,11 @@
     <string name="abort_switch_receiving_address_desc">Промяната на адреса ще бъде прекъсната. Ще се използва старият адрес за получаване.</string>
     <string name="accept_contact_button">Приеми</string>
     <string name="accept_contact_incognito_button">Приеми инкогнито</string>
-    <string name="about_simplex_chat">За SimpleX Chat</string>
+    <string name="about_simplex_chat">За Inqalaab</string>
     <string name="smp_servers_preset_add">Добави предварително зададени сървъри</string>
     <string name="smp_servers_add_to_another_device">Добави към друго устройство</string>
     <string name="network_settings">Разширени мрежови настройки</string>
-    <string name="about_simplex">За SimpleX</string>
+    <string name="about_simplex">За Inqalaab</string>
     <string name="accept">Приеми</string>
     <string name="accept_call_on_lock_screen">Приеми</string>
     <string name="all_app_data_will_be_cleared">Всички данни от приложението бяха изтрити.</string>
@@ -49,7 +49,7 @@
     <string name="color_primary_variant">Допълнителен акцент</string>
     <string name="v4_2_group_links_desc">Админите могат да създадат линкове за присъединяване към групи.</string>
     <string name="if_you_cannot_meet_in_person_show_QR_in_video_call_or_via_another_channel"><![CDATA[Ако не можете да се срещнете лично, <b>покажете QR кода във видеоразговора</b> или споделете линка.]]></string>
-    <string name="open_simplex_chat_to_accept_call">Отворете SimpleX Chat, за да приемете повикването</string>
+    <string name="open_simplex_chat_to_accept_call">Отворете Inqalaab, за да приемете повикването</string>
     <string name="v4_6_audio_video_calls_descr">Поддръжка на bluetooth и други подобрения.</string>
     <string name="relay_server_protects_ip">Relay сървърът защитава вашия IP адрес, но може да наблюдава продължителността на разговора.</string>
     <string name="periodic_notifications_desc">Приложението изтегля нови съобщения периодично - това използва няколко процента от батерията на ден. Приложението не използва push известия — данни от вашето устройство не се изпращат до сървърите.</string>
@@ -106,7 +106,7 @@
     <string name="if_you_cannot_meet_in_person_scan_QR_in_video_call_or_ask_for_invitation_link"><![CDATA[Ако не можете да се срещнете лично, можете <b>да сканирате QR код във видеоразговора</b> или вашият контакт може да сподели линк за покана.]]></string>
     <string name="notifications_mode_service_desc">Услугата във фонов режим винаги работи – известията ще се показват веднага щом съобщенията са налични.</string>
     <string name="it_can_disabled_via_settings_notifications_still_shown"><![CDATA[<b>Може да бъде деактивирано през настройките</b> – известията ще продължат да се показват, докато приложението работи.]]></string>
-    <string name="ntf_channel_calls">SimpleX Chat разговори</string>
+    <string name="ntf_channel_calls">Inqalaab разговори</string>
     <string name="notifications_mode_periodic">Започва периодично</string>
     <string name="database_initialization_error_title">Базата данни не може да се стартира</string>
     <string name="notification_preview_somebody">Контактът е скрит:</string>
@@ -214,9 +214,9 @@
     <string name="chat_is_stopped_indication">Чатът е спрян</string>
     <string name="v4_4_verify_connection_security_desc">Сравнете кодовете за сигурност с вашите контакти.</string>
     <string name="self_destruct_passcode_enabled">Кодът за достъп за самоунищожение е активиран!</string>
-    <string name="auth_device_authentication_is_disabled_turning_off">Идентификацията на устройството е деактивирано. Изключване на SimpleX заключване.</string>
-    <string name="auth_device_authentication_is_not_enabled_you_can_turn_on_in_settings_once_enabled">Идентификацията на устройството не е активирана. Можете да включите SimpleX заключване през Настройки, след като активирате идентификацията на устройството.</string>
-    <string name="auth_simplex_lock_turned_on">SimpleX заключване е включено</string>
+    <string name="auth_device_authentication_is_disabled_turning_off">Идентификацията на устройството е деактивирано. Изключване на Inqalaab заключване.</string>
+    <string name="auth_device_authentication_is_not_enabled_you_can_turn_on_in_settings_once_enabled">Идентификацията на устройството не е активирана. Можете да включите Inqalaab заключване през Настройки, след като активирате идентификацията на устройството.</string>
+    <string name="auth_simplex_lock_turned_on">Inqalaab заключване е включено</string>
     <string name="connection_error_auth">Грешка при свързване (AUTH)</string>
     <string name="display_name_connecting">свързване…</string>
     <string name="switch_receiving_address">Промени адреса за получаване</string>
@@ -263,16 +263,16 @@
     <string name="la_enter_app_passcode">Въведете kодa за достъп</string>
     <string name="la_no_app_password">Приложението няма kод за достъп</string>
     <string name="la_lock_mode_passcode">Въвеждане на код за достъп</string>
-    <string name="la_notice_title_simplex_lock">SimpleX заключване</string>
+    <string name="la_notice_title_simplex_lock">Inqalaab заключване</string>
     <string name="la_change_app_passcode">Промени kодa за достъп</string>
-    <string name="la_lock_mode">Режим на SimpleX заключване</string>
+    <string name="la_lock_mode">Режим на Inqalaab заключване</string>
     <string name="la_lock_mode_system">Системна идентификация</string>
-    <string name="la_notice_to_protect_your_information_turn_on_simplex_lock_you_will_be_prompted_to_complete_authentication_before_this_feature_is_enabled">За да защитите информацията си, включете SimpleX заключване.
+    <string name="la_notice_to_protect_your_information_turn_on_simplex_lock_you_will_be_prompted_to_complete_authentication_before_this_feature_is_enabled">За да защитите информацията си, включете Inqalaab заключване.
 \nЩе бъдете подканени да извършите идентификация, преди тази функция да бъде активирана.</string>
-    <string name="auth_disable_simplex_lock">Деактивирай SimpleX заключване</string>
-    <string name="auth_enable_simplex_lock">Активирай SimpleX заключване</string>
-    <string name="lock_not_enabled">SimpleX заключване не е активирано!</string>
-    <string name="you_can_turn_on_lock">Можете да включите SimpleX заключване през Настройки.</string>
+    <string name="auth_disable_simplex_lock">Деактивирай Inqalaab заключване</string>
+    <string name="auth_enable_simplex_lock">Активирай Inqalaab заключване</string>
+    <string name="lock_not_enabled">Inqalaab заключване не е активирано!</string>
+    <string name="you_can_turn_on_lock">Можете да включите Inqalaab заключване през Настройки.</string>
     <string name="auth_confirm_credential">Потвърдете вашите идентификационни данни</string>
     <string name="your_chats">Чатове</string>
     <string name="chat_with_developers">Чат с разработчиците</string>
@@ -290,7 +290,7 @@
     <string name="connection_request_sent">Заявката за връзка е изпратена!</string>
     <string name="smp_servers_check_address">Проверете адреса на сървъра и опитайте отново.</string>
     <string name="clear_verification">Изчисти проверката</string>
-    <string name="chat_lock">SimpleX заключване</string>
+    <string name="chat_lock">Inqalaab заключване</string>
     <string name="chat_console">Конзола</string>
     <string name="network_session_mode_user">Чат профил</string>
     <string name="configure_ICE_servers">Конфигурирай ICE сървъри</string>
@@ -358,7 +358,7 @@
     <string name="theme_dark">Тъмна</string>
     <string name="chat_preferences_default">по подразбиране (%s)</string>
     <string name="theme_light">Светла</string>
-    <string name="theme_simplex">SimpleX</string>
+    <string name="theme_simplex">Inqalaab</string>
     <string name="theme_system">Системна</string>
     <string name="theme">Тема</string>
     <string name="contact_preferences">Настройки за контакт</string>
@@ -401,7 +401,7 @@
     <string name="core_version">Версия на ядрото: v%s</string>
     <string name="create_address">Създай адрес</string>
     <string name="create_address_and_let_people_connect">Създайте адрес, за да позволите на хората да се свързват с вас.</string>
-    <string name="create_simplex_address">Създай SimpleX адрес</string>
+    <string name="create_simplex_address">Създай Inqalaab адрес</string>
     <string name="customize_theme_title">Персонализирай темата</string>
     <string name="developer_options">Идентификатори в базата данни и опция за изолация на транспорта.</string>
     <string name="delete_address">Изтрий адрес</string>
@@ -428,7 +428,7 @@
     <string name="v5_1_custom_themes_descr">Персонализирайте и споделяйте цветови теми.</string>
     <string name="custom_time_unit_days">дни</string>
     <string name="choose_file_title">Избери файл</string>
-    <string name="if_you_received_simplex_invitation_link_you_can_open_in_browser">Ако сте получили линк за покана за SimpleX Chat, можете да го отворите във вашия браузър:</string>
+    <string name="if_you_received_simplex_invitation_link_you_can_open_in_browser">Ако сте получили линк за покана за Inqalaab, можете да го отворите във вашия браузър:</string>
     <string name="desktop_scan_QR_code_from_app_via_scan_QR_code"><![CDATA[💻 настолно устройство: сканирай показания QR код от приложението чрез <b>Сканирай QR код</b>.]]></string>
     <string name="delete_pending_connection__question">Изтрий линк за чакаща връзка?</string>
     <string name="icon_descr_email">Електронна поща</string>
@@ -535,7 +535,7 @@
     <string name="v5_2_fix_encryption">Запазете връзките си</string>
     <string name="enable_receipts_all">Активирай</string>
     <string name="simplex_link_mode_description">Описание</string>
-    <string name="simplex_link_invitation">Еднократна покана за SimpleX</string>
+    <string name="simplex_link_invitation">Еднократна покана за Inqalaab</string>
     <string name="display_name_invited_to_connect">покана за свързване</string>
     <string name="smp_server_test_delete_queue">Изтрий опашка</string>
     <string name="smp_server_test_disconnect">Прекъсни връзката</string>
@@ -645,7 +645,7 @@
     <string name="icon_descr_help">помощ</string>
     <string name="settings_section_title_help">ПОМОЩ</string>
     <string name="email_invite_body">Здравей,
-\nСвържи се с мен през SimpleX Chat: %s</string>
+\nСвържи се с мен през Inqalaab: %s</string>
     <string name="group_members_can_add_message_reactions">Членовете могат да добавят реакции към съобщенията.</string>
     <string name="group_members_can_delete">Членовете могат необратимо да изтриват изпратените съобщения. (24 часа)</string>
     <string name="group_members_can_send_voice">Членовете могат да изпращат гласови съобщения.</string>
@@ -762,9 +762,9 @@
     <string name="in_reply_to">В отговор на</string>
     <string name="gallery_image_button">Изображение</string>
     <string name="how_to">Информация</string>
-    <string name="install_simplex_chat_for_terminal">Инсталирай SimpleX Chat за терминал</string>
+    <string name="install_simplex_chat_for_terminal">Инсталирай Inqalaab за терминал</string>
     <string name="how_it_works">Как работи</string>
-    <string name="how_simplex_works">Как работи SimpleX</string>
+    <string name="how_simplex_works">Как работи Inqalaab</string>
     <string name="immune_to_spam_and_abuse">Защитен от спам</string>
     <string name="ignore">Игнорирай</string>
     <string name="button_add_members">Покани членове</string>
@@ -784,7 +784,7 @@
     <string name="mute_chat">Без звук</string>
     <string name="image_descr_qr_code">QR код</string>
     <string name="icon_descr_more_button">Повече</string>
-    <string name="read_more_in_user_guide_with_link"><![CDATA[Прочетете повече в <font color="#0088ff">Ръководство за потребителя</font>.]]></string>
+    <string name="read_more_in_user_guide_with_link"><![CDATA[Прочетете повече в <font color="#1E8E3E">Ръководство за потребителя</font>.]]></string>
     <string name="mark_code_verified">Маркирай като проверено</string>
     <string name="is_not_verified">%s не е потвърдено</string>
     <string name="is_verified">%s е потвърдено</string>
@@ -800,9 +800,9 @@
 \nМоля, обърнете внимание: няма да можете да се свържете със сървърите без .onion адрес.</string>
     <string name="network_use_onion_hosts_prefer_desc">Ще се използват Onion хостове, когато са налични.</string>
     <string name="network_use_onion_hosts_no_desc">Няма се използват Onion хостове.</string>
-    <string name="email_invite_subject">Нека да поговорим в SimpleX Chat</string>
+    <string name="email_invite_subject">Нека да поговорим в Inqalaab</string>
     <string name="password_to_show">Парола за показване</string>
-    <string name="read_more_in_github_with_link"><![CDATA[Прочетете повече в нашето <font color="#0088ff">GitHub хранилище</font>.]]></string>
+    <string name="read_more_in_github_with_link"><![CDATA[Прочетете повече в нашето <font color="#1E8E3E">GitHub хранилище</font>.]]></string>
     <string name="onboarding_notifications_mode_off">Когато приложението работи</string>
     <string name="onboarding_notifications_mode_periodic">Периодично</string>
     <string name="paste_the_link_you_received">Постави получения линк</string>
@@ -943,7 +943,7 @@
     <string name="marked_deleted_description">маркирано като изтрито</string>
     <string name="moderated_description">модерирано</string>
     <string name="moderated_item_description">модерирано от %s</string>
-    <string name="simplex_link_mode_browser_warning">Отварянето на линка в браузъра може да намали поверителността и сигурността на връзката. Несигурните SimpleX линкове ще бъдат червени.</string>
+    <string name="simplex_link_mode_browser_warning">Отварянето на линка в браузъра може да намали поверителността и сигурността на връзката. Несигурните Inqalaab линкове ще бъдат червени.</string>
     <string name="contact_developers">Моля, актуализирайте приложението и се свържете с разработчиците.</string>
     <string name="network_error_desc">Моля, проверете мрежовата си връзка с %1$s и опитайте отново.</string>
     <string name="please_check_correct_link_and_maybe_ask_for_a_new_one">Моля, проверете дали сте използвали правилния линк или поискайте вашия контакт, за да ви изпрати друг.</string>
@@ -954,8 +954,8 @@
     <string name="periodic_notifications_disabled">Периодичните известия са деактивирани!</string>
     <string name="simplex_service_notification_text">Получаване на съобщения…</string>
     <string name="notifications_mode_off">Работи, когато приложението е отворено</string>
-    <string name="simplex_service_notification_title">Simplex Chat услуга</string>
-    <string name="to_preserve_privacy_simplex_has_background_service_instead_of_push_notifications_it_uses_a_few_pc_battery"><![CDATA[За подобряване на поверителността <b>SimpleX работи във фонов режим</b> вместо да използва push известия.]]></string>
+    <string name="simplex_service_notification_title">Inqalaab услуга</string>
+    <string name="to_preserve_privacy_simplex_has_background_service_instead_of_push_notifications_it_uses_a_few_pc_battery"><![CDATA[За подобряване на поверителността <b>Inqalaab работи във фонов режим</b> вместо да използва push известия.]]></string>
     <string name="enter_passphrase_notification_desc">За да получавате известия, моля, въведете паролата на базата данни</string>
     <string name="auth_log_in_using_credential">Влезте с вашите идентификационни данни</string>
     <string name="message_delivery_error_title">Грешка при доставката на съобщението</string>
@@ -1012,7 +1012,7 @@
     <string name="save_servers_button">Запази</string>
     <string name="network_socks_proxy_settings">SOCKS прокси настройки</string>
     <string name="show_developer_options">Покажи опциите за разработчици</string>
-    <string name="save_auto_accept_settings">Запази настройките за SimpleX адрес</string>
+    <string name="save_auto_accept_settings">Запази настройките за Inqalaab адрес</string>
     <string name="save_settings_question">Запази настройките\?</string>
     <string name="save_profile_password">Запази паролата на профила</string>
     <string name="stop_chat_question">Спри чата\?</string>
@@ -1034,9 +1034,9 @@
     <string name="icon_descr_send_message">Изпрати съобщение</string>
     <string name="skip_inviting_button">Пропусни покана на членове</string>
     <string name="info_row_sent_at">Изпратено на</string>
-    <string name="icon_descr_address">SimpleX Адрес</string>
-    <string name="image_descr_simplex_logo">SimpleX Лого</string>
-    <string name="icon_descr_simplex_team">SimpleX Екип</string>
+    <string name="icon_descr_address">Inqalaab Адрес</string>
+    <string name="image_descr_simplex_logo">Inqalaab Лого</string>
+    <string name="icon_descr_simplex_team">Inqalaab Екип</string>
     <string name="smp_servers">SMP сървъри</string>
     <string name="share_address_with_contacts_question">Сподели адреса с контактите\?</string>
     <string name="share_link">Сподели линк</string>
@@ -1092,8 +1092,8 @@
     <string name="color_sent_message">Изпратено съобщение</string>
     <string name="set_group_preferences">Задай групови настройки</string>
     <string name="share_image">Сподели медия…</string>
-    <string name="simplex_address">SimpleX адрес</string>
-    <string name="v4_2_security_assessment_desc">Сигурността на SimpleX Chat беше одитирана от Trail of Bits.</string>
+    <string name="simplex_address">Inqalaab адрес</string>
+    <string name="v4_2_security_assessment_desc">Сигурността на Inqalaab беше одитирана от Trail of Bits.</string>
     <string name="settings_section_title_socks">SOCKS ПРОКСИ</string>
     <string name="settings_restart_app">Рестартиране</string>
     <string name="settings_shutdown">Изключване</string>
@@ -1107,15 +1107,15 @@
     <string name="save_group_profile">Запази профила на групата</string>
     <string name="accept_feature_set_1_day">Задай 1 ден</string>
     <string name="sending_files_not_yet_supported">изпращането на файлове все още не се поддържа</string>
-    <string name="simplex_link_contact">SimpleX адрес за контакт</string>
-    <string name="simplex_link_group">SimpleX групов линк</string>
-    <string name="simplex_link_mode">SimpleX линкове</string>
+    <string name="simplex_link_contact">Inqalaab адрес за контакт</string>
+    <string name="simplex_link_group">Inqalaab групов линк</string>
+    <string name="simplex_link_mode">Inqalaab линкове</string>
     <string name="smp_server_test_secure_queue">Сигурна опашка</string>
     <string name="sender_cancelled_file_transfer">Подателят отмени прехвърлянето на файла.</string>
     <string name="sender_may_have_deleted_the_connection_request">Подателят може да е изтрил заявката за връзка.</string>
     <string name="error_smp_test_server_auth">Сървърът изисква оторизация за създаване на опашки, проверете паролата</string>
     <string name="error_xftp_test_server_auth">Сървърът изисква оторизация за качване, проверете паролата</string>
-    <string name="ntf_channel_messages">SimpleX Chat съобщения</string>
+    <string name="ntf_channel_messages">Inqalaab съобщения</string>
     <string name="save_verb">Запази</string>
     <string name="search_verb">Търсене</string>
     <string name="sent_message">Изпратено съобщение</string>
@@ -1153,7 +1153,7 @@
     <string name="color_title">Заглавие</string>
     <string name="to_share_with_your_contact">(за споделяне с вашия контакт)</string>
     <string name="alert_message_no_group">Тази група вече не съществува.</string>
-    <string name="settings_section_title_support">ПОДКРЕПЕТЕ SIMPLEX CHAT</string>
+    <string name="settings_section_title_support">ПОДКРЕПЕТЕ Inqalaab</string>
     <string name="contact_sent_large_file">Вашият контакт изпрати файл, който е по-голям от поддържания в момента максимален размер (%1$s).</string>
     <string name="in_developing_desc">Тази функция все още не се поддържа. Опитайте следващата версия.</string>
     <string name="tap_to_start_new_chat">Докосни за започване на нов чат</string>
@@ -1180,14 +1180,14 @@
     <string name="this_string_is_not_a_connection_link">Този текст не е линк за връзка!</string>
     <string name="videos_limit_title">Твърде много видеоклипове!</string>
     <string name="messages_section_description">Тази настройка се прилага за съобщения в текущия ви профил</string>
-    <string name="to_protect_privacy_simplex_has_ids_for_queues">За да се защити поверителността, SimpleX използва идентификатори за опашки от съобщения, отделни за всеки от вашите контакти.</string>
+    <string name="to_protect_privacy_simplex_has_ids_for_queues">За да се защити поверителността, Inqalaab използва идентификатори за опашки от съобщения, отделни за всеки от вашите контакти.</string>
     <string name="trying_to_connect_to_server_to_receive_messages">Опит за свързване със сървъра, използван за получаване на съобщения от този контакт.</string>
     <string name="trying_to_connect_to_server_to_receive_messages_with_error">Опит за свързване със сървъра, използван за получаване на съобщения от този контакт (грешка: %1$s).</string>
     <string name="error_smp_test_failed_at_step">Тестът е неуспешен на стъпка %s.</string>
     <string name="database_initialization_error_desc">Базата данни не работи правилно. Докоснете, за да научите повече</string>
     <string name="image_decoding_exception_desc">Изображението не може да бъде декодирано. Моля, опитайте с друго изображение или се свържете с разработчиците.</string>
     <string name="chat_help_tap_button">Докосни бутона</string>
-    <string name="thank_you_for_installing_simplex">Благодарим Ви, че инсталирахте SimpleX Chat!</string>
+    <string name="thank_you_for_installing_simplex">Благодарим Ви, че инсталирахте Inqalaab!</string>
     <string name="save_and_notify_contacts">Запази и уведоми контактите</string>
     <string name="next_generation_of_private_messaging">Бъдещето на комуникацията</string>
     <string name="first_platform_without_user_ids">Няма потребителски идентификатори.</string>
@@ -1202,11 +1202,11 @@
     <string name="you_will_be_connected_when_your_contacts_device_is_online">Ще бъдете свързани, когато устройството на вашия контакт е онлайн, моля, изчакайте или проверете по-късно!</string>
     <string name="you_wont_lose_your_contacts_if_delete_address">Няма да загубите контактите си, ако по-късно изтриете адреса си.</string>
     <string name="your_settings">Настройки</string>
-    <string name="your_simplex_contact_address">SimpleX адрес</string>
+    <string name="your_simplex_contact_address">Inqalaab адрес</string>
     <string name="smp_servers_use_server_for_new_conn">Използвай за нови връзки</string>
     <string name="your_XFTP_servers">Вашите XFTP сървъри</string>
-    <string name="use_simplex_chat_servers__question">Използвай сървърите на SimpleX Chat\?</string>
-    <string name="using_simplex_chat_servers">Използват се сървърите на SimpleX Chat.</string>
+    <string name="use_simplex_chat_servers__question">Използвай сървърите на Inqalaab\?</string>
+    <string name="using_simplex_chat_servers">Използват се сървърите на Inqalaab.</string>
     <string name="your_ICE_servers">Вашите ICE сървъри</string>
     <string name="your_SMP_servers">Вашите SMP сървъри</string>
     <string name="network_socks_toggle_use_socks_proxy">Използвай SOCKS прокси</string>
@@ -1304,13 +1304,13 @@
     <string name="auth_you_will_be_required_to_authenticate_when_you_start_or_resume">Ще трябва да се идентифицирате, когато стартирате или възобновите приложението след 30 секунди във фонов режим.</string>
     <string name="you_are_observer">вие сте наблюдател</string>
     <string name="gallery_video_button">Видео</string>
-    <string name="you_can_connect_to_simplex_chat_founder"><![CDATA[Можете да <font color="#0088ff">се свържете с разработчиците на SimpleX Chat, за да задавате въпроси и да получавате актуализации</font>;.]]></string>
+    <string name="you_can_connect_to_simplex_chat_founder"><![CDATA[Можете да <font color="#1E8E3E">се свържете с разработчиците на Inqalaab, за да задавате въпроси и да получавате актуализации</font>;.]]></string>
     <string name="contact_wants_to_connect_with_you">иска да се свърже с вас!</string>
     <string name="you_can_also_connect_by_clicking_the_link"><![CDATA[Можете също да се свържете, като натиснете върху линка. Ако се отвори в браузъра, натиснете върху бутона <b>Отваряне в мобилно приложение</b>.]]></string>
     <string name="xftp_servers">XFTP сървъри</string>
     <string name="update_network_session_mode_question">Актуализиране на режима на изолация на транспорта\?</string>
     <string name="your_current_profile">Вашият текущ профил</string>
-    <string name="your_profile_is_stored_on_device_and_shared_only_with_contacts_simplex_cannot_see_it">Вашият профил се съхранява на вашето устройство и се споделя само с вашите контакти. SimpleX сървърите не могат да видят вашия профил.</string>
+    <string name="your_profile_is_stored_on_device_and_shared_only_with_contacts_simplex_cannot_see_it">Вашият профил се съхранява на вашето устройство и се споделя само с вашите контакти. Inqalaab сървърите не могат да видят вашия профил.</string>
     <string name="icon_descr_video_off">Видеото е изключено</string>
     <string name="icon_descr_video_on">Видеото е включено</string>
     <string name="webrtc_ice_servers">WebRTC ICE сървъри</string>
@@ -1334,7 +1334,7 @@
     <string name="connect_use_current_profile">Използвай текущия профил</string>
     <string name="paste_the_link_you_received_to_connect_with_your_contact">Поставете линка, който сте получили, за да се свържете с вашия контакт…</string>
     <string name="connect__your_profile_will_be_shared">Вашият профил %1$s ще бъде споделен.</string>
-    <string name="system_restricted_background_desc">SimpleX не може да работи във фонов режим. Ще получавате известията само когато приложението работи.</string>
+    <string name="system_restricted_background_desc">Inqalaab не може да работи във фонов режим. Ще получавате известията само когато приложението работи.</string>
     <string name="system_restricted_background_in_call_desc">Приложението може да се затвори след 1 минута във фонов режим.</string>
     <string name="system_restricted_background_warn"><![CDATA[За да активирате известията, моля, изберете <b>Използване на батерията на приложението</b> / <b>Неограничено</b> в системните настройки на приложението.]]></string>
     <string name="connect_use_new_incognito_profile">Използвай нов инкогнито профил</string>
@@ -1433,7 +1433,7 @@
     <string name="contact_tap_to_connect">Докосни за свързване</string>
     <string name="this_device_name">Името на това устройство</string>
     <string name="connect_plan_you_are_already_in_group_vName"><![CDATA[Вече сте в група <b>%1$s</b>.]]></string>
-    <string name="connect_plan_this_is_your_own_simplex_address">Това е вашият личен SimpleX адрес!</string>
+    <string name="connect_plan_this_is_your_own_simplex_address">Това е вашият личен Inqalaab адрес!</string>
     <string name="loading_remote_file_title">Зареждане на файла</string>
     <string name="connecting_to_desktop">Свързване с настолно устройство</string>
     <string name="found_desktop">Намерено настолно устройство</string>
@@ -1503,7 +1503,7 @@
     <string name="verify_connection">Потвърди връзка</string>
     <string name="no_connected_mobile">Няма свързано мобилно устройство</string>
     <string name="blocked_item_description">блокиран</string>
-    <string name="you_can_make_address_visible_via_settings">Можете да го направите видим за вашите контакти в SimpleX чрез Настройки.</string>
+    <string name="you_can_make_address_visible_via_settings">Можете да го направите видим за вашите контакти в Inqalaab чрез Настройки.</string>
     <string name="recent_history_is_not_sent_to_new_members">Историята не се изпраща на нови членове.</string>
     <string name="retry_verb">Опитай отново</string>
     <string name="camera_not_available">Камерата е неодстъпна</string>
@@ -1513,8 +1513,8 @@
     <string name="error_showing_content">грешка при показване на съдържанието</string>
     <string name="or_show_this_qr_code">Или покажи този код</string>
     <string name="recent_history_is_sent_to_new_members">На новите членове се изпращат до последните 100 съобщения.</string>
-    <string name="code_you_scanned_is_not_simplex_link_qr_code">QR кодът, който сканирахте, не е SimpleX линк за връзка.</string>
-    <string name="the_text_you_pasted_is_not_a_link">Текстът, който поставихте, не е SimpleX линк за връзка.</string>
+    <string name="code_you_scanned_is_not_simplex_link_qr_code">QR кодът, който сканирахте, не е Inqalaab линк за връзка.</string>
+    <string name="the_text_you_pasted_is_not_a_link">Текстът, който поставихте, не е Inqalaab линк за връзка.</string>
     <string name="error_showing_message">грешка при показване на съобщението</string>
     <string name="enable_camera_access">Разреши достъпа до камерата</string>
     <string name="you_can_view_invitation_link_again">Можете да видите отново линкът за покана в подробностите за връзката.</string>
@@ -1532,7 +1532,7 @@
     <string name="tap_to_scan">Докосни за сканиране</string>
     <string name="keep_invitation_link">Запази</string>
     <string name="tap_to_paste_link">Докосни за поставяне на линк за връзка</string>
-    <string name="search_or_paste_simplex_link">Търси или постави SimpleX линк</string>
+    <string name="search_or_paste_simplex_link">Търси или постави Inqalaab линк</string>
     <string name="start_chat_question">Стартирай чата?</string>
     <string name="chat_is_stopped_you_should_transfer_database">Чатът е спрян. Ако вече сте използвали тази база данни на друго устройство, трябва да я прехвърлите обратно, преди да стартирате чата отново.</string>
     <string name="remote_ctrl_error_bad_invitation">Настолното устройство има грешен код за връзка</string>
@@ -1694,7 +1694,7 @@
     <string name="migrate_from_device_check_connection_and_try_again">Проверете вашата интернет връзка и опитайте отново</string>
     <string name="migrate_from_device_archive_will_be_deleted"><![CDATA[<b>Внимание</b>: архивът ще бъде изтрит.]]></string>
     <string name="v5_6_quantum_resistant_encryption_descr">Активиране в личните чатове (БЕТА)!</string>
-    <string name="allow_to_send_simplex_links">Разрешаване на изпращане на SimpleX линкове.</string>
+    <string name="allow_to_send_simplex_links">Разрешаване на изпращане на Inqalaab линкове.</string>
     <string name="forwarded_description">препратено</string>
     <string name="error_showing_desktop_notification">Грешка при показване на известие, свържете се с разработчиците.</string>
     <string name="permissions_open_settings">Отвори настройки</string>
@@ -1704,14 +1704,14 @@
     <string name="network_type_no_network_connection">Няма мрежова връзка</string>
     <string name="network_type_network_wifi">WiFi</string>
     <string name="network_type_ethernet">Кабелен Ethernet</string>
-    <string name="simplex_links_not_allowed">SimpleX линковете не са разрешени</string>
+    <string name="simplex_links_not_allowed">Inqalaab линковете не са разрешени</string>
     <string name="voice_messages_not_allowed">Гласовите съобщения не са разрешени</string>
     <string name="permissions_grant_in_settings">Предоставяне в настройките</string>
     <string name="settings_section_title_network_connection">Мрежова връзка</string>
-    <string name="simplex_links">SimpleX линкове</string>
-    <string name="prohibit_sending_simplex_links">Забранете изпращането на SimpleX линкове</string>
-    <string name="group_members_can_send_simplex_links">Членовете могат да изпращат SimpleX линкове.</string>
-    <string name="simplex_links_are_prohibited_in_group">SimpleX линкове са забранени.</string>
+    <string name="simplex_links">Inqalaab линкове</string>
+    <string name="prohibit_sending_simplex_links">Забранете изпращането на Inqalaab линкове</string>
+    <string name="group_members_can_send_simplex_links">Членовете могат да изпращат Inqalaab линкове.</string>
+    <string name="simplex_links_are_prohibited_in_group">Inqalaab линкове са забранени.</string>
     <string name="feature_enabled_for">Активирано за</string>
     <string name="feature_roles_owners">собственици</string>
     <string name="permissions_camera">Камера</string>
@@ -1985,7 +1985,7 @@
     <string name="v6_0_privacy_blur">Размазване за по-добра поверителност.</string>
     <string name="v6_0_delete_many_messages_descr">Изтрийте до 20 съобщения наведнъж.</string>
     <string name="v6_0_chat_list_media">Възпроизвеждане от чат списъка.</string>
-    <string name="v6_1_better_security_descr">SimpleX протоколите, прегледани от Trail of Bits.</string>
+    <string name="v6_1_better_security_descr">Inqalaab протоколите, прегледани от Trail of Bits.</string>
     <string name="v6_1_better_security">По-добра сигурност ✅</string>
     <string name="compose_save_messages_n">%1$s съобщения се запазват</string>
     <string name="keep_conversation">Запази разговора</string>
@@ -2001,7 +2001,7 @@
     <string name="chat_database_exported_not_all_files">Някои файлове не са били експортирани</string>
     <string name="chat_database_exported_title">Базата данни е експортирана</string>
     <string name="error_parsing_uri_title">Невалиден линк</string>
-    <string name="error_parsing_uri_desc">Моля, проверете, че SimpleX линкът е правилен.</string>
+    <string name="error_parsing_uri_desc">Моля, проверете, че Inqalaab линкът е правилен.</string>
     <string name="only_delete_conversation">Изтрий само разговора</string>
     <string name="network_socks_proxy">SOCKS прокси</string>
     <string name="v6_0_upgrade_app">Автоматични актуализации на приложението</string>
@@ -2113,14 +2113,14 @@
     <string name="errors_in_servers_configuration">Грешки в конфигурацията на сървърите.</string>
     <string name="connection_error_quota">Недоставени съобщения</string>
     <string name="connection_error_quota_desc">Връзката достигна лимита за недоставени съобщения, вашият контакт може да е офлайн.</string>
-    <string name="share_simplex_address_on_social_media">Сподели SimpleX адресът в социалните мрежи.</string>
+    <string name="share_simplex_address_on_social_media">Сподели Inqalaab адресът в социалните мрежи.</string>
     <string name="connection_security">Сигурност на връзката</string>
     <string name="to_protect_against_your_link_replaced_compare_codes">За да се предпазите от подмяна на вашия линк, можете да сравните кодовете за сигурност на контакта.</string>
     <string name="for_social_media">За социалните мрежи</string>
-    <string name="simplex_address_or_1_time_link">SimpleX адрес или еднократен линк?</string>
+    <string name="simplex_address_or_1_time_link">Inqalaab адрес или еднократен линк?</string>
     <string name="create_1_time_link">Създай еднократен линк</string>
     <string name="onboarding_network_operators_app_will_use_different_operators">Приложението защитава вашата поверителност, като използва различни оператори за всеки разговор.</string>
-    <string name="onboarding_network_operators_app_will_use_for_routing">Например, ако контактът ви получава съобщения чрез SimpleX Chat сървър, приложението ви ще ги достави чрез Flux сървър.</string>
+    <string name="onboarding_network_operators_app_will_use_for_routing">Например, ако контактът ви получава съобщения чрез Inqalaab сървър, приложението ви ще ги достави чрез Flux сървър.</string>
     <string name="onboarding_choose_server_operators">Сървърни оператори</string>
     <string name="onboarding_network_operators">Мрежови оператори</string>
     <string name="onboarding_network_operators_review_later">Преглед по-късно</string>
@@ -2184,7 +2184,7 @@
     <string name="operator_use_for_messages">Използвай за съобщения</string>
     <string name="direct_messages_are_prohibited">Личните съобщения между членовете са забранени.</string>
     <string name="connect_plan_you_are_already_connected_with_vName"><![CDATA[Вече сте свързани с <b>%1$s</b>.]]></string>
-    <string name="simplex_address_and_1_time_links_are_safe_to_share">SimpleX адресът и еднократните линкове за връзки са безопасни за споделяне чрез всеки месинджър.</string>
+    <string name="simplex_address_and_1_time_links_are_safe_to_share">Inqalaab адресът и еднократните линкове за връзки са безопасни за споделяне чрез всеки месинджър.</string>
     <string name="you_can_set_connection_name_to_remember">Можете да зададете име на връзка, за да запомните с кого е споделена.</string>
     <string name="server_added_to_operator__name">Сървърът е добавен към оператор %s.</string>
     <string name="error_updating_chat_tags">Грешка при актуализирането на чат списъка</string>
@@ -2193,7 +2193,7 @@
     <string name="error_loading_chat_tags">Грешка при зареждането на чат списъка</string>
     <string name="no_chats_in_list">Няма чатове в списъка %s.</string>
     <string name="no_unread_chats">Няма непрочетени чатове</string>
-    <string name="address_creation_instruction">Докосни Създаване на SimpleX адрес в менюто, за да го създадете по-късно.</string>
+    <string name="address_creation_instruction">Докосни Създаване на Inqalaab адрес в менюто, за да го създадете по-късно.</string>
     <string name="no_chats">Няма чатове</string>
     <string name="no_chats_found">Няма намерени чатове</string>
     <string name="chat_list_favorites">Любими</string>
@@ -2256,7 +2256,7 @@
     <string name="business_address">Бизнес адрес</string>
     <string name="leave_chat_question">Напусни чата?</string>
     <string name="appearance_bars_blur_radius">Размазване</string>
-    <string name="onboarding_network_operators_simplex_flux_agreement">SimpleX Chat и Flux сключиха споразумение за включване на управлявани от Flux сървъри в приложението.</string>
+    <string name="onboarding_network_operators_simplex_flux_agreement">Inqalaab и Flux сключиха споразумение за включване на управлявани от Flux сървъри в приложението.</string>
     <string name="operator_conditions_will_be_applied"><![CDATA[Тези условия ще се прилагат и за: <b>%s</b>.]]></string>
     <string name="operators_conditions_will_also_apply"><![CDATA[Тези условия ще се прилагат и за: <b>%s</b>.]]></string>
     <string name="operator_open_conditions">Отвори условията</string>
@@ -2312,7 +2312,7 @@
     <string name="bio_too_large">Биографията е твърде дълга</string>
     <string name="block_members_for_all_question">Блокиране на членовете за всички?</string>
     <string name="chat_banner_business_connection">Бизнес връзка</string>
-    <string name="onboarding_conditions_by_using_you_agree">С използването на SimpleX Chat вие се съгласявате със:\n- изпращане само на легално съдържание в публични групи.\n- уважение към другите потребители – без спам.</string>
+    <string name="onboarding_conditions_by_using_you_agree">С използването на Inqalaab вие се съгласявате със:\n- изпращане само на легално съдържание в публични групи.\n- уважение към другите потребители – без спам.</string>
     <string name="context_user_picker_cant_change_profile_alert_title">Промяната на профила е невъзможна</string>
     <string name="cant_send_message_generic">съобщенията не могат да бъдат изпратени</string>
     <string name="v6_4_1_new_interface_languages_descr">Каталонски, индонезийски, румънски и виетнамски - благодарение на нашите потребители!</string>
@@ -2465,8 +2465,8 @@
     <string name="v6_4_1_short_address_share">Споделете адреса си</string>
     <string name="group_short_descr_field">Кратко описание:</string>
     <string name="short_link_button_text">Кратък линк</string>
-    <string name="v6_4_1_short_address">Кратък SimpleX адрес</string>
-    <string name="simplex_link_channel">Линк за канала на SimpleX</string>
+    <string name="v6_4_1_short_address">Кратък Inqalaab адрес</string>
+    <string name="simplex_link_channel">Линк за канала на Inqalaab</string>
     <string name="report_reason_spam">Спам</string>
     <string name="blocking_reason_spam">Спам</string>
     <string name="chat_banner_connect_to_chat">Докосни Свързване за чат</string>
@@ -2522,7 +2522,7 @@
     <string name="open_to_use_bot">Отвори за използване на бот</string>
     <string name="prohibit_sending_files_and_media">Забрани изпращането на файлове и медия.</string>
     <string name="sanitize_links_toggle">Премахни параметри за проследяване от линковете</string>
-    <string name="simplex_link_relay">SimpleX реле линк</string>
+    <string name="simplex_link_relay">Inqalaab реле линк</string>
     <string name="chat_banner_connect_to_use_bot">Натисни Свързване, за използване на бота</string>
     <string name="cant_send_commands_alert_text">За да изпращате команди, трябва да сте свързани.</string>
 </resources>

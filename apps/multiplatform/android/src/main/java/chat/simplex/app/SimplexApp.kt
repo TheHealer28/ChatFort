@@ -84,6 +84,20 @@ class SimplexApp: Application(), LifecycleEventObserver {
       initChatControllerOnStart()
     }
     ProcessLifecycleOwner.get().lifecycle.addObserver(this@SimplexApp)
+
+    // Inqalaab: Wait for app to be fully ready, then replace servers and clean contacts
+    CoroutineScope(Dispatchers.Default).launch {
+      while (true) {
+        if (appPrefs.onboardingStage.get() == OnboardingStage.OnboardingComplete &&
+            chatModel.chatRunning.value == true &&
+            chatModel.currentUser.value != null) {
+          delay(3000) // Extra buffer for chats list to populate
+          InqalaabServers.configureIfNeeded()
+          break
+        }
+        delay(2000)
+      }
+    }
   }
 
   override fun onStateChanged(source: LifecycleOwner, event: Lifecycle.Event) {

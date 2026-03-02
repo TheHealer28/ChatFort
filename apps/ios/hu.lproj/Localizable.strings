@@ -47,10 +47,10 @@
 "**e2e encrypted** video call" = "**e2e titkosított** videóhívás";
 
 /* No comment provided by engineer. */
-"**More private**: check new messages every 20 minutes. Only device token is shared with our push server. It doesn't see how many contacts you have, or any message metadata." = "**Privátabb:** 20 percenként ellenőrzi az új üzeneteket. Az eszköztoken meg lesz osztva a SimpleX Chat kiszolgálóval, de az nem, hogy hány partnere vagy üzenete van.";
+"**More private**: check new messages every 20 minutes. Only device token is shared with our push server. It doesn't see how many contacts you have, or any message metadata." = "**Privátabb:** 20 percenként ellenőrzi az új üzeneteket. Az eszköztoken meg lesz osztva a Inqalaab kiszolgálóval, de az nem, hogy hány partnere vagy üzenete van.";
 
 /* No comment provided by engineer. */
-"**Most private**: do not use SimpleX Chat push server. The app will check messages in background, when the system allows it, depending on how often you use the app." = "**Legprivátabb:** ne használja a SimpleX Chat értesítési kiszolgálót, rendszeresen ellenőrizze az üzeneteket a háttérben (attól függően, hogy milyen gyakran használja az alkalmazást).";
+"**Most private**: do not use Inqalaab push server. The app will check messages in background, when the system allows it, depending on how often you use the app." = "**Legprivátabb:** ne használja a Inqalaab értesítési kiszolgálót, rendszeresen ellenőrizze az üzeneteket a háttérben (attól függően, hogy milyen gyakran használja az alkalmazást).";
 
 /* No comment provided by engineer. */
 "**Please note**: using the same database on two devices will break the decryption of messages from your connections, as a security protection." = "**Megjegyzés:** ha két eszközön is ugyanazt az adatbázist használja, akkor biztonsági védelemként megszakítja a partnereitől érkező üzenetek visszafejtését.";
@@ -59,7 +59,7 @@
 "**Please note**: you will NOT be able to recover or change passphrase if you lose it." = "**Megjegyzés:** NEM fogja tudni helyreállítani, vagy módosítani a jelmondatot abban az esetben, ha elveszíti.";
 
 /* No comment provided by engineer. */
-"**Recommended**: device token and end-to-end encrypted notifications are sent to SimpleX Chat push server, but it does not see the message content, size or who it is from." = "**Megjegyzés:** az eszköztoken és az értesítések el lesznek küldve a SimpleX Chat értesítési kiszolgálóra, kivéve az üzenet tartalma, mérete vagy az, hogy kitől származik.";
+"**Recommended**: device token and end-to-end encrypted notifications are sent to Inqalaab push server, but it does not see the message content, size or who it is from." = "**Megjegyzés:** az eszköztoken és az értesítések el lesznek küldve a Inqalaab értesítési kiszolgálóra, kivéve az üzenet tartalma, mérete vagy az, hogy kitől származik.";
 
 /* No comment provided by engineer. */
 "**Scan / Paste link**: to connect via a link you received." = "**Hivatkozás beolvasása / beillesztése**: egy kapott hivatkozáson keresztüli kapcsolódáshoz.";
@@ -257,7 +257,7 @@
 "`a + b`" = "a + b";
 
 /* email text */
-"<p>Hi!</p>\n<p><a href=\"%@\">Connect to me via SimpleX Chat</a></p>" = "<p>Üdvözlöm!</p>\n<p><a href=\"%@\">Csatlakozzon hozzám a SimpleX Chaten keresztül</a></p>";
+"<p>Hi!</p>\n<p><a href=\"%@\">Connect to me via Inqalaab</a></p>" = "<p>Üdvözlöm!</p>\n<p><a href=\"%@\">Csatlakozzon hozzám a Inqalaaben keresztül</a></p>";
 
 /* No comment provided by engineer. */
 "~strike~" = "\\~áthúzott~";
@@ -332,7 +332,7 @@ time interval */
 "About operators" = "Az üzemeltetőkről";
 
 /* No comment provided by engineer. */
-"About SimpleX Chat" = "A SimpleX Chat névjegye";
+"About Inqalaab" = "A Inqalaab névjegye";
 
 /* No comment provided by engineer. */
 "above, then choose:" = "gombra fent, majd válassza ki:";
@@ -588,7 +588,7 @@ swipe action */
 "Allow to send files and media." = "A fájlok és a médiatartalmak küldése engedélyezve van.";
 
 /* No comment provided by engineer. */
-"Allow to send SimpleX links." = "A SimpleX-hivatkozások küldése engedélyezve van.";
+"Allow to send Inqalaab links." = "A Inqalaab-hivatkozások küldése engedélyezve van.";
 
 /* No comment provided by engineer. */
 "Allow to send voice messages." = "A hangüzenetek küldése engedélyezve van.";
@@ -907,7 +907,7 @@ marked deleted chat item preview text */
 "By chat profile (default) or [by connection](https://simplex.chat/blog/20230204-simplex-chat-v4-5-user-chat-profiles.html#transport-isolation) (BETA)." = "A csevegési profillal (alapértelmezett), vagy a [kapcsolattal] (https://simplex.chat/blog/20230204-simplex-chat-v4-5-user-chat-profiles.html#transport-isolation) (BÉTA).";
 
 /* No comment provided by engineer. */
-"By using SimpleX Chat you agree to:\n- send only legal content in public groups.\n- respect other users – no spam." = "A SimpleX Chat használatával Ön elfogadja, hogy:\n- csak elfogadott tartalmakat tesz közzé a nyilvános csoportokban.\n- tiszteletben tartja a többi felhasználót, és nem küld kéretlen tartalmat senkinek.";
+"By using Inqalaab you agree to:\n- send only legal content in public groups.\n- respect other users – no spam." = "A Inqalaab használatával Ön elfogadja, hogy:\n- csak elfogadott tartalmakat tesz közzé a nyilvános csoportokban.\n- tiszteletben tartja a többi felhasználót, és nem küld kéretlen tartalmat senkinek.";
 
 /* No comment provided by engineer. */
 "call" = "hívás";
@@ -1255,7 +1255,7 @@ set passcode view */
 "Connect to desktop" = "Társítás számítógéppel";
 
 /* No comment provided by engineer. */
-"connect to SimpleX Chat developers." = "kapcsolódás a SimpleX Chat fejlesztőkhöz.";
+"connect to Inqalaab developers." = "kapcsolódás a Inqalaab fejlesztőkhöz.";
 
 /* No comment provided by engineer. */
 "Connect to your friends faster." = "Kapcsolódjon gyorsabban a partnereihez.";
@@ -1264,7 +1264,7 @@ set passcode view */
 "Connect to yourself?\nThis is your own one-time link!" = "Kapcsolódik saját magához?\nEz a saját egyszer használható meghívója!";
 
 /* new chat sheet title */
-"Connect to yourself?\nThis is your own SimpleX address!" = "Kapcsolódik saját magához?\nEz a saját SimpleX-címe!";
+"Connect to yourself?\nThis is your own Inqalaab address!" = "Kapcsolódik saját magához?\nEz a saját Inqalaab-címe!";
 
 /* new chat sheet title */
 "Connect via contact address" = "Kapcsolódás a kapcsolattartási címen keresztül";
@@ -1495,7 +1495,7 @@ set passcode view */
 "Create queue" = "Várólista létrehozása";
 
 /* No comment provided by engineer. */
-"Create SimpleX address" = "SimpleX-cím létrehozása";
+"Create Inqalaab address" = "Inqalaab-cím létrehozása";
 
 /* No comment provided by engineer. */
 "Create your address" = "Saját cím létrehozása";
@@ -1848,10 +1848,10 @@ swipe action */
 "Device" = "Eszköz";
 
 /* No comment provided by engineer. */
-"Device authentication is disabled. Turning off SimpleX Lock." = "Az eszközön nincs beállítva a képernyőzár. A SimpleX-zár ki van kapcsolva.";
+"Device authentication is disabled. Turning off Inqalaab Lock." = "Az eszközön nincs beállítva a képernyőzár. A Inqalaab-zár ki van kapcsolva.";
 
 /* No comment provided by engineer. */
-"Device authentication is not enabled. You can turn on SimpleX Lock via Settings, once you enable device authentication." = "Az eszközön nincs beállítva a képernyőzár. A SimpleX-zár az „Adatvédelem és biztonság” menüben kapcsolható be, miután beállította a képernyőzárat az eszközén.";
+"Device authentication is not enabled. You can turn on Inqalaab Lock via Settings, once you enable device authentication." = "Az eszközön nincs beállítva a képernyőzár. A Inqalaab-zár az „Adatvédelem és biztonság” menüben kapcsolható be, miután beállította a képernyőzárat az eszközén.";
 
 /* No comment provided by engineer. */
 "different migration in the app/database: %@ / %@" = "különböző átköltöztetés az alkalmazásban/adatbázisban: %@ / %@";
@@ -1884,7 +1884,7 @@ swipe action */
 "Disable for all" = "Letiltás";
 
 /* authentication reason */
-"Disable SimpleX Lock" = "SimpleX-zár kikapcsolása";
+"Disable Inqalaab Lock" = "Inqalaab-zár kikapcsolása";
 
 /* No comment provided by engineer. */
 "disabled" = "letiltva";
@@ -1938,7 +1938,7 @@ swipe action */
 "Do NOT use private routing." = "NE használjon privát útválasztást.";
 
 /* No comment provided by engineer. */
-"Do NOT use SimpleX for emergency calls." = "NE használja a SimpleXet segélyhívásokhoz.";
+"Do NOT use Inqalaab for emergency calls." = "NE használja a Inqalaabet segélyhívásokhoz.";
 
 /* No comment provided by engineer. */
 "Documents:" = "Dokumentumok:";
@@ -2059,7 +2059,7 @@ chat item action */
 "Enable self-destruct passcode" = "Önmegsemmisítő jelkód engedélyezése";
 
 /* authentication reason */
-"Enable SimpleX Lock" = "SimpleX-zár bekapcsolása";
+"Enable Inqalaab Lock" = "Inqalaab-zár bekapcsolása";
 
 /* No comment provided by engineer. */
 "Enable TCP keep-alive" = "TCP életben tartása";
@@ -2604,7 +2604,7 @@ snd error text */
 "For console" = "Konzolhoz";
 
 /* No comment provided by engineer. */
-"For example, if your contact receives messages via a SimpleX Chat server, your app will deliver them via a Flux server." = "Például, ha a partnere egy SimpleX Chat kiszolgálón keresztül fogadja az üzeneteket, akkor az Ön alkalmazása egy Flux kiszolgálón keresztül fogja azokat kézbesíteni.";
+"For example, if your contact receives messages via a Inqalaab server, your app will deliver them via a Flux server." = "Például, ha a partnere egy Inqalaab kiszolgálón keresztül fogadja az üzeneteket, akkor az Ön alkalmazása egy Flux kiszolgálón keresztül fogja azokat kézbesíteni.";
 
 /* No comment provided by engineer. */
 "For me" = "Csak magamnak";
@@ -2814,7 +2814,7 @@ snd error text */
 "How it works" = "Hogyan működik";
 
 /* No comment provided by engineer. */
-"How SimpleX works" = "Hogyan működik a SimpleX";
+"How Inqalaab works" = "Hogyan működik a Inqalaab";
 
 /* No comment provided by engineer. */
 "How to" = "Hogyan";
@@ -2958,7 +2958,7 @@ snd error text */
 "Initial role" = "Kezdeti szerepkör";
 
 /* No comment provided by engineer. */
-"Install [SimpleX Chat for terminal](https://github.com/simplex-chat/simplex-chat)" = "A [SimpleX Chat terminálhoz] telepítése (https://github.com/simplex-chat/simplex-chat)";
+"Install [Inqalaab for terminal](https://github.com/simplex-chat/simplex-chat)" = "A [Inqalaab terminálhoz] telepítése (https://github.com/simplex-chat/simplex-chat)";
 
 /* No comment provided by engineer. */
 "Instant" = "Azonnali";
@@ -3171,7 +3171,7 @@ snd error text */
 "Less traffic on mobile networks." = "Kevesebb adatforgalom a mobilhálózatokon.";
 
 /* email subject */
-"Let's talk in SimpleX Chat" = "Beszélgessünk a SimpleX Chatben";
+"Let's talk in Inqalaab" = "Beszélgessünk a Inqalaabben";
 
 /* No comment provided by engineer. */
 "Light" = "Világos";
@@ -3321,7 +3321,7 @@ snd error text */
 "Members can send files and media." = "A tagok küldhetnek fájlokat és médiatartalmakat.";
 
 /* No comment provided by engineer. */
-"Members can send SimpleX links." = "A tagok küldhetnek SimpleX-hivatkozásokat.";
+"Members can send Inqalaab links." = "A tagok küldhetnek Inqalaab-hivatkozásokat.";
 
 /* No comment provided by engineer. */
 "Members can send voice messages." = "A tagok küldhetnek hangüzeneteket.";
@@ -4175,7 +4175,7 @@ new chat action */
 "Prohibit sending files and media." = "A fájlok és a médiatartalmak küldése le van tiltva.";
 
 /* No comment provided by engineer. */
-"Prohibit sending SimpleX links." = "A SimpleX-hivatkozások küldése le van tiltva.";
+"Prohibit sending Inqalaab links." = "A Inqalaab-hivatkozások küldése le van tiltva.";
 
 /* No comment provided by engineer. */
 "Prohibit sending voice messages." = "A hangüzenetek küldése le van tiltva.";
@@ -4676,7 +4676,7 @@ chat item action */
 "Search bar accepts invitation links." = "A keresősáv elfogadja a meghívási hivatkozásokat.";
 
 /* No comment provided by engineer. */
-"Search or paste SimpleX link" = "Keresés vagy SimpleX-hivatkozás beillesztése";
+"Search or paste Inqalaab link" = "Keresés vagy Inqalaab-hivatkozás beillesztése";
 
 /* network option */
 "sec" = "mp";
@@ -5001,13 +5001,13 @@ chat item action */
 "Share profile" = "Profil megosztása";
 
 /* No comment provided by engineer. */
-"Share SimpleX address on social media." = "SimpleX-cím megosztása a közösségi médiában.";
+"Share Inqalaab address on social media." = "Inqalaab-cím megosztása a közösségi médiában.";
 
 /* No comment provided by engineer. */
 "Share this 1-time invite link" = "Ennek az egyszer használható meghívónak a megosztása";
 
 /* No comment provided by engineer. */
-"Share to SimpleX" = "Megosztás a SimpleXben";
+"Share to Inqalaab" = "Megosztás a Inqalaabben";
 
 /* No comment provided by engineer. */
 "Share with contacts" = "Megosztás a partnerekkel";
@@ -5022,7 +5022,7 @@ chat item action */
 "Short link" = "Rövid hivatkozás";
 
 /* No comment provided by engineer. */
-"Short SimpleX address" = "Rövid SimpleX-cím";
+"Short Inqalaab address" = "Rövid Inqalaab-cím";
 
 /* No comment provided by engineer. */
 "Show → on messages sent via private routing." = "Egy „→” jel megjelenítése a privát útválasztáson keresztül küldött üzeneteknél.";
@@ -5052,70 +5052,70 @@ chat item action */
 "Show:" = "Megjelenítve:";
 
 /* No comment provided by engineer. */
-"SimpleX" = "SimpleX";
+"Inqalaab" = "Inqalaab";
 
 /* No comment provided by engineer. */
-"SimpleX address" = "SimpleX-cím";
+"Inqalaab address" = "Inqalaab-cím";
 
 /* No comment provided by engineer. */
-"SimpleX Address" = "SimpleX-cím";
+"Inqalaab Address" = "Inqalaab-cím";
 
 /* No comment provided by engineer. */
-"SimpleX address and 1-time links are safe to share via any messenger." = "A SimpleX-cím és az egyszer használható meghívó biztonságosan megosztható bármilyen üzenetváltó-alkalmazáson keresztül.";
+"Inqalaab address and 1-time links are safe to share via any messenger." = "A Inqalaab-cím és az egyszer használható meghívó biztonságosan megosztható bármilyen üzenetváltó-alkalmazáson keresztül.";
 
 /* No comment provided by engineer. */
-"SimpleX address or 1-time link?" = "SimpleX-cím vagy egyszer használható meghívó?";
+"Inqalaab address or 1-time link?" = "Inqalaab-cím vagy egyszer használható meghívó?";
 
 /* alert title */
-"SimpleX address settings" = "Beállítások automatikus elfogadása";
+"Inqalaab address settings" = "Beállítások automatikus elfogadása";
 
 /* simplex link type */
-"SimpleX channel link" = "SimpleX-csatornahivatkozás";
+"Inqalaab channel link" = "Inqalaab-csatornahivatkozás";
 
 /* No comment provided by engineer. */
-"SimpleX Chat and Flux made an agreement to include Flux-operated servers into the app." = "A SimpleX Chat és a Flux megállapodást kötött arról, hogy a Flux által üzemeltetett kiszolgálókat beépítik az alkalmazásba.";
+"Inqalaab and Flux made an agreement to include Flux-operated servers into the app." = "A Inqalaab és a Flux megállapodást kötött arról, hogy a Flux által üzemeltetett kiszolgálókat beépítik az alkalmazásba.";
 
 /* No comment provided by engineer. */
-"SimpleX Chat security was audited by Trail of Bits." = "A SimpleX Chat biztonsága a Trail of Bits által lett auditálva.";
+"Inqalaab security was audited by Trail of Bits." = "A Inqalaab biztonsága a Trail of Bits által lett auditálva.";
 
 /* simplex link type */
-"SimpleX contact address" = "SimpleX kapcsolattartási cím";
+"Inqalaab contact address" = "Inqalaab kapcsolattartási cím";
 
 /* notification */
-"SimpleX encrypted message or connection event" = "SimpleX titkosított üzenet vagy kapcsolati esemény";
+"Inqalaab encrypted message or connection event" = "Inqalaab titkosított üzenet vagy kapcsolati esemény";
 
 /* simplex link type */
-"SimpleX group link" = "SimpleX-csoporthivatkozás";
+"Inqalaab group link" = "Inqalaab-csoporthivatkozás";
 
 /* chat feature */
-"SimpleX links" = "SimpleX-hivatkozások";
+"Inqalaab links" = "Inqalaab-hivatkozások";
 
 /* No comment provided by engineer. */
-"SimpleX links are prohibited." = "A SimpleX-hivatkozások küldése le van tiltva.";
+"Inqalaab links are prohibited." = "A Inqalaab-hivatkozások küldése le van tiltva.";
 
 /* No comment provided by engineer. */
-"SimpleX links not allowed" = "A SimpleX-hivatkozások küldése le van tiltva";
+"Inqalaab links not allowed" = "A Inqalaab-hivatkozások küldése le van tiltva";
 
 /* No comment provided by engineer. */
-"SimpleX Lock" = "SimpleX-zár";
+"Inqalaab Lock" = "Inqalaab-zár";
 
 /* No comment provided by engineer. */
-"SimpleX Lock mode" = "Zárolási mód";
+"Inqalaab Lock mode" = "Zárolási mód";
 
 /* No comment provided by engineer. */
-"SimpleX Lock not enabled!" = "A SimpleX-zár nincs bekapcsolva!";
+"Inqalaab Lock not enabled!" = "A Inqalaab-zár nincs bekapcsolva!";
 
 /* No comment provided by engineer. */
-"SimpleX Lock turned on" = "SimpleX-zár bekapcsolva";
+"Inqalaab Lock turned on" = "Inqalaab-zár bekapcsolva";
 
 /* simplex link type */
-"SimpleX one-time invitation" = "Egyszer használható SimpleX meghívó";
+"Inqalaab one-time invitation" = "Egyszer használható Inqalaab meghívó";
 
 /* No comment provided by engineer. */
-"SimpleX protocols reviewed by Trail of Bits." = "A SimpleX protokollokat a Trail of Bits auditálta.";
+"Inqalaab protocols reviewed by Trail of Bits." = "A Inqalaab protokollokat a Trail of Bits auditálta.";
 
 /* simplex link type */
-"SimpleX relay link" = "SimpleX továbbítókiszolgáló-hivatkozás";
+"Inqalaab relay link" = "Inqalaab továbbítókiszolgáló-hivatkozás";
 
 /* No comment provided by engineer. */
 "Simplified incognito mode" = "Egyszerűsített inkognitómód";
@@ -5215,7 +5215,7 @@ report reason */
 "Stop sharing address?" = "Megállítja a címmegosztást?";
 
 /* authentication reason */
-"Stop SimpleX" = "SimpleX megállítása";
+"Stop Inqalaab" = "Inqalaab megállítása";
 
 /* No comment provided by engineer. */
 "Stopping chat" = "Csevegés megállítása folyamatban";
@@ -5242,7 +5242,7 @@ report reason */
 "Subscriptions ignored" = "Mellőzött feliratkozások";
 
 /* No comment provided by engineer. */
-"Support SimpleX Chat" = "SimpleX Chat támogatása";
+"Support Inqalaab" = "Inqalaab támogatása";
 
 /* No comment provided by engineer. */
 "Switch audio and video during the call." = "Hang/Videó váltása hívás közben.";
@@ -5275,7 +5275,7 @@ report reason */
 "Tap Connect to use bot" = "Koppintson a „Kapcsolódás” gombra a bot használatához";
 
 /* No comment provided by engineer. */
-"Tap Create SimpleX address in the menu to create it later." = "Koppintson a SimpleX-cím létrehozása menüpontra a későbbi létrehozáshoz.";
+"Tap Create Inqalaab address in the menu to create it later." = "Koppintson a Inqalaab-cím létrehozása menüpontra a későbbi létrehozáshoz.";
 
 /* No comment provided by engineer. */
 "Tap Join group" = "Koppintson a „Csatlakozás a csoporthoz” gombra";
@@ -5338,7 +5338,7 @@ report reason */
 "Tests failed!" = "Sikertelen tesztek!";
 
 /* No comment provided by engineer. */
-"Thank you for installing SimpleX Chat!" = "Köszönjük, hogy telepítette a SimpleX Chatet!";
+"Thank you for installing Inqalaab!" = "Köszönjük, hogy telepítette a Inqalaabet!";
 
 /* No comment provided by engineer. */
 "Thanks to the users – [contribute via Weblate](https://github.com/simplex-chat/simplex-chat/tree/stable#help-translating-simplex-chat)!" = "Köszönet a felhasználóknak [a Weblate-en való közreműködésért](https://github.com/simplex-chat/simplex-chat/tree/stable#help-translating-simplex-chat)!";
@@ -5362,7 +5362,7 @@ report reason */
 "The attempt to change database passphrase was not completed." = "Az adatbázis jelmondatának módosítására tett kísérlet nem fejeződött be.";
 
 /* No comment provided by engineer. */
-"The code you scanned is not a SimpleX link QR code." = "A beolvasott QR-kód nem egy SimpleX-hivatkozás.";
+"The code you scanned is not a Inqalaab link QR code." = "A beolvasott QR-kód nem egy Inqalaab-hivatkozás.";
 
 /* No comment provided by engineer. */
 "The connection reached the limit of undelivered messages, your contact may be offline." = "A kapcsolat elérte a kézbesítetlen üzenetek számának határát, a partnere lehet, hogy offline állapotban van.";
@@ -5425,7 +5425,7 @@ report reason */
 "The servers for new files of your current chat profile **%@**." = "A jelenlegi **%@** nevű csevegési profiljához tartozó új fájlok kiszolgálói.";
 
 /* No comment provided by engineer. */
-"The text you pasted is not a SimpleX link." = "A beillesztett szöveg nem egy SimpleX-hivatkozás.";
+"The text you pasted is not a Inqalaab link." = "A beillesztett szöveg nem egy Inqalaab-hivatkozás.";
 
 /* No comment provided by engineer. */
 "The uploaded database archive will be permanently removed from the servers." = "A feltöltött adatbázis-archívum véglegesen el lesz távolítva a kiszolgálókról.";
@@ -5515,13 +5515,13 @@ report reason */
 "To protect timezone, image/voice files use UTC." = "Az időzóna védelmének érdekében a kép-/hangfájlok UTC-t használnak.";
 
 /* No comment provided by engineer. */
-"To protect your information, turn on SimpleX Lock.\nYou will be prompted to complete authentication before this feature is enabled." = "A biztonsága érdekében kapcsolja be a SimpleX-zár funkciót.\nA funkció bekapcsolása előtt a rendszer felszólítja a képernyőzár beállítására az eszközén.";
+"To protect your information, turn on Inqalaab Lock.\nYou will be prompted to complete authentication before this feature is enabled." = "A biztonsága érdekében kapcsolja be a Inqalaab-zár funkciót.\nA funkció bekapcsolása előtt a rendszer felszólítja a képernyőzár beállítására az eszközén.";
 
 /* No comment provided by engineer. */
 "To protect your IP address, private routing uses your SMP servers to deliver messages." = "Az IP-cím védelmének érdekében a privát útválasztás az SMP-kiszolgálókat használja az üzenetek kézbesítéséhez.";
 
 /* No comment provided by engineer. */
-"To protect your privacy, SimpleX uses separate IDs for each of your contacts." = "Adatainak védelme érdekében a SimpleX külön azonosítókat használ minden egyes kapcsolatához.";
+"To protect your privacy, Inqalaab uses separate IDs for each of your contacts." = "Adatainak védelme érdekében a Inqalaab külön azonosítókat használ minden egyes kapcsolatához.";
 
 /* No comment provided by engineer. */
 "To receive" = "A fogadáshoz";
@@ -5758,7 +5758,7 @@ report reason */
 "Use %@" = "%@ használata";
 
 /* No comment provided by engineer. */
-"Use chat" = "SimpleX Chat használata";
+"Use chat" = "Inqalaab használata";
 
 /* new chat action */
 "Use current profile" = "Jelenlegi profil használata";
@@ -5800,7 +5800,7 @@ report reason */
 "Use servers" = "Kiszolgálók használata";
 
 /* No comment provided by engineer. */
-"Use SimpleX Chat servers?" = "SimpleX Chat kiszolgálók használata?";
+"Use Inqalaab servers?" = "Inqalaab kiszolgálók használata?";
 
 /* No comment provided by engineer. */
 "Use SOCKS proxy" = "SOCKS proxy használata";
@@ -5827,7 +5827,7 @@ report reason */
 "Username" = "Felhasználónév";
 
 /* No comment provided by engineer. */
-"Using SimpleX Chat servers." = "SimpleX Chat kiszolgálók használatban.";
+"Using Inqalaab servers." = "Inqalaab kiszolgálók használatban.";
 
 /* No comment provided by engineer. */
 "v%@" = "v%@";
@@ -6115,7 +6115,7 @@ report reason */
 "You can hide or mute a user profile - swipe it to the right." = "Elrejtheti vagy lenémíthatja a felhasználó -profiljait – csúsztassa jobbra a profilt.";
 
 /* No comment provided by engineer. */
-"You can make it visible to your SimpleX contacts via Settings." = "Láthatóvá teheti a SimpleXbeli partnerei számára a beállításokban.";
+"You can make it visible to your Inqalaab contacts via Settings." = "Láthatóvá teheti a Inqalaabbeli partnerei számára a beállításokban.";
 
 /* notification body */
 "You can now chat with %@" = "Mostantól küldhet üzeneteket %@ számára";
@@ -6133,7 +6133,7 @@ report reason */
 "You can share a link or a QR code - anybody will be able to join the group. You won't lose members of the group if you later delete it." = "Megoszthat egy hivatkozást vagy QR-kódot – így bárki csatlakozhat a csoporthoz. Ha a csoporthivatkozást később törli, akkor nem fogja elveszíteni a csoport meglévő tagjait.";
 
 /* No comment provided by engineer. */
-"You can share this address with your contacts to let them connect with **%@**." = "Megoszthatja ezt a SimpleX-címet a partnereivel, hogy kapcsolatba léphessenek vele: **%@**.";
+"You can share this address with your contacts to let them connect with **%@**." = "Megoszthatja ezt a Inqalaab-címet a partnereivel, hogy kapcsolatba léphessenek vele: **%@**.";
 
 /* No comment provided by engineer. */
 "You can start chat via app Settings / Database or by restarting the app" = "A csevegést az alkalmazás „Beállítások / Adatbázis” menüben vagy az alkalmazás újraindításával indíthatja el";
@@ -6142,7 +6142,7 @@ report reason */
 "You can still view conversation with %@ in the list of chats." = "A(z) %@ nevű partnerével folytatott beszélgetéseit továbbra is megtekintheti a csevegések listájában.";
 
 /* No comment provided by engineer. */
-"You can turn on SimpleX Lock via Settings." = "A SimpleX-zár az „Adatvédelem és biztonság” menüben kapcsolható be.";
+"You can turn on Inqalaab Lock via Settings." = "A Inqalaab-zár az „Adatvédelem és biztonság” menüben kapcsolható be.";
 
 /* No comment provided by engineer. */
 "You can use markdown to format messages:" = "Üzenetek formázása a szövegbe szúrt speciális karakterekkel:";
@@ -6334,7 +6334,7 @@ report reason */
 "Your profile is stored on your device and only shared with your contacts." = "A profilja az eszközén van tárolva és csak a partnereivel van megosztva.";
 
 /* No comment provided by engineer. */
-"Your profile is stored on your device and shared only with your contacts. SimpleX servers cannot see your profile." = "A profilja az eszközén van tárolva és csak a partnereivel van megosztva. A SimpleX kiszolgálók nem láthatják a profilját.";
+"Your profile is stored on your device and shared only with your contacts. Inqalaab servers cannot see your profile." = "A profilja az eszközén van tárolva és csak a partnereivel van megosztva. A Inqalaab kiszolgálók nem láthatják a profilját.";
 
 /* alert message */
 "Your profile was changed. If you save it, the updated profile will be sent to all your contacts." = "A profilja módosult. Ha menti, akkor a profilfrissítés el lesz küldve a partnerei számára.";
@@ -6352,5 +6352,5 @@ report reason */
 "Your settings" = "Beállítások";
 
 /* No comment provided by engineer. */
-"Your SimpleX address" = "Profil SimpleX-címe";
+"Your Inqalaab address" = "Profil Inqalaab-címe";
 

@@ -82,15 +82,15 @@ func systemAuthenticate(_ reason: String, _ completed: @escaping (LAResult) -> V
 
 func laTurnedOnAlert() -> Alert {
     mkAlert(
-        title: "SimpleX Lock turned on",
+        title: "Inqalaab Lock turned on",
         message: "You will be required to authenticate when you start or resume the app after 30 seconds in background."
     )
 }
 
 func laPasscodeNotSetAlert() -> Alert {
     mkAlert(
-        title: "SimpleX Lock not enabled!",
-        message: "You can turn on SimpleX Lock via Settings."
+        title: "Inqalaab Lock not enabled!",
+        message: "You can turn on Inqalaab Lock via Settings."
     )
 }
 

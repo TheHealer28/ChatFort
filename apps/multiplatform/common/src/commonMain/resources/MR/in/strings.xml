@@ -8,9 +8,9 @@
     <string name="send_disappearing_message_5_minutes">5 menit</string>
     <string name="clear_chat_warning">Semua pesan akan dihapus - ini tidak bisa dikembalikan! Pesan akan HANYA dihapus untukmu.</string>
     <string name="accept_connection_request__question">Terima permintaan koneksi?</string>
-    <string name="learn_more_about_address">Tentang alamat SimpleX</string>
+    <string name="learn_more_about_address">Tentang alamat Inqalaab</string>
     <string name="add_contact_tab">Tambah kontak</string>
-    <string name="about_simplex">Tentang SimpleX</string>
+    <string name="about_simplex">Tentang Inqalaab</string>
     <string name="alert_text_decryption_error_n_messages_failed_to_decrypt">%1$d pesan gagal terdekripsi.</string>
     <string name="alert_text_fragment_please_report_to_developers">Mohon laporkan ke pengembang.</string>
     <string name="chat_item_ttl_month">1 bulan</string>
@@ -46,7 +46,7 @@
     <string name="network_smp_proxy_mode_always">Selalu</string>
     <string name="settings_section_title_app">APLIKASI</string>
     <string name="appearance_settings">Tampilan</string>
-    <string name="about_simplex_chat">Tentang SimpleX Chat</string>
+    <string name="about_simplex_chat">Tentang Inqalaab</string>
     <string name="accept">Terima</string>
     <string name="accept_call_on_lock_screen">Terima</string>
     <string name="cancel_verb">Batalkan</string>
@@ -102,7 +102,7 @@
     <string name="callstate_connecting">menyambungkan…</string>
     <string name="servers_info_sessions_connecting">Menghubungkan</string>
     <string name="error_parsing_uri_title">Tautan tidak valid</string>
-    <string name="error_parsing_uri_desc">Periksa apakah tautan SimpleX sudah benar.</string>
+    <string name="error_parsing_uri_desc">Periksa apakah tautan Inqalaab sudah benar.</string>
     <string name="connected_to_server_to_receive_messages_from_contact">Anda terhubung ke server yang digunakan untuk menerima pesan dari kontak ini.</string>
     <string name="trying_to_connect_to_server_to_receive_messages_with_error">Mencoba menyambung ke server yang digunakan untuk menerima pesan dari kontak ini (error: %1$s).</string>
     <string name="database_migration_in_progress">Migrasi basis data sedang berlangsung,
@@ -244,7 +244,7 @@
     <string name="no_history">Tidak ada riwayat</string>
     <string name="v5_8_chat_themes">Tema obrolan yang baru</string>
     <string name="all_users">Semua profil</string>
-    <string name="allow_to_send_simplex_links">Izinkan untuk mengirim tautan SimpleX.</string>
+    <string name="allow_to_send_simplex_links">Izinkan untuk mengirim tautan Inqalaab.</string>
     <string name="v5_1_self_destruct_passcode_descr">Semua data akan terhapus jika ini dimasukkan.</string>
     <string name="not_compatible">Tidak kompatibel!</string>
     <string name="new_mobile_device">Perangkat seluler baru</string>
@@ -354,7 +354,7 @@
     <string name="forward_files_not_accepted_receive_files">Unduh</string>
     <string name="forward_multiple">Teruskan pesan…</string>
     <string name="compose_forward_messages_n">Meneruskan %1$s pesan</string>
-    <string name="simplex_links_not_allowed">Tautan SimpleX tidak diizinkan</string>
+    <string name="simplex_links_not_allowed">Tautan Inqalaab tidak diizinkan</string>
     <string name="files_and_media_not_allowed">Berkas dan media tidak diizinkan</string>
     <string name="video_descr">Video</string>
     <string name="icon_descr_waiting_for_video">Menunggu video</string>
@@ -363,7 +363,7 @@
     <string name="new_chat_share_profile">Bagikan profil</string>
     <string name="select_chat_profile">Pilih profil obrolan</string>
     <string name="deleted_chats">Kontak arsipan</string>
-    <string name="code_you_scanned_is_not_simplex_link_qr_code">Kode yang Anda pindai bukan kode QR tautan SimpleX.</string>
+    <string name="code_you_scanned_is_not_simplex_link_qr_code">Kode yang Anda pindai bukan kode QR tautan Inqalaab.</string>
     <string name="to_verify_compare">Untuk memverifikasi enkripsi end-to-end dengan kontak Anda, bandingkan (atau pindai) kode pada perangkat Anda.</string>
     <string name="contact_list_header_title">Kontak Anda</string>
     <string name="scan_code">Pindai kode</string>
@@ -376,13 +376,13 @@
     <string name="smp_servers">Server SMP</string>
     <string name="rate_the_app">Beri nilai aplikasi</string>
     <string name="star_on_github">Bintang di GitHub</string>
-    <string name="use_simplex_chat_servers__question">Gunakan server SimpleX Chat?</string>
+    <string name="use_simplex_chat_servers__question">Gunakan server Inqalaab?</string>
     <string name="your_SMP_servers">Server SMP Anda</string>
     <string name="xftp_servers">Server XFTP</string>
     <string name="network_proxy_auth_mode_username_password">Kredensial Anda mungkin dikirim tidak terenkripsi.</string>
     <string name="network_proxy_username">Username</string>
     <string name="your_XFTP_servers">Server XFTP Anda</string>
-    <string name="using_simplex_chat_servers">Gunakan server SimpleX Chat.</string>
+    <string name="using_simplex_chat_servers">Gunakan server Inqalaab.</string>
     <string name="network_proxy_auth_mode_isolate_by_auth_entity">Gunakan kredensial proxy yang berbeda untuk setiap koneksi.</string>
     <string name="network_proxy_password">Kata sandi</string>
     <string name="network_proxy_port">port %d</string>
@@ -491,7 +491,7 @@
     <string name="disappearing_messages_are_prohibited">Pesan sementara dilarang.</string>
     <string name="ttl_week">%d minggu</string>
     <string name="ttl_weeks">%d minggu</string>
-    <string name="v4_2_security_assessment_desc">Keamanan SimpleX Chat diaudit oleh Trail of Bits.</string>
+    <string name="v4_2_security_assessment_desc">Keamanan Inqalaab diaudit oleh Trail of Bits.</string>
     <string name="v4_2_group_links">Tautan grup</string>
     <string name="v4_2_group_links_desc">Admin dapat membuat tautan untuk gabung ke grup.</string>
     <string name="v4_3_voice_messages_desc">Maks 40 detik, diterima secara instan.</string>
@@ -533,7 +533,7 @@
     <string name="e2ee_info_no_pq"><![CDATA[Pesan, berkas dan panggilan dilindungi oleh <b>enkripsi end-to-end</b> dengan perfect forward secrecy, penolakan dan pemulihan pembobolan.]]></string>
     <string name="simplex_link_mode_browser">Via peramban</string>
     <string name="failed_to_active_user_title">Gagal mengganti profil</string>
-    <string name="simplex_link_mode_browser_warning">Buka tautan di peramban mengurangi privasi dan keamanan koneksi. Tautan SimpleX tidak tepercaya akan berwarna merah.</string>
+    <string name="simplex_link_mode_browser_warning">Buka tautan di peramban mengurangi privasi dan keamanan koneksi. Tautan Inqalaab tidak tepercaya akan berwarna merah.</string>
     <string name="error_saving_smp_servers">Gagal simpan server SMP</string>
     <string name="ensure_smp_server_address_are_correct_format_and_unique">Pastikan alamat server SMP dalam format yang benar, pisahkan baris dan tidak terduplikasi.</string>
     <string name="ensure_xftp_server_address_are_correct_format_and_unique">Pastikan alamat server XFTP dalam format yang benar, pisahkan baris dan tidak terduplikasi.</string>
@@ -565,7 +565,7 @@
     <string name="group_members_can_send_voice">Anggota dapat mengirim pesan suara.</string>
     <string name="message_deletion_prohibited_in_chat">Hapus pesan yang tidak dapat dibatalkan dilarang.</string>
     <string name="direct_messages_are_prohibited_in_group">Pesan pribadi antar anggota dilarang di grup ini.</string>
-    <string name="group_members_can_send_simplex_links">Anggota dapat kirim tautan SimpleX.</string>
+    <string name="group_members_can_send_simplex_links">Anggota dapat kirim tautan Inqalaab.</string>
     <string name="ttl_hours">%d jam</string>
     <string name="ttl_hour">%d jam</string>
     <string name="ttl_day">%d hari</string>
@@ -619,7 +619,7 @@
     <string name="error_initializing_web_view_wrong_arch">Kesalahan saat menginisialisasi WebView. Pastikan Anda telah menginstal WebView dan arsitektur yang didukung adalah arm64.\nKesalahan: %s</string>
     <string name="use_chat">Gunakan obrolan</string>
     <string name="how_it_works">Bagaimana caranya</string>
-    <string name="how_simplex_works">Cara kerja SimpleX</string>
+    <string name="how_simplex_works">Cara kerja Inqalaab</string>
     <string name="onboarding_notifications_mode_periodic">Berkala</string>
     <string name="incoming_audio_call">Panggilan suara masuk</string>
     <string name="encrypted_audio_call">panggilan suara terenkripsi e2e</string>
@@ -645,7 +645,7 @@
     <string name="enable_self_destruct">Aktifkan hapus otomatis</string>
     <string name="set_passcode">Pasang kode sandi</string>
     <string name="settings_section_title_help">BANTUAN</string>
-    <string name="settings_section_title_support">DUKUNG SIMPLEX CHAT</string>
+    <string name="settings_section_title_support">DUKUNG Inqalaab</string>
     <string name="settings_section_title_calls">PANGGILAN</string>
     <string name="restart_the_app_to_create_a_new_chat_profile">Mulai ulang aplikasi untuk buat profil obrolan baru.</string>
     <string name="delete_messages">Hapus pesan</string>
@@ -695,7 +695,7 @@
     <string name="switching_profile_error_message">Koneksi Anda dipindahkan ke %s tetapi gagal saat mengarahkan Anda ke profil.</string>
     <string name="send_us_an_email">Kirim kami email</string>
     <string name="chat_with_the_founder">Kirim pertanyaan dan ide</string>
-    <string name="chat_lock">Kunci SimpleX</string>
+    <string name="chat_lock">Kunci Inqalaab</string>
     <string name="markdown_help">Bantuan Markdown</string>
     <string name="media_and_file_servers">Server media &amp; berkas</string>
     <string name="smp_servers_your_server">Server Anda</string>
@@ -742,7 +742,7 @@
     <string name="session_code">Kode sesi</string>
     <string name="verify_connections">Verifikasi koneksi</string>
     <string name="remote_host_error_timeout"><![CDATA[Batas waktu tercapai saat menghubungkan ke ponsel <b>%s</b>]]></string>
-    <string name="connect_plan_this_is_your_own_simplex_address">Ini adalah alamat SimpleX Anda!</string>
+    <string name="connect_plan_this_is_your_own_simplex_address">Ini adalah alamat Inqalaab Anda!</string>
     <string name="connect_plan_repeat_connection_request">Permintaan koneksi berulang?</string>
     <string name="connect_plan_join_your_group">Gabung ke grup Anda?</string>
     <string name="servers_info_statistics_section_header">Statistik</string>
@@ -775,12 +775,12 @@
     <string name="description_via_contact_address_link">via tautan alamat kontak</string>
     <string name="description_via_contact_address_link_incognito">samaran via tautan alamat kontak</string>
     <string name="description_via_one_time_link">via tautan sekali</string>
-    <string name="simplex_link_contact">Alamat kontak SimpleX</string>
+    <string name="simplex_link_contact">Alamat kontak Inqalaab</string>
     <string name="description_via_one_time_link_incognito">samaran via tautan sekali</string>
     <string name="simplex_link_mode_full">Tautan lengkap</string>
-    <string name="simplex_link_group">Tautan grup SimpleX</string>
-    <string name="simplex_link_mode">Tautan SimpleX</string>
-    <string name="simplex_link_invitation">Undangan sekali SimpleX</string>
+    <string name="simplex_link_group">Tautan grup Inqalaab</string>
+    <string name="simplex_link_mode">Tautan Inqalaab</string>
+    <string name="simplex_link_invitation">Undangan sekali Inqalaab</string>
     <string name="simplex_link_connection">via %1$s</string>
     <string name="error_saving_xftp_servers">Gagal simpan server XFTP</string>
     <string name="failed_to_create_user_invalid_title">Nama tampilan tidak valid!</string>
@@ -811,7 +811,7 @@
     <string name="keep_invitation_link">Simpan</string>
     <string name="keep_unused_invitation_question">Simpan undangan tidak terpakai?</string>
     <string name="you_can_view_invitation_link_again">Anda dapat melihat tautan undangan lagi dalam detail koneksi.</string>
-    <string name="simplex_address">Alamat SimpleX</string>
+    <string name="simplex_address">Alamat Inqalaab</string>
     <string name="or_show_this_qr_code">Atau perlihatkan kode ini</string>
     <string name="scan_code_from_contacts_app">Pindai kode keamanan dari aplikasi kontak Anda.</string>
     <string name="security_code">Kode keamanan</string>
@@ -867,7 +867,7 @@
     <string name="connect_plan_you_are_already_joining_the_group_via_this_link">Anda bergabung dengan grup melalui tautan ini.</string>
     <string name="v4_6_audio_video_calls_descr">Mendukung bluetooth dan peningkatan lainnya.</string>
     <string name="migrate_from_device_archiving_database">Pengarsipan basis data</string>
-    <string name="v6_1_better_security_descr">Protokol SimpleX ditinjau oleh Trail of Bits.</string>
+    <string name="v6_1_better_security_descr">Protokol Inqalaab ditinjau oleh Trail of Bits.</string>
     <string name="v5_1_better_messages_descr">- pesan suara hingga 5 menit.\n- kustom waktu pesan sementara.\n- riwayat edit.</string>
     <string name="feature_enabled_for">Diaktifkan untuk</string>
     <string name="ttl_d">%dh</string>
@@ -875,7 +875,7 @@
     <string name="xftp_servers_other">Server XFTP lainnya</string>
     <string name="network_proxy_auth_mode_isolate_by_auth_user">Gunakan kredensial proksi yang berbeda untuk setiap profil.</string>
     <string name="proxy_destination_error_failed_to_connect">Server penerusan %1$s gagal terhubung ke server tujuan %2$s. Coba lagi nanti.</string>
-    <string name="search_or_paste_simplex_link">Cari atau tempel tautan SimpleX</string>
+    <string name="search_or_paste_simplex_link">Cari atau tempel tautan Inqalaab</string>
     <string name="cannot_share_message_alert_text">Preferensi obrolan yang dipilih melarang pesan ini.</string>
     <string name="attach">Lampiran</string>
     <string name="icon_descr_context">Ikon konteks</string>
@@ -894,9 +894,9 @@
     <string name="paste_button">Tempel</string>
     <string name="retry_verb">Coba lagi</string>
     <string name="connect_via_link">Hubungkan melalui tautan</string>
-    <string name="the_text_you_pasted_is_not_a_link">Teks yang Anda tempel bukan tautan SimpleX.</string>
+    <string name="the_text_you_pasted_is_not_a_link">Teks yang Anda tempel bukan tautan Inqalaab.</string>
     <string name="your_settings">Pengaturan Anda</string>
-    <string name="your_simplex_contact_address">Alamat SimpleX Anda</string>
+    <string name="your_simplex_contact_address">Alamat Inqalaab Anda</string>
     <string name="your_chat_profiles">Profil obrolan Anda</string>
     <string name="smp_servers_configured">Server SMP dikonfigurasi</string>
     <string name="smp_servers_other">Server SMP lainnya</string>
@@ -905,7 +905,7 @@
     <string name="smp_servers_check_address">Periksa alamat server dan coba lagi.</string>
     <string name="subscription_percentage">Tampilkan persentase</string>
     <string name="contribute">Kontribusi</string>
-    <string name="install_simplex_chat_for_terminal">Instal SimpleX Chat untuk terminal</string>
+    <string name="install_simplex_chat_for_terminal">Instal Inqalaab untuk terminal</string>
     <string name="incoming_video_call">Panggilan video masuk</string>
     <string name="rcv_group_event_member_added">mengundang %1$s</string>
     <string name="group_member_role_owner">pemilik</string>
@@ -959,9 +959,9 @@
     <string name="theme_remove_image">Hapus gambar</string>
     <string name="appearance_font_size">Ukuran huruf</string>
     <string name="prohibit_direct_messages">Kirim pesan pribadi ke anggota dilarang.</string>
-    <string name="prohibit_sending_simplex_links">Kirim tautan SimpleX dilarang</string>
+    <string name="prohibit_sending_simplex_links">Kirim tautan Inqalaab dilarang</string>
     <string name="message_reactions_are_prohibited">Reaksi pesan dilarang.</string>
-    <string name="simplex_links_are_prohibited_in_group">Tautan SimpleX dilarang.</string>
+    <string name="simplex_links_are_prohibited_in_group">Tautan Inqalaab dilarang.</string>
     <string name="network_session_mode_server">Server</string>
     <string name="network_smp_proxy_mode_unprotected">Tak terlindungi</string>
     <string name="network_session_mode_session">Sesi aplikasi</string>
@@ -983,9 +983,9 @@
     <string name="create_address">Buat alamat</string>
     <string name="developer_options">ID Basis Data dan Opsi Isolasi Transport.</string>
     <string name="callstatus_missed">panggilan tak terjawab</string>
-    <string name="you_can_make_address_visible_via_settings">Anda dapat membuatnya terlihat oleh kontak SimpleX Anda melalui Pengaturan.</string>
+    <string name="you_can_make_address_visible_via_settings">Anda dapat membuatnya terlihat oleh kontak Inqalaab Anda melalui Pengaturan.</string>
     <string name="invite_friends_short">Undang</string>
-    <string name="email_invite_body">Hai!\nHubungi saya melalui SimpleX Chat: %s</string>
+    <string name="email_invite_body">Hai!\nHubungi saya melalui Inqalaab: %s</string>
     <string name="confirm_password">Konfirmasi kata sandi</string>
     <string name="callstatus_error">panggilan gagal</string>
     <string name="callstate_waiting_for_answer">menunggu jawaban…</string>
@@ -1012,7 +1012,7 @@
     <string name="call_desktop_permission_denied_chrome">Klik tombol info di dekat kolom alamat untuk mengizinkan penggunaan mikrofon.</string>
     <string name="relay_server_protects_ip">Server relai melindungi alamat IP Anda, tetapi dapat mengamati durasi panggilan.</string>
     <string name="call_desktop_permission_denied_safari">Buka Pengaturan Safari / Situs Web / Mikrofon, lalu pilih Izinkan untuk localhost.</string>
-    <string name="open_simplex_chat_to_accept_call">Buka SimpleX Chat untuk terima panggilan</string>
+    <string name="open_simplex_chat_to_accept_call">Buka Inqalaab untuk terima panggilan</string>
     <string name="open_verb">Buka</string>
     <string name="status_e2e_encrypted">terenkripsi e2e</string>
     <string name="call_connection_peer_to_peer">peer-to-peer</string>
@@ -1116,9 +1116,9 @@
     <string name="icon_descr_add_members">Undang anggota</string>
     <string name="theme_system">Sistem</string>
     <string name="theme_light">Terang</string>
-    <string name="theme_simplex">SimpleX</string>
+    <string name="theme_simplex">Inqalaab</string>
     <string name="files_and_media">Berkas dan media</string>
-    <string name="simplex_links">Tautan SimpleX</string>
+    <string name="simplex_links">Tautan Inqalaab</string>
     <string name="recent_history">Perlihat riwayat</string>
     <string name="audio_video_calls">Panggilan suara/video</string>
     <string name="delete_after">Hapus setelah</string>
@@ -1180,8 +1180,8 @@
     <string name="notification_preview_mode_message_desc">Tampilkan kontak dan pesan</string>
     <string name="notification_preview_somebody">Kontak tersembunyi:</string>
     <string name="la_notice_turn_on">Nyalakan</string>
-    <string name="la_lock_mode">Mode Kunci SimpleX</string>
-    <string name="auth_simplex_lock_turned_on">Kunci SimpleX diaktifkan</string>
+    <string name="la_lock_mode">Mode Kunci Inqalaab</string>
+    <string name="auth_simplex_lock_turned_on">Kunci Inqalaab diaktifkan</string>
     <string name="auth_you_will_be_required_to_authenticate_when_you_start_or_resume">Anda akan diminta untuk lakukan autentikasi saat mulai atau lanjutkan aplikasi setelah 30 detik di latar belakang.</string>
     <string name="app_passcode_replaced_with_self_destruct">Kode sandi aplikasi diganti dengan kode sandi hapus otomatis.</string>
     <string name="receipts_section_description_1">Mereka dapat ditimpa dalam pengaturan kontak dan grup.</string>
@@ -1198,10 +1198,10 @@
     <string name="error_deleting_pending_contact_connection">Gagal menghapus koneksi kontak tertunda</string>
     <string name="error_changing_address">Gagal mengubah alamat</string>
     <string name="error_aborting_address_change">Gagal batalkan perubahan alamat</string>
-    <string name="ntf_channel_messages">Pesan SimpleX Chat</string>
+    <string name="ntf_channel_messages">Pesan Inqalaab</string>
     <string name="system_restricted_background_warn"><![CDATA[Untuk aktifkan notifikasi, pilih <b>Penggunaan baterai aplikasi</b> / <b>Tidak dibatasi</b> di pengaturan aplikasi.]]></string>
     <string name="system_restricted_background_in_call_desc">Aplikasi mungkin ditutup setelah 1 menit di latar belakang.</string>
-    <string name="la_notice_to_protect_your_information_turn_on_simplex_lock_you_will_be_prompted_to_complete_authentication_before_this_feature_is_enabled">Untuk melindungi informasi Anda, aktifkan Kunci SimpleX.\nAnda akan diminta untuk menyelesaikan autentikasi sebelum fitur ini aktif.</string>
+    <string name="la_notice_to_protect_your_information_turn_on_simplex_lock_you_will_be_prompted_to_complete_authentication_before_this_feature_is_enabled">Untuk melindungi informasi Anda, aktifkan Kunci Inqalaab.\nAnda akan diminta untuk menyelesaikan autentikasi sebelum fitur ini aktif.</string>
     <string name="la_minutes">%d menit</string>
     <string name="error_showing_desktop_notification">Gagal menampilkan notifikasi, hubungi pengembang.</string>
     <string name="receipts_groups_title_enable">Aktifkan tanda terima untuk grup?</string>
@@ -1225,7 +1225,7 @@
     <string name="service_notifications">Notifikasi instan!</string>
     <string name="service_notifications_disabled">Notifikasi instan dimatikan!</string>
     <string name="periodic_notifications">Notifikasi berkala</string>
-    <string name="system_restricted_background_desc">SimpleX tidak dapat berjalan di latar belakang. Anda hanya menerima notifikasi saat aplikasi berjalan.</string>
+    <string name="system_restricted_background_desc">Inqalaab tidak dapat berjalan di latar belakang. Anda hanya menerima notifikasi saat aplikasi berjalan.</string>
     <string name="call_service_notification_video_call">Panggilan video</string>
     <string name="simplex_service_notification_text">Menerima pesan…</string>
     <string name="settings_notification_preview_mode_title">Lihat pratinjau</string>
@@ -1233,7 +1233,7 @@
     <string name="notifications_mode_service_desc">Layanan latar belakang selalu berjalan – notifikasi selalu menampilkan pesan yang tersedia.</string>
     <string name="notification_preview_mode_contact_desc">Tampilkan hanya kontak</string>
     <string name="notification_display_mode_hidden_desc">Sembunyikan kontak dan pesan</string>
-    <string name="la_notice_title_simplex_lock">Kunci SimpleX</string>
+    <string name="la_notice_title_simplex_lock">Kunci Inqalaab</string>
     <string name="la_lock_mode_system">Autentikasi sistem</string>
     <string name="la_auth_failed">Autentikasi gagal</string>
     <string name="la_lock_mode_passcode">Entri kode sandi</string>
@@ -1245,7 +1245,7 @@
     <string name="smp_proxy_error_broker_host">Alamat server penerusan tidak kompatibel dengan pengaturan jaringan: %1$s.</string>
     <string name="smp_server_test_upload_file">Unggah berkas</string>
     <string name="possible_slow_function_desc">Eksekusi fungsi memakan waktu terlalu lama: %1$d detik: %2$s</string>
-    <string name="ntf_channel_calls">Panggilan SimpleX Chat</string>
+    <string name="ntf_channel_calls">Panggilan Inqalaab</string>
     <string name="network_error_broker_host_desc">Alamat server tidak kompatibel dengan pengaturan jaringan: %1$s.</string>
     <string name="error_smp_test_failed_at_step">Uji gagal pada langkah %s.</string>
     <string name="la_seconds">%d detik</string>
@@ -1265,9 +1265,9 @@
     <string name="error_xftp_test_server_auth">Server perlu otorisasi untuk mengunggah, periksa kata sandi</string>
     <string name="smp_server_test_create_queue">Buat antrian</string>
     <string name="it_can_disabled_via_settings_notifications_still_shown"><![CDATA[<b>Dapat dimatikan melalui pengaturan</b> – notifikasi akan tetap ditampilkan saat aplikasi berjalan.]]></string>
-    <string name="to_preserve_privacy_simplex_has_background_service_instead_of_push_notifications_it_uses_a_few_pc_battery"><![CDATA[Untuk tingkatkan privasi, <b>SimpleX berjalan di latar belakang</b> alih-alih gunakan notifikasi push.]]></string>
+    <string name="to_preserve_privacy_simplex_has_background_service_instead_of_push_notifications_it_uses_a_few_pc_battery"><![CDATA[Untuk tingkatkan privasi, <b>Inqalaab berjalan di latar belakang</b> alih-alih gunakan notifikasi push.]]></string>
     <string name="periodic_notifications_desc">Aplikasi terima pesan baru secara berkala — aplikasi ini memakai beberapa persen baterai per hari. Aplikasi ini tidak gunakan notifikasi push — data dari perangkat tidak dikirim ke server.</string>
-    <string name="simplex_service_notification_title">Layanan SimpleX Chat</string>
+    <string name="simplex_service_notification_title">Layanan Inqalaab</string>
     <string name="notification_preview_mode_contact">Nama kontak</string>
     <string name="la_enter_app_passcode">Masukkan Kode Sandi</string>
     <string name="la_current_app_passcode">Kode Sandi Saat Ini</string>
@@ -1398,7 +1398,7 @@
     <string name="confirm_delete_contact_question">Konfirmasi hapus kontak?</string>
     <string name="send_disappearing_message_custom_time">Waktu kustom</string>
     <string name="choose_file_title">Pilih berkas</string>
-    <string name="you_can_connect_to_simplex_chat_founder"><![CDATA[Anda dapat <font color="#0088ff">terhubung ke pengembang SimpleX Chat untuk mengajukan pertanyaan dan menerima pembaruan</font>.]]></string>
+    <string name="you_can_connect_to_simplex_chat_founder"><![CDATA[Anda dapat <font color="#1E8E3E">terhubung ke pengembang Inqalaab untuk mengajukan pertanyaan dan menerima pembaruan</font>.]]></string>
     <string name="clear_chat_question">Hapus obrolan?</string>
     <string name="network_proxy_auth_mode_no_auth">Jangan gunakan kredensial dengan proxy.</string>
     <string name="disable_onion_hosts_when_not_supported"><![CDATA[Atur <i>Gunakan host .onion</i> ke Tidak jika proxy SOCKS tidak mendukung.]]></string>
@@ -1529,11 +1529,11 @@
     <string name="connecting_to_desktop">Menghubungkan ke desktop</string>
     <string name="desktop_app_version_is_incompatible">Versi aplikasi desktop %s tidak kompatibel dengan aplikasi ini.</string>
     <string name="remote_host_error_bad_state"><![CDATA[Koneksi ponsel <b>%s</b> dalam kondisi buruk]]></string>
-    <string name="auth_device_authentication_is_not_enabled_you_can_turn_on_in_settings_once_enabled">Autentikasi perangkat tidak diaktifkan. Anda dapat aktifkan SimpleX Lock via Pengaturan, setelah mengaktifkan autentikasi perangkat.</string>
+    <string name="auth_device_authentication_is_not_enabled_you_can_turn_on_in_settings_once_enabled">Autentikasi perangkat tidak diaktifkan. Anda dapat aktifkan Inqalaab Lock via Pengaturan, setelah mengaktifkan autentikasi perangkat.</string>
     <string name="auth_unavailable">Autentikasi tidak tersedia</string>
     <string name="auth_confirm_credential">Konfirmasi kredensial Anda</string>
-    <string name="auth_device_authentication_is_disabled_turning_off">Autentikasi perangkat mati. Matikan SimpleX Lock.</string>
-    <string name="auth_disable_simplex_lock">Matikan Kunci SimpleX</string>
+    <string name="auth_device_authentication_is_disabled_turning_off">Autentikasi perangkat mati. Matikan Inqalaab Lock.</string>
+    <string name="auth_disable_simplex_lock">Matikan Kunci Inqalaab</string>
     <string name="snd_error_relay">Kesalahan server tujuan: %1$s</string>
     <string name="delete_and_notify_contact">Hapus dan beritahu kontak</string>
     <string name="button_delete_contact">Hapus kontak</string>
@@ -1549,7 +1549,7 @@
     <string name="icon_descr_close_button">Tombol tutup</string>
     <string name="icon_descr_email">Email</string>
     <string name="if_you_cannot_meet_in_person_scan_QR_in_video_call_or_ask_for_invitation_link"><![CDATA[Jika Anda tidak dapat bertemu langsung, Anda dapat <b>pindai kode QR dalam panggilan video</b>, atau kontak Anda dapat bagikan tautan undangan.]]></string>
-    <string name="read_more_in_user_guide_with_link"><![CDATA[Lebih lanjut di <font color="#0088ff">Panduan Pengguna</font>.]]></string>
+    <string name="read_more_in_user_guide_with_link"><![CDATA[Lebih lanjut di <font color="#1E8E3E">Panduan Pengguna</font>.]]></string>
     <string name="enable_receipts_all">Aktifkan</string>
     <string name="onboarding_network_operators_cant_see_who_talks_to_whom">Ketika lebih dari satu operator diaktifkan, tidak satupun dari mereka memiliki metadata untuk mengetahui siapa yang berkomunikasi.</string>
     <string name="chat_is_running">Obrolan sedang berjalan</string>
@@ -1591,11 +1591,11 @@
     <string name="onboarding_notifications_mode_service_desc_short">Aplikasi selalu berjalan di latar belakang</string>
     <string name="onboarding_notifications_mode_periodic_desc_short">Periksa pesan setiap 10 menit</string>
     <string name="onboarding_select_network_operators_to_use">Pilih operator jaringan yang akan digunakan.</string>
-    <string name="onboarding_network_operators_app_will_use_for_routing">Misalnya, jika kontak Anda menerima pesan melalui server SimpleX Chat, aplikasi Anda akan mengirimkannya melalui server Flux.</string>
+    <string name="onboarding_network_operators_app_will_use_for_routing">Misalnya, jika kontak Anda menerima pesan melalui server Inqalaab, aplikasi Anda akan mengirimkannya melalui server Flux.</string>
     <string name="how_it_helps_privacy">Bagaimana ini membantu privasi</string>
     <string name="onboarding_network_operators_continue">Lanjutkan</string>
     <string name="onboarding_network_operators_configure_via_settings">Anda dapat konfigurasi server di pengaturan.</string>
-    <string name="read_more_in_github_with_link"><![CDATA[Lebih lengkap di <font color="#0088ff">repositori GitHub</font> kami.]]></string>
+    <string name="read_more_in_github_with_link"><![CDATA[Lebih lengkap di <font color="#1E8E3E">repositori GitHub</font> kami.]]></string>
     <string name="onboarding_network_operators_review_later">Nilai nanti</string>
     <string name="onboarding_network_operators_update">Perbarui</string>
     <string name="migrate_to_device_downloading_details">Rincian tautan unduhan</string>
@@ -1603,7 +1603,7 @@
     <string name="network_session_mode_entity_description"><![CDATA[Koneksi TCP terpisah (dan kredensial SOCKS) akan digunakan <b>untuk setiap kontak dan anggota grup</b>.\n<b>Harap diperhatikan</b>: jika Anda memiliki banyak koneksi, konsumsi baterai dan lalu lintas dapat jauh lebih tinggi dan beberapa koneksi mungkin gagal.]]></string>
     <string name="app_check_for_updates_download_started">Mengunduh pembaruan aplikasi, jangan tutup aplikasi</string>
     <string name="app_check_for_updates_notice_disable">Mati</string>
-    <string name="create_simplex_address">Buat alamat SimpleX</string>
+    <string name="create_simplex_address">Buat alamat Inqalaab</string>
     <string name="create_address_and_let_people_connect">Buat alamat agar orang dapat terhubung dengan Anda.</string>
     <string name="continue_to_next_step">Lanjutkan</string>
     <string name="delete_image">Hapus gambar</string>
@@ -1618,7 +1618,7 @@
     <string name="desktop_address">Alamat desktop</string>
     <string name="desktop_devices">Perangkat desktop</string>
     <string name="onboarding_network_about_operators">Tentang operator</string>
-    <string name="onboarding_network_operators_simplex_flux_agreement">SimpleX Chat dan Flux membuat kesepakatan untuk sertakan server yang dioperasikan Flux ke aplikasi.</string>
+    <string name="onboarding_network_operators_simplex_flux_agreement">Inqalaab dan Flux membuat kesepakatan untuk sertakan server yang dioperasikan Flux ke aplikasi.</string>
     <string name="delete_chat_profile_question">Hapus profil obrolan?</string>
     <string name="chat_is_stopped_you_should_transfer_database">Obrolan dihentikan. Jika Anda sudah gunakan basis data ini di perangkat lain, Anda harus transfer kembali sebelum memulai obrolan.</string>
     <string name="database_passphrase_will_be_updated">Frasa sandi enkripsi basis data akan diperbarui.</string>
@@ -1656,7 +1656,7 @@
     <string name="hide_dev_options">Sembunyikan:</string>
     <string name="for_social_media">Untuk media sosial</string>
     <string name="settings_experimental_features">Fitur eksperimental</string>
-    <string name="auth_enable_simplex_lock">Aktifkan Kunci SimpleX</string>
+    <string name="auth_enable_simplex_lock">Aktifkan Kunci Inqalaab</string>
     <string name="file_error_no_file">Berkas tidak ditemukan - kemungkinan besar telah dihapus atau dibatalkan.</string>
     <string name="file_error_relay">Kesalahan berkas server: %1$s</string>
     <string name="in_reply_to">Balasan untuk</string>
@@ -1737,7 +1737,7 @@
     <string name="file_will_be_received_when_contact_completes_uploading">Berkas akan diterima setelah kontak Anda selesai mengunggah.</string>
     <string name="file_will_be_received_when_contact_is_online">Berkas akan diterima saat kontak Anda online, harap tunggu atau periksa nanti!</string>
     <string name="enable_camera_access">Aktifkan akses kamera</string>
-    <string name="if_you_received_simplex_invitation_link_you_can_open_in_browser">Jika Anda menerima tautan undangan SimpleX Chat, Anda dapat buka di peramban Anda:</string>
+    <string name="if_you_received_simplex_invitation_link_you_can_open_in_browser">Jika Anda menerima tautan undangan Inqalaab, Anda dapat buka di peramban Anda:</string>
     <string name="icon_descr_help">bantuan</string>
     <string name="if_you_cant_meet_in_person">Jika Anda tidak dapat bertemu langsung, tunjukkan kode QR dalam panggilan video, atau bagikan tautan.</string>
     <string name="network_option_enable_tcp_keep_alive">Aktifkan TCP keep-alive</string>
@@ -1881,7 +1881,7 @@
     <string name="switch_receiving_address_desc">Alamat penerima akan diubah ke server lain. Perubahan alamat akan selesai setelah pengirim online.</string>
     <string name="ask_your_contact_to_enable_voice">Minta kontak Anda untuk aktifkan kirim pesan suara.</string>
     <string name="image_descr_profile_image">gambar profil</string>
-    <string name="save_auto_accept_settings">Simpan pengaturan alamat SimpleX</string>
+    <string name="save_auto_accept_settings">Simpan pengaturan alamat Inqalaab</string>
     <string name="share_text_updated_at">Catatan diperbarui pada: %s</string>
     <string name="network_option_seconds_label">dtk</string>
     <string name="bad_desktop_address">Alamat desktop salah</string>
@@ -1949,7 +1949,7 @@
     <string name="agent_critical_error_desc">Harap laporkan ke pengembang:\n%s\n\nDisarankan untuk memulai ulang aplikasi.</string>
     <string name="custom_time_unit_minutes">menit</string>
     <string name="network_session_mode_session_description">Kredensial SOCKS baru akan digunakan setiap kali Anda memulai aplikasi.</string>
-    <string name="email_invite_subject">Mari bicara di SimpleX Chat</string>
+    <string name="email_invite_subject">Mari bicara di Inqalaab</string>
     <string name="save_and_notify_contact">Simpan dan beritahu kontak</string>
     <string name="save_preferences_question">Simpan preferensi?</string>
     <string name="you_can_create_it_later">Anda dapat buat nanti</string>
@@ -2002,7 +2002,7 @@
     <string name="message_deleted_or_not_received_error_desc">Pesan ini telah dihapus atau belum diterima.</string>
     <string name="to_connect_via_link_title">Untuk terhubung via tautan</string>
     <string name="app_check_for_updates_notice_desc">Untuk mendapatkan pemberitahuan tentang rilis baru, aktifkan pemeriksaan berkala untuk versi Stabil atau Beta.</string>
-    <string name="simplex_address_or_1_time_link">Alamat SimpleX atau tautan 1-kali?</string>
+    <string name="simplex_address_or_1_time_link">Alamat Inqalaab atau tautan 1-kali?</string>
     <string name="settings_shutdown">Matikan</string>
     <string name="terminal_always_visible">Lihat konsol di jendela baru</string>
     <string name="user_unmute">Bunyikan</string>
@@ -2024,7 +2024,7 @@
     <string name="we_do_not_store_contacts_or_messages_on_servers">Kami tidak menyimpan kontak atau pesan Anda (setelah terkirim) di server.</string>
     <string name="your_profile_is_stored_on_your_device">Profil, kontak, dan pesan terkirim Anda disimpan di perangkat Anda.</string>
     <string name="the_messaging_and_app_platform_protecting_your_privacy_and_security">Platform perpesanan dan aplikasi yang melindungi privasi dan keamanan Anda.</string>
-    <string name="to_protect_privacy_simplex_has_ids_for_queues">Untuk melindungi privasi Anda, SimpleX gunakan ID terpisah untuk setiap kontak.</string>
+    <string name="to_protect_privacy_simplex_has_ids_for_queues">Untuk melindungi privasi Anda, Inqalaab gunakan ID terpisah untuk setiap kontak.</string>
     <string name="settings_section_title_socks">PROXY SOCKS</string>
     <string name="one_hand_ui_card_title">Alihkan daftar obrolan:</string>
     <string name="upgrade_and_open_chat">Tingkatkan dan buka obrolan</string>
@@ -2099,9 +2099,9 @@
     <string name="video_decoding_exception_desc">Video tidak dapat didekodekan. Silakan coba video lain atau hubungi pengembang.</string>
     <string name="sync_connection_force_desc">Enkripsi berfungsi dan perjanjian enkripsi baru tidak diperlukan. Hal ini dapat mengakibatkan kesalahan koneksi!</string>
     <string name="share_address_publicly">Bagikan alamat secara publik</string>
-    <string name="share_simplex_address_on_social_media">Bagikan alamat SimpleX di media sosial.</string>
+    <string name="share_simplex_address_on_social_media">Bagikan alamat Inqalaab di media sosial.</string>
     <string name="share_1_time_link_with_a_friend">Bagikan tautan 1-kali dengan teman</string>
-    <string name="simplex_address_and_1_time_links_are_safe_to_share">Alamat SimpleX dan tautan 1-kali aman untuk dibagikan ke messenger lain.</string>
+    <string name="simplex_address_and_1_time_links_are_safe_to_share">Alamat Inqalaab dan tautan 1-kali aman untuk dibagikan ke messenger lain.</string>
     <string name="you_can_use_markdown_to_format_messages__prompt">Anda dapat gunakan markdown untuk format pesan:</string>
     <string name="you_will_stop_receiving_messages_from_this_chat_chat_history_will_be_preserved">Anda akan berhenti menerima pesan dari obrolan ini. Riwayat obrolan akan disimpan.</string>
     <string name="operator_use_for_messages">Gunakan untuk pesan</string>
@@ -2117,7 +2117,7 @@
     <string name="moderate_message_will_be_deleted_warning">Pesan akan dihapus untuk semua anggota.</string>
     <string name="verify_code_on_mobile">Verifikasi kode di ponsel</string>
     <string name="you_are_invited_to_group_join_to_connect_with_group_members">Anda diundang ke grup. Bergabung untuk terhubung dengan anggota grup.</string>
-    <string name="your_profile_is_stored_on_device_and_shared_only_with_contacts_simplex_cannot_see_it">Profil Anda disimpan di perangkat dan hanya dibagikan dengan kontak. Server SimpleX tidak dapat melihat profil Anda.</string>
+    <string name="your_profile_is_stored_on_device_and_shared_only_with_contacts_simplex_cannot_see_it">Profil Anda disimpan di perangkat dan hanya dibagikan dengan kontak. Server Inqalaab tidak dapat melihat profil Anda.</string>
     <string name="snd_conn_event_switch_queue_phase_completed_for_member">Anda mengubah alamat untuk %s</string>
     <string name="rcv_group_event_updated_group_profile">profil grup diperbarui</string>
     <string name="rcv_group_event_3_members_connected">%s, %s dan %s terhubung</string>
@@ -2133,7 +2133,7 @@
     <string name="chat_help_tap_button">Tombol ketuk</string>
     <string name="unfavorite_chat">Batal favorit</string>
     <string name="you_invited_a_contact">Anda mengundang kontak</string>
-    <string name="icon_descr_address">Alamat SimpleX</string>
+    <string name="icon_descr_address">Alamat Inqalaab</string>
     <string name="contact_wants_to_connect_with_you">ingin terhubung dengan Anda!</string>
     <string name="show_QR_code">Lihat kode QR</string>
     <string name="share_address_with_contacts_question">Bagikan alamat dengan kontak?</string>
@@ -2149,11 +2149,11 @@
     <string name="you_need_to_allow_to_send_voice">Anda perlu mengizinkan kontak mengirim pesan suara agar dapat mengirimkannya.</string>
     <string name="to_share_with_your_contact">(untuk dibagikan dengan kontak Anda)</string>
     <string name="tap_to_scan">Ketuk untuk pindai</string>
-    <string name="thank_you_for_installing_simplex">Terima kasih telah memasang SimpleX Chat!</string>
+    <string name="thank_you_for_installing_simplex">Terima kasih telah memasang Inqalaab!</string>
     <string name="set_contact_name">Setel nama kontak</string>
     <string name="alert_text_connection_pending_they_need_to_be_online_can_delete_and_retry">Kontak Anda harus online agar koneksi dapat selesai.\nAnda dapat batalkan koneksi ini dan hapus kontak (dan coba lagi nanti dengan tautan baru).</string>
-    <string name="image_descr_simplex_logo">Logo SimpleX</string>
-    <string name="icon_descr_simplex_team">Tim SimpleX</string>
+    <string name="image_descr_simplex_logo">Logo Inqalaab</string>
+    <string name="icon_descr_simplex_team">Tim Inqalaab</string>
     <string name="you_will_be_connected_when_your_contacts_device_is_online">Anda akan terhubung saat perangkat kontak Anda online, harap tunggu atau periksa nanti!</string>
     <string name="you_will_be_connected_when_your_connection_request_is_accepted">Anda akan terhubung saat permintaan koneksi Anda diterima. Harap tunggu atau periksa nanti!</string>
     <string name="share_invitation_link">Bagikan tautan 1-kali</string>
@@ -2186,13 +2186,13 @@
     <string name="size">Ukuran</string>
     <string name="uploaded_files">Berkas diunggah</string>
     <string name="connection_error_quota_desc">Koneksi mencapai batas pesan yang tidak terkirim, kontak Anda mungkin sedang offline.</string>
-    <string name="lock_not_enabled">Kunci SimpleX tidak diaktifkan!</string>
-    <string name="you_can_turn_on_lock">Anda dapat aktifkan Kunci SimpleX di Pengaturan.</string>
+    <string name="lock_not_enabled">Kunci Inqalaab tidak diaktifkan!</string>
+    <string name="you_can_turn_on_lock">Anda dapat aktifkan Kunci Inqalaab di Pengaturan.</string>
     <string name="contact_you_shared_link_with_wont_be_able_to_connect">Kontak yang Anda bagikan tautan ini TIDAK akan dapat terhubung!</string>
     <string name="image_decoding_exception_desc">Gambar tidak dapat didekodekan. Silakan coba gambar lain atau hubungi pengembang.</string>
     <string name="snd_error_auth">Kunci salah atau koneksi tidak dikenal - kemungkinan besar koneksi ini dihapus.</string>
     <string name="add_contact_or_create_group">Mulai obrolan baru</string>
-    <string name="address_creation_instruction">Ketuk Buat alamat SimpleX di menu untuk membuatnya nanti.</string>
+    <string name="address_creation_instruction">Ketuk Buat alamat Inqalaab di menu untuk membuatnya nanti.</string>
     <string name="scan_qr_to_connect_to_contact">Untuk terhubung, kontak Anda dapat pindai kode QR atau gunakan tautan di aplikasi.</string>
     <string name="connect__your_profile_will_be_shared">Profil Anda %1$s akan dibagikan.</string>
     <string name="to_protect_against_your_link_replaced_compare_codes">Untuk melindungi tautan Anda dari penggantian, Anda dapat membandingkan kode keamanan kontak.</string>
@@ -2344,7 +2344,7 @@
     <string name="v6_3_organize_chat_lists">Atur obrolan ke dalam daftar</string>
     <string name="restore_passphrase_can_not_be_read_desc">Frasa sandi di Keystore tidak dapat dibaca. Hal ini mungkin terjadi setelah pembaruan sistem yang tidak kompatibel dengan aplikasi. Jika tidak demikian, silakan hubungi pengembang.</string>
     <string name="onboarding_conditions_accept">Terima</string>
-    <string name="onboarding_conditions_by_using_you_agree">Dengan menggunakan SimpleX Chat, Anda setuju untuk:\n- hanya mengirim konten legal di grup publik.\n- hormati pengguna lain – tidak ada spam.</string>
+    <string name="onboarding_conditions_by_using_you_agree">Dengan menggunakan Inqalaab, Anda setuju untuk:\n- hanya mengirim konten legal di grup publik.\n- hormati pengguna lain – tidak ada spam.</string>
     <string name="onboarding_conditions_configure_server_operators">Konfigurasikan operator server</string>
     <string name="onboarding_conditions_privacy_policy_and_conditions_of_use">Kebijakan privasi dan ketentuan penggunaan.</string>
     <string name="onboarding_conditions_private_chats_not_accessible">Obrolan pribadi, grup, dan kontak Anda tidak dapat diakses oleh operator server.</string>
@@ -2355,7 +2355,7 @@
     <string name="network_smp_web_port_preset">Presetel server</string>
     <string name="full_link_button_text">Tautan lengkap</string>
     <string name="link_requires_newer_app_version_please_upgrade">Tautan ini perlu versi aplikasi yang baru. Harap perbarui aplikasi atau minta kontak untuk kirim tautan kompatibel.</string>
-    <string name="simplex_link_channel">Tautan saluran SimpleX</string>
+    <string name="simplex_link_channel">Tautan saluran Inqalaab</string>
     <string name="unsupported_connection_link">Tautan koneksi tidak didukung</string>
     <string name="short_link_button_text">Tautan singkat</string>
     <string name="cant_send_message_generic">gagal mengirim pesan</string>
@@ -2476,8 +2476,8 @@
     <string name="share_old_link_alert_button">Bagikan tautan lama</string>
     <string name="v6_4_1_short_address_share">Bagikan alamat Anda</string>
     <string name="group_short_descr_field">Deskripsi singkat:</string>
-    <string name="v6_4_1_short_address">Alamat singkat SimpleX</string>
-    <string name="simplex_link_relay">Tautan relay SimpleX</string>
+    <string name="v6_4_1_short_address">Alamat singkat Inqalaab</string>
+    <string name="simplex_link_relay">Tautan relay Inqalaab</string>
     <string name="v6_4_1_welcome_contacts">Sambut kontak Anda 👋</string>
     <string name="short_descr">Bio Anda:</string>
     <string name="chat_banner_your_business_contact">Kontak bisnis Anda</string>

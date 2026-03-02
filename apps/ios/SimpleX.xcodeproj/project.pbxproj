@@ -216,12 +216,31 @@
 		8CC4ED902BD7B8530078AEE8 /* CallAudioDeviceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC4ED8F2BD7B8530078AEE8 /* CallAudioDeviceManager.swift */; };
 		8CC956EE2BC0041000412A11 /* NetworkObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC956ED2BC0041000412A11 /* NetworkObserver.swift */; };
 		8CE848A32C5A0FA000D5C7C8 /* SelectableChatItemToolbars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE848A22C5A0FA000D5C7C8 /* SelectableChatItemToolbars.swift */; };
+		A1B2C3D4E5F6A7B8C9D0E1F3 /* InqalaabServers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6A7B8C9D0E1F2 /* InqalaabServers.swift */; };
+		B1B2C3D4E5F6A7B8C9D0E101 /* InqalaabTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B2C3D4E5F6A7B8C9D0E100 /* InqalaabTabView.swift */; };
+		B1B2C3D4E5F6A7B8C9D0E103 /* SafetyHubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B2C3D4E5F6A7B8C9D0E102 /* SafetyHubView.swift */; };
+		B1B2C3D4E5F6A7B8C9D0E105 /* PanicModeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B2C3D4E5F6A7B8C9D0E104 /* PanicModeView.swift */; };
+		B1B2C3D4E5F6A7B8C9D0E109 /* PanicWipeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B2C3D4E5F6A7B8C9D0E108 /* PanicWipeManager.swift */; };
+		B1B2C3D4E5F6A7B8C9D0E111 /* InqalaabShakeDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B2C3D4E5F6A7B8C9D0E110 /* InqalaabShakeDetector.swift */; };
 		B70A39732D24090D00E80A5F /* TagListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70A39722D24090D00E80A5F /* TagListView.swift */; };
 		B70CE9E62D4BE5930080F36D /* GroupMentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70CE9E52D4BE5930080F36D /* GroupMentions.swift */; };
 		B728945B2D0C62BF00F7A19A /* ElegantEmojiPicker in Frameworks */ = {isa = PBXBuildFile; productRef = B728945A2D0C62BF00F7A19A /* ElegantEmojiPicker */; };
 		B73EFE532CE5FA3500C778EA /* CreateSimpleXAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73EFE522CE5FA3500C778EA /* CreateSimpleXAddress.swift */; };
 		B76E6C312C5C41D900EC11AA /* ContactListNavLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76E6C302C5C41D900EC11AA /* ContactListNavLink.swift */; };
 		B79ADAFF2CE4EF930083DFFD /* AddressCreationCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79ADAFE2CE4EF930083DFFD /* AddressCreationCard.swift */; };
+		C1B2C3D4E5F6A7B8C9D0E201 /* InqalaabMissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B2C3D4E5F6A7B8C9D0E200 /* InqalaabMissionView.swift */; };
+		C1B2C3D4E5F6A7B8C9D0E203 /* InqalaabSecurityPledgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B2C3D4E5F6A7B8C9D0E202 /* InqalaabSecurityPledgeView.swift */; };
+		C1D2E3F4A5B6C7D8E9F0A101 /* NearbyTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D2E3F4A5B6C7D8E9F0A100 /* NearbyTypes.swift */; };
+		C1D2E3F4A5B6C7D8E9F0A103 /* NearbyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D2E3F4A5B6C7D8E9F0A102 /* NearbyStore.swift */; };
+		C1D2E3F4A5B6C7D8E9F0A105 /* NearbyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D2E3F4A5B6C7D8E9F0A104 /* NearbyService.swift */; };
+		C1D2E3F4A5B6C7D8E9F0A107 /* NearbyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D2E3F4A5B6C7D8E9F0A106 /* NearbyModel.swift */; };
+		C1D2E3F4A5B6C7D8E9F0A109 /* NearbyModeToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D2E3F4A5B6C7D8E9F0A108 /* NearbyModeToggle.swift */; };
+		C1D2E3F4A5B6C7D8E9F0A10B /* NearbyEmptyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D2E3F4A5B6C7D8E9F0A10A /* NearbyEmptyState.swift */; };
+		C1D2E3F4A5B6C7D8E9F0A10D /* NearbyPeerRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D2E3F4A5B6C7D8E9F0A10C /* NearbyPeerRow.swift */; };
+		C1D2E3F4A5B6C7D8E9F0A10F /* NearbyPeerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D2E3F4A5B6C7D8E9F0A10E /* NearbyPeerListView.swift */; };
+		C1D2E3F4A5B6C7D8E9F0A111 /* NearbyConversationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D2E3F4A5B6C7D8E9F0A110 /* NearbyConversationView.swift */; };
+		C1D2E3F4A5B6C7D8E9F0A113 /* NearbyMessageBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D2E3F4A5B6C7D8E9F0A112 /* NearbyMessageBubble.swift */; };
+		C1D2E3F4A5B6C7D8E9F0A115 /* NearbyComposeBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D2E3F4A5B6C7D8E9F0A114 /* NearbyComposeBar.swift */; };
 		CE176F202C87014C00145DBC /* InvertedForegroundStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE176F1F2C87014C00145DBC /* InvertedForegroundStyle.swift */; };
 		CE1EB0E42C459A660099D896 /* ShareAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1EB0E32C459A660099D896 /* ShareAPI.swift */; };
 		CE2AD9CE2C452A4D00E844E3 /* ChatUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2AD9CD2C452A4D00E844E3 /* ChatUtils.swift */; };
@@ -348,7 +367,6 @@
 		5C136D8E2AAB3D14006DE2FC /* fi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fi; path = "fi.lproj/SimpleX--iOS--InfoPlist.strings"; sourceTree = "<group>"; };
 		5C136D8F2AAB3D14006DE2FC /* fi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fi; path = fi.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5C13730A28156D2700F43030 /* ContactConnectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactConnectionView.swift; sourceTree = "<group>"; };
-		5C13730C2815740A00F43030 /* DebugJSON.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = DebugJSON.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		5C1A4C1D27A715B700EAD5AD /* ChatItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatItemView.swift; sourceTree = "<group>"; };
 		5C245F3C2B501E98001CC39F /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5C245F3D2B501F13001CC39F /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = "tr.lproj/SimpleX--iOS--InfoPlist.strings"; sourceTree = "<group>"; };
@@ -428,7 +446,7 @@
 		5CA059C3279559F40002BEB4 /* SimpleXApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleXApp.swift; sourceTree = "<group>"; };
 		5CA059C4279559F40002BEB4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5CA059C5279559F40002BEB4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		5CA059CA279559F40002BEB4 /* SimpleX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleX.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5CA059CA279559F40002BEB4 /* Inqalaab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Inqalaab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CA059D7279559F40002BEB4 /* Tests iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CA059DB279559F40002BEB4 /* Tests_iOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_iOS.swift; sourceTree = "<group>"; };
 		5CA059DD279559F40002BEB4 /* Tests_iOSLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_iOSLaunchTests.swift; sourceTree = "<group>"; };
@@ -534,6 +552,7 @@
 		6493D667280ED77F007A76FB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		649BCD9F280460FD00C3A862 /* ComposeImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeImageView.swift; sourceTree = "<group>"; };
 		649BCDA12805D6EF00C3A862 /* CIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIImageView.swift; sourceTree = "<group>"; };
+		64A0B1C22D55AEEE00DF0001 /* ur */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ur; path = ur.lproj/Localizable.strings; sourceTree = "<group>"; };
 		64A779F52DBFB9F200FDEF2F /* MemberAdmissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberAdmissionView.swift; sourceTree = "<group>"; };
 		64A779F72DBFDBF200FDEF2F /* MemberSupportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberSupportView.swift; sourceTree = "<group>"; };
 		64A779FB2DC1040000FDEF2F /* SecondaryChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryChatView.swift; sourceTree = "<group>"; };
@@ -582,11 +601,30 @@
 		8CC4ED8F2BD7B8530078AEE8 /* CallAudioDeviceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallAudioDeviceManager.swift; sourceTree = "<group>"; };
 		8CC956ED2BC0041000412A11 /* NetworkObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkObserver.swift; sourceTree = "<group>"; };
 		8CE848A22C5A0FA000D5C7C8 /* SelectableChatItemToolbars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableChatItemToolbars.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F6A7B8C9D0E1F2 /* InqalaabServers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InqalaabServers.swift; sourceTree = "<group>"; };
+		B1B2C3D4E5F6A7B8C9D0E100 /* InqalaabTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InqalaabTabView.swift; sourceTree = "<group>"; };
+		B1B2C3D4E5F6A7B8C9D0E102 /* SafetyHubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafetyHubView.swift; sourceTree = "<group>"; };
+		B1B2C3D4E5F6A7B8C9D0E104 /* PanicModeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanicModeView.swift; sourceTree = "<group>"; };
+		B1B2C3D4E5F6A7B8C9D0E108 /* PanicWipeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanicWipeManager.swift; sourceTree = "<group>"; };
+		B1B2C3D4E5F6A7B8C9D0E110 /* InqalaabShakeDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InqalaabShakeDetector.swift; sourceTree = "<group>"; };
 		B70A39722D24090D00E80A5F /* TagListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagListView.swift; sourceTree = "<group>"; };
 		B70CE9E52D4BE5930080F36D /* GroupMentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupMentions.swift; sourceTree = "<group>"; };
 		B73EFE522CE5FA3500C778EA /* CreateSimpleXAddress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateSimpleXAddress.swift; sourceTree = "<group>"; };
 		B76E6C302C5C41D900EC11AA /* ContactListNavLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListNavLink.swift; sourceTree = "<group>"; };
 		B79ADAFE2CE4EF930083DFFD /* AddressCreationCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressCreationCard.swift; sourceTree = "<group>"; };
+		C1B2C3D4E5F6A7B8C9D0E200 /* InqalaabMissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InqalaabMissionView.swift; sourceTree = "<group>"; };
+		C1B2C3D4E5F6A7B8C9D0E202 /* InqalaabSecurityPledgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InqalaabSecurityPledgeView.swift; sourceTree = "<group>"; };
+		C1D2E3F4A5B6C7D8E9F0A100 /* NearbyTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyTypes.swift; sourceTree = "<group>"; };
+		C1D2E3F4A5B6C7D8E9F0A102 /* NearbyStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyStore.swift; sourceTree = "<group>"; };
+		C1D2E3F4A5B6C7D8E9F0A104 /* NearbyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyService.swift; sourceTree = "<group>"; };
+		C1D2E3F4A5B6C7D8E9F0A106 /* NearbyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyModel.swift; sourceTree = "<group>"; };
+		C1D2E3F4A5B6C7D8E9F0A108 /* NearbyModeToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyModeToggle.swift; sourceTree = "<group>"; };
+		C1D2E3F4A5B6C7D8E9F0A10A /* NearbyEmptyState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyEmptyState.swift; sourceTree = "<group>"; };
+		C1D2E3F4A5B6C7D8E9F0A10C /* NearbyPeerRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyPeerRow.swift; sourceTree = "<group>"; };
+		C1D2E3F4A5B6C7D8E9F0A10E /* NearbyPeerListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyPeerListView.swift; sourceTree = "<group>"; };
+		C1D2E3F4A5B6C7D8E9F0A110 /* NearbyConversationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyConversationView.swift; sourceTree = "<group>"; };
+		C1D2E3F4A5B6C7D8E9F0A112 /* NearbyMessageBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyMessageBubble.swift; sourceTree = "<group>"; };
+		C1D2E3F4A5B6C7D8E9F0A114 /* NearbyComposeBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyComposeBar.swift; sourceTree = "<group>"; };
 		CE176F1F2C87014C00145DBC /* InvertedForegroundStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvertedForegroundStyle.swift; sourceTree = "<group>"; };
 		CE1EB0E32C459A660099D896 /* ShareAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareAPI.swift; sourceTree = "<group>"; };
 		CE2AD9CD2C452A4D00E844E3 /* ChatUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatUtils.swift; sourceTree = "<group>"; };
@@ -606,7 +644,6 @@
 		D72A9087294BD7A70047C86D /* NativeTextEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeTextEditor.swift; sourceTree = "<group>"; };
 		D741547729AF89AF0022400A /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS16.1.sdk/System/Library/Frameworks/StoreKit.framework; sourceTree = DEVELOPER_DIR; };
 		D741547929AF90B00022400A /* PushKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PushKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS16.1.sdk/System/Library/Frameworks/PushKit.framework; sourceTree = DEVELOPER_DIR; };
-		D7AA2C3429A936B400737B40 /* MediaEncryption.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = MediaEncryption.playground; path = Shared/MediaEncryption.playground; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		E51CC1E52C62085600DB91FE /* OneHandUICard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneHandUICard.swift; sourceTree = "<group>"; };
 		E559A0A02E3F77EE00B26F74 /* CommandsMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandsMenuView.swift; sourceTree = "<group>"; };
 		E5DCF9702C590272007928CC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -758,6 +795,9 @@
 				5CA8D01B2AD9B076001FD661 /* RemoteAccess */,
 				5CB924DF27A8678B00ACCCDD /* UserSettings */,
 				5C2E261127A30FEA00F70299 /* TerminalView.swift */,
+				B1B2C3D4E5F6A7B8C9D0E100 /* InqalaabTabView.swift */,
+				B1B2C3D4E5F6A7B8C9D0E106 /* SafetyHub */,
+				C1D2E3F4A5B6C7D8E9F0A120 /* Nearby */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -886,11 +926,11 @@
 				5CA059C3279559F40002BEB4 /* SimpleXApp.swift */,
 				5C36027227F47AD5009F19D9 /* AppDelegate.swift */,
 				5CA059C4279559F40002BEB4 /* ContentView.swift */,
+				A1B2C3D4E5F6A7B8C9D0E1F2 /* InqalaabServers.swift */,
 				5C764E87279CBC8E000C6508 /* Model */,
+				C1D2E3F4A5B6C7D8E9F0A116 /* Nearby */,
 				5C2E260D27A30E2400F70299 /* Views */,
 				5CA059C5279559F40002BEB4 /* Assets.xcassets */,
-				D7AA2C3429A936B400737B40 /* MediaEncryption.playground */,
-				5C13730C2815740A00F43030 /* DebugJSON.playground */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -898,7 +938,7 @@
 		5CA059CB279559F40002BEB4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5CA059CA279559F40002BEB4 /* SimpleX.app */,
+				5CA059CA279559F40002BEB4 /* Inqalaab.app */,
 				5CA059D7279559F40002BEB4 /* Tests iOS.xctest */,
 				5CDCAD452818589900503DA2 /* SimpleX NSE.appex */,
 				5CE2BA682845308900EC33A6 /* SimpleXChat.framework */,
@@ -935,6 +975,8 @@
 				5C9A5BDA2871E05400A5B906 /* SetNotificationsMode.swift */,
 				5CBD285B29575B8E00EC2CF4 /* WhatsNewView.swift */,
 				640743602CD360E600158442 /* ChooseServerOperators.swift */,
+				C1B2C3D4E5F6A7B8C9D0E200 /* InqalaabMissionView.swift */,
+				C1B2C3D4E5F6A7B8C9D0E202 /* InqalaabSecurityPledgeView.swift */,
 				B79ADAFE2CE4EF930083DFFD /* AddressCreationCard.swift */,
 			);
 			path = Onboarding;
@@ -1173,12 +1215,48 @@
 			path = Theme;
 			sourceTree = "<group>";
 		};
+		B1B2C3D4E5F6A7B8C9D0E106 /* SafetyHub */ = {
+			isa = PBXGroup;
+			children = (
+				B1B2C3D4E5F6A7B8C9D0E102 /* SafetyHubView.swift */,
+				B1B2C3D4E5F6A7B8C9D0E104 /* PanicModeView.swift */,
+				B1B2C3D4E5F6A7B8C9D0E108 /* PanicWipeManager.swift */,
+				B1B2C3D4E5F6A7B8C9D0E110 /* InqalaabShakeDetector.swift */,
+			);
+			path = SafetyHub;
+			sourceTree = "<group>";
+		};
 		B76E6C2F2C5C41C300EC11AA /* Contacts */ = {
 			isa = PBXGroup;
 			children = (
 				B76E6C302C5C41D900EC11AA /* ContactListNavLink.swift */,
 			);
 			path = Contacts;
+			sourceTree = "<group>";
+		};
+		C1D2E3F4A5B6C7D8E9F0A116 /* Nearby */ = {
+			isa = PBXGroup;
+			children = (
+				C1D2E3F4A5B6C7D8E9F0A100 /* NearbyTypes.swift */,
+				C1D2E3F4A5B6C7D8E9F0A102 /* NearbyStore.swift */,
+				C1D2E3F4A5B6C7D8E9F0A104 /* NearbyService.swift */,
+				C1D2E3F4A5B6C7D8E9F0A106 /* NearbyModel.swift */,
+			);
+			path = Nearby;
+			sourceTree = "<group>";
+		};
+		C1D2E3F4A5B6C7D8E9F0A120 /* Nearby */ = {
+			isa = PBXGroup;
+			children = (
+				C1D2E3F4A5B6C7D8E9F0A108 /* NearbyModeToggle.swift */,
+				C1D2E3F4A5B6C7D8E9F0A10A /* NearbyEmptyState.swift */,
+				C1D2E3F4A5B6C7D8E9F0A10C /* NearbyPeerRow.swift */,
+				C1D2E3F4A5B6C7D8E9F0A10E /* NearbyPeerListView.swift */,
+				C1D2E3F4A5B6C7D8E9F0A110 /* NearbyConversationView.swift */,
+				C1D2E3F4A5B6C7D8E9F0A112 /* NearbyMessageBubble.swift */,
+				C1D2E3F4A5B6C7D8E9F0A114 /* NearbyComposeBar.swift */,
+			);
+			path = Nearby;
 			sourceTree = "<group>";
 		};
 		CEE723A82C3BD3D70009AE93 /* SimpleX SE */ = {
@@ -1242,7 +1320,7 @@
 				B728945A2D0C62BF00F7A19A /* ElegantEmojiPicker */,
 			);
 			productName = "SimpleX (iOS)";
-			productReference = 5CA059CA279559F40002BEB4 /* SimpleX.app */;
+			productReference = 5CA059CA279559F40002BEB4 /* Inqalaab.app */;
 			productType = "com.apple.product-type.application";
 		};
 		5CA059D6279559F40002BEB4 /* Tests iOS */ = {
@@ -1375,6 +1453,7 @@
 				bg,
 				tr,
 				hu,
+				ur,
 			);
 			mainGroup = 5CA059BD279559F40002BEB4;
 			packageReferences = (
@@ -1455,6 +1534,8 @@
 				640417CE2B29B8C200CCB412 /* NewChatView.swift in Sources */,
 				6440CA03288AECA70062C672 /* AddGroupMembersView.swift in Sources */,
 				640743612CD360E600158442 /* ChooseServerOperators.swift in Sources */,
+				C1B2C3D4E5F6A7B8C9D0E201 /* InqalaabMissionView.swift in Sources */,
+				C1B2C3D4E5F6A7B8C9D0E203 /* InqalaabSecurityPledgeView.swift in Sources */,
 				64A779FE2DC3AFF200FDEF2F /* MemberSupportChatToolbar.swift in Sources */,
 				5C3F1D58284363C400EC8A82 /* PrivacySettings.swift in Sources */,
 				5C55A923283CEDE600C4E99E /* SoundPlayer.swift in Sources */,
@@ -1568,6 +1649,23 @@
 				8CAD466F2D15A8100078D18F /* ChatScrollHelpers.swift in Sources */,
 				644EFFDE292BCD9D00525D5B /* ComposeVoiceView.swift in Sources */,
 				5CA059EB279559F40002BEB4 /* SimpleXApp.swift in Sources */,
+				A1B2C3D4E5F6A7B8C9D0E1F3 /* InqalaabServers.swift in Sources */,
+				B1B2C3D4E5F6A7B8C9D0E101 /* InqalaabTabView.swift in Sources */,
+				B1B2C3D4E5F6A7B8C9D0E103 /* SafetyHubView.swift in Sources */,
+				B1B2C3D4E5F6A7B8C9D0E105 /* PanicModeView.swift in Sources */,
+				B1B2C3D4E5F6A7B8C9D0E109 /* PanicWipeManager.swift in Sources */,
+				B1B2C3D4E5F6A7B8C9D0E111 /* InqalaabShakeDetector.swift in Sources */,
+				C1D2E3F4A5B6C7D8E9F0A101 /* NearbyTypes.swift in Sources */,
+				C1D2E3F4A5B6C7D8E9F0A103 /* NearbyStore.swift in Sources */,
+				C1D2E3F4A5B6C7D8E9F0A105 /* NearbyService.swift in Sources */,
+				C1D2E3F4A5B6C7D8E9F0A107 /* NearbyModel.swift in Sources */,
+				C1D2E3F4A5B6C7D8E9F0A109 /* NearbyModeToggle.swift in Sources */,
+				C1D2E3F4A5B6C7D8E9F0A10B /* NearbyEmptyState.swift in Sources */,
+				C1D2E3F4A5B6C7D8E9F0A10D /* NearbyPeerRow.swift in Sources */,
+				C1D2E3F4A5B6C7D8E9F0A10F /* NearbyPeerListView.swift in Sources */,
+				C1D2E3F4A5B6C7D8E9F0A111 /* NearbyConversationView.swift in Sources */,
+				C1D2E3F4A5B6C7D8E9F0A113 /* NearbyMessageBubble.swift in Sources */,
+				C1D2E3F4A5B6C7D8E9F0A115 /* NearbyComposeBar.swift in Sources */,
 				64D0C2C029F9688300B38D5F /* UserAddressView.swift in Sources */,
 				6448BBB628FA9D56000D2AB9 /* GroupLinkView.swift in Sources */,
 				E5DDBE6E2DC4106800A0EFF0 /* AppAPITypes.swift in Sources */,
@@ -1771,6 +1869,7 @@
 				5C5B67912ABAF4B500DA9412 /* bg */,
 				5C245F3C2B501E98001CC39F /* tr */,
 				5C371E4E2BA9AAA200100AD3 /* hu */,
+				64A0B1C22D55AEEE00DF0001 /* ur */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -2003,19 +2102,22 @@
 				CLANG_TIDY_MISC_REDUNDANT_EXPRESSION = YES;
 				CODE_SIGN_ENTITLEMENTS = "SimpleX (iOS).entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 320;
+				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_TEAM = 5NN7GUYB6T;
+				DEVELOPMENT_TEAM = C7P2NWA933;
 				ENABLE_BITCODE = NO;
 				ENABLE_PREVIEWS = YES;
 				GCC_OPTIMIZATION_LEVEL = s;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "SimpleX--iOS--Info.plist";
-				INFOPLIST_KEY_NSCameraUsageDescription = "SimpleX needs camera access to scan QR codes to connect to other users and for video calls.";
-				INFOPLIST_KEY_NSFaceIDUsageDescription = "SimpleX uses Face ID for local authentication";
-				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "SimpleX uses local network access to allow using user chat profile via desktop app on the same network.";
-				INFOPLIST_KEY_NSMicrophoneUsageDescription = "SimpleX needs microphone access for audio and video calls, and to record voice messages.";
-				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "SimpleX needs access to Photo Library for saving captured and received media";
+				INFOPLIST_KEY_CFBundleDisplayName = Inqalaab;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Inqalaab needs camera access to scan QR codes to connect to other users and for video calls.";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "Inqalaab uses Face ID for local authentication";
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Inqalaab uses local network access to allow using user chat profile via desktop app on the same network.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Inqalaab needs microphone access for audio and video calls, and to record voice messages.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Inqalaab needs access to Photo Library for saving captured and received media";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -2028,10 +2130,10 @@
 					"@executable_path/Frameworks",
 				);
 				LLVM_LTO = YES_THIN;
-				MARKETING_VERSION = 6.4.10;
+				MARKETING_VERSION = 1.0.0;
 				OTHER_LDFLAGS = "-Wl,-stack_size,0x1000000";
-				PRODUCT_BUNDLE_IDENTIFIER = chat.simplex.app;
-				PRODUCT_NAME = SimpleX;
+				PRODUCT_BUNDLE_IDENTIFIER = com.inqalaab.app;
+				PRODUCT_NAME = Inqalaab;
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -2053,19 +2155,22 @@
 				CLANG_TIDY_MISC_REDUNDANT_EXPRESSION = YES;
 				CODE_SIGN_ENTITLEMENTS = "SimpleX (iOS).entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 320;
+				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_TEAM = 5NN7GUYB6T;
+				DEVELOPMENT_TEAM = C7P2NWA933;
 				ENABLE_BITCODE = NO;
 				ENABLE_CODE_COVERAGE = NO;
 				ENABLE_PREVIEWS = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "SimpleX--iOS--Info.plist";
-				INFOPLIST_KEY_NSCameraUsageDescription = "SimpleX needs camera access to scan QR codes to connect to other users and for video calls.";
-				INFOPLIST_KEY_NSFaceIDUsageDescription = "SimpleX uses Face ID for local authentication";
-				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "SimpleX uses local network access to allow using user chat profile via desktop app on the same network.";
-				INFOPLIST_KEY_NSMicrophoneUsageDescription = "SimpleX needs microphone access for audio and video calls, and to record voice messages.";
-				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "SimpleX needs access to Photo Library for saving captured and received media";
+				INFOPLIST_KEY_CFBundleDisplayName = Inqalaab;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Inqalaab needs camera access to scan QR codes to connect to other users and for video calls.";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "Inqalaab uses Face ID for local authentication";
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Inqalaab uses local network access to allow using user chat profile via desktop app on the same network.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Inqalaab needs microphone access for audio and video calls, and to record voice messages.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Inqalaab needs access to Photo Library for saving captured and received media";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -2078,10 +2183,10 @@
 					"@executable_path/Frameworks",
 				);
 				LLVM_LTO = YES;
-				MARKETING_VERSION = 6.4.10;
+				MARKETING_VERSION = 1.0.0;
 				OTHER_LDFLAGS = "-Wl,-stack_size,0x1000000";
-				PRODUCT_BUNDLE_IDENTIFIER = chat.simplex.app;
-				PRODUCT_NAME = SimpleX;
+				PRODUCT_BUNDLE_IDENTIFIER = com.inqalaab.app;
+				PRODUCT_NAME = Inqalaab;
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -2096,11 +2201,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 320;
-				DEVELOPMENT_TEAM = 5NN7GUYB6T;
+				DEVELOPMENT_TEAM = C7P2NWA933;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 6.4.10;
-				PRODUCT_BUNDLE_IDENTIFIER = "chat.simplex.Tests-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.inqalaab.Tests-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = NO;
@@ -2116,11 +2221,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 320;
-				DEVELOPMENT_TEAM = 5NN7GUYB6T;
+				DEVELOPMENT_TEAM = C7P2NWA933;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 6.4.10;
-				PRODUCT_BUNDLE_IDENTIFIER = "chat.simplex.Tests-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.inqalaab.Tests-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = NO;
@@ -2141,12 +2246,12 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 320;
-				DEVELOPMENT_TEAM = 5NN7GUYB6T;
+				DEVELOPMENT_TEAM = C7P2NWA933;
 				ENABLE_BITCODE = NO;
 				GCC_OPTIMIZATION_LEVEL = s;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "SimpleX NSE/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "SimpleX NSE";
+				INFOPLIST_KEY_CFBundleDisplayName = "Inqalaab NSE";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 SimpleX Chat. All rights reserved.";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2156,7 +2261,7 @@
 				);
 				LLVM_LTO = YES;
 				MARKETING_VERSION = 6.4.10;
-				PRODUCT_BUNDLE_IDENTIFIER = "chat.simplex.app.SimpleX-NSE";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.inqalaab.app.Inqalaab-NSE";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
@@ -2178,12 +2283,12 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 320;
-				DEVELOPMENT_TEAM = 5NN7GUYB6T;
+				DEVELOPMENT_TEAM = C7P2NWA933;
 				ENABLE_BITCODE = NO;
 				ENABLE_CODE_COVERAGE = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "SimpleX NSE/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "SimpleX NSE";
+				INFOPLIST_KEY_CFBundleDisplayName = "Inqalaab NSE";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 SimpleX Chat. All rights reserved.";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2193,7 +2298,7 @@
 				);
 				LLVM_LTO = YES;
 				MARKETING_VERSION = 6.4.10;
-				PRODUCT_BUNDLE_IDENTIFIER = "chat.simplex.app.SimpleX-NSE";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.inqalaab.app.Inqalaab-NSE";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
@@ -2216,7 +2321,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 320;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 5NN7GUYB6T;
+				DEVELOPMENT_TEAM = C7P2NWA933;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -2241,7 +2346,7 @@
 				);
 				LLVM_LTO = YES;
 				MARKETING_VERSION = 6.4.10;
-				PRODUCT_BUNDLE_IDENTIFIER = chat.simplex.SimpleXChat;
+				PRODUCT_BUNDLE_IDENTIFIER = com.inqalaab.SimpleXChat;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -2267,7 +2372,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 320;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 5NN7GUYB6T;
+				DEVELOPMENT_TEAM = C7P2NWA933;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -2292,7 +2397,7 @@
 				);
 				LLVM_LTO = YES;
 				MARKETING_VERSION = 6.4.10;
-				PRODUCT_BUNDLE_IDENTIFIER = chat.simplex.SimpleXChat;
+				PRODUCT_BUNDLE_IDENTIFIER = com.inqalaab.SimpleXChat;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -2317,12 +2422,12 @@
 				CODE_SIGN_ENTITLEMENTS = "SimpleX SE/SimpleX SE.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 320;
-				DEVELOPMENT_TEAM = 5NN7GUYB6T;
+				DEVELOPMENT_TEAM = C7P2NWA933;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "SimpleX SE/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "SimpleX SE";
+				INFOPLIST_KEY_CFBundleDisplayName = "Inqalaab SE";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2024 SimpleX Chat. All rights reserved.";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2332,7 +2437,7 @@
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MARKETING_VERSION = 6.4.10;
-				PRODUCT_BUNDLE_IDENTIFIER = "chat.simplex.app.SimpleX-SE";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.inqalaab.app.Inqalaab-SE";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -2351,12 +2456,12 @@
 				CODE_SIGN_ENTITLEMENTS = "SimpleX SE/SimpleX SE.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 320;
-				DEVELOPMENT_TEAM = 5NN7GUYB6T;
+				DEVELOPMENT_TEAM = C7P2NWA933;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "SimpleX SE/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "SimpleX SE";
+				INFOPLIST_KEY_CFBundleDisplayName = "Inqalaab SE";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2024 SimpleX Chat. All rights reserved.";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2366,7 +2471,7 @@
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MARKETING_VERSION = 6.4.10;
-				PRODUCT_BUNDLE_IDENTIFIER = "chat.simplex.app.SimpleX-SE";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.inqalaab.app.Inqalaab-SE";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;

@@ -19,17 +19,10 @@ struct ChatHelp: View {
 
     func chatHelp() -> some View {
         VStack(alignment: .leading, spacing: 10) {
-            Text("Thank you for installing SimpleX Chat!")
+            Text("Welcome to Inqalaab!")
 
             VStack(alignment: .leading, spacing: 0) {
-                Text("To ask any questions and to receive updates:")
-                Button("connect to SimpleX Chat developers.") {
-                    dismissSettingsSheet()
-                    DispatchQueue.main.async {
-                        UIApplication.shared.open(simplexTeamURL)
-                    }
-                }
-                .padding(.top, 2)
+                Text("Secure, private messaging for the people.")
             }
 
             VStack(alignment: .leading, spacing: 10) {

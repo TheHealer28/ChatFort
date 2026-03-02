@@ -11,7 +11,7 @@ import SimpleXChat
 
 struct SetNotificationsMode: View {
     @EnvironmentObject var m: ChatModel
-    @State private var notificationMode = NotificationsMode.instant
+    @State private var notificationMode = NotificationsMode.off
     @State private var showAlert: NotificationAlert?
     @State private var showInfo: Bool = false
 
@@ -43,6 +43,10 @@ struct SetNotificationsMode: View {
                             }
                             onboardingStageDefault.set(.onboardingComplete)
                             m.onboardingStage = .onboardingComplete
+                            // Inqalaab: Configure servers now that onboarding is done and currentUser exists
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                                InqalaabServers.shared.configureIfNeeded()
+                            }
                         } label: {
                             if case .off = notificationMode {
                                 Text("Use chat")
@@ -76,14 +80,17 @@ struct SetNotificationsMode: View {
             m.tokenStatus = .new
             m.notificationMode = .off
         default:
+            m.notificationMode = mode
             Task {
                 do {
                     let status = try await apiRegisterToken(token: token, notificationMode: mode)
                     await MainActor.run {
                         m.tokenStatus = status
-                        m.notificationMode = mode
                     }
                 } catch let error {
+                    await MainActor.run {
+                        m.notificationMode = .off
+                    }
                     let a = getErrorAlert(error, "Error enabling notifications")
                     AlertManager.shared.showAlertMsg(
                         title: a.title,

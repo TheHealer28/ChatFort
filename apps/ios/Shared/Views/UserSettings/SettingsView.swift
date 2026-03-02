@@ -82,7 +82,7 @@ let DEFAULT_NETWORK_PROXY = "networkProxy"
 
 let ANDROID_DEFAULT_CALL_ON_LOCK_SCREEN = "androidCallOnLockScreen"
 
-let defaultChatItemRoundness: Double = 0.75
+let defaultChatItemRoundness: Double = 0.5 // Inqalaab: more angular bubbles
 
 let appDefaults: [String: Any] = [
     DEFAULT_SHOW_LA_NOTICE: false,
@@ -272,6 +272,7 @@ struct SettingsView: View {
     @EnvironmentObject var chatModel: ChatModel
     @EnvironmentObject var sceneDelegate: SceneDelegate
     @EnvironmentObject var theme: AppTheme
+    @StateObject private var ss = SaveableSettings()
     @State private var showProgress: Bool = false
 
     var body: some View {
@@ -303,6 +304,7 @@ struct SettingsView: View {
                     NetworkAndServers()
                         .navigationTitle("Network & servers")
                         .modifier(ThemedBackground(grouped: true))
+                        .environmentObject(ss)
                 } label: {
                     settingsRow("externaldrive.connected.to.line.below", color: theme.colors.secondary) { Text("Network & servers") }
                 }
@@ -379,22 +381,11 @@ struct SettingsView: View {
                         .modifier(ThemedBackground())
                         .frame(maxHeight: .infinity, alignment: .top)
                 } label: {
-                    settingsRow("info", color: theme.colors.secondary) { Text("About SimpleX Chat") }
+                    settingsRow("info", color: theme.colors.secondary) { Text("About Inqalaab") }
                 }
-                settingsRow("number", color: theme.colors.secondary) {
-                    Button("Send questions and ideas") {
-                        dismiss()
-                        DispatchQueue.main.async {
-                            UIApplication.shared.open(simplexTeamURL)
-                        }
-                    }
-                }
-                .disabled(chatModel.chatRunning != true)
-                settingsRow("envelope", color: theme.colors.secondary) { Text("[Send us email](mailto:chat@simplex.chat)") }
             }
 
-            Section(header: Text("Support SimpleX Chat").foregroundColor(theme.colors.secondary)) {
-                settingsRow("keyboard", color: theme.colors.secondary) { Text("[Contribute](https://github.com/simplex-chat/simplex-chat#contribute)") }
+            Section(header: Text("Support Inqalaab").foregroundColor(theme.colors.secondary)) {
                 settingsRow("star", color: theme.colors.secondary) {
                     Button("Rate the app") {
                         if let scene = sceneDelegate.windowScene {

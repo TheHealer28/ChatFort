@@ -1,18 +1,18 @@
 /* Bundle name */
-"CFBundleName" = "SimpleX";
+"CFBundleName" = "Inqalaab";
 
 /* Privacy - Camera Usage Description */
-"NSCameraUsageDescription" = "SimpleX потребує доступу до камери, щоб сканувати QR-коди для з'єднання з іншими користувачами та для відеодзвінків.";
+"NSCameraUsageDescription" = "Inqalaab потребує доступу до камери, щоб сканувати QR-коди для з'єднання з іншими користувачами та для відеодзвінків.";
 
 /* Privacy - Face ID Usage Description */
-"NSFaceIDUsageDescription" = "SimpleX використовує Face ID для локальної автентифікації";
+"NSFaceIDUsageDescription" = "Inqalaab використовує Face ID для локальної автентифікації";
 
 /* Privacy - Local Network Usage Description */
-"NSLocalNetworkUsageDescription" = "SimpleX використовує доступ до локальної мережі, щоб дозволити користувачеві користуватися профілем чату через десктопну програму в тій же мережі.";
+"NSLocalNetworkUsageDescription" = "Inqalaab використовує доступ до локальної мережі, щоб дозволити користувачеві користуватися профілем чату через десктопну програму в тій же мережі.";
 
 /* Privacy - Microphone Usage Description */
-"NSMicrophoneUsageDescription" = "SimpleX потребує доступу до мікрофона для аудіо та відео дзвінків, а також для запису голосових повідомлень.";
+"NSMicrophoneUsageDescription" = "Inqalaab потребує доступу до мікрофона для аудіо та відео дзвінків, а також для запису голосових повідомлень.";
 
 /* Privacy - Photo Library Additions Usage Description */
-"NSPhotoLibraryAddUsageDescription" = "SimpleX потребує доступу до фототеки для збереження захоплених та отриманих медіафайлів";
+"NSPhotoLibraryAddUsageDescription" = "Inqalaab потребує доступу до фототеки для збереження захоплених та отриманих медіафайлів";
 
