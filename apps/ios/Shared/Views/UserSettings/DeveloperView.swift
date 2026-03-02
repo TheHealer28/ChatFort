@@ -28,7 +28,7 @@ struct DeveloperView: View {
                             .frame(width: 24, height: 24)
                             .opacity(0.5)
                             .colorMultiply(theme.colors.secondary)
-                        Text("Install [SimpleX Chat for terminal](https://github.com/simplex-chat/simplex-chat)")
+                        Text("Install [Inqalaab for terminal](https://github.com/simplex-chat/simplex-chat)")
                             .padding(.leading, 36)
                     }
                     NavigationLink {
@@ -68,7 +68,7 @@ struct DeveloperView: View {
                 }
                 Section("Deprecated options") {
                     settingsRow("link", color: theme.colors.secondary) {
-                        Picker("SimpleX links", selection: $simplexLinkMode) {
+                        Picker("Inqalaab links", selection: $simplexLinkMode) {
                             ForEach(
                                 SimpleXLinkMode.values + (SimpleXLinkMode.values.contains(simplexLinkMode) ? [] : [simplexLinkMode])
                             ) { mode in

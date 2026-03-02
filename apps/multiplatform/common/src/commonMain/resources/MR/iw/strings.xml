@@ -3,8 +3,8 @@
     <string name="color_primary">הדגשה</string>
     <string name="accept_contact_button">אשר</string>
     <string name="accept_connection_request__question">לאשר בקשת חיבור\?</string>
-    <string name="about_simplex_chat">אודות SimpleX Chat</string>
-    <string name="about_simplex">אודות SimpleX</string>
+    <string name="about_simplex_chat">אודות Inqalaab</string>
+    <string name="about_simplex">אודות Inqalaab</string>
     <string name="accept_call_on_lock_screen">ענה</string>
     <string name="chat_item_ttl_week">שבוע</string>
     <string name="accept_feature">קבל</string>
@@ -267,7 +267,7 @@
     <string name="one_time_link_short">קישור חד־פעמי</string>
     <string name="network_session_mode_transport_isolation">בידוד תעבורה</string>
     <string name="all_your_contacts_will_remain_connected_update_sent">כל אנשי הקשר יישארו מחוברים. עדכון הפרופיל יישלח לאנשי הקשר.</string>
-    <string name="create_simplex_address">צור כתובת SimpleX</string>
+    <string name="create_simplex_address">צור כתובת Inqalaab</string>
     <string name="delete_address__question">למחוק כתובת\?</string>
     <string name="auto_accept_contact">אשר אוטומטית</string>
     <string name="continue_to_next_step">המשך</string>
@@ -290,7 +290,7 @@
     <string name="color_secondary">משני</string>
     <string name="color_secondary_variant">משני נוסף</string>
     <string name="color_background">רקע</string>
-    <string name="learn_more_about_address">אודות כתובת SimpleX</string>
+    <string name="learn_more_about_address">אודות כתובת Inqalaab</string>
     <string name="add_address_to_your_profile">הוסיפו את הכתובת לפרופיל שלכם, כך שאנשי קשר יוכלו לשתף אותה עם אנשים אחרים. עדכון הפרופיל יישלח לאנשי הקשר.</string>
     <string name="color_primary_variant">הדגשה נוספת</string>
     <string name="address_section_title">כתובת</string>
@@ -313,8 +313,8 @@
     <string name="delete_group_question">למחוק קבוצה\?</string>
     <string name="desktop_scan_QR_code_from_app_via_scan_QR_code"><![CDATA[💻 שולחן עבודה: סירקו את קוד ה־QR המוצג באפליקציה, באמצעות <b>סריקת קוד QR</b>.]]></string>
     <string name="settings_section_title_device">מכשיר</string>
-    <string name="auth_device_authentication_is_disabled_turning_off">נעילת המכשיר מושבתת. מכבה נעילת SimpleX.</string>
-    <string name="auth_device_authentication_is_not_enabled_you_can_turn_on_in_settings_once_enabled">נעילת המכשיר אינה מופעלת. ניתן להפעיל את נעילת SimpleX, לאחר שתפעילו את נעילת המכשיר.</string>
+    <string name="auth_device_authentication_is_disabled_turning_off">נעילת המכשיר מושבתת. מכבה נעילת Inqalaab.</string>
+    <string name="auth_device_authentication_is_not_enabled_you_can_turn_on_in_settings_once_enabled">נעילת המכשיר אינה מופעלת. ניתן להפעיל את נעילת Inqalaab, לאחר שתפעילו את נעילת המכשיר.</string>
     <string name="total_files_count_and_size">%d קבצים בגודל כולל של %s</string>
     <string name="server_error">שגיאה</string>
     <string name="error_loading_smp_servers">שגיאה בטעינת שרתי SMP</string>
@@ -325,7 +325,7 @@
     <string name="la_minutes">%d דקות</string>
     <string name="la_seconds">%d שניות</string>
     <string name="la_enter_app_passcode">הזינו קוד גישה</string>
-    <string name="auth_enable_simplex_lock">הפעלת נעילת SimpleX</string>
+    <string name="auth_enable_simplex_lock">הפעלת נעילת Inqalaab</string>
     <string name="edit_verb">ערוך</string>
     <string name="display_name__field">שם פרופיל:</string>
     <string name="edit_image">ערוך תמונה</string>
@@ -352,7 +352,7 @@
     <string name="smp_server_test_download_file">הורד קובץ</string>
     <string name="error_changing_address">שגיאה בשינוי כתובת</string>
     <string name="error_deleting_user">שגיאה במחיקת פרופיל משתמש</string>
-    <string name="auth_disable_simplex_lock">השבתת נעילת SimpleX</string>
+    <string name="auth_disable_simplex_lock">השבתת נעילת Inqalaab</string>
     <string name="dont_create_address">לא ליצור כתובת</string>
     <string name="no_call_on_lock_screen">מושבת</string>
     <string name="integrity_msg_duplicate">הודעה כפולה</string>
@@ -477,12 +477,12 @@
     <string name="if_you_cant_meet_in_person">אם לא ניתן להיפגש פנים אל פנים, הציגו את קוד ה־QR בשיחת וידאו, או שתפו את הקישור.</string>
     <string name="how_to_use_simplex_chat">איך להשתמש בזה</string>
     <string name="email_invite_body">היי!
-\nאפשר להתחבר אליי דרך SimpleX Chat: %s</string>
+\nאפשר להתחבר אליי דרך Inqalaab: %s</string>
     <string name="hidden_profile_password">סיסמת פרופיל מוסתרת</string>
     <string name="hide_profile">הסתר פרופיל</string>
     <string name="how_to_use_markdown">איך להשתמש במרקדאון</string>
     <string name="how_it_works">איך זה עובד</string>
-    <string name="how_simplex_works">איך SimpleX עובדת</string>
+    <string name="how_simplex_works">איך Inqalaab עובדת</string>
     <string name="icon_descr_hang_up">נתק</string>
     <string name="settings_section_title_help">עזרה</string>
     <string name="delete_group_for_all_members_cannot_undo_warning">הקבוצה תימחק עבור כל חברי הקבוצה – לא ניתן לבטל זאת!</string>
@@ -497,7 +497,7 @@
     <string name="if_you_choose_to_reject_the_sender_will_not_be_notified">אם תבחרו לדחות השולח לא יקבל התראה על כך.</string>
     <string name="network_disable_socks_info">אם תאשרו, שרתי העברת ההודעות יוכלו לראות את ה־IP שלכם, וספק האינטרנט שלכם – את השרתים אליהם אתם מחוברים.</string>
     <string name="image_descr">תמונה</string>
-    <string name="if_you_received_simplex_invitation_link_you_can_open_in_browser">אם קיבלתם קישור הזמנה ל־SimpleX Chat, תוכלו לפתוח אותו בדפדפן.</string>
+    <string name="if_you_received_simplex_invitation_link_you_can_open_in_browser">אם קיבלתם קישור הזמנה ל־Inqalaab, תוכלו לפתוח אותו בדפדפן.</string>
     <string name="if_you_enter_self_destruct_code">אם תזינו את קוד הגישה להשמדה עצמית בעת פתיחת האפליקציה:</string>
     <string name="if_you_enter_passcode_data_removed">אם תזינו קוד גישה זה בעת פתיחת האפליקציה, כל נתוני האפליקציה יימחקו באופן בלתי הפיך!</string>
     <string name="image_saved">תמונה נשמרה בגלריה</string>
@@ -532,7 +532,7 @@
     <string name="v4_3_irreversible_message_deletion">מחיקה בלתי הפיכה של הודעות</string>
     <string name="v4_5_italian_interface">ממשק איטלקית</string>
     <string name="smp_servers_invalid_address">כתובת שרת לא תקינה!</string>
-    <string name="install_simplex_chat_for_terminal">התקנת SimpleX Chat עבור מסוף הפקודה</string>
+    <string name="install_simplex_chat_for_terminal">התקנת Inqalaab עבור מסוף הפקודה</string>
     <string name="invite_friends">הזמן חברים</string>
     <string name="italic_text">נטוי</string>
     <string name="invalid_chat">צ׳אט לא תקין</string>
@@ -582,7 +582,7 @@
     <string name="auth_log_in_using_credential">התחבר באמצעות האישור שלך</string>
     <string name="learn_more">למדו עוד</string>
     <string name="markdown_help">עזרה במרקדאון</string>
-    <string name="email_invite_subject">בואו נדבר ב־Simplex Chat</string>
+    <string name="email_invite_subject">בואו נדבר ב־Inqalaab</string>
     <string name="keychain_error">שגיאת Keychain</string>
     <string name="join_group_incognito_button">הצטרף עם זהות נסתרת</string>
     <string name="leave_group_question">לעזוב קבוצה\?</string>
@@ -700,7 +700,7 @@
     <string name="toast_permission_denied">ההרשאה נדחתה!</string>
     <string name="image_descr_profile_image">תמונת פרופיל</string>
     <string name="profile_update_will_be_sent_to_contacts">עדכון הפרופיל יישלח לאנשי הקשר שלך.</string>
-    <string name="open_simplex_chat_to_accept_call">פיתחו את Simplex Chat כדי לענות לשיחה.</string>
+    <string name="open_simplex_chat_to_accept_call">פיתחו את Inqalaab כדי לענות לשיחה.</string>
     <string name="v4_5_message_draft_descr">שמירת טיוטת ההודעה האחרונה, עם קבצים מצורפים.</string>
     <string name="prohibit_message_reactions_group">לאסור תגובות אמוג׳י להודעות.</string>
     <string name="v4_5_private_filenames">שמות קבצים פרטיים</string>
@@ -739,7 +739,7 @@
     <string name="restore_database_alert_desc">נא להזין את הסיסמה הקודמת לאחר שחזור גיבוי מסד הנתונים, לא ניתן לבטל פעולה זו.</string>
     <string name="prohibit_message_deletion">לאסור מחיקה בלתי הפיכה של הודעות.</string>
     <string name="opening_database">פותח מסד נתונים…</string>
-    <string name="simplex_link_mode_browser_warning">פתיחת הקישור בדפדפן עלולה להפחית את פרטיות ואבטחת החיבור. קישורי SimpleX לא מהימנים יהיו אדומים.</string>
+    <string name="simplex_link_mode_browser_warning">פתיחת הקישור בדפדפן עלולה להפחית את פרטיות ואבטחת החיבור. קישורי Inqalaab לא מהימנים יהיו אדומים.</string>
     <string name="network_error_desc">אנא בידקו את חיבור האינטרנט שלכם עם %1$s ונסו שוב.</string>
     <string name="error_smp_test_certificate">ייתכן שטביעת האצבע של התעודה בכתובת השרת שגויה</string>
     <string name="auth_open_chat_console">פתיחת מסוף צ׳אט</string>
@@ -785,9 +785,9 @@
     <string name="stop_rcv_file__message">קבלת הקובץ תופסק.</string>
     <string name="icon_descr_record_voice_message">הקלט הודעה קולית</string>
     <string name="reject_contact_button">דחיה</string>
-    <string name="read_more_in_user_guide_with_link"><![CDATA[קראו עוד ב<font color="#0088ff">מדריך למשתמש</font>.]]></string>
+    <string name="read_more_in_user_guide_with_link"><![CDATA[קראו עוד ב<font color="#1E8E3E">מדריך למשתמש</font>.]]></string>
     <string name="rate_the_app">דרגו את האפליקציה</string>
-    <string name="read_more_in_github_with_link"><![CDATA[קראו עוד ב־<font color="#0088ff">GitHub repository</font> שלנו.]]></string>
+    <string name="read_more_in_github_with_link"><![CDATA[קראו עוד ב־<font color="#1E8E3E">GitHub repository</font> שלנו.]]></string>
     <string name="relay_server_if_necessary">יבוצע שימוש בשרת ממסר רק במידת הצורך. גורם אחר יכול לצפות בכתובת ה־IP שלך.</string>
     <string name="relay_server_protects_ip">שרת ממסר מגן על כתובת ה־IP שלך, אך הוא יכול לראות את משך השיחה.</string>
     <string name="icon_descr_call_rejected">שיחה נדחתה</string>
@@ -921,7 +921,7 @@
     <string name="callstate_starting">מתחיל…</string>
     <string name="v4_6_audio_video_calls_descr">תמיכה ב־Bluetooth ושיפורים אחרים.</string>
     <string name="la_lock_mode_system">אימות מערכת</string>
-    <string name="la_lock_mode">מצב נעילת SimpleX</string>
+    <string name="la_lock_mode">מצב נעילת Inqalaab</string>
     <string name="share_image">שתף מדיה…</string>
     <string name="share_message">שתף הודעה…</string>
     <string name="add_contact_or_create_group">התחל צ׳אט חדש</string>
@@ -933,22 +933,22 @@
     <string name="alert_title_skipped_messages">הודעות שדולגו</string>
     <string name="language_system">מערכת</string>
     <string name="settings_notification_preview_mode_title">הצג תצוגה מקדימה</string>
-    <string name="ntf_channel_messages">הודעות SimpleX Chat</string>
+    <string name="ntf_channel_messages">הודעות Inqalaab</string>
     <string name="v4_6_group_welcome_message_descr">הגדירו את ההודעה המוצגת לחברי קבוצה חדשים!</string>
-    <string name="ntf_channel_calls">שיחות SimpleX Chat</string>
-    <string name="auth_simplex_lock_turned_on">נעילת SimpleX מופעלת</string>
+    <string name="ntf_channel_calls">שיחות Inqalaab</string>
+    <string name="auth_simplex_lock_turned_on">נעילת Inqalaab מופעלת</string>
     <string name="share_verb">שתף</string>
     <string name="stop_file__action">עצור קובץ</string>
     <string name="stop_snd_file__title">לעצור שליחת קובץ\?</string>
     <string name="share_file">שתף קובץ…</string>
     <string name="icon_descr_settings">הגדרות</string>
     <string name="show_QR_code">הצג קוד QR</string>
-    <string name="chat_lock">נעילת SimpleX</string>
+    <string name="chat_lock">נעילת Inqalaab</string>
     <string name="star_on_github">כוכב ב־GitHub</string>
     <string name="share_address_with_contacts_question">לשתף כתובת עם אנשי קשר\?</string>
     <string name="stop_sharing">עצור שיתוף</string>
     <string name="set_passcode">הגדרת קוד גישה</string>
-    <string name="la_notice_title_simplex_lock">נעילת SimpleX</string>
+    <string name="la_notice_title_simplex_lock">נעילת Inqalaab</string>
     <string name="share_invitation_link">שתף קישור חד־פעמי</string>
     <string name="is_not_verified">%s אינו מאומת</string>
     <string name="is_verified">%s מאומת</string>
@@ -956,32 +956,32 @@
     <string name="submit_passcode">אישור</string>
     <string name="la_mode_system">מערכת</string>
     <string name="set_password_to_export">הגדרת סיסמה לייצוא</string>
-    <string name="simplex_link_contact">כתובת איש קשר של SimpleX</string>
-    <string name="simplex_link_group">קישור לקבוצת SimpleX</string>
-    <string name="simplex_link_mode">קישורי SimpleX</string>
-    <string name="simplex_link_invitation">הזמנה חד־פעמית של SimpleX</string>
+    <string name="simplex_link_contact">כתובת איש קשר של Inqalaab</string>
+    <string name="simplex_link_group">קישור לקבוצת Inqalaab</string>
+    <string name="simplex_link_mode">קישורי Inqalaab</string>
+    <string name="simplex_link_invitation">הזמנה חד־פעמית של Inqalaab</string>
     <string name="notifications_mode_periodic">מתחיל מעת לעת</string>
     <string name="notification_preview_mode_contact_desc">הצג איש קשר בלבד</string>
     <string name="notification_preview_mode_message_desc">הצג איש קשר והודעה</string>
-    <string name="lock_not_enabled">נעילת SimpleX לא מופעלת!</string>
+    <string name="lock_not_enabled">נעילת Inqalaab לא מופעלת!</string>
     <string name="auth_stop_chat">עצירת צ׳אט</string>
     <string name="stop_rcv_file__title">לעצור קבלת קובץ\?</string>
     <string name="switch_receiving_address_question">לשנות כתובת קבלה\?</string>
-    <string name="simplex_address">כתובת SimpleX</string>
+    <string name="simplex_address">כתובת Inqalaab</string>
     <string name="smp_servers">שרתי SMP</string>
     <string name="share_with_contacts">שתף עם אנשי קשר</string>
     <string name="show_call_on_lock_screen">הצג</string>
     <string name="icon_descr_speaker_off">רמקול כבוי</string>
     <string name="icon_descr_speaker_on">רמקול פעיל</string>
     <string name="settings_section_title_settings">הגדרות</string>
-    <string name="settings_section_title_support">תמיכה ב־SIMPLEX CHAT</string>
+    <string name="settings_section_title_support">תמיכה ב־Inqalaab</string>
     <string name="stop_chat_question">לעצור צ׳אט\?</string>
     <string name="stop_chat_to_export_import_or_delete_chat_database">עיצרו את הצ׳אט כדי לייצא, לייבא או למחוק את מסד הנתונים. לא תוכלו לקבל ולשלוח הודעות בזמן שהצ׳אט מופסק.</string>
     <string name="stop_chat_confirmation">עצור</string>
     <string name="skip_inviting_button">דלג על הזמנת חברים</string>
     <string name="share_address">שתף כתובת</string>
-    <string name="theme_simplex">SimpleX</string>
-    <string name="v4_2_security_assessment_desc">אבטחת SimpleX Chat נבדקה על ידי Trail of Bits.</string>
+    <string name="theme_simplex">Inqalaab</string>
+    <string name="v4_2_security_assessment_desc">אבטחת Inqalaab נבדקה על ידי Trail of Bits.</string>
     <string name="theme_system">מערכת</string>
     <string name="non_fatal_errors_occured_during_import">כמה שגיאות לא קטלניות התרחשו במהלך הייבוא – ניתן לראות את מסוף הצ׳אט לקבלת פרטים נוספים.</string>
     <string name="chat_item_ttl_seconds">%s שניות</string>
@@ -1011,7 +1011,7 @@
     <string name="database_initialization_error_desc">מסד הנתונים אינו פועל כראוי. הקישו למידע נוסף</string>
     <string name="this_text_is_available_in_settings">טקסט זה זמין בהגדרות</string>
     <string name="images_limit_title">יותר מדי תמונות!</string>
-    <string name="thank_you_for_installing_simplex">תודה שהתקנתם את SimpleX Chat!</string>
+    <string name="thank_you_for_installing_simplex">תודה שהתקנתם את Inqalaab!</string>
     <string name="this_link_is_not_a_valid_connection_link">קישור זה אינו קישור חיבור תקין!</string>
     <string name="theme_colors_section_title">צבעי ממשק</string>
     <string name="member_role_will_be_changed_with_invitation">התפקיד ישתנה ל־"%s". החבר יקבל הזמנה חדשה.</string>
@@ -1037,12 +1037,12 @@
     <string name="database_backup_can_be_restored">הניסיון לשנות את סיסמת מסד הנתונים לא הושלם.</string>
     <string name="color_title">כותרת</string>
     <string name="group_is_decentralized">הקבוצה מבוזרת לחלוטין - היא גלויה רק לחברי הקבוצה.</string>
-    <string name="to_protect_privacy_simplex_has_ids_for_queues">כדי לשמור על הפרטיות, במקום מזהי משתמש הקיימים בכל הפלטפורמות האחרות, ל־SimpleX יש מזהים לתורי הודעות, נפרדים עבור כל אחד מאנשי הקשר שלך.</string>
-    <string name="using_simplex_chat_servers">משתמש בשרתי SimpleX Chatז</string>
+    <string name="to_protect_privacy_simplex_has_ids_for_queues">כדי לשמור על הפרטיות, במקום מזהי משתמש הקיימים בכל הפלטפורמות האחרות, ל־Inqalaab יש מזהים לתורי הודעות, נפרדים עבור כל אחד מאנשי הקשר שלך.</string>
+    <string name="using_simplex_chat_servers">משתמש בשרתי Inqalaabז</string>
     <string name="trying_to_connect_to_server_to_receive_messages">מנסה להתחבר לשרת המשמש לקבלת הודעות מאיש קשר זה.</string>
     <string name="connection_error_auth_desc">אלא אם איש הקשר שלכם מחק את החיבור או שהקישור הזה כבר היה בשימוש, זה עשוי להיות באג - אנא דווחו על כך.
 \nכדי להתחבר, אנא בקשו מאיש הקשר שלכם ליצור קישור חיבור נוסף ובידקו שיש לכם חיבור יציב לרשת.</string>
-    <string name="la_notice_to_protect_your_information_turn_on_simplex_lock_you_will_be_prompted_to_complete_authentication_before_this_feature_is_enabled">כדי להגן על המידע שלכם, הפעילו את SimpleX Lock.
+    <string name="la_notice_to_protect_your_information_turn_on_simplex_lock_you_will_be_prompted_to_complete_authentication_before_this_feature_is_enabled">כדי להגן על המידע שלכם, הפעילו את Inqalaab Lock.
 \nתתבקשו להשלים את האימות לפני שתכונה זו תופעל.</string>
     <string name="smp_servers_use_server">השתמש בשרת</string>
     <string name="network_socks_toggle_use_socks_proxy">השתמש בפרוקסי SOCKS</string>
@@ -1051,7 +1051,7 @@
     <string name="upgrade_and_open_chat">שדרג ופתח צ׳אט</string>
     <string name="v4_5_private_filenames_descr">כדי להגן על אזור הזמן, קובצי תמונה/קול משתמשים ב־UTC.</string>
     <string name="smp_server_test_upload_file">העלה קובץ</string>
-    <string name="to_preserve_privacy_simplex_has_background_service_instead_of_push_notifications_it_uses_a_few_pc_battery"><![CDATA[כדי לשפר את הפרטיות <b>SimpleX  רץ ברקע</b> במקום להשתמש בpush notifications.]]></string>
+    <string name="to_preserve_privacy_simplex_has_background_service_instead_of_push_notifications_it_uses_a_few_pc_battery"><![CDATA[כדי לשפר את הפרטיות <b>Inqalaab  רץ ברקע</b> במקום להשתמש בpush notifications.]]></string>
     <string name="enter_passphrase_notification_desc">כדי לקבל התראות, יש להזין את סיסמת מסד הנתונים</string>
     <string name="auth_unlock">בטל נעילה</string>
     <string name="icon_descr_sent_msg_status_unauthorized_send">שליחה לא מורשית</string>
@@ -1068,7 +1068,7 @@
     <string name="simplex_link_mode_browser">דרך הדפדפן</string>
     <string name="unmute_chat">בטל השתקה</string>
     <string name="network_enable_socks">להשתמש בפרוקסי SOCKS\?</string>
-    <string name="use_simplex_chat_servers__question">להשתמש בשרתי SimpleX Chat\?</string>
+    <string name="use_simplex_chat_servers__question">להשתמש בשרתי Inqalaab\?</string>
     <string name="network_disable_socks">להשתמש בחיבור ישיר לאינטרנט\?</string>
     <string name="to_reveal_profile_enter_password">כדי לחשוף את הפרופיל המוסתר שלכם, הזינו סיסמה מלאה בשדה חיפוש בדף פרופילי צ׳אט.</string>
     <string name="use_chat">שימוש בצ׳אט</string>
@@ -1086,7 +1086,7 @@
     <string name="callstate_waiting_for_confirmation">ממתין לאישור…</string>
     <string name="callstate_waiting_for_answer">ממתין למענה…</string>
     <string name="we_do_not_store_contacts_or_messages_on_servers">איננו מאחסנים את אנשי הקשר או ההודעות שלך (לאחר המסירה) בשרתים.</string>
-    <string name="app_name">SimpleX</string>
+    <string name="app_name">Inqalaab</string>
     <string name="sender_you_pronoun">אתם</string>
     <string name="description_via_contact_address_link">באמצעות קישור לכתובת איש קשר</string>
     <string name="description_via_group_link">באמצעות קישור לקבוצה</string>
@@ -1094,8 +1094,8 @@
     <string name="failed_to_create_user_duplicate_desc">כבר יש לך פרופיל צ׳אט עם אותו שם תצוגה. יש לבחור שם אחר.</string>
     <string name="voice_message_with_duration">הודעה קולית (%1$s)</string>
     <string name="contact_wants_to_connect_with_you">רוצה שתתחברו!</string>
-    <string name="icon_descr_address">כתובת SimpleX</string>
-    <string name="icon_descr_simplex_team">צוות SimpleX</string>
+    <string name="icon_descr_address">כתובת Inqalaab</string>
+    <string name="icon_descr_simplex_team">צוות Inqalaab</string>
     <string name="video_call_no_encryption">שיחת וידאו (לא מוצפנת מקצה־לקצה)</string>
     <string name="your_calls">השיחות שלך</string>
     <string name="settings_section_title_you">אתם</string>
@@ -1110,7 +1110,7 @@
     <string name="you_can_start_chat_via_setting_or_by_restarting_the_app">באפשרותך להתחיל את הצ׳אט באמצעות הגדרות האפליקציה / מסד נתונים או על ידי הפעלה מחדש של האפליקציה.</string>
     <string name="chat_preferences_you_allow">אתם מאפשרים</string>
     <string name="you_are_already_connected_to_vName_via_this_link">אתם כבר מחוברים ל־%1$s.</string>
-    <string name="simplex_service_notification_title">שירות SimpleX Chat</string>
+    <string name="simplex_service_notification_title">שירות Inqalaab</string>
     <string name="la_could_not_be_verified">לא ניתן היה לאמת אתכם; אנא נסו שוב.</string>
     <string name="welcome">ברוכים הבאים!</string>
     <string name="personal_welcome">ברוכ/ה הבא/ה %1$s!</string>
@@ -1125,7 +1125,7 @@
     <string name="voice_message_send_text">הודעה קולית…</string>
     <string name="you_need_to_allow_to_send_voice">עליכם לאפשר לאיש הקשר שלכם לשלוח הודעות קוליות כדי שתוכלו לשלוח אותן.</string>
     <string name="gallery_video_button">סרטון</string>
-    <string name="you_can_connect_to_simplex_chat_founder"><![CDATA[באפשרותך <font color="#0088ff">להתחבר למפתחי SimpleX Chat כדי לשאול כל שאלה ולקבל עדכונים</font>.]]></string>
+    <string name="you_can_connect_to_simplex_chat_founder"><![CDATA[באפשרותך <font color="#1E8E3E">להתחבר למפתחי Inqalaab כדי לשאול כל שאלה ולקבל עדכונים</font>.]]></string>
     <string name="webrtc_ice_servers">שרתי WebRTC ICE</string>
     <string name="integrity_msg_skipped">%1$d הודעות שדולגו</string>
     <string name="custom_time_unit_weeks">שבועות</string>
@@ -1134,7 +1134,7 @@
     <string name="icon_descr_video_snd_complete">סרטון נשלח</string>
     <string name="voice_message">הודעה קולית</string>
     <string name="you_accepted_connection">אישרת את החיבור</string>
-    <string name="image_descr_simplex_logo">סמל SimpleX</string>
+    <string name="image_descr_simplex_logo">סמל Inqalaab</string>
     <string name="xftp_servers">שרתי XFTP</string>
     <string name="alert_text_decryption_error_too_many_skipped">דילג על %1$d הודעות.</string>
     <string name="wrong_passphrase">סיסמת מסד נתונים שגויה</string>
@@ -1145,7 +1145,7 @@
     <string name="chat_preferences_yes">כן</string>
     <string name="simplex_link_connection">דרך %1$s</string>
     <string name="connected_to_server_to_receive_messages_from_contact">אתם מחוברים לשרת המשמש לקבלת הודעות מאיש קשר זה.</string>
-    <string name="you_can_turn_on_lock">באפשרותך להפעיל את SimpleX Lock דרך ההגדרות.</string>
+    <string name="you_can_turn_on_lock">באפשרותך להפעיל את Inqalaab Lock דרך ההגדרות.</string>
     <string name="you_have_no_chats">אין לך צ׳אטים</string>
     <string name="waiting_for_video">ממתין לסרטון</string>
     <string name="waiting_for_file">ממתין לקובץ</string>
@@ -1216,9 +1216,9 @@
     <string name="you_will_be_connected_when_group_host_device_is_online">אתם תהיו מחוברים לקבוצה כאשר המכשיר של מארח הקבוצה יהיה מקוון, אנא חכו או בידקו מאוחר יותר!</string>
     <string name="you_will_be_connected_when_your_contacts_device_is_online">אתם תהיו מחוברים כאשר המכשיר של איש הקשר שלך יהיה מקוון, אנא חכו או בידקו מאוחר יותר!</string>
     <string name="you_wont_lose_your_contacts_if_delete_address">לא תאבדו את אנשי הקשר שלכם אם תמחקו מאוחר יותר את הכתובת שלכם.</string>
-    <string name="your_simplex_contact_address">כתובת SimpleX שלך</string>
+    <string name="your_simplex_contact_address">כתובת Inqalaab שלך</string>
     <string name="your_SMP_servers">שרתי SMP שלך</string>
-    <string name="your_profile_is_stored_on_device_and_shared_only_with_contacts_simplex_cannot_see_it">הפרופיל שלך מאוחסן במכשירך ומשותף רק עם אנשי הקשר שלך.\nשרתי SimpleX אינם יכולים לראות את הפרופיל שלך.</string>
+    <string name="your_profile_is_stored_on_device_and_shared_only_with_contacts_simplex_cannot_see_it">הפרופיל שלך מאוחסן במכשירך ומשותף רק עם אנשי הקשר שלך.\nשרתי Inqalaab אינם יכולים לראות את הפרופיל שלך.</string>
     <string name="your_profile_is_stored_on_your_device">הפרופיל, אנשי הקשר וההודעות שנמסרו מאוחסנים במכשיר שלך.</string>
     <string name="you_will_stop_receiving_messages_from_this_group_chat_history_will_be_preserved">אתם תפסיקו לקבל הודעות מקבוצה זו. היסטוריית הצ׳אט תישמר.</string>
     <string name="invite_prohibited_description">הינך מנסה להזמין איש קשר איתו שיתפת פרופיל זהות נסתרת לקבוצה בה ישנו שימוש בפרופיל הראשי שלך</string>
@@ -1335,7 +1335,7 @@
     <string name="receipts_groups_enable_keep_overrides">הפעל (שמור על עקיפות קבוצה)</string>
     <string name="receipts_groups_title_enable">להפעיל קבלות לקבוצות\?</string>
     <string name="rcv_group_event_2_members_connected">%s ו-%s מחוברים</string>
-    <string name="system_restricted_background_desc">SimpleX לא יכול לרוץ ברקע. תקבל את ההתראות רק כשהאפליקציה פועלת.</string>
+    <string name="system_restricted_background_desc">Inqalaab לא יכול לרוץ ברקע. תקבל את ההתראות רק כשהאפליקציה פועלת.</string>
     <string name="rcv_group_event_n_members_connected">%s, %s ו-%d חברים אחרים מחוברים</string>
     <string name="system_restricted_background_in_call_desc">האפליקציה עשויה להיסגר לאחר דקה אחת ברקע.</string>
     <string name="send_receipts_disabled_alert_msg">לקבוצה זו יש יותר מ-%1$d חברים, קבלות מסירה לא נשלחות.</string>
@@ -1393,8 +1393,8 @@
     <string name="call_service_notification_video_call">שיחת וידאו</string>
     <string name="auth_open_migration_to_another_device">פתח מסך העברה</string>
     <string name="expand_verb">הרחב</string>
-    <string name="code_you_scanned_is_not_simplex_link_qr_code">הקוד שסרקת אינו קוד QR של קישור SimpleX.</string>
-    <string name="you_can_make_address_visible_via_settings">תוכל להפוך אותו לגלוי לאנשי הקשר שלך ב-SimpleX דרך ההגדרות.</string>
+    <string name="code_you_scanned_is_not_simplex_link_qr_code">הקוד שסרקת אינו קוד QR של קישור Inqalaab.</string>
+    <string name="you_can_make_address_visible_via_settings">תוכל להפוך אותו לגלוי לאנשי הקשר שלך ב-Inqalaab דרך ההגדרות.</string>
     <string name="invalid_name">שם לא חוקי!</string>
     <string name="set_passphrase">הגדר סיסמא</string>
     <string name="group_member_status_unknown_short">לא ידוע</string>
@@ -1518,7 +1518,7 @@
     <string name="add_contact_tab">הוסף איש קשר</string>
     <string name="you_can_view_invitation_link_again">תוכל לראות את קישור ההזמנה שוב בפרטי החיבור.</string>
     <string name="keep_unused_invitation_question">האם לשמור הזמנה שלא נעשה בה שימוש?</string>
-    <string name="the_text_you_pasted_is_not_a_link">הטקסט שהדבקת אינו קישור של SimpleX.</string>
+    <string name="the_text_you_pasted_is_not_a_link">הטקסט שהדבקת אינו קישור של Inqalaab.</string>
     <string name="show_slow_api_calls">הצג קריאות API איטיות</string>
     <string name="developer_options_section">אפשרויות למפתח</string>
     <string name="create_another_profile_button">צור פרופיל</string>
@@ -1528,7 +1528,7 @@
     <string name="unable_to_open_browser_desc">דפדפן האינטרנט המוגדר כברירת מחדל נדרש לשיחות. אנא הגדר דפדפן ברירת מחדל במערכת, ושתף מידע נוסף עם המפתחים.</string>
     <string name="e2ee_info_no_pq_short">השיחה הזו מוגנת באמצעות הצפנה קצה-אל-קצה.</string>
     <string name="e2ee_info_pq_short">השיחה הזו מוגנת באמצעות הצפנה קצה-אל-קצה עמידה בפני מחשוב קוונטי.</string>
-    <string name="connect_plan_this_is_your_own_simplex_address">זהו כתובת ה-SimpleX שלך!</string>
+    <string name="connect_plan_this_is_your_own_simplex_address">זהו כתובת ה-Inqalaab שלך!</string>
     <string name="remote_host_error_timeout"><![CDATA[הסתיים פסק הזמן הקצוב להתחברות למכשיר נייד <b>%s</b>]]></string>
     <string name="clear_note_folder_warning">כל ההודעות יימחקו- לא ניתן לשוב לאחור</string>
     <string name="block_member_desc">כל ההודעות החדשות מ %s יהיו מוחבאות</string>
@@ -1598,7 +1598,7 @@
     <string name="remote_host_error_bad_state"><![CDATA[החיבור לנייד <b>%s</b> נמצא במצב לקוי]]></string>
     <string name="remote_host_error_bad_version"><![CDATA[הנייד <b>%s</b> משתמש בגרסה שאינה נתמכת. אנא, ודא שאתה משתמש באותה גרסה על שני המכשירים]]></string>
     <string name="failed_to_create_user_invalid_title">שם תצוגה לא חוקי!</string>
-    <string name="search_or_paste_simplex_link">חפש או הדבק קישור של SimpleX</string>
+    <string name="search_or_paste_simplex_link">חפש או הדבק קישור של Inqalaab</string>
     <string name="verify_code_on_mobile">אמת קוד במכשיר הנייד</string>
     <string name="remote_ctrl_was_disconnected_title">החיבור עצר</string>
     <string name="non_content_uri_alert_title">נתיב קובץ לא חוקי</string>
@@ -1762,7 +1762,7 @@
     <string name="chat_theme_reset_to_user_theme">אפס ערכת נושא למשתמש</string>
     <string name="chat_theme_apply_to_mode">החל על</string>
     <string name="chat_theme_apply_to_all_modes">ערכת נושא</string>
-    <string name="group_members_can_send_simplex_links">משתמשים יכולים לשלוח קישורי SimpleXצ</string>
+    <string name="group_members_can_send_simplex_links">משתמשים יכולים לשלוח קישורי Inqalaabצ</string>
     <string name="v5_8_chat_themes_descr">עשה שהצאט\'ים שלך יראו אחרת!</string>
     <string name="v5_7_network">הגדרות רשת</string>
     <string name="remote_ctrl_connection_stopped_identity_desc">הקישור הזה שומש כבר במכשיר אחר, אנא צור קישור חדש במחשב.</string>
@@ -1782,7 +1782,7 @@
     <string name="network_smp_proxy_fallback_prohibit_description">אל תשלח הודעות ישירות אפילו אם שרת היעד לא תומך במסלול פרטי</string>
     <string name="v5_8_message_delivery">שיפור בשליחת הודעות</string>
     <string name="permissions_camera">מצלמה</string>
-    <string name="allow_to_send_simplex_links">אפשר שליחת קישורי SimpleX</string>
+    <string name="allow_to_send_simplex_links">אפשר שליחת קישורי Inqalaab</string>
     <string name="feature_roles_owners">בעלים</string>
     <string name="feature_roles_admins">מנהלים</string>
     <string name="feature_enabled_for">מופעל עבור</string>
@@ -1795,7 +1795,7 @@
     <string name="recipients_can_not_see_who_message_from">מקבלי ההודעה לא יוכלו לראות מי שלח את ההודעה</string>
     <string name="forward_chat_item">העבר</string>
     <string name="forward_message">מעביר הודעה…</string>
-    <string name="simplex_links_not_allowed">קישורי SimpleX לא מאופשרים</string>
+    <string name="simplex_links_not_allowed">קישורי Inqalaab לא מאופשרים</string>
     <string name="network_smp_proxy_mode_private_routing">מסלול פרטי</string>
     <string name="network_smp_proxy_mode_unprotected">לא מוגן</string>
     <string name="network_smp_proxy_mode_always">תמיד</string>
@@ -1812,7 +1812,7 @@
     <string name="settings_section_title_files">קבצים</string>
     <string name="settings_section_title_profile_images">תמונות פרופיל</string>
     <string name="settings_section_title_private_message_routing">מסלול הודעה פרטית</string>
-    <string name="simplex_links">קישורי SimpleX</string>
+    <string name="simplex_links">קישורי Inqalaab</string>
     <string name="network_type_no_network_connection">אין חיבור לרשת</string>
     <string name="network_type_other">אחר</string>
     <string name="chat_theme_apply_to_light_mode">ערכת נושא בהירה</string>
@@ -1885,7 +1885,7 @@
     <string name="servers_info_messages_received">הודעות שהתקבלו</string>
     <string name="servers_info_reset_stats">אפס את כל הסטטיסטיקות</string>
     <string name="wallpaper_scale">גודל</string>
-    <string name="simplex_links_are_prohibited_in_group">קישורי SimpleX לא מאופשרים בקבוצה הזו.</string>
+    <string name="simplex_links_are_prohibited_in_group">קישורי Inqalaab לא מאופשרים בקבוצה הזו.</string>
     <string name="scan_paste_link">סרוק/ הדבק קישור</string>
     <string name="please_try_later">אנא נסה מאוחר יותר</string>
     <string name="smp_servers_other">שרתי SMP אחרים</string>
@@ -2062,7 +2062,7 @@
     <string name="v6_3_reports_descr">עזור לאחראי תוכן בדיווחים על תוכן בעייתי בקבוצות</string>
     <string name="chat_list_add_list">הוסף רשימה</string>
     <string name="color_primary_variant2">הדגשה נוספת 2</string>
-    <string name="onboarding_conditions_by_using_you_agree">בשימוש שלך ב- SimpleX Chat אתה מסכים ל:\n\n- לשלוח רק תוכן חוקי בקבוצות ציבוריות.\n\n- לכבד את שאר המשתמשים - לא לשלוח ספאם.</string>
+    <string name="onboarding_conditions_by_using_you_agree">בשימוש שלך ב- Inqalaab אתה מסכים ל:\n\n- לשלוח רק תוכן חוקי בקבוצות ציבוריות.\n\n- לכבד את שאר המשתמשים - לא לשלוח ספאם.</string>
     <string name="operator_conditions_will_be_applied"><![CDATA[תנאי שימוש אלה יחולו גם על:<b>%s</b>.]]></string>
     <string name="operator_same_conditions_will_apply_to_operators"><![CDATA[אותם תנאי שימוש יחולו על מפעיל/ים: <b>%s</b>.]]></string>
     <string name="button_add_friends">הוסף חברים</string>
@@ -2120,7 +2120,7 @@
     <string name="servers_info_private_data_disclaimer">החל מ-%s.\nכל הנתונים נשמרים פרטיים במכשיר שלך.</string>
     <string name="network_smp_web_port_all">כל השרתים</string>
     <string name="onboarding_conditions_private_chats_not_accessible">צ\'אטים פרטיים, קבוצות ואנשי הקשר שלך אינם נגישים למפעילי השרת.</string>
-    <string name="onboarding_network_operators_app_will_use_for_routing">לדוגמה, אם איש הקשר שלך מקבל הודעות דרך שרת SimpleX Chat, האפליקציה שלך תעביר אותן דרך שרת Flux.</string>
+    <string name="onboarding_network_operators_app_will_use_for_routing">לדוגמה, אם איש הקשר שלך מקבל הודעות דרך שרת Inqalaab, האפליקציה שלך תעביר אותן דרך שרת Flux.</string>
     <string name="onboarding_conditions_privacy_policy_and_conditions_of_use">מדיניות פרטיות ותנאי שימוש.</string>
     <string name="onboarding_network_operators_conditions_you_can_configure">ניתן להגדיר מפעילים בהגדרות רשת ושרתים.</string>
     <string name="privacy_chat_list_open_links_no">לא</string>
@@ -2133,7 +2133,7 @@
     <string name="v6_1_customizable_message_descr">צורת הודעה הניתנת להתאמה אישית.</string>
     <string name="network_options_save_and_reconnect">שמור וחבר מחדש</string>
     <string name="appearance_in_app_bars_alpha">שקיפות</string>
-    <string name="error_parsing_uri_desc">אנא בדוק שקישור SimpleX תקין.</string>
+    <string name="error_parsing_uri_desc">אנא בדוק שקישור Inqalaab תקין.</string>
     <string name="connect_plan_open_chat">פתח שיחה</string>
     <string name="connect_plan_open_new_chat">פתח שיחה חדשה</string>
     <string name="connect_plan_open_new_group">פתח קבוצה חדשה</string>

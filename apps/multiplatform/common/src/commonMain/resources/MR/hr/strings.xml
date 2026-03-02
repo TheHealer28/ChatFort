@@ -37,10 +37,10 @@
     <string name="how_to_use_markdown">Kako koristiti markdown</string>
     <string name="from_gallery_button">Iz Galerije</string>
     <string name="group_reports_active_one">1 izveštaj</string>
-    <string name="learn_more_about_address">O SimpleX adresama</string>
+    <string name="learn_more_about_address">O Inqalaab adresama</string>
     <string name="above_then_preposition_continuation">iznad, onda:</string>
     <string name="accept_connection_request__question">Prihvati zahtev za vezu?</string>
-    <string name="email_invite_body">Zdravo!\nPoveži se sa mnom pomoću SimpleX Razgovora: %s</string>
+    <string name="email_invite_body">Zdravo!\nPoveži se sa mnom pomoću Inqalaab Razgovora: %s</string>
     <string name="icon_descr_group_inactive">Grupa neaktivna</string>
     <string name="group_is_decentralized">U potpunosti decentralizovan - vidljivo samo za članove grupe.</string>
     <string name="group_full_name_field">Celo ime grupe:</string>
@@ -79,7 +79,7 @@
     <string name="forward_files_messages_deleted_after_selection_title">%1$s poruke nisu prosledjene</string>
     <string name="chat_list_groups">Grupe</string>
     <string name="how_to_use_simplex_chat">Kako se koristi</string>
-    <string name="about_simplex_chat">O SimpleX Razgovoru</string>
+    <string name="about_simplex_chat">O Inqalaab Razgovoru</string>
     <string name="alert_text_decryption_error_n_messages_failed_to_decrypt">%1$d neuspešno u dešifrovanje poruke.</string>
     <string name="snd_group_event_group_profile_updated">grupni profil ažuriran</string>
     <string name="group_member_status_group_deleted">grupa odstranjena</string>
@@ -90,7 +90,7 @@
     <string name="host_verb">Domaćin</string>
     <string name="onboarding_notifications_mode_subtitle">Kako utiče na bateriju</string>
     <string name="how_it_helps_privacy">Kako pomaže privatnosti</string>
-    <string name="how_simplex_works">Kako SimpleX radi</string>
+    <string name="how_simplex_works">Kako Inqalaab radi</string>
     <string name="group_profile_is_stored_on_members_devices">Grupni profil je uskladnjen na uredjajima korisnika, ne na serverima.</string>
     <string name="onboarding_network_about_operators">O operatorima</string>
     <string name="hidden_profile_password">Skrivena šifra profila</string>
@@ -100,7 +100,7 @@
     <string name="accept_contact_button">Prihvatiti</string>
     <string name="wallpaper_preview_hello_bob">Dobro jutro!</string>
     <string name="v4_6_reduced_battery_usage">Dodatno smanjena potrošnja baterije.</string>
-    <string name="about_simplex">O SimpleX</string>
+    <string name="about_simplex">O Inqalaab</string>
     <string name="display_name_accepted_invitation">prihvaćena pozivnica</string>
     <string name="info_view_message_button">poruka</string>
     <string name="delete_and_notify_contact">Odstraniti i obavestiti kontakte</string>
@@ -426,8 +426,8 @@
     <string name="gallery_video_button">Video</string>
     <string name="you_accepted_connection">Prihvatili ste vezu</string>
     <string name="clear_verb">Očistiti</string>
-    <string name="simplex_address">SimpleX adresa</string>
-    <string name="image_descr_simplex_logo">SimpleX Logo</string>
+    <string name="simplex_address">Inqalaab adresa</string>
+    <string name="image_descr_simplex_logo">Inqalaab Logo</string>
     <string name="show_dev_options">Prikazati:</string>
     <string name="settings_section_title_device">UREĐAJ</string>
     <string name="new_message">Nova poruka</string>
@@ -454,7 +454,7 @@
     <string name="enable_automatic_deletion_question">Omogući automatsko brisanje poruka?</string>
     <string name="snd_conn_event_ratchet_sync_ok">šifrovanje ok za %s</string>
     <string name="user_mute">Isključiti zvuk</string>
-    <string name="theme_simplex">SimpleX</string>
+    <string name="theme_simplex">Inqalaab</string>
     <string name="theme">Teme</string>
     <string name="voice_messages">Glasovne poruke</string>
     <string name="calls_prohibited_with_this_contact">Audio/video pozivi su zabranjeni.</string>
@@ -482,14 +482,14 @@
     <string name="conn_event_ratchet_sync_agreed">šifrovanje prihvaćeno</string>
     <string name="whats_new_thanks_to_users_contribute_weblate">Zahvaljujući korisnicima – doprinesi pomoću Weblate!</string>
     <string name="back">Nazad</string>
-    <string name="your_simplex_contact_address">Vaša SimpleX adresa</string>
+    <string name="your_simplex_contact_address">Vaša Inqalaab adresa</string>
     <string name="save_and_notify_contacts">Sačuvati i obavestiti kontakte</string>
     <string name="v4_4_french_interface_descr">Zahvaljujući korisnicima – doprinesi pomoću Weblate!</string>
     <string name="icon_descr_edited">uređeno</string>
     <string name="privacy_chat_list_open_links_no">Ne</string>
     <string name="network_smp_proxy_fallback_prohibit">Ne</string>
     <string name="keep_conversation">Zadržite konverzaciju</string>
-    <string name="icon_descr_address">SimpleX Adresa</string>
+    <string name="icon_descr_address">Inqalaab Adresa</string>
     <string name="save_servers_button">Sačuvati</string>
     <string name="core_simplexmq_version">simplexmq: v%s (%2s)</string>
     <string name="settings_section_title_experimenta">EKSPERIMENTALNO</string>
@@ -764,7 +764,7 @@
     <string name="copy_verb">Kopirati</string>
     <string name="submit_passcode">Predati</string>
     <string name="xftp_servers_other">Ostali XFTP serveri</string>
-    <string name="create_simplex_address">Napraviti SimpleX adresu</string>
+    <string name="create_simplex_address">Napraviti Inqalaab adresu</string>
     <string name="encrypt_database">Šifrovati</string>
     <string name="info_row_created_at">Kreirano u</string>
     <string name="operator_open_conditions">Otvoriti uslove</string>
@@ -1012,7 +1012,7 @@
     <string name="rcv_group_event_changed_member_role">uloga promenjena iz %s u %s</string>
     <string name="change_member_role_question">Promeniti ulogu grupe?</string>
     <string name="smp_server_test_delete_file">Odstraniti datoteku</string>
-    <string name="icon_descr_simplex_team">SimpleX Tim</string>
+    <string name="icon_descr_simplex_team">Inqalaab Tim</string>
     <string name="moderated_description">moderirano</string>
     <string name="connection_error_blocked_desc">Operator servera blokira vezu:\n%1$s.</string>
     <string name="change_role">Promeniti ulogu</string>
@@ -1152,7 +1152,7 @@
     <string name="privacy_show_last_messages">Prikazati poslednje poruke</string>
     <string name="v6_0_delete_many_messages_descr">Odstraniti do 20 poruka odjednom.</string>
     <string name="remote_host_error_disconnected"><![CDATA[Mobilni <b>%s</b> prekinuta veza]]></string>
-    <string name="connect_plan_this_is_your_own_simplex_address">Ovo je Vaša vlastita SimpleX adresa!</string>
+    <string name="connect_plan_this_is_your_own_simplex_address">Ovo je Vaša vlastita Inqalaab adresa!</string>
     <string name="clear_verification">Očistiti verifikaciju</string>
     <string name="unable_to_open_browser_title">Greška u otvaranju pretraživača</string>
     <string name="no_chats">Nema razgovora</string>
@@ -1251,7 +1251,7 @@
     <string name="cannot_receive_file">Nije moguće primiti datoteku</string>
     <string name="error_creating_message">Greška pri kreiranju poruke</string>
     <string name="turn_off_system_restriction_button">Otvoriti podešavanja aplikacije</string>
-    <string name="auth_enable_simplex_lock">Omogućiti SimpleX Zaključavanje</string>
+    <string name="auth_enable_simplex_lock">Omogućiti Inqalaab Zaključavanje</string>
     <string name="share_file">Podeliti datoteku…</string>
     <string name="send_disappearing_message_custom_time">Prilagođeno vreme</string>
     <string name="servers_info_connected_servers_section_header">Povezani serveri</string>
@@ -1261,7 +1261,7 @@
     <string name="passcode_set">Pin kod postavljen!</string>
     <string name="all_app_data_will_be_cleared">Svi podaci u aplikaciji su odstranjeni.</string>
     <string name="app_passcode_replaced_with_self_destruct">Pin kod aplikacije je zamenjen pin kodom za samouništenje.</string>
-    <string name="settings_section_title_support">POTPORI SIMPLEX CHAT</string>
+    <string name="settings_section_title_support">POTPORI Inqalaab</string>
     <string name="settings_section_title_message_shape">Oblik poruke</string>
     <string name="settings_section_title_icon">IKONA APLIKACIJE</string>
     <string name="database_passphrase">Pristupna fraza baze podataka</string>
@@ -1279,8 +1279,8 @@
     <string name="allow_direct_messages">Dozvoliti slanje direktnih poruka članovima.</string>
     <string name="prohibit_direct_messages">Zabraniti slanje direktnih poruka članovima.</string>
     <string name="allow_to_send_voice">Dozvoliti slanje glasovnih poruka.</string>
-    <string name="allow_to_send_simplex_links">Dozvoliti slanje SimpleX veza.</string>
-    <string name="simplex_links_are_prohibited_in_group">SimpleX veze su zabranjene.</string>
+    <string name="allow_to_send_simplex_links">Dozvoliti slanje Inqalaab veza.</string>
+    <string name="simplex_links_are_prohibited_in_group">Inqalaab veze su zabranjene.</string>
     <string name="v5_4_incognito_groups_descr">Napraviti grupu koristeći nasumičan profil.</string>
     <string name="v6_0_reachable_chat_toolbar_descr">Koristiti aplikaciju jednom rukom.</string>
     <string name="migrate_to_device_confirm_network_settings">Potvrditi mrežna podešavanja</string>
@@ -1294,7 +1294,7 @@
     <string name="servers_info_previously_connected_servers_section_header">Prethodno povezani serveri</string>
     <string name="chunks_downloaded">Komadi su preuzeti</string>
     <string name="disable_automatic_deletion_question">Onemogućiti automatsko brisanje poruka?</string>
-    <string name="thank_you_for_installing_simplex">Hvala Vam što ste instalirali SimpleX Chat!</string>
+    <string name="thank_you_for_installing_simplex">Hvala Vam što ste instalirali Inqalaab!</string>
     <string name="smp_servers_test_some_failed">Neki serveri nisu prošli test:</string>
     <string name="operator_info_title">Mrežni operator</string>
     <string name="migrate_to_device_try_again">Možete pokušati ponovo.</string>
@@ -1314,7 +1314,7 @@
     <string name="migrate_from_device_check_connection_and_try_again">Proverite internet vezu i pokušajte ponovo</string>
     <string name="servers_info_missing">Bez Informacija, pokušajte ponovo da učitate</string>
     <string name="chunks_deleted">Komadi su odstranjeni</string>
-    <string name="ntf_channel_calls">SimpleX Chat pozivi</string>
+    <string name="ntf_channel_calls">Inqalaab pozivi</string>
     <string name="xftp_servers">XFTP serveri</string>
     <string name="network_and_servers">Mreža i serveri</string>
     <string name="configure_ICE_servers">Podesite ICE servere</string>
@@ -1337,7 +1337,7 @@
     <string name="allow_to_send_files">Dozvoliti slanje datoteka i medijskog sadržaji.</string>
     <string name="passcode_changed">Pin kod promenjen!</string>
     <string name="share_text_database_id">ID Baze podataka: %d</string>
-    <string name="simplex_link_mode">SimpleX veze</string>
+    <string name="simplex_link_mode">Inqalaab veze</string>
     <string name="operator_added_xftp_servers">Dodani serveri za medije i datoteke</string>
     <string name="connect__your_profile_will_be_shared">Vas profil %1$s će biti deljen.</string>
     <string name="callstate_received_answer">primljen odgovor…</string>
@@ -1352,7 +1352,7 @@
     <string name="privacy_media_blur_radius_strong">Intenzivno</string>
     <string name="delete_message_mark_deleted_warning">Poruka će biti označena za ostranjivanje. Primaoci će moći da otkriju ovu poruku.</string>
     <string name="privacy_and_security">Privatnost i bezbednost</string>
-    <string name="ntf_channel_messages">SimpleX Chat poruke</string>
+    <string name="ntf_channel_messages">Inqalaab poruke</string>
     <string name="migrate_from_device_try_again">Možete pokušati ponovo.</string>
     <string name="migrate_from_device_error_saving_settings">Greška pri čuvanju podešavanja</string>
     <string name="v4_6_group_welcome_message_descr">Postavi poruku koja će biti prikazana novim članovima!</string>
@@ -1374,7 +1374,7 @@
     <string name="report_archive_for_me">Za mene</string>
     <string name="share_message">Podeliti poruku…</string>
     <string name="archive_reports">Arhivirati izveštaje</string>
-    <string name="simplex_links_not_allowed">SimpleX veze nisu dozvoljene</string>
+    <string name="simplex_links_not_allowed">Inqalaab veze nisu dozvoljene</string>
     <string name="change_automatic_deletion_question">Promeniti automatsko brisanje poruka?</string>
     <string name="voice_messages_prohibited">Glasovne poruke su zabranjene!</string>
     <string name="or_show_this_qr_code">Ili prikazati ovaj kod</string>
@@ -1388,7 +1388,7 @@
     <string name="member_will_be_removed_from_group_cannot_be_undone">Član će biti uklonjen iz grupe – ovo se ne može poništiti!</string>
     <string name="calls_prohibited_alert_title">Pozivi zabranjeni!</string>
     <string name="available_in_v51">\nDostupno u v5.1</string>
-    <string name="simplex_links">SimpleX veze</string>
+    <string name="simplex_links">Inqalaab veze</string>
     <string name="full_deletion">Odstraniti za sve</string>
     <string name="allow_to_send_disappearing">Dozvoliti slanje poruka koje nestaju.</string>
     <string name="v5_0_app_passcode">Pin kod aplikacije</string>
@@ -1403,7 +1403,7 @@
     <string name="allow_your_contacts_to_call">Dozvoliti vašim kontaktima da vas zovu.</string>
     <string name="servers_info_subscriptions_section_header">Prijem poruke</string>
     <string name="migrate_from_device_error_exporting_archive">Greška pri izvoženju baze podataka razgovora</string>
-    <string name="you_can_make_address_visible_via_settings">Možete učiniti vidljivim vašim SimpleX kontaktima putem Podešavanja.</string>
+    <string name="you_can_make_address_visible_via_settings">Možete učiniti vidljivim vašim Inqalaab kontaktima putem Podešavanja.</string>
     <string name="error_sending_message_contact_invitation">Greška pri slanju pozivnice</string>
     <string name="skip_inviting_button">Preskočiti pozivanje članova</string>
     <string name="operator_use_for_messages_private_routing">Za privatno usmeravanje</string>
@@ -1411,7 +1411,7 @@
     <string name="servers_info_starting_from">Pokretanje iz %s.</string>
     <string name="your_ice_servers">Vaši ICE serveri</string>
     <string name="use_random_passphrase">Koristiti nasumičnu pristupnu frazu</string>
-    <string name="auth_disable_simplex_lock">Onemogućiti SimpleX Zaključavanje</string>
+    <string name="auth_disable_simplex_lock">Onemogućiti Inqalaab Zaključavanje</string>
     <string name="servers_info_reconnect_server_title">Ponovo povezati server?</string>
     <string name="no_received_app_files">Nema primljenih niti poslanih datoteka</string>
     <string name="integrity_msg_bad_hash">neispravan hash poruke</string>
@@ -1470,7 +1470,7 @@
     <string name="v5_2_fix_encryption">Zadržati Vaše konekcije</string>
     <string name="migrate_to_device_title">Migriraj ovde</string>
     <string name="connect_plan_connect_via_link">Povezati se pomoću linka?</string>
-    <string name="install_simplex_chat_for_terminal">Instaliraj SimpleX Chat za terminal</string>
+    <string name="install_simplex_chat_for_terminal">Instaliraj Inqalaab za terminal</string>
     <string name="network_smp_web_port_toggle">Koristiti web port</string>
     <string name="only_you_can_make_calls">Samo Vi možete da upućujete pozive.</string>
     <string name="app_check_for_updates_button_open">Otvoriti lokaciju datoteke</string>

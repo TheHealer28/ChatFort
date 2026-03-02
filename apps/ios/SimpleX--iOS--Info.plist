@@ -43,8 +43,6 @@
 			</array>
 		</dict>
 	</array>
-	<key>ITSAppUsesNonExemptEncryption</key>
-	<false/>
 	<key>NSUserActivityTypes</key>
 	<array>
 		<string>INStartCallIntent</string>
@@ -58,5 +56,12 @@
 	</array>
 	<key>UIDesignRequiresCompatibility</key>
 	<true/>
+	<key>NSLocalNetworkUsageDescription</key>
+	<string>Inqalaab uses your local network to discover and communicate with nearby users when internet is unavailable.</string>
+	<key>NSBonjourServices</key>
+	<array>
+		<string>_inqalaab-p2p._tcp</string>
+		<string>_inqalaab-p2p._udp</string>
+	</array>
 </dict>
 </plist>

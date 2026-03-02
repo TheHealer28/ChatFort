@@ -47,10 +47,10 @@
 "**e2e encrypted** video call" = "**端到端加密** 视频通话";
 
 /* No comment provided by engineer. */
-"**More private**: check new messages every 20 minutes. Only device token is shared with our push server. It doesn't see how many contacts you have, or any message metadata." = "**更私密**：每20分钟检查新消息。设备令牌和 SimpleX Chat 服务器共享，但是不会共享有您有多少联系人或者消息。";
+"**More private**: check new messages every 20 minutes. Only device token is shared with our push server. It doesn't see how many contacts you have, or any message metadata." = "**更私密**：每20分钟检查新消息。设备令牌和 Inqalaab 服务器共享，但是不会共享有您有多少联系人或者消息。";
 
 /* No comment provided by engineer. */
-"**Most private**: do not use SimpleX Chat push server. The app will check messages in background, when the system allows it, depending on how often you use the app." = "**最私密**：不使用 SimpleX Chat 通知服务器，在后台定期检查消息（取决于您多经常使用应用程序）。";
+"**Most private**: do not use Inqalaab push server. The app will check messages in background, when the system allows it, depending on how often you use the app." = "**最私密**：不使用 Inqalaab 通知服务器，在后台定期检查消息（取决于您多经常使用应用程序）。";
 
 /* No comment provided by engineer. */
 "**Please note**: using the same database on two devices will break the decryption of messages from your connections, as a security protection." = "**请注意**: 在两台设备上使用相同的数据库将破坏来自您的连接的消息解密，作为一种安全保护.";
@@ -59,7 +59,7 @@
 "**Please note**: you will NOT be able to recover or change passphrase if you lose it." = "**请注意**：如果您丢失密码，您将无法恢复或者更改密码。";
 
 /* No comment provided by engineer. */
-"**Recommended**: device token and end-to-end encrypted notifications are sent to SimpleX Chat push server, but it does not see the message content, size or who it is from." = "**推荐**：设备令牌和通知会发送至 SimpleX Chat 通知服务器，但是消息内容、大小或者发送人不会。";
+"**Recommended**: device token and end-to-end encrypted notifications are sent to Inqalaab push server, but it does not see the message content, size or who it is from." = "**推荐**：设备令牌和通知会发送至 Inqalaab 通知服务器，但是消息内容、大小或者发送人不会。";
 
 /* No comment provided by engineer. */
 "**Scan / Paste link**: to connect via a link you received." = "**扫描/粘贴链接**：用您收到的链接连接。";
@@ -257,7 +257,7 @@
 "`a + b`" = "\\`a + b`";
 
 /* email text */
-"<p>Hi!</p>\n<p><a href=\"%@\">Connect to me via SimpleX Chat</a></p>" = "<p>你好！</p>\n<p><a href=\"%@\">通过 SimpleX Chat </a></p>与我联系";
+"<p>Hi!</p>\n<p><a href=\"%@\">Connect to me via Inqalaab</a></p>" = "<p>你好！</p>\n<p><a href=\"%@\">通过 Inqalaab </a></p>与我联系";
 
 /* No comment provided by engineer. */
 "~strike~" = "\\~删去~";
@@ -332,7 +332,7 @@ time interval */
 "About operators" = "关于运营方";
 
 /* No comment provided by engineer. */
-"About SimpleX Chat" = "关于SimpleX Chat";
+"About Inqalaab" = "关于Inqalaab";
 
 /* No comment provided by engineer. */
 "above, then choose:" = "上面，然后选择：";
@@ -558,7 +558,7 @@ swipe action */
 "Allow to send files and media." = "允许发送文件和媒体。";
 
 /* No comment provided by engineer. */
-"Allow to send SimpleX links." = "允许发送 SimpleX 链接。";
+"Allow to send Inqalaab links." = "允许发送 Inqalaab 链接。";
 
 /* No comment provided by engineer. */
 "Allow to send voice messages." = "允许发送语音消息。";
@@ -856,7 +856,7 @@ marked deleted chat item preview text */
 "By chat profile (default) or [by connection](https://simplex.chat/blog/20230204-simplex-chat-v4-5-user-chat-profiles.html#transport-isolation) (BETA)." = "通过聊天资料（默认）或者[通过连接](https://simplex.chat/blog/20230204-simplex-chat-v4-5-user-chat-profiles.html#transport-isolation) (BETA)。";
 
 /* No comment provided by engineer. */
-"By using SimpleX Chat you agree to:\n- send only legal content in public groups.\n- respect other users – no spam." = "使用 SimpleX Chat 代表您同意：\n- 在公开群中只发送合法内容\n- 尊重其他用户 – 没有垃圾信息。";
+"By using Inqalaab you agree to:\n- send only legal content in public groups.\n- respect other users – no spam." = "使用 Inqalaab 代表您同意：\n- 在公开群中只发送合法内容\n- 尊重其他用户 – 没有垃圾信息。";
 
 /* No comment provided by engineer. */
 "call" = "呼叫";
@@ -1183,7 +1183,7 @@ set passcode view */
 "Connect to desktop" = "连接到桌面";
 
 /* No comment provided by engineer. */
-"connect to SimpleX Chat developers." = "连接到 SimpleX Chat 开发者。";
+"connect to Inqalaab developers." = "连接到 Inqalaab 开发者。";
 
 /* No comment provided by engineer. */
 "Connect to your friends faster." = "更快地与您的朋友联系。";
@@ -1192,7 +1192,7 @@ set passcode view */
 "Connect to yourself?\nThis is your own one-time link!" = "与自己建立联系？\n这是您自己的一次性链接！";
 
 /* new chat sheet title */
-"Connect to yourself?\nThis is your own SimpleX address!" = "与自己建立联系？\n这是您自己的 SimpleX 地址！";
+"Connect to yourself?\nThis is your own Inqalaab address!" = "与自己建立联系？\n这是您自己的 Inqalaab 地址！";
 
 /* new chat sheet title */
 "Connect via contact address" = "通过联系地址连接";
@@ -1408,7 +1408,7 @@ set passcode view */
 "Create queue" = "创建队列";
 
 /* No comment provided by engineer. */
-"Create SimpleX address" = "创建 SimpleX 地址";
+"Create Inqalaab address" = "创建 Inqalaab 地址";
 
 /* No comment provided by engineer. */
 "Create your profile" = "创建您的资料";
@@ -1749,10 +1749,10 @@ swipe action */
 "Device" = "设备";
 
 /* No comment provided by engineer. */
-"Device authentication is disabled. Turning off SimpleX Lock." = "设备验证已禁用。 SimpleX 已解锁。";
+"Device authentication is disabled. Turning off Inqalaab Lock." = "设备验证已禁用。 Inqalaab 已解锁。";
 
 /* No comment provided by engineer. */
-"Device authentication is not enabled. You can turn on SimpleX Lock via Settings, once you enable device authentication." = "没有启用设备验证。一旦启用设备验证，您可以通过设置打开 SimpleX 锁定。";
+"Device authentication is not enabled. You can turn on Inqalaab Lock via Settings, once you enable device authentication." = "没有启用设备验证。一旦启用设备验证，您可以通过设置打开 Inqalaab 锁定。";
 
 /* No comment provided by engineer. */
 "different migration in the app/database: %@ / %@" = "应用程序/数据库中的不同迁移：%@ / %@";
@@ -1785,7 +1785,7 @@ swipe action */
 "Disable for all" = "全部禁用";
 
 /* authentication reason */
-"Disable SimpleX Lock" = "禁用 SimpleX 锁定";
+"Disable Inqalaab Lock" = "禁用 Inqalaab 锁定";
 
 /* No comment provided by engineer. */
 "disabled" = "关闭";
@@ -1839,7 +1839,7 @@ swipe action */
 "Do NOT use private routing." = "不要使用私有路由。";
 
 /* No comment provided by engineer. */
-"Do NOT use SimpleX for emergency calls." = "请勿使用 SimpleX 进行紧急通话。";
+"Do NOT use Inqalaab for emergency calls." = "请勿使用 Inqalaab 进行紧急通话。";
 
 /* No comment provided by engineer. */
 "Documents:" = "文档：";
@@ -1954,7 +1954,7 @@ chat item action */
 "Enable self-destruct passcode" = "启用自毁密码";
 
 /* authentication reason */
-"Enable SimpleX Lock" = "启用 SimpleX 锁定";
+"Enable Inqalaab Lock" = "启用 Inqalaab 锁定";
 
 /* No comment provided by engineer. */
 "Enable TCP keep-alive" = "启用 TCP 保持活跃状态";
@@ -2472,7 +2472,7 @@ snd error text */
 "For console" = "用于控制台";
 
 /* No comment provided by engineer. */
-"For example, if your contact receives messages via a SimpleX Chat server, your app will deliver them via a Flux server." = "比如，如果你通过 SimpleX 服务器收到消息，应用会通过 Flux 服务器传送它们。";
+"For example, if your contact receives messages via a Inqalaab server, your app will deliver them via a Flux server." = "比如，如果你通过 Inqalaab 服务器收到消息，应用会通过 Flux 服务器传送它们。";
 
 /* No comment provided by engineer. */
 "For me" = "仅自己";
@@ -2673,7 +2673,7 @@ snd error text */
 "How it works" = "工作原理";
 
 /* No comment provided by engineer. */
-"How SimpleX works" = "SimpleX的工作原理";
+"How Inqalaab works" = "Inqalaab的工作原理";
 
 /* No comment provided by engineer. */
 "How to" = "如何";
@@ -2817,7 +2817,7 @@ snd error text */
 "Initial role" = "初始角色";
 
 /* No comment provided by engineer. */
-"Install [SimpleX Chat for terminal](https://github.com/simplex-chat/simplex-chat)" = "安装[用于终端的 SimpleX Chat](https://github.com/simplex-chat/simplex-chat)";
+"Install [Inqalaab for terminal](https://github.com/simplex-chat/simplex-chat)" = "安装[用于终端的 Inqalaab](https://github.com/simplex-chat/simplex-chat)";
 
 /* No comment provided by engineer. */
 "Instant" = "即时";
@@ -3024,7 +3024,7 @@ snd error text */
 "left" = "已离开";
 
 /* email subject */
-"Let's talk in SimpleX Chat" = "让我们一起在 SimpleX Chat 里聊天";
+"Let's talk in Inqalaab" = "让我们一起在 Inqalaab 里聊天";
 
 /* No comment provided by engineer. */
 "Light" = "浅色";
@@ -3156,7 +3156,7 @@ snd error text */
 "Members can send files and media." = "群组成员可以发送文件和媒体。";
 
 /* No comment provided by engineer. */
-"Members can send SimpleX links." = "群成员可发送 SimpleX 链接。";
+"Members can send Inqalaab links." = "群成员可发送 Inqalaab 链接。";
 
 /* No comment provided by engineer. */
 "Members can send voice messages." = "群组成员可以发送语音消息。";
@@ -3911,7 +3911,7 @@ new chat action */
 "Prohibit sending files and media." = "禁止发送文件和媒体。";
 
 /* No comment provided by engineer. */
-"Prohibit sending SimpleX links." = "禁止发送 SimpleX 链接。";
+"Prohibit sending Inqalaab links." = "禁止发送 Inqalaab 链接。";
 
 /* No comment provided by engineer. */
 "Prohibit sending voice messages." = "禁止发送语音消息。";
@@ -4307,7 +4307,7 @@ chat item action */
 "Search bar accepts invitation links." = "搜索栏接受邀请链接。";
 
 /* No comment provided by engineer. */
-"Search or paste SimpleX link" = "搜索或粘贴 SimpleX 链接";
+"Search or paste Inqalaab link" = "搜索或粘贴 Inqalaab 链接";
 
 /* network option */
 "sec" = "秒";
@@ -4572,7 +4572,7 @@ chat item action */
 "Share this 1-time invite link" = "分享此一次性邀请链接";
 
 /* No comment provided by engineer. */
-"Share to SimpleX" = "分享到 SimpleX";
+"Share to Inqalaab" = "分享到 Inqalaab";
 
 /* No comment provided by engineer. */
 "Share with contacts" = "与联系人分享";
@@ -4605,67 +4605,67 @@ chat item action */
 "Show:" = "显示：";
 
 /* No comment provided by engineer. */
-"SimpleX" = "SimpleX";
+"Inqalaab" = "Inqalaab";
 
 /* No comment provided by engineer. */
-"SimpleX address" = "SimpleX 地址";
+"Inqalaab address" = "Inqalaab 地址";
 
 /* No comment provided by engineer. */
-"SimpleX Address" = "SimpleX 地址";
+"Inqalaab Address" = "Inqalaab 地址";
 
 /* No comment provided by engineer. */
-"SimpleX address and 1-time links are safe to share via any messenger." = "可以通过任何消息应用安全分享 SimpleX 地址和一次性链接。";
+"Inqalaab address and 1-time links are safe to share via any messenger." = "可以通过任何消息应用安全分享 Inqalaab 地址和一次性链接。";
 
 /* No comment provided by engineer. */
-"SimpleX address or 1-time link?" = "SimpleX 地址或一次性链接？";
+"Inqalaab address or 1-time link?" = "Inqalaab 地址或一次性链接？";
 
 /* alert title */
-"SimpleX address settings" = "自动接受设置";
+"Inqalaab address settings" = "自动接受设置";
 
 /* simplex link type */
-"SimpleX channel link" = "SimpleX 频道链接";
+"Inqalaab channel link" = "Inqalaab 频道链接";
 
 /* No comment provided by engineer. */
-"SimpleX Chat and Flux made an agreement to include Flux-operated servers into the app." = "SimpleX Chat 与 Flux 达成了协议，将由 Flux 控制的服务器纳入 SimpleX 应用。";
+"Inqalaab and Flux made an agreement to include Flux-operated servers into the app." = "Inqalaab 与 Flux 达成了协议，将由 Flux 控制的服务器纳入 Inqalaab 应用。";
 
 /* No comment provided by engineer. */
-"SimpleX Chat security was audited by Trail of Bits." = "SimpleX Chat 的安全性 由 Trail of Bits 审核。";
+"Inqalaab security was audited by Trail of Bits." = "Inqalaab 的安全性 由 Trail of Bits 审核。";
 
 /* simplex link type */
-"SimpleX contact address" = "SimpleX 联系地址";
+"Inqalaab contact address" = "Inqalaab 联系地址";
 
 /* notification */
-"SimpleX encrypted message or connection event" = "SimpleX 加密的消息或连接事件";
+"Inqalaab encrypted message or connection event" = "Inqalaab 加密的消息或连接事件";
 
 /* simplex link type */
-"SimpleX group link" = "SimpleX 群链接";
+"Inqalaab group link" = "Inqalaab 群链接";
 
 /* chat feature */
-"SimpleX links" = "SimpleX 链接";
+"Inqalaab links" = "Inqalaab 链接";
 
 /* No comment provided by engineer. */
-"SimpleX links are prohibited." = "此群禁止 SimpleX 链接。";
+"Inqalaab links are prohibited." = "此群禁止 Inqalaab 链接。";
 
 /* No comment provided by engineer. */
-"SimpleX links not allowed" = "不允许SimpleX 链接";
+"Inqalaab links not allowed" = "不允许Inqalaab 链接";
 
 /* No comment provided by engineer. */
-"SimpleX Lock" = "SimpleX 锁定";
+"Inqalaab Lock" = "Inqalaab 锁定";
 
 /* No comment provided by engineer. */
-"SimpleX Lock mode" = "SimpleX 锁定模式";
+"Inqalaab Lock mode" = "Inqalaab 锁定模式";
 
 /* No comment provided by engineer. */
-"SimpleX Lock not enabled!" = "未启用 SimpleX 锁定！";
+"Inqalaab Lock not enabled!" = "未启用 Inqalaab 锁定！";
 
 /* No comment provided by engineer. */
-"SimpleX Lock turned on" = "已开启 SimpleX 锁定";
+"Inqalaab Lock turned on" = "已开启 Inqalaab 锁定";
 
 /* simplex link type */
-"SimpleX one-time invitation" = "SimpleX 一次性邀请";
+"Inqalaab one-time invitation" = "Inqalaab 一次性邀请";
 
 /* No comment provided by engineer. */
-"SimpleX protocols reviewed by Trail of Bits." = "SimpleX 协议由 Trail of Bits 审阅。";
+"Inqalaab protocols reviewed by Trail of Bits." = "Inqalaab 协议由 Trail of Bits 审阅。";
 
 /* No comment provided by engineer. */
 "Simplified incognito mode" = "简化的隐身模式";
@@ -4755,7 +4755,7 @@ chat item action */
 "Stop sharing address?" = "停止分享地址？";
 
 /* authentication reason */
-"Stop SimpleX" = "停止 SimpleX";
+"Stop Inqalaab" = "停止 Inqalaab";
 
 /* No comment provided by engineer. */
 "Stopping chat" = "正在停止聊天";
@@ -4779,7 +4779,7 @@ chat item action */
 "Subscriptions ignored" = "忽略订阅";
 
 /* No comment provided by engineer. */
-"Support SimpleX Chat" = "支持 SimpleX Chat";
+"Support Inqalaab" = "支持 Inqalaab";
 
 /* No comment provided by engineer. */
 "System" = "系统";
@@ -4842,7 +4842,7 @@ chat item action */
 "Tests failed!" = "测试失败！";
 
 /* No comment provided by engineer. */
-"Thank you for installing SimpleX Chat!" = "感谢您安装 SimpleX Chat！";
+"Thank you for installing Inqalaab!" = "感谢您安装 Inqalaab！";
 
 /* No comment provided by engineer. */
 "Thanks to the users – [contribute via Weblate](https://github.com/simplex-chat/simplex-chat/tree/stable#help-translating-simplex-chat)!" = "感谢用户——[通过 Weblate 贡献](https://github.com/simplex-chat/simplex-chat/tree/stable#help-translating-simplex-chat)！";
@@ -4860,7 +4860,7 @@ chat item action */
 "The attempt to change database passphrase was not completed." = "更改数据库密码的尝试未完成。";
 
 /* No comment provided by engineer. */
-"The code you scanned is not a SimpleX link QR code." = "您扫描的码不是 SimpleX 链接的二维码。";
+"The code you scanned is not a Inqalaab link QR code." = "您扫描的码不是 Inqalaab 链接的二维码。";
 
 /* No comment provided by engineer. */
 "The connection you accepted will be cancelled!" = "您接受的连接将被取消！";
@@ -4908,7 +4908,7 @@ chat item action */
 "The servers for new connections of your current chat profile **%@**." = "您当前聊天资料 **%@** 的新连接服务器。";
 
 /* No comment provided by engineer. */
-"The text you pasted is not a SimpleX link." = "您粘贴的文本不是 SimpleX 链接。";
+"The text you pasted is not a Inqalaab link." = "您粘贴的文本不是 Inqalaab 链接。";
 
 /* No comment provided by engineer. */
 "Themes" = "主题";
@@ -4974,13 +4974,13 @@ chat item action */
 "To protect timezone, image/voice files use UTC." = "为了保护时区，图像/语音文件使用 UTC。";
 
 /* No comment provided by engineer. */
-"To protect your information, turn on SimpleX Lock.\nYou will be prompted to complete authentication before this feature is enabled." = "为保护您的信息，请打开 SimpleX 锁定。\n在启用此功能之前，系统将提示您完成身份验证。";
+"To protect your information, turn on Inqalaab Lock.\nYou will be prompted to complete authentication before this feature is enabled." = "为保护您的信息，请打开 Inqalaab 锁定。\n在启用此功能之前，系统将提示您完成身份验证。";
 
 /* No comment provided by engineer. */
 "To protect your IP address, private routing uses your SMP servers to deliver messages." = "为了保护您的 IP 地址，私有路由使用您的 SMP 服务器来传递邮件。";
 
 /* No comment provided by engineer. */
-"To protect your privacy, SimpleX uses separate IDs for each of your contacts." = "为了保护隐私，SimpleX使用针对消息队列的标识符，而不是所有其他平台使用的用户ID，每个联系人都有独立的标识符。";
+"To protect your privacy, Inqalaab uses separate IDs for each of your contacts." = "为了保护隐私，Inqalaab使用针对消息队列的标识符，而不是所有其他平台使用的用户ID，每个联系人都有独立的标识符。";
 
 /* No comment provided by engineer. */
 "To record voice message please grant permission to use Microphone." = "请授权使用麦克风以录制语音消息。";
@@ -5193,7 +5193,7 @@ chat item action */
 "Use server" = "使用服务器";
 
 /* No comment provided by engineer. */
-"Use SimpleX Chat servers?" = "使用 SimpleX Chat 服务器？";
+"Use Inqalaab servers?" = "使用 Inqalaab 服务器？";
 
 /* No comment provided by engineer. */
 "Use the app while in the call." = "通话时使用本应用.";
@@ -5205,7 +5205,7 @@ chat item action */
 "User selection" = "用户选择";
 
 /* No comment provided by engineer. */
-"Using SimpleX Chat servers." = "使用 SimpleX Chat 服务器。";
+"Using Inqalaab servers." = "使用 Inqalaab 服务器。";
 
 /* No comment provided by engineer. */
 "v%@" = "v%@";
@@ -5472,7 +5472,7 @@ chat item action */
 "You can hide or mute a user profile - swipe it to the right." = "您可以隐藏或静音用户个人资料——只需向右滑动。";
 
 /* No comment provided by engineer. */
-"You can make it visible to your SimpleX contacts via Settings." = "你可以通过设置让它对你的 SimpleX 联系人可见。";
+"You can make it visible to your Inqalaab contacts via Settings." = "你可以通过设置让它对你的 Inqalaab 联系人可见。";
 
 /* notification body */
 "You can now chat with %@" = "您现在可以给 %@ 发送消息";
@@ -5496,7 +5496,7 @@ chat item action */
 "You can still view conversation with %@ in the list of chats." = "您仍然可以在聊天列表中查看与 %@的对话。";
 
 /* No comment provided by engineer. */
-"You can turn on SimpleX Lock via Settings." = "您可以通过设置开启 SimpleX 锁定。";
+"You can turn on Inqalaab Lock via Settings." = "您可以通过设置开启 Inqalaab 锁定。";
 
 /* No comment provided by engineer. */
 "You can use markdown to format messages:" = "您可以使用 markdown 来编排消息格式：";
@@ -5655,7 +5655,7 @@ chat item action */
 "Your profile is stored on your device and only shared with your contacts." = "该资料仅与您的联系人共享。";
 
 /* No comment provided by engineer. */
-"Your profile is stored on your device and shared only with your contacts. SimpleX servers cannot see your profile." = "您的资料存储在您的设备上并仅与您的联系人共享。 SimpleX 服务器无法看到您的资料。";
+"Your profile is stored on your device and shared only with your contacts. Inqalaab servers cannot see your profile." = "您的资料存储在您的设备上并仅与您的联系人共享。 Inqalaab 服务器无法看到您的资料。";
 
 /* No comment provided by engineer. */
 "Your random profile" = "您的随机资料";
@@ -5667,5 +5667,5 @@ chat item action */
 "Your settings" = "您的设置";
 
 /* No comment provided by engineer. */
-"Your SimpleX address" = "您的 SimpleX 地址";
+"Your Inqalaab address" = "您的 Inqalaab 地址";
 

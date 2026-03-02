@@ -157,8 +157,8 @@ fun ModalData.NetworkAndServersView(closeNetworkAndServers: () -> Unit) {
   networkUseSocksProxy: MutableState<Boolean>,
   onionHosts: MutableState<OnionHosts>,
   currUserServers: MutableState<List<UserOperatorServers>>,
-  serverErrors: MutableState<List<UserServersError>>,
   userServers: MutableState<List<UserOperatorServers>>,
+  serverErrors: MutableState<List<UserServersError>>,
   toggleSocksProxy: (Boolean) -> Unit,
 ) {
   val m = chatModel
@@ -209,7 +209,7 @@ fun ModalData.NetworkAndServersView(closeNetworkAndServers: () -> Unit) {
     if (!chatModel.desktopNoUserNoRemote) {
       SectionView(generalGetString(MR.strings.network_preset_servers_title).uppercase()) {
         userServers.value.forEachIndexed { index, srv ->
-          srv.operator?.let { ServerOperatorRow(index, it, currUserServers, userServers, serverErrors, currentRemoteHost?.remoteHostId) }
+          srv.operator?.let { if (it.enabled) ServerOperatorRow(index, it, currUserServers, userServers, serverErrors, currentRemoteHost?.remoteHostId) }
         }
       }
       if (conditionsAction != null && anyOperatorEnabled.value) {

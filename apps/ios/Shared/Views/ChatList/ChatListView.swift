@@ -21,7 +21,7 @@ enum UserPickerSheet: Identifiable {
 
     var navigationTitle: LocalizedStringKey {
         switch self {
-        case .address: "SimpleX address"
+        case .address: "Inqalaab address"
         case .chatPreferences: "Your preferences"
         case .chatProfiles: "Your chat profiles"
         case .currentProfile: "Your current profile"
@@ -139,6 +139,7 @@ struct ChatListView: View {
     @EnvironmentObject var chatModel: ChatModel
     @StateObject private var connectProgressManager = ConnectProgressManager.shared
     @EnvironmentObject var theme: AppTheme
+    @EnvironmentObject var nearbyModel: NearbyModel
     @Binding var activeUserPickerSheet: UserPickerSheet?
     @State private var showNewChatSheet = false
     @State private var searchMode = false
@@ -151,6 +152,10 @@ struct ChatListView: View {
     @State private var sheet: SomeSheet<AnyView>? = nil
     @StateObject private var chatTagsModel = ChatTagsModel.shared
     @State private var scrollToItemId: ChatItem.ID? = nil
+    // Inqalaab: @State-backed navigation path so NavigationStack properly observes it.
+    // The computed Binding in NavStackCompat was not observed by NavigationStack when
+    // NavStackCompat.body was stale (same closure issue as the ForEach fix).
+    @State private var chatNavigationPath: [Bool] = []
 
     // iOS 15 is required it to show/hide toolbar while chat is hidden/visible
     @State private var viewOnScreen = true
@@ -170,15 +175,46 @@ struct ChatListView: View {
     
     private var viewBody: some View {
         ZStack(alignment: oneHandUI ? .bottomLeading : .topLeading) {
-            NavStackCompat(
-                isActive: Binding(
-                    get: { chatModel.chatId != nil },
-                    set: { active in
-                        if !active { chatModel.chatId = nil }
+            // Inqalaab: Replaced NavStackCompat with inline NavigationStack using
+            // @State-backed path. NavStackCompat's computed Binding was not properly
+            // observed by NavigationStack (stale closure issue), so tapping a chat
+            // called loadOpenChat but navigation never fired. Using @State + onChange
+            // ensures NavigationStack sees path changes and navigates.
+            if #available(iOS 16.0, *) {
+                NavigationStack(path: $chatNavigationPath) {
+                    ZStack {
+                        NavigationLink(value: true) { EmptyView() }
+                        chatListView
                     }
-                ),
-                destination: chatView
-            ) { chatListView }
+                    .navigationDestination(for: Bool.self) { show in
+                        if show { chatView() }
+                    }
+                }
+                .onChange(of: chatModel.chatId) { newChatId in
+                    let shouldNavigate = newChatId != nil
+                    let isNavigated = !chatNavigationPath.isEmpty
+                    if shouldNavigate != isNavigated {
+                        print("Inqalaab navigation sync: chatId=\(newChatId ?? "nil") → path=\(shouldNavigate ? "[true]" : "[]")")
+                        chatNavigationPath = shouldNavigate ? [true] : []
+                    }
+                }
+                .onChange(of: chatNavigationPath) { newPath in
+                    if newPath.isEmpty && chatModel.chatId != nil {
+                        print("Inqalaab navigation sync: back navigation → chatId=nil")
+                        chatModel.chatId = nil
+                    }
+                }
+            } else {
+                NavStackCompat(
+                    isActive: Binding(
+                        get: { chatModel.chatId != nil },
+                        set: { active in
+                            if !active { chatModel.chatId = nil }
+                        }
+                    ),
+                    destination: chatView
+                ) { chatListView }
+            }
         }
         .modifier(
             Sheet(isPresented: $userPickerShown) {
@@ -206,16 +242,31 @@ struct ChatListView: View {
     
     private var chatListView: some View {
         let tm = ToolbarMaterial.material(toolbarMaterial)
-        return withToolbar(tm) {
-            chatList
-                .background(theme.colors.background)
-                .navigationBarTitleDisplayMode(.inline)
-                .navigationBarHidden(searchMode || oneHandUI)
+        return VStack(spacing: 0) {
+            NearbyModeToggle()
+            if nearbyModel.nearbyMode {
+                NearbyPeerListView()
+                    .background(theme.colors.background)
+            } else {
+                withToolbar(tm) {
+                    chatList
+                        .background(theme.colors.background)
+                        .navigationBarTitleDisplayMode(.inline)
+                        .navigationBarHidden(searchMode || oneHandUI)
+                }
+                .scaleEffect(x: 1, y: oneHandUI ? -1 : 1, anchor: .center)
+            }
         }
-        .scaleEffect(x: 1, y: oneHandUI ? -1 : 1, anchor: .center)
         .onAppear {
             if #unavailable(iOS 16.0), !viewOnScreen {
                 viewOnScreen = true
+            }
+            // Inqalaab: Ensure servers are configured when chat list appears
+            // This catches the case where onboarding trigger didn't fire
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                if chatModel.chatRunning == true && chatModel.currentUser != nil {
+                    InqalaabServers.shared.configureIfNeeded()
+                }
             }
         }
         .onDisappear {
@@ -257,12 +308,13 @@ struct ChatListView: View {
         }
     }
     
-    static var hasHomeIndicator: Bool = {
-        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
-           let window = windowScene.windows.first {
-            window.safeAreaInsets.bottom > 0
-        } else { false }
-    }()
+    static var hasHomeIndicator: Bool {
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+              let window = windowScene.windows.first else {
+            return true // default to true (safer for modern iPhones)
+        }
+        return window.safeAreaInsets.bottom > 0
+    }
     
     @ViewBuilder func withToolbar(_ material: Material, content: () -> some View) -> some View {
         if #available(iOS 16.0, *) {
@@ -343,7 +395,6 @@ struct ChatListView: View {
     }
     
     private var chatList: some View {
-        let cs = filteredChats()
         return ZStack {
             ScrollViewReader { scrollProxy in
                 List {
@@ -363,25 +414,11 @@ struct ChatListView: View {
                         .padding(.top, oneHandUI ? 8 : 0)
                         .id("searchBar")
                     }
-                    if #available(iOS 16.0, *) {
-                        ForEach(cs, id: \.viewId) { chat in
-                            ChatListNavLink(chat: chat, parentSheet: $sheet)
-                                .scaleEffect(x: 1, y: oneHandUI ? -1 : 1, anchor: .center)
-                                .padding(.trailing, -16)
-                                .disabled(chatModel.chatRunning != true || chatModel.deletedChats.contains(chat.chatInfo.id))
-                                .listRowBackground(Color.clear)
-                        }
-                        .offset(x: -8)
-                    } else {
-                        ForEach(cs, id: \.viewId) { chat in
-                            ChatListNavLink(chat: chat,  parentSheet: $sheet)
-                            .scaleEffect(x: 1, y: oneHandUI ? -1 : 1, anchor: .center)
-                            .listRowSeparator(.hidden)
-                            .listRowInsets(EdgeInsets())
-                            .background { theme.colors.background } // Hides default list selection colour
-                            .disabled(chatModel.chatRunning != true || chatModel.deletedChats.contains(chat.chatInfo.id))
-                        }
-                    }
+                    // Inqalaab: ChatListRows is a separate View struct with its own
+                    // @EnvironmentObject observation. This ensures SwiftUI re-evaluates
+                    // the ForEach when chatModel.chats changes, even though the parent
+                    // NavStackCompat closure is not re-evaluated.
+                    ChatListRows(parentSheet: $sheet, oneHandUI: oneHandUI)
                     if !oneHandUICardShown {
                         OneHandUICard()
                             .padding(.vertical, 6)
@@ -389,7 +426,10 @@ struct ChatListView: View {
                             .listRowSeparator(.hidden)
                             .listRowBackground(Color.clear)
                     }
-                    if !addressCreationCardShown {
+                    // Inqalaab: Also hide AddressCreationCard when user already has
+                    // an address (auto-created by InqalaabServers). The QR overlay
+                    // in ChatListQROverlay already displays the address.
+                    if !addressCreationCardShown && chatModel.userAddress == nil {
                         AddressCreationCard()
                             .padding(.vertical, 6)
                             .scaleEffect(x: 1, y: oneHandUI ? -1 : 1, anchor: .center)
@@ -415,12 +455,34 @@ struct ChatListView: View {
                     }
                 }
             }
-            if cs.isEmpty && !chatModel.chats.isEmpty {
-                noChatsView()
-                    .scaleEffect(x: 1, y: oneHandUI ? -1 : 1, anchor: .center)
-                    .foregroundColor(.secondary)
-            }
+            // Inqalaab: ChatListQROverlay is a separate reactive View that observes
+            // chatModel directly, so it updates when chats change (e.g. hides QR
+            // code when a real chat connects).
+            ChatListQROverlay(oneHandUI: oneHandUI)
         }
+    }
+
+    @ViewBuilder private func inqalaabAddressQRCode(_ userAddress: UserContactLink) -> some View {
+        VStack(spacing: 12) {
+            Spacer()
+            Text("Your Inqalaab Address")
+                .font(.title2)
+                .fontWeight(.bold)
+                .foregroundColor(theme.colors.onBackground)
+            Text("Show this QR code to connect")
+                .font(.subheadline)
+                .foregroundColor(theme.colors.secondary)
+            SimpleXCreatedLinkQRCode(link: userAddress.connLinkContact, short: .constant(false))
+                .frame(maxWidth: 260, maxHeight: 260)
+                .padding(.horizontal, 24)
+            Text("Scan each other's code to chat securely")
+                .font(.caption)
+                .foregroundColor(theme.colors.secondary)
+                .multilineTextAlignment(.center)
+            Spacer()
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .padding(.horizontal, 16)
     }
     
     @ViewBuilder private func noChatsView() -> some View {
@@ -452,6 +514,7 @@ struct ChatListView: View {
     }
     
     @ViewBuilder private func chatView() -> some View {
+        let _ = print("Inqalaab chatView: chatId=\(chatModel.chatId ?? "nil") found=\(chatModel.chatId != nil ? String(chatModel.getChat(chatModel.chatId!) != nil) : "n/a")")
         if let chatId = chatModel.chatId, let chat = chatModel.getChat(chatId) {
             let im = ItemsModel.shared
             ChatView(
@@ -470,33 +533,46 @@ struct ChatListView: View {
     }
     
     private func filteredChats() -> [Chat] {
+        let allChats = chatModel.chats
+        let activeFilter = chatTagsModel.activeFilter
+        print("Inqalaab filteredChats: ENTER chatsCount=\(allChats.count) ids=\(allChats.map { $0.id }) activeFilter=\(String(describing: activeFilter)) linkFilter=\(String(describing: searchChatFilteredBySimplexLink))")
         if let linkChatId = searchChatFilteredBySimplexLink {
             return chatModel.chats.filter { $0.id == linkChatId }
         } else {
             let s = searchString()
-            return s == ""
-            ? chatModel.chats.filter { chat in
-                !chat.chatInfo.chatDeleted && !chat.chatInfo.contactCard && filtered(chat)
-            }
-            : chatModel.chats.filter { chat in
-                let cInfo = chat.chatInfo
-                return switch cInfo {
-                case let .direct(contact):
-                    !contact.chatDeleted && !chat.chatInfo.contactCard && (
-                        ( viewNameContains(cInfo, s) ||
-                          contact.profile.displayName.localizedLowercase.contains(s) ||
-                          contact.fullName.localizedLowercase.contains(s)
+            let result: [Chat]
+            if s == "" {
+                result = allChats.filter { chat in
+                    let del = chat.chatInfo.chatDeleted
+                    let card = chat.chatInfo.contactCard
+                    let filt = filtered(chat)
+                    let pass = !del && !card && filt
+                    print("Inqalaab filteredChats: id=\(chat.id) type=\(chat.chatInfo.chatType) deleted=\(del) card=\(card) filtered=\(filt) -> \(pass)")
+                    return pass
+                }
+            } else {
+                result = allChats.filter { chat in
+                    let cInfo = chat.chatInfo
+                    return switch cInfo {
+                    case let .direct(contact):
+                        !contact.chatDeleted && !chat.chatInfo.contactCard && (
+                            ( viewNameContains(cInfo, s) ||
+                              contact.profile.displayName.localizedLowercase.contains(s) ||
+                              contact.fullName.localizedLowercase.contains(s)
+                            )
                         )
-                    )
-                case .group: viewNameContains(cInfo, s)
-                case .local: viewNameContains(cInfo, s)
-                case .contactRequest: viewNameContains(cInfo, s)
-                case let .contactConnection(conn): conn.localAlias.localizedLowercase.contains(s)
-                case .invalidJSON: false
+                    case .group: viewNameContains(cInfo, s)
+                    case .local: viewNameContains(cInfo, s)
+                    case .contactRequest: viewNameContains(cInfo, s)
+                    case let .contactConnection(conn): conn.localAlias.localizedLowercase.contains(s)
+                    case .invalidJSON: false
+                    }
                 }
             }
+            print("Inqalaab filteredChats: EXIT result=\(result.count) ids=\(result.map { $0.id })")
+            return result
         }
-        
+
         func filtered(_ chat: Chat) -> Bool {
             switch chatTagsModel.activeFilter {
             case let .presetTag(tag): presetTagMatchesChat(tag, chat.chatInfo, chat.chatStats)
@@ -505,7 +581,7 @@ struct ChatListView: View {
             case .none: true
             }
         }
-        
+
         func viewNameContains(_ cInfo: ChatInfo, _ s: String) -> Bool {
             cInfo.chatViewName.localizedLowercase.contains(s)
         }
@@ -593,7 +669,7 @@ struct ChatListSearchBar: View {
             HStack(spacing: 12) {
                 HStack(spacing: 4) {
                     Image(systemName: "magnifyingglass")
-                    TextField("Search or paste SimpleX link", text: $searchText)
+                    TextField("Search or paste Inqalaab link", text: $searchText)
                         .foregroundColor(searchShowingSimplexLink ? theme.colors.secondary : theme.colors.onBackground)
                         .disabled(searchShowingSimplexLink)
                         .focused($searchFocussed)
@@ -920,6 +996,95 @@ func presetTagMatchesChat(_ tag: PresetTag, _ chatInfo: ChatInfo, _ chatStats: C
         switch chatInfo {
         case .local: true
         default: false
+        }
+    }
+}
+
+// MARK: - Inqalaab Reactive Views
+// These separate View structs have their own @EnvironmentObject observation.
+// SwiftUI directly invalidates them when chatModel publishes, bypassing the
+// stale NavStackCompat closure that prevents the parent from re-evaluating.
+
+/// Reactive ForEach wrapper that re-renders chat rows when chatModel.chats changes.
+private struct ChatListRows: View {
+    @EnvironmentObject var chatModel: ChatModel
+    @EnvironmentObject var chatTagsModel: ChatTagsModel
+    @EnvironmentObject var theme: AppTheme
+    @Binding var parentSheet: SomeSheet<AnyView>?
+    var oneHandUI: Bool
+
+    var body: some View {
+        let cs = chatModel.chats.filter { chat in
+            !chat.chatInfo.chatDeleted && !chat.chatInfo.contactCard && tagFilterMatch(chat)
+        }
+        let _ = print("Inqalaab ChatListRows: rendering \(cs.count) chats: \(cs.map { $0.id })")
+        if #available(iOS 16.0, *) {
+            ForEach(cs, id: \.viewId) { chat in
+                ChatListNavLink(chat: chat, parentSheet: $parentSheet)
+                    .scaleEffect(x: 1, y: oneHandUI ? -1 : 1, anchor: .center)
+                    .padding(.trailing, -16)
+                    .disabled(chatModel.chatRunning != true || chatModel.deletedChats.contains(chat.chatInfo.id))
+                    .listRowBackground(Color.clear)
+            }
+            .offset(x: -8)
+        } else {
+            ForEach(cs, id: \.viewId) { chat in
+                ChatListNavLink(chat: chat, parentSheet: $parentSheet)
+                    .scaleEffect(x: 1, y: oneHandUI ? -1 : 1, anchor: .center)
+                    .listRowSeparator(.hidden)
+                    .listRowInsets(EdgeInsets())
+                    .background { theme.colors.background }
+                    .disabled(chatModel.chatRunning != true || chatModel.deletedChats.contains(chat.chatInfo.id))
+            }
+        }
+    }
+
+    private func tagFilterMatch(_ chat: Chat) -> Bool {
+        switch chatTagsModel.activeFilter {
+        case let .presetTag(tag): presetTagMatchesChat(tag, chat.chatInfo, chat.chatStats)
+        case let .userTag(tag): chat.chatInfo.chatTags?.contains(tag.chatTagId) == true
+        case .unread: chat.unreadTag
+        case .none: true
+        }
+    }
+}
+
+/// Reactive QR code overlay that shows when no real chats exist (only Notes).
+/// Hides automatically when a real chat connects.
+private struct ChatListQROverlay: View {
+    @EnvironmentObject var chatModel: ChatModel
+    @EnvironmentObject var theme: AppTheme
+    var oneHandUI: Bool
+
+    var body: some View {
+        let hasRealChats = chatModel.chats.contains { chat in
+            if case .local = chat.chatInfo { return false }  // Notes doesn't count
+            return !chat.chatInfo.chatDeleted && !chat.chatInfo.contactCard
+        }
+        let _ = print("Inqalaab ChatListQROverlay: hasRealChats=\(hasRealChats) userAddress=\(chatModel.userAddress != nil)")
+        if !hasRealChats, let userAddress = chatModel.userAddress {
+            VStack(spacing: 12) {
+                Spacer()
+                Text("Your Inqalaab Address")
+                    .font(.title2)
+                    .fontWeight(.bold)
+                    .foregroundColor(theme.colors.onBackground)
+                Text("Show this QR code to connect")
+                    .font(.subheadline)
+                    .foregroundColor(theme.colors.secondary)
+                SimpleXCreatedLinkQRCode(link: userAddress.connLinkContact, short: .constant(false))
+                    .frame(maxWidth: 260, maxHeight: 260)
+                    .padding(.horizontal, 24)
+                Text("Scan each other's code to chat securely")
+                    .font(.caption)
+                    .foregroundColor(theme.colors.secondary)
+                    .multilineTextAlignment(.center)
+                Spacer()
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .padding(.horizontal, 16)
+            .padding(.bottom, 300)
+            .scaleEffect(x: 1, y: oneHandUI ? -1 : 1, anchor: .center)
         }
     }
 }

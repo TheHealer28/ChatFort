@@ -62,9 +62,11 @@ struct ChatListNavLink: View {
     var dynamicRowHeight: CGFloat { dynamicSize(userFont).rowHeight }
 
     var body: some View {
+        let _ = print("Inqalaab ChatListNavLink: id=\(chat.id) type=\(chat.chatInfo.chatType) chatRunning=\(chatModel.chatRunning ?? false)")
         Group {
             switch chat.chatInfo {
             case let .direct(contact):
+                let _ = print("Inqalaab ChatListNavLink: direct contact=\(contact.displayName) isContactCard=\(contact.isContactCard)")
                 contactNavLink(contact)
             case let .group(groupInfo, _):
                 groupNavLink(groupInfo)
@@ -73,6 +75,7 @@ struct ChatListNavLink: View {
             case let .contactRequest(cReq):
                 contactRequestNavLink(cReq)
             case let .contactConnection(cConn):
+                let _ = print("Inqalaab ChatListNavLink: contactConnection id=\(cConn.pccConnId)")
                 contactConnectionNavLink(cConn)
             case let .invalidJSON(json):
                 invalidJSONPreview(json)

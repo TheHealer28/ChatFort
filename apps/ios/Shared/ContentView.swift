@@ -110,7 +110,7 @@ struct ContentView: View {
             }
         }
         .alert(isPresented: $alertManager.presentAlert) { alertManager.alertView! }
-        .confirmationDialog("SimpleX Lock mode", isPresented: $showChooseLAMode, titleVisibility: .visible) {
+        .confirmationDialog("Inqalaab Lock mode", isPresented: $showChooseLAMode, titleVisibility: .visible) {
             Button("System authentication") { initialEnableLA() }
             Button("Passcode entry") { showSetPasscode = true }
         }
@@ -122,7 +122,11 @@ struct ContentView: View {
                 // it remembers enteredBackgroundAuthenticated and sets chatModel.contentViewAccessAuthenticated to false
                 automaticAuthenticationAttempted = false
                 canConnectViewCall = false
+                // Suspend Nearby P2P service on background
+                NearbyModel.shared.onBackground()
             case .active:
+                // Resume Nearby P2P service on foreground
+                NearbyModel.shared.onForeground()
                 canConnectViewCall = !prefPerformLA || contentAccessAuthenticationExtended || unlockedRecently()
                 
                 // condition `!chatModel.contentViewAccessAuthenticated` is required for when authentication is enabled in settings or on initial notice
@@ -246,7 +250,8 @@ struct ContentView: View {
 
     private func mainView() -> some View {
         ZStack(alignment: .top) {
-            ChatListView(activeUserPickerSheet: $chatListUserPickerSheet)
+            // Inqalaab: TabView navigation replaces single ChatListView
+            InqalaabTabView(activeUserPickerSheet: $chatListUserPickerSheet)
                 .redacted(reason: appSheetState.redactionReasons(protectScreen))
             .onAppear {
                 requestNtfAuthorization()
@@ -388,8 +393,8 @@ struct ContentView: View {
 
     func laNoticeAlert() -> Alert {
         Alert(
-            title: Text("SimpleX Lock"),
-            message: Text("To protect your information, turn on SimpleX Lock.\nYou will be prompted to complete authentication before this feature is enabled."),
+            title: Text("Inqalaab Lock"),
+            message: Text("To protect your information, turn on Inqalaab Lock.\nYou will be prompted to complete authentication before this feature is enabled."),
             primaryButton: .default(Text("Turn on")) { showChooseLAMode = true },
             secondaryButton: .cancel()
          )
@@ -397,7 +402,7 @@ struct ContentView: View {
 
     private func initialEnableLA () {
         privacyLocalAuthModeDefault.set(.system)
-        authenticate(reason: NSLocalizedString("Enable SimpleX Lock", comment: "authentication reason")) { laResult in
+        authenticate(reason: NSLocalizedString("Enable Inqalaab Lock", comment: "authentication reason")) { laResult in
             switch laResult {
             case .success:
                 chatModel.contentViewAccessAuthenticated = true

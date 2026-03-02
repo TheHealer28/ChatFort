@@ -77,7 +77,7 @@
 "Passphrase" = "密码";
 
 /* No comment provided by engineer. */
-"Please create a profile in the SimpleX app" = "请在 SimpleX 应用程序中创建配置文件";
+"Please create a profile in the Inqalaab app" = "请在 Inqalaab 应用程序中创建配置文件";
 
 /* No comment provided by engineer. */
 "Selected chat preferences prohibit this message." = "选定的聊天首选项禁止此消息。";
@@ -107,5 +107,5 @@
 "Wrong database passphrase" = "数据库密码错误";
 
 /* No comment provided by engineer. */
-"You can allow sharing in Privacy & Security / SimpleX Lock settings." = "您可以在 \"隐私与安全\"/\"SimpleX Lock \"设置中允许共享。";
+"You can allow sharing in Privacy & Security / Inqalaab Lock settings." = "您可以在 \"隐私与安全\"/\"Inqalaab Lock \"设置中允许共享。";
 

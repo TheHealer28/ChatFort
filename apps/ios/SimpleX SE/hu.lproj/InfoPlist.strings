@@ -1,9 +1,9 @@
 /* Bundle display name */
-"CFBundleDisplayName" = "SimpleX SE";
+"CFBundleDisplayName" = "Inqalaab SE";
 
 /* Bundle name */
-"CFBundleName" = "SimpleX SE";
+"CFBundleName" = "Inqalaab SE";
 
 /* Copyright (human-readable) */
-"NSHumanReadableCopyright" = "Copyright © 2024 SimpleX Chat. Minden jog fenntartva.";
+"NSHumanReadableCopyright" = "Copyright © 2024 Inqalaab. Minden jog fenntartva.";
 

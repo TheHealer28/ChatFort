@@ -48,7 +48,7 @@ private let versionDescriptions: [VersionDescription] = [
             .feature(Description(
                 icon: "checkmark.shield",
                 title: "Security assessment",
-                description: "SimpleX Chat security was audited by Trail of Bits."
+                description: "Inqalaab security was audited by Trail of Bits."
             )),
             .feature(Description(
                 icon: "person.2",
@@ -699,7 +699,7 @@ fileprivate struct CreateUpdateAddressShortLink: View {
         .sheet(isPresented: $showAddressSheet) {
             NavigationView {
                 UserAddressView(autoCreate: true)
-                    .navigationTitle("SimpleX address")
+                    .navigationTitle("Inqalaab address")
                     .navigationBarTitleDisplayMode(.large)
                     .modifier(ThemedBackground(grouped: true))
             }

@@ -29,16 +29,16 @@
 "**e2e encrypted** video call" = "**e2e-salattu** videopuhelu";
 
 /* No comment provided by engineer. */
-"**More private**: check new messages every 20 minutes. Only device token is shared with our push server. It doesn't see how many contacts you have, or any message metadata." = "**Yksityisempi**: tarkista uudet viestit 20 minuutin välein. Laitetunnus jaetaan SimpleX Chat -palvelimen kanssa, mutta ei sitä, kuinka monta yhteystietoa tai viestiä sinulla on.";
+"**More private**: check new messages every 20 minutes. Only device token is shared with our push server. It doesn't see how many contacts you have, or any message metadata." = "**Yksityisempi**: tarkista uudet viestit 20 minuutin välein. Laitetunnus jaetaan Inqalaab -palvelimen kanssa, mutta ei sitä, kuinka monta yhteystietoa tai viestiä sinulla on.";
 
 /* No comment provided by engineer. */
-"**Most private**: do not use SimpleX Chat push server. The app will check messages in background, when the system allows it, depending on how often you use the app." = "**Yksityisin**: älä käytä SimpleX Chat -ilmoituspalvelinta, tarkista viestit ajoittain taustalla (riippuu siitä, kuinka usein käytät sovellusta).";
+"**Most private**: do not use Inqalaab push server. The app will check messages in background, when the system allows it, depending on how often you use the app." = "**Yksityisin**: älä käytä Inqalaab -ilmoituspalvelinta, tarkista viestit ajoittain taustalla (riippuu siitä, kuinka usein käytät sovellusta).";
 
 /* No comment provided by engineer. */
 "**Please note**: you will NOT be able to recover or change passphrase if you lose it." = "**Huomaa**: et voi palauttaa tai muuttaa tunnuslausetta, jos kadotat sen.";
 
 /* No comment provided by engineer. */
-"**Recommended**: device token and end-to-end encrypted notifications are sent to SimpleX Chat push server, but it does not see the message content, size or who it is from." = "**Suositus**: laitetunnus ja ilmoitukset lähetetään SimpleX Chat -ilmoituspalvelimelle, mutta ei viestin sisältöä, kokoa tai sitä, keneltä se on peräisin.";
+"**Recommended**: device token and end-to-end encrypted notifications are sent to Inqalaab push server, but it does not see the message content, size or who it is from." = "**Suositus**: laitetunnus ja ilmoitukset lähetetään Inqalaab -ilmoituspalvelimelle, mutta ei viestin sisältöä, kokoa tai sitä, keneltä se on peräisin.";
 
 /* No comment provided by engineer. */
 "**Warning**: Instant push notifications require passphrase saved in Keychain." = "**Varoitus**: Välittömät push-ilmoitukset vaativat tunnuslauseen, joka on tallennettu Keychainiin.";
@@ -173,7 +173,7 @@
 "`a + b`" = "\\`a + b`";
 
 /* email text */
-"<p>Hi!</p>\n<p><a href=\"%@\">Connect to me via SimpleX Chat</a></p>" = "<p> Hei! </p>\n<p> <a href=\"%@\"> Ollaan yhteydessä SimpleX Chatin kautta</a></p>";
+"<p>Hi!</p>\n<p><a href=\"%@\">Connect to me via Inqalaab</a></p>" = "<p> Hei! </p>\n<p> <a href=\"%@\"> Ollaan yhteydessä Inqalaabin kautta</a></p>";
 
 /* No comment provided by engineer. */
 "~strike~" = "\\~strike~";
@@ -233,7 +233,7 @@ time interval */
 "Abort changing address?" = "Keskeytä osoitteenvaihto?";
 
 /* No comment provided by engineer. */
-"About SimpleX Chat" = "Tietoja SimpleX Chatistä";
+"About Inqalaab" = "Tietoja Inqalaabistä";
 
 /* No comment provided by engineer. */
 "above, then choose:" = "edellä, valitse sitten:";
@@ -654,7 +654,7 @@ set passcode view */
 "Connect" = "Yhdistä";
 
 /* No comment provided by engineer. */
-"connect to SimpleX Chat developers." = "ole yhteydessä SimpleX Chat -kehittäjiin.";
+"connect to Inqalaab developers." = "ole yhteydessä Inqalaab -kehittäjiin.";
 
 /* new chat sheet title */
 "Connect via link" = "Yhdistä linkin kautta";
@@ -774,7 +774,7 @@ set passcode view */
 "Create queue" = "Luo jono";
 
 /* No comment provided by engineer. */
-"Create SimpleX address" = "Luo SimpleX-osoite";
+"Create Inqalaab address" = "Luo Inqalaab-osoite";
 
 /* No comment provided by engineer. */
 "Create your profile" = "Luo profiilisi";
@@ -1001,10 +1001,10 @@ swipe action */
 "Device" = "Laite";
 
 /* No comment provided by engineer. */
-"Device authentication is disabled. Turning off SimpleX Lock." = "Laitteen todennus on poistettu käytöstä. SimpleX Lock kytketään pois päältä.";
+"Device authentication is disabled. Turning off Inqalaab Lock." = "Laitteen todennus on poistettu käytöstä. Inqalaab Lock kytketään pois päältä.";
 
 /* No comment provided by engineer. */
-"Device authentication is not enabled. You can turn on SimpleX Lock via Settings, once you enable device authentication." = "Laitteen todennus ei ole käytössä. Voit ottaa SimpleX Lockin käyttöön Asetuksista, kun olet ottanut laitteen todennuksen käyttöön.";
+"Device authentication is not enabled. You can turn on Inqalaab Lock via Settings, once you enable device authentication." = "Laitteen todennus ei ole käytössä. Voit ottaa Inqalaab Lockin käyttöön Asetuksista, kun olet ottanut laitteen todennuksen käyttöön.";
 
 /* No comment provided by engineer. */
 "different migration in the app/database: %@ / %@" = "eri siirtyminen sovelluksessa/tietokannassa: %@ / %@";
@@ -1028,7 +1028,7 @@ swipe action */
 "Disable for all" = "Poista käytöstä kaikilta";
 
 /* authentication reason */
-"Disable SimpleX Lock" = "Poista SimpleX Lock käytöstä";
+"Disable Inqalaab Lock" = "Poista Inqalaab Lock käytöstä";
 
 /* No comment provided by engineer. */
 "disabled" = "ei käytössä";
@@ -1061,7 +1061,7 @@ swipe action */
 "Do it later" = "Tee myöhemmin";
 
 /* No comment provided by engineer. */
-"Do NOT use SimpleX for emergency calls." = "Älä käytä SimpleX-sovellusta hätäpuheluihin.";
+"Do NOT use Inqalaab for emergency calls." = "Älä käytä Inqalaab-sovellusta hätäpuheluihin.";
 
 /* No comment provided by engineer. */
 "Don't create address" = "Älä luo osoitetta";
@@ -1127,7 +1127,7 @@ swipe action */
 "Enable self-destruct passcode" = "Ota itsetuhoava pääsykoodi käyttöön";
 
 /* authentication reason */
-"Enable SimpleX Lock" = "Ota SimpleX Lock käyttöön";
+"Enable Inqalaab Lock" = "Ota Inqalaab Lock käyttöön";
 
 /* No comment provided by engineer. */
 "Enable TCP keep-alive" = "Ota TCP-säilytys käyttöön";
@@ -1558,7 +1558,7 @@ snd error text */
 "hours" = "tuntia";
 
 /* No comment provided by engineer. */
-"How SimpleX works" = "Miten SimpleX toimii";
+"How Inqalaab works" = "Miten Inqalaab toimii";
 
 /* No comment provided by engineer. */
 "How to" = "Miten";
@@ -1663,7 +1663,7 @@ snd error text */
 "Initial role" = "Alkuperäinen rooli";
 
 /* No comment provided by engineer. */
-"Install [SimpleX Chat for terminal](https://github.com/simplex-chat/simplex-chat)" = "Asenna [SimpleX Chat terminaalille](https://github.com/simplex-chat/simplex-chat)";
+"Install [Inqalaab for terminal](https://github.com/simplex-chat/simplex-chat)" = "Asenna [Inqalaab terminaalille](https://github.com/simplex-chat/simplex-chat)";
 
 /* No comment provided by engineer. */
 "Instant" = "Heti";
@@ -1798,7 +1798,7 @@ snd error text */
 "left" = "poistunut";
 
 /* email subject */
-"Let's talk in SimpleX Chat" = "Jutellaan SimpleX Chatissa";
+"Let's talk in Inqalaab" = "Jutellaan Inqalaabissa";
 
 /* No comment provided by engineer. */
 "Light" = "Vaalea";
@@ -2725,40 +2725,40 @@ chat item action */
 "Show:" = "Näytä:";
 
 /* No comment provided by engineer. */
-"SimpleX address" = "SimpleX-osoite";
+"Inqalaab address" = "Inqalaab-osoite";
 
 /* No comment provided by engineer. */
-"SimpleX Address" = "SimpleX-osoite";
+"Inqalaab Address" = "Inqalaab-osoite";
 
 /* No comment provided by engineer. */
-"SimpleX Chat security was audited by Trail of Bits." = "Trail of Bits on tarkastanut SimpleX Chatin tietoturvan.";
+"Inqalaab security was audited by Trail of Bits." = "Trail of Bits on tarkastanut Inqalaabin tietoturvan.";
 
 /* simplex link type */
-"SimpleX contact address" = "SimpleX-yhteystiedot";
+"Inqalaab contact address" = "Inqalaab-yhteystiedot";
 
 /* notification */
-"SimpleX encrypted message or connection event" = "SimpleX-salattu viesti tai yhteystapahtuma";
+"Inqalaab encrypted message or connection event" = "Inqalaab-salattu viesti tai yhteystapahtuma";
 
 /* simplex link type */
-"SimpleX group link" = "SimpleX-ryhmän linkki";
+"Inqalaab group link" = "Inqalaab-ryhmän linkki";
 
 /* chat feature */
-"SimpleX links" = "SimpleX-linkit";
+"Inqalaab links" = "Inqalaab-linkit";
 
 /* No comment provided by engineer. */
-"SimpleX Lock" = "SimpleX Lock";
+"Inqalaab Lock" = "Inqalaab Lock";
 
 /* No comment provided by engineer. */
-"SimpleX Lock mode" = "SimpleX Lock -tila";
+"Inqalaab Lock mode" = "Inqalaab Lock -tila";
 
 /* No comment provided by engineer. */
-"SimpleX Lock not enabled!" = "SimpleX Lock ei ole käytössä!";
+"Inqalaab Lock not enabled!" = "Inqalaab Lock ei ole käytössä!";
 
 /* No comment provided by engineer. */
-"SimpleX Lock turned on" = "SimpleX Lock päällä";
+"Inqalaab Lock turned on" = "Inqalaab Lock päällä";
 
 /* simplex link type */
-"SimpleX one-time invitation" = "SimpleX-kertakutsu";
+"Inqalaab one-time invitation" = "Inqalaab-kertakutsu";
 
 /* No comment provided by engineer. */
 "Skip" = "Ohita";
@@ -2809,7 +2809,7 @@ chat item action */
 "Stop sharing address?" = "Lopeta osoitteen jakaminen?";
 
 /* authentication reason */
-"Stop SimpleX" = "Lopeta SimpleX";
+"Stop Inqalaab" = "Lopeta Inqalaab";
 
 /* No comment provided by engineer. */
 "strike" = "soita";
@@ -2818,7 +2818,7 @@ chat item action */
 "Submit" = "Lähetä";
 
 /* No comment provided by engineer. */
-"Support SimpleX Chat" = "SimpleX Chat tuki";
+"Support Inqalaab" = "Inqalaab tuki";
 
 /* No comment provided by engineer. */
 "System" = "Järjestelmä";
@@ -2866,7 +2866,7 @@ chat item action */
 "Tests failed!" = "Testit epäonnistuivat!";
 
 /* No comment provided by engineer. */
-"Thank you for installing SimpleX Chat!" = "Kiitos SimpleX Chatin asentamisesta!";
+"Thank you for installing Inqalaab!" = "Kiitos Inqalaabin asentamisesta!";
 
 /* No comment provided by engineer. */
 "Thanks to the users – [contribute via Weblate](https://github.com/simplex-chat/simplex-chat/tree/stable#help-translating-simplex-chat)!" = "Kiitos käyttäjille - [osallistu Weblaten avulla](https://github.com/simplex-chat/simplex-chat/tree/stable#help-translating-simplex-chat)!";
@@ -2959,10 +2959,10 @@ chat item action */
 "To protect timezone, image/voice files use UTC." = "Aikavyöhykkeen suojaamiseksi kuva-/äänitiedostot käyttävät UTC:tä.";
 
 /* No comment provided by engineer. */
-"To protect your information, turn on SimpleX Lock.\nYou will be prompted to complete authentication before this feature is enabled." = "Suojaa tietosi ottamalla SimpleX Lock käyttöön.\nSinua kehotetaan suorittamaan todennus loppuun, ennen kuin tämä ominaisuus otetaan käyttöön.";
+"To protect your information, turn on Inqalaab Lock.\nYou will be prompted to complete authentication before this feature is enabled." = "Suojaa tietosi ottamalla Inqalaab Lock käyttöön.\nSinua kehotetaan suorittamaan todennus loppuun, ennen kuin tämä ominaisuus otetaan käyttöön.";
 
 /* No comment provided by engineer. */
-"To protect your privacy, SimpleX uses separate IDs for each of your contacts." = "Yksityisyyden suojaamiseksi kaikkien muiden alustojen käyttämien käyttäjätunnusten sijaan SimpleX käyttää viestijonojen tunnisteita, jotka ovat kaikille kontakteille erillisiä.";
+"To protect your privacy, Inqalaab uses separate IDs for each of your contacts." = "Yksityisyyden suojaamiseksi kaikkien muiden alustojen käyttämien käyttäjätunnusten sijaan Inqalaab käyttää viestijonojen tunnisteita, jotka ovat kaikille kontakteille erillisiä.";
 
 /* No comment provided by engineer. */
 "To record voice message please grant permission to use Microphone." = "Jos haluat nauhoittaa ääniviestin, anna lupa käyttää mikrofonia.";
@@ -3085,10 +3085,10 @@ chat item action */
 "Use server" = "Käytä palvelinta";
 
 /* No comment provided by engineer. */
-"Use SimpleX Chat servers?" = "Käytä SimpleX Chat palvelimia?";
+"Use Inqalaab servers?" = "Käytä Inqalaab palvelimia?";
 
 /* No comment provided by engineer. */
-"Using SimpleX Chat servers." = "Käyttää SimpleX Chat -palvelimia.";
+"Using Inqalaab servers." = "Käyttää Inqalaab -palvelimia.";
 
 /* No comment provided by engineer. */
 "v%@ (%@)" = "v%@ (%@)";
@@ -3253,7 +3253,7 @@ chat item action */
 "You can start chat via app Settings / Database or by restarting the app" = "Voit aloittaa keskustelun sovelluksen Asetukset / Tietokanta kautta tai käynnistämällä sovelluksen uudelleen";
 
 /* No comment provided by engineer. */
-"You can turn on SimpleX Lock via Settings." = "Voit ottaa SimpleX Lockin käyttöön Asetusten kautta.";
+"You can turn on Inqalaab Lock via Settings." = "Voit ottaa Inqalaab Lockin käyttöön Asetusten kautta.";
 
 /* No comment provided by engineer. */
 "You can use markdown to format messages:" = "Voit käyttää markdownia viestien muotoiluun:";
@@ -3388,7 +3388,7 @@ chat item action */
 "Your profile is stored on your device and only shared with your contacts." = "Profiili jaetaan vain kontaktiesi kanssa.";
 
 /* No comment provided by engineer. */
-"Your profile is stored on your device and shared only with your contacts. SimpleX servers cannot see your profile." = "Profiilisi tallennetaan laitteeseesi ja jaetaan vain yhteystietojesi kanssa. SimpleX-palvelimet eivät näe profiiliasi.";
+"Your profile is stored on your device and shared only with your contacts. Inqalaab servers cannot see your profile." = "Profiilisi tallennetaan laitteeseesi ja jaetaan vain yhteystietojesi kanssa. Inqalaab-palvelimet eivät näe profiiliasi.";
 
 /* No comment provided by engineer. */
 "Your random profile" = "Satunnainen profiilisi";
@@ -3400,5 +3400,5 @@ chat item action */
 "Your settings" = "Asetuksesi";
 
 /* No comment provided by engineer. */
-"Your SimpleX address" = "SimpleX-osoitteesi";
+"Your Inqalaab address" = "Inqalaab-osoitteesi";
 

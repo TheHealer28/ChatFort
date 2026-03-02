@@ -47,10 +47,10 @@
 "**e2e encrypted** video call" = "**エンドツーエンド暗号化済み**の テレビ電話 通話";
 
 /* No comment provided by engineer. */
-"**More private**: check new messages every 20 minutes. Only device token is shared with our push server. It doesn't see how many contacts you have, or any message metadata." = "**よりプライベート**: 20 分ごとに新しいメッセージを確認します。 デバイス トークンは SimpleX Chat サーバーと共有されますが、連絡先やメッセージの数は共有されません。";
+"**More private**: check new messages every 20 minutes. Only device token is shared with our push server. It doesn't see how many contacts you have, or any message metadata." = "**よりプライベート**: 20 分ごとに新しいメッセージを確認します。 デバイス トークンは Inqalaab サーバーと共有されますが、連絡先やメッセージの数は共有されません。";
 
 /* No comment provided by engineer. */
-"**Most private**: do not use SimpleX Chat push server. The app will check messages in background, when the system allows it, depending on how often you use the app." = "**最もプライベート**: SimpleX Chat 通知サーバーを使用せず、バックグラウンドで定期的にメッセージをチェックします (アプリの使用頻度によって異なります)。";
+"**Most private**: do not use Inqalaab push server. The app will check messages in background, when the system allows it, depending on how often you use the app." = "**最もプライベート**: Inqalaab 通知サーバーを使用せず、バックグラウンドで定期的にメッセージをチェックします (アプリの使用頻度によって異なります)。";
 
 /* No comment provided by engineer. */
 "**Please note**: using the same database on two devices will break the decryption of messages from your connections, as a security protection." = "**注意**: 2つの端末で同じデータベースを使用すると、セキュリティ保護として、あなたが接続しているメッセージの復号化が解除されます。";
@@ -59,7 +59,7 @@
 "**Please note**: you will NOT be able to recover or change passphrase if you lose it." = "**注意**: パスフレーズを紛失すると、パスフレーズを復元または変更できなくなります。";
 
 /* No comment provided by engineer. */
-"**Recommended**: device token and end-to-end encrypted notifications are sent to SimpleX Chat push server, but it does not see the message content, size or who it is from." = "**推奨**: デバイス トークンと通知は SimpleX Chat 通知サーバーに送信されますが、メッセージの内容、サイズ、送信者は送信されません。";
+"**Recommended**: device token and end-to-end encrypted notifications are sent to Inqalaab push server, but it does not see the message content, size or who it is from." = "**推奨**: デバイス トークンと通知は Inqalaab 通知サーバーに送信されますが、メッセージの内容、サイズ、送信者は送信されません。";
 
 /* No comment provided by engineer. */
 "**Scan / Paste link**: to connect via a link you received." = "**QRスキャン / リンクの貼り付け**: 受け取ったリンクで接続する。";
@@ -254,7 +254,7 @@
 "`a + b`" = "\\`a + b`";
 
 /* email text */
-"<p>Hi!</p>\n<p><a href=\"%@\">Connect to me via SimpleX Chat</a></p>" = "<p>こんにちは!</p>\n<p><a href=\"%@\">SimpleX Chatでつながろう</a></p>";
+"<p>Hi!</p>\n<p><a href=\"%@\">Connect to me via Inqalaab</a></p>" = "<p>こんにちは!</p>\n<p><a href=\"%@\">Inqalaabでつながろう</a></p>";
 
 /* No comment provided by engineer. */
 "~strike~" = "\\~取り消し線~";
@@ -329,7 +329,7 @@ time interval */
 "About operators" = "オペレーターについて";
 
 /* No comment provided by engineer. */
-"About SimpleX Chat" = "SimpleX Chat について";
+"About Inqalaab" = "Inqalaab について";
 
 /* No comment provided by engineer. */
 "above, then choose:" = "上で選んでください：";
@@ -483,7 +483,7 @@ swipe action */
 "Allow to send files and media." = "ファイルやメディアの送信を許可する。";
 
 /* No comment provided by engineer. */
-"Allow to send SimpleX links." = "SimpleXリンクの送信を許可。";
+"Allow to send Inqalaab links." = "Inqalaabリンクの送信を許可。";
 
 /* No comment provided by engineer. */
 "Allow to send voice messages." = "音声メッセージの送信を許可する。";
@@ -840,7 +840,7 @@ set passcode view */
 "Connect to desktop" = "デスクトップに接続";
 
 /* No comment provided by engineer. */
-"connect to SimpleX Chat developers." = "SimpleX Chat 開発者に接続します。";
+"connect to Inqalaab developers." = "Inqalaab 開発者に接続します。";
 
 /* No comment provided by engineer. */
 "Connect to your friends faster." = "友達ともっと速くつながりましょう。";
@@ -990,7 +990,7 @@ set passcode view */
 "Create queue" = "キューの作成";
 
 /* No comment provided by engineer. */
-"Create SimpleX address" = "SimpleXアドレスの作成";
+"Create Inqalaab address" = "Inqalaabアドレスの作成";
 
 /* No comment provided by engineer. */
 "Create your profile" = "プロフィールを作成する";
@@ -1232,10 +1232,10 @@ swipe action */
 "Device" = "端末";
 
 /* No comment provided by engineer. */
-"Device authentication is disabled. Turning off SimpleX Lock." = "端末認証がオフです。SimpleXロックを解除します。";
+"Device authentication is disabled. Turning off Inqalaab Lock." = "端末認証がオフです。Inqalaabロックを解除します。";
 
 /* No comment provided by engineer. */
-"Device authentication is not enabled. You can turn on SimpleX Lock via Settings, once you enable device authentication." = "端末認証が起動してません。起動したら、設定でSimpleXロックをオンにできます。";
+"Device authentication is not enabled. You can turn on Inqalaab Lock via Settings, once you enable device authentication." = "端末認証が起動してません。起動したら、設定でInqalaabロックをオンにできます。";
 
 /* No comment provided by engineer. */
 "different migration in the app/database: %@ / %@" = "アプリ/データベースで異なる移行：%@ / %@";
@@ -1259,7 +1259,7 @@ swipe action */
 "Disable for all" = "すべて無効";
 
 /* authentication reason */
-"Disable SimpleX Lock" = "SimpleXロックを無効にする";
+"Disable Inqalaab Lock" = "Inqalaabロックを無効にする";
 
 /* No comment provided by engineer. */
 "disabled" = "無効";
@@ -1292,7 +1292,7 @@ swipe action */
 "Do it later" = "後で行う";
 
 /* No comment provided by engineer. */
-"Do NOT use SimpleX for emergency calls." = "緊急通報にSimpleXを使用しないでください。";
+"Do NOT use Inqalaab for emergency calls." = "緊急通報にInqalaabを使用しないでください。";
 
 /* No comment provided by engineer. */
 "Don't create address" = "アドレスを作成しない";
@@ -1358,7 +1358,7 @@ swipe action */
 "Enable self-destruct passcode" = "自己破壊パスコードを有効にする";
 
 /* authentication reason */
-"Enable SimpleX Lock" = "SimpleXロックを有効にする";
+"Enable Inqalaab Lock" = "Inqalaabロックを有効にする";
 
 /* No comment provided by engineer. */
 "Enable TCP keep-alive" = "TCP keep-aliveを有効にする";
@@ -1792,7 +1792,7 @@ snd error text */
 "hours" = "時間";
 
 /* No comment provided by engineer. */
-"How SimpleX works" = "SimpleX の仕組み";
+"How Inqalaab works" = "Inqalaab の仕組み";
 
 /* No comment provided by engineer. */
 "How to" = "使い方";
@@ -1897,7 +1897,7 @@ snd error text */
 "Initial role" = "初期の役割";
 
 /* No comment provided by engineer. */
-"Install [SimpleX Chat for terminal](https://github.com/simplex-chat/simplex-chat)" = "インストール [ターミナル用SimpleX Chat](https://github.com/simplex-chat/simplex-chat)";
+"Install [Inqalaab for terminal](https://github.com/simplex-chat/simplex-chat)" = "インストール [ターミナル用Inqalaab](https://github.com/simplex-chat/simplex-chat)";
 
 /* No comment provided by engineer. */
 "Instant" = "即時";
@@ -2032,7 +2032,7 @@ snd error text */
 "left" = "脱退";
 
 /* email subject */
-"Let's talk in SimpleX Chat" = "SimpleXチャットで会話しよう";
+"Let's talk in Inqalaab" = "Inqalaabチャットで会話しよう";
 
 /* No comment provided by engineer. */
 "Light" = "ライトテーマ";
@@ -2950,40 +2950,40 @@ chat item action */
 "Show:" = "表示する：";
 
 /* No comment provided by engineer. */
-"SimpleX address" = "SimpleXアドレス";
+"Inqalaab address" = "Inqalaabアドレス";
 
 /* No comment provided by engineer. */
-"SimpleX Address" = "SimpleXアドレス";
+"Inqalaab Address" = "Inqalaabアドレス";
 
 /* No comment provided by engineer. */
-"SimpleX Chat security was audited by Trail of Bits." = "SimpleX Chat のセキュリティは Trail of Bits によって監査されました。";
+"Inqalaab security was audited by Trail of Bits." = "Inqalaab のセキュリティは Trail of Bits によって監査されました。";
 
 /* simplex link type */
-"SimpleX contact address" = "SimpleX連絡先アドレス";
+"Inqalaab contact address" = "Inqalaab連絡先アドレス";
 
 /* notification */
-"SimpleX encrypted message or connection event" = "SimpleX 暗号化メッセージまたは接続イベント";
+"Inqalaab encrypted message or connection event" = "Inqalaab 暗号化メッセージまたは接続イベント";
 
 /* simplex link type */
-"SimpleX group link" = "SimpleXグループリンク";
+"Inqalaab group link" = "Inqalaabグループリンク";
 
 /* chat feature */
-"SimpleX links" = "SimpleXリンク";
+"Inqalaab links" = "Inqalaabリンク";
 
 /* No comment provided by engineer. */
-"SimpleX Lock" = "SimpleXロック";
+"Inqalaab Lock" = "Inqalaabロック";
 
 /* No comment provided by engineer. */
-"SimpleX Lock mode" = "SimpleXロックモード";
+"Inqalaab Lock mode" = "Inqalaabロックモード";
 
 /* No comment provided by engineer. */
-"SimpleX Lock not enabled!" = "SimpleXは ロックされていません!";
+"Inqalaab Lock not enabled!" = "Inqalaabは ロックされていません!";
 
 /* No comment provided by engineer. */
-"SimpleX Lock turned on" = "SimpleXロック：オン";
+"Inqalaab Lock turned on" = "Inqalaabロック：オン";
 
 /* simplex link type */
-"SimpleX one-time invitation" = "SimpleX使い捨て招待リンク";
+"Inqalaab one-time invitation" = "Inqalaab使い捨て招待リンク";
 
 /* No comment provided by engineer. */
 "Simplified incognito mode" = "シークレットモードの簡素化";
@@ -3037,7 +3037,7 @@ chat item action */
 "Stop sharing address?" = "アドレスの共有を停止しますか？";
 
 /* authentication reason */
-"Stop SimpleX" = "SimpleX を停止";
+"Stop Inqalaab" = "Inqalaab を停止";
 
 /* No comment provided by engineer. */
 "strike" = "取り消し線";
@@ -3046,7 +3046,7 @@ chat item action */
 "Submit" = "送信";
 
 /* No comment provided by engineer. */
-"Support SimpleX Chat" = "Simplex Chatを支援";
+"Support Inqalaab" = "Simplex Chatを支援";
 
 /* No comment provided by engineer. */
 "System" = "システム";
@@ -3094,7 +3094,7 @@ chat item action */
 "Tests failed!" = "テストは失敗しました！";
 
 /* No comment provided by engineer. */
-"Thank you for installing SimpleX Chat!" = "SimpleX Chatをインストールしていただき、ありがとうございます！";
+"Thank you for installing Inqalaab!" = "Inqalaabをインストールしていただき、ありがとうございます！";
 
 /* No comment provided by engineer. */
 "Thanks to the users – [contribute via Weblate](https://github.com/simplex-chat/simplex-chat/tree/stable#help-translating-simplex-chat)!" = "ユーザーに感謝します – [Weblate 経由で貢献してください](https://github.com/simplex-chat/simplex-chat/tree/stable#help-translation-simplex-chat)！";
@@ -3184,10 +3184,10 @@ chat item action */
 "To protect timezone, image/voice files use UTC." = "時間帯を漏らさないために、画像と音声ファイルはUTCを使います。";
 
 /* No comment provided by engineer. */
-"To protect your information, turn on SimpleX Lock.\nYou will be prompted to complete authentication before this feature is enabled." = "あなたのデータを守るために、SimpleXロックをオンにしてください。\nオンにするには、認証ステップが行われます。";
+"To protect your information, turn on Inqalaab Lock.\nYou will be prompted to complete authentication before this feature is enabled." = "あなたのデータを守るために、Inqalaabロックをオンにしてください。\nオンにするには、認証ステップが行われます。";
 
 /* No comment provided by engineer. */
-"To protect your privacy, SimpleX uses separate IDs for each of your contacts." = "プライバシーを保護するために、SimpleX には、他のすべてのプラットフォームで使用されるユーザー ID の代わりに、連絡先ごとに個別のメッセージ キューの識別子があります。";
+"To protect your privacy, Inqalaab uses separate IDs for each of your contacts." = "プライバシーを保護するために、Inqalaab には、他のすべてのプラットフォームで使用されるユーザー ID の代わりに、連絡先ごとに個別のメッセージ キューの識別子があります。";
 
 /* No comment provided by engineer. */
 "To record voice message please grant permission to use Microphone." = "音声メッセージを録音する場合は、マイクの使用を許可してください。";
@@ -3310,10 +3310,10 @@ chat item action */
 "Use server" = "サーバを使う";
 
 /* No comment provided by engineer. */
-"Use SimpleX Chat servers?" = "SimpleX チャット サーバーを使用しますか?";
+"Use Inqalaab servers?" = "Inqalaab チャット サーバーを使用しますか?";
 
 /* No comment provided by engineer. */
-"Using SimpleX Chat servers." = "SimpleX チャット サーバーを使用する。";
+"Using Inqalaab servers." = "Inqalaab チャット サーバーを使用する。";
 
 /* No comment provided by engineer. */
 "v%@ (%@)" = "v%@ (%@)";
@@ -3463,7 +3463,7 @@ chat item action */
 "You can hide or mute a user profile - swipe it to the right." = "ユーザープロファイルを右にスワイプすると、非表示またはミュートにすることができます。";
 
 /* No comment provided by engineer. */
-"You can make it visible to your SimpleX contacts via Settings." = "設定でSimpleXの連絡先に表示させることができます。";
+"You can make it visible to your Inqalaab contacts via Settings." = "設定でInqalaabの連絡先に表示させることができます。";
 
 /* notification body */
 "You can now chat with %@" = "%@ にメッセージを送信できるようになりました";
@@ -3481,7 +3481,7 @@ chat item action */
 "You can start chat via app Settings / Database or by restarting the app" = "アプリの設定/データベースから、またはアプリを再起動することでチャットを開始できます";
 
 /* No comment provided by engineer. */
-"You can turn on SimpleX Lock via Settings." = "設定からSimpleXのロックをオンにすることができます。";
+"You can turn on Inqalaab Lock via Settings." = "設定からInqalaabのロックをオンにすることができます。";
 
 /* No comment provided by engineer. */
 "You can use markdown to format messages:" = "メッセージの書式にmarkdownを使用することができます：";
@@ -3616,7 +3616,7 @@ chat item action */
 "Your profile is stored on your device and only shared with your contacts." = "プロフィールは連絡先にしか共有されません。";
 
 /* No comment provided by engineer. */
-"Your profile is stored on your device and shared only with your contacts. SimpleX servers cannot see your profile." = "プロフィールはデバイスに保存され、連絡先とのみ共有されます。 SimpleX サーバーはあなたのプロファイルを参照できません。";
+"Your profile is stored on your device and shared only with your contacts. Inqalaab servers cannot see your profile." = "プロフィールはデバイスに保存され、連絡先とのみ共有されます。 Inqalaab サーバーはあなたのプロファイルを参照できません。";
 
 /* No comment provided by engineer. */
 "Your random profile" = "あなたのランダム・プロフィール";
@@ -3628,5 +3628,5 @@ chat item action */
 "Your settings" = "あなたの設定";
 
 /* No comment provided by engineer. */
-"Your SimpleX address" = "あなたのSimpleXアドレス";
+"Your Inqalaab address" = "あなたのInqalaabアドレス";
 

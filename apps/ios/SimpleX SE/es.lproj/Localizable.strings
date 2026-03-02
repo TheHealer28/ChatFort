@@ -77,7 +77,7 @@
 "Passphrase" = "Frase de contraseña";
 
 /* No comment provided by engineer. */
-"Please create a profile in the SimpleX app" = "Por favor, crea un perfil en SimpleX";
+"Please create a profile in the Inqalaab app" = "Por favor, crea un perfil en Inqalaab";
 
 /* No comment provided by engineer. */
 "Selected chat preferences prohibit this message." = "Las preferencias seleccionadas no permiten este mensaje.";
@@ -107,5 +107,5 @@
 "Wrong database passphrase" = "Contraseña incorrecta de la base de datos";
 
 /* No comment provided by engineer. */
-"You can allow sharing in Privacy & Security / SimpleX Lock settings." = "Puedes dar permiso para compartir en Privacidad y Seguridad / Bloque SimpleX.";
+"You can allow sharing in Privacy & Security / Inqalaab Lock settings." = "Puedes dar permiso para compartir en Privacidad y Seguridad / Bloque Inqalaab.";
 

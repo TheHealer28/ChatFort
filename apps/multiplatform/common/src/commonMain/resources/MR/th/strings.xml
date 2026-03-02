@@ -5,7 +5,7 @@
     <string name="above_then_preposition_continuation">ด้านบน, จากนั้น:</string>
     <string name="accept_contact_button">รับ</string>
     <string name="accept_contact_incognito_button">ยอมรับโหมดไม่ระบุตัวตน</string>
-    <string name="about_simplex_chat">เกี่ยวกับ SimpleX Chat</string>
+    <string name="about_simplex_chat">เกี่ยวกับ Inqalaab</string>
     <string name="callstatus_accepted">รับสายแล้ว</string>
     <string name="accept_call_on_lock_screen">รับ</string>
     <string name="chat_item_ttl_week">1 สัปดาห์</string>
@@ -17,7 +17,7 @@
     <string name="accept_connection_request__question">รับการขอเชื่อมต่อหรือไม่\?</string>
     <string name="one_time_link_short">ลิงก์สำหรับใช้ 1 ครั้ง</string>
     <string name="send_disappearing_message_5_minutes">5 นาที</string>
-    <string name="about_simplex">เกี่ยวกับ SimpleX</string>
+    <string name="about_simplex">เกี่ยวกับ Inqalaab</string>
     <string name="network_enable_socks_info">เข้าถึงเซิร์ฟเวอร์ผ่านพร็อกซี SOCKS บนพอร์ต %d หรือไม่\? ต้องเริ่มพร็อกซีก่อนที่จะเปิดใช้งานตัวเลือกนี้</string>
     <string name="add_address_to_your_profile">เพิ่มที่อยู่ลงในโปรไฟล์ของคุณ เพื่อให้ผู้ติดต่อของคุณสามารถแชร์กับผู้อื่นได้ การอัปเดตโปรไฟล์จะถูกส่งไปยังผู้ติดต่อของคุณ</string>
     <string name="color_primary_variant">เน้นสีเพิ่มเติม</string>
@@ -112,7 +112,7 @@
     <string name="both_you_and_your_contact_can_add_message_reactions">ทั้งคุณและผู้ติดต่อของคุณสามารถเพิ่มปฏิกิริยาต่อข้อความได้</string>
     <string name="both_you_and_your_contacts_can_delete">ทั้งคุณและผู้ติดต่อของคุณสามารถลบข้อความที่ส่งแล้วอย่างถาวรได้</string>
     <string name="use_camera_button">กล้อง</string>
-    <string name="learn_more_about_address">เกี่ยวกับที่อยู่ SimpleX</string>
+    <string name="learn_more_about_address">เกี่ยวกับที่อยู่ Inqalaab</string>
     <string name="bold_text">ตัวหนา</string>
     <string name="callstatus_calling">กำลังโทร…</string>
     <string name="callstatus_in_progress">กําลังโทร</string>
@@ -212,7 +212,7 @@
     <string name="customize_theme_title">ปรับแต่งธีม</string>
     <string name="create_address">สร้างที่อยู่</string>
     <string name="create_address_and_let_people_connect">สร้างที่อยู่เพื่อให้ผู้อื่นเชื่อมต่อกับคุณ</string>
-    <string name="create_simplex_address">สร้างที่อยู่ SimpleX</string>
+    <string name="create_simplex_address">สร้างที่อยู่ Inqalaab</string>
     <string name="continue_to_next_step">ดำเนินการต่อ</string>
     <string name="create_profile_button">สร้าง</string>
     <string name="create_profile">สร้างโปรไฟล์</string>
@@ -275,7 +275,7 @@
     <string name="decryption_error">ข้อผิดพลาดในการ decrypt</string>
     <string name="rcv_group_event_group_deleted">กลุ่มที่ถูกลบ</string>
     <string name="delete_group_question">ลบกลุ่ม\?</string>
-    <string name="auth_device_authentication_is_not_enabled_you_can_turn_on_in_settings_once_enabled">การตรวจสอบอุปกรณ์ไม่ได้ถูกเปิดใช้งาน คุณสามารถเปิด SimpleX Lock ผ่านการตั้งค่าได้ เมื่อคุณเปิดใช้งานการตรวจสอบอุปกรณ์แล้ว</string>
+    <string name="auth_device_authentication_is_not_enabled_you_can_turn_on_in_settings_once_enabled">การตรวจสอบอุปกรณ์ไม่ได้ถูกเปิดใช้งาน คุณสามารถเปิด Inqalaab Lock ผ่านการตั้งค่าได้ เมื่อคุณเปิดใช้งานการตรวจสอบอุปกรณ์แล้ว</string>
     <string name="enter_welcome_message_optional">ใส่ข้อความต้อนรับ… (ไม่บังคับ)</string>
     <string name="error_loading_smp_servers">เกิดข้อผิดพลาดในการโหลดเซิร์ฟเวอร์ SMP</string>
     <string name="error_loading_xftp_servers">เกิดข้อผิดพลาดในการโหลดเซิร์ฟเวอร์ XFTP</string>
@@ -313,11 +313,11 @@
     <string name="notification_preview_mode_hidden">ซ่อนอยู่</string>
     <string name="notification_display_mode_hidden_desc">ซ่อนผู้ติดต่อและข้อความ</string>
     <string name="la_enter_app_passcode">ใส่รหัสผ่าน</string>
-    <string name="auth_disable_simplex_lock">ปิดการใช้งาน SimpleX Lock</string>
+    <string name="auth_disable_simplex_lock">ปิดการใช้งาน Inqalaab Lock</string>
     <string name="la_minutes">%d นาที</string>
     <string name="la_seconds">%d วินาที</string>
-    <string name="auth_enable_simplex_lock">เปิดใช้งาน SimpleX Lock</string>
-    <string name="auth_device_authentication_is_disabled_turning_off">การตรวจสอบสิทธิ์อุปกรณ์ถูกปิดใช้งาน กำลังปิด SimpleX Lock</string>
+    <string name="auth_enable_simplex_lock">เปิดใช้งาน Inqalaab Lock</string>
+    <string name="auth_device_authentication_is_disabled_turning_off">การตรวจสอบสิทธิ์อุปกรณ์ถูกปิดใช้งาน กำลังปิด Inqalaab Lock</string>
     <string name="edit_verb">แก้ไข</string>
     <string name="hide_verb">ซ่อน</string>
     <string name="delete_verb">ลบ</string>
@@ -360,7 +360,7 @@
     <string name="hide_dev_options">ซ่อน:</string>
     <string name="delete_address__question">ลบที่อยู่\?</string>
     <string name="email_invite_body">สวัสดี!
-\nเชื่อมต่อกับฉันผ่าน SimpleX Chat: %s</string>
+\nเชื่อมต่อกับฉันผ่าน Inqalaab: %s</string>
     <string name="delete_address">ลบที่อยู่</string>
     <string name="dont_create_address">อย่าสร้างที่อยู่</string>
     <string name="full_name__field">ชื่อเต็ม:</string>
@@ -376,7 +376,7 @@
     <string name="how_to_use_markdown">วิธีใช้มาร์กดาวน์</string>
     <string name="callstate_ended">สิ้นสุดลงแล้ว</string>
     <string name="how_it_works">มันทำงานอย่างไร</string>
-    <string name="how_simplex_works">วิธีการ SimpleX ทํางานอย่างไร</string>
+    <string name="how_simplex_works">วิธีการ Inqalaab ทํางานอย่างไร</string>
     <string name="decentralized">กระจายอำนาจแล้ว</string>
     <string name="encrypted_audio_call">การโทรเสียงแบบ encrypted จากต้นจนจบ</string>
     <string name="encrypted_video_call">การโทรวิดีแบบ encrypted จากต้นจนจบ</string>
@@ -525,7 +525,7 @@
     <string name="if_you_enter_self_destruct_code">หากคุณใส่รหัสผ่านทำลายตัวเองขณะเปิดแอป:</string>
     <string name="incognito_info_protects">โหมดไม่ระบุตัวตนปกป้องความเป็นส่วนตัวของชื่อและรูปภาพโปรไฟล์หลักของคุณ — สำหรับผู้ติดต่อใหม่แต่ละราย จะมีการสร้างโปรไฟล์ใหม่แบบสุ่ม</string>
     <string name="conn_level_desc_indirect">ทางอ้อม (%1$s)</string>
-    <string name="install_simplex_chat_for_terminal">ติดตั้ง SimpleX Chat สำหรับเทอร์มินัล</string>
+    <string name="install_simplex_chat_for_terminal">ติดตั้ง Inqalaab สำหรับเทอร์มินัล</string>
     <string name="alert_text_skipped_messages_it_can_happen_when">มันสามารถเกิดขึ้นได้เมื่อ:
 \n1. ข้อความหมดอายุในไคลเอนต์ที่ส่งหลังจาก 2 วันหรือบนเซิร์ฟเวอร์หลังจาก 30 วัน
 \n2. การถอดรหัสข้อความล้มเหลว เนื่องจากคุณหรือผู้ติดต่อของคุณใช้การสำรองฐานข้อมูลเก่า
@@ -544,7 +544,7 @@
     <string name="icon_descr_instant_notifications">การแจ้งเตือนทันที</string>
     <string name="service_notifications">การแจ้งเตือนทันที!</string>
     <string name="service_notifications_disabled">ปิดการแจ้งเตือนทันทีแล้ว!</string>
-    <string name="turn_off_battery_optimization"><![CDATA[เพื่อให้สามารถใช้งานได้ โปรด <b>ปิดการใช้งานการเพิ่มประสิทธิภาพแบตเตอรี่</b> สำหรับ SimpleX ในกล่องโต้ตอบถัดไป มิฉะนั้น การแจ้งเตือนจะถูกปิดใช้งาน]]></string>
+    <string name="turn_off_battery_optimization"><![CDATA[เพื่อให้สามารถใช้งานได้ โปรด <b>ปิดการใช้งานการเพิ่มประสิทธิภาพแบตเตอรี่</b> สำหรับ Inqalaab ในกล่องโต้ตอบถัดไป มิฉะนั้น การแจ้งเตือนจะถูกปิดใช้งาน]]></string>
     <string name="la_immediately">โดยทันที</string>
     <string name="auth_log_in_using_credential">เข้าสู่ระบบโดยใช้ข้อมูลประจำตัวของคุณ</string>
     <string name="info_menu">ข้อมูล</string>
@@ -557,7 +557,7 @@
     <string name="large_file">ไฟล์ขนาดใหญ่!</string>
     <string name="live_message">ข้อความสด!</string>
     <string name="gallery_image_button">ภาพ</string>
-    <string name="if_you_received_simplex_invitation_link_you_can_open_in_browser">หากคุณได้รับลิงก์เชิญ SimpleX Chat คุณสามารถเปิดได้ในเบราว์เซอร์ของคุณ:</string>
+    <string name="if_you_received_simplex_invitation_link_you_can_open_in_browser">หากคุณได้รับลิงก์เชิญ Inqalaab คุณสามารถเปิดได้ในเบราว์เซอร์ของคุณ:</string>
     <string name="image_descr_link_preview">ภาพตัวอย่างลิงค์</string>
     <string name="invalid_QR_code">รหัส QR ไม่ถูกต้อง</string>
     <string name="invalid_contact_link">ลิงค์ไม่ถูกต้อง!</string>
@@ -565,7 +565,7 @@
     <string name="incorrect_code">รหัสความปลอดภัยไม่ถูกต้อง!</string>
     <string name="smp_servers_invalid_address">ที่อยู่เซิร์ฟเวอร์ไม่ถูกต้อง!</string>
     <string name="invite_friends">เชิญเพื่อน ๆ</string>
-    <string name="email_invite_subject">มาคุยกันใน SimpleX Chat</string>
+    <string name="email_invite_subject">มาคุยกันใน Inqalaab</string>
     <string name="italic_text">ตัวเอียง</string>
     <string name="immune_to_spam_and_abuse">มีภูมิคุ้มกันต่อสแปมและการละเมิด</string>
     <string name="make_private_connection">สร้างการเชื่อมต่อแบบส่วนตัว</string>
@@ -670,7 +670,7 @@
     <string name="paste_the_link_you_received">แปะลิงก์ที่ได้รับ</string>
     <string name="status_no_e2e_encryption">ไม่มีการ encrypt จากต้นจนจบ</string>
     <string name="open_verb">เปิด</string>
-    <string name="open_simplex_chat_to_accept_call">เปิด SimpleX Chat เพื่อรับสาย</string>
+    <string name="open_simplex_chat_to_accept_call">เปิด Inqalaab เพื่อรับสาย</string>
     <string name="call_connection_peer_to_peer">เพื่อนต่อเพื่อน</string>
     <string name="icon_descr_call_pending_sent">รอดำเนินการสาย</string>
     <string name="icon_descr_call_missed">สายที่ไม่ได้รับ</string>
@@ -748,7 +748,7 @@
     <string name="ensure_smp_server_address_are_correct_format_and_unique">ตรวจสอบให้แน่ใจว่าที่อยู่เซิร์ฟเวอร์ SMP อยู่ในรูปแบบที่ถูกต้อง แยกบรรทัดและไม่ซ้ำกัน</string>
     <string name="network_use_onion_hosts_prefer_desc">โฮสต์หัวหอมจะถูกใช้เมื่อมี</string>
     <string name="only_your_contact_can_send_voice">ผู้ติดต่อของคุณเท่านั้นที่สามารถส่งข้อความเสียงได้</string>
-    <string name="simplex_link_mode_browser_warning">การเปิดลิงก์ในเบราว์เซอร์อาจลดความเป็นส่วนตัวและความปลอดภัยของการเชื่อมต่อ ลิงก์ SimpleX ที่ไม่น่าเชื่อถือจะเป็นสีแดง</string>
+    <string name="simplex_link_mode_browser_warning">การเปิดลิงก์ในเบราว์เซอร์อาจลดความเป็นส่วนตัวและความปลอดภัยของการเชื่อมต่อ ลิงก์ Inqalaab ที่ไม่น่าเชื่อถือจะเป็นสีแดง</string>
     <string name="please_check_correct_link_and_maybe_ask_for_a_new_one">โปรดตรวจสอบว่าคุณใช้ลิงก์ที่ถูกต้องหรือขอให้ผู้ติดต่อของคุณส่งลิงก์ใหม่ให้คุณ</string>
     <string name="network_error_desc">โปรดตรวจสอบการเชื่อมต่อเครือข่ายของคุณกับ %1$s แล้วลองอีกครั้ง</string>
     <string name="contact_developers">โปรดอัปเดตแอปและติดต่อนักพัฒนาแอป</string>
@@ -757,7 +757,7 @@
     <string name="icon_descr_profile_image_placeholder">ตัวยึดตำแหน่งรูปโปรไฟล์</string>
     <string name="image_descr_profile_image">รูปโปรไฟล์</string>
     <string name="image_descr_qr_code">คิวอาร์โค้ด</string>
-    <string name="read_more_in_user_guide_with_link"><![CDATA[อ่านเพิ่มเติมใน <font color="#0088ff"> คู่มือผู้ใช้ </font>]]></string>
+    <string name="read_more_in_user_guide_with_link"><![CDATA[อ่านเพิ่มเติมใน <font color="#1E8E3E"> คู่มือผู้ใช้ </font>]]></string>
     <string name="smp_servers_preset_address">ที่อยู่เซิร์ฟเวอร์ที่ตั้งไว้ล่วงหน้า</string>
     <string name="smp_servers_preset_server">เซิร์ฟเวอร์ที่ตั้งไว้ล่วงหน้า</string>
     <string name="rate_the_app">ให้คะแนนแอป</string>
@@ -766,7 +766,7 @@
     <string name="callstate_received_answer">ได้รับคำตอบ…</string>
     <string name="callstate_received_confirmation">ได้รับการยืนยัน…</string>
     <string name="privacy_redefined">นิยามความเป็นส่วนตัวใหม่</string>
-    <string name="read_more_in_github_with_link"><![CDATA[อ่านเพิ่มเติมใน <font color="#0088ff"> GitHub repository </font> ของเรา]]></string>
+    <string name="read_more_in_github_with_link"><![CDATA[อ่านเพิ่มเติมใน <font color="#1E8E3E"> GitHub repository </font> ของเรา]]></string>
     <string name="onboarding_notifications_mode_title">การแจ้งเตือนส่วนตัว</string>
     <string name="alert_text_fragment_please_report_to_developers">โปรดรายงานไปยังผู้พัฒนาแอป</string>
     <string name="privacy_and_security">ความเป็นส่วนตัวและความปลอดภัย</string>
@@ -931,8 +931,8 @@
     <string name="v5_0_app_passcode_descr">ตั้งแทนการรับรองความถูกต้องของระบบ</string>
     <string name="v5_1_self_destruct_passcode">รหัสผ่านแบบทําลายตัวเอง</string>
     <string name="custom_time_picker_select">เลือก</string>
-    <string name="theme_simplex">SimpleX</string>
-    <string name="v4_2_security_assessment_desc">ความปลอดภัยของ SimpleX Chat ได้รับการตรวจสอบโดย Trail of Bits</string>
+    <string name="theme_simplex">Inqalaab</string>
+    <string name="v4_2_security_assessment_desc">ความปลอดภัยของ Inqalaab ได้รับการตรวจสอบโดย Trail of Bits</string>
     <string name="non_fatal_errors_occured_during_import">ข้อผิดพลาดที่ไม่ร้ายแรงบางอย่างเกิดขึ้นระหว่างการนำเข้า - คุณอาจดูรายละเอียดเพิ่มเติมได้ที่คอนโซล Chat</string>
     <string name="star_on_github">ติดดาวบน GitHub</string>
     <string name="switch_verb">เปลี่ยน</string>
@@ -952,23 +952,23 @@
     <string name="group_invitation_tap_to_join">แตะเพื่อเข้าร่วม</string>
     <string name="group_invitation_tap_to_join_incognito">แตะเพื่อเข้าร่วมโหมดไม่ระบุตัวตน</string>
     <string name="whats_new_thanks_to_users_contribute_weblate">ขอบคุณผู้ใช้ - มีส่วนร่วมผ่าน Weblate!</string>
-    <string name="simplex_link_contact">ที่อยู่ติดต่อ SimpleX</string>
-    <string name="simplex_link_group">ลิงค์กลุ่ม SimpleX</string>
-    <string name="simplex_link_invitation">คำเชิญ SimpleX แบบครั้งเดียว</string>
-    <string name="simplex_link_mode">ลิงก์ SimpleX</string>
+    <string name="simplex_link_contact">ที่อยู่ติดต่อ Inqalaab</string>
+    <string name="simplex_link_group">ลิงค์กลุ่ม Inqalaab</string>
+    <string name="simplex_link_invitation">คำเชิญ Inqalaab แบบครั้งเดียว</string>
+    <string name="simplex_link_mode">ลิงก์ Inqalaab</string>
     <string name="error_smp_test_failed_at_step">การทดสอบล้มเหลวในขั้นตอน %s</string>
     <string name="periodic_notifications_desc">แอปดึงข้อความใหม่เป็นระยะ — แอปใช้แบตเตอรี่เพียงไม่กี่เปอร์เซ็นต์ต่อวัน แอปไม่ได้ใช้การแจ้งเตือนแบบพุช — ข้อมูลจากอุปกรณ์ของคุณจะไม่ถูกส่งไปยังเซิร์ฟเวอร์</string>
     <string name="database_initialization_error_desc">ฐานข้อมูลทำงานไม่ถูกต้อง แตะเพื่อเรียนรู้เพิ่มเติม</string>
-    <string name="ntf_channel_calls">การโทร SimpleX Chat</string>
-    <string name="ntf_channel_messages">ข้อความแชท SimpleX</string>
+    <string name="ntf_channel_calls">การโทร Inqalaab</string>
+    <string name="ntf_channel_messages">ข้อความแชท Inqalaab</string>
     <string name="settings_notification_preview_mode_title">แสดงตัวอย่าง</string>
     <string name="notifications_mode_periodic">เริ่มเป็นระยะ</string>
-    <string name="la_notice_title_simplex_lock">ล็อค SimpleX</string>
-    <string name="la_lock_mode">โหมดล็อค SimpleX</string>
+    <string name="la_notice_title_simplex_lock">ล็อค Inqalaab</string>
+    <string name="la_lock_mode">โหมดล็อค Inqalaab</string>
     <string name="la_lock_mode_system">การรับรองความถูกต้องของระบบ</string>
-    <string name="auth_simplex_lock_turned_on">SimpleX Lock เปิดอยู่</string>
+    <string name="auth_simplex_lock_turned_on">Inqalaab Lock เปิดอยู่</string>
     <string name="auth_stop_chat">หยุดแชท</string>
-    <string name="lock_not_enabled">ไม่ได้เปิดใช้งาน SimpleX Lock!</string>
+    <string name="lock_not_enabled">ไม่ได้เปิดใช้งาน Inqalaab Lock!</string>
     <string name="stop_file__action">หยุดไฟล์</string>
     <string name="stop_snd_file__title">หยุดส่งไฟล์ไหม\?</string>
     <string name="stop_file__confirm">หยุด</string>
@@ -976,28 +976,28 @@
     <string name="tap_to_start_new_chat">แตะเพื่อเริ่มแชทใหม่</string>
     <string name="switch_receiving_address_question">เปลี่ยนที่อยู่ผู้รับ\?</string>
     <string name="add_contact_or_create_group">เริ่มแชทใหม่</string>
-    <string name="thank_you_for_installing_simplex">ขอบคุณสำหรับการติดตั้ง SimpleX Chat!</string>
+    <string name="thank_you_for_installing_simplex">ขอบคุณสำหรับการติดตั้ง Inqalaab!</string>
     <string name="chat_help_tap_button">แตะปุ่ม</string>
     <string name="connection_you_accepted_will_be_cancelled">การเชื่อมต่อที่คุณยอมรับแล้วจะถูกยกเลิก!</string>
     <string name="contact_you_shared_link_with_wont_be_able_to_connect">ผู้ติดต่อที่คุณแชร์ลิงก์นี้ด้วยจะไม่สามารถเชื่อมต่อได้!</string>
     <string name="show_QR_code">แสดงคิวอาร์โค้ด</string>
-    <string name="simplex_address">ที่อยู่ SimpleX</string>
+    <string name="simplex_address">ที่อยู่ Inqalaab</string>
     <string name="is_not_verified">%s ไม่ได้รับการยืนยัน</string>
     <string name="is_verified">%s ได้รับการยืนยันแล้ว</string>
-    <string name="chat_lock">ล็อค SimpleX</string>
+    <string name="chat_lock">ล็อค Inqalaab</string>
     <string name="smp_servers">เซิร์ฟเวอร์ SMP</string>
     <string name="smp_servers_test_server">เซิร์ฟเวอร์ทดสอบ</string>
     <string name="smp_servers_test_servers">เซิร์ฟเวอร์ทดสอบ</string>
     <string name="smp_servers_test_some_failed">บางเซิร์ฟเวอร์ผ่านการทดสอบล้มเหลว:</string>
     <string name="network_socks_proxy_settings">การตั้งค่าพร็อกซี SOCKS</string>
-    <string name="core_simplexmq_version">Simplexmq: v%s (%2s)</string>
+    <string name="core_simplexmq_version">simplexmq: v%s (%2s)</string>
     <string name="first_platform_without_user_ids">แพลตฟอร์มแรกที่ไม่มีตัวระบุผู้ใช้ - ถูกออกแบบให้เป็นส่วนตัว</string>
     <string name="icon_descr_speaker_off">ปิดลำโพง</string>
     <string name="icon_descr_speaker_on">เปิดลำโพง</string>
     <string name="alert_title_skipped_messages">ข้อความที่ข้ามไป</string>
     <string name="submit_passcode">ส่ง</string>
     <string name="la_mode_system">ระบบ</string>
-    <string name="settings_section_title_support">สนับสนุน SIMPLEX แชท</string>
+    <string name="settings_section_title_support">สนับสนุน Inqalaab แชท</string>
     <string name="settings_section_title_socks">พร็อกซี SOCKS</string>
     <string name="stop_chat_confirmation">หยุด</string>
     <string name="stop_chat_question">หยุดแชท\?</string>
@@ -1017,9 +1017,9 @@
     <string name="network_session_mode_transport_isolation">การแยกการขนส่ง</string>
     <string name="unhide_chat_profile">ยกเลิกการซ่อนโปรไฟล์การแชท</string>
     <string name="update_database">อัปเดต</string>
-    <string name="use_simplex_chat_servers__question">ใช้เซิร์ฟเวอร์ SimpleX Chat ไหม\?</string>
+    <string name="use_simplex_chat_servers__question">ใช้เซิร์ฟเวอร์ Inqalaab ไหม\?</string>
     <string name="video_call_no_encryption">การสนทนาทางวิดีโอ (ไม่ได้ encrypt จากต้นจนจบ)</string>
-    <string name="using_simplex_chat_servers">กำลังใช้เซิร์ฟเวอร์ SimpleX Chat อยู่</string>
+    <string name="using_simplex_chat_servers">กำลังใช้เซิร์ฟเวอร์ Inqalaab อยู่</string>
     <string name="v5_1_better_messages_descr">- ข้อความเสียงนานสุด 5 นาที
 \n- เวลาที่กำหนดเองที่จะหายไป
 \n- ประวัติการแก้ไข</string>
@@ -1031,20 +1031,20 @@
     <string name="contact_wants_to_connect_via_call">%1$s ต้องการเชื่อมต่อกับคุณผ่านทาง</string>
     <string name="alert_text_decryption_error_n_messages_failed_to_decrypt">การ decrypt %1$d ข้อความล้มเหลว</string>
     <string name="group_info_section_title_num_members">%1$s สมาชิก</string>
-    <string name="you_can_connect_to_simplex_chat_founder"><![CDATA[คุณสามารถ <font color="#0088ff">เชื่อมต่อกับ SimpleX Chat นักพัฒนาแอปเพื่อถามคำถามและรับการอัปเดต</font>]]></string>
+    <string name="you_can_connect_to_simplex_chat_founder"><![CDATA[คุณสามารถ <font color="#1E8E3E">เชื่อมต่อกับ Inqalaab นักพัฒนาแอปเพื่อถามคำถามและรับการอัปเดต</font>]]></string>
     <string name="you_can_share_your_address">คุณสามารถแชร์ที่อยู่ของคุณเป็นลิงก์หรือรหัสคิวอาร์ - ใคร ๆ ก็สามารถเชื่อมต่อกับคุณได้</string>
     <string name="snd_conn_event_switch_queue_phase_completed">คุณเปลี่ยนที่อยู่</string>
     <string name="snd_group_event_changed_role_for_yourself">คุณเปลี่ยนบทบาทของตัวเองเป็น %s</string>
     <string name="your_current_profile">โปรไฟล์ปัจจุบันของคุณ</string>
     <string name="invite_prohibited_description">คุณกำลังพยายามเชิญผู้ติดต่อที่คุณแบ่งปันโปรไฟล์ที่ไม่ระบุตัวตนไปยังกลุ่มที่คุณใช้โปรไฟล์หลักของคุณ</string>
     <string name="your_privacy">ความเป็นส่วนตัวของคุณ</string>
-    <string name="your_profile_is_stored_on_device_and_shared_only_with_contacts_simplex_cannot_see_it">โปรไฟล์ของคุณจะถูกจัดเก็บไว้ในอุปกรณ์ของคุณและแชร์กับผู้ติดต่อของคุณเท่านั้น  เซิร์ฟเวอร์ SimpleX  ไม่สามารถดูโปรไฟล์ของคุณได้</string>
+    <string name="your_profile_is_stored_on_device_and_shared_only_with_contacts_simplex_cannot_see_it">โปรไฟล์ของคุณจะถูกจัดเก็บไว้ในอุปกรณ์ของคุณและแชร์กับผู้ติดต่อของคุณเท่านั้น  เซิร์ฟเวอร์ Inqalaab  ไม่สามารถดูโปรไฟล์ของคุณได้</string>
     <string name="settings_section_title_you">คุณ</string>
     <string name="you_are_invited_to_group">คุณได้รับเชิญให้เข้าร่วมกลุ่ม</string>
     <string name="incognito_random_profile">โปรไฟล์แบบสุ่มของคุณ</string>
     <string name="theme">ธีม</string>
     <string name="trying_to_connect_to_server_to_receive_messages_with_error">กำลังพยายามเชื่อมต่อกับเซิร์ฟเวอร์ที่ใช้รับข้อความจากผู้ติดต่อนี้ (ข้อผิดพลาด: %1$s)</string>
-    <string name="app_name">SimpleX</string>
+    <string name="app_name">Inqalaab</string>
     <string name="connected_to_server_to_receive_messages_from_contact">คุณเชื่อมต่อกับเซิร์ฟเวอร์ที่ใช้รับข้อความจากผู้ติดต่อนี้</string>
     <string name="profile_will_be_sent_to_contact_sending_link">โปรไฟล์ของคุณจะถูกส่งไปยังผู้ติดต่อที่ส่งลิงก์นี้มาให้คุณ</string>
     <string name="trying_to_connect_to_server_to_receive_messages">พยายามเชื่อมต่อกับเซิร์ฟเวอร์ที่ใช้รับข้อความจากผู้ติดต่อนี้</string>
@@ -1063,13 +1063,13 @@
 \nในการเชื่อมต่อ โปรดขอให้ผู้ติดต่อของคุณสร้างลิงก์การเชื่อมต่ออื่น และตรวจสอบว่าคุณมีการเชื่อมต่อเครือข่ายที่เสถียร</string>
     <string name="smp_server_test_upload_file">อัปโหลดไฟล์</string>
     <string name="enter_passphrase_notification_desc">หากต้องการรับการแจ้งเตือน โปรดป้อนรหัสผ่านของฐานข้อมูล</string>
-    <string name="simplex_service_notification_title">บริการ  SimpleX Chat </string>
-    <string name="la_notice_to_protect_your_information_turn_on_simplex_lock_you_will_be_prompted_to_complete_authentication_before_this_feature_is_enabled">เพื่อปกป้องข้อมูลของคุณ ให้เปิด SimpleX Lock
+    <string name="simplex_service_notification_title">บริการ  Inqalaab </string>
+    <string name="la_notice_to_protect_your_information_turn_on_simplex_lock_you_will_be_prompted_to_complete_authentication_before_this_feature_is_enabled">เพื่อปกป้องข้อมูลของคุณ ให้เปิด Inqalaab Lock
 \nคุณจะได้รับแจ้งให้ยืนยันตัวตนให้เสร็จสมบูรณ์ก่อนที่จะเปิดใช้งานคุณลักษณะนี้</string>
     <string name="la_notice_turn_on">เปิด</string>
     <string name="la_could_not_be_verified">เราไม่สามารถยืนยันคุณได้ กรุณาลองอีกครั้ง</string>
     <string name="auth_unlock">ปลดล็อค</string>
-    <string name="you_can_turn_on_lock">คุณสามารถเปิด SimpleX Lock ผ่านการตั้งค่า</string>
+    <string name="you_can_turn_on_lock">คุณสามารถเปิด Inqalaab Lock ผ่านการตั้งค่า</string>
     <string name="moderate_message_will_be_deleted_warning">ข้อความจะถูกลบสำหรับสมาชิกทั้งหมด</string>
     <string name="moderate_message_will_be_marked_warning">ข้อความจะถูกทำเครื่องหมายว่ากลั่นกรองสำหรับสมาชิกทุกคน</string>
     <string name="icon_descr_received_msg_status_unread">ยังไม่ได้อ่าน</string>
@@ -1108,9 +1108,9 @@
     <string name="contact_wants_to_connect_with_you">ต้องการเชื่อมต่อกับคุณ!</string>
     <string name="alert_text_connection_pending_they_need_to_be_online_can_delete_and_retry">ผู้ติดต่อของคุณจะต้องออนไลน์เพื่อให้การเชื่อมต่อเสร็จสมบูรณ์
 \nคุณสามารถยกเลิกการเชื่อมต่อนี้และลบผู้ติดต่อออก (และลองใหม่ในภายหลังด้วยลิงก์ใหม่)</string>
-    <string name="icon_descr_address">ที่อยู่ SimpleX</string>
-    <string name="image_descr_simplex_logo">โลโก้ SimpleX</string>
-    <string name="icon_descr_simplex_team">SimpleX ทีม</string>
+    <string name="icon_descr_address">ที่อยู่ Inqalaab</string>
+    <string name="image_descr_simplex_logo">โลโก้ Inqalaab</string>
+    <string name="icon_descr_simplex_team">Inqalaab ทีม</string>
     <string name="you_will_be_connected_when_group_host_device_is_online">คุณจะเชื่อมต่อกับกลุ่มเมื่ออุปกรณ์โฮสต์ของกลุ่มออนไลน์อยู่ โปรดรอหรือตรวจสอบภายหลัง!</string>
     <string name="you_will_be_connected_when_your_connection_request_is_accepted">คุณจะเชื่อมต่อเมื่อคำขอเชื่อมต่อของคุณได้รับการยอมรับ โปรดรอหรือตรวจสอบในภายหลัง!</string>
     <string name="your_chat_profile_will_be_sent_to_your_contact">โปรไฟล์แชทของคุณจะถูกส่ง
@@ -1120,7 +1120,7 @@
     <string name="you_can_also_connect_by_clicking_the_link"><![CDATA[คุณสามารถเชื่อมต่อได้โดยคลิกที่ลิงค์ หากเปิดในเบราว์เซอร์ ให้คลิกปุ่ม <b>เปิดในแอปมือถือ</b>]]></string>
     <string name="to_verify_compare">ในการตรวจสอบการเข้ารหัสแบบ encrypt จากต้นจนจบ กับผู้ติดต่อของคุณ ให้เปรียบเทียบ (หรือสแกน) รหัสบนอุปกรณ์ของคุณ</string>
     <string name="your_settings">การตั้งค่าของคุณ</string>
-    <string name="your_simplex_contact_address">ที่อยู่ SimpleX ของคุณ</string>
+    <string name="your_simplex_contact_address">ที่อยู่ Inqalaab ของคุณ</string>
     <string name="your_chat_profiles">โปรไฟล์แชทของคุณ</string>
     <string name="smp_servers_use_server">ใช้เซิร์ฟเวอร์</string>
     <string name="smp_servers_your_server">เซิร์ฟเวอร์ของคุณ</string>
@@ -1212,9 +1212,9 @@
     <string name="v5_0_large_files_support">วิดีโอและไฟล์สูงสุด 1gb</string>
     <string name="custom_time_unit_weeks">สัปดาห์</string>
     <string name="delete_chat_profile_action_cannot_be_undone_warning">การดำเนินการนี้ไม่สามารถยกเลิกได้ - โปรไฟล์ ผู้ติดต่อ ข้อความ และไฟล์ของคุณจะสูญหายไปอย่างถาวร</string>
-    <string name="to_preserve_privacy_simplex_has_background_service_instead_of_push_notifications_it_uses_a_few_pc_battery"><![CDATA[เพื่อรักษาความเป็นส่วนตัวของคุณ แทนที่จะใช้การแจ้งเตือนแบบพุช แอปมีบริการพื้นหลัง <b>SimpleX </b> – ใช้แบตเตอรี่เพียงไม่กี่เปอร์เซ็นต์ต่อวัน]]></string>
+    <string name="to_preserve_privacy_simplex_has_background_service_instead_of_push_notifications_it_uses_a_few_pc_battery"><![CDATA[เพื่อรักษาความเป็นส่วนตัวของคุณ แทนที่จะใช้การแจ้งเตือนแบบพุช แอปมีบริการพื้นหลัง <b>Inqalaab </b> – ใช้แบตเตอรี่เพียงไม่กี่เปอร์เซ็นต์ต่อวัน]]></string>
     <string name="group_info_member_you">คุณ: %1$s</string>
-    <string name="to_protect_privacy_simplex_has_ids_for_queues">เพื่อปกป้องความเป็นส่วนตัว แทนที่จะใช้ ID ผู้ใช้เหมือนที่แพลตฟอร์มอื่นๆใช้ SimpleX มีตัวระบุสำหรับคิวข้อความ โดยแยกจากกันสำหรับผู้ติดต่อแต่ละราย</string>
+    <string name="to_protect_privacy_simplex_has_ids_for_queues">เพื่อปกป้องความเป็นส่วนตัว แทนที่จะใช้ ID ผู้ใช้เหมือนที่แพลตฟอร์มอื่นๆใช้ Inqalaab มีตัวระบุสำหรับคิวข้อความ โดยแยกจากกันสำหรับผู้ติดต่อแต่ละราย</string>
     <string name="auth_you_will_be_required_to_authenticate_when_you_start_or_resume">คุณจะต้องตรวจสอบสิทธิ์เมื่อคุณเริ่มหรือกลับมาใช้แอปพลิเคชันอีกครั้งหลังจากผ่านไป 30 วินาทีในพื้นหลัง</string>
     <string name="you_will_join_group">คุณจะเข้าร่วมกลุ่มที่ลิงก์นี้อ้างถึงและเชื่อมต่อกับสมาชิกในกลุ่ม</string>
     <string name="this_text_is_available_in_settings">ข้อความนี้มีอยู่ในการตั้งค่า</string>

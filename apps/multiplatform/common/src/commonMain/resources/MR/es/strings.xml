@@ -38,7 +38,7 @@
     <string name="network_session_mode_user_description"><![CDATA[Se usará una conexión TCP (y credenciales SOCKS) independiente <b>por cada perfil que tengas en la aplicación</b>.]]></string>
     <string name="network_session_mode_entity_description"><![CDATA[Se usará una conexión TCP (y credenciales SOCKS) independiente <b>por cada contacto y miembro del grupo</b>. \n<b>Recuerda</b>: si tienes muchas conexiones, el consumo de batería y tráfico pueden aumentar bastante y algunas conexiones pueden fallar.]]></string>
     <string name="a_plus_b">a + b</string>
-    <string name="about_simplex">Acerca de SimpleX</string>
+    <string name="about_simplex">Acerca de Inqalaab</string>
     <string name="bold_text">negrita</string>
     <string name="callstatus_accepted">llamada aceptada</string>
     <string name="accept">Aceptar</string>
@@ -68,7 +68,7 @@
     <string name="group_member_role_admin">administrador</string>
     <string name="allow_voice_messages_question">¿Permites los mensajes de voz\?</string>
     <string name="back">Volver</string>
-    <string name="about_simplex_chat">Sobre SimpleX Chat</string>
+    <string name="about_simplex_chat">Sobre Inqalaab</string>
     <string name="smp_servers_add_to_another_device">Añadir a otro dispositivo</string>
     <string name="app_version_name">Versión de la aplicación: v%s</string>
     <string name="icon_descr_asked_to_receive">Solicita recibir la imagen</string>
@@ -90,7 +90,7 @@
     <string name="rcv_group_event_group_deleted">ha eliminado el grupo</string>
     <string name="delete_group_question">¿Eliminar grupo\?</string>
     <string name="delete_messages_after">Eliminar en</string>
-    <string name="auth_device_authentication_is_not_enabled_you_can_turn_on_in_settings_once_enabled">Autenticación de dispositivo desactivada. Puedes habilitar Bloqueo SimpleX en Configuración, después de activar la autenticación de dispositivo.</string>
+    <string name="auth_device_authentication_is_not_enabled_you_can_turn_on_in_settings_once_enabled">Autenticación de dispositivo desactivada. Puedes habilitar Bloqueo Inqalaab en Configuración, después de activar la autenticación de dispositivo.</string>
     <string name="no_call_on_lock_screen">Desactivar</string>
     <string name="disappearing_prohibited_in_this_chat">Los mensajes temporales no están permitidos en este chat.</string>
     <string name="disappearing_messages_are_prohibited">Mensajes temporales no permitidos.</string>
@@ -100,8 +100,8 @@
     <string name="simplex_link_mode_description">Descripción</string>
     <string name="smp_server_test_connect">Conectar</string>
     <string name="notification_contact_connected">Conectado</string>
-    <string name="auth_disable_simplex_lock">Desactivar Bloqueo SimpleX</string>
-    <string name="auth_device_authentication_is_disabled_turning_off">Autenticación de dispositivo desactivada. Bloqueo SimpleX deshabilitado.</string>
+    <string name="auth_disable_simplex_lock">Desactivar Bloqueo Inqalaab</string>
+    <string name="auth_device_authentication_is_disabled_turning_off">Autenticación de dispositivo desactivada. Bloqueo Inqalaab deshabilitado.</string>
     <string name="maximum_supported_file_size">El tamaño máximo de archivo admitido es %1$s</string>
     <string name="clear_verification">Eliminar verificación</string>
     <string name="create_profile">Crear perfil</string>
@@ -266,16 +266,16 @@
     <string name="database_initialization_error_title">No se puede iniciar la base de datos</string>
     <string name="clear_chat_question">¿Vaciar chat\?</string>
     <string name="network_session_mode_user">por perfil</string>
-    <string name="chat_is_stopped_indication">SimpleX está parado</string>
+    <string name="chat_is_stopped_indication">Inqalaab está parado</string>
     <string name="rcv_group_event_changed_member_role">rol de %s cambiado a %s</string>
     <string name="change_role">Cambiar rol</string>
     <string name="v4_5_transport_isolation_descr">Mediante perfil (predeterminado) o por conexión (BETA)</string>
     <string name="snd_conn_event_switch_queue_phase_changing">cambiando de servidor…</string>
     <string name="chat_preferences">Preferencias generales</string>
     <string name="feature_cancelled_item">cancelado %s</string>
-    <string name="chat_is_stopped">SimpleX está parado</string>
+    <string name="chat_is_stopped">Inqalaab está parado</string>
     <string name="settings_section_title_calls">LLAMADAS</string>
-    <string name="chat_is_running">SimpleX está en ejecución</string>
+    <string name="chat_is_running">Inqalaab está en ejecución</string>
     <string name="rcv_conn_event_switch_queue_phase_changing">está cambiando de servidor…</string>
     <string name="chat_with_developers">habla con los desarrolladores</string>
     <string name="icon_descr_cancel_file_preview">Cancelar vista previa del archivo</string>
@@ -295,7 +295,7 @@
     <string name="call_on_lock_screen">Llamadas en la ventana de bloqueo</string>
     <string name="alert_title_cant_invite_contacts">¡No se pueden invitar contactos!</string>
     <string name="chat_console">Consola de Chat</string>
-    <string name="chat_database_section">BASE DE DATOS DE SIMPLEX</string>
+    <string name="chat_database_section">BASE DE DATOS DE Inqalaab</string>
     <string name="chat_database_deleted">Base de datos eliminada</string>
     <string name="chat_database_imported">Base de datos importada</string>
     <string name="smp_servers_check_address">Comprueba la dirección del servidor e inténtalo de nuevo.</string>
@@ -314,13 +314,13 @@
     <string name="delete_group_for_self_cannot_undo_warning">El grupo será eliminado para tí. ¡No puede deshacerse!</string>
     <string name="how_to_use_markdown">Cómo usar la sintaxis markdown</string>
     <string name="description_via_one_time_link_incognito">en modo incógnito mediante enlace de un solo uso</string>
-    <string name="simplex_link_contact">Dirección de contacto SimpleX</string>
+    <string name="simplex_link_contact">Dirección de contacto Inqalaab</string>
     <string name="error_saving_smp_servers">Error al guardar servidores SMP</string>
-    <string name="simplex_link_mode_browser_warning">Abrir el enlace en el navegador puede reducir la privacidad y seguridad de la conexión. Los enlaces de SimpleX que no son de confianza aparecerán en rojo.</string>
+    <string name="simplex_link_mode_browser_warning">Abrir el enlace en el navegador puede reducir la privacidad y seguridad de la conexión. Los enlaces de Inqalaab que no son de confianza aparecerán en rojo.</string>
     <string name="error_setting_network_config">Error al actualizar la configuración de red</string>
     <string name="error_creating_address">Error al crear dirección</string>
     <string name="error_deleting_user">Error al eliminar perfil</string>
-    <string name="auth_enable_simplex_lock">Activar Bloqueo SimpleX</string>
+    <string name="auth_enable_simplex_lock">Activar Bloqueo Inqalaab</string>
     <string name="one_time_link">Enlace de invitación de un solo uso</string>
     <string name="smp_servers">Servidores SMP</string>
     <string name="settings_experimental_features">Características experimentales</string>
@@ -330,7 +330,7 @@
     <string name="failed_to_active_user_title">¡Error al cambiar perfil!</string>
     <string name="smp_servers_enter_manually">Añadir manualmente</string>
     <string name="how_to_use_your_servers">Cómo usar los servidores</string>
-    <string name="error_stopping_chat">Error al parar SimpleX</string>
+    <string name="error_stopping_chat">Error al parar Inqalaab</string>
     <string name="enter_correct_passphrase">Introduce la contraseña correcta.</string>
     <string name="enter_passphrase">Introduce la contraseña…</string>
     <string name="icon_descr_group_inactive">Grupo inactivo</string>
@@ -345,7 +345,7 @@
     <string name="from_gallery_button">De la galería</string>
     <string name="gallery_image_button">Imagen</string>
     <string name="gallery_video_button">Vídeo</string>
-    <string name="if_you_received_simplex_invitation_link_you_can_open_in_browser">Si has recibido un enlace de invitación a SimpleX Chat puedes abrirlo en tu navegador:</string>
+    <string name="if_you_received_simplex_invitation_link_you_can_open_in_browser">Si has recibido un enlace de invitación a Inqalaab puedes abrirlo en tu navegador:</string>
     <string name="if_you_choose_to_reject_the_sender_will_not_be_notified">Si seleccionas rechazar, el remitente NO será notificado.</string>
     <string name="invalid_contact_link">¡Enlace no válido!</string>
     <string name="if_you_cannot_meet_in_person_scan_QR_in_video_call_or_ask_for_invitation_link"><![CDATA[Si no puedes reunirte en persona, puedes <b>escanear el código QR por videollamada</b>, o tu contacto puede compartir un enlace de invitación.]]></string>
@@ -381,7 +381,7 @@
     <string name="enter_one_ICE_server_per_line">Servidores ICE (uno por línea)</string>
     <string name="full_name__field">Nombre completo:</string>
     <string name="people_can_connect_only_via_links_you_share">Tu decides quién se conecta.</string>
-    <string name="how_simplex_works">Cómo funciona SimpleX</string>
+    <string name="how_simplex_works">Cómo funciona Inqalaab</string>
     <string name="icon_descr_hang_up">Colgar</string>
     <string name="files_and_media_section">Archivos y multimedia</string>
     <string name="alert_title_no_group">¡Grupo no encontrado!</string>
@@ -430,7 +430,7 @@
     <string name="delete_message_cannot_be_undone_warning">El mensaje será eliminado. ¡No puede deshacerse!</string>
     <string name="incognito_info_protects">El modo incógnito protege tu privacidad creando un perfil aleatorio por cada contacto.</string>
     <string name="turn_off_battery_optimization"><![CDATA[<b>Da permiso</b> en el siguiente diálogo para recibir notificaciones instantáneas.]]></string>
-    <string name="install_simplex_chat_for_terminal">Instalar terminal de SimpleX Chat</string>
+    <string name="install_simplex_chat_for_terminal">Instalar terminal de Inqalaab</string>
     <string name="group_invitation_item_description">invitación al grupo %1$s</string>
     <string name="rcv_group_event_member_added">ha invitado a %1$s</string>
     <string name="incognito_info_allows">Permite tener varias conexiones anónimas sin datos compartidos entre estas dentro del mismo perfil.</string>
@@ -594,7 +594,7 @@
     <string name="saved_ICE_servers_will_be_removed">Se eliminarán los servidores WebRTC ICE guardados.</string>
     <string name="callstatus_rejected">llamada rechazada</string>
     <string name="secret_text">secreto</string>
-    <string name="open_simplex_chat_to_accept_call">Abrir SimpleX Chat para aceptar llamada</string>
+    <string name="open_simplex_chat_to_accept_call">Abrir Inqalaab para aceptar llamada</string>
     <string name="network_options_reset_to_defaults">Reiniciar a valores predetarminados</string>
     <string name="icon_descr_server_status_pending">Pendiente</string>
     <string name="periodic_notifications">Notificaciones periódicas</string>
@@ -605,7 +605,7 @@
     <string name="image_descr_profile_image">imagen del perfil</string>
     <string name="prohibit_sending_voice_messages">No se permiten mensajes de voz.</string>
     <string name="protect_app_screen">Proteger pantalla de la aplicación</string>
-    <string name="read_more_in_github_with_link"><![CDATA[Conoce más en nuestro <font color="#0088ff">repositorio GitHub</font> .]]></string>
+    <string name="read_more_in_github_with_link"><![CDATA[Conoce más en nuestro <font color="#1E8E3E">repositorio GitHub</font> .]]></string>
     <string name="icon_descr_record_voice_message">Grabar mensaje de voz</string>
     <string name="rcv_group_event_member_deleted">ha expulsado a %1$s</string>
     <string name="send_link_previews">Enviar previsualizacion de enlaces</string>
@@ -662,7 +662,7 @@
     <string name="prohibit_sending_disappearing_messages">No se permiten mensajes temporales.</string>
     <string name="only_you_can_send_voice">Sólo tú puedes enviar mensajes de voz.</string>
     <string name="only_your_contact_can_send_voice">Sólo tu contacto puede enviar mensajes de voz.</string>
-    <string name="run_chat_section">EJECUTAR SIMPLEX</string>
+    <string name="run_chat_section">EJECUTAR Inqalaab</string>
     <string name="restart_the_app_to_use_imported_chat_database">Reinicia la aplicación para poder usar la base de datos importada.</string>
     <string name="enter_correct_current_passphrase">Introduce la contraseña actual correcta.</string>
     <string name="feature_received_prohibited">recepción no permitida</string>
@@ -695,15 +695,15 @@
     <string name="save_and_notify_group_members">Guardar y notificar grupo</string>
     <string name="connection_error_auth_desc">A menos que tu contacto haya eliminado la conexión o el enlace se haya usado, podría ser un error. Por favor, notifícalo. \nPara conectarte pide a tu contacto que cree otro enlace y comprueba la conexión de red.</string>
     <string name="periodic_notifications_desc">La aplicación recoge nuevos mensajes periódicamente lo que consume un pequeño porcentaje de batería al día. La aplicación no usa notificaciones push por tanto los datos de tu dispositivo no se envían a los servidores push.</string>
-    <string name="la_notice_title_simplex_lock">Bloqueo SimpleX</string>
+    <string name="la_notice_title_simplex_lock">Bloqueo Inqalaab</string>
     <string name="auth_unlock">Desbloquear</string>
     <string name="this_text_is_available_in_settings">Este texto está disponible en Configuración</string>
     <string name="switch_receiving_address_desc">La dirección de recepción pasará a otro servidor. El cambio se completará cuando el remitente esté en línea.</string>
-    <string name="chat_lock">Bloqueo SimpleX</string>
-    <string name="using_simplex_chat_servers">Usando servidores SimpleX Chat.</string>
+    <string name="chat_lock">Bloqueo Inqalaab</string>
+    <string name="using_simplex_chat_servers">Usando servidores Inqalaab.</string>
     <string name="network_session_mode_transport_isolation">Aislamiento de transporte</string>
     <string name="strikethrough_text">tachado</string>
-    <string name="use_chat">Abrir SimpleX</string>
+    <string name="use_chat">Abrir Inqalaab</string>
     <string name="settings_section_title_socks">PROXY SOCKS</string>
     <string name="settings_section_title_themes">TEMAS</string>
     <string name="stop_chat_confirmation">Parar</string>
@@ -716,9 +716,9 @@
     <string name="set_contact_name">Escribe un nombre para el contacto</string>
     <string name="unknown_error">Error desconocido</string>
     <string name="member_role_will_be_changed_with_notification">El rol cambiará a %s. Se notificará en el grupo.</string>
-    <string name="v4_2_security_assessment_desc">La seguridad de SimpleX Chat ha sido auditada por Trail of Bits.</string>
+    <string name="v4_2_security_assessment_desc">La seguridad de Inqalaab ha sido auditada por Trail of Bits.</string>
     <string name="v4_4_disappearing_messages_desc">Los mensajes enviados se eliminarán una vez transcurrido el tiempo establecido.</string>
-    <string name="ntf_channel_messages">Mensajes de chat SimpleX</string>
+    <string name="ntf_channel_messages">Mensajes de chat Inqalaab</string>
     <string name="icon_descr_received_msg_status_unread">no leído</string>
     <string name="text_field_set_contact_placeholder">Escribe un nombre para el contacto…</string>
     <string name="switch_receiving_address_question">¿Cambiar servidor de recepción\?</string>
@@ -738,28 +738,28 @@
     <string name="enable_automatic_deletion_message">Esta acción es irreversible. Los mensajes enviados y recibidos anteriores a la selección serán eliminados. Podría tardar varios minutos.</string>
     <string name="messages_section_description">Esta configuración se aplica a los mensajes del perfil actual</string>
     <string name="this_string_is_not_a_connection_link">¡Esta cadena no es un enlace de conexión!</string>
-    <string name="to_preserve_privacy_simplex_has_background_service_instead_of_push_notifications_it_uses_a_few_pc_battery"><![CDATA[Para mejorar la privacidad, en lugar de usar notificaciones push, <b>SimpleX se ejecuta en segundo plano</b>.]]></string>
+    <string name="to_preserve_privacy_simplex_has_background_service_instead_of_push_notifications_it_uses_a_few_pc_battery"><![CDATA[Para mejorar la privacidad, en lugar de usar notificaciones push, <b>Inqalaab se ejecuta en segundo plano</b>.]]></string>
     <string name="icon_descr_settings">Configuración</string>
     <string name="icon_descr_speaker_off">Altavoz desactivado</string>
     <string name="add_contact_or_create_group">Inciar chat nuevo</string>
-    <string name="stop_chat_to_export_import_or_delete_chat_database">Para exportar, importar o eliminar la base de datos debes parar SimpleX. Mientra tanto no podrás enviar ni recibir mensajes.</string>
-    <string name="thank_you_for_installing_simplex">¡Gracias por instalar SimpleX Chat!</string>
-    <string name="to_protect_privacy_simplex_has_ids_for_queues">Para proteger tu privacidad, SimpleX usa identificadores distintos para cada uno de tus contactos.</string>
-    <string name="la_notice_to_protect_your_information_turn_on_simplex_lock_you_will_be_prompted_to_complete_authentication_before_this_feature_is_enabled">Para proteger tu información, activa el Bloqueo SimpleX.
+    <string name="stop_chat_to_export_import_or_delete_chat_database">Para exportar, importar o eliminar la base de datos debes parar Inqalaab. Mientra tanto no podrás enviar ni recibir mensajes.</string>
+    <string name="thank_you_for_installing_simplex">¡Gracias por instalar Inqalaab!</string>
+    <string name="to_protect_privacy_simplex_has_ids_for_queues">Para proteger tu privacidad, Inqalaab usa identificadores distintos para cada uno de tus contactos.</string>
+    <string name="la_notice_to_protect_your_information_turn_on_simplex_lock_you_will_be_prompted_to_complete_authentication_before_this_feature_is_enabled">Para proteger tu información, activa el Bloqueo Inqalaab.
 \nSe te pedirá que completes la autenticación antes de activar esta función.</string>
     <string name="updating_settings_will_reconnect_client_to_all_servers">Para actualizar la configuración el cliente se reconectará a todos los servidores.</string>
-    <string name="use_simplex_chat_servers__question">¿Usar servidores SimpleX Chat\?</string>
-    <string name="simplex_link_group">Enlace de grupo SimpleX</string>
-    <string name="simplex_link_invitation">Invitación SimpleX de un uso</string>
-    <string name="simplex_link_mode">Enlaces SimpleX</string>
+    <string name="use_simplex_chat_servers__question">¿Usar servidores Inqalaab\?</string>
+    <string name="simplex_link_group">Enlace de grupo Inqalaab</string>
+    <string name="simplex_link_invitation">Invitación Inqalaab de un uso</string>
+    <string name="simplex_link_mode">Enlaces Inqalaab</string>
     <string name="error_smp_test_server_auth">El servidor requiere autorización para crear colas, comprueba la contraseña</string>
     <string name="enter_passphrase_notification_desc">Para recibir notificaciones, introduce la contraseña de la base de datos</string>
-    <string name="ntf_channel_calls">Llamadas de chat SimpleX</string>
+    <string name="ntf_channel_calls">Llamadas de chat Inqalaab</string>
     <string name="notifications_mode_periodic">Cíclico</string>
     <string name="notification_preview_mode_message_desc">Se muestran el nombre del contacto y el mensaje</string>
     <string name="notification_preview_mode_contact_desc">Se muestra sólo el nombre del contacto</string>
-    <string name="auth_simplex_lock_turned_on">Bloqueo SimpleX activado</string>
-    <string name="auth_stop_chat">Parar SimpleX</string>
+    <string name="auth_simplex_lock_turned_on">Bloqueo Inqalaab activado</string>
+    <string name="auth_stop_chat">Parar Inqalaab</string>
     <string name="moderate_message_will_be_deleted_warning">El mensaje se eliminará para todos los miembros.</string>
     <string name="share_file">Compartir archivo…</string>
     <string name="images_limit_title">¡Demasiadas imágenes!</string>
@@ -788,14 +788,14 @@
     <string name="callstate_starting">inicializando…</string>
     <string name="alert_title_skipped_messages">Mensajes omitidos</string>
     <string name="settings_section_title_settings">CONFIGURACIÓN</string>
-    <string name="stop_chat_question">¿Parar SimpleX?</string>
+    <string name="stop_chat_question">¿Parar Inqalaab?</string>
     <string name="chat_item_ttl_seconds">%s segundo(s)</string>
     <string name="group_invitation_tap_to_join">Pulsa para unirte</string>
     <string name="rcv_group_event_updated_group_profile">ha actualizado el perfil del grupo</string>
     <string name="network_option_tcp_connection_timeout">Timeout de la conexión TCP</string>
     <string name="theme">Tema</string>
     <string name="set_group_preferences">Establece preferencias de grupo</string>
-    <string name="settings_section_title_support">SOPORTE SIMPLEX CHAT</string>
+    <string name="settings_section_title_support">SOPORTE Inqalaab</string>
     <string name="set_password_to_export">Escribe la contraseña para exportar</string>
     <string name="update_database">Actualizar</string>
     <string name="update_database_passphrase">Actualizar contraseña base de datos</string>
@@ -854,7 +854,7 @@
     <string name="contact_wants_to_connect_via_call">%1$s quiere conectarse contigo mediante</string>
     <string name="failed_to_create_user_duplicate_desc">Ya tienes un perfil con este nombre mostrado. Por favor, selecciona otro nombre.</string>
     <string name="you_can_also_connect_by_clicking_the_link"><![CDATA[También puedes conectarte pulsando el enlace. Si se abre en el navegador, pulsa en <b>Abrir en aplicación móvil</b>.]]></string>
-    <string name="you_can_connect_to_simplex_chat_founder"><![CDATA[Puedes <font color="#0088ff">ponerte en contacto con los desarrolladores de SimpleX Chat para consultas y para recibir actualizaciones</font>.]]></string>
+    <string name="you_can_connect_to_simplex_chat_founder"><![CDATA[Puedes <font color="#1E8E3E">ponerte en contacto con los desarrolladores de Inqalaab para consultas y para recibir actualizaciones</font>.]]></string>
     <string name="observer_cant_send_message_title">eres observador</string>
     <string name="you_can_use_markdown_to_format_messages__prompt">Puedes usar la sintaxis markdown para dar formato a tus mensajes:</string>
     <string name="you_must_use_the_most_recent_version_of_database">Debes usar la versión más reciente de tu base de datos ÚNICAMENTE en un dispositivo, de lo contrario podrías dejar de recibir mensajes de algunos contactos.</string>
@@ -869,7 +869,7 @@
     <string name="invite_prohibited_description">Estás intentando invitar a un contacto con el que compartes un perfil incógnito a un grupo en el que usas tu perfil principal</string>
     <string name="simplex_link_mode_browser">Mediante navegador</string>
     <string name="simplex_link_connection">mediante %1$s</string>
-    <string name="simplex_service_notification_title">Servicio SimpleX Chat</string>
+    <string name="simplex_service_notification_title">Servicio Inqalaab</string>
     <string name="personal_welcome">¡Bienvenido %1$s!</string>
     <string name="group_preview_you_are_invited">Has sido invitado al grupo</string>
     <string name="waiting_for_file">Esperando archivo</string>
@@ -912,7 +912,7 @@
     <string name="you_joined_this_group">Te has unido a este grupo</string>
     <string name="chat_preferences_yes">sí</string>
     <string name="chat_preferences_you_allow">Permites</string>
-    <string name="app_name">SimpleX</string>
+    <string name="app_name">Inqalaab</string>
     <string name="profile_will_be_sent_to_contact_sending_link">Tu perfil se enviará al contacto del que has recibido este enlace.</string>
     <string name="you_will_join_group">Conectarás con todos los miembros del grupo.</string>
     <string name="sender_you_pronoun">tu</string>
@@ -929,15 +929,15 @@
     <string name="you_need_to_allow_to_send_voice">Para poder enviar mensajes de voz antes debes permitir que tu contacto pueda enviarlos.</string>
     <string name="voice_messages_prohibited">¡Mensajes de voz no permitidos!</string>
     <string name="group_main_profile_sent">Tu perfil será enviado a los miembros del grupo</string>
-    <string name="icon_descr_address">Dirección SimpleX</string>
-    <string name="image_descr_simplex_logo">Logo SimpleX</string>
-    <string name="icon_descr_simplex_team">Equipo SimpleX</string>
+    <string name="icon_descr_address">Dirección Inqalaab</string>
+    <string name="image_descr_simplex_logo">Logo Inqalaab</string>
+    <string name="icon_descr_simplex_team">Equipo Inqalaab</string>
     <string name="your_chat_profiles">Mis perfiles</string>
-    <string name="your_simplex_contact_address">Mi dirección SimpleX</string>
+    <string name="your_simplex_contact_address">Mi dirección Inqalaab</string>
     <string name="smp_servers_your_server">Tu servidor</string>
     <string name="smp_servers_your_server_address">Dirección de tu servidor</string>
     <string name="your_current_profile">Tu perfil actual</string>
-    <string name="your_profile_is_stored_on_device_and_shared_only_with_contacts_simplex_cannot_see_it">Tu perfil se almacena en tu dispositivo y sólo se comparte con tus contactos. Los servidores SimpleX no pueden ver tu perfil.</string>
+    <string name="your_profile_is_stored_on_device_and_shared_only_with_contacts_simplex_cannot_see_it">Tu perfil se almacena en tu dispositivo y sólo se comparte con tus contactos. Los servidores Inqalaab no pueden ver tu perfil.</string>
     <string name="language_system">Sistema</string>
     <string name="button_add_welcome_message">Añadir mensaje de bienvenida</string>
     <string name="v4_6_audio_video_calls">Llamadas y videollamadas</string>
@@ -1041,14 +1041,14 @@
     <string name="la_lock_mode_system">Autenticación del sistema</string>
     <string name="la_no_app_password">Sin código de acceso de la aplicación</string>
     <string name="la_lock_mode_passcode">Campo de código de acceso</string>
-    <string name="la_lock_mode">Modo Bloqueo SimpleX</string>
+    <string name="la_lock_mode">Modo Bloqueo Inqalaab</string>
     <string name="la_could_not_be_verified">No has podido ser autenticado. Inténtalo de nuevo.</string>
     <string name="la_minutes">%d minutos</string>
     <string name="la_enter_app_passcode">Introduce código</string>
     <string name="la_immediately">Inmediatamente</string>
     <string name="la_please_remember_to_store_password">Por favor, recuerda y guarda el código de acceso en un lugar seguro. ¡No hay manera de recuperar un código perdido!</string>
-    <string name="lock_not_enabled">¡Bloqueo SimpleX no activado!</string>
-    <string name="you_can_turn_on_lock">Puedes activar el Bloqueo SimpleX a través de Configuración.</string>
+    <string name="lock_not_enabled">¡Bloqueo Inqalaab no activado!</string>
+    <string name="you_can_turn_on_lock">Puedes activar el Bloqueo Inqalaab a través de Configuración.</string>
     <string name="confirm_passcode">Confirma código</string>
     <string name="enable_lock">Activar bloqueo</string>
     <string name="lock_after">Bloquear en</string>
@@ -1100,25 +1100,25 @@
     <string name="learn_more">Más información</string>
     <string name="if_you_cant_meet_in_person">Si no puedes reunirte en persona, muestra el código QR por videollamada o comparte el enlace.</string>
     <string name="scan_qr_to_connect_to_contact">Para conectarse, tu contacto puede escanear el código QR o usar el enlace en la aplicación.</string>
-    <string name="create_simplex_address">Crear dirección SimpleX</string>
+    <string name="create_simplex_address">Crear dirección Inqalaab</string>
     <string name="auto_accept_contact">Auto aceptar</string>
     <string name="group_welcome_preview">Vista previa</string>
     <string name="opening_database">Abriendo base de datos…</string>
     <string name="error_setting_address">Error al introducir dirección</string>
-    <string name="read_more_in_user_guide_with_link"><![CDATA[Conoce más en la <font color="#0088ff">Guía de Usuario</font>.]]></string>
+    <string name="read_more_in_user_guide_with_link"><![CDATA[Conoce más en la <font color="#1E8E3E">Guía de Usuario</font>.]]></string>
     <string name="one_time_link_short">Enlace de un solo uso</string>
-    <string name="simplex_address">Dirección SimpleX</string>
+    <string name="simplex_address">Dirección Inqalaab</string>
     <string name="you_can_accept_or_reject_connection">Cuando alguien solicite conectarse podrás aceptar o rechazar su solicitud.</string>
     <string name="share_address">Compartir dirección</string>
     <string name="enter_welcome_message">Deja un mensaje de bienvenida…</string>
-    <string name="theme_simplex">SimpleX</string>
+    <string name="theme_simplex">Inqalaab</string>
     <string name="color_primary_variant">Color adicional</string>
     <string name="color_secondary_variant">Secundario adicional</string>
     <string name="color_background">Fondo</string>
     <string name="export_theme">Exportar tema</string>
     <string name="color_surface">Menús y alertas</string>
     <string name="add_address_to_your_profile">Añade la dirección a tu perfil para que tus contactos puedan compartirla con otros. La actualización del perfil se enviará a tus contactos.</string>
-    <string name="learn_more_about_address">Acerca de la dirección SimpleX</string>
+    <string name="learn_more_about_address">Acerca de la dirección Inqalaab</string>
     <string name="address_section_title">Dirección</string>
     <string name="all_your_contacts_will_remain_connected_update_sent">Todos tus contactos permanecerán conectados. La actualización del perfil se enviará a tus contactos.</string>
     <string name="continue_to_next_step">Continuar</string>
@@ -1126,17 +1126,17 @@
     <string name="customize_theme_title">Personalizar tema</string>
     <string name="enter_welcome_message_optional">Deja un mensaje de bienvenida… (opcional)</string>
     <string name="create_address_and_let_people_connect">Crea una dirección para que otras personas puedan conectar contigo.</string>
-    <string name="dont_create_address">No crear dirección SimpleX</string>
+    <string name="dont_create_address">No crear dirección Inqalaab</string>
     <string name="email_invite_body">¡Hola!
-\nConecta conmigo a través de SimpleX Chat: %s</string>
+\nConecta conmigo a través de Inqalaab: %s</string>
     <string name="import_theme">Importar tema</string>
     <string name="import_theme_error">Error al importar tema</string>
     <string name="invite_friends">Invitar amigos</string>
-    <string name="email_invite_subject">Hablemos en SimpleX Chat</string>
+    <string name="email_invite_subject">Hablemos en Inqalaab</string>
     <string name="import_theme_error_desc">Asegúrate de que el archivo tiene la sintaxis YAML correcta. Exporta el tema para tener un ejemplo de la estructura del archivo de tema.</string>
     <string name="profile_update_will_be_sent_to_contacts">La actualización del perfil se enviará a tus contactos.</string>
     <string name="color_received_message">Mensaje recibido</string>
-    <string name="save_auto_accept_settings">Guardar configuración de dirección SimpleX</string>
+    <string name="save_auto_accept_settings">Guardar configuración de dirección Inqalaab</string>
     <string name="you_can_share_your_address">Puedes compartir tu dirección como enlace o código QR para que cualquiera pueda conectarse contigo.</string>
     <string name="save_settings_question">¿Guardar configuración\?</string>
     <string name="color_secondary">Secundario</string>
@@ -1229,7 +1229,7 @@
     <string name="v5_1_japanese_portuguese_interface">Interfaz en japonés y portugués</string>
     <string name="item_info_no_text">sin texto</string>
     <string name="non_fatal_errors_occured_during_import">Han ocurrido algunos errores no críticos durante la importación:</string>
-    <string name="shutdown_alert_question">¿Salir de SimpleX?</string>
+    <string name="shutdown_alert_question">¿Salir de Inqalaab?</string>
     <string name="settings_section_title_app">APLICACIÓN</string>
     <string name="settings_restart_app">Reiniciar</string>
     <string name="settings_shutdown">Salir</string>
@@ -1338,7 +1338,7 @@
     <string name="connect__your_profile_will_be_shared">El perfil %1$s será compartido.</string>
     <string name="disable_notifications_button">Desactivar notificaciones</string>
     <string name="system_restricted_background_in_call_title">Sin llamadas en segundo plano.</string>
-    <string name="system_restricted_background_desc">SimpleX no puede funcionar en segundo plano. Sólo recibirás notificaciones con la aplicación abierta.</string>
+    <string name="system_restricted_background_desc">Inqalaab no puede funcionar en segundo plano. Sólo recibirás notificaciones con la aplicación abierta.</string>
     <string name="system_restricted_background_in_call_desc">La aplicación podría cerrarse después de un minuto en segundo plano.</string>
     <string name="system_restricted_background_warn"><![CDATA[Para activar las notificaciones, por favor selecciona <b>Uso de batería de la aplicación</b> / <b>No restringido</b> en las configuraciónes de la aplicación.]]></string>
     <string name="system_restricted_background_in_call_warn"><![CDATA[Para realizar llamadas en segundo plano, por favor selecciona <b>Uso de batería de la aplicación</b> / <b>No restringido</b> en las configuraciónes de la aplicación.]]></string>
@@ -1469,7 +1469,7 @@
     <string name="contact_tap_to_connect">Pulsa para conectar</string>
     <string name="this_device_name">Nombre del dispositivo</string>
     <string name="connect_plan_you_are_already_in_group_vName"><![CDATA[Ya estás en el grupo <b>%1$s</b>.]]></string>
-    <string name="connect_plan_this_is_your_own_simplex_address">¡Esta es tu propia dirección SimpleX!</string>
+    <string name="connect_plan_this_is_your_own_simplex_address">¡Esta es tu propia dirección Inqalaab!</string>
     <string name="found_desktop">Ordenador encontrado</string>
     <string name="not_compatible">¡No compatible!</string>
     <string name="waiting_for_mobile_to_connect">Esperando conexión móvil:</string>
@@ -1508,7 +1508,7 @@
     <string name="app_was_crashed">Error aplicación</string>
     <string name="error_showing_content">error al mostrar el contenido</string>
     <string name="error_showing_message">error al mostrar mensaje</string>
-    <string name="you_can_make_address_visible_via_settings">Puedes hacerlo visible para tus contactos de SimpleX en Configuración.</string>
+    <string name="you_can_make_address_visible_via_settings">Puedes hacerlo visible para tus contactos de Inqalaab en Configuración.</string>
     <string name="recent_history_is_not_sent_to_new_members">El historial no se envía a miembros nuevos.</string>
     <string name="retry_verb">Reintentar</string>
     <string name="camera_not_available">Cámara no disponible</string>
@@ -1517,8 +1517,8 @@
     <string name="disable_sending_recent_history">No se envía el historial a los miembros nuevos.</string>
     <string name="or_show_this_qr_code">O muestra el código QR</string>
     <string name="recent_history_is_sent_to_new_members">Hasta 100 últimos mensajes son enviados a los miembros nuevos.</string>
-    <string name="code_you_scanned_is_not_simplex_link_qr_code">El código QR escaneado no es un enlace de SimpleX.</string>
-    <string name="the_text_you_pasted_is_not_a_link">El texto pegado no es un enlace de SimpleX.</string>
+    <string name="code_you_scanned_is_not_simplex_link_qr_code">El código QR escaneado no es un enlace de Inqalaab.</string>
+    <string name="the_text_you_pasted_is_not_a_link">El texto pegado no es un enlace de Inqalaab.</string>
     <string name="enable_camera_access">Permitir acceso a la cámara</string>
     <string name="you_can_view_invitation_link_again">Puedes ver el enlace de invitación de nuevo en los detalles de la conexión.</string>
     <string name="keep_unused_invitation_question">¿Guardar enlace no usado?</string>
@@ -1535,7 +1535,7 @@
     <string name="tap_to_scan">Pulsa para escanear</string>
     <string name="keep_invitation_link">Guardar</string>
     <string name="tap_to_paste_link">Pulsa aquí para pegar el enlace</string>
-    <string name="search_or_paste_simplex_link">Buscar o pegar enlace SimpleX</string>
+    <string name="search_or_paste_simplex_link">Buscar o pegar enlace Inqalaab</string>
     <string name="v5_5_message_delivery_descr">Con uso reducido de batería.</string>
     <string name="blocked_by_admin_item_description">bloqueado por administrador</string>
     <string name="blocked_by_admin_items_description">%d mensajes bloqueados por el administrador</string>
@@ -1559,7 +1559,7 @@
     <string name="error_blocking_member_for_all">Error al bloqear el miembro para todos</string>
     <string name="v5_5_private_notes_descr">Con cifrado de archivos y multimedia.</string>
     <string name="remote_host_error_timeout"><![CDATA[Tiempo de espera para conectar con el móvil <b>%s</b> agotado]]></string>
-    <string name="chat_is_stopped_you_should_transfer_database">SimpleX está parado. Si has usado esta base de datos en otro dispositivo, debes transferirla de vuelta antes de iniciar SimpleX.</string>
+    <string name="chat_is_stopped_you_should_transfer_database">Inqalaab está parado. Si has usado esta base de datos en otro dispositivo, debes transferirla de vuelta antes de iniciar Inqalaab.</string>
     <string name="failed_to_create_user_invalid_desc">Este nombre mostrado no es válido. Por favor, selecciona otro nombre.</string>
     <string name="remote_host_was_disconnected_title">Conexión parada</string>
     <string name="remote_ctrl_was_disconnected_title">Conexión parada</string>
@@ -1682,7 +1682,7 @@
     <string name="migrate_from_device_error_exporting_archive">Error al exportar base de datos del chat</string>
     <string name="migrate_from_device_error_saving_settings">Error al guardar ajustes</string>
     <string name="migrate_from_device_exported_file_doesnt_exist">El archivo exportado no existe</string>
-    <string name="migrate_from_device_chat_should_be_stopped">Para continuar, SimpleX debe estar parado.</string>
+    <string name="migrate_from_device_chat_should_be_stopped">Para continuar, Inqalaab debe estar parado.</string>
     <string name="e2ee_info_no_pq"><![CDATA[Los mensajes, archivos y llamadas están protegidos mediante <b>cifrado de extremo a extremo</b> con secreto perfecto hacia adelante, repudio y recuperación tras ataque.]]></string>
     <string name="e2ee_info_pq"><![CDATA[Los mensajes, archivos y llamadas están protegidos mediante <b>cifrado de extremo a extremo resistente a tecnología cuántica</b> con secreto perfecto hacia adelante, repudio y recuperación tras ataque.]]></string>
     <string name="migrate_to_device_title">Migrar aquí</string>
@@ -1708,11 +1708,11 @@
     <string name="settings_section_title_network_connection">Conexión de red</string>
     <string name="forwarded_description">reenviado</string>
     <string name="files_and_media_not_allowed">Archivos y multimedia no permitidos</string>
-    <string name="simplex_links_not_allowed">Enlaces SimpleX no permitidos</string>
+    <string name="simplex_links_not_allowed">Enlaces Inqalaab no permitidos</string>
     <string name="voice_messages_not_allowed">Mensajes de voz no permitidos</string>
-    <string name="simplex_links">Enlaces SimpleX</string>
-    <string name="group_members_can_send_simplex_links">Los miembros pueden enviar enlaces de SimpleX.</string>
-    <string name="simplex_links_are_prohibited_in_group">Enlaces SimpleX no permitidos.</string>
+    <string name="simplex_links">Enlaces Inqalaab</string>
+    <string name="group_members_can_send_simplex_links">Los miembros pueden enviar enlaces de Inqalaab.</string>
+    <string name="simplex_links_are_prohibited_in_group">Enlaces Inqalaab no permitidos.</string>
     <string name="feature_roles_owners">propietarios</string>
     <string name="network_type_cellular">Móvil</string>
     <string name="network_type_no_network_connection">Sin conexión de red</string>
@@ -1721,9 +1721,9 @@
     <string name="network_type_ethernet">Ethernet por cable</string>
     <string name="feature_roles_admins">administradores</string>
     <string name="feature_enabled_for">Activado para</string>
-    <string name="prohibit_sending_simplex_links">No se permite enviar enlaces SimpleX</string>
+    <string name="prohibit_sending_simplex_links">No se permite enviar enlaces Inqalaab</string>
     <string name="feature_roles_all_members">todos los miembros</string>
-    <string name="allow_to_send_simplex_links">Se permite enviar enlaces SimpleX.</string>
+    <string name="allow_to_send_simplex_links">Se permite enviar enlaces Inqalaab.</string>
     <string name="saved_description">guardado</string>
     <string name="saved_from_description">guardado desde %s</string>
     <string name="saved_chat_item_info_tab">Guardado</string>
@@ -2052,7 +2052,7 @@
     <string name="v6_0_upgrade_app_descr">Descarga nuevas versiones desde GitHub.</string>
     <string name="new_message">Mensaje nuevo</string>
     <string name="error_parsing_uri_title">Enlace no válido</string>
-    <string name="error_parsing_uri_desc">Por favor, comprueba que el enlace SimpleX es correcto.</string>
+    <string name="error_parsing_uri_desc">Por favor, comprueba que el enlace Inqalaab es correcto.</string>
     <string name="forward_files_in_progress_desc">%1$d archivo(s) se está(n) descargando todavía.</string>
     <string name="n_other_file_errors">%1$d otro(s) error(es) de archivo.</string>
     <string name="settings_section_title_chat_database">BASE DE DATOS</string>
@@ -2105,7 +2105,7 @@
     <string name="v6_1_better_user_experience">Experiencia de usuario mejorada</string>
     <string name="v6_1_customizable_message_descr">Forma personalizable de los mensajes.</string>
     <string name="v6_1_forward_many_messages_descr">Desplazamiento de hasta 20 mensajes.</string>
-    <string name="v6_1_better_security_descr">Protocolos de SimpleX auditados por Trail of Bits.</string>
+    <string name="v6_1_better_security_descr">Protocolos de Inqalaab auditados por Trail of Bits.</string>
     <string name="v6_1_better_calls_descr">Intercambia audio y video durante la llamada.</string>
     <string name="v6_1_better_security">Seguridad mejorada ✅</string>
     <string name="v6_1_delete_many_messages_descr">Elimina o modera hasta 200 mensajes a la vez.</string>
@@ -2118,11 +2118,11 @@
     <string name="no_media_servers_configured_for_sending">Sin servidores para enviar archivos.</string>
     <string name="connection_security">Seguridad de conexión</string>
     <string name="share_1_time_link_with_a_friend">Compartir enlace de un uso con un amigo</string>
-    <string name="share_simplex_address_on_social_media">Comparte tu dirección SimpleX en redes sociales.</string>
+    <string name="share_simplex_address_on_social_media">Comparte tu dirección Inqalaab en redes sociales.</string>
     <string name="address_settings">Ajustes de dirección</string>
     <string name="create_1_time_link">Crear enlace de un solo uso</string>
     <string name="for_social_media">Para redes sociales</string>
-    <string name="simplex_address_or_1_time_link">¿Dirección SimpleX o enlace de un solo uso?</string>
+    <string name="simplex_address_or_1_time_link">¿Dirección Inqalaab o enlace de un solo uso?</string>
     <string name="onboarding_choose_server_operators">Operadores de servidores</string>
     <string name="onboarding_network_operators">Operadores de red</string>
     <string name="onboarding_network_operators_conditions_will_be_accepted">Las condiciones de los operadores habilitados serán aceptadas después de 30 días.</string>
@@ -2168,7 +2168,7 @@
     <string name="or_to_share_privately">O para compartir en privado</string>
     <string name="onboarding_select_network_operators_to_use">Selecciona los operadores de red a utilizar</string>
     <string name="share_address_publicly">Compartir dirección públicamente</string>
-    <string name="simplex_address_and_1_time_links_are_safe_to_share">Compartir enlaces de un solo uso y direcciones SimpleX es seguro a través de cualquier medio.</string>
+    <string name="simplex_address_and_1_time_links_are_safe_to_share">Compartir enlaces de un solo uso y direcciones Inqalaab es seguro a través de cualquier medio.</string>
     <string name="onboarding_network_operators_update">Actualizar</string>
     <string name="operator_website">Sitio web</string>
     <string name="your_servers">Tus servidores</string>
@@ -2199,8 +2199,8 @@
     <string name="to_protect_against_your_link_replaced_compare_codes">Para protegerte contra una sustitución del enlace, puedes comparar los códigos de seguridad con tu contacto.</string>
     <string name="operator_same_conditions_will_apply_to_operators"><![CDATA[Las mismas condiciones se aplican a el/los operador(es) <b>%s</b>.]]></string>
     <string name="operator_conditions_will_be_applied"><![CDATA[Estas condiciones también se aplican para: <b>%s</b>.]]></string>
-    <string name="onboarding_network_operators_app_will_use_for_routing">Por ejemplo, si tu contacto recibe a través de un servidor de SimpleX Chat, tu aplicación enviará a través de un servidor de Flux.</string>
-    <string name="address_creation_instruction">Pulsa Crear dirección SimpleX en el menú para crearla más tarde.</string>
+    <string name="onboarding_network_operators_app_will_use_for_routing">Por ejemplo, si tu contacto recibe a través de un servidor de Inqalaab, tu aplicación enviará a través de un servidor de Flux.</string>
+    <string name="address_creation_instruction">Pulsa Crear dirección Inqalaab en el menú para crearla más tarde.</string>
     <string name="connection_error_quota_desc">La conexión ha alcanzado el límite de mensajes no entregados. es posible que tu contacto esté desconectado.</string>
     <string name="message_deleted_or_not_received_error_desc">El mensaje ha sido eliminado o aún no se ha recibido.</string>
     <string name="remote_hosts_section">Móvil remoto</string>
@@ -2244,7 +2244,7 @@
     <string name="onboarding_notifications_mode_service_desc_short">La aplicación siempre funciona en segundo plano</string>
     <string name="all_message_and_files_e2e_encrypted"><![CDATA[Todos los mensajes y archivos son enviados <b>cifrados de extremo a extremo</b> y con seguridad postcuántica en mensajes directos.]]></string>
     <string name="maximum_message_size_title">¡Mensaje demasiado largo!</string>
-    <string name="onboarding_network_operators_simplex_flux_agreement">Simplex Chat y Flux han acordado incluir en la aplicación servidores operados por Flux.</string>
+    <string name="onboarding_network_operators_simplex_flux_agreement">Inqalaab y Flux han acordado incluir en la aplicación servidores operados por Flux.</string>
     <string name="debug_logs">Activar registros</string>
     <string name="error_saving_database">Error al guardar base de datos</string>
     <string name="sync_connection_desc">La conexión requiere renegociar el cifrado.</string>
@@ -2375,9 +2375,9 @@
     <string name="onboarding_conditions_accept">Aceptar</string>
     <string name="onboarding_conditions_privacy_policy_and_conditions_of_use">Política de privacidad y condiciones de uso.</string>
     <string name="onboarding_conditions_private_chats_not_accessible">Los chats privados, los grupos y tus contactos no son accesibles para los operadores de servidores.</string>
-    <string name="onboarding_conditions_by_using_you_agree">Al usar SimpleX Chat, aceptas:\n- enviar únicamente contenido legal en los grupos públicos.\n- respetar a los demás usuarios - spam prohibido.</string>
+    <string name="onboarding_conditions_by_using_you_agree">Al usar Inqalaab, aceptas:\n- enviar únicamente contenido legal en los grupos públicos.\n- respetar a los demás usuarios - spam prohibido.</string>
     <string name="onboarding_conditions_configure_server_operators">Configurar operadores de servidores</string>
-    <string name="simplex_link_channel">Enlace de canal SimpleX</string>
+    <string name="simplex_link_channel">Enlace de canal Inqalaab</string>
     <string name="full_link_button_text">Enlace completo</string>
     <string name="short_link_button_text">Enlace corto</string>
     <string name="link_requires_newer_app_version_please_upgrade">Este enlace requiere una versión más reciente de la aplicación. Por favor, actualiza la aplicación o pide a tu contacto un enlace compatible.</string>
@@ -2504,7 +2504,7 @@
     <string name="v6_4_1_keep_chats_clean">Mantén los chats limpios</string>
     <string name="v6_4_1_welcome_contacts_descr">Añade mensaje de bienvenida y biografía del perfil</string>
     <string name="v6_4_1_short_address_share">Comparte tu dirección</string>
-    <string name="v6_4_1_short_address">Direcciones SimpleX cortas</string>
+    <string name="v6_4_1_short_address">Direcciones Inqalaab cortas</string>
     <string name="v6_4_1_short_address_update">Actualiza tu dirección</string>
     <string name="v6_4_1_welcome_contacts">Da la bienvenida a tus contactos 👋</string>
     <string name="share_old_address_alert_button">Compartir dirección antigua</string>
@@ -2530,6 +2530,6 @@
     <string name="privacy_chat_list_open_clean_web_link">Abrir enlace limpio</string>
     <string name="sanitize_links_toggle">Limpiar enlaces de seguimiento</string>
     <string name="privacy_chat_list_open_full_web_link">Abrir enlace completo</string>
-    <string name="simplex_link_relay">Enlace de servidor SimpleX</string>
+    <string name="simplex_link_relay">Enlace de servidor Inqalaab</string>
     <string name="error_marking_member_support_chat_read">Error al marcar el chat con miembro como leído</string>
 </resources>

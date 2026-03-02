@@ -47,16 +47,16 @@
 "**e2e encrypted** video call" = "**e2e šifrovaný** videohovor";
 
 /* No comment provided by engineer. */
-"**More private**: check new messages every 20 minutes. Only device token is shared with our push server. It doesn't see how many contacts you have, or any message metadata." = "**Soukromější**: kontrolovat nové zprávy každých 20 minut. Token zařízení je sdílen se serverem SimpleX Chat, ale ne kolik máte kontaktů nebo zpráv.";
+"**More private**: check new messages every 20 minutes. Only device token is shared with our push server. It doesn't see how many contacts you have, or any message metadata." = "**Soukromější**: kontrolovat nové zprávy každých 20 minut. Token zařízení je sdílen se serverem Inqalaab, ale ne kolik máte kontaktů nebo zpráv.";
 
 /* No comment provided by engineer. */
-"**Most private**: do not use SimpleX Chat push server. The app will check messages in background, when the system allows it, depending on how often you use the app." = "**Nejsoukromější**: nepoužívejte server oznámení SimpleX Chat, pravidelně kontrolujte zprávy na pozadí (závisí na tom, jak často aplikaci používáte).";
+"**Most private**: do not use Inqalaab push server. The app will check messages in background, when the system allows it, depending on how often you use the app." = "**Nejsoukromější**: nepoužívejte server oznámení Inqalaab, pravidelně kontrolujte zprávy na pozadí (závisí na tom, jak často aplikaci používáte).";
 
 /* No comment provided by engineer. */
 "**Please note**: you will NOT be able to recover or change passphrase if you lose it." = "**Upozornění**: Pokud heslo ztratíte, NEBUDETE jej moci obnovit ani změnit.";
 
 /* No comment provided by engineer. */
-"**Recommended**: device token and end-to-end encrypted notifications are sent to SimpleX Chat push server, but it does not see the message content, size or who it is from." = "**Doporučeno**: Token zařízení a oznámení se odesílají na oznamovací server SimpleX Chat, ale nikoli obsah, velikost nebo od koho jsou zprávy.";
+"**Recommended**: device token and end-to-end encrypted notifications are sent to Inqalaab push server, but it does not see the message content, size or who it is from." = "**Doporučeno**: Token zařízení a oznámení se odesílají na oznamovací server Inqalaab, ale nikoli obsah, velikost nebo od koho jsou zprávy.";
 
 /* No comment provided by engineer. */
 "**Scan / Paste link**: to connect via a link you received." = "**Skenovat / Vložit odkaz**: pro připojení pomocí odkazu který jste obdrželi.";
@@ -251,7 +251,7 @@
 "`a + b`" = "\\`a + b`";
 
 /* email text */
-"<p>Hi!</p>\n<p><a href=\"%@\">Connect to me via SimpleX Chat</a></p>" = "<p>Ahoj!</p>\n<p><a href=\"%@\"> Připojte se ke mne přes SimpleX Chat</a></p>";
+"<p>Hi!</p>\n<p><a href=\"%@\">Connect to me via Inqalaab</a></p>" = "<p>Ahoj!</p>\n<p><a href=\"%@\"> Připojte se ke mne přes Inqalaab</a></p>";
 
 /* No comment provided by engineer. */
 "~strike~" = "\\~stávka~";
@@ -323,7 +323,7 @@ time interval */
 "About operators" = "O operátorech";
 
 /* No comment provided by engineer. */
-"About SimpleX Chat" = "O SimpleX chat";
+"About Inqalaab" = "O Inqalaab chat";
 
 /* No comment provided by engineer. */
 "above, then choose:" = "výše, pak vyberte:";
@@ -522,7 +522,7 @@ swipe action */
 "Allow to send files and media." = "Povolit odesílání souborů a médii.";
 
 /* No comment provided by engineer. */
-"Allow to send SimpleX links." = "Povolit odesílání SimpleX odkazů.";
+"Allow to send Inqalaab links." = "Povolit odesílání Inqalaab odkazů.";
 
 /* No comment provided by engineer. */
 "Allow to send voice messages." = "Povolit odesílání hlasových zpráv.";
@@ -966,7 +966,7 @@ set passcode view */
 "Connect automatically" = "Připojit automaticky";
 
 /* No comment provided by engineer. */
-"connect to SimpleX Chat developers." = "připojit se k vývojářům SimpleX Chat.";
+"connect to Inqalaab developers." = "připojit se k vývojářům Inqalaab.";
 
 /* new chat sheet title */
 "Connect to yourself?\nThis is your own one-time link!" = "Připojit se k sobě?\nToto je váš vlastní jednorázový odkaz!";
@@ -1089,7 +1089,7 @@ set passcode view */
 "Create queue" = "Vytvořit frontu";
 
 /* No comment provided by engineer. */
-"Create SimpleX address" = "Vytvořit SimpleX adresu";
+"Create Inqalaab address" = "Vytvořit Inqalaab adresu";
 
 /* No comment provided by engineer. */
 "Create your profile" = "Vytvořte si profil";
@@ -1316,10 +1316,10 @@ swipe action */
 "Device" = "Zařízení";
 
 /* No comment provided by engineer. */
-"Device authentication is disabled. Turning off SimpleX Lock." = "Ověřování zařízení je zakázáno. Vypnutí zámku SimpleX Lock.";
+"Device authentication is disabled. Turning off Inqalaab Lock." = "Ověřování zařízení je zakázáno. Vypnutí zámku Inqalaab Lock.";
 
 /* No comment provided by engineer. */
-"Device authentication is not enabled. You can turn on SimpleX Lock via Settings, once you enable device authentication." = "Ověřování zařízení není povoleno. Jakmile povolíte ověřování zařízení, můžete zámek SimpleX Lock zapnout prostřednictvím Nastavení.";
+"Device authentication is not enabled. You can turn on Inqalaab Lock via Settings, once you enable device authentication." = "Ověřování zařízení není povoleno. Jakmile povolíte ověřování zařízení, můžete zámek Inqalaab Lock zapnout prostřednictvím Nastavení.";
 
 /* No comment provided by engineer. */
 "different migration in the app/database: %@ / %@" = "různé migrace v aplikaci/databázi: %@ / %@";
@@ -1343,7 +1343,7 @@ swipe action */
 "Disable for all" = "Vypnout pro všechny";
 
 /* authentication reason */
-"Disable SimpleX Lock" = "Vypnutí zámku SimpleX";
+"Disable Inqalaab Lock" = "Vypnutí zámku Inqalaab";
 
 /* No comment provided by engineer. */
 "disabled" = "vypnut";
@@ -1376,7 +1376,7 @@ swipe action */
 "Do it later" = "Udělat později";
 
 /* No comment provided by engineer. */
-"Do NOT use SimpleX for emergency calls." = "NEpoužívejte SimpleX pro tísňová volání.";
+"Do NOT use Inqalaab for emergency calls." = "NEpoužívejte Inqalaab pro tísňová volání.";
 
 /* No comment provided by engineer. */
 "Don't create address" = "Nevytvářet adresu";
@@ -1442,7 +1442,7 @@ swipe action */
 "Enable self-destruct passcode" = "Povolit sebedestrukční heslo";
 
 /* authentication reason */
-"Enable SimpleX Lock" = "Zapnutí zámku SimpleX";
+"Enable Inqalaab Lock" = "Zapnutí zámku Inqalaab";
 
 /* No comment provided by engineer. */
 "Enable TCP keep-alive" = "Povolit TCP keep-alive";
@@ -1882,7 +1882,7 @@ snd error text */
 "hours" = "hodin";
 
 /* No comment provided by engineer. */
-"How SimpleX works" = "Jak SimpleX funguje";
+"How Inqalaab works" = "Jak Inqalaab funguje";
 
 /* No comment provided by engineer. */
 "How to" = "Jak";
@@ -1987,7 +1987,7 @@ snd error text */
 "Initial role" = "Počáteční role";
 
 /* No comment provided by engineer. */
-"Install [SimpleX Chat for terminal](https://github.com/simplex-chat/simplex-chat)" = "Nainstalujte [SimpleX Chat pro terminál](https://github.com/simplex-chat/simplex-chat)";
+"Install [Inqalaab for terminal](https://github.com/simplex-chat/simplex-chat)" = "Nainstalujte [Inqalaab pro terminál](https://github.com/simplex-chat/simplex-chat)";
 
 /* No comment provided by engineer. */
 "Instant" = "Okamžitě";
@@ -2122,7 +2122,7 @@ snd error text */
 "left" = "opustil";
 
 /* email subject */
-"Let's talk in SimpleX Chat" = "Promluvme si v SimpleX Chatu";
+"Let's talk in Inqalaab" = "Promluvme si v Inqalaabu";
 
 /* No comment provided by engineer. */
 "Light" = "Světlo";
@@ -3058,40 +3058,40 @@ chat item action */
 "Show:" = "Zobrazit:";
 
 /* No comment provided by engineer. */
-"SimpleX address" = "Adresa SimpleX";
+"Inqalaab address" = "Adresa Inqalaab";
 
 /* No comment provided by engineer. */
-"SimpleX Address" = "SimpleX Adresa";
+"Inqalaab Address" = "Inqalaab Adresa";
 
 /* No comment provided by engineer. */
-"SimpleX Chat security was audited by Trail of Bits." = "Zabezpečení SimpleX chatu bylo auditováno společností Trail of Bits.";
+"Inqalaab security was audited by Trail of Bits." = "Zabezpečení Inqalaab chatu bylo auditováno společností Trail of Bits.";
 
 /* simplex link type */
-"SimpleX contact address" = "SimpleX kontaktní adresa";
+"Inqalaab contact address" = "Inqalaab kontaktní adresa";
 
 /* notification */
-"SimpleX encrypted message or connection event" = "SimpleX šifrovaná zpráva nebo událost připojení";
+"Inqalaab encrypted message or connection event" = "Inqalaab šifrovaná zpráva nebo událost připojení";
 
 /* simplex link type */
-"SimpleX group link" = "Skupinový odkaz SimpleX";
+"Inqalaab group link" = "Skupinový odkaz Inqalaab";
 
 /* chat feature */
-"SimpleX links" = "Odkazy na SimpleX";
+"Inqalaab links" = "Odkazy na Inqalaab";
 
 /* No comment provided by engineer. */
-"SimpleX Lock" = "Zámek SimpleX";
+"Inqalaab Lock" = "Zámek Inqalaab";
 
 /* No comment provided by engineer. */
-"SimpleX Lock mode" = "SimpleX zámek";
+"Inqalaab Lock mode" = "Inqalaab zámek";
 
 /* No comment provided by engineer. */
-"SimpleX Lock not enabled!" = "Zámek SimpleX není povolen!";
+"Inqalaab Lock not enabled!" = "Zámek Inqalaab není povolen!";
 
 /* No comment provided by engineer. */
-"SimpleX Lock turned on" = "Zapnutý zámek SimpleX Lock";
+"Inqalaab Lock turned on" = "Zapnutý zámek Inqalaab Lock";
 
 /* simplex link type */
-"SimpleX one-time invitation" = "Jednorázová pozvánka SimpleX";
+"Inqalaab one-time invitation" = "Jednorázová pozvánka Inqalaab";
 
 /* No comment provided by engineer. */
 "Simplified incognito mode" = "Zjednodušený inkognito režim";
@@ -3145,7 +3145,7 @@ chat item action */
 "Stop sharing address?" = "Přestat sdílet adresu?";
 
 /* authentication reason */
-"Stop SimpleX" = "Zastavit SimpleX";
+"Stop Inqalaab" = "Zastavit Inqalaab";
 
 /* No comment provided by engineer. */
 "strike" = "stávka";
@@ -3154,7 +3154,7 @@ chat item action */
 "Submit" = "Odeslat";
 
 /* No comment provided by engineer. */
-"Support SimpleX Chat" = "Podpořte SimpleX Chat";
+"Support Inqalaab" = "Podpořte Inqalaab";
 
 /* No comment provided by engineer. */
 "System" = "Systém";
@@ -3202,7 +3202,7 @@ chat item action */
 "Tests failed!" = "Testy selhaly!";
 
 /* No comment provided by engineer. */
-"Thank you for installing SimpleX Chat!" = "Děkujeme, že jste si nainstalovali SimpleX Chat!";
+"Thank you for installing Inqalaab!" = "Děkujeme, že jste si nainstalovali Inqalaab!";
 
 /* No comment provided by engineer. */
 "Thanks to the users – [contribute via Weblate](https://github.com/simplex-chat/simplex-chat/tree/stable#help-translating-simplex-chat)!" = "Díky uživatelům - [přispějte přes Weblate](https://github.com/simplex-chat/simplex-chat/tree/stable#help-translating-simplex-chat)!";
@@ -3295,10 +3295,10 @@ chat item action */
 "To protect timezone, image/voice files use UTC." = "K ochraně časového pásma používají obrazové/hlasové soubory UTC.";
 
 /* No comment provided by engineer. */
-"To protect your information, turn on SimpleX Lock.\nYou will be prompted to complete authentication before this feature is enabled." = "Chcete-li chránit své informace, zapněte zámek SimpleX Lock.\nPřed zapnutím této funkce budete vyzváni k dokončení ověření.";
+"To protect your information, turn on Inqalaab Lock.\nYou will be prompted to complete authentication before this feature is enabled." = "Chcete-li chránit své informace, zapněte zámek Inqalaab Lock.\nPřed zapnutím této funkce budete vyzváni k dokončení ověření.";
 
 /* No comment provided by engineer. */
-"To protect your privacy, SimpleX uses separate IDs for each of your contacts." = "Pro ochranu soukromí namísto ID uživatelů používaných všemi ostatními platformami má SimpleX identifikátory pro fronty zpráv, oddělené pro každý z vašich kontaktů.";
+"To protect your privacy, Inqalaab uses separate IDs for each of your contacts." = "Pro ochranu soukromí namísto ID uživatelů používaných všemi ostatními platformami má Inqalaab identifikátory pro fronty zpráv, oddělené pro každý z vašich kontaktů.";
 
 /* No comment provided by engineer. */
 "To record voice message please grant permission to use Microphone." = "Chcete-li nahrávat hlasové zprávy, udělte povolení k použití mikrofonu.";
@@ -3424,10 +3424,10 @@ chat item action */
 "Use server" = "Použít server";
 
 /* No comment provided by engineer. */
-"Use SimpleX Chat servers?" = "Používat servery SimpleX Chat?";
+"Use Inqalaab servers?" = "Používat servery Inqalaab?";
 
 /* No comment provided by engineer. */
-"Using SimpleX Chat servers." = "Používat servery SimpleX Chat.";
+"Using Inqalaab servers." = "Používat servery Inqalaab.";
 
 /* No comment provided by engineer. */
 "v%@ (%@)" = "v%@ (%@)";
@@ -3592,7 +3592,7 @@ chat item action */
 "You can start chat via app Settings / Database or by restarting the app" = "Chat můžete zahájit prostřednictvím aplikace Nastavení / Databáze nebo restartováním aplikace";
 
 /* No comment provided by engineer. */
-"You can turn on SimpleX Lock via Settings." = "Zámek SimpleX můžete zapnout v Nastavení.";
+"You can turn on Inqalaab Lock via Settings." = "Zámek Inqalaab můžete zapnout v Nastavení.";
 
 /* No comment provided by engineer. */
 "You can use markdown to format messages:" = "K formátování zpráv můžete použít markdown:";
@@ -3727,7 +3727,7 @@ chat item action */
 "Your profile is stored on your device and only shared with your contacts." = "Profil je sdílen pouze s vašimi kontakty.";
 
 /* No comment provided by engineer. */
-"Your profile is stored on your device and shared only with your contacts. SimpleX servers cannot see your profile." = "Váš profil je uložen ve vašem zařízení a sdílen pouze s vašimi kontakty. Servery SimpleX nevidí váš profil.";
+"Your profile is stored on your device and shared only with your contacts. Inqalaab servers cannot see your profile." = "Váš profil je uložen ve vašem zařízení a sdílen pouze s vašimi kontakty. Servery Inqalaab nevidí váš profil.";
 
 /* No comment provided by engineer. */
 "Your random profile" = "Váš náhodný profil";
@@ -3739,5 +3739,5 @@ chat item action */
 "Your settings" = "Vaše nastavení";
 
 /* No comment provided by engineer. */
-"Your SimpleX address" = "Vaše SimpleX adresa";
+"Your Inqalaab address" = "Vaše Inqalaab adresa";
 

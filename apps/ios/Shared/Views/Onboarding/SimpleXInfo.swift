@@ -1,9 +1,9 @@
 //
-//  SimpleXInfo.swift
-//  SimpleX (iOS)
+//  SimpleXInfo.swift → Inqalaab Welcome Screen
+//  Inqalaab (iOS)
 //
-//  Created by Evgeny on 07/05/2022.
-//  Copyright © 2022 SimpleX Chat. All rights reserved.
+//  Completely redesigned from SimpleX Chat.
+//  Mission-focused welcome screen for activists and journalists.
 //
 
 import SwiftUI
@@ -12,63 +12,108 @@ import SimpleXChat
 struct SimpleXInfo: View {
     @EnvironmentObject var m: ChatModel
     @Environment(\.colorScheme) var colorScheme: ColorScheme
-    @State private var showHowItWorks = false
     @State private var createProfileNavLinkActive = false
+    @State private var missionNavLinkActive = false
     var onboarding: Bool
 
     var body: some View {
         GeometryReader { g in
             let v = ScrollView {
-                VStack(alignment: .leading) {
-                    VStack(alignment: .center, spacing: 10) {
-                        Image(colorScheme == .light ? "logo" : "logo-light")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: g.size.width * 0.67)
-                            .padding(.bottom, 8)
-                            .padding(.leading, 4)
-                            .frame(maxWidth: .infinity, minHeight: 48, alignment: .top)
-                        
-                        Button {
-                            showHowItWorks = true
-                        } label: {
-                            Label("The future of messaging", systemImage: "info.circle")
-                                .font(.headline)
-                        }
+                VStack(spacing: 0) {
+                    Spacer().frame(height: 60)
+
+                    // Inqalaab Logo
+                    Image(colorScheme == .light ? "logo" : "logo-light")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 120, height: 120)
+                        .clipShape(RoundedRectangle(cornerRadius: 24))
+                        .shadow(color: Color.green.opacity(0.3), radius: 20, x: 0, y: 10)
+
+                    Spacer().frame(height: 24)
+
+                    // App Name
+                    Text("Inqalaab")
+                        .font(.system(size: 42, weight: .bold, design: .rounded))
+                        .foregroundColor(.primary)
+
+                    // Urdu subtitle
+                    Text("انقلاب")
+                        .font(.system(size: 28, weight: .medium, design: .serif))
+                        .foregroundColor(.green)
+
+                    Spacer().frame(height: 8)
+
+                    Text("Secure communication for the resistance")
+                        .font(.title3)
+                        .fontWeight(.medium)
+                        .foregroundColor(.secondary)
+                        .multilineTextAlignment(.center)
+                        .padding(.horizontal, 30)
+
+                    Spacer().frame(height: 48)
+
+                    // Feature highlights — different from SimpleX's
+                    VStack(alignment: .leading, spacing: 20) {
+                        inqalaabFeatureRow(
+                            icon: "hand.raised.fill",
+                            color: .green,
+                            title: "Built for activists",
+                            detail: "Designed for those who fight for freedom and justice"
+                        )
+                        inqalaabFeatureRow(
+                            icon: "eye.slash.fill",
+                            color: .orange,
+                            title: "No surveillance possible",
+                            detail: "No phone number, no tracking, no metadata collected"
+                        )
+                        inqalaabFeatureRow(
+                            icon: "server.rack",
+                            color: .cyan,
+                            title: "Independent infrastructure",
+                            detail: "Routed through community-run servers outside your country"
+                        )
                     }
+                    .padding(.horizontal, 30)
 
-                    Spacer()
-
-                    VStack(alignment: .leading) {
-                        onboardingInfoRow("privacy", "Privacy redefined",
-                                "No user identifiers.", width: 48)
-                        onboardingInfoRow("shield", "Immune to spam",
-                                "You decide who can connect.", width: 46)
-                        onboardingInfoRow(colorScheme == .light ? "decentralized" : "decentralized-light", "Decentralized",
-                                "Anybody can host servers.", width: 46)
-                    }
-                    .padding(.leading, 16)
-
-                    Spacer()
+                    Spacer().frame(height: 48)
 
                     if onboarding {
-                        VStack(spacing: 10) {
-                            createFirstProfileButton()
+                        VStack(spacing: 12) {
+                            // Primary action: Continue to mission
+                            ZStack {
+                                Button {
+                                    missionNavLinkActive = true
+                                } label: {
+                                    Text("Get Started")
+                                }
+                                .buttonStyle(OnboardingButtonStyle(isDisabled: false))
 
+                                NavigationLink(isActive: $missionNavLinkActive) {
+                                    InqalaabMissionView()
+                                        .modifier(ThemedBackground())
+                                } label: {
+                                    EmptyView()
+                                }
+                                .frame(width: 1, height: 1)
+                                .hidden()
+                            }
+
+                            // Migrate option
                             Button {
                                 m.migrationState = .pasteOrScanLink
                             } label: {
                                 Label("Migrate from another device", systemImage: "tray.and.arrow.down")
-                                    .font(.system(size: 17, weight: .semibold))
-                                    .frame(minHeight: 40)
+                                    .font(.system(size: 15))
+                                    .frame(minHeight: 36)
                             }
                             .frame(maxWidth: .infinity)
                         }
+                        .padding(.horizontal, 25)
                     }
+
+                    Spacer().frame(height: 30)
                 }
-                .padding(.horizontal, 25)
-                .padding(.top, 75)
-                .padding(.bottom, 25)
                 .frame(minHeight: g.size.height)
             }
             .sheet(isPresented: Binding(
@@ -85,12 +130,6 @@ struct SimpleXInfo: View {
                     .modifier(ThemedBackground(grouped: true))
                 }
             }
-            .sheet(isPresented: $showHowItWorks) {
-                HowItWorks(
-                    onboarding: onboarding,
-                    createProfileNavLinkActive: $createProfileNavLinkActive
-                )
-            }
             if #available(iOS 16.4, *) {
                 v.scrollBounceBehavior(.basedOnSize)
             } else {
@@ -101,46 +140,25 @@ struct SimpleXInfo: View {
             setLastVersionDefault()
         }
         .frame(maxHeight: .infinity)
-        .navigationBarHidden(true) // necessary on iOS 15
+        .navigationBarHidden(true)
     }
 
-    private func onboardingInfoRow(_ image: String, _ title: LocalizedStringKey, _ text: LocalizedStringKey, width: CGFloat) -> some View {
-        HStack(alignment: .top) {
-            Image(image)
-                .resizable()
-                .scaledToFit()
-                .frame(width: width, height: 54)
-                .frame(width: 54)
-                .padding(.trailing, 10)
-            VStack(alignment: .leading, spacing: 4) {
-                Text(title).font(.headline)
-                Text(text).frame(minHeight: 40, alignment: .top)
+    private func inqalaabFeatureRow(icon: String, color: Color, title: String, detail: String) -> some View {
+        HStack(alignment: .top, spacing: 16) {
+            Image(systemName: icon)
+                .font(.title2)
+                .foregroundColor(color)
+                .frame(width: 36, height: 36)
+                .background(color.opacity(0.15))
+                .clipShape(RoundedRectangle(cornerRadius: 8))
+            VStack(alignment: .leading, spacing: 3) {
+                Text(title)
+                    .font(.headline)
+                Text(detail)
                     .font(.callout)
-                    .lineLimit(3)
+                    .foregroundColor(.secondary)
                     .fixedSize(horizontal: false, vertical: true)
             }
-            .padding(.top, 4)
-        }
-        .padding(.bottom, 12)
-    }
-
-    private func createFirstProfileButton() -> some View {
-        ZStack {
-            Button {
-                createProfileNavLinkActive = true
-            } label: {
-                Text("Create your profile")
-            }
-            .buttonStyle(OnboardingButtonStyle(isDisabled: false))
-
-            NavigationLink(isActive: $createProfileNavLinkActive) {
-                CreateFirstProfile()
-                    .modifier(ThemedBackground())
-            } label: {
-                EmptyView()
-            }
-            .frame(width: 1, height: 1)
-            .hidden()
         }
     }
 }

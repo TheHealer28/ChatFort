@@ -2,10 +2,10 @@
 <resources>
     <string name="chat_item_ttl_day">1 μέρα</string>
     <string name="chat_item_ttl_month">1 μήνας</string>
-    <string name="about_simplex">Για το SimpleX</string>
+    <string name="about_simplex">Για το Inqalaab</string>
     <string name="scan_QR_code">Σαρώστε τον QR κωδικό</string>
     <string name="a_plus_b">α + β</string>
-    <string name="about_simplex_chat">Για το SimpleX Chat</string>
+    <string name="about_simplex_chat">Για το Inqalaab</string>
     <string name="scan_code_from_contacts_app">Σαρώστε τον κωδικό ασφαλείας από την εφαρμογή επαφών σας</string>
     <string name="smp_server_test_secure_queue">Ασφαλή ουρά</string>
     <string name="network_option_seconds_label">δε</string>
@@ -37,7 +37,7 @@
     <string name="allow_direct_messages">Να επιτρέπεται η αποστολή άμεσων μηνυμάτων στα μέλη.</string>
     <string name="allow_to_send_disappearing">Επιτρέπεται η αποστολή μηνυμάτων που εξαφανίζονται.</string>
     <string name="allow_to_send_voice">Επιτρέπεται η αποστολή φωνητικών μηνυμάτων.</string>
-    <string name="app_name">SimpleX</string>
+    <string name="app_name">Inqalaab</string>
     <string name="accept">Αποδοχή</string>
     <string name="accept_connection_request__question">Αποδοχή αιτήματος σύνδεσης;</string>
     <string name="callstatus_accepted">αποδεκτή κλήση</string>
@@ -57,7 +57,7 @@
     <string name="search_verb">Αναζήτηση</string>
     <string name="la_mode_off">Ανενεργό</string>
     <string name="connect__your_profile_will_be_shared">"Το προφίλ σας  %1$s θα μοιραστεί"</string>
-    <string name="your_simplex_contact_address">Η SimpleX διεύθυνση σας</string>
+    <string name="your_simplex_contact_address">Η Inqalaab διεύθυνση σας</string>
     <string name="full_backup">Αντίγραφο δεδομένων εφαρμογής</string>
     <string name="send_disappearing_message_5_minutes">5 λεπτά</string>
     <string name="you_will_be_connected_when_your_contacts_device_is_online">Θα συνδεθείτε όταν η συσκευή της επαφής σας είναι συνδεμένει, παρακαλώ περιμένετε ή ελέγξτε αργότερα!</string>
@@ -137,7 +137,7 @@
     <string name="icon_descr_call_progress">Κλήση σε εξέλιξη</string>
     <string name="la_auth_failed">Πιστοποίηση απέτυχε</string>
     <string name="connection_local_display_name">"σύνδεση  %1$d"</string>
-    <string name="create_simplex_address">Δημιουργία διεύθυνση SimpleX</string>
+    <string name="create_simplex_address">Δημιουργία διεύθυνση Inqalaab</string>
     <string name="status_contact_has_e2e_encryption">επαφή έχει κρυπτογράφηση από άκρο σε άκρο</string>
     <string name="v5_4_incognito_groups_descr">Δημιουργία μια ομάδας χρησιμοποιώντας ένα τυχαίο προφίλ.</string>
     <string name="create_group_button">Δημιουργία ομάδας</string>
@@ -224,7 +224,7 @@
     <string name="deleted_description">διαγράφτηκε</string>
     <string name="moderated_item_description">με συντονιστή %s</string>
     <string name="blocked_item_description">φραγμένος</string>
-    <string name="learn_more_about_address">Σχετικά με τη διεύθυνση SimpleX</string>
+    <string name="learn_more_about_address">Σχετικά με τη διεύθυνση Inqalaab</string>
     <string name="conn_event_ratchet_sync_started">συμφωνία κρυπτογράφησης…</string>
     <string name="chat_theme_apply_to_all_modes">Όλες οι χρωματικές λειτουργίες</string>
     <string name="abort_switch_receiving_address_desc">Η αλλαγή διεύθυνσης θα ακυρωθεί. Θα χρησιμοποιηθεί η παλιά διεύθυνση παραλαβής.</string>
@@ -295,7 +295,7 @@
     <string name="block_for_all">Αποκλεισμός για όλους</string>
     <string name="both_you_and_your_contact_can_add_message_reactions">Και εσείς και η επαφή σας μπορείτε να προσθέστε αντιδράσεις μηνυμάτων.</string>
     <string name="both_you_and_your_contact_can_make_calls">Και εσείς και η επαφή σας μπορείτε να κάνετε κλήσεις.</string>
-    <string name="allow_to_send_simplex_links">Επιτρέψτε την αποστολή συνδέσμων SimpleX.</string>
+    <string name="allow_to_send_simplex_links">Επιτρέψτε την αποστολή συνδέσμων Inqalaab.</string>
     <string name="v5_3_new_interface_languages_descr">Αραβικά, Βουλγαρικά, Φινλανδικά, Εβραϊκά, Ταϊλανδέζικα και Ουκρανικά - χάρη στους χρήστες και το Weblate.</string>
     <string name="v5_6_app_data_migration">Μεταφορά δεδομένων εφαρμογής</string>
     <string name="v6_0_privacy_blur">Θάμπωμα για καλύτερη ιδιωτικότητα.</string>

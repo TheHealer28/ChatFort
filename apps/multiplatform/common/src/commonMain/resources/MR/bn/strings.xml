@@ -5,8 +5,8 @@
     <string name="send_disappearing_message_1_minute">১ মিনিট</string>
     <string name="one_time_link_short">এককালীন সংযোগ-সূত্র</string>
     <string name="send_disappearing_message_30_seconds">৩০ সেকেন্ড</string>
-    <string name="about_simplex">SimpleX সম্পর্কে</string>
-    <string name="learn_more_about_address">SimpleX ঠিকানা সম্পর্কে জানুন</string>
+    <string name="about_simplex">Inqalaab সম্পর্কে</string>
+    <string name="learn_more_about_address">Inqalaab ঠিকানা সম্পর্কে জানুন</string>
     <string name="abort_switch_receiving_address_confirm">থামুন</string>
     <string name="abort_switch_receiving_address_question">ঠিকানা পরিবর্তন বাতিল করতে চান\?</string>
     <string name="send_disappearing_message_5_minutes">৫ মিনিট</string>
@@ -17,7 +17,7 @@
     <string name="accept_feature">গ্রহণ করুন</string>
     <string name="chat_item_ttl_month">১ মাস</string>
     <string name="chat_item_ttl_week">১ সপ্তাহ</string>
-    <string name="about_simplex_chat">About SimpleX Chat</string>
+    <string name="about_simplex_chat">About Inqalaab</string>
     <string name="accept_contact_button">গ্রহণ করুন</string>
     <string name="accept_connection_request__question">সংযোগের অনুরোধটি গ্রহণ করবেন কি\?</string>
     <string name="callstatus_accepted">কলটি গৃহীত হয়েছে</string>

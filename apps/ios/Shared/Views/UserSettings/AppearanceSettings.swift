@@ -52,17 +52,24 @@ struct AppearanceSettings: View {
 
     @State var showImageImporter: Bool = false
     @State var customizeThemeIsOpen: Bool = false
+    // Inqalaab: In-app Urdu/English language toggle
+    @State private var selectedLanguage: String = UserDefaults.standard.string(forKey: "inqalaab_selected_language")
+        ?? Bundle.main.preferredLocalizations.first ?? "en"
 
     var body: some View {
         VStack{
             List {
-                Section(String("Language")) {
-                    HStack {
-                        Text(currentLanguage)
-                        Spacer()
-                        Button("Change") {
-                            UIApplication.shared.open(appSettingsURL)
-                        }
+                // Inqalaab: Direct Urdu/English picker (replaces "open iOS Settings" button)
+                Section(String("Language / زبان")) {
+                    Picker("", selection: $selectedLanguage) {
+                        Text("English").tag("en")
+                        Text("اردو").tag("ur")
+                    }
+                    .pickerStyle(.segmented)
+                    .onChange(of: selectedLanguage) { newLang in
+                        UserDefaults.standard.set([newLang], forKey: "AppleLanguages")
+                        UserDefaults.standard.set(newLang, forKey: "inqalaab_selected_language")
+                        UserDefaults.standard.synchronize()
                     }
                 }
 
@@ -290,10 +297,7 @@ struct AppearanceSettings: View {
         }
     }
 
-    private var currentLanguage: String {
-        let lang = Bundle.main.preferredLocalizations.first ?? "en"
-        return Locale.current.localizedString(forIdentifier: lang)?.localizedCapitalized ?? lang
-    }
+    // Inqalaab: currentLanguage computed property removed — replaced by in-app language picker
 
     private func updateAppIcon(image: String, icon: String?, tapped: Binding<Bool>) -> some View {
         Image(image)

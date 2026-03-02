@@ -11,7 +11,7 @@
     <string name="invite_friends">സുഹൃത്തുക്കളെ ക്ഷണിക്കുക</string>
     <string name="delete_address">വിലാസം ഇല്ലാതാക്കുക</string>
     <string name="italic_text">ഇറ്റാലിക്</string>
-    <string name="about_simplex">SimpleX-നെ കുറിച്ച്</string>
+    <string name="about_simplex">Inqalaab-നെ കുറിച്ച്</string>
     <string name="callstate_connected">ബന്ധിപ്പിച്ചിരിക്കുന്നു</string>
     <string name="callstate_connecting">ബന്ധിപ്പിക്കുന്നു…</string>
     <string name="onboarding_notifications_mode_periodic">ആനുകാലികം</string>
@@ -32,9 +32,9 @@
     <string name="send_disappearing_message_5_minutes">5 നിമിഷങ്ങൾ</string>
     <string name="send_disappearing_message_30_seconds">30 ഞൊടികൾ</string>
     <string name="feature_enabled_for_you">നിങ്ങൾക്കായി പ്രവർത്തനക്ഷമമാക്കി</string>
-    <string name="learn_more_about_address">SimpleX വിലാസത്തെക്കുറിച്ച്</string>
+    <string name="learn_more_about_address">Inqalaab വിലാസത്തെക്കുറിച്ച്</string>
     <string name="feature_enabled">പ്രവർത്തനക്ഷമമാക്കി</string>
-    <string name="auth_enable_simplex_lock">SimpleX താഴ് പ്രവർത്തനക്ഷമമാക്കുക</string>
+    <string name="auth_enable_simplex_lock">Inqalaab താഴ് പ്രവർത്തനക്ഷമമാക്കുക</string>
     <string name="feature_enabled_for_contact">ബന്ധപ്പെടാൻ പ്രവർത്തനക്ഷമമാക്കി</string>
     <string name="enable_self_destruct">സ്വയം നശിപ്പിക്കൽ പ്രവർത്തനക്ഷമമാക്കുക</string>
     <string name="button_add_welcome_message">സ്വാഗത സന്ദേശം ചേർക്കുക</string>
@@ -83,7 +83,7 @@
     <string name="onboarding_notifications_mode_subtitle">ഇത് പിന്നീട് ക്രമീകരണങ്ങൾ വഴി മാറ്റാവുന്നതാണ്.</string>
     <string name="your_settings">നിങ്ങളുടെ ക്രമീകരണങ്ങൾ</string>
     <string name="your_privacy">നിങ്ങളുടെ സ്വകാര്യത</string>
-    <string name="your_simplex_contact_address">നിങ്ങളുടെ SimpleX വിലാസം</string>
+    <string name="your_simplex_contact_address">നിങ്ങളുടെ Inqalaab വിലാസം</string>
     <string name="chat_item_ttl_day">1 ദിവസം</string>
     <string name="you_wont_lose_your_contacts_if_delete_address">പിന്നീട് നിങ്ങളുടെ വിലാസം ഇല്ലാതാക്കിയാൽ നിങ്ങളുടെ കോൺടാക്റ്റുകൾ നഷ്‌ടമാകില്ല.</string>
     <string name="stop_chat_confirmation">നിർത്തുക</string>
@@ -212,13 +212,13 @@
     <string name="clear_verb">വൃത്തിയാക്കുക</string>
     <string name="clear_chat_menu_action">വൃത്തിയാക്കുക</string>
     <string name="learn_more">കൂടുതലറിയുക</string>
-    <string name="read_more_in_user_guide_with_link"><![CDATA[<font color="#0088ff">ഉപയോക്തൃ മാര്‍ഗ്ഗദര്‍ശിയിൽ</font> കൂടുതൽ വായിക്കുക.]]></string>
+    <string name="read_more_in_user_guide_with_link"><![CDATA[<font color="#1E8E3E">ഉപയോക്തൃ മാര്‍ഗ്ഗദര്‍ശിയിൽ</font> കൂടുതൽ വായിക്കുക.]]></string>
     <string name="smp_servers_check_address">സെർവർ വിലാസം പരിശോധിച്ച് വീണ്ടും ശ്രമിക്കുക.</string>
     <string name="your_SMP_servers">നിങ്ങളുടെ SMP സെർവറുകൾ</string>
     <string name="network_session_mode_entity">ബന്ധം</string>
     <string name="stop_sharing_address">വിലാസം പങ്കിടുന്നത് നിർത്തണോ\?</string>
     <string name="continue_to_next_step">തുടരുക</string>
-    <string name="create_simplex_address">SimpleX വിലാസം സൃഷ്ടിക്കുക</string>
+    <string name="create_simplex_address">Inqalaab വിലാസം സൃഷ്ടിക്കുക</string>
     <string name="create_profile_button">സൃഷ്ടിക്കുക</string>
     <string name="colored_text">നിറമുള്ള</string>
     <string name="callstate_ended">അവസാനിച്ചു</string>
@@ -273,7 +273,7 @@
     <string name="smp_servers_your_server_address">നിങ്ങളുടെ സെർവർ വിലാസം</string>
     <string name="info_row_sent_at">എന്ന വിലാസത്തിൽ അയച്ചു</string>
     <string name="your_XFTP_servers">നിങ്ങളുടെ XFTP സെർവറുകൾ</string>
-    <string name="about_simplex_chat">കുറിച്ച് SimpleX Chat</string>
+    <string name="about_simplex_chat">കുറിച്ച് Inqalaab</string>
     <string name="users_delete_all_chats_deleted">എല്ലാ സംഭാഷണങ്ങളും സന്ദേശങ്ങളും ഇല്ലാതാക്കപ്പെടും - ഇത് പഴയപടിയാക്കാനാകില്ല!</string>
     <string name="all_group_members_will_remain_connected">സംഘത്തിലെ എല്ലാ അംഗങ്ങളുടെ ബന്ധം നിലനിർത്തും.</string>
     <string name="la_could_not_be_verified">നിങ്ങളെ പരിശോധിക്കാൻ കഴിഞ്ഞില്ല; ദയവായി വീണ്ടും ശ്രമിക്കുക.</string>
@@ -353,7 +353,7 @@
     <string name="enter_welcome_message_optional">സ്വാഗത സന്ദേശം നൽകുക... (ഇച്ഛാനുസൃതമായ)</string>
     <string name="exit_without_saving">സംരക്ഷിക്കാതെ പുറത്ത് പോവുക</string>
     <string name="how_it_works">ഇത് എങ്ങനെ പ്രവർത്തിക്കുന്നു</string>
-    <string name="how_simplex_works">SimpleX എങ്ങനെ പ്രവർത്തിക്കുന്നു</string>
+    <string name="how_simplex_works">Inqalaab എങ്ങനെ പ്രവർത്തിക്കുന്നു</string>
     <string name="onboarding_notifications_mode_service">കൃത്യസമയം</string>
     <string name="no_call_on_lock_screen">പ്രവർത്തനരഹിതമാക്കുക</string>
     <string name="info_row_deleted_at">എന്നതിൽ ഇല്ലാതാക്കി</string>

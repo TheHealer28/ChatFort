@@ -3,15 +3,15 @@
     <string name="alert_text_decryption_error_n_messages_failed_to_decrypt">%1$d tin nhắn không thể giải mã.</string>
     <string name="moderated_items_description">%1$d tin nhắn đã bị xóa bởi %2$s</string>
     <string name="group_info_section_title_num_members">%1$s THÀNH VIÊN</string>
-    <string name="learn_more_about_address">Thông tin về địa chỉ SimpleX</string>
+    <string name="learn_more_about_address">Thông tin về địa chỉ Inqalaab</string>
     <string name="address_section_title">Địa chỉ</string>
     <string name="abort_switch_receiving_address_confirm">Hủy bỏ</string>
     <string name="accept_contact_button">Chấp nhận</string>
     <string name="one_time_link_short">đường dẫn dùng 1 lần</string>
     <string name="add_contact_tab">Thêm liên hệ</string>
-    <string name="about_simplex_chat">Thông tin về SimpleX Chat</string>
+    <string name="about_simplex_chat">Thông tin về Inqalaab</string>
     <string name="smp_servers_add">Thêm máy chủ</string>
-    <string name="about_simplex">Thông tin về SimpleX</string>
+    <string name="about_simplex">Thông tin về Inqalaab</string>
     <string name="group_member_role_admin">quản trị viên</string>
     <string name="button_add_welcome_message">Thêm lời chào</string>
     <string name="contact_wants_to_connect_via_call">%1$s muốn kết nối với bạn qua</string>
@@ -122,7 +122,7 @@
     <string name="audio_video_calls">Các cuộc gọi thoại/video</string>
     <string name="feature_roles_all_members">tất cả các thành viên</string>
     <string name="calls_prohibited_with_this_contact">Các cuộc gọi thoại/video bị cấm.</string>
-    <string name="allow_to_send_simplex_links">Cho phép gửi đường dẫn SimpleX.</string>
+    <string name="allow_to_send_simplex_links">Cho phép gửi đường dẫn Inqalaab.</string>
     <string name="feature_roles_admins">quản trị viên</string>
     <string name="group_member_role_author">tác giả</string>
     <string name="authentication_cancelled">Quá trình xác thực đã bị hủy bỏ</string>
@@ -385,7 +385,7 @@
     <string name="send_disappearing_message_custom_time">Thời lượng tùy chỉnh</string>
     <string name="database_passphrase_will_be_updated">Mật khẩu mã hóa cơ sở dữ liệu sẽ được cập nhật.</string>
     <string name="customize_theme_title">Tùy chỉnh chủ đề</string>
-    <string name="create_simplex_address">Tạo địa chỉ SimpleX</string>
+    <string name="create_simplex_address">Tạo địa chỉ Inqalaab</string>
     <string name="create_another_profile_button">Tạo hồ sơ</string>
     <string name="smp_server_test_create_queue">Tạo hàng đợi</string>
     <string name="migrate_from_device_creating_archive_link">Tạo đường dẫn lưu trữ</string>
@@ -465,7 +465,7 @@
     <string name="settings_developer_tools">Công cụ nhà phát triển</string>
     <string name="settings_section_title_device">THIẾT BỊ</string>
     <string name="developer_options_section">Tùy chọn cho nhà phát triển</string>
-    <string name="auth_device_authentication_is_disabled_turning_off">Xác thực thiết bị đã bị vô hiệu hóa. Tắt Khóa SimpleX.</string>
+    <string name="auth_device_authentication_is_disabled_turning_off">Xác thực thiết bị đã bị vô hiệu hóa. Tắt Khóa Inqalaab.</string>
     <string name="snd_error_relay">Lỗi máy chủ đích: %1$s</string>
     <string name="delivery_receipts_title">Chỉ báo đã nhận!</string>
     <string name="delivery_receipts_are_disabled">Chỉ báo đã nhận bị vô hiệu hóa!</string>
@@ -513,7 +513,7 @@
     <string name="v4_5_multiple_chat_profiles_descr">Tên, hình đại diện và cách ly truyền tải khác nhau.</string>
     <string name="devices">Thiết bị</string>
     <string name="conn_level_desc_direct">trực tiếp</string>
-    <string name="auth_device_authentication_is_not_enabled_you_can_turn_on_in_settings_once_enabled">Xác thực thiết bị không được bật. Bạn có thể bật SimpleX Lock thông qua phần Cài đặt, sau khi bạn bật xác thực thiết bị.</string>
+    <string name="auth_device_authentication_is_not_enabled_you_can_turn_on_in_settings_once_enabled">Xác thực thiết bị không được bật. Bạn có thể bật Inqalaab Lock thông qua phần Cài đặt, sau khi bạn bật xác thực thiết bị.</string>
     <string name="receipts_contacts_title_disable">Tắt chỉ báo đã nhận?</string>
     <string name="timed_messages">Tin nhắn tự xóa</string>
     <string name="disappearing_message">Tin nhắn tự xóa</string>
@@ -526,7 +526,7 @@
     <string name="info_row_disappears_at">Biến mất vào lúc</string>
     <string name="disconnect_remote_host">Ngắt kết nối</string>
     <string name="disable_notifications_button">Tắt thông báo</string>
-    <string name="auth_disable_simplex_lock">Tắt SimpleX Lock</string>
+    <string name="auth_disable_simplex_lock">Tắt Inqalaab Lock</string>
     <string name="receipts_groups_disable_keep_overrides">Tắt (giữ thông tin ghi đè về nhóm)</string>
     <string name="disappearing_prohibited_in_this_chat">Tin nhắn tự xóa bị cấm trong cuộc hội thoại này.</string>
     <string name="no_call_on_lock_screen">Tắt</string>
@@ -654,7 +654,7 @@
     <string name="network_option_enable_tcp_keep_alive">Bật TCP keep-alive</string>
     <string name="enter_password_to_show">Nhập mật khẩu trong tìm kiếm</string>
     <string name="enter_this_device_name">Nhập tên của thiết bị này…</string>
-    <string name="auth_enable_simplex_lock">Bật SimpleX Lock</string>
+    <string name="auth_enable_simplex_lock">Bật Inqalaab Lock</string>
     <string name="enter_welcome_message">Nhập lời chào…</string>
     <string name="la_enter_app_passcode">Nhập mã truy cập</string>
     <string name="icon_descr_server_status_error">Lỗi</string>
@@ -843,7 +843,7 @@
     <string name="group_full_name_field">Tên đầy đủ nhóm:</string>
     <string name="group_members_can_send_disappearing">Các thành viên có thể gửi tin nhắn tự xóa.</string>
     <string name="group_members_can_send_files">Các thành viên có thể gửi tệp và đa phương tiện.</string>
-    <string name="group_members_can_send_simplex_links">Các thành viên có thể gửi đường dẫn SimpleX.</string>
+    <string name="group_members_can_send_simplex_links">Các thành viên có thể gửi đường dẫn Inqalaab.</string>
     <string name="icon_descr_group_inactive">Nhóm không hoạt động</string>
     <string name="connect_plan_group_already_exists">Nhóm đã tồn tại rồi!</string>
     <string name="group_members_can_send_dms">Các thành viên có thể gửi tin nhắn trực tiếp.</string>
@@ -861,7 +861,7 @@
     <string name="icon_descr_help">trợ giúp</string>
     <string name="hide_dev_options">Ẩn:</string>
     <string name="email_invite_body">Xin chào!
-\nKết nối với tôi qua SimpleX Chat: %s</string>
+\nKết nối với tôi qua Inqalaab: %s</string>
     <string name="hide_profile">Ẩn hồ sơ</string>
     <string name="settings_section_title_help">TRỢ GIÚP</string>
     <string name="delete_group_for_all_members_cannot_undo_warning">Nhóm sẽ bị xóa cho tất cả các thành viên - điều này không thể hoàn tác!</string>
@@ -880,7 +880,7 @@
     <string name="v4_6_hidden_chat_profiles">Hồ sơ trò chuyện ẩn</string>
     <string name="how_to_use_simplex_chat">Cách sử dụng</string>
     <string name="how_it_works">Cách thức hoạt động</string>
-    <string name="how_simplex_works">Cách thức SimpleX hoạt động</string>
+    <string name="how_simplex_works">Cách thức Inqalaab hoạt động</string>
     <string name="how_to">Cách làm</string>
     <string name="error_initializing_web_view_wrong_arch">Lỗi khởi động WebView. Hãy đảm bảo bạn đã cài đặt WebView và kiến trúc hỗ trợ của nó là arm64.\nLỗi: %s</string>
     <string name="custom_time_unit_hours">giờ</string>
@@ -911,7 +911,7 @@
     <string name="icon_descr_image_snd_complete">Hình ảnh đã được gửi</string>
     <string name="image_descr">Hình ảnh</string>
     <string name="image_saved">Hình ảnh đã được lưu vào Thư viện</string>
-    <string name="if_you_received_simplex_invitation_link_you_can_open_in_browser">Nếu bạn nhận được đường dẫn mời SimpleX Chat, bạn có thể mở nó trong trình duyệt của mình:</string>
+    <string name="if_you_received_simplex_invitation_link_you_can_open_in_browser">Nếu bạn nhận được đường dẫn mời Inqalaab, bạn có thể mở nó trong trình duyệt của mình:</string>
     <string name="if_you_cannot_meet_in_person_scan_QR_in_video_call_or_ask_for_invitation_link"><![CDATA[Nếu bạn không thể gặp mặt trực tiếp, bạn có thể <b>quét mã QR trong cuộc gọi video</b>, hoặc liên hệ của bạn có thể chia sẻ một đường dẫn mời.]]></string>
     <string name="network_disable_socks_info">Nếu bạn xác nhận, các máy chủ truyền tin nhắn sẽ có thể biết địa chỉ IP, và nhà cung cấp của bạn - máy chủ nào mà bạn đang kết nối.</string>
     <string name="if_you_choose_to_reject_the_sender_will_not_be_notified">Nếu bạn chọn từ chối người gửi sẽ KHÔNG được thông báo.</string>
@@ -937,7 +937,7 @@
     <string name="info_menu">Thông tin</string>
     <string name="conn_level_desc_indirect">gián tiếp (%1$s)</string>
     <string name="migrate_from_device_chat_should_be_stopped">Để tiếp tục, hãy ngắt kết nối trò chuyện.</string>
-    <string name="install_simplex_chat_for_terminal">Cài đặt SimpleX Chat cho cửa sổ câu lệnh</string>
+    <string name="install_simplex_chat_for_terminal">Cài đặt Inqalaab cho cửa sổ câu lệnh</string>
     <string name="description_via_contact_address_link_incognito">ẩn danh qua đường dẫn địa chỉ liên lạc</string>
     <string name="incoming_audio_call">Cuộc gọi thoại đến</string>
     <string name="initial_member_role">Chức vụ ban đầu</string>
@@ -1055,7 +1055,7 @@
     <string name="message_deletion_prohibited_in_chat">Việc xóa tin nhắn mà không thể phục hồi là bị cấm.</string>
     <string name="v5_5_join_group_conversation">Tham gia vào các cuộc trò chuyện nhóm</string>
     <string name="update_network_smp_proxy_mode_question">Chế độ định tuyến tin nhắn</string>
-    <string name="email_invite_subject">Hãy trò chuyện trên SimpleX Chat</string>
+    <string name="email_invite_subject">Hãy trò chuyện trên Inqalaab</string>
     <string name="italic_text">in nghiêng</string>
     <string name="onboarding_notifications_mode_subtitle">Nó ảnh hưởng đến pin như thế nào</string>
     <string name="message_deletion_prohibited">Việc xóa tin nhắn mà không thể phục hồi bị cấm trong cuộc trò chuyện này.</string>
@@ -1228,7 +1228,7 @@
     <string name="only_your_contact_can_send_voice">Chỉ liên hệ của bạn mới có thể gửi tin nhắn thoại.</string>
     <string name="group_member_role_owner">chủ sở hữu</string>
     <string name="open_server_settings_button">Mở cài đặt máy chủ</string>
-    <string name="simplex_link_mode_browser_warning">Mở đường dẫn trong trình duyệt có thể làm giảm sự riêng tư và bảo mật của kết nối. Đường dẫn SimpleX không đáng tin cậy sẽ được đánh dấu màu đỏ.</string>
+    <string name="simplex_link_mode_browser_warning">Mở đường dẫn trong trình duyệt có thể làm giảm sự riêng tư và bảo mật của kết nối. Đường dẫn Inqalaab không đáng tin cậy sẽ được đánh dấu màu đỏ.</string>
     <string name="only_your_contact_can_delete">Chỉ liên hệ của bạn mới có thể xóa tin nhắn mà không thể phục hồi (bạn có thể đánh dấu chúng để xóa). (24 giờ)</string>
     <string name="turn_off_system_restriction_button">Mở cài đặt ứng dụng</string>
     <string name="la_lock_mode_passcode">Mục mã truy cập</string>
@@ -1241,7 +1241,7 @@
     <string name="v5_4_more_things_descr">- tùy chọn thông báo khi xóa liên hệ.\n- tên hồ sơ với dấu cách.\n- và hơn thế nữa!</string>
     <string name="permissions_open_settings">Mở cài đặt</string>
     <string name="migrate_from_device_or_share_this_file_link">Hoặc chia sẻ đường dẫn tệp này một cách an toàn.</string>
-    <string name="open_simplex_chat_to_accept_call">Mở SimpleX Chat để chấp nhận cuộc gọi</string>
+    <string name="open_simplex_chat_to_accept_call">Mở Inqalaab để chấp nhận cuộc gọi</string>
     <string name="call_desktop_permission_denied_safari">Mở Cài đặt Safari / Trang Web / Mic, rồi chọn Cho phép với localhost.</string>
     <string name="la_mode_passcode">Mã truy cập</string>
     <string name="open_chat">Mở cuộc trò chuyện</string>
@@ -1279,7 +1279,7 @@
     <string name="network_option_ping_count">bộ đếm PING</string>
     <string name="v5_8_persian_ui">UI tiếng Ba Tư</string>
     <string name="migrate_to_device_confirm_network_settings_footer">Xin vui lòng xác nhận rằng cài đặt mạng cho thiết bị này là chính xác.</string>
-    <string name="error_parsing_uri_desc">Xin vui lòng kiểm tra rằng đường dẫn SimpleX là chính xác.</string>
+    <string name="error_parsing_uri_desc">Xin vui lòng kiểm tra rằng đường dẫn Inqalaab là chính xác.</string>
     <string name="calls_prohibited_ask_to_enable_calls_alert_text">Xin vui lòng yêu cầu liên hệ của bạn mở tính năng thực hiện cuộc gọi.</string>
     <string name="network_error_desc">Xin vui lòng kiểm tra kết nối mạng của bạn với %1$s và thử lại.</string>
     <string name="enter_correct_current_passphrase">Xin vui lòng nhập đúng mật khẩu hiện tại.</string>
@@ -1348,7 +1348,7 @@
     <string name="prohibit_sending_files">Cấm gửi tệp và đa phương tiện.</string>
     <string name="prohibit_sending_voice">Cấm gửi tin nhắn thoại.</string>
     <string name="prohibit_sending_disappearing_messages">Cấm gửi tin nhắn tự xóa.</string>
-    <string name="prohibit_sending_simplex_links">Cấm gửi đường dẫn SimpleX</string>
+    <string name="prohibit_sending_simplex_links">Cấm gửi đường dẫn Inqalaab</string>
     <string name="proxied">Được proxy</string>
     <string name="address_or_1_time_link">Địa chỉ hay đường dẫn dùng 1 lần?</string>
     <string name="one_time_link_can_be_used_with_one_contact_only"><![CDATA[đường dẫn dùng một lần có thể được dùng <i>với chỉ một liên hệ</i> - chia sẻ trực tiếp hoặc thông qua bất kỳ ứng dụng tin nhắn nào.]]></string>
@@ -1365,24 +1365,24 @@
     <string name="address_settings">Cài đặt địa chỉ</string>
     <string name="operators_conditions_accepted_for"><![CDATA[Các điều kiện được chấp nhận với (các) nhà cung cấp: <b>%s</b>.]]></string>
     <string name="operator_conditions_accepted_for_some"><![CDATA[Các điều kiện đã được chấp nhận rồi đối với (các) nhà cung cấp sau: <b>%s</b>.]]></string>
-    <string name="read_more_in_github_with_link"><![CDATA[Đọc thêm tại <font color="#0088ff">Kho lưu trữ GitHub của chúng tôi</font>.]]></string>
+    <string name="read_more_in_github_with_link"><![CDATA[Đọc thêm tại <font color="#1E8E3E">Kho lưu trữ GitHub của chúng tôi</font>.]]></string>
     <string name="operator_same_conditions_will_be_applied"><![CDATA[Các điều kiện tương tự sẽ áp dụng cho nhà cung cấp <b>%s</b>.]]></string>
     <string name="operator_same_conditions_will_apply_to_operators"><![CDATA[Các điều kiện tương tự sẽ áp dụng cho (các) nhà cung cấp <b>%s</b>.]]></string>
     <string name="operators_conditions_will_also_apply"><![CDATA[Các điều kiện này cũng sẽ áp dụng cho: <b>%s</b>.]]></string>
-    <string name="read_more_in_user_guide_with_link"><![CDATA[Đọc thêm tại <font color="#0088ff">Hướng dẫn người dùng</font>.]]></string>
+    <string name="read_more_in_user_guide_with_link"><![CDATA[Đọc thêm tại <font color="#1E8E3E">Hướng dẫn người dùng</font>.]]></string>
     <string name="connect_plan_you_are_already_connecting_to_vName"><![CDATA[Bạn đã kết nối tới <b>%1$s</b> rồi.]]></string>
     <string name="system_restricted_background_in_call_warn"><![CDATA[Để thực hiện cuộc gọi trong nền, vui lòng chọn <b>Mức sử dụng pin ứng dụng</b> / <b>Không hạn chế</b> trong phần cài đặt ứng dụng.]]></string>
     <string name="remote_host_error_timeout"><![CDATA[Đã hết thời gian chờ khi kết nối tới thiết bị di động <b>%s</b>]]></string>
     <string name="turn_off_battery_optimization"><![CDATA[<b>Chọn cho phép</b> trong hộp thoại tiếp theo để nhận thông báo ngay lập tức.]]></string>
     <string name="operator_in_order_to_use_accept_conditions"><![CDATA[Để sử dụng các máy chủ của <b>%s</b>, vui lòng chấp nhận điều kiện sử dụng.]]></string>
-    <string name="to_preserve_privacy_simplex_has_background_service_instead_of_push_notifications_it_uses_a_few_pc_battery"><![CDATA[Để tăng cường sự riêng tư, <b>SimpleX chạy trong nền</b> thay vì dùng thông báo đẩy.]]></string>
+    <string name="to_preserve_privacy_simplex_has_background_service_instead_of_push_notifications_it_uses_a_few_pc_battery"><![CDATA[Để tăng cường sự riêng tư, <b>Inqalaab chạy trong nền</b> thay vì dùng thông báo đẩy.]]></string>
     <string name="system_restricted_background_warn"><![CDATA[Để bật thông báo, vui lòng chọn <b>Mức sử dụng pin ứng dụng</b> / <b>Không hạn chế</b> trong phần cài đặt ứng dụng.]]></string>
     <string name="connect_plan_you_are_already_in_group_vName"><![CDATA[Bạn đã ở trong nhóm <b>%1$s</b> rồi.]]></string>
     <string name="connect_plan_this_is_your_link_for_group_vName"><![CDATA[Đây là đường dẫn của bạn cho nhóm <b>%1$s</b>!]]></string>
     <string name="connect_plan_you_are_already_joining_the_group_vName"><![CDATA[Bạn đã tham gia nhóm <b>%1$s</b> rồi.]]></string>
     <string name="you_can_also_connect_by_clicking_the_link"><![CDATA[Bạn cũng có thể kết nối bằng cách nhấp vào đường dẫn. Nếu nó mở trong trình duyệt, nhấp vào nút<b>Mở trong ứng dụng di động</b>.]]></string>
     <string name="onboarding_choose_server_operators">Các bên vận hành máy chủ</string>
-    <string name="you_can_connect_to_simplex_chat_founder"><![CDATA[Bạn có thể <font color="#0088ff">kết nối với các nhà phát triển SimpleX Chat để hỏi bất kỳ câu hỏi nào và nhận thông tin cập nhật</font>.]]></string>
+    <string name="you_can_connect_to_simplex_chat_founder"><![CDATA[Bạn có thể <font color="#1E8E3E">kết nối với các nhà phát triển Inqalaab để hỏi bất kỳ câu hỏi nào và nhận thông tin cập nhật</font>.]]></string>
     <string name="migrate_from_device_you_must_not_start_database_on_two_device"><![CDATA[Bạn <b>không được</b> sử dụng cùng một cơ sở dữ liệu trên hai thiết .]]></string>
     <string name="error_accepting_operator_conditions">Lỗi chấp nhận điều kiện</string>
     <string name="failed_to_save_servers">Lỗi lưu máy chủ</string>
@@ -1418,7 +1418,7 @@
     <string name="direct_messages_are_prohibited_in_chat">Tin nhắn trực tiếp giữa các thành viên bị cấm trong cuộc trò chuyện này.</string>
     <string name="for_chat_profile">Dành cho hồ sơ trò chuyện %s:</string>
     <string name="onboarding_notifications_mode_periodic_desc_short">Kiểm tra tin nhắn mỗi 10 phút.</string>
-    <string name="onboarding_network_operators_app_will_use_for_routing">Ví dụ, nếu liên hệ của bạn nhận tin nhắn thông qua một máy chủ SimpleX Chat, ứng dụng của bạn sẽ gửi chúng qua một máy chủ Flux.</string>
+    <string name="onboarding_network_operators_app_will_use_for_routing">Ví dụ, nếu liên hệ của bạn nhận tin nhắn thông qua một máy chủ Inqalaab, ứng dụng của bạn sẽ gửi chúng qua một máy chủ Flux.</string>
     <string name="how_it_helps_privacy">Cách nó cải thiện sự riêng tư</string>
     <string name="invite_to_chat_button">Mời để trò chuyện</string>
     <string name="button_leave_chat">Rời cuộc trò chuyện</string>
@@ -1626,7 +1626,7 @@
     <string name="scan_code_from_contacts_app">Quét mã bảo mật từ ứng dụng của liên hệ bạn.</string>
     <string name="settings_section_title_delivery_receipts">GỬI CHỈ BÁO ĐÃ NHẬN TỚI</string>
     <string name="search_verb">Tìm kiếm</string>
-    <string name="search_or_paste_simplex_link">Tìm kiếm hoặc dán đường dẫn SimpleX</string>
+    <string name="search_or_paste_simplex_link">Tìm kiếm hoặc dán đường dẫn Inqalaab</string>
     <string name="save_list">Lưu danh sách</string>
     <string name="retry_verb">Thử lại</string>
     <string name="save_and_notify_contact">Lưu và thông báo tới liên hệ</string>
@@ -1741,7 +1741,7 @@
     <string name="receipts_groups_override_enabled">Gửi chỉ báo đã nhận được bật cho %d nhóm</string>
     <string name="sent_directly">Đã gửi trực tiếp</string>
     <string name="v4_6_group_welcome_message_descr">Hiển thị thông điệp tới các thành viên mới!</string>
-    <string name="share_simplex_address_on_social_media">Chia sẻ địa chỉ SimpleX trên mạng xã hội.</string>
+    <string name="share_simplex_address_on_social_media">Chia sẻ địa chỉ Inqalaab trên mạng xã hội.</string>
     <string name="notification_preview_mode_message_desc">Hiển thị liên hệ và tin nhắn</string>
     <string name="private_routing_show_message_status">Hiển thị trạng thái tin nhắn</string>
     <string name="show_dev_options">Hiển thị:</string>
@@ -1772,35 +1772,35 @@
     <string name="share_1_time_link_with_a_friend">Chia sẻ đường dẫn dùng 1 lần với một người bạn</string>
     <string name="prefs_error_saving_settings">Lỗi lưu cài đặt</string>
     <string name="settings_notification_preview_mode_title">Hiển thị bản xem trước</string>
-    <string name="ntf_channel_calls">Các cuộc gọi SimpleX Chat</string>
+    <string name="ntf_channel_calls">Các cuộc gọi Inqalaab</string>
     <string name="core_simplexmq_version">simplexmq: v%s (%2s)</string>
-    <string name="simplex_links_not_allowed">Các đường dẫn SimpleX là không được phép</string>
-    <string name="chat_lock">Khóa SimpleX</string>
-    <string name="simplex_links">Các đường dẫn SimpleX</string>
-    <string name="ntf_channel_messages">Các tin nhắn SimpleX Chat</string>
-    <string name="icon_descr_address">Địa chỉ SimpleX</string>
-    <string name="system_restricted_background_desc">SimpleX không thể chạy trong nền. Bạn sẽ chỉ nhận được thông báo khi ứng dụng đang chạy.</string>
-    <string name="la_lock_mode">Chế độ Khóa SimpleX</string>
-    <string name="simplex_link_contact">Địa chỉ liên lạc SimpleX Chat</string>
-    <string name="simplex_link_group">Đường dẫn nhóm SimpleX</string>
-    <string name="simplex_link_mode">Các đường dẫn SimpleX</string>
-    <string name="simplex_link_invitation">Lời mời SimpleX dùng một lần</string>
-    <string name="la_notice_title_simplex_lock">Khóa SimpleX</string>
-    <string name="onboarding_network_operators_simplex_flux_agreement">SimpleX Chat và Flux đã đi đến một thỏa thuận để đưa các máy chủ do Flux vận hành vào ứng dụng.</string>
-    <string name="theme_simplex">SimpleX</string>
-    <string name="simplex_address">Địa chỉ SimpleX</string>
+    <string name="simplex_links_not_allowed">Các đường dẫn Inqalaab là không được phép</string>
+    <string name="chat_lock">Khóa Inqalaab</string>
+    <string name="simplex_links">Các đường dẫn Inqalaab</string>
+    <string name="ntf_channel_messages">Các tin nhắn Inqalaab</string>
+    <string name="icon_descr_address">Địa chỉ Inqalaab</string>
+    <string name="system_restricted_background_desc">Inqalaab không thể chạy trong nền. Bạn sẽ chỉ nhận được thông báo khi ứng dụng đang chạy.</string>
+    <string name="la_lock_mode">Chế độ Khóa Inqalaab</string>
+    <string name="simplex_link_contact">Địa chỉ liên lạc Inqalaab</string>
+    <string name="simplex_link_group">Đường dẫn nhóm Inqalaab</string>
+    <string name="simplex_link_mode">Các đường dẫn Inqalaab</string>
+    <string name="simplex_link_invitation">Lời mời Inqalaab dùng một lần</string>
+    <string name="la_notice_title_simplex_lock">Khóa Inqalaab</string>
+    <string name="onboarding_network_operators_simplex_flux_agreement">Inqalaab và Flux đã đi đến một thỏa thuận để đưa các máy chủ do Flux vận hành vào ứng dụng.</string>
+    <string name="theme_simplex">Inqalaab</string>
+    <string name="simplex_address">Địa chỉ Inqalaab</string>
     <string name="shutdown_alert_question">Tắt?</string>
     <string name="settings_shutdown">Tắt</string>
-    <string name="v4_2_security_assessment_desc">Sự an toàn của SimpleX Chat đã được kiểm định bởi Trail of Bits.</string>
-    <string name="simplex_service_notification_title">Dịch vụ SimpleX Chat</string>
-    <string name="auth_simplex_lock_turned_on">Khóa SimpleX đã được bật</string>
+    <string name="v4_2_security_assessment_desc">Sự an toàn của Inqalaab đã được kiểm định bởi Trail of Bits.</string>
+    <string name="simplex_service_notification_title">Dịch vụ Inqalaab</string>
+    <string name="auth_simplex_lock_turned_on">Khóa Inqalaab đã được bật</string>
     <string name="show_QR_code">Hiển thị mã QR</string>
-    <string name="simplex_address_and_1_time_links_are_safe_to_share">Địa chỉ SimpleX và các đường dẫn dùng một lần đều an toàn để chia sẻ thông qua bất kỳ ứng dụng nhắn tin nào.</string>
-    <string name="image_descr_simplex_logo">Logo SimpleX</string>
+    <string name="simplex_address_and_1_time_links_are_safe_to_share">Địa chỉ Inqalaab và các đường dẫn dùng một lần đều an toàn để chia sẻ thông qua bất kỳ ứng dụng nhắn tin nào.</string>
+    <string name="image_descr_simplex_logo">Logo Inqalaab</string>
     <string name="show_slow_api_calls">Hiển thị các lượt yêu cầu API chậm</string>
-    <string name="simplex_address_or_1_time_link">Địa chỉ SimpleX hay đường dẫn dùng 1 lần?</string>
-    <string name="lock_not_enabled">Khóa SimpleX không được bật!</string>
-    <string name="simplex_links_are_prohibited_in_group">Các đường dẫn SimpleX là bị cấm.</string>
+    <string name="simplex_address_or_1_time_link">Địa chỉ Inqalaab hay đường dẫn dùng 1 lần?</string>
+    <string name="lock_not_enabled">Khóa Inqalaab không được bật!</string>
+    <string name="simplex_links_are_prohibited_in_group">Các đường dẫn Inqalaab là bị cấm.</string>
     <string name="report_item_visibility_moderators">Chỉ người gửi và các kiểm duyệt mới xem được</string>
     <string name="report_archive_alert_title">Lưu trữ bản báo cáo?</string>
     <string name="report_item_archived">đã lưu trữ bản báo cáo</string>
@@ -1809,8 +1809,8 @@
     <string name="report_reason_other">Một lý do khác</string>
     <string name="group_member_role_moderator">kiểm duyệt viên</string>
     <string name="report_compose_reason_header_profile">Báo cáo hồ sơ thành viên: sẽ chỉ có các kiểm duyệt viên trong nhóm là xem được.</string>
-    <string name="icon_descr_simplex_team">Đội ngũ SimpleX</string>
-    <string name="v6_1_better_security_descr">Các giao thức SimpleX đã được xem xét bởi Trail of Bits.</string>
+    <string name="icon_descr_simplex_team">Đội ngũ Inqalaab</string>
+    <string name="v6_1_better_security_descr">Các giao thức Inqalaab đã được xem xét bởi Trail of Bits.</string>
     <string name="v5_3_simpler_incognito_mode">Đã đơn giản hóa chế độ ẩn danh</string>
     <string name="report_reason_community">Vi phạm các nguyên tắc cộng động</string>
     <string name="report_reason_illegal">Nội dung không phù hợp</string>
@@ -1897,14 +1897,14 @@
     <string name="v4_6_chinese_spanish_interface_descr">Xin gửi lời cảm ơn tới các người dùng đã góp công qua Weblate!</string>
     <string name="v5_0_polish_interface_descr">Xin gửi lời cảm ơn tới các người dùng đã góp công qua Weblate!</string>
     <string name="system_mode_toast">Chế độ hệ thống</string>
-    <string name="settings_section_title_support">HỖ TRỢ SIMPLEX CHAT</string>
+    <string name="settings_section_title_support">HỖ TRỢ Inqalaab</string>
     <string name="temporary_file_error">Lỗi tệp tạm thời</string>
     <string name="chat_help_tap_button">Nhấn nút</string>
     <string name="network_option_tcp_connection">Kết nối TCP</string>
     <string name="la_mode_system">Hệ thống</string>
     <string name="whats_new_thanks_to_users_contribute_weblate">Xin gửi lời cảm ơn tới các người dùng đã góp công qua Weblate!</string>
     <string name="contact_tap_to_connect">Nhấn để Kết nối</string>
-    <string name="address_creation_instruction">Nhấn Tạo địa chỉ SimpleX ở menu để tạo sau.</string>
+    <string name="address_creation_instruction">Nhấn Tạo địa chỉ Inqalaab ở menu để tạo sau.</string>
     <string name="group_invitation_tap_to_join_incognito">Nhấn để tham gia một cách ẩn danh</string>
     <string name="theme_system">Hệ thống</string>
     <string name="v6_1_better_calls_descr">Chuyển đổi âm thanh và video trong lúc gọi.</string>
@@ -1912,7 +1912,7 @@
     <string name="error_smp_test_failed_at_step">Kiểm tra thất bại tại bước %s.</string>
     <string name="la_lock_mode_system">Xác thực hệ thống</string>
     <string name="tap_to_scan">Nhấn để quét</string>
-    <string name="thank_you_for_installing_simplex">Cảm ơn bạn đã cài đặt SimpleX Chat!</string>
+    <string name="thank_you_for_installing_simplex">Cảm ơn bạn đã cài đặt Inqalaab!</string>
     <string name="smp_servers_test_server">Kiểm tra máy chủ</string>
     <string name="smp_servers_test_servers">Kiểm tra các máy chủ</string>
     <string name="tap_to_start_new_chat">Nhấn để bắt đầu một cuộc trò chuyện mới</string>
@@ -1942,7 +1942,7 @@
     <string name="onboarding_network_operators_app_will_use_different_operators">Ứng dụng bảo vệ sự riêng tư của bạn bằng cách sử dụng các bên vận hành khác nhau trong mỗi cuộc trò chuyện.</string>
     <string name="system_restricted_background_in_call_desc">Ứng dụng có thể bị đóng sau 1 phút chạy trong nền.</string>
     <string name="periodic_notifications_desc">Ứng dụng tìm nhận tin nhắn mới một cách định kỳ - nó tiêu tốn một vài phần trăm pin mỗi ngày. Ứng dụng không sử dụng thông báo đẩy - dữ liệu ở thiết bị của bạn không được gửi đi tới máy chủ nào.</string>
-    <string name="code_you_scanned_is_not_simplex_link_qr_code">Mã mà bạn đã quét không phải là một mã QR dẫn SimpleX.</string>
+    <string name="code_you_scanned_is_not_simplex_link_qr_code">Mã mà bạn đã quét không phải là một mã QR dẫn Inqalaab.</string>
     <string name="theme">Chủ đề</string>
     <string name="alert_text_msg_bad_hash">Mã băm của tin nhắn trước có sự khác biệt.</string>
     <string name="alert_text_msg_bad_id">ID của tin nhắn tiếp theo là không chính xác (nhỏ hơn hoặc bằng với cái trước).\nViệc này có thể xảy ra do một vài lỗi hoặc khi kết nối bị xâm phạm.</string>
@@ -1971,7 +1971,7 @@
     <string name="the_messaging_and_app_platform_protecting_your_privacy_and_security">Nền tảng ứng dụng và nhắn tin bảo vệ sự riêng tư và bảo mật của bạn.</string>
     <string name="v6_2_network_decentralization_descr">Bên vận hành được cài sẵn thứ hai trong ứng dụng!</string>
     <string name="member_role_will_be_changed_with_notification_chat">Chức vụ sẽ được đổi thành %s. Tất cả mọi người trong cuộc trò chuyện sẽ được thông báo.</string>
-    <string name="the_text_you_pasted_is_not_a_link">Văn bản bạn vừa dán không phải là một đường dẫn SimpleX.</string>
+    <string name="the_text_you_pasted_is_not_a_link">Văn bản bạn vừa dán không phải là một đường dẫn Inqalaab.</string>
     <string name="member_role_will_be_changed_with_invitation">Chức vụ sẽ được đổi thành %s. Thành viên sẽ nhận được một lời mời mới.</string>
     <string name="passphrase_will_be_saved_in_settings">Mật khẩu sẽ được lưu trữ trong cài đặt dưới dạng thuần văn bản sau khi bản đổi nó hoặc khởi động lại ứng dụng.</string>
     <string name="receipts_section_description">Các cài đặt này là cho hồ sơ trò chuyện hiện tại của bạn</string>
@@ -1986,13 +1986,13 @@
     <string name="one_hand_ui_card_title">Chuyển đổi danh sách trò chuyện:</string>
     <string name="remote_ctrl_error_timeout">Thời gian chờ đã hết trong khi kết nối tới máy tính</string>
     <string name="open_port_in_firewall_desc">Để cho phép một ứng dụng di động kết nối tới máy tính, mở cổng này trong tường lửa của bạn, nếu bạn có bật nó lên</string>
-    <string name="to_protect_privacy_simplex_has_ids_for_queues">Để bảo vệ sự riêng tư của bạn, SimpleX sử dụng các ID riêng biệt cho mỗi liên hệ bạn có.</string>
+    <string name="to_protect_privacy_simplex_has_ids_for_queues">Để bảo vệ sự riêng tư của bạn, Inqalaab sử dụng các ID riêng biệt cho mỗi liên hệ bạn có.</string>
     <string name="enter_passphrase_notification_desc">Để nhận thông báo, xin vui lòng nhập mật khẩu cơ sở dữ liệu</string>
     <string name="images_limit_title">Quá nhiều ảnh!</string>
     <string name="videos_limit_title">Quá nhiều video!</string>
     <string name="operator_use_for_sending">Để gửi</string>
     <string name="remote_ctrl_connection_stopped_identity_desc">Đường dẫn này đã được sử dụng với một thiết bị di động khác, xin vui lòng tạo một đường dẫn mới trên máy tính.</string>
-    <string name="la_notice_to_protect_your_information_turn_on_simplex_lock_you_will_be_prompted_to_complete_authentication_before_this_feature_is_enabled">Để bảo vệ thông tin của bạn, bật Khóa SimpleX.\nBạn sẽ được nhắc để hoàn thành xác thực trước khi tính năng này được bật.</string>
+    <string name="la_notice_to_protect_your_information_turn_on_simplex_lock_you_will_be_prompted_to_complete_authentication_before_this_feature_is_enabled">Để bảo vệ thông tin của bạn, bật Khóa Inqalaab.\nBạn sẽ được nhắc để hoàn thành xác thực trước khi tính năng này được bật.</string>
     <string name="this_string_is_not_a_connection_link">Chuỗi ký tự này không phải là một đường dẫn kết nối!</string>
     <string name="call_desktop_permission_denied_title">Để thực hiện các cuộc gọi, cho phép sử dụng mic của bạn. Kết thúc cuộc gọi và thử gọi lại.</string>
     <string name="operator_use_for_messages_receiving">Để nhận</string>
@@ -2006,7 +2006,7 @@
     <string name="to_reveal_profile_enter_password">Để tiết lộ hồ sơ ẩn của bạn, nhập đầy đủ mật khẩu vào trường tìm kiếm trong trang Các hồ sơ trò chuyện của bạn.</string>
     <string name="connect_plan_this_is_your_own_one_time_link">Đây là đường dẫn dùng một lần của riêng bạn!</string>
     <string name="messages_section_description">Cài đặt này áp dụng cho các tin nhắn trong hồ sơ trò chuyện hiện tại của bạn</string>
-    <string name="connect_plan_this_is_your_own_simplex_address">Đây là địa chỉ SimpleX của riêng bạn!</string>
+    <string name="connect_plan_this_is_your_own_simplex_address">Đây là địa chỉ Inqalaab của riêng bạn!</string>
     <string name="to_connect_via_link_title">Để kết nối qua đường dẫn</string>
     <string name="to_protect_against_your_link_replaced_compare_codes">Để bảo vệ đường dẫn của bạn khỏi bị thay thế, bạn có thể so sánh các mã bảo mật liên lạc.</string>
     <string name="private_routing_explanation">Để bảo vệ địa chỉ IP của bạn, định tuyến riêng tư sử dụng các máy chủ SMP của bạn để gửi tin nhắn.</string>
@@ -2082,7 +2082,7 @@
     <string name="operator_use_operator_toggle_description">Sử dụng các máy chủ</string>
     <string name="v5_6_picture_in_picture_calls_descr">Dùng ứng dụng khi đang trong cuộc gọi.</string>
     <string name="verify_connection">Xác minh kết nối</string>
-    <string name="using_simplex_chat_servers">Đang sử dụng các máy chủ SimpleX Chat.</string>
+    <string name="using_simplex_chat_servers">Đang sử dụng các máy chủ Inqalaab.</string>
     <string name="verify_connections">Xác minh các kết nối</string>
     <string name="operator_use_for_messages">Sử dụng cho các tin nhắn</string>
     <string name="network_proxy_username">Tên người dùng</string>
@@ -2092,11 +2092,11 @@
     <string name="connect_use_new_incognito_profile">Sử dụng hồ sơ ẩn danh mới</string>
     <string name="simplex_link_connection">qua %1$s</string>
     <string name="network_socks_toggle_use_socks_proxy">Sử dụng proxy SOCKS</string>
-    <string name="use_chat">Sử dụng SimpleX Chat</string>
+    <string name="use_chat">Sử dụng Inqalaab</string>
     <string name="smp_servers_use_server_for_new_conn">Sử dụng cho các kết nối mới</string>
     <string name="smp_servers_use_server">Sử dụng máy chủ</string>
     <string name="network_enable_socks">Sử dụng proxy SOCKS?</string>
-    <string name="use_simplex_chat_servers__question">Sử dụng các máy chủ SimpleX Chat?</string>
+    <string name="use_simplex_chat_servers__question">Sử dụng các máy chủ Inqalaab?</string>
     <string name="migrate_from_device_verify_passphrase">Xác minh mật khẩu</string>
     <string name="verify_code_with_desktop">Xác minh mã với máy tính</string>
     <string name="use_random_passphrase">Sử dụng mật khẩu ngẫu nhiên</string>
@@ -2193,7 +2193,7 @@
     <string name="chat_item_ttl_year">1 năm</string>
     <string name="change_automatic_chat_deletion_message">Việc này không thể được hoàn tác - các tin nhắn đã được gửi và nhận trong cuộc trò chuyện này sớm hơn thời gian được chọn sẽ bị xóa.</string>
     <string name="chat_preferences_yes">có</string>
-    <string name="you_can_make_address_visible_via_settings">Bạn có thể hiển thị nó cho các liên hệ SimpleX của mình thông qua Cài đặt.</string>
+    <string name="you_can_make_address_visible_via_settings">Bạn có thể hiển thị nó cho các liên hệ Inqalaab của mình thông qua Cài đặt.</string>
     <string name="you_can_create_it_later">Bạn có thể tạo nó sau</string>
     <string name="one_hand_ui_change_instruction">Bạn có thể thay đổi nói trong cài đặt Giao diện.</string>
     <string name="connect_plan_you_are_already_joining_the_group_via_this_link">Bạn đang tham gia nhóm thông qua đường dẫn này.</string>
@@ -2224,7 +2224,7 @@
     <string name="sender_you_pronoun">bạn</string>
     <string name="group_preview_you_are_invited">bạn được mời vào nhóm</string>
     <string name="your_calls">Các cuộc gọi của bạn</string>
-    <string name="you_can_turn_on_lock">Bạn có thể bật Khóa SimpleX thông qua Cài đặt.</string>
+    <string name="you_can_turn_on_lock">Bạn có thể bật Khóa Inqalaab thông qua Cài đặt.</string>
     <string name="you_have_no_chats">Bạn không có cuộc trò chuyện nào</string>
     <string name="you_can_still_view_conversation_with_contact">Bạn vẫn có thể xem cuộc hội thoại với %1$s trong danh sách các cuộc trò chuyện.</string>
     <string name="you_joined_this_group">Bạn đã tham gia nhóm này</string>
@@ -2272,7 +2272,7 @@
     <string name="snd_group_event_member_unblocked">bạn đã bỏ chặn %s</string>
     <string name="your_chat_profile_will_be_sent_to_your_contact">Hồ sơ trò chuyện của bạn sẽ được gửi\ntới liên hệ của bạn</string>
     <string name="description_you_shared_one_time_link_incognito">bạn đã chia sẻ đường dẫn ẩn danh dùng một lần</string>
-    <string name="your_simplex_contact_address">Địa chỉ SimpleX của bạn</string>
+    <string name="your_simplex_contact_address">Địa chỉ Inqalaab của bạn</string>
     <string name="alert_text_connection_pending_they_need_to_be_online_can_delete_and_retry">Liên hệ của bạn cần phải trực tuyến để cho kết nối hoàn thành.\nBạn có thể hủy kết nối này và xóa liên hệ (và thử lại sau với một đường dẫn mới).</string>
     <string name="your_ICE_servers">Các máy chủ ICE của bạn</string>
     <string name="invite_prohibited_description">Bạn đang cố mời liên hệ mà bạn đã chia sẻ một hồ sơ ẩn danh với để tham gia nhóm mà bạn đang dùng hồ sơ chính của mình</string>
@@ -2297,7 +2297,7 @@
     <string name="smp_servers_your_server_address">Địa chỉ máy chủ của bạn</string>
     <string name="your_ice_servers">Các máy chủ ICE của bạn</string>
     <string name="network_proxy_auth_mode_username_password">Thông tin định danh của bạn có thể bị gửi mà không được mã hóa.</string>
-    <string name="your_profile_is_stored_on_device_and_shared_only_with_contacts_simplex_cannot_see_it">Hồ sơ của bạn được lưu trên thiết bị bạn dùng và chỉ được chia sẻ với các liên hệ bạn có. Các máy chủ SimpleX không thể xem hồ sơ của bạn.</string>
+    <string name="your_profile_is_stored_on_device_and_shared_only_with_contacts_simplex_cannot_see_it">Hồ sơ của bạn được lưu trên thiết bị bạn dùng và chỉ được chia sẻ với các liên hệ bạn có. Các máy chủ Inqalaab không thể xem hồ sơ của bạn.</string>
     <string name="switching_profile_error_message">Kết nối của bạn đã bị chuyển tới %s nhưng một lỗi không mong muốn đã xảy ra trong khi chuyển hướng bạn đến hồ sơ.</string>
     <string name="you_will_be_connected_when_group_host_device_is_online">Bạn sẽ được kết nối tới nhóm khi thiết bị của chủ nhóm trực tuyến, xin vui lòng đợi hoặc kiểm tra sau!</string>
     <string name="you_will_be_connected_when_your_contacts_device_is_online">Bạn sẽ được kết nối khi thiết bị của liên hệ bạn trực tuyến, xin vui lòng đợi hoặc kiểm tra sau!</string>
@@ -2348,12 +2348,12 @@
     <string name="unblock_members_for_all_question">Bỏ chặn các thành viên cho tất cả?</string>
     <string name="button_remove_members_question">Xóa các thành viên?</string>
     <string name="onboarding_conditions_privacy_policy_and_conditions_of_use">Chính sách quyền riêng tư và các điều kiện sử dụng.</string>
-    <string name="onboarding_conditions_by_using_you_agree">Bằng việc sử dụng SimpleX Chat, bạn đồng ý:\n- chỉ gửi nội dung hợp pháp trong các nhóm công khai.\n- tôn trọng những người dùng khác - không gửi tin rác.</string>
+    <string name="onboarding_conditions_by_using_you_agree">Bằng việc sử dụng Inqalaab, bạn đồng ý:\n- chỉ gửi nội dung hợp pháp trong các nhóm công khai.\n- tôn trọng những người dùng khác - không gửi tin rác.</string>
     <string name="onboarding_conditions_private_chats_not_accessible">Các cuộc trò chuyện riêng tư, nhóm và liên hệ của bạn không thể truy cập được đối với các bên vận hành máy chủ.</string>
     <string name="onboarding_conditions_accept">Chấp nhận</string>
     <string name="onboarding_conditions_configure_server_operators">Định cấu hình các bên vận hành máy chủ</string>
     <string name="link_requires_newer_app_version_please_upgrade">Đường dẫn này yêu cầu một phiên bản ứng dụng mới hơn. Vui lòng nâng cấp ứng dụng hoặc yêu cầu liên hệ của một gửi cho một đường dẫn tương thích.</string>
-    <string name="simplex_link_channel">Đường dẫn kênh SimpleX</string>
+    <string name="simplex_link_channel">Đường dẫn kênh Inqalaab</string>
     <string name="unsupported_connection_link">Đường dẫn kết nối không được hỗ trợ</string>
     <string name="full_link_button_text">Toàn bộ đường dẫn</string>
     <string name="short_link_button_text">Đường dẫn ngắn</string>

@@ -1,9 +1,9 @@
 /* Bundle display name */
-"CFBundleDisplayName" = "SimpleX NSE";
+"CFBundleDisplayName" = "Inqalaab NSE";
 
 /* Bundle name */
-"CFBundleName" = "SimpleX NSE";
+"CFBundleName" = "Inqalaab NSE";
 
 /* Copyright (human-readable) */
-"NSHumanReadableCopyright" = "Copyright © 2022 SimpleX Chat. Kaikki oikeudet pidätetään.";
+"NSHumanReadableCopyright" = "Copyright © 2022 Inqalaab. Kaikki oikeudet pidätetään.";
 
