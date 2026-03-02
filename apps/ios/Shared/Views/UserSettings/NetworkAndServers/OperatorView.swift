@@ -348,7 +348,7 @@ struct ConditionsTextView: View {
     @State private var failedToLoad: Bool = false
     @State private var conditionsHTML: String? = nil
 
-    let defaultConditionsLink = "https://github.com/simplex-chat/simplex-chat/blob/stable/PRIVACY.md"
+    let defaultConditionsLink = "https://github.com/TheHealer28/Inqalaab/blob/main/PRIVACY.md"
 
     var body: some View {
         viewBody()
@@ -357,7 +357,7 @@ struct ConditionsTextView: View {
                 do {
                     let conditions = try await getUsageConditions()
                     let conditionsText = conditions.1
-                    let parentLink =  "https://github.com/simplex-chat/simplex-chat/blob/\(conditions.0.conditionsCommit)"
+                    let parentLink =  "https://github.com/TheHealer28/Inqalaab/blob/\(conditions.0.conditionsCommit)"
                     let preparedText: String?
                     if let conditionsText {
                         let prepared = prepareMarkdown(conditionsText.trimmingCharacters(in: .whitespacesAndNewlines), parentLink)
@@ -385,7 +385,7 @@ struct ConditionsTextView: View {
                             .fill(Color(uiColor: .secondarySystemGroupedBackground))
                     )
             } else {
-                let conditionsLink = "https://github.com/simplex-chat/simplex-chat/blob/\(usageConditions.conditionsCommit)/PRIVACY.md"
+                let conditionsLink = "https://github.com/TheHealer28/Inqalaab/blob/\(usageConditions.conditionsCommit)/PRIVACY.md"
                 conditionsLinkView(conditionsLink)
             }
         } else if failedToLoad {
@@ -555,12 +555,12 @@ struct SingleOperatorUsageConditionsView: View {
 
 func conditionsLinkButton() -> some View {
     let commit = ChatModel.shared.conditions.currentConditions.conditionsCommit
-    let mdUrl = URL(string: "https://github.com/simplex-chat/simplex-chat/blob/\(commit)/PRIVACY.md") ?? conditionsURL
+    let mdUrl = URL(string: "https://github.com/TheHealer28/Inqalaab/blob/\(commit)/PRIVACY.md") ?? conditionsURL
     return Menu {
         Link(destination: mdUrl) {
             Label("Open conditions", systemImage: "doc")
         }
-        if let commitUrl = URL(string: "https://github.com/simplex-chat/simplex-chat/commit/\(commit)") {
+        if let commitUrl = URL(string: "https://github.com/TheHealer28/Inqalaab/commit/\(commit)") {
             Link(destination: commitUrl) {
                 Label("Open changes", systemImage: "ellipsis")
             }

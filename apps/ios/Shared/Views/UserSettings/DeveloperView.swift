@@ -28,7 +28,7 @@ struct DeveloperView: View {
                             .frame(width: 24, height: 24)
                             .opacity(0.5)
                             .colorMultiply(theme.colors.secondary)
-                        Text("Install [Inqalaab for terminal](https://github.com/simplex-chat/simplex-chat)")
+                        Text("Install [Inqalaab for terminal](https://github.com/TheHealer28/Inqalaab)")
                             .padding(.leading, 36)
                     }
                     NavigationLink {
