@@ -1,5 +1,6 @@
 package chat.simplex.common.views.chatlist
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
 import androidx.compose.runtime.*
@@ -24,10 +25,9 @@ fun InqalaabBottomTabBar(
         MaterialTheme.colors.onBackground, 0.97f
     ).copy(alpha = barAlpha.value)
 
-    Column {
+    Column(Modifier.background(bgColor).navigationBarsPadding()) {
         Divider(color = MaterialTheme.colors.onBackground.copy(alpha = 0.12f))
         BottomNavigation(
-            modifier = Modifier.navigationBarsPadding(),
             backgroundColor = bgColor,
             elevation = 0.dp
         ) {

@@ -4,6 +4,7 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import chat.simplex.common.model.ChatModel
@@ -13,8 +14,9 @@ import chat.simplex.common.views.usersettings.SettingsView
 import kotlinx.coroutines.flow.MutableStateFlow
 
 /**
- * CompositionLocal providing the height of the bottom tab bar.
- * ChatListView reads this to add extra bottom padding in oneHandUI mode.
+ * CompositionLocal providing the height of the bottom tab bar (including system nav bar inset).
+ * ChatListView and SafetyHubView read this to add extra bottom padding so content
+ * doesn't get hidden behind the tab bar.
  */
 val LocalTabBarHeight = staticCompositionLocalOf<Dp> { 0.dp }
 
@@ -27,9 +29,15 @@ fun InqalaabTabHost(
 ) {
     val selectedTab = remember { mutableStateOf(InqalaabTab.CHATS) }
 
+    // Calculate total tab bar height = 56dp tab bar + system navigation bar inset
+    val density = LocalDensity.current
+    val navBarInset = WindowInsets.navigationBars.getBottom(density)
+    val navBarHeightDp = with(density) { navBarInset.toDp() }
+    val totalTabBarHeight = BOTTOM_TAB_BAR_HEIGHT + navBarHeightDp
+
     Box(Modifier.fillMaxSize()) {
         // Content area — switches based on selected tab
-        CompositionLocalProvider(LocalTabBarHeight provides BOTTOM_TAB_BAR_HEIGHT) {
+        CompositionLocalProvider(LocalTabBarHeight provides totalTabBarHeight) {
             when (selectedTab.value) {
                 InqalaabTab.CHATS -> {
                     CompositionLocalProvider(LocalAppBarHandler provides rememberAppBarHandler()) {
@@ -44,7 +52,7 @@ fun InqalaabTabHost(
                 InqalaabTab.SETTINGS -> {
                     CompositionLocalProvider(LocalAppBarHandler provides rememberAppBarHandler()) {
                         // Add bottom padding so scrollable content clears the tab bar
-                        Box(Modifier.padding(bottom = BOTTOM_TAB_BAR_HEIGHT)) {
+                        Box(Modifier.padding(bottom = totalTabBarHeight)) {
                             SettingsView(chatModel, setPerformLA, close = {
                                 // When Settings requests close (e.g., during database update),
                                 // switch back to Chats tab
