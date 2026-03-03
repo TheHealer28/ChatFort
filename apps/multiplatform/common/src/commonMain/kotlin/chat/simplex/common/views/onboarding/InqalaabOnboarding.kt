@@ -108,7 +108,7 @@ fun InqalaabSecurityPledgeScreen() {
     ) {
         Spacer(Modifier.height(40.dp))
 
-        // Shield icon
+        // Shield checkmark icon
         Icon(
             painterResource(MR.images.ic_shield),
             contentDescription = null,
@@ -119,7 +119,7 @@ fun InqalaabSecurityPledgeScreen() {
         Spacer(Modifier.height(24.dp))
 
         Text(
-            "Our Security Pledge",
+            "Your Security Pledge",
             style = MaterialTheme.typography.h4.copy(fontWeight = FontWeight.Bold),
             color = MaterialTheme.colors.onBackground,
             textAlign = TextAlign.Center,
@@ -129,7 +129,7 @@ fun InqalaabSecurityPledgeScreen() {
         Spacer(Modifier.height(8.dp))
 
         Text(
-            "Our promises to you",
+            "We make these promises to you:",
             style = MaterialTheme.typography.body1,
             color = MaterialTheme.colors.secondary,
             textAlign = TextAlign.Center,
@@ -138,29 +138,30 @@ fun InqalaabSecurityPledgeScreen() {
 
         Spacer(Modifier.height(32.dp))
 
-        // 5 numbered promises
-        PledgeItem(1, "We will never collect your personal data or metadata")
+        PledgeItem(1, "Zero data collection", "We collect nothing. No analytics, no telemetry, no usage data. Ever.")
         Spacer(Modifier.height(12.dp))
 
-        PledgeItem(2, "We will never share information with governments or corporations")
+        PledgeItem(2, "No phone number required", "Your identity stays hidden. Connect via QR codes and links only.")
         Spacer(Modifier.height(12.dp))
 
-        PledgeItem(3, "We will always provide tools to protect yourself in emergencies")
+        PledgeItem(3, "Panic mode for emergencies", "Wipe all data instantly if you're ever in danger. One shake is all it takes.")
         Spacer(Modifier.height(12.dp))
 
-        PledgeItem(4, "We will keep the code open source so you never have to trust us blindly")
+        PledgeItem(4, "Community-run servers", "Your messages route through independent servers that no government controls.")
         Spacer(Modifier.height(12.dp))
 
-        PledgeItem(5, "We stand with those who fight for justice and human rights")
+        PledgeItem(5, "Open source & auditable", "Our code is public. Anyone can verify we keep these promises.")
 
         Spacer(Modifier.weight(1f))
 
-        OnboardingActionButton(
+        Button(
+            onClick = { appPrefs.onboardingStage.set(OnboardingStage.Step2_CreateProfile) },
             modifier = Modifier.padding(bottom = 8.dp).fillMaxWidth(),
-            labelId = MR.strings.setup_protection_continue,
-            onboarding = OnboardingStage.Step1_SimpleXInfo,
-            onclick = null
-        )
+            shape = RoundedCornerShape(50),
+            contentPadding = PaddingValues(horizontal = DEFAULT_PADDING * 2, vertical = 17.dp),
+        ) {
+            Text("I understand \u2014 Create my profile", color = Color.White, fontWeight = FontWeight.Medium)
+        }
 
         SectionBottomSpacer()
     }
@@ -201,7 +202,7 @@ private fun ValueCard(icon: Painter, title: String, description: String) {
 }
 
 @Composable
-private fun PledgeItem(number: Int, text: String) {
+private fun PledgeItem(number: Int, title: String, description: String) {
     Row(
         modifier = Modifier
             .fillMaxWidth()
@@ -226,11 +227,19 @@ private fun PledgeItem(number: Int, text: String) {
             )
         }
         Spacer(Modifier.width(12.dp))
-        Text(
-            text,
-            style = MaterialTheme.typography.body1,
-            color = MaterialTheme.colors.onBackground,
-            modifier = Modifier.weight(1f)
-        )
+        Column(Modifier.weight(1f)) {
+            Text(
+                title,
+                style = MaterialTheme.typography.subtitle1.copy(fontWeight = FontWeight.SemiBold),
+                color = MaterialTheme.colors.onBackground
+            )
+            Spacer(Modifier.height(4.dp))
+            Text(
+                description,
+                style = MaterialTheme.typography.body2,
+                color = MaterialTheme.colors.secondary,
+                fontSize = 13.sp
+            )
+        }
     }
 }
