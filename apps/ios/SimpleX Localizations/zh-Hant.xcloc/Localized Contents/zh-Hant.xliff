@@ -2052,9 +2052,9 @@ We will be adding server redundancy to prevent lost messages.</source>
         <target state="translated">遷移錯誤：</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Migration failed. Tap **Skip** below to continue using the current database. Please report the issue to the app developers via chat or email [chat@simplex.chat](mailto:chat@simplex.chat)." xml:space="preserve" approved="no">
-        <source>Migration failed. Tap **Skip** below to continue using the current database. Please report the issue to the app developers via chat or email [chat@simplex.chat](mailto:chat@simplex.chat).</source>
-        <target state="translated">遷移失敗。點擊 **跳過**以繼續使用目前的數據庫。請透過對話或電郵，向應用程式開發人員報告 [chat@simplex.chat](mailto:chat@simplex.chat)。</target>
+      <trans-unit id="Migration failed. Tap **Skip** below to continue using the current database. Please report the issue to the app developers via chat or email [chat@inqalaab.chat](mailto:chat@inqalaab.chat)." xml:space="preserve" approved="no">
+        <source>Migration failed. Tap **Skip** below to continue using the current database. Please report the issue to the app developers via chat or email [chat@inqalaab.chat](mailto:chat@inqalaab.chat).</source>
+        <target state="translated">遷移失敗。點擊 **跳過**以繼續使用目前的數據庫。請透過對話或電郵，向應用程式開發人員報告 [chat@inqalaab.chat](mailto:chat@inqalaab.chat)。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Migration is completed" xml:space="preserve" approved="no">
@@ -3670,9 +3670,9 @@ SimpleX 伺服器並不會看到你的個人檔案。</target>
         <target state="translated">[貢獻](https://github.com/simplex-chat/simplex-chat#contribute)</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="[Send us email](mailto:chat@simplex.chat)" xml:space="preserve" approved="no">
-        <source>[Send us email](mailto:chat@simplex.chat)</source>
-        <target state="translated">[傳送電郵給開發者](mailto:chat@simplex.chat)</target>
+      <trans-unit id="[Send us email](mailto:chat@inqalaab.chat)" xml:space="preserve" approved="no">
+        <source>[Send us email](mailto:chat@inqalaab.chat)</source>
+        <target state="translated">[傳送電郵給開發者](mailto:chat@inqalaab.chat)</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="[Star on GitHub](https://github.com/simplex-chat/simplex-chat)" xml:space="preserve" approved="no">

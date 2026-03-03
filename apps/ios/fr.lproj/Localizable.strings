@@ -29,7 +29,7 @@
 "[Contribute](https://github.com/simplex-chat/simplex-chat#contribute)" = "[Contribuer](https://github.com/simplex-chat/simplex-chat#contribute)";
 
 /* No comment provided by engineer. */
-"[Send us email](mailto:chat@simplex.chat)" = "[Contact par mail](mailto:chat@simplex.chat)";
+"[Send us email](mailto:chat@inqalaab.chat)" = "[Contact par mail](mailto:chat@inqalaab.chat)";
 
 /* No comment provided by engineer. */
 "[Star on GitHub](https://github.com/simplex-chat/simplex-chat)" = "[Star sur GitHub](https://github.com/simplex-chat/simplex-chat)";
@@ -3246,7 +3246,7 @@ snd error text */
 "Migration error:" = "Erreur de migration :";
 
 /* No comment provided by engineer. */
-"Migration failed. Tap **Skip** below to continue using the current database. Please report the issue to the app developers via chat or email [chat@simplex.chat](mailto:chat@simplex.chat)." = "Echec de la migration. Appuyez sur **Passer** ci-dessous pour continuer à utiliser la base de données actuelle. Veuillez signaler le problème aux développeurs de l'app par chat ou par e-mail [chat@simplex.chat](mailto:chat@simplex.chat).";
+"Migration failed. Tap **Skip** below to continue using the current database. Please report the issue to the app developers via chat or email [chat@inqalaab.chat](mailto:chat@inqalaab.chat)." = "Echec de la migration. Appuyez sur **Passer** ci-dessous pour continuer à utiliser la base de données actuelle. Veuillez signaler le problème aux développeurs de l'app par chat ou par e-mail [chat@inqalaab.chat](mailto:chat@inqalaab.chat).";
 
 /* No comment provided by engineer. */
 "Migration is completed" = "La migration est terminée";

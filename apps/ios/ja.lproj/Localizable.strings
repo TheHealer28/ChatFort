@@ -29,7 +29,7 @@
 "[Contribute](https://github.com/simplex-chat/simplex-chat#contribute)" = "[貢献する](https://github.com/simplex-chat/simplex-chat#contribute)";
 
 /* No comment provided by engineer. */
-"[Send us email](mailto:chat@simplex.chat)" = "[メールを送信](mailto:chat@simplex.chat)";
+"[Send us email](mailto:chat@inqalaab.chat)" = "[メールを送信](mailto:chat@inqalaab.chat)";
 
 /* No comment provided by engineer. */
 "[Star on GitHub](https://github.com/simplex-chat/simplex-chat)" = "[GitHub でスターを付ける](https://github.com/simplex-chat/simplex-chat)";
@@ -2167,7 +2167,7 @@ snd error text */
 "Migration error:" = "移行エラー：";
 
 /* No comment provided by engineer. */
-"Migration failed. Tap **Skip** below to continue using the current database. Please report the issue to the app developers via chat or email [chat@simplex.chat](mailto:chat@simplex.chat)." = "移行に失敗しました。現在のデータベースの使用を続けるには、下の **スキップ**をタップします。 チャットまたはメール [chat@simplex.chat](mailto:chat@simplex.chat) でアプリ開発者に問題を報告してください。";
+"Migration failed. Tap **Skip** below to continue using the current database. Please report the issue to the app developers via chat or email [chat@inqalaab.chat](mailto:chat@inqalaab.chat)." = "移行に失敗しました。現在のデータベースの使用を続けるには、下の **スキップ**をタップします。 チャットまたはメール [chat@inqalaab.chat](mailto:chat@inqalaab.chat) でアプリ開発者に問題を報告してください。";
 
 /* No comment provided by engineer. */
 "Migration is completed" = "移行が完了しました";

@@ -4801,9 +4801,9 @@ This is your link for group %@!</source>
         <target>移行エラー：</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Migration failed. Tap **Skip** below to continue using the current database. Please report the issue to the app developers via chat or email [chat@simplex.chat](mailto:chat@simplex.chat)." xml:space="preserve">
-        <source>Migration failed. Tap **Skip** below to continue using the current database. Please report the issue to the app developers via chat or email [chat@simplex.chat](mailto:chat@simplex.chat).</source>
-        <target>移行に失敗しました。現在のデータベースの使用を続けるには、下の **スキップ**をタップします。 チャットまたはメール [chat@simplex.chat](mailto:chat@simplex.chat) でアプリ開発者に問題を報告してください。</target>
+      <trans-unit id="Migration failed. Tap **Skip** below to continue using the current database. Please report the issue to the app developers via chat or email [chat@inqalaab.chat](mailto:chat@inqalaab.chat)." xml:space="preserve">
+        <source>Migration failed. Tap **Skip** below to continue using the current database. Please report the issue to the app developers via chat or email [chat@inqalaab.chat](mailto:chat@inqalaab.chat).</source>
+        <target>移行に失敗しました。現在のデータベースの使用を続けるには、下の **スキップ**をタップします。 チャットまたはメール [chat@inqalaab.chat](mailto:chat@inqalaab.chat) でアプリ開発者に問題を報告してください。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Migration is completed" xml:space="preserve">
@@ -8754,9 +8754,9 @@ Repeat connection request?</source>
         <target>[貢献する](https://github.com/simplex-chat/simplex-chat#contribute)</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="[Send us email](mailto:chat@simplex.chat)" xml:space="preserve">
-        <source>[Send us email](mailto:chat@simplex.chat)</source>
-        <target>[メールを送信](mailto:chat@simplex.chat)</target>
+      <trans-unit id="[Send us email](mailto:chat@inqalaab.chat)" xml:space="preserve">
+        <source>[Send us email](mailto:chat@inqalaab.chat)</source>
+        <target>[メールを送信](mailto:chat@inqalaab.chat)</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="[Star on GitHub](https://github.com/simplex-chat/simplex-chat)" xml:space="preserve">

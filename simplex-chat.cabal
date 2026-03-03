@@ -9,7 +9,7 @@ version:        6.4.10.0
 category:       Web, System, Services, Cryptography
 homepage:       https://github.com/simplex-chat/simplex-chat#readme
 author:         simplex.chat
-maintainer:     chat@simplex.chat
+maintainer:     chat@inqalaab.chat
 copyright:      2020-22 simplex.chat
 license:        AGPL-3
 license-file:   LICENSE

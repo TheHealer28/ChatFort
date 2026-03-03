@@ -29,7 +29,7 @@
 "[Contribute](https://github.com/simplex-chat/simplex-chat#contribute)" = "[Допринеси](https://github.com/simplex-chat/simplex-chat#contribute)";
 
 /* No comment provided by engineer. */
-"[Send us email](mailto:chat@simplex.chat)" = "[Изпратете ни имейл](mailto:chat@simplex.chat)";
+"[Send us email](mailto:chat@inqalaab.chat)" = "[Изпратете ни имейл](mailto:chat@inqalaab.chat)";
 
 /* No comment provided by engineer. */
 "[Star on GitHub](https://github.com/simplex-chat/simplex-chat)" = "[Звезда в GitHub](https://github.com/simplex-chat/simplex-chat)";
@@ -2847,7 +2847,7 @@ snd error text */
 "Migration error:" = "Грешка при мигриране:";
 
 /* No comment provided by engineer. */
-"Migration failed. Tap **Skip** below to continue using the current database. Please report the issue to the app developers via chat or email [chat@simplex.chat](mailto:chat@simplex.chat)." = "Мигрирането е неуспешно. Докоснете **Пропускане** по-долу, за да продължите да използвате текущата база данни. Моля, докладвайте проблема на разработчиците на приложението чрез чат или имейл [chat@simplex.chat](mailto:chat@simplex.chat).";
+"Migration failed. Tap **Skip** below to continue using the current database. Please report the issue to the app developers via chat or email [chat@inqalaab.chat](mailto:chat@inqalaab.chat)." = "Мигрирането е неуспешно. Докоснете **Пропускане** по-долу, за да продължите да използвате текущата база данни. Моля, докладвайте проблема на разработчиците на приложението чрез чат или имейл [chat@inqalaab.chat](mailto:chat@inqalaab.chat).";
 
 /* No comment provided by engineer. */
 "Migration is completed" = "Миграцията е завършена";
