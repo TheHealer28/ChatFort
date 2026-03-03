@@ -4,7 +4,6 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import chat.simplex.common.model.ChatModel
@@ -20,6 +19,11 @@ import kotlinx.coroutines.flow.MutableStateFlow
  */
 val LocalTabBarHeight = staticCompositionLocalOf<Dp> { 0.dp }
 
+// 56dp for the tab bar itself + ~48dp typical system nav bar.
+// The actual system nav bar padding is handled by navigationBarsPadding() in InqalaabBottomTabBar.
+// This constant just needs to be large enough to prevent content from hiding behind the tab bar.
+private val TOTAL_TAB_BAR_HEIGHT = 110.dp
+
 @Composable
 fun InqalaabTabHost(
     chatModel: ChatModel,
@@ -29,15 +33,9 @@ fun InqalaabTabHost(
 ) {
     val selectedTab = remember { mutableStateOf(InqalaabTab.CHATS) }
 
-    // Calculate total tab bar height = 56dp tab bar + system navigation bar inset
-    val density = LocalDensity.current
-    val navBarInset = WindowInsets.navigationBars.getBottom(density)
-    val navBarHeightDp = with(density) { navBarInset.toDp() }
-    val totalTabBarHeight = BOTTOM_TAB_BAR_HEIGHT + navBarHeightDp
-
     Box(Modifier.fillMaxSize()) {
         // Content area — switches based on selected tab
-        CompositionLocalProvider(LocalTabBarHeight provides totalTabBarHeight) {
+        CompositionLocalProvider(LocalTabBarHeight provides TOTAL_TAB_BAR_HEIGHT) {
             when (selectedTab.value) {
                 InqalaabTab.CHATS -> {
                     CompositionLocalProvider(LocalAppBarHandler provides rememberAppBarHandler()) {
@@ -51,11 +49,8 @@ fun InqalaabTabHost(
                 }
                 InqalaabTab.SETTINGS -> {
                     CompositionLocalProvider(LocalAppBarHandler provides rememberAppBarHandler()) {
-                        // Add bottom padding so scrollable content clears the tab bar
-                        Box(Modifier.padding(bottom = totalTabBarHeight)) {
+                        Box(Modifier.padding(bottom = TOTAL_TAB_BAR_HEIGHT)) {
                             SettingsView(chatModel, setPerformLA, close = {
-                                // When Settings requests close (e.g., during database update),
-                                // switch back to Chats tab
                                 selectedTab.value = InqalaabTab.CHATS
                             })
                         }
@@ -64,8 +59,8 @@ fun InqalaabTabHost(
             }
         }
 
-        // Bottom tab bar — positioned at bottom, overlaps content
-        // Content views add bottom padding via LocalTabBarHeight to avoid overlap
+        // Bottom tab bar — positioned at bottom
+        // navigationBarsPadding() inside InqalaabBottomTabBar pushes it above system nav buttons
         Column(Modifier.align(Alignment.BottomCenter)) {
             InqalaabBottomTabBar(
                 selectedTab = selectedTab.value,
