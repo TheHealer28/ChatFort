@@ -1,11 +1,16 @@
 /* Urdu Localization for Inqalaab - انقلاب */
+/* Expanded translation covering all major user-facing sections */
 
-/* Tab Bar */
+/* ============================================ */
+/* Tab Bar                                       */
+/* ============================================ */
 "Chats" = "بات چیت";
 "Safety Hub" = "حفاظتی مرکز";
 "Settings" = "ترتیبات";
 
-/* Onboarding */
+/* ============================================ */
+/* Onboarding                                    */
+/* ============================================ */
 "Welcome to Inqalaab" = "انقلاب میں خوش آمدید";
 "Secure communication for the resistance" = "مزاحمت کے لیے محفوظ مواصلات";
 "Built for Activists" = "سرگرم کارکنوں کے لیے بنایا گیا";
@@ -21,8 +26,13 @@
 "I Understand" = "میں سمجھتا/سمجھتی ہوں";
 "Continue" = "جاری رکھیں";
 "Get Started" = "شروع کریں";
+"Create your profile" = "اپنا پروفائل بنائیں";
+"Your profile, contacts and delivered messages are stored on your device." = "آپ کا پروفائل، رابطے اور پیغامات آپ کے آلے پر محفوظ ہیں۔";
+"Create" = "بنائیں";
 
-/* Safety Hub */
+/* ============================================ */
+/* Safety Hub                                    */
+/* ============================================ */
 "Server Connection" = "سرور کنکشن";
 "Connected" = "منسلک";
 "Connecting" = "منسلک ہو رہا ہے";
@@ -38,8 +48,15 @@
 "Digital Security Guide" = "ڈیجیٹل سیکیورٹی گائیڈ";
 "Anti-Surveillance Tips" = "نگرانی مخالف تجاویز";
 "Emergency Contacts for Activists" = "کارکنوں کے لیے ایمرجنسی رابطے";
+"protections active" = "تحفظات فعال";
+"Emergency" = "ایمرجنسی";
+"Emergency Wipe Now" = "ابھی ایمرجنسی صفایا";
+"Link Previews Disabled" = "لنک پیش نظارہ غیر فعال";
+"Private Notifications" = "نجی اطلاعات";
 
-/* Panic Mode */
+/* ============================================ */
+/* Panic Mode                                    */
+/* ============================================ */
 "Panic Mode" = "پینک موڈ";
 "Configure Panic Mode" = "پینک موڈ ترتیب دیں";
 "Shake device 5 times to activate" = "فعال کرنے کے لیے ڈیوائس کو 5 بار ہلائیں";
@@ -48,36 +65,399 @@
 "Shake Gesture" = "ہلانے کا اشارہ";
 "Panic Passcode" = "پینک پاس کوڈ";
 "Test Panic Mode" = "پینک موڈ ٹیسٹ کریں";
+"Enable Panic Mode" = "پینک موڈ فعال کریں";
+"Disable Panic Mode" = "پینک موڈ غیر فعال کریں";
+"Shake Count" = "ہلانے کی تعداد";
+"What Gets Deleted" = "کیا حذف ہوگا";
+"All messages and conversations" = "تمام پیغامات اور بات چیت";
+"All contacts and groups" = "تمام رابطے اور گروپس";
+"Your profile" = "آپ کا پروفائل";
+"Server connections" = "سرور کنکشنز";
+"All media and files" = "تمام میڈیا اور فائلیں";
+"Wipe in progress..." = "صفایا جاری ہے...";
+"Data wiped successfully" = "ڈیٹا کامیابی سے حذف ہو گیا";
 
-/* Chat List */
+/* ============================================ */
+/* Settings Screen                               */
+/* ============================================ */
+"Your settings" = "آپ کی ترتیبات";
+"Notifications" = "اطلاعات";
+"Network & servers" = "نیٹ ورک اور سرورز";
+"Audio & video calls" = "آڈیو اور ویڈیو کالز";
+"Privacy & security" = "رازداری اور سیکیورٹی";
+"Appearance" = "ظاہری شکل";
+"Chat database" = "چیٹ ڈیٹا بیس";
+"Migrate to another device" = "دوسرے آلے میں منتقل کریں";
+"Help" = "مدد";
+"How to use it" = "استعمال کا طریقہ";
+"What's new" = "نیا کیا ہے";
+"About Inqalaab" = "انقلاب کے بارے میں";
+"Support Inqalaab" = "انقلاب کی حمایت کریں";
+"Rate the app" = "ایپ کی درجہ بندی کریں";
+"Star on GitHub" = "گٹ ہب پر ستارہ دیں";
+"Develop" = "ترقی";
+"Developer tools" = "ڈویلپر ٹولز";
+"Database passphrase & export" = "ڈیٹا بیس پاسفریز اور ایکسپورٹ";
+"Your chat profiles" = "آپ کے چیٹ پروفائلز";
+"Your current profile" = "آپ کا موجودہ پروفائل";
+"Connect to desktop" = "ڈیسک ٹاپ سے جوڑیں";
+"Your preferences" = "آپ کی ترجیحات";
+
+/* ============================================ */
+/* Privacy & Security Settings                   */
+/* ============================================ */
+"Your privacy" = "آپ کی رازداری";
+"Device" = "آلہ";
+"Inqalaab Lock" = "انقلاب لاک";
+"Off" = "بند";
+"Protect app screen" = "ایپ سکرین محفوظ کریں";
+"Send link previews" = "لنک پیش نظارہ بھیجیں";
+"Remove link tracking" = "لنک ٹریکنگ ہٹائیں";
+"Show last messages" = "آخری پیغامات دکھائیں";
+"Message draft" = "پیغام مسودہ";
+"Encrypt local files" = "مقامی فائلیں انکرپٹ کریں";
+"Auto-accept images" = "تصاویر خودکار قبول کریں";
+"Blur media" = "میڈیا دھندلا کریں";
+"Soft" = "ہلکا";
+"Medium" = "درمیانہ";
+"Strong" = "مضبوط";
+"Protect IP address" = "آئی پی ایڈریس محفوظ کریں";
+"Files" = "فائلیں";
+"Contact requests from groups" = "گروپس سے رابطے کی درخواستیں";
+"Auto-accept" = "خودکار قبول";
+"Send delivery receipts to" = "وصولی کی تصدیق بھیجیں";
+"Small groups (max 20)" = "چھوٹے گروپس (زیادہ سے زیادہ 20)";
+"Enable (keep overrides)" = "فعال کریں (اوور رائیڈز رکھیں)";
+"Disable (keep overrides)" = "غیر فعال کریں (اوور رائیڈز رکھیں)";
+"Enable for all" = "سب کے لیے فعال کریں";
+"Disable for all" = "سب کے لیے غیر فعال کریں";
+"Enable lock" = "لاک فعال کریں";
+"Lock mode" = "لاک موڈ";
+"Lock after" = "اس کے بعد لاک";
+"Immediately" = "فوری طور پر";
+"seconds" = "سیکنڈ";
+"minutes" = "منٹ";
+"Allow sharing" = "شیئرنگ کی اجازت دیں";
+"Self-destruct passcode" = "خود تباہی پاس کوڈ";
+"Enable self-destruct" = "خود تباہی فعال کریں";
+"Change passcode" = "پاس کوڈ تبدیل کریں";
+"Change self-destruct passcode" = "خود تباہی پاس کوڈ تبدیل کریں";
+"Self-destruct" = "خود تباہی";
+"All app data is deleted" = "تمام ایپ ڈیٹا حذف ہو جائے گا";
+"Set passcode" = "پاس کوڈ مقرر کریں";
+"Passcode set!" = "پاس کوڈ مقرر ہو گیا!";
+"Passcode changed!" = "پاس کوڈ تبدیل ہو گیا!";
+"Self-destruct passcode enabled!" = "خود تباہی پاس کوڈ فعال!";
+"Self-destruct passcode changed!" = "خود تباہی پاس کوڈ تبدیل ہو گیا!";
+"Passcode not changed!" = "پاس کوڈ تبدیل نہیں ہوا!";
+"Please remember or store it securely" = "براہ کرم یاد رکھیں یا محفوظ طریقے سے رکھیں";
+"If you enter this passcode when opening the app, all app data will be irreversibly removed!" = "اگر آپ ایپ کھولتے وقت یہ پاس کوڈ داخل کریں گے تو تمام ڈیٹا مستقل طور پر حذف ہو جائے گا!";
+"System" = "سسٹم";
+"Passcode" = "پاس کوڈ";
+"Current Passcode" = "موجودہ پاس کوڈ";
+
+/* ============================================ */
+/* Appearance Settings                           */
+/* ============================================ */
+"Themes" = "تھیمز";
+"Message shape" = "پیغام کی شکل";
+"Corner" = "کونا";
+"Profile images" = "پروفائل تصاویر";
+"App icon" = "ایپ آئیکن";
+"Remove image" = "تصویر ہٹائیں";
+"Customize theme" = "تھیم حسب ضرورت بنائیں";
+"Chat colors" = "چیٹ رنگ";
+"Reset colors" = "رنگ ری سیٹ کریں";
+"Export theme" = "تھیم ایکسپورٹ کریں";
+"Import theme" = "تھیم امپورٹ کریں";
+"Profile theme" = "پروفائل تھیم";
+"Interface colors" = "انٹرفیس رنگ";
+"Language / زبان" = "زبان / Language";
+
+/* ============================================ */
+/* Notifications                                 */
+/* ============================================ */
+"Push notifications" = "پش اطلاعات";
+"Send notifications" = "اطلاعات بھیجیں";
+"Show preview" = "پیش نظارہ دکھائیں";
+"Test notifications" = "اطلاعات کی جانچ کریں";
+"Open Settings" = "ترتیبات کھولیں";
+"Notifications status" = "اطلاعات کی حالت";
+"Notifications error" = "اطلاعات کی خرابی";
+"No device token!" = "آلے کا ٹوکن نہیں!";
+"Server test failed!" = "سرور ٹیسٹ ناکام!";
+"Error enabling notifications" = "اطلاعات فعال کرنے میں خرابی";
+"Turn off" = "بند کریں";
+"Enable" = "فعال کریں";
+"Most private" = "سب سے زیادہ نجی";
+"More private" = "زیادہ نجی";
+"Recommended" = "تجویز کردہ";
+"Check messages when allowed" = "اجازت ہونے پر پیغامات چیک کریں";
+"Check messages every 20 min" = "ہر 20 منٹ میں پیغامات چیک کریں";
+"E2E encrypted notifications" = "اینڈ ٹو اینڈ انکرپٹڈ اطلاعات";
+"Use only local notifications?" = "صرف مقامی اطلاعات استعمال کریں؟";
+"Enable periodic notifications?" = "وقفے وقفے سے اطلاعات فعال کریں؟";
+"Enable instant notifications?" = "فوری اطلاعات فعال کریں؟";
+
+/* ============================================ */
+/* Chat List                                     */
+/* ============================================ */
+"Your Inqalaab Address" = "آپ کا انقلاب ایڈریس";
+"Show this QR code to connect" = "جڑنے کے لیے یہ QR کوڈ دکھائیں";
+"Scan each other's code to chat securely" = "محفوظ بات چیت کے لیے ایک دوسرے کا کوڈ سکین کریں";
+"No filtered chats" = "کوئی فلٹر شدہ بات چیت نہیں";
+"No chats in list" = "فہرست میں کوئی بات چیت نہیں";
+"No unread chats" = "کوئی غیر پڑھی بات چیت نہیں";
+"No chats" = "کوئی بات چیت نہیں";
+"No chats found" = "کوئی بات چیت نہیں ملی";
+"Add list" = "فہرست شامل کریں";
+"All" = "سب";
+"Inqalaab address" = "انقلاب ایڈریس";
+"Reconnect servers?" = "سرورز دوبارہ جوڑیں؟";
+"Reconnect all connected servers to force message delivery" = "پیغامات کی ترسیل کے لیے تمام سرورز دوبارہ جوڑیں";
 "Start a secure conversation" = "ایک محفوظ بات چیت شروع کریں";
 "Your conversations are protected with end-to-end encryption" = "آپ کی بات چیت اینڈ ٹو اینڈ انکرپشن سے محفوظ ہے";
 
-/* Common */
+/* ============================================ */
+/* New Chat / Connection                         */
+/* ============================================ */
 "New chat" = "نئی بات چیت";
+"1-time link" = "ایک وقتی لنک";
+"Connect via link" = "لنک سے جڑیں";
+"Keep unused invitation?" = "غیر استعمال شدہ دعوت رکھیں؟";
+"You can view invitation link again in connection details" = "آپ کنکشن کی تفصیلات میں دعوتی لنک دوبارہ دیکھ سکتے ہیں";
+"Keep" = "رکھیں";
+"Scan QR code" = "QR کوڈ سکین کریں";
+"Your QR code" = "آپ کا QR کوڈ";
+"Share link" = "لنک شیئر کریں";
+"Paste link" = "لنک پیسٹ کریں";
+"Add contact" = "رابطہ شامل کریں";
+"Create group" = "گروپ بنائیں";
+"Join group" = "گروپ میں شامل ہوں";
+"Invite members" = "اراکین کو مدعو کریں";
+"Contact already exists" = "رابطہ پہلے سے موجود ہے";
+"You are already connected to %@" = "آپ پہلے سے %@ سے جڑے ہوئے ہیں";
+
+/* ============================================ */
+/* Chat / Conversation                           */
+/* ============================================ */
+"Message…" = "پیغام…";
+"Reply" = "جواب دیں";
+"Forward" = "آگے بھیجیں";
+"Copy" = "کاپی کریں";
+"Select" = "منتخب کریں";
+"Edit" = "ترمیم کریں";
+"Delete message" = "پیغام حذف کریں";
+"Delete for everyone" = "سب کے لیے حذف کریں";
+"Delete for me" = "میرے لیے حذف کریں";
+"Moderate" = "ناظم حذف";
+"Info" = "معلومات";
+"Sent" = "بھیجا گیا";
+"Received" = "موصول ہوا";
+"Read" = "پڑھا گیا";
+"Sending…" = "بھیج رہا ہے…";
+"Send" = "بھیجیں";
+"voice message" = "صوتی پیغام";
+"Voice message…" = "صوتی پیغام…";
+"image" = "تصویر";
+"video" = "ویڈیو";
+"file" = "فائل";
+"Messages" = "پیغامات";
+"No messages" = "کوئی پیغام نہیں";
+"Disappearing message" = "غائب ہونے والا پیغام";
+"Message deleted" = "پیغام حذف ہو گیا";
+"marked deleted" = "حذف شدہ نشان زد";
+"moderated" = "ناظم نے حذف کیا";
+"Edited" = "ترمیم شدہ";
+"Send disappearing message" = "غائب ہونے والا پیغام بھیجیں";
+"This message will disappear" = "یہ پیغام غائب ہو جائے گا";
+"Live message" = "لائیو پیغام";
+"Send live message" = "لائیو پیغام بھیجیں";
+"Attach" = "منسلک کریں";
+"Take photo" = "تصویر لیں";
+"Choose from library" = "لائبریری سے منتخب کریں";
+"Record voice message" = "صوتی پیغام ریکارڈ کریں";
+
+/* ============================================ */
+/* Contact & Profile                             */
+/* ============================================ */
 "Contacts" = "رابطے";
 "Profile" = "پروفائل";
+"Display name" = "ظاہری نام";
+"Full name" = "پورا نام";
+"Edit profile" = "پروفائل میں ترمیم";
+"Save and notify contacts" = "محفوظ کریں اور رابطوں کو مطلع کریں";
+"Save" = "محفوظ کریں";
+"Clear chat" = "بات چیت صاف کریں";
+"Clear chat?" = "بات چیت صاف کریں؟";
+"Delete contact" = "رابطہ حذف کریں";
+"Delete contact?" = "رابطہ حذف کریں؟";
+"Delete group" = "گروپ حذف کریں";
+"Delete group?" = "گروپ حذف کریں؟";
+"Leave group" = "گروپ چھوڑیں";
+"Leave group?" = "گروپ چھوڑیں؟";
+"Group members" = "گروپ کے اراکین";
+"Member" = "رکن";
+"Admin" = "ایڈمن";
+"Owner" = "مالک";
+"Observer" = "مبصر";
+"removed" = "ہٹایا گیا";
+"left" = "چھوڑ دیا";
+"invited" = "مدعو کیا گیا";
+"connecting" = "جڑ رہا ہے";
+"complete" = "مکمل";
+"unknown" = "نامعلوم";
+"creator" = "بانی";
+"Block member" = "رکن کو بلاک کریں";
+"Unblock member" = "رکن کو ان بلاک کریں";
+"Remove member" = "رکن کو ہٹائیں";
+"Change role" = "کردار تبدیل کریں";
+
+/* ============================================ */
+/* Nearby P2P                                    */
+/* ============================================ */
+"Nearby" = "قریبی";
+"Nearby Mode" = "قریبی موڈ";
+"Searching for nearby peers..." = "قریبی لوگوں کی تلاش...";
+"connected" = "منسلک";
+"found nearby" = "قریب میں ملا";
+"Peer" = "ساتھی";
+"Connecting" = "جڑ رہا ہے";
+"Discovered" = "دریافت ہوا";
+"Offline" = "آف لائن";
+"Nearby Conversations" = "قریبی بات چیت";
+"No nearby peers found" = "کوئی قریبی ساتھی نہیں ملا";
+"Make sure Bluetooth and Wi-Fi are enabled" = "یقینی بنائیں کہ بلوٹوتھ اور وائی فائی فعال ہیں";
+
+/* ============================================ */
+/* Network & Servers                             */
+/* ============================================ */
+"Your servers" = "آپ کے سرورز";
+"Message servers" = "پیغام سرورز";
+"Media & file servers" = "میڈیا اور فائل سرورز";
+"Use SOCKS proxy" = "SOCKS پراکسی استعمال کریں";
+"Use .onion hosts" = ".onion ہوسٹس استعمال کریں";
+"No" = "نہیں";
+"When available" = "دستیاب ہونے پر";
+"Required" = "ضروری";
+"Transport isolation" = "ٹرانسپورٹ آئسولیشن";
+"Use direct internet connection" = "براہ راست انٹرنیٹ کنکشن استعمال کریں";
+"Server address" = "سرور ایڈریس";
+"Test server" = "سرور ٹیسٹ کریں";
+"Connected to server" = "سرور سے جڑا ہوا";
+"Connection failed" = "کنکشن ناکام";
+
+/* ============================================ */
+/* Calls                                         */
+/* ============================================ */
+"Audio call" = "آڈیو کال";
+"Video call" = "ویڈیو کال";
+"Calling…" = "کال ہو رہی ہے…";
+"Ringing…" = "گھنٹی بج رہی ہے…";
+"In call" = "کال میں";
+"Call ended" = "کال ختم";
+"Missed call" = "چھوٹی ہوئی کال";
+"connecting call" = "کال سے جڑ رہا ہے…";
+"End call" = "کال ختم کریں";
+"Mute" = "خاموش";
+"Unmute" = "آواز";
+"Speaker" = "اسپیکر";
+"Flip camera" = "کیمرہ بدلیں";
+"Accept" = "قبول کریں";
+"Reject" = "رد کریں";
+"Incoming call" = "آنے والی کال";
+
+/* ============================================ */
+/* Database                                      */
+/* ============================================ */
+"Your chat database" = "آپ کا چیٹ ڈیٹا بیس";
+"Export database" = "ڈیٹا بیس ایکسپورٹ کریں";
+"Import database" = "ڈیٹا بیس امپورٹ کریں";
+"Delete database" = "ڈیٹا بیس حذف کریں";
+"Database passphrase" = "ڈیٹا بیس پاسفریز";
+"Change passphrase" = "پاسفریز تبدیل کریں";
+"Remove passphrase" = "پاسفریز ہٹائیں";
+"Set passphrase" = "پاسفریز مقرر کریں";
+"Stop chat" = "چیٹ بند کریں";
+"Start chat" = "چیٹ شروع کریں";
+"Chat is stopped" = "چیٹ بند ہے";
+
+/* ============================================ */
+/* Common Actions & Alerts                       */
+/* ============================================ */
 "Delete" = "حذف کریں";
 "Cancel" = "منسوخ کریں";
 "OK" = "ٹھیک ہے";
 "Done" = "ہو گیا";
-"Save" = "محفوظ کریں";
 "Error" = "خرابی";
 "Warning" = "انتباہ";
 "Search" = "تلاش";
 "Share" = "شیئر کریں";
+"Yes" = "ہاں";
+"No" = "نہیں";
+"Back" = "واپس";
+"Close" = "بند کریں";
+"Open" = "کھولیں";
+"Retry" = "دوبارہ کوشش";
+"Reset" = "ری سیٹ";
+"Confirm" = "تصدیق کریں";
+"Update" = "اپ ڈیٹ";
+"Loading…" = "لوڈ ہو رہا ہے…";
+"Please wait…" = "براہ کرم انتظار کریں…";
+"Are you sure?" = "کیا آپ کو یقین ہے؟";
+"This cannot be undone!" = "یہ واپس نہیں ہو سکتا!";
+"Something went wrong" = "کچھ غلط ہو گیا";
 
-/* call status */
-"connecting call" = "کال سے جڑ رہا ہے…";
-
-/* No comment provided by engineer. */
+/* ============================================ */
+/* Connection Status                             */
+/* ============================================ */
 "Connecting server…" = "سرور سے جڑ رہا ہے…";
-
-/* No comment provided by engineer. */
 "Connecting server… (error: %@)" = "سرور سے جڑ رہا ہے… (خرابی: %@)";
-
-/* rcv group event chat item */
-"member connected" = "منسلک ہو گیا";
-
-/* No comment provided by engineer. */
+"member connected" = "رکن منسلک ہو گیا";
 "No group!" = "گروپ نہیں ملا!";
+"Waiting for connection…" = "کنکشن کا انتظار…";
+"Contact is connected" = "رابطہ منسلک ہے";
+"Contact connecting" = "رابطہ جڑ رہا ہے";
+"Connection request sent!" = "کنکشن کی درخواست بھیج دی!";
+
+/* ============================================ */
+/* Incognito Mode                                */
+/* ============================================ */
+"Incognito" = "پوشیدہ";
+"Incognito mode" = "پوشیدہ موڈ";
+"Your real profile will not be sent to contacts" = "آپ کا اصل پروفائل رابطوں کو نہیں بھیجا جائے گا";
+
+/* ============================================ */
+/* Media & Files                                 */
+/* ============================================ */
+"Photo" = "تصویر";
+"Video" = "ویڈیو";
+"File" = "فائل";
+"Voice message" = "صوتی پیغام";
+"Camera" = "کیمرہ";
+"Gallery" = "گیلری";
+"Document" = "دستاویز";
+"Download" = "ڈاؤن لوڈ";
+"Downloaded" = "ڈاؤن لوڈ ہو گیا";
+"Uploading" = "اپ لوڈ ہو رہا ہے";
+"Download file" = "فائل ڈاؤن لوڈ کریں";
+"Cancel download" = "ڈاؤن لوڈ منسوخ کریں";
+"Save to gallery" = "گیلری میں محفوظ کریں";
+"Saved" = "محفوظ ہو گیا";
+
+/* ============================================ */
+/* Time Intervals                                */
+/* ============================================ */
+"off" = "بند";
+"30 seconds" = "30 سیکنڈ";
+"1 minute" = "1 منٹ";
+"5 minutes" = "5 منٹ";
+"30 minutes" = "30 منٹ";
+"1 hour" = "1 گھنٹہ";
+"8 hours" = "8 گھنٹے";
+"1 day" = "1 دن";
+"1 week" = "1 ہفتہ";
+"1 month" = "1 مہینہ";
+"now" = "ابھی";
+"today" = "آج";
+"yesterday" = "کل";
