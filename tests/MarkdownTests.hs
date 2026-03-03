@@ -254,14 +254,14 @@ email = Markdown $ Just Email
 textWithEmail :: Spec
 textWithEmail = describe "text with Email" do
   it "correct markdown" do
-    "chat@simplex.chat" <==> email "chat@simplex.chat"
-    "test chat@simplex.chat" <==> "test " <> email "chat@simplex.chat"
+    "chat@inqalaab.chat" <==> email "chat@inqalaab.chat"
+    "test chat@inqalaab.chat" <==> "test " <> email "chat@inqalaab.chat"
     "test chat+123@simplex.chat" <==> "test " <> email "chat+123@simplex.chat"
     "test chat.chat+123@simplex.chat" <==> "test " <> email "chat.chat+123@simplex.chat"
-    "chat@simplex.chat test" <==> email "chat@simplex.chat" <> " test"
-    "test1 chat@simplex.chat test2" <==> "test1 " <> email "chat@simplex.chat" <> " test2"
-    "test chat@simplex.chat." <==> "test " <> email "chat@simplex.chat" <> "."
-    "test chat@simplex.chat..." <==> "test " <> email "chat@simplex.chat" <> "..."
+    "chat@inqalaab.chat test" <==> email "chat@inqalaab.chat" <> " test"
+    "test1 chat@inqalaab.chat test2" <==> "test1 " <> email "chat@inqalaab.chat" <> " test2"
+    "test chat@inqalaab.chat." <==> "test " <> email "chat@inqalaab.chat" <> "."
+    "test chat@inqalaab.chat..." <==> "test " <> email "chat@inqalaab.chat" <> "..."
   it "ignored as email markdown" do
     "chat @simplex.chat" <==> "chat " <> mention "simplex.chat" "@simplex.chat"
     "this is chat @simplex.chat" <==> "this is chat " <> mention "simplex.chat" "@simplex.chat"

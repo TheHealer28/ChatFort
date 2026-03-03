@@ -29,7 +29,7 @@
 "[Contribute](https://github.com/simplex-chat/simplex-chat#contribute)" = "[贡献](https://github.com/simplex-chat/simplex-chat#contribute)";
 
 /* No comment provided by engineer. */
-"[Send us email](mailto:chat@simplex.chat)" = "[给我们发电邮](mailto:chat@simplex.chat)";
+"[Send us email](mailto:chat@inqalaab.chat)" = "[给我们发电邮](mailto:chat@inqalaab.chat)";
 
 /* No comment provided by engineer. */
 "[Star on GitHub](https://github.com/simplex-chat/simplex-chat)" = "[在 GitHub 上加星](https://github.com/simplex-chat/simplex-chat)";
@@ -3282,7 +3282,7 @@ snd error text */
 "Migration error:" = "迁移错误：";
 
 /* No comment provided by engineer. */
-"Migration failed. Tap **Skip** below to continue using the current database. Please report the issue to the app developers via chat or email [chat@simplex.chat](mailto:chat@simplex.chat)." = "迁移失败。点击下面的 **Skip** 继续使用当前数据库。请通过通过聊天或电邮 [chat@simplex.chat](mailto:chat@simplex.chat) 将问题报告给应用程序开发人员。";
+"Migration failed. Tap **Skip** below to continue using the current database. Please report the issue to the app developers via chat or email [chat@inqalaab.chat](mailto:chat@inqalaab.chat)." = "迁移失败。点击下面的 **Skip** 继续使用当前数据库。请通过通过聊天或电邮 [chat@inqalaab.chat](mailto:chat@inqalaab.chat) 将问题报告给应用程序开发人员。";
 
 /* No comment provided by engineer. */
 "Migration is completed" = "迁移完成";

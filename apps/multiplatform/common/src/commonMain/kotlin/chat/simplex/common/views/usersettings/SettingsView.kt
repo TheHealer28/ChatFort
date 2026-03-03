@@ -120,7 +120,6 @@ fun SettingsLayout(
       SettingsActionItem(painterResource(MR.images.ic_help), stringResource(MR.strings.how_to_use_simplex_chat), showModal { HelpView(userDisplayName ?: "") }, disabled = stopped)
       SettingsActionItem(painterResource(MR.images.ic_add), stringResource(MR.strings.whats_new), showCustomModal { _, close -> WhatsNewView(viaSettings = true, close = close) }, disabled = stopped)
       SettingsActionItem(painterResource(MR.images.ic_info), stringResource(MR.strings.about_simplex_chat), showModal { SimpleXInfo(it, onboarding = false) })
-      SettingsActionItem(painterResource(MR.images.ic_shield), stringResource(MR.strings.privacy_policy), showModal { PrivacyPolicyView() })
       if (!chatModel.desktopNoUserNoRemote) {
         SettingsActionItem(painterResource(MR.images.ic_tag), stringResource(MR.strings.chat_with_the_founder), { uriHandler.openVerifiedSimplexUri(simplexTeamUri) }, textColor = MaterialTheme.colors.primary, disabled = stopped)
       }
@@ -221,8 +220,8 @@ fun ChatLockItem(
 
 @Composable private fun RateAppItem(uriHandler: UriHandler) {
   SectionItemView({
-    runCatching { uriHandler.openUriCatching("market://details?id=com.inqalaab.app") }
-      .onFailure { uriHandler.openUriCatching("https://play.google.com/store/apps/details?id=com.inqalaab.app") }
+    runCatching { uriHandler.openUriCatching("market://details?id=chat.simplex.app") }
+      .onFailure { uriHandler.openUriCatching("https://play.google.com/store/apps/details?id=chat.simplex.app") }
   }
   ) {
     Icon(

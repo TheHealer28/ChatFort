@@ -17,7 +17,7 @@
 "[Contribute](https://github.com/simplex-chat/simplex-chat#contribute)" = "[Osallistu](https://github.com/simplex-chat/simplex-chat#contribute)";
 
 /* No comment provided by engineer. */
-"[Send us email](mailto:chat@simplex.chat)" = "[Lähetä meille sähköpostia](mailto:chat@simplex.chat)";
+"[Send us email](mailto:chat@inqalaab.chat)" = "[Lähetä meille sähköpostia](mailto:chat@inqalaab.chat)";
 
 /* No comment provided by engineer. */
 "[Star on GitHub](https://github.com/simplex-chat/simplex-chat)" = "[Tähti GitHubissa](https://github.com/simplex-chat/simplex-chat)";
@@ -1927,7 +1927,7 @@ snd error text */
 "Migration error:" = "Siirtovirhe:";
 
 /* No comment provided by engineer. */
-"Migration failed. Tap **Skip** below to continue using the current database. Please report the issue to the app developers via chat or email [chat@simplex.chat](mailto:chat@simplex.chat)." = "Siirto epäonnistui. Jatka nykyisen tietokannan käyttöä napauttamalla alla **Poistu**. Ilmoita ongelmasta sovelluskehittäjille keskustelussa tai sähköpostitse [chat@simplex.chat](mailto:chat@simplex.chat).";
+"Migration failed. Tap **Skip** below to continue using the current database. Please report the issue to the app developers via chat or email [chat@inqalaab.chat](mailto:chat@inqalaab.chat)." = "Siirto epäonnistui. Jatka nykyisen tietokannan käyttöä napauttamalla alla **Poistu**. Ilmoita ongelmasta sovelluskehittäjille keskustelussa tai sähköpostitse [chat@inqalaab.chat](mailto:chat@inqalaab.chat).";
 
 /* No comment provided by engineer. */
 "Migration is completed" = "Siirto on valmis";

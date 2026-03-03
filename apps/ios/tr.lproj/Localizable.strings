@@ -29,7 +29,7 @@
 "[Contribute](https://github.com/simplex-chat/simplex-chat#contribute)" = "[Katkıda bulun](https://github.com/simplex-chat/simplex-chat#contribute)";
 
 /* No comment provided by engineer. */
-"[Send us email](mailto:chat@simplex.chat)" = "[Bize e-posta gönder](mailto:chat@simplex.chat)";
+"[Send us email](mailto:chat@inqalaab.chat)" = "[Bize e-posta gönder](mailto:chat@inqalaab.chat)";
 
 /* No comment provided by engineer. */
 "[Star on GitHub](https://github.com/simplex-chat/simplex-chat)" = "[Bize GitHub'da yıldız verin](https://github.com/simplex-chat/simplex-chat)";
@@ -3453,7 +3453,7 @@ snd error text */
 "Migration error:" = "Geçiş hatası:";
 
 /* No comment provided by engineer. */
-"Migration failed. Tap **Skip** below to continue using the current database. Please report the issue to the app developers via chat or email [chat@simplex.chat](mailto:chat@simplex.chat)." = "Geçiş başarısız oldu. Alttaki **Geç** tuşuna basarak şu anki veritabanını kullanabilirsiniz. Lütfen sorunu sohbet veya e-posta yoluyla uygulama geliştiricilerine bildirin[chat@simplex.chat](mailto:chat@simplex.chat).";
+"Migration failed. Tap **Skip** below to continue using the current database. Please report the issue to the app developers via chat or email [chat@inqalaab.chat](mailto:chat@inqalaab.chat)." = "Geçiş başarısız oldu. Alttaki **Geç** tuşuna basarak şu anki veritabanını kullanabilirsiniz. Lütfen sorunu sohbet veya e-posta yoluyla uygulama geliştiricilerine bildirin[chat@inqalaab.chat](mailto:chat@inqalaab.chat).";
 
 /* No comment provided by engineer. */
 "Migration is completed" = "Geçiş tamamlandı";

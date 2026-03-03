@@ -17,7 +17,7 @@
 "[Contribute](https://github.com/simplex-chat/simplex-chat#contribute)" = "[มีส่วนร่วม](https://github.com/simplex-chat/simplex-chat#contribute)";
 
 /* No comment provided by engineer. */
-"[Send us email](mailto:chat@simplex.chat)" = "[ส่งอีเมลถึงเรา](mailto:chat@simplex.chat)";
+"[Send us email](mailto:chat@inqalaab.chat)" = "[ส่งอีเมลถึงเรา](mailto:chat@inqalaab.chat)";
 
 /* No comment provided by engineer. */
 "[Star on GitHub](https://github.com/simplex-chat/simplex-chat)" = "[ติดดาวบน GitHub](https://github.com/simplex-chat/simplex-chat)";
@@ -1873,7 +1873,7 @@ snd error text */
 "Migration error:" = "ข้อผิดพลาดในการย้ายข้อมูล:";
 
 /* No comment provided by engineer. */
-"Migration failed. Tap **Skip** below to continue using the current database. Please report the issue to the app developers via chat or email [chat@simplex.chat](mailto:chat@simplex.chat)." = "การย้ายข้อมูลล้มเหลว แตะ **ข้าม** ด้านล่างเพื่อใช้ฐานข้อมูลปัจจุบันต่อไป โปรดรายงานปัญหาให้นักพัฒนาแอปทราบผ่านทางแชทหรืออีเมล [chat@simplex.chat](mailto:chat@simplex.chat)";
+"Migration failed. Tap **Skip** below to continue using the current database. Please report the issue to the app developers via chat or email [chat@inqalaab.chat](mailto:chat@inqalaab.chat)." = "การย้ายข้อมูลล้มเหลว แตะ **ข้าม** ด้านล่างเพื่อใช้ฐานข้อมูลปัจจุบันต่อไป โปรดรายงานปัญหาให้นักพัฒนาแอปทราบผ่านทางแชทหรืออีเมล [chat@inqalaab.chat](mailto:chat@inqalaab.chat)";
 
 /* No comment provided by engineer. */
 "Migration is completed" = "การโยกย้ายเสร็จสมบูรณ์";

@@ -5151,9 +5151,9 @@ Voici votre lien pour le groupe %@ !</target>
         <target>Erreur de migration :</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Migration failed. Tap **Skip** below to continue using the current database. Please report the issue to the app developers via chat or email [chat@simplex.chat](mailto:chat@simplex.chat)." xml:space="preserve">
-        <source>Migration failed. Tap **Skip** below to continue using the current database. Please report the issue to the app developers via chat or email [chat@simplex.chat](mailto:chat@simplex.chat).</source>
-        <target>Echec de la migration. Appuyez sur **Passer** ci-dessous pour continuer à utiliser la base de données actuelle. Veuillez signaler le problème aux développeurs de l'app par chat ou par e-mail [chat@simplex.chat](mailto:chat@simplex.chat).</target>
+      <trans-unit id="Migration failed. Tap **Skip** below to continue using the current database. Please report the issue to the app developers via chat or email [chat@inqalaab.chat](mailto:chat@inqalaab.chat)." xml:space="preserve">
+        <source>Migration failed. Tap **Skip** below to continue using the current database. Please report the issue to the app developers via chat or email [chat@inqalaab.chat](mailto:chat@inqalaab.chat).</source>
+        <target>Echec de la migration. Appuyez sur **Passer** ci-dessous pour continuer à utiliser la base de données actuelle. Veuillez signaler le problème aux développeurs de l'app par chat ou par e-mail [chat@inqalaab.chat](mailto:chat@inqalaab.chat).</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Migration is completed" xml:space="preserve">
@@ -9431,9 +9431,9 @@ Répéter la demande de connexion ?</target>
         <target>[Contribuer](https://github.com/simplex-chat/simplex-chat#contribute)</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="[Send us email](mailto:chat@simplex.chat)" xml:space="preserve">
-        <source>[Send us email](mailto:chat@simplex.chat)</source>
-        <target>[Contact par mail](mailto:chat@simplex.chat)</target>
+      <trans-unit id="[Send us email](mailto:chat@inqalaab.chat)" xml:space="preserve">
+        <source>[Send us email](mailto:chat@inqalaab.chat)</source>
+        <target>[Contact par mail](mailto:chat@inqalaab.chat)</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="[Star on GitHub](https://github.com/simplex-chat/simplex-chat)" xml:space="preserve">
