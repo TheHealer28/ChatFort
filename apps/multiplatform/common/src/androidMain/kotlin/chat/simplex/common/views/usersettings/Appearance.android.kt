@@ -15,6 +15,7 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.*
 import androidx.compose.material.MaterialTheme.colors
 import androidx.compose.runtime.*
 import androidx.compose.runtime.saveable.rememberSaveable
@@ -24,7 +25,10 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import dev.icerock.moko.resources.compose.stringResource
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import chat.simplex.common.model.*
 import chat.simplex.common.ui.theme.*
 import chat.simplex.common.views.helpers.*
@@ -89,18 +93,14 @@ fun AppearanceScope.AppearanceLayout(
       //          onSelected = { openSystemLangPicker(context as? Activity ?: return@SectionItemWithValue) }
       //        )
       //      } else {
-      val state = rememberSaveable { mutableStateOf(languagePref.get() ?: "system") }
-      LangSelector(state) {
+      val state = rememberSaveable { mutableStateOf(languagePref.get() ?: "en") }
+      InqalaabLangPicker(state) {
         state.value = it
         withApi {
           delay(200)
           val activity = context as? Activity
           if (activity != null) {
-            if (it == "system") {
-              activity.saveAppLocale(languagePref)
-            } else {
-              activity.saveAppLocale(languagePref, it)
-            }
+            activity.saveAppLocale(languagePref, it)
           }
         }
       }
@@ -156,6 +156,46 @@ fun AppearanceScope.AppearanceLayout(
     FontScaleSection()
 
     SectionBottomSpacer()
+  }
+}
+
+@Composable
+private fun InqalaabLangPicker(state: State<String>, onSelected: (String) -> Unit) {
+  val languages = listOf("en" to "English", "ur" to "اردو")
+
+  Row(
+    modifier = Modifier.fillMaxWidth().padding(horizontal = DEFAULT_PADDING, vertical = 8.dp),
+    verticalAlignment = Alignment.CenterVertically,
+    horizontalArrangement = Arrangement.SpaceBetween
+  ) {
+    Text(
+      generalGetString(MR.strings.settings_section_title_language),
+      color = colors.onBackground
+    )
+    Row(
+      modifier = Modifier
+        .clip(RoundedCornerShape(8.dp))
+        .background(colors.onBackground.copy(alpha = 0.08f))
+        .padding(2.dp)
+    ) {
+      languages.forEach { (code, label) ->
+        val selected = state.value == code
+        Box(
+          modifier = Modifier
+            .clip(RoundedCornerShape(6.dp))
+            .background(if (selected) colors.primary else Color.Transparent)
+            .clickable { onSelected(code) }
+            .padding(horizontal = 16.dp, vertical = 6.dp)
+        ) {
+          Text(
+            label,
+            color = if (selected) Color.White else colors.secondary,
+            fontWeight = FontWeight.Medium,
+            fontSize = 14.sp
+          )
+        }
+      }
+    }
   }
 }
 

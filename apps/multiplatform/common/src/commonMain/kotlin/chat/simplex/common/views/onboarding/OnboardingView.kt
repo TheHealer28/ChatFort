@@ -1,6 +1,8 @@
 package chat.simplex.common.views.onboarding
 
 enum class OnboardingStage {
+  Step0_MissionScreen,
+  Step0_5_SecurityPledgeScreen,
   Step1_SimpleXInfo,
   Step2_CreateProfile,
   LinkAMobile,
@@ -8,5 +10,6 @@ enum class OnboardingStage {
   Step3_ChooseServerOperators,
   Step3_CreateSimpleXAddress,
   Step4_SetNotificationsMode,
+  Step5_SetupProtection,
   OnboardingComplete
 }

@@ -149,15 +149,15 @@ suspend fun initChatController(useKey: String? = null, confirmMigrations: Migrat
          * */
         chatModel.localUserCreated.value = null
         if (chatController.listRemoteHosts()?.isEmpty() == true) {
-          chatController.appPrefs.onboardingStage.set(OnboardingStage.Step1_SimpleXInfo)
+          chatController.appPrefs.onboardingStage.set(if (appPlatform.isAndroid) OnboardingStage.Step0_MissionScreen else OnboardingStage.Step1_SimpleXInfo)
         }
         chatController.startChatWithoutUser()
       } else {
-        chatController.appPrefs.onboardingStage.set(OnboardingStage.Step1_SimpleXInfo)
+        chatController.appPrefs.onboardingStage.set(if (appPlatform.isAndroid) OnboardingStage.Step0_MissionScreen else OnboardingStage.Step1_SimpleXInfo)
       }
     } else if (startChat().await()) {
       val savedOnboardingStage = appPreferences.onboardingStage.get()
-      val newStage = if (listOf(OnboardingStage.Step1_SimpleXInfo, OnboardingStage.Step2_CreateProfile).contains(savedOnboardingStage) && chatModel.users.size == 1) {
+      val newStage = if (listOf(OnboardingStage.Step0_MissionScreen, OnboardingStage.Step0_5_SecurityPledgeScreen, OnboardingStage.Step1_SimpleXInfo, OnboardingStage.Step2_CreateProfile).contains(savedOnboardingStage) && chatModel.users.size == 1) {
         if (appPlatform.isAndroid) {
           OnboardingStage.Step4_SetNotificationsMode
         } else {
