@@ -1119,6 +1119,7 @@ object AppearanceScope {
       "th" to "ภาษาไทย",
       "tr" to "Türkçe",
       "uk" to "Українська",
+      "ur" to "اردو",
       "vi" to "Tiếng Việt",
       "zh-CN" to "简体中文"
     )

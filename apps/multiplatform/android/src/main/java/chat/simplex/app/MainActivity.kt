@@ -8,6 +8,7 @@ import android.view.View
 import android.view.WindowManager
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.platform.ClipboardManager
 import androidx.fragment.app.FragmentActivity
 import chat.simplex.app.model.NtfManager
@@ -20,6 +21,7 @@ import chat.simplex.common.views.chatlist.*
 import chat.simplex.common.views.helpers.*
 import chat.simplex.common.views.onboarding.*
 import chat.simplex.common.platform.*
+import chat.simplex.app.nearby.*
 import chat.simplex.res.MR
 import kotlinx.coroutines.*
 import java.lang.ref.WeakReference
@@ -58,7 +60,30 @@ class MainActivity: FragmentActivity() {
     }
     enableEdgeToEdge()
     setContent {
-      AppScreen()
+      CompositionLocalProvider(
+        LocalNearbyContent provides { onLeave ->
+          val connectionState = NearbyUiState.connectionState.value
+          val discoveryActive = NearbyUiState.discoveryActive.value
+          when {
+            connectionState == NearbyConnectionState.CONNECTED -> {
+              NearbyChatView(onLeave = {
+                NearbyManager.leaveRoom()
+                onLeave()
+              })
+            }
+            discoveryActive -> {
+              NearbyPeopleView(onBack = {
+                NearbyManager.stopPeopleDiscovery()
+              })
+            }
+            else -> {
+              NearbyRoomSetup(onRoomReady = { /* UI recomposes when state becomes CONNECTED */ }, onBack = onLeave)
+            }
+          }
+        }
+      ) {
+        AppScreen()
+      }
     }
     SimplexApp.context.schedulePeriodicServiceRestartWorker()
     SimplexApp.context.schedulePeriodicWakeUp()

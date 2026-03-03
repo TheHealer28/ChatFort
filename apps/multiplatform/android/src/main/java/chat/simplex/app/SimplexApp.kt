@@ -70,6 +70,8 @@ class SimplexApp: Application(), LifecycleEventObserver {
     context = this
     initHaskell(packageName)
     initMultiplatform()
+    // Initialize Nearby Chat manager
+    chat.simplex.app.nearby.NearbyManager.init(this)
     reconfigureBroadcastReceivers()
     runMigrations()
     tmpDir.deleteRecursively()

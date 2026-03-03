@@ -183,6 +183,8 @@ fun MainScreen() {
       ) { state ->
         when (state) {
           OnboardingStage.OnboardingComplete -> { /* handled out of AnimatedContent block */}
+          OnboardingStage.Step0_MissionScreen -> InqalaabMissionScreen()
+          OnboardingStage.Step0_5_SecurityPledgeScreen -> InqalaabSecurityPledgeScreen()
           OnboardingStage.Step1_SimpleXInfo -> {
             SimpleXInfo(chatModel, onboarding = true)
             if (appPlatform.isDesktop) {
@@ -202,6 +204,7 @@ fun MainScreen() {
           // Ensure backwards compatibility with old onboarding stage for address creation, otherwise notification setup would be skipped
           OnboardingStage.Step3_CreateSimpleXAddress -> SetNotificationsMode(chatModel)
           OnboardingStage.Step4_SetNotificationsMode -> SetNotificationsMode(chatModel)
+          OnboardingStage.Step5_SetupProtection -> SetupProtection(chatModel)
         }
       }
     }
@@ -354,8 +357,13 @@ fun StartPartOfScreen(userPickerState: MutableStateFlow<AnimatedViewState>) {
   } else {
     val stopped = chatModel.chatRunning.value == false
     if (chatModel.sharedContent.value == null) {
-      CompositionLocalProvider(LocalAppBarHandler provides rememberAppBarHandler()) {
-        ChatListView(chatModel, userPickerState, AppLock::setPerformLA, stopped)
+      if (appPlatform.isAndroid) {
+        // Inqalaab: 3-tab navigation (Chats | Safety Hub | Settings)
+        InqalaabTabHost(chatModel, userPickerState, AppLock::setPerformLA, stopped)
+      } else {
+        CompositionLocalProvider(LocalAppBarHandler provides rememberAppBarHandler()) {
+          ChatListView(chatModel, userPickerState, AppLock::setPerformLA, stopped)
+        }
       }
     } else {
       // LALAL initial load of view doesn't show blur. Focusing text field shows it

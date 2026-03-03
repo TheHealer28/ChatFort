@@ -58,10 +58,9 @@ fun SetNotificationsMode(m: ChatModel) {
           OnboardingActionButton(
             modifier = if (appPlatform.isAndroid) Modifier.padding(horizontal = DEFAULT_ONBOARDING_HORIZONTAL_PADDING).fillMaxWidth() else Modifier,
             labelId = MR.strings.use_chat,
-            onboarding = OnboardingStage.OnboardingComplete,
+            onboarding = OnboardingStage.Step5_SetupProtection,
             onclick = {
               changeNotificationsMode(currentMode.value, m)
-              ModalManager.fullscreen.closeModals()
             }
           )
           // Reserve space

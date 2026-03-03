@@ -106,6 +106,7 @@ android {
         "th",
         "tr",
         "uk",
+        "ur",
         "vi",
         "zh-rCN"
     )

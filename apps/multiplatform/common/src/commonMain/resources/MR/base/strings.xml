@@ -919,6 +919,7 @@
   <string name="create_chat_profile">Create chat profile</string>
   <string name="database_passphrase_and_export">Database passphrase &amp; export</string>
   <string name="about_simplex_chat">About Inqalaab</string>
+  <string name="privacy_policy">Privacy policy</string>
   <string name="how_to_use_simplex_chat">How to use it</string>
   <string name="markdown_help">Markdown help</string>
   <string name="markdown_in_messages">Markdown in messages</string>
@@ -1235,6 +1236,21 @@
   <string name="make_private_connection">Make a private connection</string>
   <string name="migrate_from_another_device">Migrate from another device</string>
   <string name="how_it_works">How it works</string>
+
+  <!-- Onboarding - Setup Protection -->
+  <string name="setup_protection_title">Protect your data</string>
+  <string name="setup_protection_description">Set up security features to protect your messages. You can always change these later in Settings.</string>
+  <string name="setup_app_passcode">Set app passcode</string>
+  <string name="setup_app_passcode_desc">Lock the app with a passcode</string>
+  <string name="setup_emergency_code">Set emergency code</string>
+  <string name="setup_emergency_code_desc">Entering this code will wipe all data and create a decoy profile</string>
+  <string name="setup_emergency_code_requires_passcode">Set app passcode first to enable emergency code</string>
+  <string name="setup_protection_continue">Continue</string>
+
+  <!-- Emergency Wipe -->
+  <string name="emergency_wipe_title">Reset App</string>
+  <string name="emergency_wipe_message">This will permanently delete all messages, contacts, and files. A new empty profile will be created. This cannot be undone.</string>
+  <string name="emergency_wipe_confirm">Reset</string>
 
   <!-- How Inqalaab Works -->
   <string name="how_simplex_works">How Inqalaab works</string>
@@ -2773,4 +2789,40 @@
 
   <!-- GroupMentions.kt -->
   <string name="max_group_mentions_per_message_reached">You can mention up to %1$s members per message!</string>
+
+  <!-- Nearby Chat -->
+  <string name="nearby_mode">Nearby</string>
+  <string name="internet_mode">Internet</string>
+  <string name="nearby_create_room">Create Room</string>
+  <string name="nearby_join_room">Join Room</string>
+  <string name="nearby_room_code">Room Code</string>
+  <string name="nearby_enter_code">Enter 6-character room code</string>
+  <string name="nearby_share_code">Share this code with people nearby</string>
+  <string name="nearby_connecting">Connecting…</string>
+  <string name="nearby_connected">Connected</string>
+  <string name="nearby_leave_room">Leave Room</string>
+  <string name="nearby_leave_confirm">Leave this nearby room?</string>
+  <string name="nearby_messages_ephemeral">Messages are ephemeral and will disappear when you leave.</string>
+  <string name="nearby_members">%d members</string>
+  <string name="nearby_error_bluetooth">Bluetooth is required for Nearby Chat</string>
+  <string name="nearby_error_wifi">Wi-Fi must be enabled for Nearby Chat</string>
+  <string name="nearby_error_permissions">Nearby Chat needs Bluetooth and Location permissions</string>
+  <string name="nearby_error_connection">Connection failed. Please try again.</string>
+  <string name="nearby_type_message">Type a message</string>
+  <string name="nearby_no_messages">No messages yet. Say hello!</string>
+  <string name="nearby_room_created">Room created. Waiting for others to join…</string>
+  <string name="nearby_joined_room">Joined the room</string>
+  <string name="nearby_left_room">Left the room</string>
+  <string name="nearby_feature_description">Chat with people nearby without internet</string>
+
+  <!-- Nearby People Discovery -->
+  <string name="nearby_find_people">Find People Nearby</string>
+  <string name="nearby_looking_for_someone">Looking for someone?</string>
+  <string name="nearby_searching">Searching for Inqalaab users near you…</string>
+  <string name="nearby_no_one_found">No one found yet…</string>
+  <string name="nearby_ensure_other_open">Make sure the other person also has Nearby open in Inqalaab</string>
+  <string name="nearby_tap_to_connect">Tap to connect</string>
+  <string name="nearby_wants_to_connect">%s wants to connect</string>
+  <string name="nearby_waiting_accept">Waiting for %s to accept…</string>
+  <string name="nearby_connected_with">Connected with %s</string>
 </resources>

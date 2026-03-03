@@ -46,6 +46,15 @@ import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.serialization.json.Json
 import kotlin.time.Duration.Companion.seconds
 
+/**
+ * CompositionLocal that provides the Nearby Chat content composable.
+ * Android module provides the actual implementation; other platforms get null.
+ */
+val LocalNearbyContent = staticCompositionLocalOf<(@Composable (onLeave: () -> Unit) -> Unit)?> { null }
+
+/** Global state for whether Nearby mode is active in the chat list */
+val nearbyModeActive = mutableStateOf(false)
+
 enum class PresetTagKind { GROUP_REPORTS, FAVORITES, CONTACTS, GROUPS, BUSINESS, NOTES }
 
 sealed class ActiveFilter {
@@ -146,8 +155,13 @@ fun ChatListView(chatModel: ChatModel, userPickerState: MutableStateFlow<Animate
   }
   val searchText = rememberSaveable(stateSaver = TextFieldValue.Saver) { mutableStateOf(TextFieldValue("")) }
   val listState = rememberLazyListState(lazyListState.first, lazyListState.second)
+  val nearbyContent = LocalNearbyContent.current
+  val isNearby = nearbyModeActive.value
+
   Box(Modifier.fillMaxSize()) {
-    if (oneHandUI.value) {
+    if (isNearby && nearbyContent != null && appPlatform.isAndroid) {
+      nearbyContent { nearbyModeActive.value = false }
+    } else if (oneHandUI.value) {
       ChatListWithLoadingScreen(searchText, listState)
       Column(Modifier.align(Alignment.BottomCenter)) {
         ChatListToolbar(
@@ -302,7 +316,7 @@ private fun BoxScope.ChatListWithLoadingScreen(searchText: MutableState<TextFiel
       val userAddress = remember { chatModel.userAddress }.value
       if (userAddress != null) {
         Column(
-          Modifier.align(Alignment.Center).offset(y = (-60).dp).padding(horizontal = DEFAULT_PADDING),
+          Modifier.align(Alignment.Center).offset(y = (-140).dp).padding(horizontal = DEFAULT_PADDING),
           horizontalAlignment = Alignment.CenterHorizontally
         ) {
           Text(
@@ -485,31 +499,97 @@ private fun ChatListToolbar(userPickerState: MutableStateFlow<AnimatedViewState>
       }
     },
     title = {
-      Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(DEFAULT_SPACE_AFTER_ICON)) {
-        Text(
-          stringResource(MR.strings.your_chats),
-          color = MaterialTheme.colors.onBackground,
-          fontWeight = FontWeight.SemiBold,
-        )
-        SubscriptionStatusIndicator(
-          click = {
-            ModalManager.start.closeModals()
-            val summary = serversSummary.value
-            ModalManager.start.showModalCloseable(
-              endButtons = {
-                if (summary != null) {
-                  ShareButton {
-                    val json = Json {
-                      prettyPrint = true
+      if (appPlatform.isAndroid && LocalNearbyContent.current != null) {
+        Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+          // Segmented toggle: WiFi | Nearby
+          Row(
+            modifier = Modifier
+              .clip(RoundedCornerShape(8.dp))
+              .background(MaterialTheme.colors.onBackground.copy(alpha = 0.08f))
+              .padding(2.dp),
+            horizontalArrangement = Arrangement.spacedBy(0.dp)
+          ) {
+            val wifiSelected = !nearbyModeActive.value
+            val nearbySelected = nearbyModeActive.value
+
+            Box(
+              modifier = Modifier
+                .clip(RoundedCornerShape(6.dp))
+                .background(if (wifiSelected) MaterialTheme.colors.primary else Color.Transparent)
+                .clickable { nearbyModeActive.value = false }
+                .padding(horizontal = 14.dp, vertical = 6.dp)
+            ) {
+              Text(
+                stringResource(MR.strings.internet_mode),
+                color = if (wifiSelected) Color.White else MaterialTheme.colors.secondary,
+                fontWeight = FontWeight.Medium,
+                fontSize = 14.sp
+              )
+            }
+            Box(
+              modifier = Modifier
+                .clip(RoundedCornerShape(6.dp))
+                .background(if (nearbySelected) MaterialTheme.colors.primary else Color.Transparent)
+                .clickable { nearbyModeActive.value = true }
+                .padding(horizontal = 14.dp, vertical = 6.dp)
+            ) {
+              Text(
+                stringResource(MR.strings.nearby_mode),
+                color = if (nearbySelected) Color.White else MaterialTheme.colors.secondary,
+                fontWeight = FontWeight.Medium,
+                fontSize = 14.sp
+              )
+            }
+          }
+          if (!nearbyModeActive.value) {
+            SubscriptionStatusIndicator(
+              click = {
+                ModalManager.start.closeModals()
+                val summary = serversSummary.value
+                ModalManager.start.showModalCloseable(
+                  endButtons = {
+                    if (summary != null) {
+                      ShareButton {
+                        val json = Json {
+                          prettyPrint = true
+                        }
+                        val text = json.encodeToString(PresentedServersSummary.serializer(), summary)
+                        clipboard.shareText(text)
+                      }
                     }
-                    val text = json.encodeToString(PresentedServersSummary.serializer(), summary)
-                    clipboard.shareText(text)
+                  }
+                ) { ServersSummaryView(chatModel.currentRemoteHost.value, serversSummary) }
+              }
+            )
+          }
+        }
+      } else {
+        Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(DEFAULT_SPACE_AFTER_ICON)) {
+          Text(
+            stringResource(MR.strings.your_chats),
+            color = MaterialTheme.colors.onBackground,
+            fontWeight = FontWeight.SemiBold,
+          )
+          SubscriptionStatusIndicator(
+            click = {
+              ModalManager.start.closeModals()
+              val summary = serversSummary.value
+              ModalManager.start.showModalCloseable(
+                endButtons = {
+                  if (summary != null) {
+                    ShareButton {
+                      val json = Json {
+                        prettyPrint = true
+                      }
+                      val text = json.encodeToString(PresentedServersSummary.serializer(), summary)
+                      clipboard.shareText(text)
+                    }
                   }
                 }
-              }
-            ) { ServersSummaryView(chatModel.currentRemoteHost.value, serversSummary) }
-          }
-        )
+              ) { ServersSummaryView(chatModel.currentRemoteHost.value, serversSummary) }
+            }
+          )
+        }
       }
     },
     onTitleClick = if (canScrollToZero.value) { { scrollToBottom(scope, listState) } } else null,
@@ -817,7 +897,8 @@ private fun BoxScope.ChatList(searchText: MutableState<TextFieldValue>, listStat
   val searchChatFilteredBySimplexLink = remember { mutableStateOf<String?>(null) }
   val chats = filteredChats(searchShowingSimplexLink, searchChatFilteredBySimplexLink, searchText.value.text, allChats.value.toList(), activeFilter.value)
   val topPaddingToContent = topPaddingToContent(false)
-  val blankSpaceSize = if (oneHandUI.value) WindowInsets.navigationBars.asPaddingValues().calculateBottomPadding() + AppBarHeight * fontSizeSqrtMultiplier else topPaddingToContent
+  val tabBarHeight = LocalTabBarHeight.current
+  val blankSpaceSize = if (oneHandUI.value) WindowInsets.navigationBars.asPaddingValues().calculateBottomPadding() + AppBarHeight * fontSizeSqrtMultiplier + tabBarHeight else topPaddingToContent
   LazyColumnWithScrollBar(
     if (!oneHandUI.value) Modifier.imePadding() else Modifier,
     listState,
