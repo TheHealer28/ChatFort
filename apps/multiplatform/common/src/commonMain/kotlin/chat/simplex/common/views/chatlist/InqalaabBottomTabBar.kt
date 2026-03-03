@@ -43,7 +43,7 @@ fun InqalaabBottomTabBar(
                 selected = selectedTab == InqalaabTab.SAFETY_HUB,
                 onClick = { onTabSelected(InqalaabTab.SAFETY_HUB) },
                 icon = { Icon(painterResource(MR.images.ic_shield), contentDescription = "Safety") },
-                label = { Text("Safety", fontSize = 11.sp) },
+                label = { Text("Safety Hub", fontSize = 11.sp) },
                 selectedContentColor = MaterialTheme.colors.primary,
                 unselectedContentColor = MaterialTheme.colors.secondary
             )

@@ -16,7 +16,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import chat.simplex.common.model.ChatController.appPrefs
-import chat.simplex.common.platform.ColumnWithScrollBar
+import chat.simplex.common.platform.ColumnWithScrollBarNoAppBar
 import chat.simplex.common.ui.theme.*
 import chat.simplex.common.views.helpers.*
 import chat.simplex.res.MR
@@ -25,7 +25,7 @@ import dev.icerock.moko.resources.compose.stringResource
 
 @Composable
 fun InqalaabMissionScreen() {
-    ColumnWithScrollBar(
+    ColumnWithScrollBarNoAppBar(
         Modifier.fillMaxSize().padding(horizontal = DEFAULT_PADDING)
     ) {
         Spacer(Modifier.height(40.dp))
@@ -103,7 +103,7 @@ fun InqalaabMissionScreen() {
 
 @Composable
 fun InqalaabSecurityPledgeScreen() {
-    ColumnWithScrollBar(
+    ColumnWithScrollBarNoAppBar(
         Modifier.fillMaxSize().padding(horizontal = DEFAULT_PADDING)
     ) {
         Spacer(Modifier.height(40.dp))
