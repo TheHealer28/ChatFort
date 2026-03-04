@@ -71,6 +71,10 @@ fun NearbyRoomSetup(onRoomReady: () -> Unit, onBack: () -> Unit = {}) {
         permissionsGranted = results.values.all { it }
     }
 
+    // Check if Bluetooth is enabled (required for BLE discovery)
+    val bluetoothManager = context.getSystemService(android.content.Context.BLUETOOTH_SERVICE) as? android.bluetooth.BluetoothManager
+    val bluetoothEnabled = bluetoothManager?.adapter?.isEnabled == true
+
     // Check if Location Services are enabled (required for WiFi Direct)
     val locationManager = context.getSystemService(android.content.Context.LOCATION_SERVICE) as? LocationManager
     val locationEnabled = locationManager?.isProviderEnabled(LocationManager.GPS_PROVIDER) == true
@@ -154,6 +158,24 @@ fun NearbyRoomSetup(onRoomReady: () -> Unit, onBack: () -> Unit = {}) {
                 modifier = Modifier.fillMaxWidth().height(50.dp)
             ) {
                 Text("Grant Permissions", color = MaterialTheme.colors.onPrimary)
+            }
+        } else if (!bluetoothEnabled) {
+            Text(
+                "Bluetooth must be turned ON to discover nearby devices.",
+                style = MaterialTheme.typography.body1,
+                color = MaterialTheme.colors.error,
+                textAlign = TextAlign.Center,
+                modifier = Modifier.padding(16.dp)
+            )
+            Button(
+                onClick = {
+                    context.startActivity(android.content.Intent(android.provider.Settings.ACTION_BLUETOOTH_SETTINGS))
+                },
+                colors = ButtonDefaults.buttonColors(backgroundColor = MaterialTheme.colors.primary),
+                shape = RoundedCornerShape(20.dp),
+                modifier = Modifier.fillMaxWidth().height(50.dp)
+            ) {
+                Text("Open Bluetooth Settings", color = MaterialTheme.colors.onPrimary)
             }
         } else if (!locationEnabled) {
             Text(
