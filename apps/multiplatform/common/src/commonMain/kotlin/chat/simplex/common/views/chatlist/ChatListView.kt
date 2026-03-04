@@ -323,7 +323,7 @@ private fun BoxScope.ChatListWithLoadingScreen(searchText: MutableState<TextFiel
       val userAddress = remember { chatModel.userAddress }.value
       if (userAddress != null) {
         Column(
-          Modifier.align(Alignment.Center).offset(y = (-140).dp).padding(horizontal = DEFAULT_PADDING),
+          Modifier.align(Alignment.Center).offset(y = (-236).dp).padding(horizontal = DEFAULT_PADDING),
           horizontalAlignment = Alignment.CenterHorizontally
         ) {
           Text(
