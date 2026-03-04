@@ -19,6 +19,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import dev.icerock.moko.resources.compose.painterResource
 import chat.simplex.common.ui.theme.*
+import chat.simplex.common.views.chatlist.LocalTabBarHeight
 import chat.simplex.res.MR
 import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
@@ -53,7 +54,8 @@ fun NearbyChatView(onLeave: () -> Unit) {
         }
     }
 
-    Column(Modifier.fillMaxSize().navigationBarsPadding().imePadding()) {
+    val tabBarHeight = LocalTabBarHeight.current
+    Column(Modifier.fillMaxSize().padding(bottom = tabBarHeight).imePadding()) {
         // Top bar
         Surface(
             Modifier.fillMaxWidth().statusBarsPadding(),

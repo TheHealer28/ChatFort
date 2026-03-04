@@ -25,6 +25,7 @@ import androidx.compose.ui.unit.sp
 import androidx.core.content.ContextCompat
 import chat.simplex.common.model.ChatModel
 import chat.simplex.common.ui.theme.*
+import chat.simplex.common.views.chatlist.LocalTabBarHeight
 
 /**
  * Room setup screen: Create or Join a nearby chat room.
@@ -96,12 +97,13 @@ fun NearbyRoomSetup(onRoomReady: () -> Unit, onBack: () -> Unit = {}) {
         }
     }
 
+    val tabBarHeight = LocalTabBarHeight.current
     Column(
         Modifier
             .fillMaxSize()
             .statusBarsPadding()
             .padding(horizontal = DEFAULT_PADDING)
-            .padding(top = 8.dp),
+            .padding(top = 8.dp, bottom = tabBarHeight),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         // Back to Internet mode
