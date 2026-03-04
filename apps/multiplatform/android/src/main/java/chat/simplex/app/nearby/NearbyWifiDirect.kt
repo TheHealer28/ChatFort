@@ -104,8 +104,10 @@ class NearbyWifiDirect(private val context: Context) {
             addAction(WifiP2pManager.WIFI_P2P_THIS_DEVICE_CHANGED_ACTION)
         }
 
+        // WiFi P2P broadcasts are SYSTEM broadcasts — must use RECEIVER_EXPORTED
+        // so the receiver can receive intents from the Android framework
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            context.registerReceiver(receiver, filter, Context.RECEIVER_NOT_EXPORTED)
+            context.registerReceiver(receiver, filter, Context.RECEIVER_EXPORTED)
         } else {
             context.registerReceiver(receiver, filter)
         }
@@ -149,22 +151,45 @@ class NearbyWifiDirect(private val context: Context) {
 
     /**
      * Discover peers and connect to the Group Owner.
-     * Called by the room joiner.
+     * Called by the room joiner. Retries up to 3 times with increasing wait.
      */
     @SuppressLint("MissingPermission")
     fun discoverAndConnect(onResult: (Boolean) -> Unit) {
+        discoverWithRetry(1, 3, onResult)
+    }
+
+    @SuppressLint("MissingPermission")
+    private fun discoverWithRetry(attempt: Int, maxAttempts: Int, onResult: (Boolean) -> Unit) {
+        Log.d(TAG, "Peer discovery attempt $attempt/$maxAttempts")
         manager?.discoverPeers(channel, object : WifiP2pManager.ActionListener {
             override fun onSuccess() {
-                Log.d(TAG, "Peer discovery initiated")
-                // Wait briefly for peers, then request the list
+                Log.d(TAG, "Peer discovery initiated (attempt $attempt)")
+                // Wait longer for peers — WiFi Direct needs 5-10s typically
+                val waitMs = 5000L + (attempt - 1) * 3000L
                 android.os.Handler(Looper.getMainLooper()).postDelayed({
-                    requestPeersAndConnect(onResult)
-                }, 3000)
+                    requestPeersAndConnect { success ->
+                        if (success) {
+                            onResult(true)
+                        } else if (attempt < maxAttempts) {
+                            Log.d(TAG, "No peers found, retrying...")
+                            discoverWithRetry(attempt + 1, maxAttempts, onResult)
+                        } else {
+                            Log.w(TAG, "No peers found after $maxAttempts attempts")
+                            onResult(false)
+                        }
+                    }
+                }, waitMs)
             }
 
             override fun onFailure(reason: Int) {
                 Log.e(TAG, "Peer discovery failed: reason=$reason")
-                onResult(false)
+                if (attempt < maxAttempts) {
+                    android.os.Handler(Looper.getMainLooper()).postDelayed({
+                        discoverWithRetry(attempt + 1, maxAttempts, onResult)
+                    }, 2000)
+                } else {
+                    onResult(false)
+                }
             }
         })
     }

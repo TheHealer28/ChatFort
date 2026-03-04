@@ -2,6 +2,7 @@ package chat.simplex.app.nearby
 
 import android.Manifest
 import android.content.pm.PackageManager
+import android.location.LocationManager
 import android.os.Build
 import androidx.activity.compose.BackHandler
 import androidx.activity.compose.rememberLauncherForActivityResult
@@ -69,6 +70,11 @@ fun NearbyRoomSetup(onRoomReady: () -> Unit, onBack: () -> Unit = {}) {
     ) { results ->
         permissionsGranted = results.values.all { it }
     }
+
+    // Check if Location Services are enabled (required for WiFi Direct)
+    val locationManager = context.getSystemService(android.content.Context.LOCATION_SERVICE) as? LocationManager
+    val locationEnabled = locationManager?.isProviderEnabled(LocationManager.GPS_PROVIDER) == true
+        || locationManager?.isProviderEnabled(LocationManager.NETWORK_PROVIDER) == true
 
     LaunchedEffect(Unit) {
         permissionsGranted = requiredPermissions.all {
@@ -148,6 +154,24 @@ fun NearbyRoomSetup(onRoomReady: () -> Unit, onBack: () -> Unit = {}) {
                 modifier = Modifier.fillMaxWidth().height(50.dp)
             ) {
                 Text("Grant Permissions", color = MaterialTheme.colors.onPrimary)
+            }
+        } else if (!locationEnabled) {
+            Text(
+                "Location Services must be turned ON for WiFi Direct to discover nearby devices.",
+                style = MaterialTheme.typography.body1,
+                color = MaterialTheme.colors.error,
+                textAlign = TextAlign.Center,
+                modifier = Modifier.padding(16.dp)
+            )
+            Button(
+                onClick = {
+                    context.startActivity(android.content.Intent(android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS))
+                },
+                colors = ButtonDefaults.buttonColors(backgroundColor = MaterialTheme.colors.primary),
+                shape = RoundedCornerShape(20.dp),
+                modifier = Modifier.fillMaxWidth().height(50.dp)
+            ) {
+                Text("Open Location Settings", color = MaterialTheme.colors.onPrimary)
             }
         } else if (state == NearbyConnectionState.CREATING_ROOM || state == NearbyConnectionState.JOINING_ROOM) {
             // Loading state
