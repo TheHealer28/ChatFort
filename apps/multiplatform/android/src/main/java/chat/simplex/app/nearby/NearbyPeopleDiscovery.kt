@@ -69,8 +69,9 @@ class NearbyPeopleDiscovery(private val context: Context) {
             val nameBytes = mfgData.copyOfRange(9, mfgData.size)
             val name = String(nameBytes, Charsets.UTF_8)
 
-            // Ignore our own advertisements
-            if (senderHash.contentEquals(myHash)) return
+            // BLE hardware already filters out our own advertisements,
+            // so no need for hash-based self-filtering (which breaks when
+            // two users have the same display name).
 
             val person = DiscoveredPerson(
                 name = name,
