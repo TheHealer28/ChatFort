@@ -19,6 +19,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import chat.simplex.common.ui.theme.*
+import chat.simplex.common.views.chatlist.LocalTabBarHeight
 
 /**
  * Shows a live list of nearby Inqalaab users discovered via BLE.
@@ -43,12 +44,13 @@ fun NearbyPeopleView(onBack: () -> Unit) {
         )
     )
 
+    val tabBarHeight = LocalTabBarHeight.current
     Column(
         Modifier
             .fillMaxSize()
             .statusBarsPadding()
             .padding(horizontal = DEFAULT_PADDING)
-            .padding(top = 8.dp)
+            .padding(top = 8.dp, bottom = tabBarHeight)
     ) {
         // Back button
         Row(Modifier.fillMaxWidth()) {
