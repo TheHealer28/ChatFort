@@ -26,8 +26,12 @@ import chat.simplex.common.ui.theme.*
 import chat.simplex.common.views.chatlist.LocalTabBarHeight
 import chat.simplex.common.views.database.DatabaseView
 import chat.simplex.common.views.helpers.*
+import chat.simplex.common.views.newchat.SimpleXCreatedLinkQRCode
 import chat.simplex.common.views.usersettings.*
 import chat.simplex.res.MR
+import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.ui.platform.LocalClipboardManager
+import androidx.compose.ui.text.AnnotatedString
 import dev.icerock.moko.resources.compose.painterResource
 
 private data class SecurityCheck(
@@ -114,6 +118,10 @@ fun SafetyHubView(chatModel: ChatModel, setPerformLA: (Boolean) -> Unit) {
     ) {
         AppBarTitle("Safety Hub")
 
+        // Your QR Code — share your address
+        YourAddressCard()
+        SectionDividerSpaced()
+
         // Get Started card when no features are enabled
         if (enabledCount == 0) {
             GetStartedCard()
@@ -143,6 +151,103 @@ fun SafetyHubView(chatModel: ChatModel, setPerformLA: (Boolean) -> Unit) {
         // Safety Resources
         SafetyResourcesSection()
         SectionBottomSpacer()
+    }
+}
+
+@Composable
+private fun YourAddressCard() {
+    val userAddress = remember { chatModel.userAddress }.value
+    if (userAddress != null) {
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = DEFAULT_PADDING),
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            Text(
+                "Your Inqalaab QR Code",
+                style = MaterialTheme.typography.subtitle1.copy(fontWeight = FontWeight.SemiBold),
+                color = MaterialTheme.colors.primary
+            )
+            Spacer(Modifier.height(4.dp))
+            Text(
+                "Show or share to connect",
+                style = MaterialTheme.typography.body2,
+                color = MaterialTheme.colors.secondary
+            )
+            SimpleXCreatedLinkQRCode(
+                connLink = userAddress.connLinkContact,
+                short = true,
+                modifier = Modifier.fillMaxWidth(0.6f),
+                padding = PaddingValues(vertical = 8.dp)
+            )
+            val clipboard = LocalClipboardManager.current
+            Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
+                OutlinedButton(
+                    onClick = { clipboard.shareText(userAddress.connLinkContact.simplexChatUri(short = true)) },
+                    shape = RoundedCornerShape(20.dp)
+                ) {
+                    Icon(
+                        painterResource(MR.images.ic_share),
+                        contentDescription = null,
+                        modifier = Modifier.size(18.dp)
+                    )
+                    Spacer(Modifier.width(6.dp))
+                    Text("Share")
+                }
+                OutlinedButton(
+                    onClick = { clipboard.setText(AnnotatedString(userAddress.connLinkContact.simplexChatUri(short = true))) },
+                    shape = RoundedCornerShape(20.dp)
+                ) {
+                    Icon(
+                        painterResource(MR.images.ic_content_copy),
+                        contentDescription = null,
+                        modifier = Modifier.size(18.dp)
+                    )
+                    Spacer(Modifier.width(6.dp))
+                    Text("Copy Link")
+                }
+            }
+        }
+    } else {
+        // No address created yet
+        SectionView("YOUR ADDRESS") {
+            SectionItemView(click = {
+                withBGApi {
+                    val connLink = chatModel.controller.apiCreateUserAddress(chatModel.currentUser.value?.remoteHostId)
+                    if (connLink != null) {
+                        chatModel.userAddress.value = connLink
+                    }
+                }
+            }) {
+                Row(
+                    Modifier.fillMaxWidth(),
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Icon(
+                        painterResource(MR.images.ic_qr_code),
+                        contentDescription = null,
+                        tint = MaterialTheme.colors.primary,
+                        modifier = Modifier.size(24.dp)
+                    )
+                    Spacer(Modifier.width(12.dp))
+                    Column {
+                        Text(
+                            "Create Your Address",
+                            style = MaterialTheme.typography.body1,
+                            color = MaterialTheme.colors.primary,
+                            fontWeight = FontWeight.Medium
+                        )
+                        Text(
+                            "Generate a QR code so others can connect with you",
+                            style = MaterialTheme.typography.body2,
+                            color = MaterialTheme.colors.secondary,
+                            fontSize = 13.sp
+                        )
+                    }
+                }
+            }
+        }
     }
 }
 
