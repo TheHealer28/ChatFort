@@ -185,6 +185,8 @@ fun MainScreen() {
           OnboardingStage.OnboardingComplete -> { /* handled out of AnimatedContent block */}
           OnboardingStage.Step0_MissionScreen -> InqalaabMissionScreen()
           OnboardingStage.Step0_5_SecurityPledgeScreen -> InqalaabSecurityPledgeScreen()
+          OnboardingStage.Step0_2_EnableSafety -> InqalaabEnableSafetyScreen()
+          OnboardingStage.Step0_3_NearbyExplainer -> InqalaabNearbyExplainerScreen()
           OnboardingStage.Step1_SimpleXInfo -> {
             SimpleXInfo(chatModel, onboarding = true)
             if (appPlatform.isDesktop) {
