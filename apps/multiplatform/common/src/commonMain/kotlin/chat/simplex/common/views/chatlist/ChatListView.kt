@@ -53,7 +53,6 @@ import kotlin.time.Duration.Companion.seconds
 val LocalNearbyContent = staticCompositionLocalOf<(@Composable (onLeave: () -> Unit) -> Unit)?> { null }
 
 /** Global state for whether Nearby mode is active in the chat list */
-val nearbyModeActive = mutableStateOf(false)
 
 enum class PresetTagKind { GROUP_REPORTS, FAVORITES, CONTACTS, GROUPS, BUSINESS, NOTES }
 
@@ -155,19 +154,8 @@ fun ChatListView(chatModel: ChatModel, userPickerState: MutableStateFlow<Animate
   }
   val searchText = rememberSaveable(stateSaver = TextFieldValue.Saver) { mutableStateOf(TextFieldValue("")) }
   val listState = rememberLazyListState(lazyListState.first, lazyListState.second)
-  val nearbyContent = LocalNearbyContent.current
-  val isNearby = nearbyModeActive.value
-
-  Column(Modifier.fillMaxSize()) {
-    // WiFi/Nearby toggle at the top of the screen (only when nearby is available)
-    if (nearbyContent != null && appPlatform.isAndroid) {
-      NearbyToggleBar(isNearby = isNearby, onToggle = { nearbyModeActive.value = it })
-    }
-
-    Box(Modifier.weight(1f).fillMaxWidth()) {
-      if (isNearby && nearbyContent != null && appPlatform.isAndroid) {
-        nearbyContent { nearbyModeActive.value = false }
-      } else if (oneHandUI.value) {
+  Box(Modifier.fillMaxSize()) {
+      if (oneHandUI.value) {
         ChatListWithLoadingScreen(searchText, listState)
         Column(Modifier.align(Alignment.BottomCenter)) {
           ChatListToolbar(
@@ -191,7 +179,6 @@ fun ChatListView(chatModel: ChatModel, userPickerState: MutableStateFlow<Animate
           NewChatSheetFloatingButton(oneHandUI, stopped)
         }
       }
-    }
   }
 
   if (searchText.value.text.isEmpty()) {
@@ -323,7 +310,7 @@ private fun BoxScope.ChatListWithLoadingScreen(searchText: MutableState<TextFiel
       val userAddress = remember { chatModel.userAddress }.value
       if (userAddress != null) {
         Column(
-          Modifier.align(Alignment.Center).offset(y = (-300).dp).padding(horizontal = DEFAULT_PADDING),
+          Modifier.align(Alignment.Center).offset(y = (-260).dp).padding(horizontal = DEFAULT_PADDING),
           horizontalAlignment = Alignment.CenterHorizontally
         ) {
           Text(
@@ -392,66 +379,6 @@ private fun ConnectButton(text: String, onClick: () -> Unit) {
     modifier = Modifier.height(42.dp)
   ) {
     Text(text, color = Color.White)
-  }
-}
-
-@Composable
-private fun NearbyToggleBar(isNearby: Boolean, onToggle: (Boolean) -> Unit) {
-  val barAlpha = remember { appPrefs.inAppBarsAlpha.state }
-  val bgColor = MaterialTheme.colors.background.mixWith(
-    MaterialTheme.colors.onBackground, 0.97f
-  ).copy(alpha = barAlpha.value)
-
-  Row(
-    modifier = Modifier
-      .fillMaxWidth()
-      .background(bgColor)
-      .statusBarsPadding()
-      .padding(horizontal = DEFAULT_PADDING, vertical = 6.dp),
-    horizontalArrangement = Arrangement.Center
-  ) {
-    val shape = RoundedCornerShape(8.dp)
-    Row(
-      modifier = Modifier
-        .fillMaxWidth()
-        .clip(shape)
-        .background(MaterialTheme.colors.onBackground.copy(alpha = 0.1f))
-    ) {
-      // WiFi option
-      Box(
-        modifier = Modifier
-          .weight(1f)
-          .clip(RoundedCornerShape(8.dp))
-          .background(if (!isNearby) MaterialTheme.colors.primary else Color.Transparent)
-          .clickable { onToggle(false) }
-          .padding(vertical = 8.dp),
-        contentAlignment = Alignment.Center
-      ) {
-        Text(
-          "WiFi",
-          color = if (!isNearby) Color.White else MaterialTheme.colors.onBackground,
-          fontWeight = FontWeight.Medium,
-          fontSize = 14.sp
-        )
-      }
-      // Nearby option
-      Box(
-        modifier = Modifier
-          .weight(1f)
-          .clip(RoundedCornerShape(8.dp))
-          .background(if (isNearby) MaterialTheme.colors.primary else Color.Transparent)
-          .clickable { onToggle(true) }
-          .padding(vertical = 8.dp),
-        contentAlignment = Alignment.Center
-      ) {
-        Text(
-          "Nearby",
-          color = if (isNearby) Color.White else MaterialTheme.colors.onBackground,
-          fontWeight = FontWeight.Medium,
-          fontSize = 14.sp
-        )
-      }
-    }
   }
 }
 

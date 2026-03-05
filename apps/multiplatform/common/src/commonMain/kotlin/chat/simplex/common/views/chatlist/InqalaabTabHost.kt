@@ -7,14 +7,16 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import chat.simplex.common.model.ChatModel
+import chat.simplex.common.platform.appPlatform
 import chat.simplex.common.views.helpers.*
+import chat.simplex.common.views.resources.ResourcesView
 import chat.simplex.common.views.safetyhub.SafetyHubView
 import chat.simplex.common.views.usersettings.SettingsView
 import kotlinx.coroutines.flow.MutableStateFlow
 
 /**
  * CompositionLocal providing the height of the bottom tab bar (including system nav bar inset).
- * ChatListView and SafetyHubView read this to add extra bottom padding so content
+ * All tab content views read this to add extra bottom padding so content
  * doesn't get hidden behind the tab bar.
  */
 val LocalTabBarHeight = staticCompositionLocalOf<Dp> { 0.dp }
@@ -31,27 +33,39 @@ fun InqalaabTabHost(
     setPerformLA: (Boolean) -> Unit,
     stopped: Boolean
 ) {
-    val selectedTab = remember { mutableStateOf(InqalaabTab.CHATS) }
+    // Safety Hub is the default landing screen
+    val selectedTab = remember { mutableStateOf(InqalaabTab.SAFETY_HUB) }
 
     Box(Modifier.fillMaxSize()) {
         // Content area — switches based on selected tab
         CompositionLocalProvider(LocalTabBarHeight provides TOTAL_TAB_BAR_HEIGHT) {
             when (selectedTab.value) {
+                InqalaabTab.SAFETY_HUB -> {
+                    CompositionLocalProvider(LocalAppBarHandler provides rememberAppBarHandler()) {
+                        SafetyHubView(chatModel, setPerformLA)
+                    }
+                }
+                InqalaabTab.NEARBY -> {
+                    val nearbyContent = LocalNearbyContent.current
+                    if (nearbyContent != null && appPlatform.isAndroid) {
+                        nearbyContent { /* no-op: tab stays visible */ }
+                    }
+                }
                 InqalaabTab.CHATS -> {
                     CompositionLocalProvider(LocalAppBarHandler provides rememberAppBarHandler()) {
                         ChatListView(chatModel, userPickerState, setPerformLA, stopped)
                     }
                 }
-                InqalaabTab.SAFETY_HUB -> {
+                InqalaabTab.RESOURCES -> {
                     CompositionLocalProvider(LocalAppBarHandler provides rememberAppBarHandler()) {
-                        SafetyHubView(chatModel, setPerformLA)
+                        ResourcesView()
                     }
                 }
                 InqalaabTab.SETTINGS -> {
                     CompositionLocalProvider(LocalAppBarHandler provides rememberAppBarHandler()) {
                         Box(Modifier.padding(bottom = TOTAL_TAB_BAR_HEIGHT)) {
                             SettingsView(chatModel, setPerformLA, close = {
-                                selectedTab.value = InqalaabTab.CHATS
+                                selectedTab.value = InqalaabTab.SAFETY_HUB
                             })
                         }
                     }
