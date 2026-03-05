@@ -19,7 +19,7 @@ import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import chat.simplex.common.model.ChatModel
+import chat.simplex.common.model.*
 import chat.simplex.common.model.ChatController.appPrefs
 import chat.simplex.common.platform.*
 import chat.simplex.common.ui.theme.*
@@ -216,7 +216,13 @@ private fun YourAddressCard() {
                 withBGApi {
                     val connLink = chatModel.controller.apiCreateUserAddress(chatModel.currentUser.value?.remoteHostId)
                     if (connLink != null) {
-                        chatModel.userAddress.value = connLink
+                        val slDataSet = connLink.connShortLink != null
+                        chatModel.userAddress.value = UserContactLinkRec(
+                            connLink,
+                            shortLinkDataSet = slDataSet,
+                            shortLinkLargeDataSet = slDataSet,
+                            addressSettings = AddressSettings(businessAddress = false, autoAccept = null, autoReply = null)
+                        )
                     }
                 }
             }) {
