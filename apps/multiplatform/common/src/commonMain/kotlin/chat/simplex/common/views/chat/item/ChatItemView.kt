@@ -39,9 +39,10 @@ import kotlin.math.*
 
 // TODO refactor so that FramedItemView can show all CIContent items if they're deleted (see Swift code)
 
-private val msgRectMaxRadius = 18.dp
+// Inqalaab: distinct bubble geometry (rounder, smaller tail)
+private val msgRectMaxRadius = if (appPlatform.isAndroid) 20.dp else 18.dp
 private val msgBubbleMaxRadius = msgRectMaxRadius * 1.2f
-val msgTailWidthDp = 9.dp
+val msgTailWidthDp = if (appPlatform.isAndroid) 6.dp else 9.dp
 private val msgTailMinHeightDp = msgTailWidthDp * 1.254f // ~56deg
 private val msgTailMaxHeightDp = msgTailWidthDp * 1.732f // 60deg
 

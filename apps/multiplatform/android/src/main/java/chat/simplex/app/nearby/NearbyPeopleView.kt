@@ -145,24 +145,35 @@ fun NearbyPeopleView(onBack: () -> Unit) {
         // People list
         if (people.isEmpty()) {
             Box(Modifier.weight(1f).fillMaxWidth(), contentAlignment = Alignment.Center) {
-                Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                Column(
+                    Modifier.padding(horizontal = DEFAULT_PADDING),
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
                     CircularProgressIndicator(
                         Modifier.size(40.dp),
-                        color = MaterialTheme.colors.primary.copy(alpha = 0.5f),
+                        color = MaterialTheme.colors.primary.copy(alpha = alpha),
                         strokeWidth = 3.dp
                     )
                     Spacer(Modifier.height(16.dp))
                     Text(
-                        "No one found yet\u2026",
-                        style = MaterialTheme.typography.body1,
+                        "Scanning for people\u2026",
+                        style = MaterialTheme.typography.h6,
+                        fontWeight = FontWeight.Medium,
+                        color = MaterialTheme.colors.onBackground
+                    )
+                    Spacer(Modifier.height(16.dp))
+                    Text(
+                        "Troubleshooting",
+                        style = MaterialTheme.typography.body2,
+                        fontWeight = FontWeight.SemiBold,
                         color = MaterialTheme.colors.secondary
                     )
-                    Spacer(Modifier.height(4.dp))
+                    Spacer(Modifier.height(8.dp))
                     Text(
-                        "Make sure the other person also has\nNearby open in Inqalaab",
+                        "\u2022 Both devices need Bluetooth turned on\n\u2022 Both devices need Location Services enabled\n\u2022 The other person must also have Nearby open\n\u2022 Stay within ~30 feet of each other",
                         style = MaterialTheme.typography.body2,
-                        color = MaterialTheme.colors.secondary.copy(alpha = 0.6f),
-                        textAlign = TextAlign.Center
+                        color = MaterialTheme.colors.secondary.copy(alpha = 0.7f),
+                        textAlign = TextAlign.Start
                     )
                 }
             }
