@@ -14,6 +14,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -113,12 +114,26 @@ fun SafetyHubView(chatModel: ChatModel, setPerformLA: (Boolean) -> Unit) {
     ) {
         AppBarTitle("Safety Hub")
 
+        // Get Started card when no features are enabled
+        if (enabledCount == 0) {
+            GetStartedCard()
+            SectionDividerSpaced()
+        }
+
+        // Security Status Dashboard
+        SecurityStatusDashboard(enabledCount, totalCount, appLockEnabled)
+        SectionDividerSpaced()
+
         // Security Score Header
         SecurityScoreHeader(enabledCount, totalCount)
         SectionDividerSpaced()
 
         // Security Checklist
         SecurityChecklistSection(securityChecks)
+        SectionDividerSpaced()
+
+        // Trusted Contacts
+        TrustedContactsSection()
         SectionDividerSpaced()
 
         // Emergency Actions
@@ -128,6 +143,160 @@ fun SafetyHubView(chatModel: ChatModel, setPerformLA: (Boolean) -> Unit) {
         // Safety Resources
         SafetyResourcesSection()
         SectionBottomSpacer()
+    }
+}
+
+@Composable
+private fun GetStartedCard() {
+    Column(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(horizontal = DEFAULT_PADDING, vertical = 8.dp)
+            .clip(RoundedCornerShape(16.dp))
+            .background(MaterialTheme.colors.primary.copy(alpha = 0.08f))
+            .padding(20.dp),
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Icon(
+            painterResource(MR.images.ic_shield),
+            contentDescription = null,
+            modifier = Modifier.size(48.dp),
+            tint = MaterialTheme.colors.primary
+        )
+        Spacer(Modifier.height(12.dp))
+        Text(
+            "Set Up Your Safety",
+            style = MaterialTheme.typography.h6.copy(fontWeight = FontWeight.Bold),
+            color = MaterialTheme.colors.onBackground
+        )
+        Spacer(Modifier.height(8.dp))
+        Text(
+            "None of your security features are enabled yet. Scroll down to the Security Checklist and enable protections like App Lock, Screen Protection, and Database Encryption.",
+            style = MaterialTheme.typography.body2,
+            color = MaterialTheme.colors.secondary,
+            fontSize = 13.sp,
+            textAlign = androidx.compose.ui.text.style.TextAlign.Center
+        )
+    }
+}
+
+@Composable
+private fun SecurityStatusDashboard(enabledCount: Int, totalCount: Int, appLockEnabled: Boolean) {
+    SectionView("SECURITY STATUS") {
+        SectionItemView {
+            Row(
+                Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                StatusIndicator(
+                    icon = painterResource(MR.images.ic_lock),
+                    label = "Encryption",
+                    active = true
+                )
+                StatusIndicator(
+                    icon = painterResource(MR.images.ic_wifi_tethering),
+                    label = "Relay",
+                    active = true
+                )
+                StatusIndicator(
+                    icon = painterResource(MR.images.ic_bluetooth),
+                    label = "Nearby",
+                    active = false
+                )
+                StatusIndicator(
+                    icon = painterResource(MR.images.ic_security),
+                    label = "Device Lock",
+                    active = appLockEnabled
+                )
+            }
+        }
+        SectionItemView {
+            Text(
+                "$enabledCount of $totalCount protections active",
+                style = MaterialTheme.typography.body2,
+                color = if (enabledCount == totalCount) SimplexGreen else MaterialTheme.colors.secondary
+            )
+        }
+    }
+}
+
+@Composable
+private fun StatusIndicator(icon: Painter, label: String, active: Boolean) {
+    Column(horizontalAlignment = Alignment.CenterHorizontally) {
+        Icon(
+            icon,
+            contentDescription = label,
+            modifier = Modifier.size(24.dp),
+            tint = if (active) SimplexGreen else MaterialTheme.colors.secondary.copy(alpha = 0.4f)
+        )
+        Spacer(Modifier.height(4.dp))
+        Text(
+            label,
+            style = MaterialTheme.typography.caption,
+            color = if (active) MaterialTheme.colors.onBackground else MaterialTheme.colors.secondary.copy(alpha = 0.4f),
+            fontSize = 11.sp
+        )
+    }
+}
+
+@Composable
+private fun TrustedContactsSection() {
+    SectionView("TRUSTED CONTACTS") {
+        SectionItemView {
+            Column {
+                Text(
+                    "Mark contacts as Trusted",
+                    style = MaterialTheme.typography.body1,
+                    color = MaterialTheme.colors.onBackground
+                )
+                Spacer(Modifier.height(4.dp))
+                Text(
+                    "Long-press any contact in your Chats tab and select \"Mark as Trusted\" to add them here. Trusted contacts receive your emergency broadcasts.",
+                    style = MaterialTheme.typography.body2,
+                    color = MaterialTheme.colors.secondary,
+                    fontSize = 13.sp
+                )
+            }
+        }
+        // "I'm Safe" broadcast
+        SectionItemView(click = {
+            AlertManager.shared.showAlertDialog(
+                title = "Send \"I'm Safe\" Message",
+                text = "This will send \"I'm safe\" to all your trusted contacts. Continue?",
+                confirmText = "Send to All",
+                onConfirm = {
+                    // TODO: implement broadcast to trusted contacts
+                }
+            )
+        }) {
+            Row(
+                Modifier.fillMaxWidth(),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Icon(
+                    painterResource(MR.images.ic_check_circle_filled),
+                    contentDescription = "I'm Safe",
+                    tint = SimplexGreen,
+                    modifier = Modifier.size(24.dp)
+                )
+                Spacer(Modifier.width(12.dp))
+                Column {
+                    Text(
+                        "Send \"I'm Safe\" Broadcast",
+                        style = MaterialTheme.typography.body1,
+                        color = SimplexGreen,
+                        fontWeight = FontWeight.Medium
+                    )
+                    Text(
+                        "Notify all trusted contacts that you are safe",
+                        style = MaterialTheme.typography.body2,
+                        color = MaterialTheme.colors.secondary,
+                        fontSize = 13.sp
+                    )
+                }
+            }
+        }
     }
 }
 

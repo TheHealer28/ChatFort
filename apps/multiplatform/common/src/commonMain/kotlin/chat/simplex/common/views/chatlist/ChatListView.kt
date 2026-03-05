@@ -330,11 +330,31 @@ private fun BoxScope.ChatListWithLoadingScreen(searchText: MutableState<TextFiel
           )
         }
       } else if (chatModel.chats.value.isEmpty()) {
-        Text(
-          stringResource(MR.strings.you_have_no_chats),
-          Modifier.align(Alignment.Center),
-          color = MaterialTheme.colors.secondary
-        )
+        Column(
+          Modifier.align(Alignment.Center).padding(horizontal = DEFAULT_PADDING * 2),
+          horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+          Icon(
+            painterResource(MR.images.ic_chat_bubble),
+            contentDescription = null,
+            modifier = Modifier.size(48.dp),
+            tint = MaterialTheme.colors.secondary.copy(alpha = 0.5f)
+          )
+          Spacer(Modifier.height(16.dp))
+          Text(
+            "No conversations yet",
+            style = MaterialTheme.typography.h6,
+            color = MaterialTheme.colors.onBackground,
+            textAlign = TextAlign.Center
+          )
+          Spacer(Modifier.height(8.dp))
+          Text(
+            "Share your QR code to connect, or use Nearby mode to find people during internet shutdowns.",
+            style = MaterialTheme.typography.body2,
+            color = MaterialTheme.colors.secondary,
+            textAlign = TextAlign.Center
+          )
+        }
       }
     }
   }
