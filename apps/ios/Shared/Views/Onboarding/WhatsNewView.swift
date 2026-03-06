@@ -43,7 +43,7 @@ private struct FeatureView {
 private let versionDescriptions: [VersionDescription] = [
     VersionDescription(
         version: "v4.2",
-        post: URL(string: "https://simplex.chat/blog/20221108-simplex-chat-v4.2-security-audit-new-website.html"),
+        post: nil, // Inqalaab: removed SimpleX blog link
         features: [
             .feature(Description(
                 icon: "checkmark.shield",
@@ -64,7 +64,7 @@ private let versionDescriptions: [VersionDescription] = [
     ),
     VersionDescription(
         version: "v4.3",
-        post: URL(string: "https://simplex.chat/blog/20221206-simplex-chat-v4.3-voice-messages.html"),
+        post: nil,
         features: [
             .feature(Description(
                 icon: "mic",
@@ -90,7 +90,7 @@ private let versionDescriptions: [VersionDescription] = [
     ),
     VersionDescription(
         version: "v4.4",
-        post: URL(string: "https://simplex.chat/blog/20230103-simplex-chat-v4.4-disappearing-messages.html"),
+        post: nil,
         features: [
             .feature(Description(
                 icon: "stopwatch",
@@ -121,7 +121,7 @@ private let versionDescriptions: [VersionDescription] = [
     ),
     VersionDescription(
         version: "v4.5",
-        post: URL(string: "https://simplex.chat/blog/20230204-simplex-chat-v4-5-user-chat-profiles.html"),
+        post: nil,
         features: [
             .feature(Description(
                 icon: "person.crop.rectangle.stack",
@@ -136,7 +136,7 @@ private let versionDescriptions: [VersionDescription] = [
             .feature(Description(
                 icon: "network.badge.shield.half.filled",
                 title: "Transport isolation",
-                description: "By chat profile (default) or [by connection](https://simplex.chat/blog/20230204-simplex-chat-v4-5-user-chat-profiles.html#transport-isolation) (BETA)."
+                description: "By chat profile (default) or by connection (BETA)."
             )),
             .feature(Description(
                 icon: "lock.doc",
@@ -157,7 +157,7 @@ private let versionDescriptions: [VersionDescription] = [
     ),
     VersionDescription(
         version: "v4.6",
-        post: URL(string: "https://simplex.chat/blog/20230328-simplex-chat-v4-6-hidden-profiles.html"),
+        post: nil,
         features: [
             .feature(Description(
                 icon: "lock",
@@ -193,7 +193,7 @@ private let versionDescriptions: [VersionDescription] = [
     ),
     VersionDescription(
         version: "v5.0",
-        post: URL(string: "https://simplex.chat/blog/20230422-simplex-chat-vision-funding-v5-videos-files-passcode.html"),
+        post: nil,
         features: [
             .feature(Description(
                 icon: "arrow.up.doc",
@@ -217,7 +217,7 @@ private let versionDescriptions: [VersionDescription] = [
     // access welcome message via a group profile
     VersionDescription(
         version: "v5.1",
-        post: URL(string: "https://simplex.chat/blog/20230523-simplex-chat-v5-1-message-reactions-self-destruct-passcode.html"),
+        post: nil,
         features: [
             .feature(Description(
                 icon: "face.smiling",
@@ -243,7 +243,7 @@ private let versionDescriptions: [VersionDescription] = [
     ),
     VersionDescription(
         version: "v5.2",
-        post: URL(string: "https://simplex.chat/blog/20230722-simplex-chat-v5-2-message-delivery-receipts.html"),
+        post: nil,
         features: [
             .feature(Description(
                 icon: "checkmark",
@@ -274,12 +274,12 @@ private let versionDescriptions: [VersionDescription] = [
     ),
     VersionDescription(
         version: "v5.3",
-        post: URL(string: "https://simplex.chat/blog/20230925-simplex-chat-v5-3-desktop-app-local-file-encryption-directory-service.html"),
+        post: nil,
         features: [
             .feature(Description(
                 icon: "desktopcomputer",
                 title: "New desktop app!",
-                description: "Create new profile in [desktop app](https://simplex.chat/downloads/). 💻"
+                description: "Create new profile in desktop app. 💻"
             )),
             .feature(Description(
                 icon: "lock",
@@ -289,7 +289,7 @@ private let versionDescriptions: [VersionDescription] = [
             .feature(Description(
                 icon: "magnifyingglass",
                 title: "Discover and join groups",
-                description: "- connect to [directory service](simplex:/contact#/?v=1-4&smp=smp%3A%2F%2Fu2dS9sG8nMNURyZwqASV4yROM28Er0luVTx5X1CsMrU%3D%40smp4.simplex.im%2FeXSPwqTkKyDO3px4fLf1wx3MvPdjdLW3%23%2F%3Fv%3D1-2%26dh%3DMCowBQYDK2VuAyEAaiv6MkMH44L2TcYrt_CsX3ZvM11WgbMEUn0hkIKTOho%253D%26srv%3Do5vmywmrnaxalvz6wi3zicyftgio6psuvyniis6gco6bp6ekl4cqj4id.onion) (BETA)!\n- delivery receipts (up to 20 members).\n- faster and more stable."
+                description: "- discover and join groups (BETA)!\n- delivery receipts (up to 20 members).\n- faster and more stable."
             )),
             .feature(Description(
                 icon: "theatermasks",
@@ -305,7 +305,7 @@ private let versionDescriptions: [VersionDescription] = [
     ),
     VersionDescription(
         version: "v5.4",
-        post: URL(string: "https://simplex.chat/blog/20231125-simplex-chat-v5-4-link-mobile-desktop-quantum-resistant-better-groups.html"),
+        post: nil,
         features: [
             .feature(Description(
                 icon: "desktopcomputer",
@@ -336,7 +336,7 @@ private let versionDescriptions: [VersionDescription] = [
     ),
     VersionDescription(
         version: "v5.5",
-        post: URL(string: "https://simplex.chat/blog/20240124-simplex-chat-infrastructure-costs-v5-5-simplex-ux-private-notes-group-history.html"),
+        post: nil,
         features: [
             .feature(Description(
                 icon: "folder",
@@ -351,7 +351,7 @@ private let versionDescriptions: [VersionDescription] = [
             .feature(Description(
                 icon: "bubble.left.and.bubble.right",
                 title: "Join group conversations",
-                description: "Recent history and improved [directory bot](simplex:/contact#/?v=1-4&smp=smp%3A%2F%2Fu2dS9sG8nMNURyZwqASV4yROM28Er0luVTx5X1CsMrU%3D%40smp4.simplex.im%2FeXSPwqTkKyDO3px4fLf1wx3MvPdjdLW3%23%2F%3Fv%3D1-2%26dh%3DMCowBQYDK2VuAyEAaiv6MkMH44L2TcYrt_CsX3ZvM11WgbMEUn0hkIKTOho%253D%26srv%3Do5vmywmrnaxalvz6wi3zicyftgio6psuvyniis6gco6bp6ekl4cqj4id.onion)."
+                description: "Recent history and improved group discovery."
             )),
             .feature(Description(
                 icon: "battery.50",
@@ -367,7 +367,7 @@ private let versionDescriptions: [VersionDescription] = [
     ),
     VersionDescription(
         version: "v5.6",
-        post: URL(string: "https://simplex.chat/blog/20240323-simplex-network-privacy-non-profit-v5-6-quantum-resistant-e2e-encryption-simple-migration.html"),
+        post: nil,
         features: [
             .feature(Description(
                 icon: "key",
@@ -398,7 +398,7 @@ private let versionDescriptions: [VersionDescription] = [
     ),
     VersionDescription(
         version: "v5.7",
-        post: URL(string: "https://simplex.chat/blog/20240426-simplex-legally-binding-transparency-v5-7-better-user-experience.html"),
+        post: nil,
         features: [
             .feature(Description(
                 icon: "key",
@@ -429,7 +429,7 @@ private let versionDescriptions: [VersionDescription] = [
     ),
     VersionDescription(
         version: "v5.8",
-        post: URL(string: "https://simplex.chat/blog/20240604-simplex-chat-v5.8-private-message-routing-chat-themes.html"),
+        post: nil,
         features: [
             .feature(Description(
                 icon: "arrow.forward",
@@ -450,7 +450,7 @@ private let versionDescriptions: [VersionDescription] = [
     ),
     VersionDescription(
         version: "v6.0",
-        post: URL(string: "https://simplex.chat/blog/20240814-simplex-chat-vision-funding-v6-private-routing-new-user-experience.html"),
+        post: nil,
         features: [
             .feature(Description(
                 icon: nil,
@@ -488,7 +488,7 @@ private let versionDescriptions: [VersionDescription] = [
     ),
     VersionDescription(
         version: "v6.1",
-        post: URL(string: "https://simplex.chat/blog/20241014-simplex-network-v6-1-security-review-better-calls-user-experience.html"),
+        post: nil,
         features: [
             .feature(Description(
                 icon: "checkmark.shield",
@@ -521,7 +521,7 @@ private let versionDescriptions: [VersionDescription] = [
     ),
     VersionDescription(
         version: "v6.2",
-        post: URL(string: "https://simplex.chat/blog/20241210-simplex-network-v6-2-servers-by-flux-business-chats.html"),
+        post: nil,
         features: [
             .view(FeatureView(
                 icon: nil,
@@ -542,7 +542,7 @@ private let versionDescriptions: [VersionDescription] = [
     ),
     VersionDescription(
         version: "v6.3",
-        post: URL(string: "https://simplex.chat/blog/20250308-simplex-chat-v6-3-new-user-experience-safety-in-public-groups.html"),
+        post: nil,
         features: [
             .feature(Description(
                 icon: "at",
@@ -581,7 +581,7 @@ private let versionDescriptions: [VersionDescription] = [
     ),
     VersionDescription(
         version: "v6.4",
-        post: URL(string: "https://simplex.chat/blog/20250703-simplex-network-protocol-extension-for-securely-connecting-people.html"),
+        post: nil,
         features: [
             .feature(Description(
                 icon: "person",
@@ -612,7 +612,7 @@ private let versionDescriptions: [VersionDescription] = [
     ),
     VersionDescription(
         version: "v6.4.1",
-        post: URL(string: "https://simplex.chat/blog/20250729-simplex-chat-v6-4-1-welcome-contacts-protect-groups-app-security.html"),
+        post: nil,
         features: [
             .feature(Description(
                 icon: "hand.wave",

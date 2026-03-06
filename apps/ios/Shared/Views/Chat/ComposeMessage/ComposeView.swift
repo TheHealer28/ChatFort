@@ -1504,7 +1504,7 @@ struct ComposeView: View {
     }
 
     private func isSimplexLink(_ link: String) -> Bool {
-        link.starts(with: "https://simplex.chat") || link.starts(with: "http://simplex.chat") || link.starts(with: "simplex:/")
+        link.starts(with: "https://simplex.chat") || link.starts(with: "http://simplex.chat") || link.starts(with: "simplex:/") || link.starts(with: "https://example.net") || link.starts(with: "http://example.net")
     }
 
     private func cancelLinkPreview() {
