@@ -63,7 +63,7 @@ struct CallSettings: View {
 
                 Section(header: Text("Limitations").foregroundColor(theme.colors.secondary)) {
                     VStack(alignment: .leading, spacing: 8) {
-                        textListItem("1.", "Do NOT use SimpleX for emergency calls.")
+                        textListItem("1.", "Do NOT use Inqalaab for emergency calls.")
                         textListItem("2.", "Unless you use iOS call interface, enable Do Not Disturb mode to avoid interruptions.")
                     }
                     .font(.callout)

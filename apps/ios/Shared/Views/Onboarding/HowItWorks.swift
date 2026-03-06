@@ -16,18 +16,18 @@ struct HowItWorks: View {
 
     var body: some View {
         VStack(alignment: .leading) {
-            Text("How SimpleX works")
+            Text("How Inqalaab works")
                 .font(.largeTitle)
                 .bold()
                 .padding(.vertical)
             ScrollView {
                 VStack(alignment: .leading) {
                     Group {
-                        Text("To protect your privacy, SimpleX uses separate IDs for each of your contacts.")
+                        Text("To protect your privacy, Inqalaab uses separate IDs for each of your contacts.")
                         Text("Only client devices store user profiles, contacts, groups, and messages.")
                         Text("All messages and files are sent **end-to-end encrypted**, with post-quantum security in direct messages.")
                         if !onboarding {
-                            Text("Read more in our [GitHub repository](https://github.com/simplex-chat/simplex-chat#readme).")
+                            Text("Read more in our [GitHub repository](https://github.com/TheHealer28/Inqalaab).")
                         }
                     }
                     .padding(.bottom)

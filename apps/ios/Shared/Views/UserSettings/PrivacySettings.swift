@@ -474,7 +474,7 @@ struct SimplexLockView: View {
                 }
 
                 if performLA {
-                    Section("Share to SimpleX") {
+                    Section("Share to Inqalaab") {
                         Toggle("Allow sharing", isOn: $allowShareExtension)
                     }
                 }

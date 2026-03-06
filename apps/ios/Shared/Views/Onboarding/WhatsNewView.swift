@@ -493,7 +493,7 @@ private let versionDescriptions: [VersionDescription] = [
             .feature(Description(
                 icon: "checkmark.shield",
                 title: "Better security ✅",
-                description: "SimpleX protocols reviewed by Trail of Bits."
+                description: "Protocols reviewed by Trail of Bits."
             )),
             .feature(Description(
                 icon: "video",
@@ -626,7 +626,7 @@ private let versionDescriptions: [VersionDescription] = [
             )),
             .view(FeatureView(
                 icon: nil,
-                title: "Short SimpleX address",
+                title: "Short Inqalaab address",
                 view: { CreateUpdateAddressShortLink() }
             ))
         ]
@@ -675,7 +675,7 @@ fileprivate struct CreateUpdateAddressShortLink: View {
                     .symbolRenderingMode(.monochrome)
                     .foregroundColor(theme.colors.secondary)
                     .frame(minWidth: 30, alignment: .center)
-                Text("Short SimpleX address").font(.title3).bold()
+                Text("Short Inqalaab address").font(.title3).bold()
             }
             Group {
                 if let addr = chatModel.userAddress {
