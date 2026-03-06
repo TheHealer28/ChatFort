@@ -339,7 +339,7 @@ struct DatabaseView: View {
 
     private func authStopChat(_ onStop: (() -> Void)? = nil) {
         if UserDefaults.standard.bool(forKey: DEFAULT_PERFORM_LA) {
-            authenticate(reason: NSLocalizedString("Stop SimpleX", comment: "authentication reason")) { laResult in
+            authenticate(reason: NSLocalizedString("Stop Inqalaab", comment: "authentication reason")) { laResult in
                 switch laResult {
                 case .success: stopChat(onStop)
                 case .unavailable: stopChat(onStop)

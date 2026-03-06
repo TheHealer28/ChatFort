@@ -333,7 +333,7 @@ struct ContactsListSearchBar: View {
                     .resizable()
                     .scaledToFit()
                     .frame(width: 16, height: 16)
-                TextField("Search or paste SimpleX link", text: $searchText)
+                TextField("Search or paste Inqalaab link", text: $searchText)
                     .foregroundColor(searchShowingSimplexLink ? theme.colors.secondary : theme.colors.onBackground)
                     .disabled(searchShowingSimplexLink)
                     .focused($searchFocussed)

@@ -897,7 +897,7 @@ public enum GroupFeature: String, Decodable, Feature, Hashable {
         case .reactions: return NSLocalizedString("Message reactions", comment: "chat feature")
         case .voice: return NSLocalizedString("Voice messages", comment: "chat feature")
         case .files: return NSLocalizedString("Files and media", comment: "chat feature")
-        case .simplexLinks: return NSLocalizedString("SimpleX links", comment: "chat feature")
+        case .simplexLinks: return NSLocalizedString("Inqalaab links", comment: "chat feature")
         case .reports: return NSLocalizedString("Member reports", comment: "chat feature")
         case .history: return NSLocalizedString("Visible history", comment: "chat feature")
         }
@@ -974,8 +974,8 @@ public enum GroupFeature: String, Decodable, Feature, Hashable {
                 }
             case .simplexLinks:
                 switch enabled {
-                case .on: return "Allow to send SimpleX links."
-                case .off: return "Prohibit sending SimpleX links."
+                case .on: return "Allow to send Inqalaab links."
+                case .off: return "Prohibit sending Inqalaab links."
                 }
             case .reports:
                 switch enabled {
@@ -1022,8 +1022,8 @@ public enum GroupFeature: String, Decodable, Feature, Hashable {
                 }
             case .simplexLinks:
                 switch enabled {
-                case .on: return "Members can send SimpleX links."
-                case .off: return "SimpleX links are prohibited."
+                case .on: return "Members can send Inqalaab links."
+                case .off: return "Inqalaab links are prohibited."
                 }
             case .reports:
                 switch enabled {
@@ -4701,11 +4701,11 @@ public enum SimplexLinkType: String, Decodable, Hashable {
 
     public var description: String {
         switch self {
-        case .contact: return NSLocalizedString("SimpleX contact address", comment: "simplex link type")
-        case .invitation: return NSLocalizedString("SimpleX one-time invitation", comment: "simplex link type")
-        case .group: return NSLocalizedString("SimpleX group link", comment: "simplex link type")
-        case .channel: return NSLocalizedString("SimpleX channel link", comment: "simplex link type")
-        case .relay: return NSLocalizedString("SimpleX relay link", comment: "simplex link type")
+        case .contact: return NSLocalizedString("Inqalaab contact address", comment: "simplex link type")
+        case .invitation: return NSLocalizedString("Inqalaab one-time invitation", comment: "simplex link type")
+        case .group: return NSLocalizedString("Inqalaab group link", comment: "simplex link type")
+        case .channel: return NSLocalizedString("Inqalaab channel link", comment: "simplex link type")
+        case .relay: return NSLocalizedString("Inqalaab relay link", comment: "simplex link type")
         }
     }
 }

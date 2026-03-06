@@ -104,14 +104,14 @@ func laFailedAlert() -> Alert {
 func laUnavailableInstructionAlert() -> Alert {
     mkAlert(
         title: "Authentication unavailable",
-        message: "Device authentication is not enabled. You can turn on SimpleX Lock via Settings, once you enable device authentication."
+        message: "Device authentication is not enabled. You can turn on Inqalaab Lock via Settings, once you enable device authentication."
     )
 }
 
 func laUnavailableTurningOffAlert() -> Alert {
     mkAlert(
         title: "Authentication unavailable",
-        message: "Device authentication is disabled. Turning off SimpleX Lock."
+        message: "Device authentication is disabled. Turning off Inqalaab Lock."
     )
 }
 
