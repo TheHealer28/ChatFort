@@ -254,6 +254,19 @@ struct ContentView: View {
             InqalaabTabView(activeUserPickerSheet: $chatListUserPickerSheet)
                 .redacted(reason: appSheetState.redactionReasons(protectScreen))
             .onAppear {
+                // Inqalaab: Deadman's Switch check — wipe if user hasn't opened app within threshold
+                if UserDefaults.standard.bool(forKey: INQALAAB_PANIC_ENABLED),
+                   UserDefaults.standard.bool(forKey: INQALAAB_DEADMAN_ENABLED),
+                   let lastOpen = UserDefaults.standard.object(forKey: INQALAAB_LAST_APP_OPEN) as? Date {
+                    let hours = max(UserDefaults.standard.integer(forKey: INQALAAB_DEADMAN_HOURS), 12)
+                    let threshold = TimeInterval(hours * 3600)
+                    if Date().timeIntervalSince(lastOpen) > threshold {
+                        PanicWipeManager.shared.performPanicWipe()
+                    }
+                }
+                // Always update last app open timestamp
+                UserDefaults.standard.set(Date(), forKey: INQALAAB_LAST_APP_OPEN)
+
                 requestNtfAuthorization()
                 // Local Authentication notice is to be shown on next start after onboarding is complete
                 if (!prefLANoticeShown && prefShowLANotice && chatModel.chats.count > 2) {

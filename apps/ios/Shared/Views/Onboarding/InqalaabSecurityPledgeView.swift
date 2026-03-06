@@ -26,11 +26,12 @@ struct InqalaabSecurityPledgeView: View {
 
                     Text("Your Security Pledge")
                         .font(.system(size: 30, weight: .bold))
+                        .foregroundColor(.white)
                         .padding(.bottom, 8)
 
                     Text("We make these promises to you:")
                         .font(.title3)
-                        .foregroundColor(.secondary)
+                        .foregroundColor(.white.opacity(0.6))
 
                     Spacer().frame(height: 36)
 
@@ -92,6 +93,22 @@ struct InqalaabSecurityPledgeView: View {
             }
         }
         .frame(maxHeight: .infinity)
+        .background(
+            ZStack {
+                LinearGradient(
+                    colors: [Color(red: 0.043, green: 0.102, blue: 0.071), Color(red: 0.02, green: 0.02, blue: 0.02)],
+                    startPoint: .top,
+                    endPoint: .bottom
+                )
+                RadialGradient(
+                    colors: [InqalaabAmber.opacity(0.05), .clear],
+                    center: .topLeading,
+                    startRadius: 0,
+                    endRadius: 350
+                )
+            }
+            .ignoresSafeArea()
+        )
         .navigationBarHidden(true)
     }
 
@@ -101,14 +118,15 @@ struct InqalaabSecurityPledgeView: View {
                 .font(.system(size: 18, weight: .bold, design: .rounded))
                 .foregroundColor(.white)
                 .frame(width: 32, height: 32)
-                .background(Color.green)
+                .background(InqalaabGreen)
                 .clipShape(Circle())
             VStack(alignment: .leading, spacing: 4) {
                 Text(title)
                     .font(.headline)
+                    .foregroundColor(.white)
                 Text(detail)
                     .font(.callout)
-                    .foregroundColor(.secondary)
+                    .foregroundColor(.white.opacity(0.6))
                     .fixedSize(horizontal: false, vertical: true)
             }
         }

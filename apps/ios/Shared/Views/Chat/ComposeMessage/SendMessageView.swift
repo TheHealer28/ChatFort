@@ -47,7 +47,7 @@ struct SendMessageView: View {
     @UserDefault(DEFAULT_LIVE_MESSAGE_ALERT_SHOWN) private var liveMessageAlertShown = false
 
     var body: some View {
-        let composeShape = RoundedRectangle(cornerSize: CGSize(width: 20, height: 20))
+        let composeShape = RoundedRectangle(cornerSize: CGSize(width: 24, height: 24))
         ZStack(alignment: .leading) {
             if case .voicePreview = composeState.preview {
                 Text("Voice message…")
@@ -94,7 +94,8 @@ struct SendMessageView: View {
         .padding(.vertical, 1)
         .background(theme.colors.background)
         .clipShape(composeShape)
-        .overlay(composeShape.strokeBorder(.secondary, lineWidth: 0.5).opacity(0.7))
+        .overlay(composeShape.strokeBorder(InqalaabGreen.opacity(0.4), lineWidth: 1))
+        .shadow(color: InqalaabGreen.opacity(0.08), radius: 6, x: 0, y: 2)
         .onChange(of: composeState.message, perform: { text in updateFont(text) })
         .padding(.vertical, 8)
     }
@@ -155,7 +156,7 @@ struct SendMessageView: View {
     private func sendToConnectButton(_ connect: @escaping () -> Void) -> some View {
         let disabled = !composeState.sendEnabled || composeState.inProgress || disableSendButton
         return Button(action: connect) {
-            Image(systemName: "arrow.up.circle.fill")
+            Image(systemName: "paperplane.circle.fill")
                 .resizable()
                 .foregroundColor(disabled ? theme.colors.secondary.opacity(0.67) : sendButtonColor)
                 .frame(width: sendButtonSize, height: sendButtonSize)
@@ -172,7 +173,7 @@ struct SendMessageView: View {
         } label: {
             Image(systemName: composeState.editing || composeState.liveMessage != nil
                   ? "checkmark.circle.fill"
-                  : "arrow.up.circle.fill")
+                  : "paperplane.circle.fill")
             .resizable()
             .foregroundColor(sendButtonColor)
             .frame(width: sendButtonSize, height: sendButtonSize)
@@ -231,7 +232,7 @@ struct SendMessageView: View {
                 Button {
                     startLiveMessage(send: send, update: update)
                 } label: {
-                    Label("Send live message", systemImage: "bolt.fill")
+                    Label("Send live message", systemImage: "person.wave.2.fill")
                 }
             }
             if timedMessageAllowed {
@@ -341,7 +342,7 @@ struct SendMessageView: View {
             default: ()
             }
         } label: {
-            Image(systemName: "bolt.fill")
+            Image(systemName: "person.wave.2.fill")
                 .resizable()
                 .scaledToFit()
                 .foregroundColor(isEnabled ? theme.colors.primary : theme.colors.secondary)

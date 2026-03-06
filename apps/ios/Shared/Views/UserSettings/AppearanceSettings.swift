@@ -13,11 +13,12 @@ import Yams
 let colorModesLocalized: [LocalizedStringKey] = ["System", "Light", "Dark"]
 let colorModesNames: [DefaultThemeMode?] = [nil, DefaultThemeMode.light, DefaultThemeMode.dark]
 
-let darkThemesLocalized: [LocalizedStringKey] = ["Dark", "SimpleX", "Black"]
-let darkThemesNames: [String] = [DefaultTheme.DARK.themeName, DefaultTheme.SIMPLEX.themeName, DefaultTheme.BLACK.themeName]
+// Inqalaab: removed SimpleX theme from dark theme options
+let darkThemesLocalized: [LocalizedStringKey] = ["Dark", "Black"]
+let darkThemesNames: [String] = [DefaultTheme.DARK.themeName, DefaultTheme.BLACK.themeName]
 
-let darkThemesWithoutBlackLocalized: [LocalizedStringKey] = ["Dark", "SimpleX"]
-let darkThemesWithoutBlackNames: [String] = [DefaultTheme.DARK.themeName, DefaultTheme.SIMPLEX.themeName]
+let darkThemesWithoutBlackLocalized: [LocalizedStringKey] = ["Dark"]
+let darkThemesWithoutBlackNames: [String] = [DefaultTheme.DARK.themeName]
 
 let appSettingsURL = URL(string: UIApplication.openSettingsURLString)!
 
@@ -503,7 +504,6 @@ struct WallpaperPresetSelector: View {
 struct CustomizeThemeView: View {
     @EnvironmentObject var theme: AppTheme
     var onChooseType: (WallpaperType?) -> Void
-    @State private var showFileImporter = false
 
     var body: some View {
         List {
@@ -587,14 +587,8 @@ struct CustomizeThemeView: View {
                 }
             }
 
-            ImportExportThemeSection(showFileImporter: $showFileImporter, perChat: nil, perUser: nil)
+            // Inqalaab: removed theme import/export section
         }
-        .modifier(
-            ThemeImporter(isPresented: $showFileImporter) { theme in
-                ThemeManager.saveAndApplyThemeOverrides(theme)
-                saveThemeToDatabase(nil)
-            }
-        )
         /// When changing app theme, user overrides are hidden. User overrides will be returned back after closing Appearance screen, see ThemeDestinationPicker()
         .interactiveDismissDisabled(true)
     }

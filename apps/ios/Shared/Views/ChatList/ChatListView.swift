@@ -426,16 +426,7 @@ struct ChatListView: View {
                             .listRowSeparator(.hidden)
                             .listRowBackground(Color.clear)
                     }
-                    // Inqalaab: Also hide AddressCreationCard when user already has
-                    // an address (auto-created by InqalaabServers). The QR overlay
-                    // in ChatListQROverlay already displays the address.
-                    if !addressCreationCardShown && chatModel.userAddress == nil {
-                        AddressCreationCard()
-                            .padding(.vertical, 6)
-                            .scaleEffect(x: 1, y: oneHandUI ? -1 : 1, anchor: .center)
-                            .listRowSeparator(.hidden)
-                            .listRowBackground(Color.clear)
-                    }
+                    // Inqalaab: AddressCreationCard removed — Safety Hub handles address creation
                 }
                 .listStyle(.plain)
                 .onChange(of: chatModel.chatId) { currentChatId in
@@ -604,8 +595,11 @@ struct SubsStatusIndicator: View {
         Button {
             showServersSummary = true
         } label: {
-            HStack(spacing: 4) {
-                Text("Chats").foregroundStyle(Color.primary).fixedSize().font(.headline)
+            HStack(spacing: 6) {
+                Text("Inqalaab")
+                    .foregroundStyle(InqalaabGreen)
+                    .fixedSize()
+                    .font(.system(size: 18, weight: .bold, design: .rounded))
                 SubscriptionStatusIndicatorView(subs: subs, hasSess: hasSess)
                 if showSubscriptionPercentage {
                     SubscriptionStatusPercentageView(subs: subs, hasSess: hasSess)

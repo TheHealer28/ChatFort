@@ -2,8 +2,12 @@
 //  InqalaabTabView.swift
 //  Inqalaab (iOS)
 //
-//  Main tab bar navigation — structurally different from SimpleX Chat.
-//  Three tabs: Chats, Safety Hub, Settings
+//  Main tab bar navigation — 5-tab structure unique to Inqalaab.
+//  Safety | Nearby | Alerts | Chats | Settings
+//
+//  This structure positions Inqalaab as a safety/resilience tool,
+//  not a messenger clone. Messaging is one tab among several
+//  operational security features.
 //
 
 import SwiftUI
@@ -19,31 +23,52 @@ struct InqalaabTabView: View {
 
     var body: some View {
         TabView(selection: $selectedTab) {
-            // Tab 1: Chats (with WiFi/Nearby toggle)
+            // Tab 0: Protection (DEFAULT — landing screen)
+            SafetyHubView()
+                .tabItem {
+                    Label("Protection", systemImage: "shield.checkered")
+                }
+                .tag(0)
+
+            // Tab 1: Nearby P2P (offline communication)
+            NearbyTabView()
+                .tabItem {
+                    Label("Nearby", systemImage: "antenna.radiowaves.left.and.right")
+                }
+                .tag(1)
+
+            // Tab 2: Alerts (emergency broadcasts & check-ins)
+            AlertsView()
+                .tabItem {
+                    Label("Alerts", systemImage: "light.beacon.max.fill")
+                }
+                .tag(2)
+
+            // Tab 3: Chats (messaging — secondary, not primary)
             ChatListView(activeUserPickerSheet: $activeUserPickerSheet)
                 .tabItem {
                     Label("Chats", systemImage: "bubble.left.and.bubble.right.fill")
                 }
-                .tag(0)
+                .tag(3)
 
-            // Tab 2: Safety Hub (UNIQUE to Inqalaab — does not exist in SimpleX)
-            SafetyHubView()
-                .tabItem {
-                    Label("Safety Hub", systemImage: "shield.checkered")
-                }
-                .tag(1)
-
-            // Tab 3: Settings
+            // Tab 4: Settings
             NavigationView {
                 SettingsView()
             }
             .tabItem {
                 Label("Settings", systemImage: "gearshape.fill")
             }
-            .tag(2)
+            .tag(4)
         }
         .environmentObject(nearbyModel)
-        .accentColor(theme.colors.primary)
+        .tint(InqalaabGreen)
+        .onAppear {
+            let appearance = UITabBarAppearance()
+            appearance.configureWithDefaultBackground()
+            appearance.shadowColor = UIColor(InqalaabGreen)
+            UITabBar.appearance().scrollEdgeAppearance = appearance
+            UITabBar.appearance().standardAppearance = appearance
+        }
         // Inqalaab: Apply locale override so all SwiftUI Text() views
         // with LocalizedStringKey immediately reflect the selected language
         .environment(\.locale, Locale(identifier: selectedLanguage))

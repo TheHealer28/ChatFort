@@ -11,11 +11,16 @@ import SimpleXChat
 
 let INQALAAB_PANIC_ENABLED = "inqalaab_panic_enabled"
 let INQALAAB_PANIC_SHAKE_COUNT = "inqalaab_panic_shake_count"
+let INQALAAB_DEADMAN_ENABLED = "inqalaab_deadman_enabled"
+let INQALAAB_DEADMAN_HOURS = "inqalaab_deadman_hours"
+let INQALAAB_LAST_APP_OPEN = "inqalaab_last_app_open"
 
 struct PanicModeView: View {
     @EnvironmentObject var theme: AppTheme
     @AppStorage(INQALAAB_PANIC_ENABLED) private var panicEnabled = false
     @AppStorage(INQALAAB_PANIC_SHAKE_COUNT) private var shakeThreshold = 5
+    @AppStorage(INQALAAB_DEADMAN_ENABLED) private var deadmanEnabled = false
+    @AppStorage(INQALAAB_DEADMAN_HOURS) private var deadmanHours = 48
     @State private var showTestAlert = false
     @State private var showEnableConfirm = false
 
@@ -132,6 +137,53 @@ struct PanicModeView: View {
                     Text("Test")
                 } footer: {
                     Text("This test does NOT delete any data")
+                }
+
+                // SECTION: Deadman's Switch
+                Section {
+                    Toggle(isOn: $deadmanEnabled) {
+                        HStack(spacing: 12) {
+                            Image(systemName: "clock.badge.exclamationmark")
+                                .foregroundColor(deadmanEnabled ? .orange : .gray)
+                            Text("Deadman's Switch")
+                        }
+                    }
+                    .tint(.orange)
+
+                    if deadmanEnabled {
+                        Stepper(value: $deadmanHours, in: 12...168, step: 12) {
+                            HStack {
+                                Text("Auto-wipe after:")
+                                Text("\(deadmanHours) hours")
+                                    .fontWeight(.semibold)
+                                    .foregroundColor(.orange)
+                            }
+                        }
+
+                        HStack(spacing: 8) {
+                            Image(systemName: "info.circle")
+                                .foregroundColor(.secondary)
+                            Text("If you don't open Inqalaab within \(deadmanHours) hours, all data will be wiped on next launch.")
+                                .font(.caption)
+                                .foregroundColor(.secondary)
+                        }
+                        .padding(.vertical, 2)
+
+                        // Show last opened time
+                        if let lastOpen = UserDefaults.standard.object(forKey: INQALAAB_LAST_APP_OPEN) as? Date {
+                            HStack(spacing: 8) {
+                                Image(systemName: "clock")
+                                    .foregroundColor(.secondary)
+                                Text("Last opened: \(lastOpen, style: .relative) ago")
+                                    .font(.caption)
+                                    .foregroundColor(.secondary)
+                            }
+                        }
+                    }
+                } header: {
+                    Text("Deadman's Switch")
+                } footer: {
+                    Text("Protects your data if you lose access to your device for an extended period")
                 }
             }
         }

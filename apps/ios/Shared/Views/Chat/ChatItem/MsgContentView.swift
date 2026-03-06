@@ -9,7 +9,7 @@
 import SwiftUI
 import SimpleXChat
 
-let uiLinkColor = UIColor(red: 0, green: 0.533, blue: 1, alpha: 1)
+let uiLinkColor = UIColor(InqalaabGreen)
 
 private func typing(_ theme: AppTheme, _ descr: UIFontDescriptor, _ ws: [UIFont.Weight]) -> NSMutableAttributedString {
     let res = NSMutableAttributedString()
@@ -291,7 +291,14 @@ func messageText(
 ) -> MsgTextResult {
     let res = NSMutableAttributedString()
     let descr = UIFontDescriptor.preferredFontDescriptor(withTextStyle: textStyle)
-    let font = UIFont.preferredFont(forTextStyle: textStyle)
+    // Inqalaab: rounded font design for message text
+    let font: UIFont = {
+        let base = UIFont.preferredFont(forTextStyle: textStyle)
+        if let roundedDescr = base.fontDescriptor.withDesign(.rounded) {
+            return UIFont(descriptor: roundedDescr, size: 0)
+        }
+        return base
+    }()
     let plain: [NSAttributedString.Key: Any] = [
         .font: font,
         .foregroundColor: UIColor.label

@@ -223,6 +223,8 @@
 		B1B2C3D4E5F6A7B8C9D0E105 /* PanicModeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B2C3D4E5F6A7B8C9D0E104 /* PanicModeView.swift */; };
 		B1B2C3D4E5F6A7B8C9D0E109 /* PanicWipeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B2C3D4E5F6A7B8C9D0E108 /* PanicWipeManager.swift */; };
 		B1B2C3D4E5F6A7B8C9D0E111 /* InqalaabShakeDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B2C3D4E5F6A7B8C9D0E110 /* InqalaabShakeDetector.swift */; };
+		B1B2C3D4E5F6A7B8C9D0E201 /* LockdownModeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B2C3D4E5F6A7B8C9D0E200 /* LockdownModeView.swift */; };
+		B1B2C3D4E5F6A7B8C9D0E203 /* EmergencyContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B2C3D4E5F6A7B8C9D0E202 /* EmergencyContactsView.swift */; };
 		B70A39732D24090D00E80A5F /* TagListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70A39722D24090D00E80A5F /* TagListView.swift */; };
 		B70CE9E62D4BE5930080F36D /* GroupMentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70CE9E52D4BE5930080F36D /* GroupMentions.swift */; };
 		B728945B2D0C62BF00F7A19A /* ElegantEmojiPicker in Frameworks */ = {isa = PBXBuildFile; productRef = B728945A2D0C62BF00F7A19A /* ElegantEmojiPicker */; };
@@ -242,6 +244,8 @@
 		C1D2E3F4A5B6C7D8E9F0A111 /* NearbyConversationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D2E3F4A5B6C7D8E9F0A110 /* NearbyConversationView.swift */; };
 		C1D2E3F4A5B6C7D8E9F0A113 /* NearbyMessageBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D2E3F4A5B6C7D8E9F0A112 /* NearbyMessageBubble.swift */; };
 		C1D2E3F4A5B6C7D8E9F0A115 /* NearbyComposeBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D2E3F4A5B6C7D8E9F0A114 /* NearbyComposeBar.swift */; };
+		C1D2E3F4A5B6C7D8E9F0A301 /* NearbyTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D2E3F4A5B6C7D8E9F0A300 /* NearbyTabView.swift */; };
+		B1B2C3D4E5F6A7B8C9D0E205 /* AlertsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B2C3D4E5F6A7B8C9D0E204 /* AlertsView.swift */; };
 		CE176F202C87014C00145DBC /* InvertedForegroundStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE176F1F2C87014C00145DBC /* InvertedForegroundStyle.swift */; };
 		CE1EB0E42C459A660099D896 /* ShareAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1EB0E32C459A660099D896 /* ShareAPI.swift */; };
 		CE2AD9CE2C452A4D00E844E3 /* ChatUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2AD9CD2C452A4D00E844E3 /* ChatUtils.swift */; };
@@ -609,6 +613,8 @@
 		B1B2C3D4E5F6A7B8C9D0E104 /* PanicModeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanicModeView.swift; sourceTree = "<group>"; };
 		B1B2C3D4E5F6A7B8C9D0E108 /* PanicWipeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanicWipeManager.swift; sourceTree = "<group>"; };
 		B1B2C3D4E5F6A7B8C9D0E110 /* InqalaabShakeDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InqalaabShakeDetector.swift; sourceTree = "<group>"; };
+		B1B2C3D4E5F6A7B8C9D0E200 /* LockdownModeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockdownModeView.swift; sourceTree = "<group>"; };
+		B1B2C3D4E5F6A7B8C9D0E202 /* EmergencyContactsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyContactsView.swift; sourceTree = "<group>"; };
 		B70A39722D24090D00E80A5F /* TagListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagListView.swift; sourceTree = "<group>"; };
 		B70CE9E52D4BE5930080F36D /* GroupMentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupMentions.swift; sourceTree = "<group>"; };
 		B73EFE522CE5FA3500C778EA /* CreateSimpleXAddress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateSimpleXAddress.swift; sourceTree = "<group>"; };
@@ -627,6 +633,8 @@
 		C1D2E3F4A5B6C7D8E9F0A110 /* NearbyConversationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyConversationView.swift; sourceTree = "<group>"; };
 		C1D2E3F4A5B6C7D8E9F0A112 /* NearbyMessageBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyMessageBubble.swift; sourceTree = "<group>"; };
 		C1D2E3F4A5B6C7D8E9F0A114 /* NearbyComposeBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyComposeBar.swift; sourceTree = "<group>"; };
+		C1D2E3F4A5B6C7D8E9F0A300 /* NearbyTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyTabView.swift; sourceTree = "<group>"; };
+		B1B2C3D4E5F6A7B8C9D0E204 /* AlertsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertsView.swift; sourceTree = "<group>"; };
 		CE176F1F2C87014C00145DBC /* InvertedForegroundStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvertedForegroundStyle.swift; sourceTree = "<group>"; };
 		CE1EB0E32C459A660099D896 /* ShareAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareAPI.swift; sourceTree = "<group>"; };
 		CE2AD9CD2C452A4D00E844E3 /* ChatUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatUtils.swift; sourceTree = "<group>"; };
@@ -1225,6 +1233,9 @@
 				B1B2C3D4E5F6A7B8C9D0E104 /* PanicModeView.swift */,
 				B1B2C3D4E5F6A7B8C9D0E108 /* PanicWipeManager.swift */,
 				B1B2C3D4E5F6A7B8C9D0E110 /* InqalaabShakeDetector.swift */,
+				B1B2C3D4E5F6A7B8C9D0E200 /* LockdownModeView.swift */,
+				B1B2C3D4E5F6A7B8C9D0E202 /* EmergencyContactsView.swift */,
+				B1B2C3D4E5F6A7B8C9D0E204 /* AlertsView.swift */,
 			);
 			path = SafetyHub;
 			sourceTree = "<group>";
@@ -1258,6 +1269,7 @@
 				C1D2E3F4A5B6C7D8E9F0A110 /* NearbyConversationView.swift */,
 				C1D2E3F4A5B6C7D8E9F0A112 /* NearbyMessageBubble.swift */,
 				C1D2E3F4A5B6C7D8E9F0A114 /* NearbyComposeBar.swift */,
+				C1D2E3F4A5B6C7D8E9F0A300 /* NearbyTabView.swift */,
 			);
 			path = Nearby;
 			sourceTree = "<group>";
@@ -1659,6 +1671,10 @@
 				B1B2C3D4E5F6A7B8C9D0E105 /* PanicModeView.swift in Sources */,
 				B1B2C3D4E5F6A7B8C9D0E109 /* PanicWipeManager.swift in Sources */,
 				B1B2C3D4E5F6A7B8C9D0E111 /* InqalaabShakeDetector.swift in Sources */,
+				B1B2C3D4E5F6A7B8C9D0E201 /* LockdownModeView.swift in Sources */,
+				B1B2C3D4E5F6A7B8C9D0E203 /* EmergencyContactsView.swift in Sources */,
+				C1D2E3F4A5B6C7D8E9F0A301 /* NearbyTabView.swift in Sources */,
+				B1B2C3D4E5F6A7B8C9D0E205 /* AlertsView.swift in Sources */,
 				C1D2E3F4A5B6C7D8E9F0A101 /* NearbyTypes.swift in Sources */,
 				C1D2E3F4A5B6C7D8E9F0A103 /* NearbyStore.swift in Sources */,
 				C1D2E3F4A5B6C7D8E9F0A105 /* NearbyService.swift in Sources */,
@@ -2124,7 +2140,7 @@
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Inqalaab needs access to Photo Library for saving captured and received media";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -2177,7 +2193,7 @@
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Inqalaab needs access to Photo Library for saving captured and received media";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

@@ -241,25 +241,26 @@ struct ChatItemContentView<Content: View>: View {
         }
     }
 
+    // Inqalaab: rebranded encryption info text
     private func directE2EEInfoText(_ info: E2EEInfo) -> Text {
         if let pqEnabled = info.pqEnabled {
             pqEnabled
-            ? e2eeInfoText("Messages, files and calls are protected by **quantum resistant e2e encryption** with perfect forward secrecy, repudiation and break-in recovery.")
+            ? e2eeInfoText("🛡️ This conversation is secured with **quantum-resistant encryption**. Your messages, files and calls are private.")
             : e2eeInfoNoPQText()
         } else {
-            e2eeInfoText("Messages are protected by **end-to-end encryption**.")
+            e2eeInfoText("🛡️ This conversation is protected by **end-to-end encryption**.")
         }
     }
 
     private func e2eeInfoNoPQText() -> Text {
-        e2eeInfoText("Messages, files and calls are protected by **end-to-end encryption** with perfect forward secrecy, repudiation and break-in recovery.")
+        e2eeInfoText("🛡️ Your messages, files and calls are protected by **end-to-end encryption** with forward secrecy.")
     }
 
     private func e2eeInfoText(_ s: LocalizedStringKey) -> Text {
         Text(s)
             .font(.caption)
-            .foregroundColor(theme.colors.secondary)
-            .fontWeight(.light)
+            .foregroundColor(InqalaabGreen)
+            .fontWeight(.medium)
     }
 }
 

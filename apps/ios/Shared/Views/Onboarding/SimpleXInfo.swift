@@ -28,26 +28,26 @@ struct SimpleXInfo: View {
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 120, height: 120)
                         .clipShape(RoundedRectangle(cornerRadius: 24))
-                        .shadow(color: Color.green.opacity(0.3), radius: 20, x: 0, y: 10)
+                        .shadow(color: InqalaabGreen.opacity(0.4), radius: 30, x: 0, y: 15)
 
                     Spacer().frame(height: 24)
 
                     // App Name
                     Text("Inqalaab")
                         .font(.system(size: 42, weight: .bold, design: .rounded))
-                        .foregroundColor(.primary)
+                        .foregroundColor(.white)
 
                     // Urdu subtitle
                     Text("انقلاب")
                         .font(.system(size: 28, weight: .medium, design: .serif))
-                        .foregroundColor(.green)
+                        .foregroundColor(InqalaabGreen)
 
                     Spacer().frame(height: 8)
 
                     Text("Secure communication for the resistance")
                         .font(.title3)
                         .fontWeight(.medium)
-                        .foregroundColor(.secondary)
+                        .foregroundColor(.white.opacity(0.6))
                         .multilineTextAlignment(.center)
                         .padding(.horizontal, 30)
 
@@ -105,6 +105,7 @@ struct SimpleXInfo: View {
                             } label: {
                                 Label("Migrate from another device", systemImage: "tray.and.arrow.down")
                                     .font(.system(size: 15))
+                                    .foregroundColor(.white.opacity(0.7))
                                     .frame(minHeight: 36)
                             }
                             .frame(maxWidth: .infinity)
@@ -140,6 +141,22 @@ struct SimpleXInfo: View {
             setLastVersionDefault()
         }
         .frame(maxHeight: .infinity)
+        .background(
+            ZStack {
+                LinearGradient(
+                    colors: [Color(red: 0.043, green: 0.102, blue: 0.071), Color(red: 0.02, green: 0.02, blue: 0.02)],
+                    startPoint: .top,
+                    endPoint: .bottom
+                )
+                RadialGradient(
+                    colors: [InqalaabGreen.opacity(0.08), .clear],
+                    center: .top,
+                    startRadius: 0,
+                    endRadius: 400
+                )
+            }
+            .ignoresSafeArea()
+        )
         .navigationBarHidden(true)
     }
 
@@ -154,9 +171,10 @@ struct SimpleXInfo: View {
             VStack(alignment: .leading, spacing: 3) {
                 Text(title)
                     .font(.headline)
+                    .foregroundColor(.white)
                 Text(detail)
                     .font(.callout)
-                    .foregroundColor(.secondary)
+                    .foregroundColor(.white.opacity(0.6))
                     .fixedSize(horizontal: false, vertical: true)
             }
         }

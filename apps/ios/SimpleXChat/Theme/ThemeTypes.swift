@@ -631,9 +631,9 @@ public let DarkColorPalette = Colors(
 )
 public let DarkColorPaletteApp = AppColors(
     title: .white,
-    primaryVariant2: Color(0xFF0D2818),
-    sentMessage: Color(0xFF0D2818),
-    sentQuote: Color(0xFF143D24),
+    primaryVariant2: Color(0xFF0E3020),
+    sentMessage: Color(0xFF0E3020),
+    sentQuote: Color(0xFF164830),
     receivedMessage: Color(0xff1A1A1B),
     receivedQuote: Color(0xff2A2A2C)
 )
@@ -652,9 +652,9 @@ public let LightColorPalette = Colors (
 )
 public let LightColorPaletteApp = AppColors(
     title: .black,
-    primaryVariant2: Color(0xFFE8F5E9),
-    sentMessage: Color(0xFFE8F5E9),
-    sentQuote: Color(0xFFC8E6C9),
+    primaryVariant2: Color(0xFFC8E6C9),
+    sentMessage: Color(0xFFC8E6C9),
+    sentQuote: Color(0xFFA5D6A7),
     receivedMessage: Color(0xfff5f5f6),
     receivedQuote: Color(0xffececee)
 )
@@ -694,9 +694,9 @@ public let BlackColorPalette = Colors(
 )
 public let BlackColorPaletteApp = AppColors(
     title: .white,
-    primaryVariant2: Color(0xff0A1F10),
-    sentMessage: Color(0xFF0D2818),
-    sentQuote: Color(0xFF143D24),
+    primaryVariant2: Color(0xff0E3020),
+    sentMessage: Color(0xFF0E3020),
+    sentQuote: Color(0xFF164830),
     receivedMessage: Color(0xff151515),
     receivedQuote: Color(0xff222224)
 )

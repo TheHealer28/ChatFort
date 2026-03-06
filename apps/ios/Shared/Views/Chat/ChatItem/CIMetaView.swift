@@ -142,7 +142,8 @@ func ciMetaText(
     }
     if let enc = encrypted {
         appendSpace()
-        r = r + statusIconText(enc ? "lock" : "lock.open", resolved)
+        // Inqalaab: green lock icon for encrypted messages
+        r = r + statusIconText(enc ? "lock" : "lock.open", enc ? InqalaabGreen : resolved)
         space = textSpace
     }
     if showTimesamp {

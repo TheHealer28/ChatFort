@@ -10,7 +10,7 @@ import SwiftUI
 import StoreKit
 import SimpleXChat
 
-let simplexTeamURL = URL(string: "simplex:/contact#/?v=1&smp=smp%3A%2F%2FPQUV2eL0t7OStZOoAsPEV2QYWt4-xilbakvGUGOItUo%3D%40smp6.simplex.im%2FK1rslx-m5bpXVIdMZg9NLUZ_8JBm8xTt%23MCowBQYDK2VuAyEALDeVe-sG8mRY22LsXlPgiwTNs9dbiLrNuA7f3ZMAJ2w%3D")!
+// Inqalaab: removed simplexTeamURL (SimpleX team contact link)
 
 let appVersion = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String
 
@@ -287,6 +287,43 @@ struct SettingsView: View {
     func settingsView() -> some View {
         List {
             let user = chatModel.currentUser
+
+            // Branded Inqalaab header
+            Section {
+                HStack(spacing: 14) {
+                    Image(colorScheme == .light ? "logo" : "logo-light")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 44, height: 44)
+                        .clipShape(RoundedRectangle(cornerRadius: 10))
+                    VStack(alignment: .leading, spacing: 2) {
+                        Text("Inqalaab")
+                            .font(.system(size: 20, weight: .bold, design: .rounded))
+                            .foregroundColor(.white)
+                        Text("v\(appVersion ?? "?") (\(appBuild ?? "?"))")
+                            .font(.caption)
+                            .foregroundColor(.white.opacity(0.6))
+                    }
+                    Spacer()
+                    Image(systemName: "shield.checkered")
+                        .font(.title2)
+                        .foregroundColor(.white.opacity(0.5))
+                }
+                .padding(16)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .background(
+                    LinearGradient(
+                        colors: [InqalaabGreen, InqalaabTeal],
+                        startPoint: .leading,
+                        endPoint: .trailing
+                    )
+                )
+                .clipShape(RoundedRectangle(cornerRadius: 16))
+                .listRowInsets(EdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16))
+                .listRowBackground(Color.clear)
+                .listRowSeparator(.hidden)
+            }
+
             Section(header: Text("Settings").foregroundColor(theme.colors.secondary)) {
                 NavigationLink {
                     NotificationsView()

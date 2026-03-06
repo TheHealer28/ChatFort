@@ -451,9 +451,13 @@ struct ComposeView: View {
             }
         }
         .background {
-            Color.clear
-                .overlay(ToolbarMaterial.material(toolbarMaterial))
-                .ignoresSafeArea(.all, edges: .bottom)
+            ZStack {
+                Color.clear
+                    .overlay(ToolbarMaterial.material(toolbarMaterial))
+                // Inqalaab: subtle green tint on compose area
+                InqalaabGreen.opacity(0.04)
+            }
+            .ignoresSafeArea(.all, edges: .bottom)
         }
         .onChange(of: composeState.message) { msg in
             if updatingCompose {

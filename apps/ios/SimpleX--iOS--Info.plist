@@ -63,5 +63,14 @@
 		<string>_inqalaab-p2p._tcp</string>
 		<string>_inqalaab-p2p._udp</string>
 	</array>
+	<key>NSBluetoothAlwaysUsageDescription</key>
+	<string>Inqalaab uses Bluetooth to discover and communicate with nearby users.</string>
+	<key>UILaunchScreen</key>
+	<dict>
+		<key>UIColorName</key>
+		<string>LaunchBackground</string>
+		<key>UIImageName</key>
+		<string>logo</string>
+	</dict>
 </dict>
 </plist>
