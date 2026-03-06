@@ -93,10 +93,7 @@ struct NotificationsView: View {
                     }
                 }
 
-                if let server = m.notificationServer {
-                    smpServers("Push server", [server], theme.colors.secondary)
-                    testTokenButton(server)
-                }
+                // Inqalaab: push server address hidden from UI
             } header: {
                 Text("Push notifications")
                     .foregroundColor(theme.colors.secondary)
