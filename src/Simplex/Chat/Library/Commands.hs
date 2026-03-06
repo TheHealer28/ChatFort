@@ -135,7 +135,8 @@ import Simplex.Messaging.Agent.Store.Common (withConnection)
 import Simplex.Messaging.Agent.Store.SQLite.DB (SlowQueryStats (..))
 #endif
 
--- Inqalaab: using community NTF servers for push notifications
+-- Inqalaab: NTF servers are baked into the prebuilt Haskell static libraries (Libraries/ios/*.a).
+-- This source is kept in sync but changes here require rebuilding the Haskell libraries to take effect.
 _defaultNtfServers :: [NtfServer]
 _defaultNtfServers =
   [ "ntf://KmpZNNXiVZJx_G2T7jRUmDFxWXM3OAnunz3uLT0tqAA=@ntf3.simplex.im,pxculznuryunjdvtvh6s6szmanyadumpbmvevgdpe4wk5c65unyt4yid.onion",
