@@ -11,7 +11,7 @@ import SimpleXChat
 
 struct SetNotificationsMode: View {
     @EnvironmentObject var m: ChatModel
-    @State private var notificationMode = NotificationsMode.off
+    @State private var notificationMode = NotificationsMode.instant
     @State private var showAlert: NotificationAlert?
     @State private var showInfo: Bool = false
 
