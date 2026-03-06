@@ -22,7 +22,6 @@ struct OperatorView: View {
     @State var useOperator: Bool
     @State private var useOperatorToggleReset: Bool = false
     @State private var showConditionsSheet: Bool = false
-    @State private var selectedServer: String? = nil
     @State private var testing = false
 
     var body: some View {
@@ -99,8 +98,7 @@ struct OperatorView: View {
                                         duplicateHosts: duplicateHosts,
                                         server: srv,
                                         serverProtocol: .smp,
-                                        backLabel: "\(userServers[operatorIndex].operator_.tradeName) servers",
-                                        selectedServer: $selectedServer
+                                        backLabel: "\(userServers[operatorIndex].operator_.tradeName) servers"
                                     )
                                 } else {
                                     EmptyView()
@@ -130,8 +128,7 @@ struct OperatorView: View {
                                         duplicateHosts: duplicateHosts,
                                         server: srv,
                                         serverProtocol: .smp,
-                                        backLabel: "\(userServers[operatorIndex].operator_.tradeName) servers",
-                                        selectedServer: $selectedServer
+                                        backLabel: "\(userServers[operatorIndex].operator_.tradeName) servers"
                                     )
                                 } else {
                                     EmptyView()
@@ -174,8 +171,7 @@ struct OperatorView: View {
                                         duplicateHosts: duplicateHosts,
                                         server: srv,
                                         serverProtocol: .xftp,
-                                        backLabel: "\(userServers[operatorIndex].operator_.tradeName) servers",
-                                        selectedServer: $selectedServer
+                                        backLabel: "\(userServers[operatorIndex].operator_.tradeName) servers"
                                     )
                                 } else {
                                     EmptyView()
@@ -205,8 +201,7 @@ struct OperatorView: View {
                                         duplicateHosts: duplicateHosts,
                                         server: srv,
                                         serverProtocol: .xftp,
-                                        backLabel: "\(userServers[operatorIndex].operator_.tradeName) servers",
-                                        selectedServer: $selectedServer
+                                        backLabel: "\(userServers[operatorIndex].operator_.tradeName) servers"
                                     )
                                 } else {
                                     EmptyView()

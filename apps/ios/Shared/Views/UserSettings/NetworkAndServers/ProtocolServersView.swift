@@ -19,7 +19,6 @@ struct YourServersView: View {
     @Binding var userServers: [UserOperatorServers]
     @Binding var serverErrors: [UserServersError]
     var operatorIndex: Int
-    @State private var selectedServer: String? = nil
     @State private var showAddServer = false
     @State private var newServerNavLinkActive = false
     @State private var showScanProtoServer = false
@@ -51,8 +50,7 @@ struct YourServersView: View {
                                 duplicateHosts: duplicateHosts,
                                 server: srv,
                                 serverProtocol: .smp,
-                                backLabel: "Your servers",
-                                selectedServer: $selectedServer
+                                backLabel: "Your servers"
                             )
                         } else {
                             EmptyView()
@@ -86,8 +84,7 @@ struct YourServersView: View {
                                 duplicateHosts: duplicateHosts,
                                 server: srv,
                                 serverProtocol: .xftp,
-                                backLabel: "Your servers",
-                                selectedServer: $selectedServer
+                                backLabel: "Your servers"
                             )
                         } else {
                             EmptyView()
@@ -193,12 +190,11 @@ struct ProtocolServerViewLink: View {
     @Binding var server: UserServer
     var serverProtocol: ServerProtocol
     var backLabel: LocalizedStringKey
-    @Binding var selectedServer: String?
 
     var body: some View {
         let proto = serverProtocol.rawValue.uppercased()
 
-        NavigationLink(tag: server.id, selection: $selectedServer) {
+        NavigationLink {
             ProtocolServerView(
                 userServers: $userServers,
                 serverErrors: $serverErrors,
