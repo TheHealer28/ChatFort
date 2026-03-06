@@ -22,6 +22,9 @@ struct SafetyHubView: View {
     @State private var showPanicConfirm = false
     @AppStorage(INQALAAB_LOCKDOWN_ENABLED) private var lockdownEnabled = false
     @State private var emergencyContactIds: Set<Int64> = []
+    // Inqalaab: In-app language toggle
+    @State private var selectedLanguage: String = UserDefaults.standard.string(forKey: "inqalaab_selected_language")
+        ?? Bundle.main.preferredLocalizations.first ?? "en"
 
     private var hasEmergencyContacts: Bool {
         !emergencyContactIds.isEmpty
@@ -81,6 +84,25 @@ struct SafetyHubView: View {
                     .listRowInsets(EdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16))
                     .listRowBackground(Color.clear)
                     .listRowSeparator(.hidden)
+                }
+
+                // LANGUAGE TOGGLE
+                Section {
+                    Picker("", selection: $selectedLanguage) {
+                        Text("English").tag("en")
+                        Text("اردو").tag("ur")
+                    }
+                    .pickerStyle(.segmented)
+                    .onChange(of: selectedLanguage) { newLang in
+                        UserDefaults.standard.set([newLang], forKey: "AppleLanguages")
+                        UserDefaults.standard.set(newLang, forKey: "inqalaab_selected_language")
+                        UserDefaults.standard.synchronize()
+                    }
+                } header: {
+                    Label("Language / زبان", systemImage: "globe")
+                } footer: {
+                    Text("Restart the app after changing language")
+                        .font(.caption2)
                 }
 
                 // NETWORK STATUS WIDGET
