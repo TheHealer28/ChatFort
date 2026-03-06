@@ -594,84 +594,9 @@ struct CustomizeThemeView: View {
     }
 }
 
-struct ImportExportThemeSection: View {
-    @EnvironmentObject var theme: AppTheme
-    @Binding var showFileImporter: Bool
-    var perChat: ThemeModeOverride?
-    var perUser: ThemeModeOverrides?
+// Inqalaab: ImportExportThemeSection removed — theme import/export not supported
 
-    var body: some View {
-        Section {
-            Button {
-                let overrides = ThemeManager.currentThemeOverridesForExport(nil, perChat, perUser)
-                do {
-                    let encoded = try encodeThemeOverrides(overrides)
-                    var lines = encoded.split(separator: "\n")
-                    // Removing theme id without using custom serializer or data class
-                    lines.remove(at: 0)
-                    let theme = lines.joined(separator: "\n")
-                    let tempUrl = getTempFilesDirectory().appendingPathComponent("simplex.theme")
-                    try? FileManager.default.removeItem(at: tempUrl)
-                    if FileManager.default.createFile(atPath: tempUrl.path, contents: theme.data(using: .utf8)) {
-                        showShareSheet(items: [tempUrl])
-                    }
-                } catch {
-                    AlertManager.shared.showAlertMsg(title: "Error", message: "Error exporting theme: \(error.localizedDescription)")
-                }
-            } label: {
-                Text("Export theme").foregroundColor(theme.colors.primary)
-            }
-            Button {
-                showFileImporter = true
-            } label: {
-                Text("Import theme").foregroundColor(theme.colors.primary)
-            }
-        }
-    }
-}
-
-struct ThemeImporter: ViewModifier {
-    @Binding var isPresented: Bool
-    var save: (ThemeOverrides) -> Void
-
-    func body(content: Content) -> some View {
-        content.fileImporter(
-            isPresented: $isPresented,
-            allowedContentTypes: [.data/*.plainText*/],
-            allowsMultipleSelection: false
-        ) { result in
-            if case let .success(files) = result, let fileURL = files.first {
-                do {
-                    var fileSize: Int? = nil
-                    if fileURL.startAccessingSecurityScopedResource() {
-                        let resourceValues = try fileURL.resourceValues(forKeys: [.fileSizeKey])
-                        fileSize = resourceValues.fileSize
-                    }
-                    if let fileSize = fileSize,
-                       // Same as Android/desktop
-                       fileSize <= 5_500_000 {
-                        if let string = try? String(contentsOf: fileURL, encoding: .utf8), let theme: ThemeOverrides = decodeYAML("themeId: \(UUID().uuidString)\n" + string) {
-                            save(theme)
-                            logger.error("Saved theme from file")
-                        } else {
-                            logger.error("Error decoding theme file")
-                        }
-                        fileURL.stopAccessingSecurityScopedResource()
-                    } else {
-                        fileURL.stopAccessingSecurityScopedResource()
-                        let prettyMaxFileSize = ByteCountFormatter.string(fromByteCount: 5_500_000, countStyle: .binary)
-                        AlertManager.shared.showAlertMsg(
-                            title: "Large file!",
-                            message: "Currently maximum supported file size is \(prettyMaxFileSize)."
-                        )
-                    }
-                } catch {
-                    logger.error("Appearance fileImporter error \(error.localizedDescription)")
-                }
-            }
-        }
-    }
-}
+// Inqalaab: ThemeImporter removed — theme import/export not supported
 
 struct UserWallpaperEditorSheet: View {
     @Environment(\.dismiss) var dismiss

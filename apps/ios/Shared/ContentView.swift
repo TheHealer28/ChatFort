@@ -40,6 +40,9 @@ struct ContentView: View {
     @AppStorage(DEFAULT_PERFORM_LA) private var prefPerformLA = false
     @AppStorage(DEFAULT_PRIVACY_PROTECT_SCREEN) private var protectScreen = false
     @AppStorage(DEFAULT_NOTIFICATION_ALERT_SHOWN) private var notificationAlertShown = false
+    @AppStorage(INQALAAB_PANIC_ENABLED) private var panicEnabled = false
+    @AppStorage(INQALAAB_DEADMAN_ENABLED) private var deadmanEnabled = false
+    @AppStorage(INQALAAB_DEADMAN_HOURS) private var deadmanHours = 48
     @State private var noticesShown = false
     @State private var noticesSheetItem: NoticesSheet? = nil
     @State private var showChooseLAMode = false
@@ -154,6 +157,8 @@ struct ContentView: View {
         }
         .onAppear {
             reactOnDarkThemeChanges(systemInDarkThemeCurrently)
+            // Inqalaab: Deadman's switch — auto-wipe if user hasn't opened app within configured hours
+            checkDeadmanSwitch()
         }
         .onChange(of: colorScheme) { scheme in
             // It's needed to update UI colors when iOS wants to make screenshot after going to background,
@@ -163,6 +168,29 @@ struct ContentView: View {
         .onChange(of: theme.name) { _ in
             ThemeManager.adjustWindowStyle()
         }
+    }
+
+    // Inqalaab: Deadman's switch — if user hasn't opened app within configured hours, trigger panic wipe
+    private func checkDeadmanSwitch() {
+        let now = Date()
+
+        // Check deadman's switch BEFORE updating timestamp
+        if panicEnabled && deadmanEnabled {
+            let lastOpen = UserDefaults.standard.double(forKey: INQALAAB_LAST_APP_OPEN)
+            // Only trigger if we have a previous open recorded (not first launch)
+            if lastOpen > 0 {
+                let lastOpenDate = Date(timeIntervalSince1970: lastOpen)
+                let hoursSinceLastOpen = now.timeIntervalSince(lastOpenDate) / 3600
+                if hoursSinceLastOpen > Double(deadmanHours) {
+                    logger.warning("Inqalaab deadman's switch triggered: \(Int(hoursSinceLastOpen))h since last open, threshold \(deadmanHours)h")
+                    PanicWipeManager.shared.performPanicWipe()
+                    return // Don't update timestamp — wipe is in progress
+                }
+            }
+        }
+
+        // Always update last app open timestamp
+        UserDefaults.standard.set(now.timeIntervalSince1970, forKey: INQALAAB_LAST_APP_OPEN)
     }
 
     @ViewBuilder private func contentView() -> some View {
