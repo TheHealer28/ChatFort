@@ -1,7 +1,7 @@
 # Inqalaab Privacy Policy
 
 **Effective Date:** March 2, 2026
-**Last Updated:** March 2, 2026
+**Last Updated:** March 6, 2026
 
 ## Overview
 
@@ -24,7 +24,8 @@ All data is stored **locally on your device only**:
 - **Messages** — All messages are end-to-end encrypted using the SimpleX protocol. Messages are stored only on your device and the recipient's device. No server retains message content after delivery.
 - **Contacts and groups** — Your contact list and group memberships are stored exclusively on your device.
 - **Media and files** — Photos, videos, voice messages, and files shared through Inqalaab are encrypted and stored on your device.
-- **Preferences and settings** — App settings (including language preference, appearance, and Safety Hub configuration) are stored locally using iOS standard preferences.
+- **Preferences and settings** — App settings (including language preference, appearance, Safety Hub configuration, Lockdown Mode state, and emergency contact selections) are stored locally using iOS standard preferences.
+- **Emergency contacts** — Your selection of emergency contacts is stored locally on your device as a list of contact identifiers. This data never leaves your device.
 
 ## Encryption
 
@@ -53,6 +54,7 @@ Inqalaab requests the following device permissions, each used only for the state
 | **Microphone** | Audio and video calls; recording voice messages |
 | **Photo Library** | Saving and sharing photos and media |
 | **Face ID / Touch ID** | Optional local app authentication |
+| **Bluetooth** | Nearby P2P communication for offline messaging |
 | **Local Network** | Nearby P2P communication; desktop app pairing |
 | **Notifications** | Receiving message notifications |
 
@@ -67,13 +69,28 @@ Inqalaab does not integrate any third-party services, SDKs, or analytics platfor
 - Do not retain messages after delivery
 - Do not log user activity
 
-## Safety Hub & Panic Mode
+## Safety Hub & Security Features
 
-Inqalaab includes a Safety Hub with an emergency data wipe (Panic Mode) feature:
+Inqalaab includes a Safety Hub (Protection tab) with several security features. All of these operate entirely on your device:
 
-- When triggered, Panic Mode permanently deletes all local data including messages, contacts, files, and settings.
+### Panic Mode
+- When triggered (via shake gesture), Panic Mode permanently deletes all local data including messages, contacts, files, and settings.
 - This deletion is irreversible and happens entirely on your device.
 - No data about Panic Mode usage is transmitted to any server.
+
+### Deadman's Switch
+- If enabled, automatically triggers data wipe if the app is not opened within a user-configured time period.
+- The last-opened timestamp is stored locally on your device only.
+
+### Lockdown Mode
+- Applies maximum privacy settings (hides previews, enables incognito mode, activates screen protection) with one tap.
+- All settings are stored and restored locally. No data is transmitted.
+
+### Emergency Contacts & Alerts
+- You can mark existing contacts as "emergency contacts" for one-tap check-in messaging.
+- Emergency contact selections are stored locally on your device as contact identifiers.
+- Check-in and alert messages are sent through the same end-to-end encrypted SimpleX protocol channels as regular messages.
+- No special data about emergency contacts or alerts is transmitted to any server beyond the encrypted messages themselves.
 
 ## Children's Privacy
 

@@ -208,42 +208,48 @@ struct FramedItemView: View {
 
     @ViewBuilder private func ciQuoteView(_ qi: CIQuote) -> some View {
         let backgroundColor = chatItemFrameContextColor(chatItem, theme)
-        let v = ZStack(alignment: .topTrailing) {
-            switch (qi.content) {
-            case let .image(_, image):
-                if let uiImage = imageFromBase64(image) {
-                    ciQuotedMsgView(qi)
+        // Inqalaab: green accent bar on left side of quoted messages
+        let v = HStack(spacing: 0) {
+            RoundedRectangle(cornerRadius: 2)
+                .fill(InqalaabGreen)
+                .frame(width: 3)
+            ZStack(alignment: .topTrailing) {
+                switch (qi.content) {
+                case let .image(_, image):
+                    if let uiImage = imageFromBase64(image) {
+                        ciQuotedMsgView(qi)
+                            .padding(.trailing, 70).frame(minWidth: msgWidth, alignment: .leading)
+                        Image(uiImage: uiImage)
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: 68, height: 68)
+                            .clipped()
+                    } else {
+                        ciQuotedMsgView(qi)
+                    }
+                case let .video(_, image, _):
+                    if let uiImage = imageFromBase64(image) {
+                        ciQuotedMsgView(qi)
                         .padding(.trailing, 70).frame(minWidth: msgWidth, alignment: .leading)
-                    Image(uiImage: uiImage)
+                        Image(uiImage: uiImage)
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                         .frame(width: 68, height: 68)
                         .clipped()
-                } else {
+                    } else {
+                        ciQuotedMsgView(qi)
+                    }
+                case .file:
+                    ciQuotedMsgView(qi)
+                        .padding(.trailing, 20).frame(minWidth: msgWidth, alignment: .leading)
+                    ciQuoteIconView("doc.fill")
+                case .voice:
+                    ciQuotedMsgView(qi)
+                        .padding(.trailing, 20).frame(minWidth: msgWidth, alignment: .leading)
+                    ciQuoteIconView("mic.fill")
+                default:
                     ciQuotedMsgView(qi)
                 }
-            case let .video(_, image, _):
-                if let uiImage = imageFromBase64(image) {
-                    ciQuotedMsgView(qi)
-                    .padding(.trailing, 70).frame(minWidth: msgWidth, alignment: .leading)
-                    Image(uiImage: uiImage)
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: 68, height: 68)
-                    .clipped()
-                } else {
-                    ciQuotedMsgView(qi)
-                }
-            case .file:
-                ciQuotedMsgView(qi)
-                    .padding(.trailing, 20).frame(minWidth: msgWidth, alignment: .leading)
-                ciQuoteIconView("doc.fill")
-            case .voice:
-                ciQuotedMsgView(qi)
-                    .padding(.trailing, 20).frame(minWidth: msgWidth, alignment: .leading)
-                ciQuoteIconView("mic.fill")
-            default:
-                ciQuotedMsgView(qi)
             }
         }
             // if enable this always, size of the framed voice message item will be incorrect after end of playback

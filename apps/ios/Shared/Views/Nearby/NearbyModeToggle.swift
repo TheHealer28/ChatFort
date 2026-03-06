@@ -1,4 +1,5 @@
 import SwiftUI
+import SimpleXChat
 
 /// Segmented control to toggle between WiFi (server) and Nearby (P2P) modes.
 /// Placed at the top of the Chats tab.
@@ -8,12 +9,13 @@ struct NearbyModeToggle: View {
 
     var body: some View {
         Picker("Mode", selection: $nearbyModel.nearbyMode) {
-            Text("WiFi")
+            Label("WiFi", systemImage: "wifi")
                 .tag(false)
-            Text("Nearby")
+            Label("Nearby", systemImage: "antenna.radiowaves.left.and.right")
                 .tag(true)
         }
         .pickerStyle(.segmented)
+        .tint(InqalaabGreen)
         .padding(.horizontal, 16)
         .padding(.vertical, 6)
     }

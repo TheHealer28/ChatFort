@@ -26,11 +26,12 @@ struct InqalaabMissionView: View {
 
                     Text("Our Mission")
                         .font(.system(size: 34, weight: .bold))
+                        .foregroundColor(.white)
                         .padding(.bottom, 8)
 
                     Text("Inqalaab exists because secure communication is a fundamental right — especially for those who risk everything to speak truth to power.")
                         .font(.body)
-                        .foregroundColor(.secondary)
+                        .foregroundColor(.white.opacity(0.6))
                         .multilineTextAlignment(.center)
                         .padding(.horizontal, 30)
 
@@ -93,6 +94,22 @@ struct InqalaabMissionView: View {
             }
         }
         .frame(maxHeight: .infinity)
+        .background(
+            ZStack {
+                LinearGradient(
+                    colors: [Color(red: 0.043, green: 0.102, blue: 0.071), Color(red: 0.02, green: 0.02, blue: 0.02)],
+                    startPoint: .top,
+                    endPoint: .bottom
+                )
+                RadialGradient(
+                    colors: [InqalaabTeal.opacity(0.06), .clear],
+                    center: .topTrailing,
+                    startRadius: 0,
+                    endRadius: 350
+                )
+            }
+            .ignoresSafeArea()
+        )
         .navigationBarHidden(true)
     }
 
@@ -107,9 +124,10 @@ struct InqalaabMissionView: View {
             VStack(alignment: .leading, spacing: 4) {
                 Text(title)
                     .font(.headline)
+                    .foregroundColor(.white)
                 Text(detail)
                     .font(.callout)
-                    .foregroundColor(.secondary)
+                    .foregroundColor(.white.opacity(0.6))
                     .fixedSize(horizontal: false, vertical: true)
             }
         }

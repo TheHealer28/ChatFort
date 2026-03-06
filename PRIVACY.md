@@ -1,6 +1,6 @@
 # Inqalaab Privacy Policy
 
-**Effective: February 27, 2026**
+**Effective: March 6, 2026**
 
 **Summary:** Inqalaab does not collect, store, or have access to any of your messages, contacts, groups, or personal data. Everything stays on your device.
 
@@ -44,8 +44,14 @@ Inqalaab contains no analytics, no tracking, no advertising, and no third-party 
 
 ## 7. Security features
 
+All security features operate entirely on your device. No security-related data is transmitted to any server.
+
 - **App passcode:** Optionally lock the app with a local passcode stored only on your device.
 - **Emergency code:** An optional self-destruct code that wipes all app data when entered.
+- **Panic Mode:** Shake your device to instantly wipe all data. Configuration is stored locally.
+- **Deadman's Switch:** If enabled, automatically wipes data if the app is not opened within a configurable time period. The last-opened timestamp is stored locally only.
+- **Lockdown Mode:** One-tap toggle that applies maximum privacy settings (hides previews, enables incognito mode, activates screen protection). All settings are stored and restored locally.
+- **Emergency Contacts & Alerts:** Mark trusted contacts for one-tap check-in messages. Contact selections are stored locally. Alert messages use the same end-to-end encrypted channels as regular messages.
 - **Quick Settings tile (Android):** An optional "Reset App" tile that can wipe all data from the notification shade.
 - **Screen protection:** Prevents app content from appearing in screenshots and recent apps.
 
@@ -53,6 +59,8 @@ Inqalaab contains no analytics, no tracking, no advertising, and no third-party 
 
 You can delete all your data at any time by:
 
+- Using the Panic Mode shake gesture.
+- Using the Emergency Wipe button in Safety Hub.
 - Using the emergency code feature.
 - Using the Quick Settings "Reset App" tile (Android).
 - Deleting the database from Settings.

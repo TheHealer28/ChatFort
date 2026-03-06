@@ -126,27 +126,11 @@ struct UserWallpaperEditor: View {
 
                 CustomizeThemeColorsSection(editColor: { name in editColor(name, theme) })
 
-                ImportExportThemeSection(showFileImporter: $showFileImporter, perChat: nil, perUser: ChatModel.shared.currentUser?.uiThemes)
+                // Inqalaab: removed theme import/export
             } else {
                 AdvancedSettingsButton(theme.colors.primary) { showMore = true }
             }
         }
-        .modifier(
-            ThemeImporter(isPresented: $showFileImporter) { imported in
-                let importedFromString = imported.wallpaper?.importFromString()
-                let importedType = importedFromString?.toAppWallpaper().type
-                let currentTheme = ThemeManager.currentColors(nil, nil, nil, themeOverridesDefault.get())
-                let type: WallpaperType? = if importedType?.sameType(currentTheme.wallpaper.type) == true { nil } else { importedType }
-                let colors = ThemeManager.currentThemeOverridesForExport(type, nil, nil).colors
-                let res = ThemeModeOverride(mode: imported.base.mode, colors: imported.colors, wallpaper: importedFromString).removeSameColors(imported.base, colorsToCompare: colors)
-                Task {
-                    await MainActor.run {
-                        themeModeOverride = res
-                    }
-                    await save(applyToMode, res)
-                }
-            }
-        )
     }
 
     private func onTypeCopyFromSameTheme(_ type: WallpaperType?) -> Bool {
@@ -333,27 +317,11 @@ struct ChatWallpaperEditor: View {
 
                 CustomizeThemeColorsSection(editColor: editColor)
 
-                ImportExportThemeSection(showFileImporter: $showFileImporter, perChat: themeModeOverride, perUser: ChatModel.shared.currentUser?.uiThemes)
+                // Inqalaab: removed theme import/export
             } else {
                 AdvancedSettingsButton(theme.colors.primary) { showMore = true }
             }
         }
-        .modifier(
-            ThemeImporter(isPresented: $showFileImporter) { imported in
-                let importedFromString = imported.wallpaper?.importFromString()
-                let importedType = importedFromString?.toAppWallpaper().type
-                let currentTheme = ThemeManager.currentColors(nil, nil, ChatModel.shared.currentUser?.uiThemes, themeOverridesDefault.get())
-                let type: WallpaperType? = if importedType?.sameType(currentTheme.wallpaper.type) == true { nil } else { importedType }
-                let colors = ThemeManager.currentThemeOverridesForExport(type, nil, ChatModel.shared.currentUser?.uiThemes).colors
-                let res = ThemeModeOverride(mode: imported.base.mode, colors: imported.colors, wallpaper: importedFromString).removeSameColors(imported.base, colorsToCompare: colors)
-                Task {
-                    await MainActor.run {
-                        themeModeOverride = res
-                    }
-                    await save(applyToMode, res)
-                }
-            }
-        )
     }
 
     private func onTypeCopyFromSameTheme(_ type: WallpaperType?) -> Bool {

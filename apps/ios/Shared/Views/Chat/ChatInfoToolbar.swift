@@ -12,6 +12,7 @@ import SimpleXChat
 struct ChatInfoToolbar: View {
     @Environment(\.colorScheme) var colorScheme
     @EnvironmentObject var theme: AppTheme
+    @EnvironmentObject var chatModel: ChatModel
     @ObservedObject var chat: Chat
     var imageSize: CGFloat = 32
 
@@ -45,13 +46,21 @@ struct ChatInfoToolbar: View {
                 }
             }
             .padding(.trailing, 4)
-            let t = Text(cInfo.displayName).font(.headline)
+            // Inqalaab: green connectivity dot
+            Circle()
+                .fill(chatModel.chatRunning == true ? InqalaabGreen : Color.orange)
+                .frame(width: 8, height: 8)
+                .padding(.trailing, 2)
+            let t = Text(cInfo.displayName)
+                .font(.system(size: 16, weight: .semibold, design: .rounded))
             (cInfo.contact?.verified == true ? contactVerifiedShield + t : t)
                 .lineLimit(1)
                 .if (cInfo.fullName != "" && cInfo.displayName != cInfo.fullName) { v in
                     VStack(spacing: 0) {
                         v
-                        Text(cInfo.fullName).font(.subheadline)
+                        Text(cInfo.fullName)
+                            .font(.system(size: 12, design: .rounded))
+                            .foregroundColor(theme.colors.secondary)
                             .lineLimit(1)
                             .padding(.top, -2)
                     }
@@ -64,7 +73,7 @@ struct ChatInfoToolbar: View {
     private var contactVerifiedShield: Text {
         (Text(Image(systemName: "checkmark.shield")) + textSpace)
             .font(.caption)
-            .foregroundColor(theme.colors.secondary)
+            .foregroundColor(InqalaabGreen)
             .baselineOffset(1)
             .kerning(-2)
     }

@@ -7,6 +7,9 @@
 "Chats" = "بات چیت";
 "Safety Hub" = "حفاظتی مرکز";
 "Settings" = "ترتیبات";
+"Protection" = "تحفظ";
+"Alerts" = "الرٹس";
+"Nearby" = "قریبی";
 
 /* ============================================ */
 /* Onboarding                                    */
@@ -31,7 +34,7 @@
 "Create" = "بنائیں";
 
 /* ============================================ */
-/* Safety Hub                                    */
+/* Safety Hub (Protection Tab)                   */
 /* ============================================ */
 "Server Connection" = "سرور کنکشن";
 "Connected" = "منسلک";
@@ -53,6 +56,55 @@
 "Emergency Wipe Now" = "ابھی ایمرجنسی صفایا";
 "Link Previews Disabled" = "لنک پیش نظارہ غیر فعال";
 "Private Notifications" = "نجی اطلاعات";
+"Your security dashboard" = "آپ کا سیکیورٹی ڈیش بورڈ";
+"secure" = "محفوظ";
+"Network Status" = "نیٹ ورک کی حالت";
+"Internet" = "انٹرنیٹ";
+"Checking" = "جانچ ہو رہی ہے";
+"Active" = "فعال";
+"Relay" = "ریلے";
+"Encryption" = "انکرپشن";
+"E2E" = "E2E";
+"Emergency Readiness" = "ایمرجنسی تیاری";
+"Configured" = "ترتیب شدہ";
+"Not set up" = "ترتیب نہیں دیا گیا";
+"Trusted Contacts" = "قابل اعتماد رابطے";
+"selected" = "منتخب";
+"Lockdown Mode" = "لاک ڈاؤن موڈ";
+"Available" = "دستیاب";
+"Emergency Wipe" = "ایمرجنسی صفایا";
+"Ready" = "تیار";
+"Not configured" = "ترتیب نہیں دیا گیا";
+"Quick Actions" = "فوری اقدامات";
+"Create 1-time link" = "ایک وقتی لنک بنائیں";
+"Scan / Paste link" = "لنک سکین / پیسٹ کریں";
+"Connection Status" = "کنکشن کی حالت";
+"Connected & Secure" = "منسلک اور محفوظ";
+"Connecting..." = "جڑ رہا ہے...";
+"Routed through independent servers" = "آزاد سرورز کے ذریعے روٹ کیا گیا";
+"Tap to configure" = "ترتیب دینے کے لیے ٹیپ کریں";
+"Biometric" = "بائیومیٹرک";
+"Hide content in app switcher" = "ایپ سوئچر میں مواد چھپائیں";
+"Hide message previews" = "پیغام کا پیش نظارہ چھپائیں";
+"Link Preview Disabled" = "لنک پیش نظارہ غیر فعال";
+"Prevent metadata leaks via links" = "لنکس کے ذریعے میٹا ڈیٹا لیک روکیں";
+"Emergency Contacts" = "ایمرجنسی رابطے";
+"One-tap check-in with trusted people" = "قابل اعتماد لوگوں کو ایک ٹیپ سے اطلاع";
+"Active — maximum privacy" = "فعال — زیادہ سے زیادہ رازداری";
+"One-tap maximum privacy" = "ایک ٹیپ زیادہ سے زیادہ رازداری";
+"Configure emergency data wipe" = "ایمرجنسی ڈیٹا صفایے کی ترتیب دیں";
+"Wiping all data..." = "تمام ڈیٹا صاف ہو رہا ہے...";
+"Emergency Wipe" = "ایمرجنسی صفایا";
+"Wipe All Data" = "تمام ڈیٹا صاف کریں";
+"This will permanently delete ALL messages, contacts, and your profile. This cannot be undone." = "یہ تمام پیغامات، رابطے اور آپ کا پروفائل مستقل طور پر حذف کر دے گا۔ یہ واپس نہیں ہو سکتا۔";
+"Protect yourself online" = "آن لائن اپنی حفاظت کریں";
+"Secure Communication Tips" = "محفوظ مواصلاتی تجاویز";
+"Best practices for activists" = "کارکنوں کے لیے بہترین طریقے";
+"Report Censorship" = "سنسرشپ کی اطلاع دیں";
+"Document internet shutdowns" = "انٹرنیٹ بندش کی دستاویز کریں";
+"Emergency: Digital Rights" = "ایمرجنسی: ڈیجیٹل حقوق";
+"Legal help for digital rights" = "ڈیجیٹل حقوق کے لیے قانونی مدد";
+"Links open in your browser" = "لنکس آپ کے براؤزر میں کھلیں گے";
 
 /* ============================================ */
 /* Panic Mode                                    */
@@ -76,6 +128,123 @@
 "All media and files" = "تمام میڈیا اور فائلیں";
 "Wipe in progress..." = "صفایا جاری ہے...";
 "Data wiped successfully" = "ڈیٹا کامیابی سے حذف ہو گیا";
+"When triggered, Panic Mode immediately and permanently deletes all your messages, contacts, and profile data. Use this in emergency situations when you need to quickly protect your communications." = "جب فعال ہو، پینک موڈ فوری طور پر آپ کے تمام پیغامات، رابطے اور پروفائل ڈیٹا مستقل طور پر حذف کر دیتا ہے۔ اسے ایمرجنسی حالات میں استعمال کریں جب آپ کو اپنی مواصلات کی فوری حفاظت کرنی ہو۔";
+"Enable Panic Mode?" = "پینک موڈ فعال کریں؟";
+"When panic mode is triggered, ALL data will be permanently deleted. Make sure you understand this before enabling." = "جب پینک موڈ فعال ہوگا تو تمام ڈیٹا مستقل طور پر حذف ہو جائے گا۔ فعال کرنے سے پہلے یقینی بنائیں کہ آپ یہ سمجھتے ہیں۔";
+"Activation" = "فعال سازی";
+"Shake Device" = "ڈیوائس ہلائیں";
+"Shake your device rapidly to trigger wipe" = "صفایے کے لیے اپنا ڈیوائس تیزی سے ہلائیں";
+"Shake count:" = "ہلانے کی تعداد:";
+"times" = "بار";
+"Trigger Method" = "ٹرگر کا طریقہ";
+"Higher count = less accidental triggers. Recommended: 5+" = "زیادہ تعداد = کم حادثاتی ٹرگرز۔ تجویز: 5+";
+"All local files and media" = "تمام مقامی فائلیں اور میڈیا";
+"Your profile and address" = "آپ کا پروفائل اور ایڈریس";
+"This action is irreversible. There is no recovery." = "یہ عمل ناقابل واپسی ہے۔ بازیابی ممکن نہیں۔";
+"Test" = "ٹیسٹ";
+"Test Panic Trigger" = "پینک ٹرگر ٹیسٹ کریں";
+"Test Successful" = "ٹیسٹ کامیاب";
+"This test does NOT delete any data" = "یہ ٹیسٹ کوئی ڈیٹا حذف نہیں کرتا";
+"Deadman's Switch" = "ڈیڈ مینز سوئچ";
+"Auto-wipe after:" = "خودکار صفایا بعد از:";
+"hours" = "گھنٹے";
+"Protects your data if you lose access to your device for an extended period" = "اگر آپ طویل عرصے تک اپنے ڈیوائس تک رسائی کھو دیں تو آپ کے ڈیٹا کی حفاظت کرتا ہے";
+"Last opened:" = "آخری بار کھولا:";
+"ago" = "پہلے";
+
+/* ============================================ */
+/* Alerts Tab                                    */
+/* ============================================ */
+"Network Active" = "نیٹ ورک فعال";
+"trusted" = "قابل اعتماد";
+"No contacts" = "کوئی رابطہ نہیں";
+"Security" = "سیکیورٹی";
+"Quick Alerts" = "فوری الرٹس";
+"I'm Safe" = "میں محفوظ ہوں";
+"Let everyone know you're OK" = "سب کو بتائیں کہ آپ ٹھیک ہیں";
+"Need Assistance" = "مدد درکار";
+"Request help from trusted contacts" = "قابل اعتماد رابطوں سے مدد کی درخواست کریں";
+"Emergency Alert" = "ایمرجنسی الرٹ";
+"Urgent broadcast to all contacts" = "تمام رابطوں کو فوری نشریات";
+"I need assistance. Please check on me." = "مجھے مدد چاہیے۔ براہ کرم میری خبر لیں۔";
+"⚠️ EMERGENCY: I need immediate help. This is urgent." = "⚠️ ایمرجنسی: مجھے فوری مدد چاہیے۔ یہ فوری ہے۔";
+"Set up emergency contacts in Safety Hub first" = "پہلے حفاظتی مرکز میں ایمرجنسی رابطے ترتیب دیں";
+"Custom Message" = "اپنی مرضی کا پیغام";
+"Custom Broadcast" = "اپنی مرضی کی نشریات";
+"Write and send a custom alert message" = "اپنی مرضی کا الرٹ پیغام لکھیں اور بھیجیں";
+"Last alert sent" = "آخری الرٹ بھیجا گیا";
+"Recent Activity" = "حالیہ سرگرمی";
+"Set Up Emergency Contacts" = "ایمرجنسی رابطے ترتیب دیں";
+"Select trusted people to receive your alerts" = "الرٹس وصول کرنے کے لیے قابل اعتماد لوگ منتخب کریں";
+"Getting Started" = "شروع کریں";
+"Send Alert?" = "الرٹ بھیجیں؟";
+"Send to All" = "سب کو بھیجیں";
+"Custom Alert" = "اپنی مرضی کا الرٹ";
+"Write your alert message" = "اپنا الرٹ پیغام لکھیں";
+"Type your message..." = "اپنا پیغام لکھیں...";
+
+/* ============================================ */
+/* Nearby Tab                                    */
+/* ============================================ */
+"Nearby Mode" = "قریبی موڈ";
+"Searching for nearby peers..." = "قریبی لوگوں کی تلاش...";
+"connected" = "منسلک";
+"found nearby" = "قریب میں ملا";
+"Peer" = "ساتھی";
+"Discovered" = "دریافت ہوا";
+"Offline" = "آف لائن";
+"Nearby Conversations" = "قریبی بات چیت";
+"No nearby peers found" = "کوئی قریبی ساتھی نہیں ملا";
+"Make sure Bluetooth and Wi-Fi are enabled" = "یقینی بنائیں کہ بلوٹوتھ اور وائی فائی فعال ہیں";
+"Offline Communication" = "آف لائن مواصلات";
+"Connect directly with nearby Inqalaab users via Bluetooth and WiFi — no internet needed." = "بلوٹوتھ اور وائی فائی کے ذریعے قریبی انقلاب صارفین سے براہ راست جڑیں — انٹرنیٹ کی ضرورت نہیں۔";
+"No Internet Required" = "انٹرنیٹ کی ضرورت نہیں";
+"Works during shutdowns & blackouts" = "شٹ ڈاؤن اور بلیک آؤٹ کے دوران کام کرتا ہے";
+"Encrypted P2P" = "انکرپٹڈ P2P";
+"All messages are encrypted end-to-end" = "تمام پیغامات اینڈ ٹو اینڈ انکرپٹڈ ہیں";
+"Auto-Discovery" = "خودکار دریافت";
+"Finds nearby users automatically" = "قریبی صارفین کو خودکار تلاش کرتا ہے";
+"Instant Setup" = "فوری سیٹ اپ";
+"Enable the toggle above to start" = "شروع کرنے کے لیے اوپر ٹوگل فعال کریں";
+"Enable Nearby Mode" = "قریبی موڈ فعال کریں";
+
+/* ============================================ */
+/* Lockdown Mode                                 */
+/* ============================================ */
+"Applies maximum privacy settings with one tap. Disables all previews, enables incognito for new connections, and activates screen protection." = "ایک ٹیپ سے زیادہ سے زیادہ رازداری کی ترتیبات لاگو کرتا ہے۔ تمام پیش نظارے غیر فعال کرتا ہے، نئے کنکشنز کے لیے پوشیدہ موڈ فعال کرتا ہے، اور سکرین تحفظ چالو کرتا ہے۔";
+"Enable Lockdown" = "لاک ڈاؤن فعال کریں";
+"All privacy settings are enforced. Disable lockdown to restore your previous settings." = "تمام رازداری کی ترتیبات نافذ ہیں۔ اپنی پچھلی ترتیبات بحال کرنے کے لیے لاک ڈاؤن غیر فعال کریں۔";
+"Enable Lockdown Mode?" = "لاک ڈاؤن موڈ فعال کریں؟";
+"Disable Lockdown Mode?" = "لاک ڈاؤن موڈ غیر فعال کریں؟";
+"Disable & Restore" = "غیر فعال کریں اور بحال کریں";
+"Your previous privacy settings will be restored." = "آپ کی پچھلی رازداری کی ترتیبات بحال ہو جائیں گی۔";
+"This will immediately:\n• Hide notification previews\n• Disable link previews\n• Hide chat list previews\n• Enable incognito mode\n• Enable screen protection\n\nYour current settings will be saved and can be restored." = "یہ فوری طور پر:\n• اطلاع کے پیش نظارے چھپائے گا\n• لنک پیش نظارے غیر فعال کرے گا\n• بات چیت کی فہرست کے پیش نظارے چھپائے گا\n• پوشیدہ موڈ فعال کرے گا\n• سکرین تحفظ فعال کرے گا\n\nآپ کی موجودہ ترتیبات محفوظ ہو جائیں گی اور بحال ہو سکتی ہیں۔";
+"Notification Previews" = "اطلاع کے پیش نظارے";
+"Hidden" = "چھپا ہوا";
+"Visible" = "نظر آ رہا ہے";
+"Link Previews" = "لنک پیش نظارے";
+"Chat List Previews" = "بات چیت فہرست پیش نظارے";
+"Incognito Connections" = "پوشیدہ کنکشنز";
+"Protected Settings" = "محفوظ ترتیبات";
+
+/* ============================================ */
+/* Emergency Contacts                            */
+/* ============================================ */
+"trusted contacts selected" = "قابل اعتماد رابطے منتخب";
+"Select trusted people from your contacts. In an emergency, send a check-in message to all of them with one tap." = "اپنے رابطوں میں سے قابل اعتماد لوگ منتخب کریں۔ ایمرجنسی میں، ایک ٹیپ سے ان سب کو چیک ان پیغام بھیجیں۔";
+"Message to send:" = "بھیجنے کا پیغام:";
+"Check-in Message" = "چیک ان پیغام";
+"Check-in message" = "چیک ان پیغام";
+"This message will be sent to all emergency contacts when you tap the button below" = "جب آپ نیچے بٹن دبائیں گے تو یہ پیغام تمام ایمرجنسی رابطوں کو بھیجا جائے گا";
+"Sending..." = "بھیج رہا ہے...";
+"Send Check-In Now" = "ابھی چیک ان بھیجیں";
+"Send Check-In?" = "چیک ان بھیجیں؟";
+"Check-in sent successfully!" = "چیک ان کامیابی سے بھیجا گیا!";
+"No contacts yet" = "ابھی کوئی رابطہ نہیں";
+"Add contacts in the Chats tab, then return here to mark emergency contacts." = "بات چیت ٹیب میں رابطے شامل کریں، پھر ایمرجنسی رابطے نشان زد کرنے کے لیے یہاں واپس آئیں۔";
+"Select Trusted Contacts" = "قابل اعتماد رابطے منتخب کریں";
+"Tap a contact to add or remove them from your emergency list" = "ایمرجنسی فہرست میں شامل کرنے یا ہٹانے کے لیے رابطے پر ٹیپ کریں";
+"I'm safe. Just checking in. 🛡️" = "میں محفوظ ہوں۔ بس اطلاع دے رہا/رہی ہوں۔ 🛡️";
 
 /* ============================================ */
 /* Settings Screen                               */
@@ -312,22 +481,6 @@
 "Unblock member" = "رکن کو ان بلاک کریں";
 "Remove member" = "رکن کو ہٹائیں";
 "Change role" = "کردار تبدیل کریں";
-
-/* ============================================ */
-/* Nearby P2P                                    */
-/* ============================================ */
-"Nearby" = "قریبی";
-"Nearby Mode" = "قریبی موڈ";
-"Searching for nearby peers..." = "قریبی لوگوں کی تلاش...";
-"connected" = "منسلک";
-"found nearby" = "قریب میں ملا";
-"Peer" = "ساتھی";
-"Connecting" = "جڑ رہا ہے";
-"Discovered" = "دریافت ہوا";
-"Offline" = "آف لائن";
-"Nearby Conversations" = "قریبی بات چیت";
-"No nearby peers found" = "کوئی قریبی ساتھی نہیں ملا";
-"Make sure Bluetooth and Wi-Fi are enabled" = "یقینی بنائیں کہ بلوٹوتھ اور وائی فائی فعال ہیں";
 
 /* ============================================ */
 /* Network & Servers                             */

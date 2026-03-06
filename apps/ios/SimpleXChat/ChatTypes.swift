@@ -730,25 +730,26 @@ public enum ChatFeature: String, Decodable, Feature, Hashable {
         }
     }
 
+    // Inqalaab: distinctive icons for chat features
     public var icon: String {
         switch self {
-        case .timedMessages: return "stopwatch"
-        case .fullDelete: return "trash.slash"
-        case .reactions: return "face.smiling"
-        case .voice: return "mic"
-        case .files: return "doc"
-        case .calls: return "phone"
+        case .timedMessages: return "timer"
+        case .fullDelete: return "eraser"
+        case .reactions: return "heart.circle"
+        case .voice: return "waveform"
+        case .files: return "paperclip"
+        case .calls: return "video"
         }
     }
 
     public var iconFilled: String {
         switch self {
-        case .timedMessages: return "stopwatch.fill"
-        case .fullDelete: return "trash.slash.fill"
-        case .reactions: return "face.smiling.fill"
-        case .voice: return "mic.fill"
-        case .files: return "doc.fill"
-        case .calls: return "phone.fill"
+        case .timedMessages: return "timer"
+        case .fullDelete: return "eraser.fill"
+        case .reactions: return "heart.circle.fill"
+        case .voice: return "waveform.circle.fill"
+        case .files: return "paperclip.circle.fill"
+        case .calls: return "video.circle.fill"
         }
     }
 
@@ -902,14 +903,15 @@ public enum GroupFeature: String, Decodable, Feature, Hashable {
         }
     }
 
+    // Inqalaab: distinctive icons for group features
     public var icon: String {
         switch self {
-        case .timedMessages: return "stopwatch"
+        case .timedMessages: return "timer"
         case .directMessages: return "arrow.left.and.right.circle"
-        case .fullDelete: return "trash.slash"
-        case .reactions: return "face.smiling"
-        case .voice: return "mic"
-        case .files: return "doc"
+        case .fullDelete: return "eraser"
+        case .reactions: return "heart.circle"
+        case .voice: return "waveform"
+        case .files: return "paperclip"
         case .simplexLinks: return "link.circle"
         case .reports: return "flag"
         case .history: return "clock"
@@ -918,12 +920,12 @@ public enum GroupFeature: String, Decodable, Feature, Hashable {
 
     public var iconFilled: String {
         switch self {
-        case .timedMessages: return "stopwatch.fill"
+        case .timedMessages: return "timer"
         case .directMessages: return "arrow.left.and.right.circle.fill"
-        case .fullDelete: return "trash.slash.fill"
-        case .reactions: return "face.smiling.fill"
-        case .voice: return "mic.fill"
-        case .files: return "doc.fill"
+        case .fullDelete: return "eraser.fill"
+        case .reactions: return "heart.circle.fill"
+        case .voice: return "waveform.circle.fill"
+        case .files: return "paperclip.circle.fill"
         case .simplexLinks: return "link.circle.fill"
         case .reports: return "flag.fill"
         case .history: return "clock.fill"
@@ -3636,10 +3638,12 @@ public enum CIStatus: Decodable, Hashable {
         switch self {
         case .sndNew: nil
         case let .sndSent(sndProgress):
-            (Image("checkmark.wide"),  sndProgress == .partial ? paleMetaColor : metaColor)
+            // Inqalaab: green checkmarks for sent messages
+            (Image("checkmark.wide"),  sndProgress == .partial ? InqalaabGreen.opacity(0.5) : InqalaabGreen)
         case let .sndRcvd(msgRcptStatus, sndProgress):
             switch msgRcptStatus {
-            case .ok: (Image("checkmark.2"), sndProgress == .partial ? paleMetaColor : metaColor)
+            // Inqalaab: green double-checkmarks for received messages
+            case .ok: (Image("checkmark.2"), sndProgress == .partial ? InqalaabGreen.opacity(0.5) : InqalaabGreen)
             case .badMsgHash: (Image("checkmark.2"), .red)
             }
         case .sndErrorAuth: (Image(systemName: "multiply"), .red)

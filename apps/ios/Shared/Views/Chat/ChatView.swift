@@ -72,7 +72,8 @@ struct ChatView: View {
         if #available(iOS 16.0, *) {
             viewBody
                 .scrollDismissesKeyboard(.immediately)
-                .toolbarBackground(.hidden, for: .navigationBar)
+                .toolbarBackground(InqalaabGreen.opacity(0.08), for: .navigationBar)
+                .toolbarBackground(.visible, for: .navigationBar)
         } else {
             viewBody
         }
@@ -98,6 +99,12 @@ struct ChatView: View {
                         ChatViewBackground(image: wallpaperImage!, imageType: wallpaperType, background: backgroundColor, tint: tintColor)
                     )
             }
+            // Inqalaab green tint on chat background (always shows)
+            LinearGradient(
+                colors: [InqalaabGreen.opacity(0.08), InqalaabGreen.opacity(0.03)],
+                startPoint: .top,
+                endPoint: .bottom
+            ).ignoresSafeArea(.all)
             VStack(spacing: 0) {
                 ZStack(alignment: .bottomTrailing) {
                     if userMemberKnockingChat {
@@ -774,16 +781,14 @@ struct ChatView: View {
                 }
                 return Group {
                     if case .chatBanner = ci.content {
+                        // Inqalaab: removed ChatBannerView — contact info is already in the toolbar
                         VStack {
-                            ChatBannerView(chat: $chat)
-                                .padding(.bottom, 90)
-                                .padding(.top, 8)
-
                             let listItem = mergedItem.newest()
                             if let prevItem = listItem.prevItem {
                                 DateSeparator(date: prevItem.meta.itemTs).padding(8)
                             }
                         }
+                        .padding(.top, 8)
                     } else {
                         let voiceNoFrame = voiceWithoutFrame(ci)
                         let maxWidth = cInfo.chatType == .group
@@ -906,8 +911,21 @@ struct ChatView: View {
             }
             .frame(maxWidth: .infinity)
             .padding()
-            .background(theme.appColors.receivedMessage)
-            .clipShape(RoundedRectangle(cornerRadius: msgRectMaxRadius * roundness))
+            .background(
+                ZStack {
+                    theme.appColors.receivedMessage
+                    LinearGradient(
+                        colors: [InqalaabGreen.opacity(0.06), .clear],
+                        startPoint: .top,
+                        endPoint: .bottom
+                    )
+                }
+            )
+            .overlay(
+                RoundedRectangle(cornerRadius: 16)
+                    .strokeBorder(InqalaabGreen.opacity(0.15), lineWidth: 1)
+            )
+            .clipShape(RoundedRectangle(cornerRadius: 16))
             if let (label, connLink) = chatAddress() {
                 v.contextMenu {
                     Button {
@@ -1074,7 +1092,7 @@ struct ChatView: View {
                 if let date = model.date, date.timeIntervalSince1970 > 0 {
                      DateSeparator(date: date)
                          .padding(.vertical, 4).padding(.horizontal, 8)
-                         .background(.thinMaterial)
+                         .background(InqalaabGreen.opacity(0.7))
                          .clipShape(Capsule())
                          .opacity(model.isDateVisible ? 1 : 0)
                          .padding(.vertical, 4)
@@ -1087,7 +1105,7 @@ struct ChatView: View {
                             circleButton {
                                 unreadCountText(model.unreadAbove)
                                     .font(.callout)
-                                    .foregroundColor(theme.colors.primary)
+                                    .foregroundColor(InqalaabGreen)
                             }
                             .onTapGesture {
                                 if loadingTopItems {
@@ -1118,9 +1136,9 @@ struct ChatView: View {
                                     if model.unreadBelow > 0 {
                                         unreadCountText(model.unreadBelow)
                                             .font(.callout)
-                                            .foregroundColor(theme.colors.primary)
+                                            .foregroundColor(InqalaabGreen)
                                     } else {
-                                        Image(systemName: "chevron.down").foregroundColor(theme.colors.primary)
+                                        Image(systemName: "chevron.down").foregroundColor(InqalaabGreen)
                                     }
                                 }
                             }
@@ -1187,7 +1205,7 @@ struct ChatView: View {
         private func circleButton<Content: View>(_ content: @escaping () -> Content) -> some View {
             ZStack {
                 Circle()
-                    .foregroundColor(Color(uiColor: .tertiarySystemGroupedBackground))
+                    .foregroundColor(InqalaabGreen.opacity(0.15))
                     .frame(width: 44, height: 44)
                 content()
             }
@@ -1207,17 +1225,23 @@ struct ChatView: View {
                     : .dateTime.day().month(.abbreviated).year()
                 )
             ))
-            .font(.callout)
-            .fontWeight(.medium)
-            .foregroundStyle(.secondary)
+            .font(.caption)
+            .fontWeight(.semibold)
+            .foregroundStyle(.white)
         }
     }
 
+    // Inqalaab: green background call button
     private func callButton(_ contact: Contact, _ media: CallMediaType, imageName: String) -> some View {
         Button {
             CallController.shared.startCall(contact, media)
         } label: {
-            Image(systemName: imageName)
+            Image(systemName: "phone.fill")
+                .font(.system(size: 14, weight: .semibold))
+                .foregroundColor(.white)
+                .frame(width: 32, height: 32)
+                .background(InqalaabGreen)
+                .clipShape(Circle())
         }
     }
 

@@ -14,8 +14,6 @@ struct DeveloperView: View {
     @AppStorage(DEFAULT_DEVELOPER_TOOLS) private var developerTools = false
     @AppStorage(GROUP_DEFAULT_CONFIRM_DB_UPGRADES, store: groupDefaults) private var confirmDatabaseUpgrades = false
     @State private var hintsUnchanged = hintDefaultsUnchanged()
-    @State private var simplexLinkMode = privacySimplexLinkModeDefault.get()
-
     @Environment(\.colorScheme) var colorScheme
 
     var body: some View {
@@ -66,21 +64,7 @@ struct DeveloperView: View {
                         Text("Developer options")
                     }
                 }
-                Section("Deprecated options") {
-                    settingsRow("link", color: theme.colors.secondary) {
-                        Picker("Inqalaab links", selection: $simplexLinkMode) {
-                            ForEach(
-                                SimpleXLinkMode.values + (SimpleXLinkMode.values.contains(simplexLinkMode) ? [] : [simplexLinkMode])
-                            ) { mode in
-                                Text(mode.text)
-                            }
-                        }
-                    }
-                    .frame(height: 36)
-                    .onChange(of: simplexLinkMode) { mode in
-                        privacySimplexLinkModeDefault.set(mode)
-                    }
-                }
+                // Inqalaab: removed deprecated SimpleX link mode section
             }
         }
     }
