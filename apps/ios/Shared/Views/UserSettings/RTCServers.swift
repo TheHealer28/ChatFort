@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-private let howToUrl = URL(string: "https://simplex.chat/docs/webrtc.html#configure-mobile-apps")!
+private let howToUrl = URL(string: "https://github.com/TheHealer28/Inqalaab")!
 
 let serversFont = Font.custom("Menlo", size: 14)
 
@@ -38,7 +38,7 @@ struct RTCServers: View {
                     }
                     .alert(isPresented: $showResetServersAlert) {
                         Alert(
-                            title: Text("Use SimpleX Chat servers?"),
+                            title: Text("Use default servers?"),
                             message: Text("Saved WebRTC ICE servers will be removed"),
                             primaryButton: .destructive(Text("Confirm")) {
                                 resetRTCServers()
@@ -53,7 +53,7 @@ struct RTCServers: View {
                 Text("")
             } footer: {
                 if !isUserRTCServers {
-                    Text("Using SimpleX Chat servers.")
+                    Text("Using default servers.")
                         .foregroundColor(theme.colors.secondary)
                 }
             }

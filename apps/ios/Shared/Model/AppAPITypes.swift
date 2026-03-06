@@ -1596,10 +1596,10 @@ struct ServerOperatorInfo {
 let operatorsInfo: Dictionary<OperatorTag, ServerOperatorInfo> = [
     .simplex: ServerOperatorInfo(
         description: [
-            "SimpleX Chat is the first communication network that has no user profile IDs of any kind, not even random numbers or identity keys.",
-            "SimpleX Chat Ltd develops the communication software for SimpleX network."
+            "Inqalaab is a private messenger for activists that has no user profile IDs of any kind, not even random numbers or identity keys.",
+            "Inqalaab uses the SimpleX protocol for maximum privacy and security."
         ],
-        website: URL(string: "https://simplex.chat")!,
+        website: URL(string: "https://github.com/TheHealer28/Inqalaab")!,
         logo: "decentralized",
         largeLogo: "logo",
         logoDarkMode: "decentralized-light",
@@ -1609,10 +1609,10 @@ let operatorsInfo: Dictionary<OperatorTag, ServerOperatorInfo> = [
         description: [
             "Flux is the largest decentralized cloud, based on a global network of user-operated nodes.",
             "Flux offers a powerful, scalable, and affordable cutting edge technology platform for all.",
-            "Flux operates servers in SimpleX network to improve its privacy and decentralization."
+            "Flux operates servers to improve privacy and decentralization."
         ],
         website: URL(string: "https://runonflux.com")!,
-        selfhost: (text: "Self-host SimpleX servers on Flux", link: URL(string: "https://home.runonflux.io/apps/marketplace?q=simplex")!),
+        selfhost: (text: "Self-host servers on Flux", link: URL(string: "https://home.runonflux.io/apps/marketplace?q=simplex")!),
         logo: "flux_logo_symbol",
         largeLogo: "flux_logo",
         logoDarkMode: "flux_logo_symbol",
@@ -1712,7 +1712,7 @@ struct ServerOperator: Identifiable, Equatable, Codable {
 
     static let dummyOperatorInfo = ServerOperatorInfo(
         description: ["Default"],
-        website: URL(string: "https://simplex.chat")!,
+        website: URL(string: "https://github.com/TheHealer28/Inqalaab")!,
         logo: "decentralized",
         largeLogo: "logo",
         logoDarkMode: "decentralized-light",
@@ -1730,9 +1730,9 @@ struct ServerOperator: Identifiable, Equatable, Codable {
     static var sampleData1 = ServerOperator(
         operatorId: 1,
         operatorTag: .simplex,
-        tradeName: "SimpleX Chat",
-        legalName: "SimpleX Chat Ltd",
-        serverDomains: ["simplex.im"],
+        tradeName: "Inqalaab",
+        legalName: "Inqalaab",
+        serverDomains: ["example.net"],
         conditionsAcceptance: .accepted(acceptedAt: nil, autoAccepted: false),
         enabled: true,
         smpRoles: ServerRoles(storage: true, proxy: true),
