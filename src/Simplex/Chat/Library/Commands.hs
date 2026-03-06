@@ -135,13 +135,12 @@ import Simplex.Messaging.Agent.Store.Common (withConnection)
 import Simplex.Messaging.Agent.Store.SQLite.DB (SlowQueryStats (..))
 #endif
 
--- Inqalaab: no default NTF servers — push notifications disabled until Inqalaab NTF server is deployed
+-- Inqalaab: using community NTF servers for push notifications
 _defaultNtfServers :: [NtfServer]
-_defaultNtfServers = []
-  -- Original SimpleX servers (disabled):
-  -- [ "ntf://KmpZNNXiVZJx_G2T7jRUmDFxWXM3OAnunz3uLT0tqAA=@ntf3.simplex.im,pxculznuryunjdvtvh6s6szmanyadumpbmvevgdpe4wk5c65unyt4yid.onion",
-  --   "ntf://CJ5o7X6fCxj2FFYRU2KuCo70y4jSqz7td2HYhLnXWbU=@ntf4.simplex.im,wtvuhdj26jwprmomnyfu5wfuq2hjkzfcc72u44vi6gdhrwxldt6xauad.onion"
-  -- ]
+_defaultNtfServers =
+  [ "ntf://KmpZNNXiVZJx_G2T7jRUmDFxWXM3OAnunz3uLT0tqAA=@ntf3.simplex.im,pxculznuryunjdvtvh6s6szmanyadumpbmvevgdpe4wk5c65unyt4yid.onion",
+    "ntf://CJ5o7X6fCxj2FFYRU2KuCo70y4jSqz7td2HYhLnXWbU=@ntf4.simplex.im,wtvuhdj26jwprmomnyfu5wfuq2hjkzfcc72u44vi6gdhrwxldt6xauad.onion"
+  ]
 
 maxImageSize :: Integer
 maxImageSize = 261120 * 2 -- auto-receive on mobiles
