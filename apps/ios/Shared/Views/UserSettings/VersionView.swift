@@ -16,12 +16,7 @@ struct VersionView: View {
         VStack(alignment: .leading) {
             Text("App version: v\(appVersion ?? "?")")
             Text("App build: \(appBuild ?? "?")")
-            if let info = versionInfo {
-                Text("Core version: v\(info.version)")
-                if let v = try? AttributedString(markdown: "simplexmq: v\(info.simplexmqVersion) ([\(info.simplexmqCommit.prefix(7))](https://github.com/simplex-chat/simplexmq/commit/\(info.simplexmqCommit)))") {
-                    Text(v)
-                }
-            }
+            // Inqalaab: core version and simplexmq version hidden from UI
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
         .padding()
