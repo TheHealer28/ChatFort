@@ -11,6 +11,7 @@ import SimpleXChat
 
 struct SetNotificationsMode: View {
     @EnvironmentObject var m: ChatModel
+    // Inqalaab: default to .instant — own NTF server deployed at ntf.example.org
     @State private var notificationMode = NotificationsMode.instant
     @State private var showAlert: NotificationAlert?
     @State private var showInfo: Bool = false
@@ -28,6 +29,7 @@ struct SetNotificationsMode: View {
                     
                     Spacer()
 
+                    // Inqalaab: all notification modes enabled — own NTF server deployed
                     ForEach(NotificationsMode.values) { mode in
                         NtfModeSelector(mode: mode, selection: $notificationMode)
                     }
@@ -163,6 +165,7 @@ struct NotificationsInfoView: View {
             ScrollView {
                 VStack(alignment: .leading) {
                     Group {
+                        // Inqalaab: all notification modes info shown
                         ForEach(NotificationsMode.values) { mode in
                             VStack(alignment: .leading, spacing: 4) {
                                 (Text(Image(systemName: mode.icon)) + textSpace + Text(mode.label))

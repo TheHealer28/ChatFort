@@ -18,7 +18,6 @@ struct NavLinkPlain<Label: View>: View {
     var body: some View {
         ZStack {
             Button("") {
-                print("Inqalaab NavLinkPlain: tap chatId=\(chatId) disabled=\(disabled)")
                 ItemsModel.shared.loadOpenChat(chatId)
             }
             .disabled(disabled)

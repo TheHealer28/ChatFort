@@ -135,12 +135,11 @@ import Simplex.Messaging.Agent.Store.Common (withConnection)
 import Simplex.Messaging.Agent.Store.SQLite.DB (SlowQueryStats (..))
 #endif
 
--- Inqalaab: NTF servers are baked into the prebuilt Haskell static libraries (Libraries/ios/*.a).
--- This source is kept in sync but changes here require rebuilding the Haskell libraries to take effect.
+-- Inqalaab: custom NTF server with APNS cert for com.inqalaab.app
+-- Rebuilding Haskell iOS libraries is required for this change to take effect.
 _defaultNtfServers :: [NtfServer]
 _defaultNtfServers =
-  [ "ntf://KmpZNNXiVZJx_G2T7jRUmDFxWXM3OAnunz3uLT0tqAA=@ntf3.simplex.im,pxculznuryunjdvtvh6s6szmanyadumpbmvevgdpe4wk5c65unyt4yid.onion",
-    "ntf://CJ5o7X6fCxj2FFYRU2KuCo70y4jSqz7td2HYhLnXWbU=@ntf4.simplex.im,wtvuhdj26jwprmomnyfu5wfuq2hjkzfcc72u44vi6gdhrwxldt6xauad.onion"
+  [ "ntf://0000000000000000000000000000000000000000014=@ntf.example.org"
   ]
 
 maxImageSize :: Integer

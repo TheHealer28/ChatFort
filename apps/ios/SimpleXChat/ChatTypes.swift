@@ -1379,7 +1379,7 @@ public enum ChatInfo: Identifiable, Decodable, NamedChat, Hashable {
 
     private static let invalidChatName = NSLocalizedString("invalid chat", comment: "invalid chat data")
 
-    static let privateNotesChatName = NSLocalizedString("Private notes", comment: "name of notes to self")
+    static let privateNotesChatName = NSLocalizedString("Note To Yourself", comment: "name of notes to self")
 
     public var localDisplayName: String {
         get {

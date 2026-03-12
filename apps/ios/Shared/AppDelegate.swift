@@ -14,6 +14,10 @@ import SwiftUI
 class AppDelegate: NSObject, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         logger.debug("AppDelegate: didFinishLaunchingWithOptions")
+        // Initialize CallController early so PushKit (VoIP push) is registered
+        // before the system tries to deliver payloads from reportNewIncomingVoIPPushPayload.
+        // Apple requires PKPushRegistry to be created in didFinishLaunchingWithOptions.
+        _ = CallController.shared
         application.registerForRemoteNotifications()
         removePasscodesIfReinstalled()
         prepareForLaunch()

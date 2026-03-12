@@ -414,7 +414,7 @@ struct SettingsView: View {
                 }
                 NavigationLink {
                     SimpleXInfo(onboarding: false)
-                        .navigationBarTitle("", displayMode: .inline)
+                        .navigationBarTitle("About Inqalaab", displayMode: .inline)
                         .modifier(ThemedBackground())
                         .frame(maxHeight: .infinity, alignment: .top)
                 } label: {

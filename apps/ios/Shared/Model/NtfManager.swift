@@ -189,7 +189,7 @@ class NtfManager: NSObject, UNUserNotificationCenterDelegate, ObservableObject {
                         title: NSLocalizedString("Reject", comment: "reject incoming call via notification")
                     )
                 ],
-                intentIdentifiers: [],
+                intentIdentifiers: ["INSendMessageIntent"],
                 hiddenPreviewsBodyPlaceholder: NSLocalizedString("Incoming call", comment: "notification")
             ),
             UNNotificationCategory(
@@ -218,7 +218,9 @@ class NtfManager: NSObject, UNUserNotificationCenterDelegate, ObservableObject {
                 self.granted = true
                 authorized?()
             default:
-                center.requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
+                var opts: UNAuthorizationOptions = [.alert, .sound, .badge]
+                if #available(iOS 15.0, *) { opts.insert(.timeSensitive) }
+                center.requestAuthorization(options: opts) { granted, error in
                     if let error = error {
                         logger.error("NtfManager.requestAuthorization error \(error.localizedDescription)")
                     } else {
@@ -249,7 +251,7 @@ class NtfManager: NSObject, UNUserNotificationCenterDelegate, ObservableObject {
 
     func notifyCallInvitation(_ invitation: RcvCallInvitation) {
         logger.debug("NtfManager.notifyCallInvitation")
-        addNotification(createCallInvitationNtf(invitation, 0))
+        addNotification(createCallCommunicationNtf(invitation, 0), id: callInvitationNtfId)
     }
 
     func setNtfBadgeCount(_ count: Int) {
@@ -261,10 +263,10 @@ class NtfManager: NSObject, UNUserNotificationCenterDelegate, ObservableObject {
         setNtfBadgeCount(max(0, UIApplication.shared.applicationIconBadgeNumber + count))
     }
 
-    private func addNotification(_ content: UNMutableNotificationContent) {
+    private func addNotification(_ content: UNNotificationContent, id: String = appNotificationId) {
         if !granted { return }
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: ntfTimeInterval, repeats: false)
-        let request = UNNotificationRequest(identifier: appNotificationId, content: content, trigger: trigger)
+        let request = UNNotificationRequest(identifier: id, content: content, trigger: trigger)
         UNUserNotificationCenter.current().add(request) { error in
             if let error = error { logger.error("addNotification error: \(error.localizedDescription)") }
         }

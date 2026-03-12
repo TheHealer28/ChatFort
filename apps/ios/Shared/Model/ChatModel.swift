@@ -575,16 +575,11 @@ final class ChatModel: ObservableObject {
     }
 
     private func updateChat(_ cInfo: ChatInfo, addMissing: Bool = true) {
-        print("Inqalaab updateChat: id=\(cInfo.id) hasChat=\(hasChat(cInfo.id)) addMissing=\(addMissing) chatsCount=\(chats.count)")
         if hasChat(cInfo.id) {
             updateChatInfo(cInfo)
-            print("Inqalaab updateChat: updated existing chat \(cInfo.id)")
         } else if addMissing {
             addChat(Chat(chatInfo: cInfo, chatItems: []))
             ChatTagsModel.shared.addPresetChatTags(cInfo, ChatStats())
-            print("Inqalaab updateChat: ADDED new chat \(cInfo.id) - chatsCount now=\(chats.count)")
-        } else {
-            print("Inqalaab updateChat: SKIPPED - no chat and addMissing=false for \(cInfo.id)")
         }
     }
 
@@ -609,7 +604,6 @@ final class ChatModel: ObservableObject {
     }
 
     func updateChats(_ newChats: [ChatData], keepingChatId: String? = nil) {
-        print("Inqalaab updateChats: REPLACING chats array! old=\(chats.count) new=\(newChats.count) keepingChatId=\(keepingChatId ?? "nil")")
         if let keepingChatId,
            let chatToKeep = getChat(keepingChatId),
            let i = newChats.firstIndex(where: { $0.id == keepingChatId }) {
@@ -618,7 +612,6 @@ final class ChatModel: ObservableObject {
         } else {
             chats = newChats.map { Chat($0) }
         }
-        print("Inqalaab updateChats: chats array now has \(chats.count) items: \(chats.map { $0.id })")
         NtfManager.shared.setNtfBadgeCount(totalUnreadCountForAllUsers())
         popChatCollector.clear()
     }
@@ -638,7 +631,6 @@ final class ChatModel: ObservableObject {
         } else {
             cInfo = chatInfo
         }
-        print("Inqalaab addChatItem: id=\(cInfo.id) exists=\(hasChat(cInfo.id)) chatsCount=\(chats.count)")
         updateChatInfo(cInfo)
         // update chat list
         if let i = getChatIndex(cInfo.id) {
@@ -1214,13 +1206,11 @@ final class ChatModel: ObservableObject {
     }
 
     func removeChat(_ id: String) {
-        print("Inqalaab removeChat: removing id=\(id) exists=\(getChatIndex(id) != nil)")
         withAnimation {
             if let i = getChatIndex(id) {
                 let removed = chats.remove(at: i)
                 ChatTagsModel.shared.removePresetChatTags(removed.chatInfo, removed.chatStats)
                 removeWallpaperFilesFromChat(removed)
-                print("Inqalaab removeChat: removed \(id) - chatsCount now=\(chats.count)")
             }
         }
     }

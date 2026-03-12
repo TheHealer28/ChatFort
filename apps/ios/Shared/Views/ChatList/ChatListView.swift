@@ -193,13 +193,11 @@ struct ChatListView: View {
                     let shouldNavigate = newChatId != nil
                     let isNavigated = !chatNavigationPath.isEmpty
                     if shouldNavigate != isNavigated {
-                        print("Inqalaab navigation sync: chatId=\(newChatId ?? "nil") → path=\(shouldNavigate ? "[true]" : "[]")")
                         chatNavigationPath = shouldNavigate ? [true] : []
                     }
                 }
                 .onChange(of: chatNavigationPath) { newPath in
                     if newPath.isEmpty && chatModel.chatId != nil {
-                        print("Inqalaab navigation sync: back navigation → chatId=nil")
                         chatModel.chatId = nil
                     }
                 }
@@ -504,7 +502,6 @@ struct ChatListView: View {
     }
     
     @ViewBuilder private func chatView() -> some View {
-        let _ = print("Inqalaab chatView: chatId=\(chatModel.chatId ?? "nil") found=\(chatModel.chatId != nil ? String(chatModel.getChat(chatModel.chatId!) != nil) : "n/a")")
         if let chatId = chatModel.chatId, let chat = chatModel.getChat(chatId) {
             let im = ItemsModel.shared
             ChatView(
@@ -525,7 +522,6 @@ struct ChatListView: View {
     private func filteredChats() -> [Chat] {
         let allChats = chatModel.chats
         let activeFilter = chatTagsModel.activeFilter
-        print("Inqalaab filteredChats: ENTER chatsCount=\(allChats.count) ids=\(allChats.map { $0.id }) activeFilter=\(String(describing: activeFilter)) linkFilter=\(String(describing: searchChatFilteredBySimplexLink))")
         if let linkChatId = searchChatFilteredBySimplexLink {
             return chatModel.chats.filter { $0.id == linkChatId }
         } else {
@@ -537,7 +533,6 @@ struct ChatListView: View {
                     let card = chat.chatInfo.contactCard
                     let filt = filtered(chat)
                     let pass = !del && !card && filt
-                    print("Inqalaab filteredChats: id=\(chat.id) type=\(chat.chatInfo.chatType) deleted=\(del) card=\(card) filtered=\(filt) -> \(pass)")
                     return pass
                 }
             } else {
@@ -559,7 +554,6 @@ struct ChatListView: View {
                     }
                 }
             }
-            print("Inqalaab filteredChats: EXIT result=\(result.count) ids=\(result.map { $0.id })")
             return result
         }
 
@@ -1010,7 +1004,6 @@ private struct ChatListRows: View {
         let cs = chatModel.chats.filter { chat in
             !chat.chatInfo.chatDeleted && !chat.chatInfo.contactCard && tagFilterMatch(chat)
         }
-        let _ = print("Inqalaab ChatListRows: rendering \(cs.count) chats: \(cs.map { $0.id })")
         if #available(iOS 16.0, *) {
             ForEach(cs, id: \.viewId) { chat in
                 ChatListNavLink(chat: chat, parentSheet: $parentSheet)
@@ -1054,7 +1047,6 @@ private struct ChatListQROverlay: View {
             if case .local = chat.chatInfo { return false }  // Notes doesn't count
             return !chat.chatInfo.chatDeleted && !chat.chatInfo.contactCard
         }
-        let _ = print("Inqalaab ChatListQROverlay: hasRealChats=\(hasRealChats) userAddress=\(chatModel.userAddress != nil)")
         if !hasRealChats, let userAddress = chatModel.userAddress {
             VStack(spacing: 12) {
                 Spacer()

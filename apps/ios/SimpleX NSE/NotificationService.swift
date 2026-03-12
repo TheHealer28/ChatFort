@@ -672,10 +672,10 @@ class NotificationService: UNNotificationServiceExtension {
                         "callTs": callInv.callTs.timeIntervalSince1970
                     ]) { error in
                         logger.debug("reportNewIncomingVoIPPushPayload result: \(error)")
-                        handler(error == nil ? UNMutableNotificationContent() : createCallInvitationNtf(callInv, self.badgeCount))
+                        handler(error == nil ? UNMutableNotificationContent() : createCallCommunicationNtf(callInv, self.badgeCount))
                     }
                 } else {
-                    handler(createCallInvitationNtf(callInv, badgeCount))
+                    handler(createCallCommunicationNtf(callInv, badgeCount))
                 }
             } else if notificationEntities.isEmpty {
                 handler(serviceNtf)
@@ -982,10 +982,20 @@ func chatRecvMsg() async -> APIResult<NSEChatEvent>? {
     }
 }
 
-private let isInChina = SKStorefront().countryCode == "CHN"
+private let isInChina: Bool = {
+    let cc = SKStorefront().countryCode
+    let result = cc == "CHN"
+    logger.debug("Inqalaab NSE: SKStorefront countryCode=\(cc), isInChina=\(result)")
+    return result
+}()
 
 @inline(__always)
-private func useCallKit() -> Bool { !isInChina && callKitEnabledGroupDefault.get() }
+private func useCallKit() -> Bool {
+    let ckEnabled = callKitEnabledGroupDefault.get()
+    let result = !isInChina && ckEnabled
+    logger.debug("Inqalaab NSE: useCallKit=\(result) (isInChina=\(isInChina), callKitEnabled=\(ckEnabled))")
+    return result
+}
 
 @inline(__always)
 func receivedMsgNtf(_ res: NSEChatEvent) async -> (String, NSENotificationData)? {

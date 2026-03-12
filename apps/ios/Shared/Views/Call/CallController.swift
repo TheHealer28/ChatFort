@@ -189,16 +189,19 @@ class CallController: NSObject, CXProviderDelegate, PKPushRegistryDelegate, Obse
 
     @objc(pushRegistry:didUpdatePushCredentials:forType:)
     func pushRegistry(_ registry: PKPushRegistry, didUpdate pushCredentials: PKPushCredentials, for type: PKPushType) {
-        logger.debug("CallController: didUpdate push credentials for type \(type.rawValue)")
+        let tokenLen = pushCredentials.token.count
+        logger.debug("Inqalaab CallController: didUpdate push credentials for type \(type.rawValue), tokenLength=\(tokenLen)")
     }
 
     func pushRegistry(_ registry: PKPushRegistry, didReceiveIncomingPushWith payload: PKPushPayload, for type: PKPushType, completion: @escaping () -> Void) {
-        logger.debug("CallController: did receive push with type \(type.rawValue)")
+        logger.debug("Inqalaab CallController: did receive push with type \(type.rawValue), appState=\(AppChatState.shared.value.rawValue)")
         if type != .voIP {
+            logger.debug("Inqalaab CallController: ignoring non-VoIP push type")
             completion()
             return
         }
         if AppChatState.shared.value == .stopped {
+            logger.debug("Inqalaab CallController: app is stopped, reporting expired call")
             self.reportExpiredCall(payload: payload, completion)
             return
         }
@@ -213,21 +216,26 @@ class CallController: NSObject, CXProviderDelegate, PKPushRegistryDelegate, Obse
            let media = CallMediaType(rawValue: mediaStr) {
             let update = self.cxCallUpdate(contactId, displayName, media)
             let callTs = Date(timeIntervalSince1970: callTsInterval)
-            if callTs.timeIntervalSinceNow >= -180 {
-                logger.debug("CallController: report pushkit call via CallKit")
+            let callAge = callTs.timeIntervalSinceNow
+            logger.debug("Inqalaab CallController: parsed call from \(displayName), callAge=\(callAge)s, uuid=\(callUUID)")
+            if callAge >= -180 {
+                logger.debug("Inqalaab CallController: REPORTING incoming call to CallKit (full-screen UI)")
                 self.provider.reportNewIncomingCall(with: uuid, update: update) { error in
-                    if error != nil {
+                    if let error = error {
+                        logger.error("Inqalaab CallController: reportNewIncomingCall FAILED: \(error.localizedDescription)")
                         m.callInvitations.removeValue(forKey: contactId)
+                    } else {
+                        logger.debug("Inqalaab CallController: reportNewIncomingCall SUCCESS — CallKit UI should be visible")
                     }
                     // Tell PushKit that the notification is handled.
                     completion()
                 }
             } else {
-                logger.debug("CallController will expire call 1")
+                logger.debug("Inqalaab CallController: call expired (age=\(callAge)s > 180s), reporting expired")
                 self.reportExpiredCall(update: update, completion)
             }
         } else {
-            logger.debug("CallController will expire call 2")
+            logger.debug("Inqalaab CallController: could not parse call payload, reporting expired. Keys: \(payload.dictionaryPayload.keys)")
             self.reportExpiredCall(payload: payload, completion)
         }
 
