@@ -9,7 +9,7 @@
 import SwiftUI
 import SimpleXChat
 
-let conditionsURL = URL(string: "https://github.com/simplex-chat/simplex-chat/blob/stable/PRIVACY.md")!
+let conditionsURL = URL(string: "https://github.com/TheHealer28/Inqalaab/blob/stable/PRIVACY.md")!
 
 struct OnboardingButtonStyle: ButtonStyle {
     @EnvironmentObject var theme: AppTheme

@@ -1597,7 +1597,7 @@ let operatorsInfo: Dictionary<OperatorTag, ServerOperatorInfo> = [
     .simplex: ServerOperatorInfo(
         description: [
             "Inqalaab is a private messenger for activists that has no user profile IDs of any kind, not even random numbers or identity keys.",
-            "Inqalaab uses the SimpleX protocol for maximum privacy and security."
+            "Inqalaab uses end-to-end encryption for maximum privacy and security."
         ],
         website: URL(string: "https://github.com/TheHealer28/Inqalaab")!,
         logo: "decentralized",
@@ -1612,7 +1612,7 @@ let operatorsInfo: Dictionary<OperatorTag, ServerOperatorInfo> = [
             "Flux operates servers to improve privacy and decentralization."
         ],
         website: URL(string: "https://runonflux.com")!,
-        selfhost: (text: "Self-host servers on Flux", link: URL(string: "https://home.runonflux.io/apps/marketplace?q=simplex")!),
+        selfhost: (text: "Self-host servers on Flux", link: URL(string: "https://home.runonflux.io/apps/marketplace")!),
         logo: "flux_logo_symbol",
         largeLogo: "flux_logo",
         logoDarkMode: "flux_logo_symbol",

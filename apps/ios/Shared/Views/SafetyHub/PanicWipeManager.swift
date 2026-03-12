@@ -28,7 +28,7 @@ class PanicWipeManager: ObservableObject {
 
     private func _performPanicWipe() {
         guard !wipeInProgress else {
-            print("Inqalaab: Wipe already in progress, ignoring duplicate call")
+            logger.debug("Inqalaab: Wipe already in progress, ignoring duplicate call")
             return
         }
 
@@ -115,9 +115,9 @@ class PanicWipeManager: ObservableObject {
                     self.wipeInProgress = false
                 }
 
-                print("Inqalaab: Panic wipe completed successfully")
+                logger.info("Inqalaab: Panic wipe completed successfully")
             } catch {
-                print("Inqalaab: Panic wipe error: \(error)")
+                logger.error("Inqalaab: Panic wipe error: \(error)")
                 await MainActor.run {
                     self.wipeInProgress = false
                     // Fallback: reset to onboarding so app can restart fresh

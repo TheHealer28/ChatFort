@@ -10,6 +10,5 @@
 	<array>
 		<string>$(AppIdentifierPrefix)com.inqalaab.app</string>
 	</array>
-
 </dict>
 </plist>

@@ -37,29 +37,10 @@ struct NotificationsView: View {
     private func viewBody() -> some View {
         List {
             Section {
-                NavigationLink {
-                    List {
-                        Section {
-                            SelectionListView(list: NotificationsMode.values, selection: $notificationMode) { mode in
-                                ntfAlert = .setMode(mode: mode)
-                            }
-                        } footer: {
-                            VStack(alignment: .leading) {
-                                Text(ntfModeDescription(notificationMode))
-                                    .foregroundColor(theme.colors.secondary)
-                            }
-                            .font(.callout)
-                            .padding(.top, 1)
-                        }
-                    }
-                    .navigationTitle("Send notifications")
-                    .modifier(ThemedBackground(grouped: true))
-                    .navigationBarTitleDisplayMode(.inline)
-                } label: {
-                    HStack {
-                        Text("Send notifications")
-                        Spacer()
-                        Text(m.notificationMode.label)
+                // Inqalaab: notification mode selector — own NTF server deployed at ntf.example.org
+                SelectionListView(list: NotificationsMode.values, selection: $notificationMode) { mode in
+                    if mode != notificationMode {
+                        ntfAlert = .setMode(mode: mode)
                     }
                 }
 
@@ -109,6 +90,7 @@ struct NotificationsView: View {
         .disabled(legacyDatabase)
         .onAppear {
             (m.savedToken, m.tokenStatus, m.notificationMode, m.notificationServer) = apiGetNtfToken()
+            notificationMode = m.notificationMode
         }
     }
 

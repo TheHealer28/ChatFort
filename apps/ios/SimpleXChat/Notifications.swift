@@ -9,6 +9,7 @@
 import Foundation
 import UserNotifications
 import SwiftUI
+import Intents
 
 public let ntfCategoryContactRequest = "NTF_CAT_CONTACT_REQUEST"
 public let ntfCategoryContactConnected = "NTF_CAT_CONTACT_CONNECTED"
@@ -78,12 +79,15 @@ public func createMessageReceivedNtf(_ user: any UserLike, _ cInfo: ChatInfo, _ 
     )
 }
 
+/// Unique notification identifier for call invitations (avoids reusing the shared appNotificationId)
+public let callInvitationNtfId = "com.inqalaab.app.call-invitation"
+
 public func createCallInvitationNtf(_ invitation: RcvCallInvitation, _ badgeCount: Int) -> UNMutableNotificationContent {
     let text = invitation.callType.media == .video
                 ? NSLocalizedString("Incoming video call", comment: "notification")
                 : NSLocalizedString("Incoming audio call", comment: "notification")
     let hideContent = ntfPreviewModeGroupDefault.get() == .hidden
-    return createNotification(
+    let content = createNotification(
         categoryIdentifier: ntfCategoryCallInvitation,
         title: hideContent ? contactHidden : "\(invitation.contact.chatViewName):",
         body: text,
@@ -91,6 +95,75 @@ public func createCallInvitationNtf(_ invitation: RcvCallInvitation, _ badgeCoun
         userInfo: ["chatId": invitation.contact.id, "userId": invitation.user.userId],
         badgeCount: badgeCount
     )
+    // Custom ringtone for incoming calls (~29 s, under Apple's 30 s limit).
+    // The file is in the "sounds" folder reference which is a bundle resource.
+    content.sound = UNNotificationSound(named: UNNotificationSoundName("sounds/ringtone.caf"))
+    // Time-sensitive: breaks through Focus / Scheduled Summary
+    if #available(iOS 15.0, *) {
+        content.interruptionLevel = .timeSensitive
+    }
+    return content
+}
+
+/// Wraps the base call notification with a Communication Notification (iOS 15+).
+/// Uses INSendMessageIntent so the system shows the caller's avatar and name
+/// prominently — the best presentation available without CallKit.
+public func createCallCommunicationNtf(_ invitation: RcvCallInvitation, _ badgeCount: Int) -> UNNotificationContent {
+    let base = createCallInvitationNtf(invitation, badgeCount)
+    guard #available(iOS 15.0, *) else { return base }
+
+    // Build INPerson for the caller
+    let handle = INPersonHandle(value: invitation.contact.id, type: .unknown)
+    var avatar: INImage? = nil
+    if let imageStr = invitation.contact.image,
+       let data = Data(base64Encoded: dropImagePrefix(imageStr)) {
+        avatar = INImage(imageData: data)
+    }
+    let caller = INPerson(
+        personHandle: handle,
+        nameComponents: nil,
+        displayName: invitation.contact.chatViewName,
+        image: avatar,
+        contactIdentifier: nil,
+        customIdentifier: invitation.contact.id,
+        isMe: false
+    )
+
+    // Apple's updating(from:) only supports INSendMessageIntent,
+    // so we use it to get the communication notification appearance
+    // (avatar, prominent sender name) even for call invitations.
+    let callText = invitation.callType.media == .video
+        ? NSLocalizedString("Incoming video call", comment: "notification")
+        : NSLocalizedString("Incoming audio call", comment: "notification")
+    let intent = INSendMessageIntent(
+        recipients: nil,
+        outgoingMessageType: .outgoingMessageText,
+        content: callText,
+        speakableGroupName: nil,
+        conversationIdentifier: invitation.contact.id,
+        serviceName: nil,
+        sender: caller,
+        attachments: nil
+    )
+
+    // Donate interaction so the system learns about this caller
+    let interaction = INInteraction(intent: intent, response: nil)
+    interaction.direction = .incoming
+    interaction.donate(completion: nil)
+
+    // Update notification content — adds avatar & prominent sender name.
+    // updating(from:) returns a new object that may lose sound/interruptionLevel,
+    // so we re-apply them on a mutable copy.
+    do {
+        let updated = try base.updating(from: intent)
+        let result = updated.mutableCopy() as! UNMutableNotificationContent
+        result.sound = UNNotificationSound(named: UNNotificationSoundName("sounds/ringtone.caf"))
+        result.interruptionLevel = .timeSensitive
+        return result
+    } catch {
+        logger.error("Communication notification update failed: \(error.localizedDescription)")
+        return base
+    }
 }
 
 public func createConnectionEventNtf(_ user: User, _ connEntity: ConnectionEntity, _ badgeCount: Int) -> UNMutableNotificationContent {

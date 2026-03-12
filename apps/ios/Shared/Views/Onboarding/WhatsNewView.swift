@@ -42,593 +42,60 @@ private struct FeatureView {
 
 private let versionDescriptions: [VersionDescription] = [
     VersionDescription(
-        version: "v4.2",
-        post: nil, // Inqalaab: removed SimpleX blog link
-        features: [
-            .feature(Description(
-                icon: "checkmark.shield",
-                title: "Security assessment",
-                description: "Inqalaab security was audited by Trail of Bits."
-            )),
-            .feature(Description(
-                icon: "person.2",
-                title: "Group links",
-                description: "Admins can create the links to join groups."
-            )),
-            .feature(Description(
-                icon: "checkmark",
-                title: "Auto-accept contact requests",
-                description: "With optional welcome message."
-            )),
-        ]
-    ),
-    VersionDescription(
-        version: "v4.3",
+        version: "v1.0.0",
         post: nil,
         features: [
             .feature(Description(
-                icon: "mic",
-                title: "Voice messages",
-                description: "Max 30 seconds, received instantly."
+                icon: "shield.checkered",
+                title: "Built for activists",
+                description: "Inqalaab is purpose-built for activists, journalists, and organizers in South Asia."
             )),
             .feature(Description(
-                icon: "trash.slash",
-                title: "Irreversible message deletion",
-                description: "Your contacts can allow full message deletion."
+                icon: "eye.slash.fill",
+                title: "No surveillance possible",
+                description: "No phone number, no tracking, no metadata collected."
             )),
             .feature(Description(
-                icon: "externaldrive.connected.to.line.below",
-                title: "Improved server configuration",
-                description: "Add servers by scanning QR codes."
+                icon: "server.rack",
+                title: "Independent servers",
+                description: "Messages routed through community-run servers outside your country."
             )),
-            .feature(Description(
-                icon: "eye.slash",
-                title: "Improved privacy and security",
-                description: "Hide app screen in the recent apps."
-            )),
-        ]
-    ),
-    VersionDescription(
-        version: "v4.4",
-        post: nil,
-        features: [
-            .feature(Description(
-                icon: "stopwatch",
-                title: "Disappearing messages",
-                description: "Sent messages will be deleted after set time."
-            )),
-            .feature(Description(
-                icon: "ellipsis.circle",
-                title: "Live messages",
-                description: "Recipients see updates as you type them."
-            )),
-            .feature(Description(
-                icon: "checkmark.shield",
-                title: "Verify connection security",
-                description: "Compare security codes with your contacts."
-            )),
-            .feature(Description(
-                icon: "camera",
-                title: "GIFs and stickers",
-                description: "Send them from gallery or custom keyboards."
-            )),
-            .feature(Description(
-                icon: "character",
-                title: "French interface",
-                description: "Thanks to the users – contribute via Weblate!"
-            )),
-        ]
-    ),
-    VersionDescription(
-        version: "v4.5",
-        post: nil,
-        features: [
-            .feature(Description(
-                icon: "person.crop.rectangle.stack",
-                title: "Multiple chat profiles",
-                description: "Different names, avatars and transport isolation."
-            )),
-            .feature(Description(
-                icon: "rectangle.and.pencil.and.ellipsis",
-                title: "Message draft",
-                description: "Preserve the last message draft, with attachments."
-            )),
-            .feature(Description(
-                icon: "network.badge.shield.half.filled",
-                title: "Transport isolation",
-                description: "By chat profile (default) or by connection (BETA)."
-            )),
-            .feature(Description(
-                icon: "lock.doc",
-                title: "Private filenames",
-                description: "To protect timezone, image/voice files use UTC."
-            )),
-            .feature(Description(
-                icon: "battery.25",
-                title: "Reduced battery usage",
-                description: "More improvements are coming soon!"
-            )),
-            .feature(Description(
-                icon: "character",
-                title: "Italian interface",
-                description: "Thanks to the users – [contribute via Weblate](https://github.com/simplex-chat/simplex-chat/tree/stable#help-translating-simplex-chat)!"
-            )),
-        ]
-    ),
-    VersionDescription(
-        version: "v4.6",
-        post: nil,
-        features: [
-            .feature(Description(
-                icon: "lock",
-                title: "Hidden chat profiles",
-                description: "Protect your chat profiles with a password!"
-            )),
-            .feature(Description(
-                icon: "phone.arrow.up.right",
-                title: "Audio and video calls",
-                description: "Fully re-implemented - work in background!"
-            )),
-            .feature(Description(
-                icon: "flag",
-                title: "Group moderation",
-                description: "Now admins can:\n- delete members' messages.\n- disable members (\"observer\" role)"
-            )),
-            .feature(Description(
-                icon: "plus.message",
-                title: "Group welcome message",
-                description: "Set the message shown to new members!"
-            )),
-            .feature(Description(
-                icon: "battery.50",
-                title: "Further reduced battery usage",
-                description: "More improvements are coming soon!"
-            )),
-            .feature(Description(
-                icon: "character",
-                title: "Chinese and Spanish interface",
-                description: "Thanks to the users – [contribute via Weblate](https://github.com/simplex-chat/simplex-chat/tree/stable#help-translating-simplex-chat)!"
-            )),
-        ]
-    ),
-    VersionDescription(
-        version: "v5.0",
-        post: nil,
-        features: [
-            .feature(Description(
-                icon: "arrow.up.doc",
-                title: "Videos and files up to 1gb",
-                description: "Fast and no wait until the sender is online!"
-            )),
-            .feature(Description(
-                icon: "lock",
-                title: "App passcode",
-                description: "Set it instead of system authentication."
-            )),
-            .feature(Description(
-                icon: "character",
-                title: "Polish interface",
-                description: "Thanks to the users – [contribute via Weblate](https://github.com/simplex-chat/simplex-chat/tree/stable#help-translating-simplex-chat)!"
-            )),
-        ]
-    ),
-    // Also
-    // preference to disable calls per contact
-    // access welcome message via a group profile
-    VersionDescription(
-        version: "v5.1",
-        post: nil,
-        features: [
-            .feature(Description(
-                icon: "face.smiling",
-                title: "Message reactions",
-                description: "Finally, we have them! 🚀"
-            )),
-            .feature(Description(
-                icon: "arrow.up.message",
-                title: "Better messages",
-                description: "- voice messages up to 5 minutes.\n- custom time to disappear.\n- editing history."
-            )),
-            .feature(Description(
-                icon: "lock",
-                title: "Self-destruct passcode",
-                description: "All data is erased when it is entered."
-            )),
-            .feature(Description(
-                icon: "character",
-                title: "Japanese interface",
-                description: "Thanks to the users – [contribute via Weblate](https://github.com/simplex-chat/simplex-chat/tree/stable#help-translating-simplex-chat)!"
-            )),
-        ]
-    ),
-    VersionDescription(
-        version: "v5.2",
-        post: nil,
-        features: [
-            .feature(Description(
-                icon: "checkmark",
-                title: "Message delivery receipts!",
-                description: "The second tick we missed! ✅"
-            )),
-            .feature(Description(
-                icon: "star",
-                title: "Find chats faster",
-                description: "Filter unread and favorite chats."
-            )),
-            .feature(Description(
-                icon: "exclamationmark.arrow.triangle.2.circlepath",
-                title: "Keep your connections",
-                description: "Fix encryption after restoring backups."
-            )),
-            .feature(Description(
-                icon: "stopwatch",
-                title: "Make one message disappear",
-                description: "Even when disabled in the conversation."
-            )),
-            .feature(Description(
-                icon: "gift",
-                title: "A few more things",
-                description: "- more stable message delivery.\n- a bit better groups.\n- and more!"
-            )),
-        ]
-    ),
-    VersionDescription(
-        version: "v5.3",
-        post: nil,
-        features: [
-            .feature(Description(
-                icon: "desktopcomputer",
-                title: "New desktop app!",
-                description: "Create new profile in desktop app. 💻"
-            )),
-            .feature(Description(
-                icon: "lock",
-                title: "Encrypt stored files & media",
-                description: "App encrypts new local files (except videos)."
-            )),
-            .feature(Description(
-                icon: "magnifyingglass",
-                title: "Discover and join groups",
-                description: "- discover and join groups (BETA)!\n- delivery receipts (up to 20 members).\n- faster and more stable."
-            )),
-            .feature(Description(
-                icon: "theatermasks",
-                title: "Simplified incognito mode",
-                description: "Toggle incognito when connecting."
-            )),
-            .feature(Description(
-                icon: "character",
-                title: "\(4) new interface languages",
-                description: "Bulgarian, Finnish, Thai and Ukrainian - thanks to the users and [Weblate](https://github.com/simplex-chat/simplex-chat/tree/stable#help-translating-simplex-chat)!"
-            )),
-        ]
-    ),
-    VersionDescription(
-        version: "v5.4",
-        post: nil,
-        features: [
-            .feature(Description(
-                icon: "desktopcomputer",
-                title: "Link mobile and desktop apps! 🔗",
-                description: "Via secure quantum resistant protocol."
-            )),
-            .feature(Description(
-                icon: "person.2",
-                title: "Better groups",
-                description: "Faster joining and more reliable messages."
-            )),
-            .feature(Description(
-                icon: "theatermasks",
-                title: "Incognito groups",
-                description: "Create a group using a random profile."
-            )),
-            .feature(Description(
-                icon: "hand.raised",
-                title: "Block group members",
-                description: "To hide unwanted messages."
-            )),
-            .feature(Description(
-                icon: "gift",
-                title: "A few more things",
-                description: "- optionally notify deleted contacts.\n- profile names with spaces.\n- and more!"
-            )),
-        ]
-    ),
-    VersionDescription(
-        version: "v5.5",
-        post: nil,
-        features: [
-            .feature(Description(
-                icon: "folder",
-                title: "Private notes",
-                description: "With encrypted files and media."
-            )),
-            .feature(Description(
-                icon: "link",
-                title: "Paste link to connect!",
-                description: "Search bar accepts invitation links."
-            )),
-            .feature(Description(
-                icon: "bubble.left.and.bubble.right",
-                title: "Join group conversations",
-                description: "Recent history and improved group discovery."
-            )),
-            .feature(Description(
-                icon: "battery.50",
-                title: "Improved message delivery",
-                description: "With reduced battery usage."
-            )),
-            .feature(Description(
-                icon: "character",
-                title: "Turkish interface",
-                description: "Thanks to the users – [contribute via Weblate](https://github.com/simplex-chat/simplex-chat/tree/stable#help-translating-simplex-chat)!"
-            )),
-        ]
-    ),
-    VersionDescription(
-        version: "v5.6",
-        post: nil,
-        features: [
             .feature(Description(
                 icon: "key",
                 title: "Quantum resistant encryption",
-                description: "Enable in direct chats (BETA)!"
-            )),
-            .feature(Description(
-                icon: "tray.and.arrow.up",
-                title: "App data migration",
-                description: "Migrate to another device via QR code."
-            )),
-            .feature(Description(
-                icon: "phone",
-                title: "Picture-in-picture calls",
-                description: "Use the app while in the call."
-            )),
-            .feature(Description(
-                icon: "hand.raised",
-                title: "Safer groups",
-                description: "Admins can block a member for all."
-            )),
-            .feature(Description(
-                icon: "character",
-                title: "Hungarian interface",
-                description: "Thanks to the users – [contribute via Weblate](https://github.com/simplex-chat/simplex-chat/tree/stable#help-translating-simplex-chat)!"
+                description: "End-to-end encrypted with post-quantum security."
             )),
         ]
     ),
     VersionDescription(
-        version: "v5.7",
+        version: "v1.1.0",
         post: nil,
         features: [
             .feature(Description(
-                icon: "key",
-                title: "Quantum resistant encryption",
-                description: "Will be enabled in direct chats!"
+                icon: "bolt.shield.fill",
+                title: "Safety Hub",
+                description: "Your security command center with real-time security score and one-tap protections."
             )),
             .feature(Description(
-                icon: "arrowshape.turn.up.forward",
-                title: "Forward and save messages",
-                description: "Message source remains private."
+                icon: "exclamationmark.triangle.fill",
+                title: "Panic Mode",
+                description: "Shake to wipe all data instantly. Configurable with deadman's switch timer."
             )),
             .feature(Description(
-                icon: "music.note",
-                title: "In-call sounds",
-                description: "When connecting audio and video calls."
+                icon: "lock.shield.fill",
+                title: "Lockdown Mode",
+                description: "One toggle to enable maximum privacy — hides previews, enables incognito, and more."
             )),
             .feature(Description(
-                icon: "person.crop.square",
-                title: "Shape profile images",
-                description: "Square, circle, or anything in between."
-            )),
-            .feature(Description(
-                icon: "antenna.radiowaves.left.and.right",
-                title: "Network management",
-                description: "More reliable network connection."
-            )),
-        ]
-    ),
-    VersionDescription(
-        version: "v5.8",
-        post: nil,
-        features: [
-            .feature(Description(
-                icon: "arrow.forward",
-                title: "Private message routing 🚀",
-                description: "Protect your IP address from the messaging relays chosen by your contacts.\nEnable in *Network & servers* settings."
-            )),
-            .feature(Description(
-                icon: "network.badge.shield.half.filled",
-                title: "Safely receive files",
-                description: "Confirm files from unknown servers."
-            )),
-            .feature(Description(
-                icon: "battery.50",
-                title: "Improved message delivery",
-                description: "With reduced battery usage."
-            )),
-        ]
-    ),
-    VersionDescription(
-        version: "v6.0",
-        post: nil,
-        features: [
-            .feature(Description(
-                icon: nil,
-                title: "New chat experience 🎉",
-                description: nil,
-                subfeatures: [
-                    ("link.badge.plus", "Connect to your friends faster."),
-                    ("archivebox", "Archive contacts to chat later."),
-                    ("trash", "Delete up to 20 messages at once."),
-                    ("platter.filled.bottom.and.arrow.down.iphone", "Use the app with one hand."),
-                    ("paintpalette", "Color chats with the new themes."),
-                ]
-            )),
-            .feature(Description(
-                icon: nil,
-                title: "New media options",
-                description: nil,
-                subfeatures: [
-                    ("square.and.arrow.up", "Share from other apps."),
-                    ("play.circle", "Play from the chat list."),
-                    ("circle.filled.pattern.diagonalline.rectangle", "Blur for better privacy.")
-                ]
-            )),
-            .feature(Description(
-                icon: "arrow.forward",
-                title: "Private message routing 🚀",
-                description: "It protects your IP address and connections."
-            )),
-            .feature(Description(
-                icon: "network",
-                title: "Better networking",
-                description: "Connection and servers status."
-            )),
-        ]
-    ),
-    VersionDescription(
-        version: "v6.1",
-        post: nil,
-        features: [
-            .feature(Description(
-                icon: "checkmark.shield",
-                title: "Better security ✅",
-                description: "Protocols reviewed by Trail of Bits."
-            )),
-            .feature(Description(
-                icon: "video",
-                title: "Better calls",
-                description: "Switch audio and video during the call."
-            )),
-            .feature(Description(
-                icon: "bolt",
-                title: "Better notifications",
-                description: "Improved delivery, reduced traffic usage.\nMore improvements are coming soon!"
-            )),
-            .feature(Description(
-                icon: nil,
-                title: "Better user experience",
-                description: nil,
-                subfeatures: [
-                    ("link", "Switch chat profile for 1-time invitations."),
-                    ("message", "Customizable message shape."),
-                    ("calendar", "Better message dates."),
-                    ("arrowshape.turn.up.right", "Forward up to 20 messages at once."),
-                    ("flag", "Delete or moderate up to 200 messages.")
-                ]
-            )),
-        ]
-    ),
-    VersionDescription(
-        version: "v6.2",
-        post: nil,
-        features: [
-            .view(FeatureView(
-                icon: nil,
-                title: "Network decentralization",
-                view: { NewOperatorsView() }
-            )),
-            .feature(Description(
-                icon: "briefcase",
-                title: "Business chats",
-                description: "Privacy for your customers."
-            )),
-            .feature(Description(
-                icon: "bolt",
-                title: "More reliable notifications",
-                description: "Delivered even when Apple drops them."
-            )),
-        ]
-    ),
-    VersionDescription(
-        version: "v6.3",
-        post: nil,
-        features: [
-            .feature(Description(
-                icon: "at",
-                title: "Mention members 👋",
-                description: "Get notified when mentioned."
-            )),
-            .feature(Description(
-                icon: "flag",
-                title: "Send private reports",
-                description: "Help admins moderating their groups."
-            )),
-            .feature(Description(
-                icon: "list.bullet",
-                title: "Organize chats into lists",
-                description: "Don't miss important messages."
-            )),
-            .feature(Description(
-                icon: nil,
-                title: "Better privacy and security",
-                description: nil,
-                subfeatures: [
-                    ("eye.slash", "Private media file names."),
-                    ("trash", "Set message expiration in chats.")
-                ]
-            )),
-            .feature(Description(
-                icon: nil,
-                title: "Better groups performance",
-                description: nil,
-                subfeatures: [
-                    ("bolt", "Faster sending messages."),
-                    ("person.2.slash", "Faster deletion of groups.")
-                ]
-            )),
-        ]
-    ),
-    VersionDescription(
-        version: "v6.4",
-        post: nil,
-        features: [
-            .feature(Description(
-                icon: "person",
-                title: "Connect faster! 🚀",
-                description: "Message instantly once you tap Connect."
-            )),
-            .feature(Description(
-                icon: { if #available(iOS 17, *) {"person.bubble"} else  {"person.crop.square"} }(),
-                title: "Review group members",
-                description: "Chat with members before they join."
-            )),
-            .feature(Description(
-                icon: { if #available(iOS 16, *) {"questionmark.bubble"} else {"questionmark.square"} }(),
-                title: "Chat with admins",
-                description: "Send your private feedback to groups."
-            )),
-            .feature(Description(
-                icon: "flag",
-                title: "New group role: Moderator",
-                description: "Removes messages and blocks members."
-            )),
-            .feature(Description(
-                icon: "battery.50",
-                title: "Improved message delivery",
-                description: "Less traffic on mobile networks."
-            )),
-        ]
-    ),
-    VersionDescription(
-        version: "v6.4.1",
-        post: nil,
-        features: [
-            .feature(Description(
-                icon: "hand.wave",
-                title: "Welcome your contacts 👋",
-                description: "Set profile bio and welcome message."
-            )),
-            .feature(Description(
-                icon: "stopwatch",
-                title: "Keep your chats clean",
-                description: "Enable disappearing messages by default."
+                icon: "person.crop.circle.badge.checkmark",
+                title: "Emergency Contacts",
+                description: "Mark trusted contacts and send a check-in message to all of them with one tap."
             )),
             .view(FeatureView(
                 icon: nil,
                 title: "Short Inqalaab address",
                 view: { CreateUpdateAddressShortLink() }
-            ))
+            )),
         ]
     ),
 ]
@@ -643,23 +110,6 @@ func shouldShowWhatsNew() -> Bool {
     let v = UserDefaults.standard.string(forKey: DEFAULT_WHATS_NEW_VERSION)
     setLastVersionDefault()
     return v != lastVersion
-}
-
-fileprivate struct NewOperatorsView: View {
-    var body: some View {
-        VStack(alignment: .leading) {
-            Image((operatorsInfo[.flux] ?? ServerOperator.dummyOperatorInfo).largeLogo)
-                .resizable()
-                .scaledToFit()
-                .frame(height: 48)
-            Text("The second preset operator in the app!")
-                .multilineTextAlignment(.leading)
-                .lineLimit(10)
-            HStack {
-                Text("Enable Flux in Network & servers settings for better metadata privacy.")
-            }
-        }
-    }
 }
 
 fileprivate struct CreateUpdateAddressShortLink: View {

@@ -157,7 +157,7 @@ struct SimpleXInfo: View {
             }
             .ignoresSafeArea()
         )
-        .navigationBarHidden(true)
+        .navigationBarHidden(onboarding)
     }
 
     private func inqalaabFeatureRow(icon: String, color: Color, title: String, detail: String) -> some View {

@@ -60,7 +60,7 @@ class InqalaabShakeDetector {
             name: .deviceDidShake,
             object: nil
         )
-        print("Inqalaab: Shake detector started")
+        logger.debug("Inqalaab: Shake detector started")
     }
 
     /// Stop listening. Called during wipe or shutdown.
@@ -68,7 +68,7 @@ class InqalaabShakeDetector {
         isListening = false
         NotificationCenter.default.removeObserver(self, name: .deviceDidShake, object: nil)
         shakeTimestamps.removeAll()
-        print("Inqalaab: Shake detector stopped")
+        logger.debug("Inqalaab: Shake detector stopped")
     }
 
     @objc private func handleShake() {
@@ -88,10 +88,10 @@ class InqalaabShakeDetector {
         // Record this shake
         shakeTimestamps.append(now)
 
-        print("Inqalaab: Shake detected (\(shakeTimestamps.count)/\(effectiveThreshold) in \(timeWindow)s window)")
+        logger.debug("Inqalaab: Shake detected (\(self.shakeTimestamps.count)/\(effectiveThreshold) in \(self.timeWindow)s window)")
 
         if shakeTimestamps.count >= effectiveThreshold {
-            print("Inqalaab: PANIC THRESHOLD REACHED — triggering emergency wipe!")
+            logger.warning("Inqalaab: PANIC THRESHOLD REACHED — triggering emergency wipe!")
             shakeTimestamps.removeAll()
 
             // Stop listening to prevent re-trigger during wipe
