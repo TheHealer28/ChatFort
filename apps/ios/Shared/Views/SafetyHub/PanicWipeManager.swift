@@ -102,7 +102,7 @@ class PanicWipeManager: ObservableObject {
                 }
 
                 // Step 11: Reset InqalaabServers flags so it fully reconfigures
-                UserDefaults.standard.removeObject(forKey: "inqalaab_servers_configured")
+                UserDefaults.standard.removeObject(forKey: "inqalaab_servers_configured_v2")
                 UserDefaults.standard.removeObject(forKey: "inqalaab_contacts_cleaned")
                 UserDefaults.standard.removeObject(forKey: "inqalaab_address_created")
 

@@ -112,8 +112,8 @@ private func baseItemQuery(forKey key: String) -> [NSString : AnyObject] {
     var query = [NSString : AnyObject]()
     query[kSecClass] = kSecClassGenericPassword
     query[kSecAttrAccount] = key as AnyObject?
-    #if TARGET_OS_IOS && !TARGET_OS_SIMULATOR
-        query[kSecAttrAccessGroup] = ACCESS_GROUP
+    #if os(iOS) && !targetEnvironment(simulator)
+        query[kSecAttrAccessGroup] = ACCESS_GROUP as AnyObject
     #endif
     return query
 }
