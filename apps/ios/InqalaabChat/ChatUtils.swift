@@ -33,17 +33,17 @@ extension ChatLike {
     }
 
     public func prohibitedByPref(
-        hasSimplexLink: Bool,
+        hasInvitationLink: Bool,
         isMediaOrFileAttachment: Bool,
         isVoice: Bool
     ) -> Bool {
         // preference checks should match checks in compose view
-        let simplexLinkProhibited = hasSimplexLink && !groupFeatureEnabled(.simplexLinks)
+        let invitationLinkProhibited = hasInvitationLink && !groupFeatureEnabled(.simplexLinks)
         let fileProhibited = isMediaOrFileAttachment && !groupFeatureEnabled(.files)
         let voiceProhibited = isVoice && !chatInfo.featureEnabled(.voice)
         return switch chatInfo {
         case .direct: voiceProhibited
-        case .group: simplexLinkProhibited || fileProhibited || voiceProhibited
+        case .group: invitationLinkProhibited || fileProhibited || voiceProhibited
         case .local: false
         case .contactRequest: false
         case .contactConnection: false
@@ -99,14 +99,14 @@ public func chatIconName(_ cInfo: ChatInfo) -> String {
     }
 }
 
-public func hasSimplexLink(_ text: String?) -> Bool {
-    if let text, let parsedMsg = parseSimpleXMarkdown(text) {
-        parsedMsgHasSimplexLink(parsedMsg)
+public func hasInvitationLink(_ text: String?) -> Bool {
+    if let text, let parsedMsg = parseChatMarkdown(text) {
+        parsedMsgHasInvitationLink(parsedMsg)
     } else {
         false
     }
 }
 
-public func parsedMsgHasSimplexLink(_ parsedMsg: [FormattedText]) -> Bool {
-    parsedMsg.contains(where: { ft in ft.format?.isSimplexLink ?? false })
+public func parsedMsgHasInvitationLink(_ parsedMsg: [FormattedText]) -> Bool {
+    parsedMsg.contains(where: { ft in ft.format?.isInvitationLink ?? false })
 }

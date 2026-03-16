@@ -4682,7 +4682,7 @@ public enum Format: Decodable, Equatable, Hashable {
     case phone
     case unknown
 
-    public var isSimplexLink: Bool {
+    public var isInvitationLink: Bool {
         get {
             switch (self) {
             case .simplexLink: return true

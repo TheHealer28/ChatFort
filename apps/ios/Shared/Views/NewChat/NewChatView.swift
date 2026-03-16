@@ -295,7 +295,7 @@ private struct InviteView: View {
 
     private func shareLinkView() -> some View {
         HStack {
-            let link = connLinkInvitation.simplexChatUri(short: showShortLink)
+            let link = connLinkInvitation.inqalaabChatUri(short: showShortLink)
             linkTextView(link)
             Button {
                 showShareSheet(items: [link])
@@ -311,7 +311,7 @@ private struct InviteView: View {
     private func qrCodeView() -> some View {
         Section {
             InqalaabCreatedLinkQRCode(link: connLinkInvitation, short: $showShortLink, onShare: setInvitationUsed)
-                .id("inqalaab-qrcode-view-for-\(connLinkInvitation.simplexChatUri(short: showShortLink))")
+                .id("inqalaab-qrcode-view-for-\(connLinkInvitation.inqalaabChatUri(short: showShortLink))")
                 .padding()
                 .background(
                     RoundedRectangle(cornerRadius: 12, style: .continuous)
@@ -790,7 +790,7 @@ struct InfoSheetButton<Content: View>: View {
 }
 
 func strIsInqalaabLink(_ str: String) -> Bool {
-    if let parsedMd = parseSimpleXMarkdown(str),
+    if let parsedMd = parseChatMarkdown(str),
        parsedMd.count == 1,
        case .simplexLink = parsedMd[0].format {
         return true
@@ -800,8 +800,8 @@ func strIsInqalaabLink(_ str: String) -> Bool {
 }
 
 func strHasSingleInqalaabLink(_ str: String) -> FormattedText? {
-    if let parsedMd = parseSimpleXMarkdown(str) {
-       let parsedLinks = parsedMd.filter({ $0.format?.isSimplexLink ?? false })
+    if let parsedMd = parseChatMarkdown(str) {
+       let parsedLinks = parsedMd.filter({ $0.format?.isInvitationLink ?? false })
         if parsedLinks.count == 1 {
             return parsedLinks[0]
         } else {

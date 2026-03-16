@@ -947,7 +947,7 @@ struct ChatView: View {
             case let .direct(contact):
                 if !contact.nextConnectPrepared && !contact.nextAcceptContactRequest {
                     let connLink: String? = if let pct = contact.preparedContact, case .con = pct.uiConnLinkType {
-                        pct.connLinkToConnect.simplexChatUri()
+                        pct.connLinkToConnect.inqalaabChatUri()
                     } else {
                         contact.profile.contactLink
                     }
@@ -958,7 +958,7 @@ struct ChatView: View {
             case let .group(groupInfo, _):
                 if !groupInfo.nextConnectPrepared {
                     if let pg = groupInfo.preparedGroup {
-                        let connLink = pg.connLinkToConnect.simplexChatUri()
+                        let connLink = pg.connLinkToConnect.inqalaabChatUri()
                         switch groupInfo.businessChat?.chatType {
                         case .none: return ("Group link", connLink)
                         case .business: return ("Business address", connLink)

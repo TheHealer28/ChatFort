@@ -170,11 +170,13 @@ struct PanicModeView: View {
                         .padding(.vertical, 2)
 
                         // Show last opened time
-                        if let lastOpen = UserDefaults.standard.object(forKey: INQALAAB_LAST_APP_OPEN) as? Date {
+                        let lastOpenInterval = UserDefaults.standard.double(forKey: INQALAAB_LAST_APP_OPEN)
+                        if lastOpenInterval > 0 {
+                            let lastOpenDate = Date(timeIntervalSince1970: lastOpenInterval)
                             HStack(spacing: 8) {
                                 Image(systemName: "clock")
                                     .foregroundColor(.secondary)
-                                Text("Last opened: \(lastOpen, style: .relative) ago")
+                                Text("Last opened: \(lastOpenDate, style: .relative) ago")
                                     .font(.caption)
                                     .foregroundColor(.secondary)
                             }

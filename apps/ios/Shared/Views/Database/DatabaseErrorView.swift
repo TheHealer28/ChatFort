@@ -279,6 +279,6 @@ struct DatabaseErrorView: View {
 
 struct DatabaseErrorView_Previews: PreviewProvider {
     static var previews: some View {
-        DatabaseErrorView(status: .errorNotADatabase(dbFile: "simplex_v1_chat.db"))
+        DatabaseErrorView(status: .errorNotADatabase(dbFile: "inqalaab_v1_chat.db"))
     }
 }

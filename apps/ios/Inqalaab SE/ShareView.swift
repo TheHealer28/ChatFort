@@ -80,7 +80,7 @@ struct ShareView: View {
             }
         }
         .onChange(of: model.comment) {
-            model.hasSimplexLink = hasSimplexLink($0)
+            model.hasInvitationLink = hasInvitationLink($0)
         }
     }
 

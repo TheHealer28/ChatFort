@@ -51,7 +51,7 @@ func getAppDirectory() -> URL {
     : getDocumentsDirectory()
 }
 
-let DB_FILE_PREFIX = "simplex_v1"
+let DB_FILE_PREFIX = "inqalaab_v1"
 
 func getLegacyDatabasePath() -> URL {
     getDocumentsDirectory().appendingPathComponent("mobile_v1", isDirectory: false)

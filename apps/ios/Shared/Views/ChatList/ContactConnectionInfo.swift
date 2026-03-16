@@ -64,7 +64,7 @@ struct ContactConnectionInfo: View {
                     if contactConnection.initiated,
                        let connLinkInv = contactConnection.connLinkInv {
                         InqalaabCreatedLinkQRCode(link: connLinkInv, short: $showShortLink)
-                            .id("inqalaab-invitation-qrcode-\(connLinkInv.simplexChatUri(short: showShortLink))")
+                            .id("inqalaab-invitation-qrcode-\(connLinkInv.inqalaabChatUri(short: showShortLink))")
                         incognitoEnabled()
                         shareLinkButton(connLinkInv, short: showShortLink)
                         oneTimeLinkLearnMoreButton()
@@ -176,7 +176,7 @@ struct ContactConnectionInfo: View {
 
 private func shareLinkButton(_ connLinkInvitation: CreatedConnLink, short: Bool) -> some View {
     Button {
-        showShareSheet(items: [connLinkInvitation.simplexChatUri(short: short)])
+        showShareSheet(items: [connLinkInvitation.inqalaabChatUri(short: short)])
     } label: {
         Label("Share 1-time link", systemImage: "square.and.arrow.up")
     }

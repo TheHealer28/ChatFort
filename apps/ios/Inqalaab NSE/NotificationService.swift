@@ -977,7 +977,7 @@ func receiveMessages() async {
 
 func chatRecvMsg() async -> APIResult<NSEChatEvent>? {
     await withCheckedContinuation { cont in
-        let resp: APIResult<NSEChatEvent>? = recvSimpleXMsg()
+        let resp: APIResult<NSEChatEvent>? = recvChatMsg()
         cont.resume(returning: resp)
     }
 }
@@ -1066,15 +1066,15 @@ func updateNetCfg() {
 }
 
 func apiGetActiveUser() -> User? {
-    let r: APIResult<NSEChatResponse> = sendSimpleXCmd(NSEChatCommand.showActiveUser)
-    logger.debug("apiGetActiveUser sendSimpleXCmd response: \(r.responseType)")
+    let r: APIResult<NSEChatResponse> = sendChatCmd(NSEChatCommand.showActiveUser)
+    logger.debug("apiGetActiveUser sendChatCmd response: \(r.responseType)")
     switch r {
     case let .result(.activeUser(user)): return user
     case .error(.error(.noActiveUser)):
-        logger.debug("apiGetActiveUser sendSimpleXCmd no active user")
+        logger.debug("apiGetActiveUser sendChatCmd no active user")
         return nil
     case let .error(err):
-        logger.debug("apiGetActiveUser sendSimpleXCmd error: \(String(describing: err))")
+        logger.debug("apiGetActiveUser sendChatCmd error: \(String(describing: err))")
         return nil
     default:
         logger.error("NotificationService apiGetActiveUser unexpected response: \(String(describing: r))")
@@ -1083,7 +1083,7 @@ func apiGetActiveUser() -> User? {
 }
 
 func apiStartChat() throws -> Bool {
-    let r: APIResult<NSEChatResponse> = sendSimpleXCmd(NSEChatCommand.startChat(mainApp: false, enableSndFiles: false))
+    let r: APIResult<NSEChatResponse> = sendChatCmd(NSEChatCommand.startChat(mainApp: false, enableSndFiles: false))
     switch r {
     case .result(.chatStarted): return true
     case .result(.chatRunning): return false
@@ -1093,27 +1093,27 @@ func apiStartChat() throws -> Bool {
 
 func apiActivateChat() -> Bool {
     chatReopenStore()
-    let r: APIResult<NSEChatResponse> = sendSimpleXCmd(NSEChatCommand.apiActivateChat(restoreChat: false))
+    let r: APIResult<NSEChatResponse> = sendChatCmd(NSEChatCommand.apiActivateChat(restoreChat: false))
     if case .result(.cmdOk) = r { return true }
     logger.error("NotificationService apiActivateChat error: \(String(describing: r))")
     return false
 }
 
 func apiSuspendChat(timeoutMicroseconds: Int) -> Bool {
-    let r: APIResult<NSEChatResponse> = sendSimpleXCmd(NSEChatCommand.apiSuspendChat(timeoutMicroseconds: timeoutMicroseconds))
+    let r: APIResult<NSEChatResponse> = sendChatCmd(NSEChatCommand.apiSuspendChat(timeoutMicroseconds: timeoutMicroseconds))
     if case .result(.cmdOk) = r { return true }
     logger.error("NotificationService apiSuspendChat error: \(String(describing: r))")
     return false
 }
 
 func apiSetAppFilePaths(filesFolder: String, tempFolder: String, assetsFolder: String) throws {
-    let r: APIResult<NSEChatResponse> = sendSimpleXCmd(NSEChatCommand.apiSetAppFilePaths(filesFolder: filesFolder, tempFolder: tempFolder, assetsFolder: assetsFolder))
+    let r: APIResult<NSEChatResponse> = sendChatCmd(NSEChatCommand.apiSetAppFilePaths(filesFolder: filesFolder, tempFolder: tempFolder, assetsFolder: assetsFolder))
     if case .result(.cmdOk) = r { return }
     throw r.unexpected
 }
 
 func apiSetEncryptLocalFiles(_ enable: Bool) throws {
-    let r: APIResult<NSEChatResponse> = sendSimpleXCmd(NSEChatCommand.apiSetEncryptLocalFiles(enable: enable))
+    let r: APIResult<NSEChatResponse> = sendChatCmd(NSEChatCommand.apiSetEncryptLocalFiles(enable: enable))
     if case .result(.cmdOk) = r { return }
     throw r.unexpected
 }
@@ -1123,7 +1123,7 @@ func apiGetNtfConns(nonce: String, encNtfInfo: String) -> [NtfConn]? {
         logger.debug("NotificationService: no active user")
         return nil
     }
-    let r: APIResult<NSEChatResponse> = sendSimpleXCmd(NSEChatCommand.apiGetNtfConns(nonce: nonce, encNtfInfo: encNtfInfo))
+    let r: APIResult<NSEChatResponse> = sendChatCmd(NSEChatCommand.apiGetNtfConns(nonce: nonce, encNtfInfo: encNtfInfo))
     if case let .result(.ntfConns(ntfConns)) = r {
         logger.debug("NotificationService apiGetNtfConns response ntfConns: \(ntfConns.count) conections")
         return ntfConns
@@ -1142,7 +1142,7 @@ func apiGetConnNtfMessages(connMsgReqs: [ConnMsgReq]) -> [RcvNtfMsgInfo]? {
     }
 //    logger.debug("NotificationService apiGetConnNtfMessages command: \(NSEChatCommand.apiGetConnNtfMessages(connMsgReqs: connMsgReqs).cmdString)")
     logger.debug("NotificationService apiGetConnNtfMessages requests: \(connMsgReqs.count)")
-    let r: APIResult<NSEChatResponse> = sendSimpleXCmd(NSEChatCommand.apiGetConnNtfMessages(connMsgReqs: connMsgReqs))
+    let r: APIResult<NSEChatResponse> = sendChatCmd(NSEChatCommand.apiGetConnNtfMessages(connMsgReqs: connMsgReqs))
     if case let .result(.connNtfMessages(msgs)) = r {
 //        logger.debug("NotificationService apiGetConnNtfMessages responses: \(String(describing: msgs))")
         logger.debug("NotificationService apiGetConnNtfMessages responses: total \(msgs.count), expecting messages \(msgs.count { !$0.noMsg }), errors \(msgs.count { $0.isError })")
@@ -1159,7 +1159,7 @@ func getConnNtfMessage(connMsgReq: ConnMsgReq) -> RcvNtfMsgInfo? {
 
 func apiReceiveFile(fileId: Int64, encrypted: Bool, inline: Bool? = nil) -> AChatItem? {
     let userApprovedRelays = !privacyAskToApproveRelaysGroupDefault.get()
-    let r: APIResult<NSEChatResponse> = sendSimpleXCmd(NSEChatCommand.receiveFile(fileId: fileId, userApprovedRelays: userApprovedRelays, encrypted: encrypted, inline: inline))
+    let r: APIResult<NSEChatResponse> = sendChatCmd(NSEChatCommand.receiveFile(fileId: fileId, userApprovedRelays: userApprovedRelays, encrypted: encrypted, inline: inline))
     if case let .result(.rcvFileAccepted(_, chatItem)) = r { return chatItem }
     logger.error("receiveFile error: \(responseError(r.unexpected))")
     return nil
@@ -1167,7 +1167,7 @@ func apiReceiveFile(fileId: Int64, encrypted: Bool, inline: Bool? = nil) -> ACha
 
 func apiSetFileToReceive(fileId: Int64, encrypted: Bool) {
     let userApprovedRelays = !privacyAskToApproveRelaysGroupDefault.get()
-    let r: APIResult<NSEChatResponse> = sendSimpleXCmd(NSEChatCommand.setFileToReceive(fileId: fileId, userApprovedRelays: userApprovedRelays, encrypted: encrypted))
+    let r: APIResult<NSEChatResponse> = sendChatCmd(NSEChatCommand.setFileToReceive(fileId: fileId, userApprovedRelays: userApprovedRelays, encrypted: encrypted))
     if case .result(.cmdOk) = r { return }
     logger.error("setFileToReceive error: \(responseError(r.unexpected))")
 }
@@ -1186,7 +1186,7 @@ func autoReceiveFile(_ file: CIFile) -> ChatItem? {
 }
 
 func setNetworkConfig(_ cfg: NetCfg) throws {
-    let r: APIResult<NSEChatResponse> = sendSimpleXCmd(NSEChatCommand.apiSetNetworkConfig(networkConfig: cfg))
+    let r: APIResult<NSEChatResponse> = sendChatCmd(NSEChatCommand.apiSetNetworkConfig(networkConfig: cfg))
     if case .result(.cmdOk) = r { return }
     throw r.unexpected
 }

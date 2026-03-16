@@ -111,8 +111,8 @@ public func resetChatCtrl() {
 }
 
 @inline(__always)
-public func sendSimpleXCmd<R: ChatAPIResult>(_ cmd: ChatCmdProtocol, _ ctrl: chat_ctrl? = nil, retryNum: Int32 = 0) -> APIResult<R> {
-    if let d = sendSimpleXCmdStr(cmd.cmdString, ctrl, retryNum: retryNum) {
+public func sendChatCmd<R: ChatAPIResult>(_ cmd: ChatCmdProtocol, _ ctrl: chat_ctrl? = nil, retryNum: Int32 = 0) -> APIResult<R> {
+    if let d = sendChatCmdStr(cmd.cmdString, ctrl, retryNum: retryNum) {
         decodeAPIResult(d)
     } else {
         APIResult.error(.invalidJSON(json: nil))
@@ -120,7 +120,7 @@ public func sendSimpleXCmd<R: ChatAPIResult>(_ cmd: ChatCmdProtocol, _ ctrl: cha
 }
 
 @inline(__always)
-public func sendSimpleXCmdStr(_ cmd: String, _ ctrl: chat_ctrl? = nil, retryNum: Int32) -> Data? {
+public func sendChatCmdStr(_ cmd: String, _ ctrl: chat_ctrl? = nil, retryNum: Int32) -> Data? {
     var c = cmd.cString(using: .utf8)!
     return if let cjson = chat_send_cmd_retry(ctrl ?? getChatCtrl(), &c, retryNum) {
         dataFromCString(cjson)
@@ -133,7 +133,7 @@ public func sendSimpleXCmdStr(_ cmd: String, _ ctrl: chat_ctrl? = nil, retryNum:
 public let MESSAGE_TIMEOUT: Int32 = 15_000_000
 
 @inline(__always)
-public func recvSimpleXMsg<R: ChatAPIResult>(_ ctrl: chat_ctrl? = nil, messageTimeout: Int32 = MESSAGE_TIMEOUT) -> APIResult<R>? {
+public func recvChatMsg<R: ChatAPIResult>(_ ctrl: chat_ctrl? = nil, messageTimeout: Int32 = MESSAGE_TIMEOUT) -> APIResult<R>? {
     if let cjson = chat_recv_msg_wait(ctrl ?? getChatCtrl(), messageTimeout),
        let d = dataFromCString(cjson) {
         decodeAPIResult(d)
@@ -142,7 +142,7 @@ public func recvSimpleXMsg<R: ChatAPIResult>(_ ctrl: chat_ctrl? = nil, messageTi
     }
 }
 
-public func parseSimpleXMarkdown(_ s: String) -> [FormattedText]? {
+public func parseChatMarkdown(_ s: String) -> [FormattedText]? {
     var c = s.cString(using: .utf8)!
     if let cjson = chat_parse_markdown(&c) {
         if let d = dataFromCString(cjson) {
@@ -150,7 +150,7 @@ public func parseSimpleXMarkdown(_ s: String) -> [FormattedText]? {
                 let r = try jsonDecoder.decode(ParsedMarkdown.self, from: d)
                 return r.formattedText
             } catch {
-                logger.error("parseSimpleXMarkdown jsonDecoder.decode error: \(error.localizedDescription)")
+                logger.error("parseChatMarkdown jsonDecoder.decode error: \(error.localizedDescription)")
             }
         }
     }

@@ -468,7 +468,7 @@ struct MigrateToDevice: View {
     private func downloadLinkDetails(_ link: String) {
         let archiveTime = Date.now
         let ts = archiveTime.ISO8601Format(Date.ISO8601FormatStyle(timeSeparator: .omitted))
-        let archiveName = "simplex-chat.\(ts).zip"
+        let archiveName = "inqalaab-chat.\(ts).zip"
         let archivePath = getMigrationTempFilesDirectory().appendingPathComponent(archiveName)
 
         startDownloading(0, link, archivePath.path)

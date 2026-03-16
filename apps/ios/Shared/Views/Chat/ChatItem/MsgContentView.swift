@@ -263,7 +263,7 @@ func markdownText(
 ) -> MsgTextResult {
     messageText(
         s,
-        parseSimpleXMarkdown(s),
+        parseChatMarkdown(s),
         textStyle: textStyle,
         sender: sender,
         preview: preview,

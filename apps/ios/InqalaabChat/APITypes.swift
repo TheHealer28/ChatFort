@@ -160,14 +160,14 @@ public struct CreatedConnLink: Decodable, Hashable {
         self.connShortLink = connShortLink
     }
 
-    public func simplexChatUri(short: Bool = true) -> String {
-        short ? (connShortLink ?? simplexChatLink(connFullLink)) : simplexChatLink(connFullLink)
+    public func inqalaabChatUri(short: Bool = true) -> String {
+        short ? (connShortLink ?? inqalaabChatLink(connFullLink)) : inqalaabChatLink(connFullLink)
     }
 }
 
-public func simplexChatLink(_ uri: String) -> String {
+public func inqalaabChatLink(_ uri: String) -> String {
     uri.starts(with: "simplex:/")
-    ? uri.replacingOccurrences(of: "simplex:/", with: "https://simplex.chat/")
+    ? uri.replacingOccurrences(of: "simplex:/", with: "https://inqalaab.chat/")
     : uri
 }
 

@@ -79,7 +79,7 @@ struct GroupLinkView: View {
                     }
                     .frame(height: 36)
                     InqalaabCreatedLinkQRCode(link: groupLink.connLinkContact, short: $showShortLink)
-                        .id("inqalaab-qrcode-view-for-\(groupLink.connLinkContact.simplexChatUri(short: showShortLink))")
+                        .id("inqalaab-qrcode-view-for-\(groupLink.connLinkContact.inqalaabChatUri(short: showShortLink))")
                     if groupLink.shouldBeUpgraded {
                         Button {
                             upgradeAndShareLinkAlert()

@@ -137,7 +137,7 @@ struct UserAddressView: View {
     @ViewBuilder private func existingAddressView(_ userAddress: UserContactLink) -> some View {
         Section {
             InqalaabCreatedLinkQRCode(link: userAddress.connLinkContact, short: $showShortLink)
-                .id("inqalaab-contact-address-qrcode-\(userAddress.connLinkContact.simplexChatUri(short: showShortLink))")
+                .id("inqalaab-contact-address-qrcode-\(userAddress.connLinkContact.inqalaabChatUri(short: showShortLink))")
             if userAddress.shouldBeUpgraded {
                 upgradeAddressButton()
             }

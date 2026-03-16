@@ -13,7 +13,7 @@ import InqalaabChat
 let logger = Logger()
 
 func apiGetActiveUser() throws -> User? {
-    let r: APIResult<SEChatResponse> = sendSimpleXCmd(SEChatCommand.showActiveUser)
+    let r: APIResult<SEChatResponse> = sendChatCmd(SEChatCommand.showActiveUser)
     switch r {
     case let .result(.activeUser(user)): return user
     case .error(.error(.noActiveUser)): return nil
@@ -22,7 +22,7 @@ func apiGetActiveUser() throws -> User? {
 }
 
 func apiStartChat() throws -> Bool {
-    let r: APIResult<SEChatResponse> = sendSimpleXCmd(SEChatCommand.startChat(mainApp: false, enableSndFiles: true))
+    let r: APIResult<SEChatResponse> = sendChatCmd(SEChatCommand.startChat(mainApp: false, enableSndFiles: true))
     switch r {
     case .result(.chatStarted): return true
     case .result(.chatRunning): return false
@@ -31,25 +31,25 @@ func apiStartChat() throws -> Bool {
 }
 
 func apiSetNetworkConfig(_ cfg: NetCfg) throws {
-    let r: APIResult<SEChatResponse> = sendSimpleXCmd(SEChatCommand.apiSetNetworkConfig(networkConfig: cfg))
+    let r: APIResult<SEChatResponse> = sendChatCmd(SEChatCommand.apiSetNetworkConfig(networkConfig: cfg))
     if case .result(.cmdOk) = r { return }
     throw r.unexpected
 }
 
 func apiSetAppFilePaths(filesFolder: String, tempFolder: String, assetsFolder: String) throws {
-    let r: APIResult<SEChatResponse> = sendSimpleXCmd(SEChatCommand.apiSetAppFilePaths(filesFolder: filesFolder, tempFolder: tempFolder, assetsFolder: assetsFolder))
+    let r: APIResult<SEChatResponse> = sendChatCmd(SEChatCommand.apiSetAppFilePaths(filesFolder: filesFolder, tempFolder: tempFolder, assetsFolder: assetsFolder))
     if case .result(.cmdOk) = r { return }
     throw r.unexpected
 }
 
 func apiSetEncryptLocalFiles(_ enable: Bool) throws {
-    let r: APIResult<SEChatResponse> = sendSimpleXCmd(SEChatCommand.apiSetEncryptLocalFiles(enable: enable))
+    let r: APIResult<SEChatResponse> = sendChatCmd(SEChatCommand.apiSetEncryptLocalFiles(enable: enable))
     if case .result(.cmdOk) = r { return }
     throw r.unexpected
 }
 
 func apiGetChats(userId: User.ID) throws -> Array<SEChatData> {
-    let r: APIResult<SEChatResponse> = sendSimpleXCmd(SEChatCommand.apiGetChats(userId: userId))
+    let r: APIResult<SEChatResponse> = sendChatCmd(SEChatCommand.apiGetChats(userId: userId))
     if case let .result(.apiChats(user: _, chats: chats)) = r { return chats }
     throw r.unexpected
 }
@@ -58,7 +58,7 @@ func apiSendMessages(
     chatInfo: ChatInfo,
     composedMessages: [ComposedMessage]
 ) throws -> [AChatItem] {
-    let r: APIResult<SEChatResponse> = sendSimpleXCmd(
+    let r: APIResult<SEChatResponse> = sendChatCmd(
         chatInfo.chatType == .local
         ? SEChatCommand.apiCreateChatItems(
             noteFolderId: chatInfo.apiId,
@@ -85,19 +85,19 @@ func apiSendMessages(
 
 func apiActivateChat() throws {
     chatReopenStore()
-    let r: APIResult<SEChatResponse> = sendSimpleXCmd(SEChatCommand.apiActivateChat(restoreChat: false))
+    let r: APIResult<SEChatResponse> = sendChatCmd(SEChatCommand.apiActivateChat(restoreChat: false))
     if case .result(.cmdOk) = r { return }
     throw r.unexpected
 }
 
 func apiSuspendChat(expired: Bool) {
-    let r: APIResult<SEChatResponse> = sendSimpleXCmd(SEChatCommand.apiSuspendChat(timeoutMicroseconds: expired ? 0 : 3_000000))
+    let r: APIResult<SEChatResponse> = sendChatCmd(SEChatCommand.apiSuspendChat(timeoutMicroseconds: expired ? 0 : 3_000000))
     // Block until `chatSuspended` received or 3 seconds has passed
     var suspended = false
     if case .result(.cmdOk) = r, !expired {
         let startTime = CFAbsoluteTimeGetCurrent()
         while CFAbsoluteTimeGetCurrent() - startTime < 3 {
-            let msg: APIResult<SEChatEvent>? = recvSimpleXMsg(messageTimeout: 3_500000)
+            let msg: APIResult<SEChatEvent>? = recvChatMsg(messageTimeout: 3_500000)
             switch msg {
             case .result(.chatSuspended):
                 suspended = false
@@ -107,7 +107,7 @@ func apiSuspendChat(expired: Bool) {
         }
     }
     if !suspended {
-        let _r1: APIResult<SEChatResponse> = sendSimpleXCmd(SEChatCommand.apiSuspendChat(timeoutMicroseconds: 0))
+        let _r1: APIResult<SEChatResponse> = sendChatCmd(SEChatCommand.apiSuspendChat(timeoutMicroseconds: 0))
     }
     logger.debug("close store")
     chatCloseStore()

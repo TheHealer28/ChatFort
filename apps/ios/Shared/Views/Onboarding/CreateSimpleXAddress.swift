@@ -122,7 +122,7 @@ struct CreateInqalaabAddress: View {
 
     private func shareQRCodeButton(_ userAddress: UserContactLink) -> some View {
         Button {
-            showShareSheet(items: [simplexChatLink(userAddress.connLinkContact.simplexChatUri(short: false))])
+            showShareSheet(items: [inqalaabChatLink(userAddress.connLinkContact.inqalaabChatUri(short: false))])
         } label: {
             Label("Share", systemImage: "square.and.arrow.up")
         }
@@ -190,7 +190,7 @@ struct SendAddressMailView: View {
         let messageBody = String(format: NSLocalizedString("""
             <p>Hi!</p>
             <p><a href="%@">Connect to me via Inqalaab</a></p>
-            """, comment: "email text"), simplexChatLink(userAddress.connLinkContact.simplexChatUri(short: false)))
+            """, comment: "email text"), inqalaabChatLink(userAddress.connLinkContact.inqalaabChatUri(short: false)))
         MailView(
             isShowing: self.$showMailView,
             result: $mailViewResult,

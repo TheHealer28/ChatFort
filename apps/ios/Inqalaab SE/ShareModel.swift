@@ -27,7 +27,7 @@ class ShareModel: ObservableObject {
     @Published var isLoaded = false
     @Published var bottomBar: BottomBar = .loadingSpinner
     @Published var errorAlert: ErrorAlert?
-    @Published var hasSimplexLink = false
+    @Published var hasInvitationLink = false
     @Published var alertRequiresPassword = false
     var networkTimeout = CFAbsoluteTimeGetCurrent()
 
@@ -62,7 +62,7 @@ class ShareModel: ObservableObject {
 
     func isProhibited(_ chat: SEChatData?) -> Bool {
         if let chat, let sharedContent {
-            sharedContent.prohibited(in: chat, hasSimplexLink: hasSimplexLink)
+            sharedContent.prohibited(in: chat, hasInvitationLink: hasInvitationLink)
         } else { false }
     }
 
@@ -303,7 +303,7 @@ class ShareModel: ObservableObject {
                     }
                 }
             }
-            let r: APIResult<SEChatEvent>? = recvSimpleXMsg(messageTimeout: 1_000_000)
+            let r: APIResult<SEChatEvent>? = recvChatMsg(messageTimeout: 1_000_000)
             switch r {
             case let .result(.sndFileProgressXFTP(_, ci, _, sentSize, totalSize)):
                 guard isMessage(for: ci) else { continue }
@@ -396,9 +396,9 @@ enum SharedContent {
         }
     }
 
-    func prohibited(in chatData: SEChatData, hasSimplexLink: Bool) -> Bool {
+    func prohibited(in chatData: SEChatData, hasInvitationLink: Bool) -> Bool {
         chatData.prohibitedByPref(
-            hasSimplexLink: hasSimplexLink,
+            hasInvitationLink: hasInvitationLink,
             isMediaOrFileAttachment: cryptoFile != nil,
             isVoice: false
         )

@@ -182,7 +182,7 @@ struct MigrateToAppGroupView: View {
     func migrateDatabaseToV3() {
         setV3DBMigration(.exporting)
         let archiveTime = Date.now
-        let archiveName = "simplex-chat.\(archiveTime.ISO8601Format()).zip"
+        let archiveName = "inqalaab-chat.\(archiveTime.ISO8601Format()).zip"
         chatArchiveTime = archiveTime.timeIntervalSince1970
         chatArchiveName = archiveName
         let config = ArchiveConfig(archivePath: getDocumentsDirectory().appendingPathComponent(archiveName).path)
@@ -225,7 +225,7 @@ struct MigrateToAppGroupView: View {
 func exportChatArchive(_ storagePath: URL? = nil) async throws -> (URL, [ArchiveError]) {
     let archiveTime = Date.now
     let ts = archiveTime.ISO8601Format(Date.ISO8601FormatStyle(timeSeparator: .omitted))
-    let archiveName = "simplex-chat.\(ts).zip"
+    let archiveName = "inqalaab-chat.\(ts).zip"
     let archivePath = (storagePath ?? getDocumentsDirectory()).appendingPathComponent(archiveName)
     let config = ArchiveConfig(archivePath: archivePath.path)
     // Settings should be saved before changing a passphrase, otherwise the database needs to be migrated first

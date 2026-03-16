@@ -1435,7 +1435,7 @@ extension InqalaabAddress {
     }
 
     func shareAddress(short: Bool) {
-        showShareSheet(items: [simplexChatLink(connLinkContact.simplexChatUri(short: short))])
+        showShareSheet(items: [inqalaabChatLink(connLinkContact.inqalaabChatUri(short: short))])
     }
 }
 

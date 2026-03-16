@@ -28,7 +28,7 @@ struct InqalaabCreatedLinkQRCode: View {
     var onShare: (() -> Void)? = nil
 
     var body: some View {
-        QRCode(uri: link.simplexChatUri(short: short), small: short && link.connShortLink != nil, onShare: onShare)
+        QRCode(uri: link.inqalaabChatUri(short: short), small: short && link.connShortLink != nil, onShare: onShare)
     }
 }
 
@@ -39,7 +39,7 @@ struct InqalaabLinkQRCode: View {
     var onShare: (() -> Void)? = nil
 
     var body: some View {
-        QRCode(uri: simplexChatLink(uri), small: uri.count < 200, withLogo: withLogo, tintColor: tintColor, onShare: onShare)
+        QRCode(uri: inqalaabChatLink(uri), small: uri.count < 200, withLogo: withLogo, tintColor: tintColor, onShare: onShare)
     }
 }
 

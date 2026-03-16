@@ -643,7 +643,7 @@ struct ConditionsWebView: UIViewRepresentable {
             switch navigationAction.navigationType {
             case .linkActivated:
                 decisionHandler(.cancel)
-                if url.absoluteString.starts(with: "https://simplex.chat/contact#") || url.absoluteString.starts(with: "https://example.net/contact#") {
+                if url.absoluteString.starts(with: "https://inqalaab.chat/contact#") || url.absoluteString.starts(with: "https://example.net/contact#") {
                     ChatModel.shared.appOpenUrl = url
                 } else {
                     UIApplication.shared.open(url)

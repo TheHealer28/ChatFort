@@ -464,7 +464,7 @@ struct ComposeView: View {
                 updatingCompose = false
                 return
             }
-            var parsedMsg = parseSimpleXMarkdown(msg)
+            var parsedMsg = parseChatMarkdown(msg)
             if privacySanitizeLinks, let parsed = parsedMsg {
                 let r = sanitizeMessage(parsed)
                 if let sanitizedPos = r.sanitizedPos {
@@ -871,7 +871,7 @@ struct ComposeView: View {
     private func checkLinkPreview_(_ msgText: String) -> MsgContent {
         switch (composeState.preview) {
         case let .linkPreview(linkPreview: linkPreview):
-            if let parsedMsg = parseSimpleXMarkdown(msgText),
+            if let parsedMsg = parseChatMarkdown(msgText),
                let url = getMessageLinks(parsedMsg).url,
                let linkPreview = linkPreview,
                url == linkPreview.uri {
@@ -1494,7 +1494,7 @@ struct ComposeView: View {
 
     private func getMessageLinks(_ parsedMsg: [FormattedText]?) -> (url: String?, hasInqalaabLink: Bool) {
         guard let parsedMsg else { return (nil, false) }
-        let inqalaabLink = parsedMsgHasSimplexLink(parsedMsg)
+        let inqalaabLink = parsedMsgHasInvitationLink(parsedMsg)
         for ft in parsedMsg {
             if let link = ft.linkUri, !cancelledLinks.contains(link) && !isInqalaabLink(link) {
                 return (link, inqalaabLink)
@@ -1504,7 +1504,7 @@ struct ComposeView: View {
     }
 
     private func isInqalaabLink(_ link: String) -> Bool {
-        link.starts(with: "https://simplex.chat") || link.starts(with: "http://simplex.chat") || link.starts(with: "simplex:/") || link.starts(with: "https://example.net") || link.starts(with: "http://example.net")
+        link.starts(with: "https://inqalaab.chat") || link.starts(with: "http://inqalaab.chat") || link.starts(with: "simplex:/") || link.starts(with: "https://example.net") || link.starts(with: "http://example.net")
     }
 
     private func cancelLinkPreview() {

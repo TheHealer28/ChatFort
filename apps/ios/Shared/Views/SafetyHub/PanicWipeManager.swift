@@ -113,6 +113,9 @@ class PanicWipeManager: ObservableObject {
 
                 await MainActor.run {
                     self.wipeInProgress = false
+                    self.panicTriggered = false
+                    // Restart shake detector for the fresh profile
+                    InqalaabShakeDetector.shared.start()
                 }
 
                 logger.info("Inqalaab: Panic wipe completed successfully")
@@ -120,6 +123,9 @@ class PanicWipeManager: ObservableObject {
                 logger.error("Inqalaab: Panic wipe error: \(error)")
                 await MainActor.run {
                     self.wipeInProgress = false
+                    self.panicTriggered = false
+                    // Restart shake detector so user can retry
+                    InqalaabShakeDetector.shared.start()
                     // Fallback: reset to onboarding so app can restart fresh
                     onboardingStageDefault.set(.step1_InqalaabInfo)
                     ChatModel.shared.chatDbChanged = true

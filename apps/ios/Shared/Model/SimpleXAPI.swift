@@ -100,8 +100,8 @@ func chatApiSendCmdSync<R: ChatAPIResult>(_ cmd: ChatCommand, bgTask: Bool = tru
     }
     let start = Date.now
     let resp: APIResult<R> = bgTask
-                ? withBGTask(bgDelay: bgDelay) { sendSimpleXCmd(cmd, ctrl, retryNum: retryNum) }
-                : sendSimpleXCmd(cmd, ctrl, retryNum: retryNum)
+                ? withBGTask(bgDelay: bgDelay) { sendChatCmd(cmd, ctrl, retryNum: retryNum) }
+                : sendChatCmd(cmd, ctrl, retryNum: retryNum)
     if log {
         logger.debug("chatSendCmd \(cmd.cmdType): \(resp.responseType)")
         if case let .invalid(_, json) = resp {
@@ -231,7 +231,7 @@ func apiResult<R: ChatAPIResult>(_ res: APIResult<R>) throws -> R {
 func chatRecvMsg(_ ctrl: chat_ctrl? = nil) async -> APIResult<ChatEvent>? {
     await withCheckedContinuation { cont in
         _  = withBGTask(bgDelay: msgDelay) { () -> APIResult<ChatEvent>? in
-            let evt: APIResult<ChatEvent>? = recvSimpleXMsg(ctrl)
+            let evt: APIResult<ChatEvent>? = recvChatMsg(ctrl)
             cont.resume(returning: evt)
             return evt
         }

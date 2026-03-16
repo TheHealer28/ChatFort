@@ -122,7 +122,7 @@ struct GroupMemberInfoView: View {
                         Section {
                             InqalaabLinkQRCode(uri: contactLink)
                             Button {
-                                showShareSheet(items: [simplexChatLink(contactLink)])
+                                showShareSheet(items: [inqalaabChatLink(contactLink)])
                             } label: {
                                 Label("Share address", systemImage: "square.and.arrow.up")
                             }
