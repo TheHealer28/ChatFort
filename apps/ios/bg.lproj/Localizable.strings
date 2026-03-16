@@ -5,7 +5,7 @@
 "_italic_" = "\\_курсив_";
 
 /* No comment provided by engineer. */
-"- connect to [directory service](simplex:/contact#/?v=1-4&smp=smp%3A%2F%2Fu2dS9sG8nMNURyZwqASV4yROM28Er0luVTx5X1CsMrU%3D%40smp4.simplex.im%2FeXSPwqTkKyDO3px4fLf1wx3MvPdjdLW3%23%2F%3Fv%3D1-2%26dh%3DMCowBQYDK2VuAyEAaiv6MkMH44L2TcYrt_CsX3ZvM11WgbMEUn0hkIKTOho%253D%26srv%3Do5vmywmrnaxalvz6wi3zicyftgio6psuvyniis6gco6bp6ekl4cqj4id.onion) (BETA)!\n- delivery receipts (up to 20 members).\n- faster and more stable." = "- свържете се с [директория за услуги](simplex:/contact#/?v=1-4&smp=smp%3A%2F%2Fu2dS9sG8nMNURyZwqASV4yROM28Er0luVTx5X1CsMrU%3D%40smp4.simplex.im%2FeXSPwqTkKyDO3px4fLf1wx3MvPdjdLW3%23%2F%3Fv%3D1-2%26dh%3DMCowBQYDK2VuAyEAaiv6MkMH44L2TcYrt_CsX3ZvM11WgbMEUn0hkIKTOho%253D%26srv%3Do5vmywmrnaxalvz6wi3zicyftgio6psuvyniis6gco6bp6ekl4cqj4id.onion) (БЕТА)!\n- потвърждениe за доставка (до 20 члена).\n- по-бързо и по-стабилно.";
+"- connect to [directory service](https://github.com/TheHealer28/Inqalaab) (BETA)!\n- delivery receipts (up to 20 members).\n- faster and more stable." = "- свържете се с [директория за услуги](https://github.com/TheHealer28/Inqalaab) (БЕТА)!\n- потвърждениe за доставка (до 20 члена).\n- по-бързо и по-стабилно.";
 
 /* No comment provided by engineer. */
 "- more stable message delivery.\n- a bit better groups.\n- and more!" = "- по-стабилна доставка на съобщения.\n- малко по-добри групи.\n- и още!";
@@ -26,13 +26,13 @@
 "(this device v%@)" = "(това устройство v%@)";
 
 /* No comment provided by engineer. */
-"[Contribute](https://github.com/simplex-chat/simplex-chat#contribute)" = "[Допринеси](https://github.com/simplex-chat/simplex-chat#contribute)";
+"[Contribute](https://github.com/TheHealer28/Inqalaab#contribute)" = "[Допринеси](https://github.com/TheHealer28/Inqalaab#contribute)";
 
 /* No comment provided by engineer. */
 "[Send us email](mailto:chat@inqalaab.chat)" = "[Изпратете ни имейл](mailto:chat@inqalaab.chat)";
 
 /* No comment provided by engineer. */
-"[Star on GitHub](https://github.com/simplex-chat/simplex-chat)" = "[Звезда в GitHub](https://github.com/simplex-chat/simplex-chat)";
+"[Star on GitHub](https://github.com/TheHealer28/Inqalaab)" = "[Звезда в GitHub](https://github.com/TheHealer28/Inqalaab)";
 
 /* No comment provided by engineer. */
 "**Create 1-time link**: to create and share a new invitation link." = "**Добави контакт**: за създаване на нов линк.";
@@ -871,7 +871,7 @@ marked deleted chat item preview text */
 "Both you and your contact can send voice messages." = "И вие, и вашият контакт можете да изпращате гласови съобщения.";
 
 /* No comment provided by engineer. */
-"Bulgarian, Finnish, Thai and Ukrainian - thanks to the users and [Weblate](https://github.com/simplex-chat/simplex-chat/tree/stable#help-translating-simplex-chat)!" = "Български, финландски, тайландски и украински - благодарение на потребителите и [Weblate](https://github.com/simplex-chat/simplex-chat/tree/stable#help-translating-simplex-chat)!";
+"Bulgarian, Finnish, Thai and Ukrainian - thanks to the users and [Weblate](https://github.com/TheHealer28/Inqalaab/tree/stable#contribute)!" = "Български, финландски, тайландски и украински - благодарение на потребителите и [Weblate](https://github.com/TheHealer28/Inqalaab/tree/stable#contribute)!";
 
 /* No comment provided by engineer. */
 "Business address" = "Бизнес адрес";
@@ -886,7 +886,7 @@ marked deleted chat item preview text */
 "Businesses" = "Бизнеси";
 
 /* No comment provided by engineer. */
-"By chat profile (default) or [by connection](https://simplex.chat/blog/20230204-simplex-chat-v4-5-user-chat-profiles.html#transport-isolation) (BETA)." = "Чрез чат профил (по подразбиране) или [чрез връзка](https://simplex.chat/blog/20230204-simplex-chat-v4-5-user-chat-profiles.html#transport-isolation) (БЕТА).";
+"By chat profile (default) or [by connection](https://github.com/TheHealer28/Inqalaab) (BETA)." = "Чрез чат профил (по подразбиране) или [чрез връзка](https://github.com/TheHealer28/Inqalaab) (БЕТА).";
 
 /* No comment provided by engineer. */
 "By using Inqalaab you agree to:\n- send only legal content in public groups.\n- respect other users – no spam." = "С използването на Inqalaab вие се съгласявате със:\n- изпращане само на легално съдържание в публични групи.\n- уважение към другите потребители – без спам.";
@@ -1414,7 +1414,7 @@ set passcode view */
 "Create link" = "Създай линк";
 
 /* No comment provided by engineer. */
-"Create new profile in [desktop app](https://simplex.chat/downloads/). 💻" = "Създайте нов профил в [настолното приложение](https://simplex.chat/downloads/). 💻";
+"Create new profile in [desktop app](https://github.com/TheHealer28/Inqalaab). 💻" = "Създайте нов профил в [настолното приложение](https://github.com/TheHealer28/Inqalaab). 💻";
 
 /* No comment provided by engineer. */
 "Create profile" = "Създай профил";
@@ -2499,7 +2499,7 @@ snd error text */
 "Initial role" = "Първоначална роля";
 
 /* No comment provided by engineer. */
-"Install [Inqalaab for terminal](https://github.com/simplex-chat/simplex-chat)" = "Инсталирайте [Inqalaab за терминал](https://github.com/simplex-chat/simplex-chat)";
+"Install [Inqalaab for terminal](https://github.com/TheHealer28/Inqalaab)" = "Инсталирайте [Inqalaab за терминал](https://github.com/TheHealer28/Inqalaab)";
 
 /* No comment provided by engineer. */
 "Instant" = "Мигновено";
@@ -3335,16 +3335,16 @@ new chat action */
 "Read more" = "Прочетете още";
 
 /* No comment provided by engineer. */
-"Read more in [User Guide](https://simplex.chat/docs/guide/chat-profiles.html#incognito-mode)." = "Прочетете повече в [Ръководство за потребителя](https://simplex.chat/docs/guide/chat-profiles.html#incognito-mode).";
+"Read more in [User Guide](https://github.com/TheHealer28/Inqalaab)." = "Прочетете повече в [Ръководство за потребителя](https://github.com/TheHealer28/Inqalaab).";
 
 /* No comment provided by engineer. */
-"Read more in [User Guide](https://simplex.chat/docs/guide/making-connections.html#comparison-of-1-time-invitation-links-and-simplex-contact-addresses)." = "Прочетете повече в [Ръководство за потребителя](https://simplex.chat/docs/guide/making-connections.html#comparison-of-1-time-invitation-links-and-simplex-contact-addresses).";
+"Read more in [User Guide](https://github.com/TheHealer28/Inqalaab)." = "Прочетете повече в [Ръководство за потребителя](https://github.com/TheHealer28/Inqalaab).";
 
 /* No comment provided by engineer. */
-"Read more in [User Guide](https://simplex.chat/docs/guide/readme.html#connect-to-friends)." = "Прочетете повече в [Ръководство на потребителя](https://simplex.chat/docs/guide/readme.html#connect-to-friends).";
+"Read more in [User Guide](https://github.com/TheHealer28/Inqalaab)." = "Прочетете повече в [Ръководство на потребителя](https://github.com/TheHealer28/Inqalaab).";
 
 /* No comment provided by engineer. */
-"Read more in our [GitHub repository](https://github.com/simplex-chat/simplex-chat#readme)." = "Прочетете повече в нашето [GitHub хранилище](https://github.com/simplex-chat/simplex-chat#readme).";
+"Read more in our [GitHub repository](https://github.com/TheHealer28/Inqalaab#readme)." = "Прочетете повече в нашето [GitHub хранилище](https://github.com/TheHealer28/Inqalaab#readme).";
 
 /* No comment provided by engineer. */
 "Receipts are disabled" = "Потвърждениeто за доставка е деактивирано";
@@ -3377,7 +3377,7 @@ new chat action */
 "Receiving via" = "Получаване чрез";
 
 /* No comment provided by engineer. */
-"Recent history and improved [directory bot](simplex:/contact#/?v=1-4&smp=smp%3A%2F%2Fu2dS9sG8nMNURyZwqASV4yROM28Er0luVTx5X1CsMrU%3D%40smp4.simplex.im%2FeXSPwqTkKyDO3px4fLf1wx3MvPdjdLW3%23%2F%3Fv%3D1-2%26dh%3DMCowBQYDK2VuAyEAaiv6MkMH44L2TcYrt_CsX3ZvM11WgbMEUn0hkIKTOho%253D%26srv%3Do5vmywmrnaxalvz6wi3zicyftgio6psuvyniis6gco6bp6ekl4cqj4id.onion)." = "Скорошна история и подобрен [bot за директория за групи](simplex:/contact#/?v=1-4&smp=smp%3A%2F%2Fu2dS9sG8nMNURyZwqASV4yROM28Er0luVTx5X1CsMrU%3D%40smp4.simplex.im%2FeXSPwqTkKyDO3px4fLf1wx3MvPd jdLW3%23%2F%3Fv%3D1-2% 26dh%3DMCowBQYDK2VuAyEAaiv6MkMH44L2TcYrt_CsX3ZvM11WgbMEUn0hkIKTOho%253D%26srv%3Do5vmywmrnaxalvz6wi3zicyftgio6psuvyniis6gco6bp6ekl4cqj4id.onion).";
+"Recent history and improved [directory bot](https://github.com/TheHealer28/Inqalaab)." = "Скорошна история и подобрен [bot за директория за групи](https://github.com/TheHealer28/Inqalaab).";
 
 /* No comment provided by engineer. */
 "Recipient(s) can't see who this message is from." = "Получателят(ите) не могат да видят от кого е това съобщение.";
@@ -3996,7 +3996,7 @@ chat item action */
 "Thank you for installing Inqalaab!" = "Благодарим Ви, че инсталирахте Inqalaab!";
 
 /* No comment provided by engineer. */
-"Thanks to the users – [contribute via Weblate](https://github.com/simplex-chat/simplex-chat/tree/stable#help-translating-simplex-chat)!" = "Благодарение на потребителите – [допринесете през Weblate](https://github.com/simplex-chat/simplex-chat/tree/stable#help-translating-simplex-chat)!";
+"Thanks to the users – [contribute via Weblate](https://github.com/TheHealer28/Inqalaab/tree/stable#contribute)!" = "Благодарение на потребителите – [допринесете през Weblate](https://github.com/TheHealer28/Inqalaab/tree/stable#contribute)!";
 
 /* No comment provided by engineer. */
 "Thanks to the users – contribute via Weblate!" = "Благодарение на потребителите – допринесете през Weblate!";

@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-import SimpleXChat
+import InqalaabChat
 
 let decryptErrorReason: LocalizedStringKey = "It can happen when you or your connection used the old database backup."
 

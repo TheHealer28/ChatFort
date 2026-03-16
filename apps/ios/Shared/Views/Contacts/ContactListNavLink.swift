@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-import SimpleXChat
+import InqalaabChat
 
 struct ContactListNavLink: View {
     @EnvironmentObject var theme: AppTheme

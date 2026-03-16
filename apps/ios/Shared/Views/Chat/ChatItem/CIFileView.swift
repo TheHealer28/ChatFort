@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-import SimpleXChat
+import InqalaabChat
 
 struct CIFileView: View {
     @EnvironmentObject var m: ChatModel

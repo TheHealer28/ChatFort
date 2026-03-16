@@ -17,8 +17,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "5CDCAD442818589900503DA2"
-               BuildableName = "SimpleX NSE.appex"
-               BlueprintName = "SimpleX NSE"
+               BuildableName = "Inqalaab NSE.appex"
+               BlueprintName = "Inqalaab NSE"
                ReferencedContainer = "container:SimpleX.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -32,7 +32,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "5CA059C9279559F40002BEB4"
                BuildableName = "Inqalaab.app"
-               BlueprintName = "SimpleX (iOS)"
+               BlueprintName = "Inqalaab (iOS)"
                ReferencedContainer = "container:SimpleX.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -63,7 +63,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5CA059C9279559F40002BEB4"
             BuildableName = "Inqalaab.app"
-            BlueprintName = "SimpleX (iOS)"
+            BlueprintName = "Inqalaab (iOS)"
             ReferencedContainer = "container:SimpleX.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -82,7 +82,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5CA059C9279559F40002BEB4"
             BuildableName = "Inqalaab.app"
-            BlueprintName = "SimpleX (iOS)"
+            BlueprintName = "Inqalaab (iOS)"
             ReferencedContainer = "container:SimpleX.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

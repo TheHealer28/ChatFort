@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-import SimpleXChat
+import InqalaabChat
 
 struct CallSettings: View {
     @EnvironmentObject var theme: AppTheme

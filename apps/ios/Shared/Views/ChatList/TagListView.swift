@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-import SimpleXChat
+import InqalaabChat
 import ElegantEmojiPicker
 
 struct TagEditorNavParams {

@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-import SimpleXChat
+import InqalaabChat
 
 struct MergedItems: Hashable, Equatable {
     let im: ItemsModel

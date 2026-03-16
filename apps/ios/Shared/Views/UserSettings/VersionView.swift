@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-import SimpleXChat
+import InqalaabChat
 
 struct VersionView: View {
     @State var versionInfo: CoreVersionInfo?

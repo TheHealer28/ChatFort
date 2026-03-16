@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-import SimpleXChat
+import InqalaabChat
 
 struct ChatInfoToolbar: View {
     @Environment(\.colorScheme) var colorScheme

@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import SimpleXChat
+import InqalaabChat
 
 class CallManager {
     func newOutgoingCall(_ contact: Contact, _ media: CallMediaType) -> String {

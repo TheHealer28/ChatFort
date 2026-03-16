@@ -7,7 +7,9 @@
 //
 
 import SwiftUI
-import SimpleXChat
+import WebKit
+import Ink
+import InqalaabChat
 
 private enum NetworkAlert: Identifiable {
     case error(err: String)
@@ -19,103 +21,58 @@ private enum NetworkAlert: Identifiable {
     }
 }
 
-private enum NetworkAndServersSheet: Identifiable {
-    case showConditions
-
-    var id: String {
-        switch self {
-        case .showConditions: return "showConditions"
-        }
-    }
-}
-
 struct NetworkAndServers: View {
     @Environment(\.dismiss) var dismiss: DismissAction
     @EnvironmentObject var m: ChatModel
-    @Environment(\.colorScheme) var colorScheme: ColorScheme
     @EnvironmentObject var theme: AppTheme
     @EnvironmentObject var ss: SaveableSettings
-    @State private var sheetItem: NetworkAndServersSheet? = nil
     @State private var justOpened = true
-    @State private var showSaveDialog = false
+    @State private var testing = false
 
     var body: some View {
         VStack {
             List {
-                let conditionsAction = m.conditions.conditionsAction
-                let servers = ss.servers.userServers
-                let anyOperatorEnabled = servers.contains(where: { $0.operator?.enabled ?? false })
+                // Inqalaab: show numbered server labels (addresses hidden)
                 Section {
-                    if !servers.isEmpty {
-                        ForEach(servers.enumerated().map { $0 }, id: \.element.id) { idx, userOperatorServers in
-                            if let serverOperator = userOperatorServers.operator, serverOperator.enabled {
-                                serverOperatorView(idx, serverOperator)
-                            } else {
-                                EmptyView()
-                            }
+                    let allSmp = ss.servers.userServers.flatMap { $0.smpServers }.filter { $0.enabled && !$0.deleted }
+                    let allXftp = ss.servers.userServers.flatMap { $0.xftpServers }.filter { $0.enabled && !$0.deleted }
+
+                    ForEach(Array(allSmp.enumerated()), id: \.element.id) { idx, server in
+                        HStack {
+                            showTestStatus(server: server)
+                                .frame(width: 16, alignment: .center)
+                                .padding(.trailing, 4)
+                            Text("Message Server \(idx + 1)")
                         }
                     }
 
-                    if let conditionsAction = conditionsAction, anyOperatorEnabled {
-                        conditionsButton(conditionsAction)
+                    ForEach(Array(allXftp.enumerated()), id: \.element.id) { idx, server in
+                        HStack {
+                            showTestStatus(server: server)
+                                .frame(width: 16, alignment: .center)
+                                .padding(.trailing, 4)
+                            Text("Media Server \(idx + 1)")
+                        }
                     }
                 } header: {
-                    Text("Preset servers")
+                    Text("Messages and files")
                         .foregroundColor(theme.colors.secondary)
-                } footer: {
-                    switch conditionsAction {
-                    case let .review(_, deadline, _):
-                        if let deadline = deadline, anyOperatorEnabled {
-                            Text("Conditions will be accepted on: \(conditionsTimestamp(deadline)).")
-                                .foregroundColor(theme.colors.secondary)
-                        }
-                    default:
-                        EmptyView()
-                    }
                 }
 
                 Section {
-                    if let idx = ss.servers.userServers.firstIndex(where: { $0.operator == nil }) {
-                        NavigationLink {
-                            YourServersView(
-                                userServers: $ss.servers.userServers,
-                                serverErrors: $ss.servers.serverErrors,
-                                operatorIndex: idx
-                            )
-                            .navigationTitle("Your servers")
-                            .modifier(ThemedBackground(grouped: true))
-                        } label: {
-                            HStack {
-                                Text("Your servers")
-                                
-                                if ss.servers.userServers[idx] != ss.servers.currUserServers[idx] {
-                                    Spacer()
-                                    unsavedChangesIndicator()
-                                }
-                            }
-                        }
+                    Button("Test servers") {
+                        testAllServers()
                     }
+                    .disabled(testing)
+                }
 
+                Section {
                     NavigationLink {
                         AdvancedNetworkSettings()
                             .navigationTitle("Advanced settings")
                             .modifier(ThemedBackground(grouped: true))
                     } label: {
                         Text("Advanced network settings")
-                    }
-                } header: {
-                    Text("Messages & files")
-                        .foregroundColor(theme.colors.secondary)
-                }
-
-                Section {
-                    Button("Save servers", action: { saveServers($ss.servers.currUserServers, $ss.servers.userServers) })
-                        .disabled(!serversCanBeSaved(ss.servers.currUserServers, ss.servers.userServers, ss.servers.serverErrors))
-                } footer: {
-                    if let errStr = globalServersError(ss.servers.serverErrors) {
-                        ServersErrorView(errStr: errStr)
-                    } else if !ss.servers.serverErrors.isEmpty {
-                        ServersErrorView(errStr: NSLocalizedString("Errors in servers configuration.", comment: "servers error"))
                     }
                 }
 
@@ -138,8 +95,16 @@ struct NetworkAndServers: View {
                 }
             }
         }
+        .opacity(testing ? 0.4 : 1)
+        .overlay {
+            if testing {
+                ProgressView()
+                    .scaleEffect(2)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+            }
+        }
+        .allowsHitTesting(!testing)
         .task {
-            // this condition is needed to prevent re-setting the servers when exiting single server view
             if justOpened {
                 do {
                     guard m.chatRunning == true else {
@@ -163,78 +128,55 @@ struct NetworkAndServers: View {
                 justOpened = false
             }
         }
-        .modifier(BackButton(disabled: Binding.constant(false)) {
-            if serversCanBeSaved(ss.servers.currUserServers, ss.servers.userServers, ss.servers.serverErrors) {
-                showSaveDialog = true
-            } else {
-                dismiss()
-            }
-        })
-        .confirmationDialog("Save servers?", isPresented: $showSaveDialog, titleVisibility: .visible) {
-            Button("Save") {
-                saveServers($ss.servers.currUserServers, $ss.servers.userServers)
-                dismiss()
-            }
-            Button("Exit without saving") { dismiss() }
-        }
-        .sheet(item: $sheetItem) { item in
-            switch item {
-            case .showConditions:
-                UsageConditionsView(
-                    currUserServers: $ss.servers.currUserServers,
-                    userServers: $ss.servers.userServers
-                )
-                .modifier(ThemedBackground(grouped: true))
-            }
-        }
     }
 
-    private func serverOperatorView(_ operatorIndex: Int, _ serverOperator: ServerOperator) -> some View {
-        NavigationLink() {
-            OperatorView(
-                currUserServers: $ss.servers.currUserServers,
-                userServers: $ss.servers.userServers,
-                serverErrors: $ss.servers.serverErrors,
-                operatorIndex: operatorIndex,
-                useOperator: serverOperator.enabled
-            )
-            .navigationBarTitle("\(serverOperator.tradeName) servers")
-            .modifier(ThemedBackground(grouped: true))
-            .navigationBarTitleDisplayMode(.large)
-        } label: {
-            HStack {
-                Image(serverOperator.logo(colorScheme))
-                    .resizable()
-                    .scaledToFit()
-                    .grayscale(serverOperator.enabled ? 0.0 : 1.0)
-                    .frame(width: 24, height: 24)
-                Text(serverOperator.tradeName)
-                    .foregroundColor(serverOperator.enabled ? theme.colors.onBackground : theme.colors.secondary)
-
-                if ss.servers.userServers[operatorIndex] != ss.servers.currUserServers[operatorIndex] {
-                    Spacer()
-                    unsavedChangesIndicator()
+    private func testAllServers() {
+        // Reset test status for all enabled servers
+        for groupIdx in 0..<ss.servers.userServers.count {
+            for srvIdx in 0..<ss.servers.userServers[groupIdx].smpServers.count {
+                if ss.servers.userServers[groupIdx].smpServers[srvIdx].enabled {
+                    ss.servers.userServers[groupIdx].smpServers[srvIdx].tested = nil
+                }
+            }
+            for srvIdx in 0..<ss.servers.userServers[groupIdx].xftpServers.count {
+                if ss.servers.userServers[groupIdx].xftpServers[srvIdx].enabled {
+                    ss.servers.userServers[groupIdx].xftpServers[srvIdx].tested = nil
                 }
             }
         }
-    }
 
-    private func unsavedChangesIndicator() -> some View {
-        Image(systemName: "pencil")
-            .foregroundColor(theme.colors.secondary)
-            .symbolRenderingMode(.monochrome)
-            .frame(maxWidth: 24, maxHeight: 24, alignment: .center)
-    }
+        testing = true
+        Task {
+            var failures: [String: ProtocolTestFailure] = [:]
 
-    private func conditionsButton(_ conditionsAction: UsageConditionsAction) -> some View {
-        Button {
-            sheetItem = .showConditions
-        } label: {
-            switch conditionsAction {
-            case .review:
-                Text("Review conditions")
-            case .accepted:
-                Text("Accepted conditions")
+            for groupIdx in 0..<ss.servers.userServers.count {
+                for srvIdx in 0..<ss.servers.userServers[groupIdx].smpServers.count {
+                    if ss.servers.userServers[groupIdx].smpServers[srvIdx].enabled {
+                        if let f = await testServerConnection(server: $ss.servers.userServers[groupIdx].smpServers[srvIdx]) {
+                            failures[serverHostname(ss.servers.userServers[groupIdx].smpServers[srvIdx].server)] = f
+                        }
+                    }
+                }
+                for srvIdx in 0..<ss.servers.userServers[groupIdx].xftpServers.count {
+                    if ss.servers.userServers[groupIdx].xftpServers[srvIdx].enabled {
+                        if let f = await testServerConnection(server: $ss.servers.userServers[groupIdx].xftpServers[srvIdx]) {
+                            failures[serverHostname(ss.servers.userServers[groupIdx].xftpServers[srvIdx].server)] = f
+                        }
+                    }
+                }
+            }
+
+            await MainActor.run {
+                testing = false
+                if !failures.isEmpty {
+                    let msg = failures.map { (srv, f) in
+                        "\(srv): \(f.localizedDescription)"
+                    }.joined(separator: "\n")
+                    showAlert(
+                        NSLocalizedString("Tests failed!", comment: "alert title"),
+                        message: String.localizedStringWithFormat(NSLocalizedString("Some servers failed the test:\n%@", comment: "alert message"), msg)
+                    )
+                }
             }
         }
     }
@@ -479,6 +421,236 @@ func updateOperatorsConditionsAcceptance(_ usvs: Binding<[UserOperatorServers]>,
     for i in 0..<usvs.wrappedValue.count {
         if let updatedOperator = updatedOperators.first(where: { $0.operatorId == usvs.wrappedValue[i].operator?.operatorId }) {
             usvs.wrappedValue[i].operator?.conditionsAcceptance = updatedOperator.conditionsAcceptance
+        }
+    }
+}
+
+// MARK: - Shared helpers (extracted from deleted ProtocolServerView.swift)
+
+struct BackButton: ViewModifier {
+    var label: LocalizedStringKey = "Back"
+    @Binding var disabled: Bool
+    var action: () -> Void
+
+    func body(content: Content) -> some View {
+        content
+        .navigationBarBackButtonHidden(true)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button(action: action) {
+                    HStack {
+                        Image(systemName: "chevron.left")
+                        Text(label)
+                    }
+                }
+                .disabled(disabled)
+            }
+        }
+    }
+}
+
+@ViewBuilder func showTestStatus(server: UserServer) -> some View {
+    switch server.tested {
+    case .some(true):
+        Image(systemName: "checkmark")
+            .foregroundColor(.green)
+    case .some(false):
+        Image(systemName: "multiply")
+            .foregroundColor(.red)
+    case .none:
+        Color.clear
+    }
+}
+
+func testServerConnection(server: Binding<UserServer>) async -> ProtocolTestFailure? {
+    do {
+        let r = try await testProtoServer(server: server.wrappedValue.server)
+        switch r {
+        case .success:
+            await MainActor.run { server.wrappedValue.tested = true }
+            return nil
+        case let .failure(f):
+            await MainActor.run { server.wrappedValue.tested = false }
+            return f
+        }
+    } catch let error {
+        logger.error("testServerConnection \(responseError(error))")
+        await MainActor.run {
+            server.wrappedValue.tested = false
+        }
+        return nil
+    }
+}
+
+func conditionsTimestamp(_ date: Date) -> String {
+    let localDateFormatter = DateFormatter()
+    localDateFormatter.dateStyle = .medium
+    localDateFormatter.timeStyle = .none
+    return localDateFormatter.string(from: date)
+}
+
+func conditionsLinkButton() -> some View {
+    let commit = ChatModel.shared.conditions.currentConditions.conditionsCommit
+    let mdUrl = URL(string: "https://github.com/TheHealer28/Inqalaab/blob/\(commit)/PRIVACY.md") ?? conditionsURL
+    return Menu {
+        Link(destination: mdUrl) {
+            Label("Open conditions", systemImage: "doc")
+        }
+        if let commitUrl = URL(string: "https://github.com/TheHealer28/Inqalaab/commit/\(commit)") {
+            Link(destination: commitUrl) {
+                Label("Open changes", systemImage: "ellipsis")
+            }
+        }
+    } label: {
+        Image(systemName: "arrow.up.right.circle")
+            .resizable()
+            .scaledToFit()
+            .frame(width: 20)
+            .padding(2)
+            .contentShape(Circle())
+    }
+}
+
+struct ConditionsTextView: View {
+    @State private var conditionsData: (UsageConditions, String?, UsageConditions?)?
+    @State private var failedToLoad: Bool = false
+    @State private var conditionsHTML: String? = nil
+
+    let defaultConditionsLink = "https://github.com/TheHealer28/Inqalaab/blob/main/PRIVACY.md"
+
+    var body: some View {
+        viewBody()
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .task {
+                do {
+                    let conditions = try await getUsageConditions()
+                    let conditionsText = conditions.1
+                    let parentLink =  "https://github.com/TheHealer28/Inqalaab/blob/\(conditions.0.conditionsCommit)"
+                    let preparedText: String?
+                    if let conditionsText {
+                        let prepared = prepareMarkdown(conditionsText.trimmingCharacters(in: .whitespacesAndNewlines), parentLink)
+                        conditionsHTML = MarkdownParser().html(from: prepared)
+                        preparedText = prepared
+                    } else {
+                        preparedText = nil
+                    }
+                    conditionsData = (conditions.0, preparedText, conditions.2)
+                } catch let error {
+                    logger.error("ConditionsTextView getUsageConditions error: \(responseError(error))")
+                    failedToLoad = true
+                }
+            }
+    }
+
+    @ViewBuilder private func viewBody() -> some View {
+        if let (usageConditions, _, _) = conditionsData {
+            if let conditionsHTML {
+                ConditionsWebView(html: conditionsHTML)
+                    .padding(6)
+                    .background(
+                        RoundedRectangle(cornerRadius: 12, style: .continuous)
+                            .fill(Color(uiColor: .secondarySystemGroupedBackground))
+                    )
+            } else {
+                let conditionsLink = "https://github.com/TheHealer28/Inqalaab/blob/\(usageConditions.conditionsCommit)/PRIVACY.md"
+                conditionsLinkView(conditionsLink)
+            }
+        } else if failedToLoad {
+            conditionsLinkView(defaultConditionsLink)
+        } else {
+            ProgressView()
+                .scaleEffect(2)
+        }
+    }
+
+    private func conditionsLinkView(_ conditionsLink: String) -> some View {
+        VStack(alignment: .leading, spacing: 20) {
+            Text("Current conditions text couldn't be loaded, you can review conditions via this link:")
+            Link(destination: URL(string: conditionsLink)!) {
+                Text(conditionsLink)
+                    .multilineTextAlignment(.leading)
+            }
+        }
+    }
+
+    private func prepareMarkdown(_ text: String, _ parentLink: String) -> String {
+        let localLinkRegex = try! NSRegularExpression(pattern: "\\[([^\\(]*)\\]\\(#.*\\)")
+        let h1Regex = try! NSRegularExpression(pattern: "^# ")
+        var text = localLinkRegex.stringByReplacingMatches(in: text, options: [], range: NSRange(location: 0, length: text.utf16.count), withTemplate: "$1")
+        text = h1Regex.stringByReplacingMatches(in: text, options: [], range: NSRange(location: 0, length: text.utf16.count), withTemplate: "")
+        return text
+            .replacingOccurrences(of: "](/", with: "](\(parentLink)/")
+            .replacingOccurrences(of: "](./", with: "](\(parentLink)/")
+    }
+}
+
+struct ConditionsWebView: UIViewRepresentable {
+    @State var html: String
+    @EnvironmentObject var theme: AppTheme
+    @State var pageLoaded = false
+
+    func makeUIView(context: Context) -> WKWebView {
+        let view = WKWebView()
+        view.backgroundColor = .clear
+        view.isOpaque = false
+        view.navigationDelegate = context.coordinator
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            if !pageLoaded {
+                loadPage(view)
+            }
+        }
+        return view
+    }
+
+    func updateUIView(_ view: WKWebView, context: Context) {
+        loadPage(view)
+    }
+
+    private func loadPage(_ webView: WKWebView) {
+        let styles = """
+        <style>
+        body {
+            color: \(theme.colors.onBackground.toHTMLHex());
+            font-family: Helvetica;
+        }
+        a {
+            color: \(theme.colors.primary.toHTMLHex());
+        }
+        code, pre {
+            font-family: Menlo;
+            background: \(theme.colors.secondary.opacity(theme.colors.isLight ? 0.2 : 0.3).toHTMLHex());
+        }
+        </style>
+        """
+        let head = "<head><meta name='viewport' content='width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no'>\(styles)</head>"
+        webView.loadHTMLString(head + html, baseURL: nil)
+        DispatchQueue.main.async {
+            pageLoaded = true
+        }
+    }
+
+    func makeCoordinator() -> Cordinator {
+        Cordinator()
+    }
+
+    class Cordinator: NSObject, WKNavigationDelegate {
+        func webView(_ webView: WKWebView,
+                     decidePolicyFor navigationAction: WKNavigationAction,
+                     decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+
+            guard let url = navigationAction.request.url else { return decisionHandler(.allow) }
+
+            switch navigationAction.navigationType {
+            case .linkActivated:
+                decisionHandler(.cancel)
+                if url.absoluteString.starts(with: "https://simplex.chat/contact#") || url.absoluteString.starts(with: "https://example.net/contact#") {
+                    ChatModel.shared.appOpenUrl = url
+                } else {
+                    UIApplication.shared.open(url)
+                }
+            default:
+                decisionHandler(.allow)
+            }
         }
     }
 }

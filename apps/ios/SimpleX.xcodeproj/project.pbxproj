@@ -61,10 +61,7 @@
 		5C7505A827B6D34800BE3227 /* ChatInfoToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7505A727B6D34800BE3227 /* ChatInfoToolbar.swift */; };
 		5C764E89279CBCB3000C6508 /* ChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C764E88279CBCB3000C6508 /* ChatModel.swift */; };
 		5C8F01CD27A6F0D8007D2C8D /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 5C8F01CC27A6F0D8007D2C8D /* CodeScanner */; };
-		5C93292F29239A170090FFF9 /* ProtocolServersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C93292E29239A170090FFF9 /* ProtocolServersView.swift */; };
-		5C93293129239BED0090FFF9 /* ProtocolServerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C93293029239BED0090FFF9 /* ProtocolServerView.swift */; };
 		5C93293F2928E0FD0090FFF9 /* AudioRecPlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C93293E2928E0FD0090FFF9 /* AudioRecPlay.swift */; };
-		5C9329412929248A0090FFF9 /* ScanProtocolServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9329402929248A0090FFF9 /* ScanProtocolServer.swift */; };
 		5C971E1D27AEBEF600C8A3CE /* ChatInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C971E1C27AEBEF600C8A3CE /* ChatInfoView.swift */; };
 		5C971E2127AEBF8300C8A3CE /* ChatInfoImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C971E2027AEBF8300C8A3CE /* ChatInfoImage.swift */; };
 		5C9A5BDB2871E05400A5B906 /* SetNotificationsMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9A5BDA2871E05400A5B906 /* SetNotificationsMode.swift */; };
@@ -113,10 +110,10 @@
 		5CD67B8F2B0E858A00C510B1 /* hs_init.h in Headers */ = {isa = PBXBuildFile; fileRef = 5CD67B8D2B0E858A00C510B1 /* hs_init.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5CD67B902B0E858A00C510B1 /* hs_init.c in Sources */ = {isa = PBXBuildFile; fileRef = 5CD67B8E2B0E858A00C510B1 /* hs_init.c */; };
 		5CDCAD482818589900503DA2 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDCAD472818589900503DA2 /* NotificationService.swift */; };
-		5CE2BA702845308900EC33A6 /* SimpleXChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CE2BA682845308900EC33A6 /* SimpleXChat.framework */; };
-		5CE2BA712845308900EC33A6 /* SimpleXChat.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5CE2BA682845308900EC33A6 /* SimpleXChat.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		5CE2BA77284530BF00EC33A6 /* SimpleXChat.h in Headers */ = {isa = PBXBuildFile; fileRef = 5CE2BA76284530BF00EC33A6 /* SimpleXChat.h */; };
-		5CE2BA79284530CC00EC33A6 /* SimpleXChat.docc in Sources */ = {isa = PBXBuildFile; fileRef = 5CE2BA78284530CC00EC33A6 /* SimpleXChat.docc */; };
+		5CE2BA702845308900EC33A6 /* InqalaabChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CE2BA682845308900EC33A6 /* InqalaabChat.framework */; };
+		5CE2BA712845308900EC33A6 /* InqalaabChat.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5CE2BA682845308900EC33A6 /* InqalaabChat.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5CE2BA77284530BF00EC33A6 /* InqalaabChat.h in Headers */ = {isa = PBXBuildFile; fileRef = 5CE2BA76284530BF00EC33A6 /* InqalaabChat.h */; };
+		5CE2BA79284530CC00EC33A6 /* InqalaabChat.docc in Sources */ = {isa = PBXBuildFile; fileRef = 5CE2BA78284530CC00EC33A6 /* InqalaabChat.docc */; };
 		5CE2BA8B284533A300EC33A6 /* ChatTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDCAD7228188CFF00503DA2 /* ChatTypes.swift */; };
 		5CE2BA8C284533A300EC33A6 /* AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDCAD5228186F9500503DA2 /* AppGroup.swift */; };
 		5CE2BA8D284533A300EC33A6 /* CallTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5E5D3C282447AB00B0488A /* CallTypes.swift */; };
@@ -129,8 +126,8 @@
 		5CE2BA94284534BB00EC33A6 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CDCAD6028187D7900503DA2 /* libz.tbd */; };
 		5CE2BA952845354B00EC33A6 /* SimpleX.h in Headers */ = {isa = PBXBuildFile; fileRef = 5CE2BA8A2845332200EC33A6 /* SimpleX.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5CE2BA97284537A800EC33A6 /* dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE2BA96284537A800EC33A6 /* dummy.m */; };
-		5CE2BA9D284555F500EC33A6 /* SimpleX NSE.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5CDCAD452818589900503DA2 /* SimpleX NSE.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		5CE2BAA62845617C00EC33A6 /* SimpleXChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CE2BA682845308900EC33A6 /* SimpleXChat.framework */; platformFilter = ios; };
+		5CE2BA9D284555F500EC33A6 /* Inqalaab NSE.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5CDCAD452818589900503DA2 /* Inqalaab NSE.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5CE2BAA62845617C00EC33A6 /* InqalaabChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CE2BA682845308900EC33A6 /* InqalaabChat.framework */; platformFilter = ios; };
 		5CE4407227ADB1D0007B033A /* Emoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE4407127ADB1D0007B033A /* Emoji.swift */; };
 		5CE4407927ADB701007B033A /* EmojiItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE4407827ADB701007B033A /* EmojiItemView.swift */; };
 		5CEACCE327DE9246000BD591 /* ComposeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEACCE227DE9246000BD591 /* ComposeView.swift */; };
@@ -146,9 +143,7 @@
 		640743612CD360E600158442 /* ChooseServerOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640743602CD360E600158442 /* ChooseServerOperators.swift */; };
 		6407BA83295DA85D0082BA18 /* CIInvalidJSONView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6407BA82295DA85D0082BA18 /* CIInvalidJSONView.swift */; };
 		6419EC582AB97507004A607A /* CIMemberCreatedContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6419EC572AB97507004A607A /* CIMemberCreatedContactView.swift */; };
-		642BA82D2CE50495005E9412 /* NewServerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642BA82C2CE50495005E9412 /* NewServerView.swift */; };
 		6432857C2925443C00FBE5C8 /* GroupPreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6432857B2925443C00FBE5C8 /* GroupPreferencesView.swift */; };
-		643B3B4E2CCFD6400083A2CF /* OperatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643B3B4D2CCFD6400083A2CF /* OperatorView.swift */; };
 		6440CA00288857A10062C672 /* CIEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6440C9FF288857A10062C672 /* CIEventView.swift */; };
 		6440CA03288AECA70062C672 /* AddGroupMembersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6440CA02288AECA70062C672 /* AddGroupMembersView.swift */; };
 		6442E0BA287F169300CEC0F9 /* AddGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6442E0B9287F169300CEC0F9 /* AddGroupView.swift */; };
@@ -209,7 +204,6 @@
 		8CAEF1502D11A6A000240F00 /* ChatItemsLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAEF14F2D11A6A000240F00 /* ChatItemsLoader.swift */; };
 		8CB15EA02CFDA30600C28209 /* ChatItemsMerger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB15E9F2CFDA30600C28209 /* ChatItemsMerger.swift */; };
 		8CB3476C2CF5CFFA006787A5 /* Ink in Frameworks */ = {isa = PBXBuildFile; productRef = 8CB3476B2CF5CFFA006787A5 /* Ink */; };
-		8CB3476E2CF5F58B006787A5 /* ConditionsWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB3476D2CF5F58B006787A5 /* ConditionsWebView.swift */; };
 		8CBC14862D357CDB00BBD901 /* StorageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBC14852D357CDB00BBD901 /* StorageView.swift */; };
 		8CC317442D4FEB9B00292A20 /* EndlessScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC317432D4FEB9B00292A20 /* EndlessScrollView.swift */; };
 		8CC317462D4FEBA800292A20 /* ScrollViewCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC317452D4FEBA800292A20 /* ScrollViewCells.swift */; };
@@ -257,11 +251,12 @@
 		CEDB245B2C9CD71800FBC5F6 /* StickyScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB245A2C9CD71800FBC5F6 /* StickyScrollView.swift */; };
 		CEDE70222C48FD9500233B1F /* SEChatState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDE70212C48FD9500233B1F /* SEChatState.swift */; };
 		CEE723AA2C3BD3D70009AE93 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE723A92C3BD3D70009AE93 /* ShareViewController.swift */; };
-		CEE723B12C3BD3D70009AE93 /* SimpleX SE.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CEE723A72C3BD3D70009AE93 /* SimpleX SE.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		CEE723B12C3BD3D70009AE93 /* Inqalaab SE.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CEE723A72C3BD3D70009AE93 /* Inqalaab SE.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		CEE723F02C3D25C70009AE93 /* ShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE723EF2C3D25C70009AE93 /* ShareView.swift */; };
 		CEE723F22C3D25ED0009AE93 /* ShareModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE723F12C3D25ED0009AE93 /* ShareModel.swift */; };
 		CEFB2EDF2CA1BCC7004B1ECE /* SheetRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFB2EDE2CA1BCC7004B1ECE /* SheetRepresentable.swift */; };
 		D1A2B3C4D5E6F7A8B9C0E201 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = D1A2B3C4D5E6F7A8B9C0E202 /* PrivacyInfo.xcprivacy */; };
+		FB000001000000000000000A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FB000001000000000000000B /* GoogleService-Info.plist */; };
 		D7197A1829AE89660055C05A /* WebRTC in Frameworks */ = {isa = PBXBuildFile; productRef = D7197A1729AE89660055C05A /* WebRTC */; };
 		D72A9088294BD7A70047C86D /* NativeTextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72A9087294BD7A70047C86D /* NativeTextEditor.swift */; };
 		D741547829AF89AF0022400A /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D741547729AF89AF0022400A /* StoreKit.framework */; };
@@ -270,7 +265,7 @@
 		D7F0E33929964E7E0068AF69 /* LZString in Frameworks */ = {isa = PBXBuildFile; productRef = D7F0E33829964E7E0068AF69 /* LZString */; };
 		E51CC1E62C62085600DB91FE /* OneHandUICard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51CC1E52C62085600DB91FE /* OneHandUICard.swift */; };
 		E559A0A12E3F77EE00B26F74 /* CommandsMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E559A0A02E3F77EE00B26F74 /* CommandsMenuView.swift */; };
-		E5DCF8DB2C56FAC1007928CC /* SimpleXChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CE2BA682845308900EC33A6 /* SimpleXChat.framework */; };
+		E5DCF8DB2C56FAC1007928CC /* InqalaabChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CE2BA682845308900EC33A6 /* InqalaabChat.framework */; };
 		E5DCF9712C590272007928CC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E5DCF96F2C590272007928CC /* Localizable.strings */; };
 		E5DCF9842C5902CE007928CC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E5DCF9822C5902CE007928CC /* Localizable.strings */; };
 		E5DCF9982C5906FF007928CC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E5DCF9962C5906FF007928CC /* InfoPlist.strings */; };
@@ -284,42 +279,42 @@
 			containerPortal = 5CA059BE279559F40002BEB4 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 5CA059C9279559F40002BEB4;
-			remoteInfo = "SimpleX (iOS)";
+			remoteInfo = "Inqalaab (iOS)";
 		};
 		5CE2BA6E2845308900EC33A6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5CA059BE279559F40002BEB4 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 5CE2BA672845308900EC33A6;
-			remoteInfo = SimpleXChat;
+			remoteInfo = InqalaabChat;
 		};
 		5CE2BA9E284555F500EC33A6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5CA059BE279559F40002BEB4 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 5CDCAD442818589900503DA2;
-			remoteInfo = "SimpleX NSE";
+			remoteInfo = "Inqalaab NSE";
 		};
 		5CE2BAA82845617C00EC33A6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5CA059BE279559F40002BEB4 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 5CE2BA672845308900EC33A6;
-			remoteInfo = SimpleXChat;
+			remoteInfo = InqalaabChat;
 		};
 		CEE723AF2C3BD3D70009AE93 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5CA059BE279559F40002BEB4 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = CEE723A62C3BD3D70009AE93;
-			remoteInfo = "SimpleX SE";
+			remoteInfo = "Inqalaab SE";
 		};
 		CEE723D12C3C21C90009AE93 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5CA059BE279559F40002BEB4 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 5CE2BA672845308900EC33A6;
-			remoteInfo = SimpleXChat;
+			remoteInfo = InqalaabChat;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -330,7 +325,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				5CE2BA712845308900EC33A6 /* SimpleXChat.framework in Embed Frameworks */,
+				5CE2BA712845308900EC33A6 /* InqalaabChat.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -341,8 +336,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				CEE723B12C3BD3D70009AE93 /* SimpleX SE.appex in Embed App Extensions */,
-				5CE2BA9D284555F500EC33A6 /* SimpleX NSE.appex in Embed App Extensions */,
+				CEE723B12C3BD3D70009AE93 /* Inqalaab SE.appex in Embed App Extensions */,
+				5CE2BA9D284555F500EC33A6 /* Inqalaab NSE.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -391,7 +386,7 @@
 		5C3CCFCB2AE6BD3100C3F0C3 /* ConnectDesktopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectDesktopView.swift; sourceTree = "<group>"; };
 		5C3F1D552842B68D00EC8A82 /* IntegrityErrorItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntegrityErrorItemView.swift; sourceTree = "<group>"; };
 		5C3F1D57284363C400EC8A82 /* PrivacySettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacySettings.swift; sourceTree = "<group>"; };
-		5C422A7C27A9A6FA0097A1E1 /* SimpleX (iOS).entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "SimpleX (iOS).entitlements"; sourceTree = "<group>"; };
+		5C422A7C27A9A6FA0097A1E1 /* Inqalaab (iOS).entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Inqalaab (iOS).entitlements"; sourceTree = "<group>"; };
 		5C4B3B09285FB130003915F2 /* DatabaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseView.swift; sourceTree = "<group>"; };
 		5C5346A727B59A6A004DF848 /* ChatHelp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatHelp.swift; sourceTree = "<group>"; };
 		5C55A91E283AD0E400C4E99E /* CallManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallManager.swift; sourceTree = "<group>"; };
@@ -432,10 +427,7 @@
 		5C8B41C929AF41BC00888272 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5C8B41CB29AF44CF00888272 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = "cs.lproj/SimpleX--iOS--InfoPlist.strings"; sourceTree = "<group>"; };
 		5C8B41CC29AF44CF00888272 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		5C93292E29239A170090FFF9 /* ProtocolServersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolServersView.swift; sourceTree = "<group>"; };
-		5C93293029239BED0090FFF9 /* ProtocolServerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolServerView.swift; sourceTree = "<group>"; };
 		5C93293E2928E0FD0090FFF9 /* AudioRecPlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecPlay.swift; sourceTree = "<group>"; };
-		5C9329402929248A0090FFF9 /* ScanProtocolServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanProtocolServer.swift; sourceTree = "<group>"; };
 		5C971E1C27AEBEF600C8A3CE /* ChatInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatInfoView.swift; sourceTree = "<group>"; };
 		5C971E2027AEBF8300C8A3CE /* ChatInfoImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatInfoImage.swift; sourceTree = "<group>"; };
 		5C9A5BDA2871E05400A5B906 /* SetNotificationsMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetNotificationsMode.swift; sourceTree = "<group>"; };
@@ -501,10 +493,10 @@
 		5CCB939B297EFCB100399E78 /* NavStackCompat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavStackCompat.swift; sourceTree = "<group>"; };
 		5CD67B8D2B0E858A00C510B1 /* hs_init.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = hs_init.h; sourceTree = "<group>"; };
 		5CD67B8E2B0E858A00C510B1 /* hs_init.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = hs_init.c; sourceTree = "<group>"; };
-		5CDCAD452818589900503DA2 /* SimpleX NSE.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "SimpleX NSE.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5CDCAD452818589900503DA2 /* Inqalaab NSE.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Inqalaab NSE.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CDCAD472818589900503DA2 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		5CDCAD492818589900503DA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5CDCAD5128186DE400503DA2 /* SimpleX NSE.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "SimpleX NSE.entitlements"; sourceTree = "<group>"; };
+		5CDCAD5128186DE400503DA2 /* Inqalaab NSE.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Inqalaab NSE.entitlements"; sourceTree = "<group>"; };
 		5CDCAD5228186F9500503DA2 /* AppGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGroup.swift; sourceTree = "<group>"; };
 		5CDCAD5E28187D4A00503DA2 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.4.sdk/usr/lib/libiconv.tbd; sourceTree = DEVELOPER_DIR; };
 		5CDCAD6028187D7900503DA2 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.4.sdk/usr/lib/libz.tbd; sourceTree = DEVELOPER_DIR; };
@@ -514,9 +506,9 @@
 		5CDCAD80281A7E2700503DA2 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		5CE1330328E118CC00FFFD8C /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = "de.lproj/SimpleX--iOS--InfoPlist.strings"; sourceTree = "<group>"; };
 		5CE1330428E118CC00FFFD8C /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		5CE2BA682845308900EC33A6 /* SimpleXChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SimpleXChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5CE2BA76284530BF00EC33A6 /* SimpleXChat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleXChat.h; sourceTree = "<group>"; };
-		5CE2BA78284530CC00EC33A6 /* SimpleXChat.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = SimpleXChat.docc; sourceTree = "<group>"; };
+		5CE2BA682845308900EC33A6 /* InqalaabChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = InqalaabChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5CE2BA76284530BF00EC33A6 /* InqalaabChat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InqalaabChat.h; sourceTree = "<group>"; };
+		5CE2BA78284530CC00EC33A6 /* InqalaabChat.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = InqalaabChat.docc; sourceTree = "<group>"; };
 		5CE2BA8A2845332200EC33A6 /* SimpleX.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SimpleX.h; sourceTree = "<group>"; };
 		5CE2BA96284537A800EC33A6 /* dummy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = dummy.m; sourceTree = "<group>"; };
 		5CE4407127ADB1D0007B033A /* Emoji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emoji.swift; sourceTree = "<group>"; };
@@ -535,9 +527,7 @@
 		640743602CD360E600158442 /* ChooseServerOperators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseServerOperators.swift; sourceTree = "<group>"; };
 		6407BA82295DA85D0082BA18 /* CIInvalidJSONView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIInvalidJSONView.swift; sourceTree = "<group>"; };
 		6419EC572AB97507004A607A /* CIMemberCreatedContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIMemberCreatedContactView.swift; sourceTree = "<group>"; };
-		642BA82C2CE50495005E9412 /* NewServerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewServerView.swift; sourceTree = "<group>"; };
 		6432857B2925443C00FBE5C8 /* GroupPreferencesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupPreferencesView.swift; sourceTree = "<group>"; };
-		643B3B4D2CCFD6400083A2CF /* OperatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperatorView.swift; sourceTree = "<group>"; };
 		6440C9FF288857A10062C672 /* CIEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIEventView.swift; sourceTree = "<group>"; };
 		6440CA02288AECA70062C672 /* AddGroupMembersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGroupMembersView.swift; sourceTree = "<group>"; };
 		6442E0B9287F169300CEC0F9 /* AddGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGroupView.swift; sourceTree = "<group>"; };
@@ -599,7 +589,6 @@
 		8CAD466E2D15A8100078D18F /* ChatScrollHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatScrollHelpers.swift; sourceTree = "<group>"; };
 		8CAEF14F2D11A6A000240F00 /* ChatItemsLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatItemsLoader.swift; sourceTree = "<group>"; };
 		8CB15E9F2CFDA30600C28209 /* ChatItemsMerger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatItemsMerger.swift; sourceTree = "<group>"; };
-		8CB3476D2CF5F58B006787A5 /* ConditionsWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConditionsWebView.swift; sourceTree = "<group>"; };
 		8CBC14852D357CDB00BBD901 /* StorageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageView.swift; sourceTree = "<group>"; };
 		8CC317432D4FEB9B00292A20 /* EndlessScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndlessScrollView.swift; sourceTree = "<group>"; };
 		8CC317452D4FEBA800292A20 /* ScrollViewCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewCells.swift; sourceTree = "<group>"; };
@@ -643,14 +632,15 @@
 		CEA6E91B2CBD21B0002B5DB4 /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
 		CEDB245A2C9CD71800FBC5F6 /* StickyScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyScrollView.swift; sourceTree = "<group>"; };
 		CEDE70212C48FD9500233B1F /* SEChatState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SEChatState.swift; sourceTree = "<group>"; };
-		CEE723A72C3BD3D70009AE93 /* SimpleX SE.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "SimpleX SE.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEE723A72C3BD3D70009AE93 /* Inqalaab SE.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Inqalaab SE.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEE723A92C3BD3D70009AE93 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		CEE723AE2C3BD3D70009AE93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CEE723D42C3C21F50009AE93 /* SimpleX SE.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "SimpleX SE.entitlements"; sourceTree = "<group>"; };
+		CEE723D42C3C21F50009AE93 /* Inqalaab SE.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Inqalaab SE.entitlements"; sourceTree = "<group>"; };
 		CEE723EF2C3D25C70009AE93 /* ShareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareView.swift; sourceTree = "<group>"; };
 		CEE723F12C3D25ED0009AE93 /* ShareModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareModel.swift; sourceTree = "<group>"; };
 		CEFB2EDE2CA1BCC7004B1ECE /* SheetRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetRepresentable.swift; sourceTree = "<group>"; };
 		D1A2B3C4D5E6F7A8B9C0E202 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		FB000001000000000000000B /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D72A9087294BD7A70047C86D /* NativeTextEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeTextEditor.swift; sourceTree = "<group>"; };
 		D741547729AF89AF0022400A /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS16.1.sdk/System/Library/Frameworks/StoreKit.framework; sourceTree = DEVELOPER_DIR; };
 		D741547929AF90B00022400A /* PushKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PushKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS16.1.sdk/System/Library/Frameworks/PushKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -717,7 +707,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5CE2BA702845308900EC33A6 /* SimpleXChat.framework in Frameworks */,
+				5CE2BA702845308900EC33A6 /* InqalaabChat.framework in Frameworks */,
 				B728945B2D0C62BF00F7A19A /* ElegantEmojiPicker in Frameworks */,
 				8C8118722C220B5B00E6FC94 /* Yams in Frameworks */,
 				8CB3476C2CF5CFFA006787A5 /* Ink in Frameworks */,
@@ -742,7 +732,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5CE2BAA62845617C00EC33A6 /* SimpleXChat.framework in Frameworks */,
+				5CE2BAA62845617C00EC33A6 /* InqalaabChat.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -765,7 +755,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E5DCF8DB2C56FAC1007928CC /* SimpleXChat.framework in Frameworks */,
+				E5DCF8DB2C56FAC1007928CC /* InqalaabChat.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -917,13 +907,13 @@
 				5C55A92D283D0FDE00C4E99E /* sounds */,
 				5CC2C0FD2809BF11000C35E3 /* SimpleX--iOS--InfoPlist.strings */,
 				5CC2C0FA2809BF11000C35E3 /* Localizable.strings */,
-				5C422A7C27A9A6FA0097A1E1 /* SimpleX (iOS).entitlements */,
+				5C422A7C27A9A6FA0097A1E1 /* Inqalaab (iOS).entitlements */,
 				5C764E5C279C70B7000C6508 /* Libraries */,
 				5CA059C2279559F40002BEB4 /* Shared */,
-				5CDCAD462818589900503DA2 /* SimpleX NSE */,
-				CEE723A82C3BD3D70009AE93 /* SimpleX SE */,
+				5CDCAD462818589900503DA2 /* Inqalaab NSE */,
+				CEE723A82C3BD3D70009AE93 /* Inqalaab SE */,
 				5CA059DA279559F40002BEB4 /* Tests iOS */,
-				5CE2BA692845308900EC33A6 /* SimpleXChat */,
+				5CE2BA692845308900EC33A6 /* InqalaabChat */,
 				5CA059CB279559F40002BEB4 /* Products */,
 				5C764E7A279C71D4000C6508 /* Frameworks */,
 			);
@@ -942,6 +932,7 @@
 				5C2E260D27A30E2400F70299 /* Views */,
 				5CA059C5279559F40002BEB4 /* Assets.xcassets */,
 				D1A2B3C4D5E6F7A8B9C0E202 /* PrivacyInfo.xcprivacy */,
+				FB000001000000000000000B /* GoogleService-Info.plist */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -951,9 +942,9 @@
 			children = (
 				5CA059CA279559F40002BEB4 /* Inqalaab.app */,
 				5CA059D7279559F40002BEB4 /* Tests iOS.xctest */,
-				5CDCAD452818589900503DA2 /* SimpleX NSE.appex */,
-				5CE2BA682845308900EC33A6 /* SimpleXChat.framework */,
-				CEE723A72C3BD3D70009AE93 /* SimpleX SE.appex */,
+				5CDCAD452818589900503DA2 /* Inqalaab NSE.appex */,
+				5CE2BA682845308900EC33A6 /* InqalaabChat.framework */,
+				CEE723A72C3BD3D70009AE93 /* Inqalaab SE.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1061,20 +1052,20 @@
 			path = ChatList;
 			sourceTree = "<group>";
 		};
-		5CDCAD462818589900503DA2 /* SimpleX NSE */ = {
+		5CDCAD462818589900503DA2 /* Inqalaab NSE */ = {
 			isa = PBXGroup;
 			children = (
-				5CDCAD5128186DE400503DA2 /* SimpleX NSE.entitlements */,
+				5CDCAD5128186DE400503DA2 /* Inqalaab NSE.entitlements */,
 				E5DDBE6F2DC4217900A0EFF0 /* NSEAPITypes.swift */,
 				5CDCAD472818589900503DA2 /* NotificationService.swift */,
 				5CDCAD492818589900503DA2 /* Info.plist */,
 				5CB0BA862826CB3A00B3292C /* InfoPlist.strings */,
 				E5DCF9822C5902CE007928CC /* Localizable.strings */,
 			);
-			path = "SimpleX NSE";
+			path = "Inqalaab NSE";
 			sourceTree = "<group>";
 		};
-		5CE2BA692845308900EC33A6 /* SimpleXChat */ = {
+		5CE2BA692845308900EC33A6 /* InqalaabChat */ = {
 			isa = PBXGroup;
 			children = (
 				8C86EBE32C0DAE3700E12243 /* Theme */,
@@ -1092,16 +1083,16 @@
 				5C9D81182AA7A4F1001D49FD /* CryptoFile.swift */,
 				5C00168028C4FE760094D739 /* KeyChain.swift */,
 				5CF9371F2B24DE8C00E1D781 /* SharedFileSubscriber.swift */,
-				5CE2BA76284530BF00EC33A6 /* SimpleXChat.h */,
+				5CE2BA76284530BF00EC33A6 /* InqalaabChat.h */,
 				5CE2BA8A2845332200EC33A6 /* SimpleX.h */,
-				5CE2BA78284530CC00EC33A6 /* SimpleXChat.docc */,
+				5CE2BA78284530CC00EC33A6 /* InqalaabChat.docc */,
 				5CE2BA96284537A800EC33A6 /* dummy.m */,
 				5CD67B8D2B0E858A00C510B1 /* hs_init.h */,
 				5CD67B8E2B0E858A00C510B1 /* hs_init.c */,
 				8C01E9BF2C8EFBB6008A4B0A /* objc.h */,
 				8C01E9C02C8EFC33008A4B0A /* objc.m */,
 			);
-			path = SimpleXChat;
+			path = InqalaabChat;
 			sourceTree = "<group>";
 		};
 		5CE4407427ADB657007B033A /* ChatItem */ = {
@@ -1167,14 +1158,8 @@
 		643B3B4C2CCFD34B0083A2CF /* NetworkAndServers */ = {
 			isa = PBXGroup;
 			children = (
-				5C9329402929248A0090FFF9 /* ScanProtocolServer.swift */,
-				642BA82C2CE50495005E9412 /* NewServerView.swift */,
-				5C93293029239BED0090FFF9 /* ProtocolServerView.swift */,
-				5C93292E29239A170090FFF9 /* ProtocolServersView.swift */,
-				643B3B4D2CCFD6400083A2CF /* OperatorView.swift */,
 				5C9C2DA6289957AE00CC63B1 /* AdvancedNetworkSettings.swift */,
 				5C9C2DA82899DA6F00CC63B1 /* NetworkAndServers.swift */,
-				8CB3476D2CF5F58B006787A5 /* ConditionsWebView.swift */,
 			);
 			path = NetworkAndServers;
 			sourceTree = "<group>";
@@ -1274,10 +1259,10 @@
 			path = Nearby;
 			sourceTree = "<group>";
 		};
-		CEE723A82C3BD3D70009AE93 /* SimpleX SE */ = {
+		CEE723A82C3BD3D70009AE93 /* Inqalaab SE */ = {
 			isa = PBXGroup;
 			children = (
-				CEE723D42C3C21F50009AE93 /* SimpleX SE.entitlements */,
+				CEE723D42C3C21F50009AE93 /* Inqalaab SE.entitlements */,
 				CEE723AE2C3BD3D70009AE93 /* Info.plist */,
 				CEDE70212C48FD9500233B1F /* SEChatState.swift */,
 				CE1EB0E32C459A660099D896 /* ShareAPI.swift */,
@@ -1287,7 +1272,7 @@
 				E5DCF96F2C590272007928CC /* Localizable.strings */,
 				E5DCF9962C5906FF007928CC /* InfoPlist.strings */,
 			);
-			path = "SimpleX SE";
+			path = "Inqalaab SE";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1297,7 +1282,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5CE2BA77284530BF00EC33A6 /* SimpleXChat.h in Headers */,
+				5CE2BA77284530BF00EC33A6 /* InqalaabChat.h in Headers */,
 				5CD67B8F2B0E858A00C510B1 /* hs_init.h in Headers */,
 				8C01E9C22C8EFF8F008A4B0A /* objc.h in Headers */,
 				5CE2BA952845354B00EC33A6 /* SimpleX.h in Headers */,
@@ -1307,9 +1292,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		5CA059C9279559F40002BEB4 /* SimpleX (iOS) */ = {
+		5CA059C9279559F40002BEB4 /* Inqalaab (iOS) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5CA059F3279559F40002BEB4 /* Build configuration list for PBXNativeTarget "SimpleX (iOS)" */;
+			buildConfigurationList = 5CA059F3279559F40002BEB4 /* Build configuration list for PBXNativeTarget "Inqalaab (iOS)" */;
 			buildPhases = (
 				5CA059C6279559F40002BEB4 /* Sources */,
 				5CA059C7279559F40002BEB4 /* Frameworks */,
@@ -1324,7 +1309,7 @@
 				5CE2BA9F284555F500EC33A6 /* PBXTargetDependency */,
 				CEE723B02C3BD3D70009AE93 /* PBXTargetDependency */,
 			);
-			name = "SimpleX (iOS)";
+			name = "Inqalaab (iOS)";
 			packageProductDependencies = (
 				5C8F01CC27A6F0D8007D2C8D /* CodeScanner */,
 				D77B92DB2952372200A5A1CC /* SwiftyGif */,
@@ -1333,8 +1318,10 @@
 				8C8118712C220B5B00E6FC94 /* Yams */,
 				8CB3476B2CF5CFFA006787A5 /* Ink */,
 				B728945A2D0C62BF00F7A19A /* ElegantEmojiPicker */,
+				FB000001000000000000000D /* FirebaseCore */,
+				FB000001000000000000000E /* FirebaseRemoteConfig */,
 			);
-			productName = "SimpleX (iOS)";
+			productName = "Inqalaab (iOS)";
 			productReference = 5CA059CA279559F40002BEB4 /* Inqalaab.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -1356,9 +1343,9 @@
 			productReference = 5CA059D7279559F40002BEB4 /* Tests iOS.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
-		5CDCAD442818589900503DA2 /* SimpleX NSE */ = {
+		5CDCAD442818589900503DA2 /* Inqalaab NSE */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5CDCAD502818589900503DA2 /* Build configuration list for PBXNativeTarget "SimpleX NSE" */;
+			buildConfigurationList = 5CDCAD502818589900503DA2 /* Build configuration list for PBXNativeTarget "Inqalaab NSE" */;
 			buildPhases = (
 				5CDCAD412818589900503DA2 /* Sources */,
 				5CDCAD422818589900503DA2 /* Frameworks */,
@@ -1369,14 +1356,14 @@
 			dependencies = (
 				5CE2BAA92845617C00EC33A6 /* PBXTargetDependency */,
 			);
-			name = "SimpleX NSE";
-			productName = "SimpleX NSE";
-			productReference = 5CDCAD452818589900503DA2 /* SimpleX NSE.appex */;
+			name = "Inqalaab NSE";
+			productName = "Inqalaab NSE";
+			productReference = 5CDCAD452818589900503DA2 /* Inqalaab NSE.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
-		5CE2BA672845308900EC33A6 /* SimpleXChat */ = {
+		5CE2BA672845308900EC33A6 /* InqalaabChat */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5CE2BA752845308900EC33A6 /* Build configuration list for PBXNativeTarget "SimpleXChat" */;
+			buildConfigurationList = 5CE2BA752845308900EC33A6 /* Build configuration list for PBXNativeTarget "InqalaabChat" */;
 			buildPhases = (
 				5CE2BA632845308900EC33A6 /* Headers */,
 				5CE2BA642845308900EC33A6 /* Sources */,
@@ -1387,17 +1374,17 @@
 			);
 			dependencies = (
 			);
-			name = SimpleXChat;
+			name = InqalaabChat;
 			packageProductDependencies = (
 				CE38A29B2C3FCD72005ED185 /* SwiftyGif */,
 			);
-			productName = SimpleXChat;
-			productReference = 5CE2BA682845308900EC33A6 /* SimpleXChat.framework */;
+			productName = InqalaabChat;
+			productReference = 5CE2BA682845308900EC33A6 /* InqalaabChat.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		CEE723A62C3BD3D70009AE93 /* SimpleX SE */ = {
+		CEE723A62C3BD3D70009AE93 /* Inqalaab SE */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CEE723B42C3BD3D70009AE93 /* Build configuration list for PBXNativeTarget "SimpleX SE" */;
+			buildConfigurationList = CEE723B42C3BD3D70009AE93 /* Build configuration list for PBXNativeTarget "Inqalaab SE" */;
 			buildPhases = (
 				CEE723A32C3BD3D70009AE93 /* Sources */,
 				CEE723A52C3BD3D70009AE93 /* Resources */,
@@ -1408,9 +1395,9 @@
 			dependencies = (
 				CEE723D22C3C21C90009AE93 /* PBXTargetDependency */,
 			);
-			name = "SimpleX SE";
-			productName = "SimpleX SE";
-			productReference = CEE723A72C3BD3D70009AE93 /* SimpleX SE.appex */;
+			name = "Inqalaab SE";
+			productName = "Inqalaab SE";
+			productReference = CEE723A72C3BD3D70009AE93 /* Inqalaab SE.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
@@ -1422,7 +1409,7 @@
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1540;
 				LastUpgradeCheck = 1340;
-				ORGANIZATIONNAME = "SimpleX Chat";
+				ORGANIZATIONNAME = "Inqalaab";
 				TargetAttributes = {
 					5CA059C9279559F40002BEB4 = {
 						CreatedOnToolsVersion = 13.2.1;
@@ -1479,16 +1466,17 @@
 				8C73C1162C21E17B00892670 /* XCRemoteSwiftPackageReference "Yams" */,
 				8CB3476A2CF5CFFA006787A5 /* XCRemoteSwiftPackageReference "ink" */,
 				B72894592D0C62BF00F7A19A /* XCRemoteSwiftPackageReference "Elegant-Emoji-Picker" */,
+				FB000001000000000000000C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 5CA059CB279559F40002BEB4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				5CA059C9279559F40002BEB4 /* SimpleX (iOS) */,
+				5CA059C9279559F40002BEB4 /* Inqalaab (iOS) */,
 				5CA059D6279559F40002BEB4 /* Tests iOS */,
-				5CDCAD442818589900503DA2 /* SimpleX NSE */,
-				CEE723A62C3BD3D70009AE93 /* SimpleX SE */,
-				5CE2BA672845308900EC33A6 /* SimpleXChat */,
+				5CDCAD442818589900503DA2 /* Inqalaab NSE */,
+				CEE723A62C3BD3D70009AE93 /* Inqalaab SE */,
+				5CE2BA672845308900EC33A6 /* InqalaabChat */,
 			);
 		};
 /* End PBXProject section */
@@ -1501,6 +1489,7 @@
 				5C55A92E283D0FDE00C4E99E /* sounds in Resources */,
 				5CA059EF279559F40002BEB4 /* Assets.xcassets in Resources */,
 				D1A2B3C4D5E6F7A8B9C0E201 /* PrivacyInfo.xcprivacy in Resources */,
+				FB000001000000000000000A /* GoogleService-Info.plist in Resources */,
 				5CC2C0FC2809BF11000C35E3 /* Localizable.strings in Resources */,
 				5CC2C0FF2809BF11000C35E3 /* SimpleX--iOS--InfoPlist.strings in Resources */,
 			);
@@ -1556,7 +1545,6 @@
 				5C3F1D58284363C400EC8A82 /* PrivacySettings.swift in Sources */,
 				5C55A923283CEDE600C4E99E /* SoundPlayer.swift in Sources */,
 				64A779F82DBFDBF200FDEF2F /* MemberSupportView.swift in Sources */,
-				5C93292F29239A170090FFF9 /* ProtocolServersView.swift in Sources */,
 				5CB924D727A8563F00ACCCDD /* SettingsView.swift in Sources */,
 				B79ADAFF2CE4EF930083DFFD /* AddressCreationCard.swift in Sources */,
 				5CEACCE327DE9246000BD591 /* ComposeView.swift in Sources */,
@@ -1569,7 +1557,6 @@
 				644EFFE0292CFD7F00525D5B /* CIVoiceView.swift in Sources */,
 				6432857C2925443C00FBE5C8 /* GroupPreferencesView.swift in Sources */,
 				8CC317462D4FEBA800292A20 /* ScrollViewCells.swift in Sources */,
-				5C93293129239BED0090FFF9 /* ProtocolServerView.swift in Sources */,
 				5C9CC7AD28C55D7800BEF955 /* DatabaseEncryptionView.swift in Sources */,
 				8C74C3EC2C1B92A900039E77 /* Theme.swift in Sources */,
 				5CE4407927ADB701007B033A /* EmojiItemView.swift in Sources */,
@@ -1704,7 +1691,6 @@
 				5C764E89279CBCB3000C6508 /* ChatModel.swift in Sources */,
 				5C971E1D27AEBEF600C8A3CE /* ChatInfoView.swift in Sources */,
 				5CBD285C29575B8E00EC2CF4 /* WhatsNewView.swift in Sources */,
-				8CB3476E2CF5F58B006787A5 /* ConditionsWebView.swift in Sources */,
 				5CC1C99527A6CF7F000D9FF6 /* ShareSheet.swift in Sources */,
 				5C5E5D3B2824468B00B0488A /* ActiveCallView.swift in Sources */,
 				B70A39732D24090D00E80A5F /* TagListView.swift in Sources */,
@@ -1713,7 +1699,6 @@
 				6440CA00288857A10062C672 /* CIEventView.swift in Sources */,
 				5CB0BA92282713FD00B3292C /* CreateProfile.swift in Sources */,
 				5C5F2B7027EBC704006A9D5F /* ProfileImage.swift in Sources */,
-				5C9329412929248A0090FFF9 /* ScanProtocolServer.swift in Sources */,
 				8C7DF3202B7CDB0A00C886D0 /* MigrateFromDevice.swift in Sources */,
 				64EEB0F72C353F1C00972D62 /* ServersSummaryView.swift in Sources */,
 				64AA1C6C27F3537400AC7277 /* DeletedItemView.swift in Sources */,
@@ -1743,9 +1728,7 @@
 				5CB634AD29E46CF70066AD6B /* LocalAuthView.swift in Sources */,
 				18415FEFE153C5920BFB7828 /* GroupWelcomeView.swift in Sources */,
 				18415F9A2D551F9757DA4654 /* CIVideoView.swift in Sources */,
-				642BA82D2CE50495005E9412 /* NewServerView.swift in Sources */,
 				184158C131FDB829D8A117EA /* VideoPlayerView.swift in Sources */,
-				643B3B4E2CCFD6400083A2CF /* OperatorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1781,7 +1764,7 @@
 				5CD67B902B0E858A00C510B1 /* hs_init.c in Sources */,
 				5CE2BA91284533A300EC33A6 /* Notifications.swift in Sources */,
 				8C01E9C12C8EFC33008A4B0A /* objc.m in Sources */,
-				5CE2BA79284530CC00EC33A6 /* SimpleXChat.docc in Sources */,
+				5CE2BA79284530CC00EC33A6 /* InqalaabChat.docc in Sources */,
 				5CE2BA90284533A300EC33A6 /* JSON.swift in Sources */,
 				5CE2BA8B284533A300EC33A6 /* ChatTypes.swift in Sources */,
 				5CE2BA8F284533A300EC33A6 /* APITypes.swift in Sources */,
@@ -1813,33 +1796,33 @@
 /* Begin PBXTargetDependency section */
 		5CA059D9279559F40002BEB4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 5CA059C9279559F40002BEB4 /* SimpleX (iOS) */;
+			target = 5CA059C9279559F40002BEB4 /* Inqalaab (iOS) */;
 			targetProxy = 5CA059D8279559F40002BEB4 /* PBXContainerItemProxy */;
 		};
 		5CE2BA6F2845308900EC33A6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 5CE2BA672845308900EC33A6 /* SimpleXChat */;
+			target = 5CE2BA672845308900EC33A6 /* InqalaabChat */;
 			targetProxy = 5CE2BA6E2845308900EC33A6 /* PBXContainerItemProxy */;
 		};
 		5CE2BA9F284555F500EC33A6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 5CDCAD442818589900503DA2 /* SimpleX NSE */;
+			target = 5CDCAD442818589900503DA2 /* Inqalaab NSE */;
 			targetProxy = 5CE2BA9E284555F500EC33A6 /* PBXContainerItemProxy */;
 		};
 		5CE2BAA92845617C00EC33A6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			platformFilter = ios;
-			target = 5CE2BA672845308900EC33A6 /* SimpleXChat */;
+			target = 5CE2BA672845308900EC33A6 /* InqalaabChat */;
 			targetProxy = 5CE2BAA82845617C00EC33A6 /* PBXContainerItemProxy */;
 		};
 		CEE723B02C3BD3D70009AE93 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = CEE723A62C3BD3D70009AE93 /* SimpleX SE */;
+			target = CEE723A62C3BD3D70009AE93 /* Inqalaab SE */;
 			targetProxy = CEE723AF2C3BD3D70009AE93 /* PBXContainerItemProxy */;
 		};
 		CEE723D22C3C21C90009AE93 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 5CE2BA672845308900EC33A6 /* SimpleXChat */;
+			target = 5CE2BA672845308900EC33A6 /* InqalaabChat */;
 			targetProxy = CEE723D12C3C21C90009AE93 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -2120,7 +2103,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_TIDY_BUGPRONE_REDUNDANT_BRANCH_CONDITION = YES;
 				CLANG_TIDY_MISC_REDUNDANT_EXPRESSION = YES;
-				CODE_SIGN_ENTITLEMENTS = "SimpleX (iOS).entitlements";
+				CODE_SIGN_ENTITLEMENTS = "Inqalaab (iOS).entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 5;
 				DEAD_CODE_STRIPPING = YES;
@@ -2172,7 +2155,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_TIDY_BUGPRONE_REDUNDANT_BRANCH_CONDITION = YES;
 				CLANG_TIDY_MISC_REDUNDANT_EXPRESSION = YES;
-				CODE_SIGN_ENTITLEMENTS = "SimpleX (iOS).entitlements";
+				CODE_SIGN_ENTITLEMENTS = "Inqalaab (iOS).entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 5;
 				DEAD_CODE_STRIPPING = YES;
@@ -2229,7 +2212,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "SimpleX (iOS)";
+				TEST_TARGET_NAME = "Inqalaab (iOS)";
 			};
 			name = Debug;
 		};
@@ -2249,7 +2232,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "SimpleX (iOS)";
+				TEST_TARGET_NAME = "Inqalaab (iOS)";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -2260,7 +2243,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_TIDY_BUGPRONE_REDUNDANT_BRANCH_CONDITION = YES;
 				CLANG_TIDY_MISC_REDUNDANT_EXPRESSION = YES;
-				CODE_SIGN_ENTITLEMENTS = "SimpleX NSE/SimpleX NSE.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "Inqalaab NSE/Inqalaab NSE.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 5;
@@ -2268,9 +2251,9 @@
 				ENABLE_BITCODE = NO;
 				GCC_OPTIMIZATION_LEVEL = s;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "SimpleX NSE/Info.plist";
+				INFOPLIST_FILE = "Inqalaab NSE/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Inqalaab NSE";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 SimpleX Chat. All rights reserved.";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2024 Your Healing Artist Limited. All rights reserved.";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2297,7 +2280,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_TIDY_BUGPRONE_REDUNDANT_BRANCH_CONDITION = YES;
 				CLANG_TIDY_MISC_REDUNDANT_EXPRESSION = YES;
-				CODE_SIGN_ENTITLEMENTS = "SimpleX NSE/SimpleX NSE.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "Inqalaab NSE/Inqalaab NSE.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 5;
@@ -2305,9 +2288,9 @@
 				ENABLE_BITCODE = NO;
 				ENABLE_CODE_COVERAGE = NO;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "SimpleX NSE/Info.plist";
+				INFOPLIST_FILE = "Inqalaab NSE/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Inqalaab NSE";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 SimpleX Chat. All rights reserved.";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2024 Your Healing Artist Limited. All rights reserved.";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2346,7 +2329,7 @@
 				ENABLE_BITCODE = NO;
 				GCC_OPTIMIZATION_LEVEL = s;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 SimpleX Chat. All rights reserved.";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2024 Your Healing Artist Limited. All rights reserved.";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2364,14 +2347,14 @@
 				);
 				LLVM_LTO = YES;
 				MARKETING_VERSION = 1.1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.inqalaab.SimpleXChat;
+				PRODUCT_BUNDLE_IDENTIFIER = com.inqalaab.InqalaabChat;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_INCLUDE_PATHS = "";
-				SWIFT_OBJC_BRIDGING_HEADER = ./SimpleXChat/SimpleX.h;
+				SWIFT_OBJC_BRIDGING_HEADER = ./InqalaabChat/SimpleX.h;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2397,7 +2380,7 @@
 				ENABLE_BITCODE = NO;
 				ENABLE_CODE_COVERAGE = NO;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 SimpleX Chat. All rights reserved.";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2024 Your Healing Artist Limited. All rights reserved.";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2415,14 +2398,14 @@
 				);
 				LLVM_LTO = YES;
 				MARKETING_VERSION = 1.1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.inqalaab.SimpleXChat;
+				PRODUCT_BUNDLE_IDENTIFIER = com.inqalaab.InqalaabChat;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_INCLUDE_PATHS = "";
-				SWIFT_OBJC_BRIDGING_HEADER = ./SimpleXChat/SimpleX.h;
+				SWIFT_OBJC_BRIDGING_HEADER = ./InqalaabChat/SimpleX.h;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2437,16 +2420,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-				CODE_SIGN_ENTITLEMENTS = "SimpleX SE/SimpleX SE.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "Inqalaab SE/Inqalaab SE.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = C7P2NWA933;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "SimpleX SE/Info.plist";
+				INFOPLIST_FILE = "Inqalaab SE/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Inqalaab SE";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2024 SimpleX Chat. All rights reserved.";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2024 Your Healing Artist Limited. All rights reserved.";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2471,16 +2454,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-				CODE_SIGN_ENTITLEMENTS = "SimpleX SE/SimpleX SE.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "Inqalaab SE/Inqalaab SE.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = C7P2NWA933;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "SimpleX SE/Info.plist";
+				INFOPLIST_FILE = "Inqalaab SE/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Inqalaab SE";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2024 SimpleX Chat. All rights reserved.";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2024 Your Healing Artist Limited. All rights reserved.";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2512,7 +2495,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5CA059F3279559F40002BEB4 /* Build configuration list for PBXNativeTarget "SimpleX (iOS)" */ = {
+		5CA059F3279559F40002BEB4 /* Build configuration list for PBXNativeTarget "Inqalaab (iOS)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5CA059F4279559F40002BEB4 /* Debug */,
@@ -2530,7 +2513,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5CDCAD502818589900503DA2 /* Build configuration list for PBXNativeTarget "SimpleX NSE" */ = {
+		5CDCAD502818589900503DA2 /* Build configuration list for PBXNativeTarget "Inqalaab NSE" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5CDCAD4E2818589900503DA2 /* Debug */,
@@ -2539,7 +2522,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5CE2BA752845308900EC33A6 /* Build configuration list for PBXNativeTarget "SimpleXChat" */ = {
+		5CE2BA752845308900EC33A6 /* Build configuration list for PBXNativeTarget "InqalaabChat" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5CE2BA732845308900EC33A6 /* Debug */,
@@ -2548,7 +2531,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CEE723B42C3BD3D70009AE93 /* Build configuration list for PBXNativeTarget "SimpleX SE" */ = {
+		CEE723B42C3BD3D70009AE93 /* Build configuration list for PBXNativeTarget "Inqalaab SE" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CEE723B22C3BD3D70009AE93 /* Debug */,
@@ -2615,6 +2598,14 @@
 				revision = 7f62f21de5b18582a950e1753b775cc614722407;
 			};
 		};
+		FB000001000000000000000C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -2657,6 +2648,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D7F0E33729964E7D0068AF69 /* XCRemoteSwiftPackageReference "lzstring-swift" */;
 			productName = LZString;
+		};
+		FB000001000000000000000D /* FirebaseCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FB000001000000000000000C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCore;
+		};
+		FB000001000000000000000E /* FirebaseRemoteConfig */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FB000001000000000000000C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseRemoteConfig;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

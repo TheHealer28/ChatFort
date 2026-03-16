@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import SimpleXChat
+import InqalaabChat
 
 private var nseSubscribers: [UUID:NSESubscriber] = [:]
 

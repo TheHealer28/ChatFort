@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-import SimpleXChat
+import InqalaabChat
 
 struct NavLinkPlain<Label: View>: View {
     let chatId: ChatId

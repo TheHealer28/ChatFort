@@ -8,7 +8,7 @@
 
 import SwiftUI
 import LinkPresentation
-import SimpleXChat
+import InqalaabChat
 
 struct ComposeLinkView: View {
     @EnvironmentObject var theme: AppTheme

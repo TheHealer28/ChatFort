@@ -5,7 +5,7 @@
 "_italic_" = "\\_dőlt_";
 
 /* No comment provided by engineer. */
-"- connect to [directory service](simplex:/contact#/?v=1-4&smp=smp%3A%2F%2Fu2dS9sG8nMNURyZwqASV4yROM28Er0luVTx5X1CsMrU%3D%40smp4.simplex.im%2FeXSPwqTkKyDO3px4fLf1wx3MvPdjdLW3%23%2F%3Fv%3D1-2%26dh%3DMCowBQYDK2VuAyEAaiv6MkMH44L2TcYrt_CsX3ZvM11WgbMEUn0hkIKTOho%253D%26srv%3Do5vmywmrnaxalvz6wi3zicyftgio6psuvyniis6gco6bp6ekl4cqj4id.onion) (BETA)!\n- delivery receipts (up to 20 members).\n- faster and more stable." = "- kapcsolódás a [könyvtár szolgáltatáshoz](simplex:/contact#/?v=1-4&smp=smp%3A%2F%2Fu2dS9sG8nMNURyZwqASV4yROM28Er0luVTx5X1CsMrU%3D%40smp4.simplex.im%2FeXSPwqTkKyDO3px4fLf1wx3MvPdjdLW3%23%2F%3Fv%3D1-2%26dh%3DMCowBQYDK2VuAyEAaiv6MkMH44L2TcYrt_CsX3ZvM11WgbMEUn0hkIKTOho%253D%26srv%3Do5vmywmrnaxalvz6wi3zicyftgio6psuvyniis6gco6bp6ekl4cqj4id.onion) (BETA)!\n- kézbesítési jelentések (legfeljebb 20 tag).\n- gyorsabb és stabilabb.";
+"- connect to [directory service](https://github.com/TheHealer28/Inqalaab) (BETA)!\n- delivery receipts (up to 20 members).\n- faster and more stable." = "- kapcsolódás a [könyvtár szolgáltatáshoz](https://github.com/TheHealer28/Inqalaab) (BETA)!\n- kézbesítési jelentések (legfeljebb 20 tag).\n- gyorsabb és stabilabb.";
 
 /* No comment provided by engineer. */
 "- more stable message delivery.\n- a bit better groups.\n- and more!" = "- stabilabb üzenetkézbesítés.\n- picit továbbfejlesztett csoportok.\n- és még sok más!";
@@ -26,13 +26,13 @@
 "(this device v%@)" = "(ez az eszköz: v%@)";
 
 /* No comment provided by engineer. */
-"[Contribute](https://github.com/simplex-chat/simplex-chat#contribute)" = "[Közreműködés](https://github.com/simplex-chat/simplex-chat#contribute)";
+"[Contribute](https://github.com/TheHealer28/Inqalaab#contribute)" = "[Közreműködés](https://github.com/TheHealer28/Inqalaab#contribute)";
 
 /* No comment provided by engineer. */
 "[Send us email](mailto:chat@inqalaab.chat)" = "[Küldjön nekünk e-mailt](mailto:chat@inqalaab.chat)";
 
 /* No comment provided by engineer. */
-"[Star on GitHub](https://github.com/simplex-chat/simplex-chat)" = "[Csillagozás a GitHubon](https://github.com/simplex-chat/simplex-chat)";
+"[Star on GitHub](https://github.com/TheHealer28/Inqalaab)" = "[Csillagozás a GitHubon](https://github.com/TheHealer28/Inqalaab)";
 
 /* No comment provided by engineer. */
 "**Create 1-time link**: to create and share a new invitation link." = "**Partner hozzáadása:** új meghívási hivatkozás létrehozásához, vagy egy kapott hivatkozáson keresztül történő kapcsolódáshoz.";
@@ -889,7 +889,7 @@ marked deleted chat item preview text */
 "Both you and your contact can send voice messages." = "Mindkét fél küldhet hangüzeneteket.";
 
 /* No comment provided by engineer. */
-"Bulgarian, Finnish, Thai and Ukrainian - thanks to the users and [Weblate](https://github.com/simplex-chat/simplex-chat/tree/stable#help-translating-simplex-chat)!" = "Bolgár, finn, thai és ukrán – köszönet a felhasználóknak és a [Weblate-nek](https://github.com/simplex-chat/simplex-chat/tree/stable#help-translating-simplex-chat)!";
+"Bulgarian, Finnish, Thai and Ukrainian - thanks to the users and [Weblate](https://github.com/TheHealer28/Inqalaab/tree/stable#contribute)!" = "Bolgár, finn, thai és ukrán – köszönet a felhasználóknak és a [Weblate-nek](https://github.com/TheHealer28/Inqalaab/tree/stable#contribute)!";
 
 /* No comment provided by engineer. */
 "Business address" = "Üzleti cím";
@@ -904,7 +904,7 @@ marked deleted chat item preview text */
 "Businesses" = "Üzleti";
 
 /* No comment provided by engineer. */
-"By chat profile (default) or [by connection](https://simplex.chat/blog/20230204-simplex-chat-v4-5-user-chat-profiles.html#transport-isolation) (BETA)." = "A csevegési profillal (alapértelmezett), vagy a [kapcsolattal] (https://simplex.chat/blog/20230204-simplex-chat-v4-5-user-chat-profiles.html#transport-isolation) (BÉTA).";
+"By chat profile (default) or [by connection](https://github.com/TheHealer28/Inqalaab) (BETA)." = "A csevegési profillal (alapértelmezett), vagy a [kapcsolattal] (https://github.com/TheHealer28/Inqalaab) (BÉTA).";
 
 /* No comment provided by engineer. */
 "By using Inqalaab you agree to:\n- send only legal content in public groups.\n- respect other users – no spam." = "A Inqalaab használatával Ön elfogadja, hogy:\n- csak elfogadott tartalmakat tesz közzé a nyilvános csoportokban.\n- tiszteletben tartja a többi felhasználót, és nem küld kéretlen tartalmat senkinek.";
@@ -1486,7 +1486,7 @@ set passcode view */
 "Create list" = "Lista létrehozása";
 
 /* No comment provided by engineer. */
-"Create new profile in [desktop app](https://simplex.chat/downloads/). 💻" = "Új profil létrehozása a [számítógép-alkalmazásban](https://simplex.chat/downloads/). 💻";
+"Create new profile in [desktop app](https://github.com/TheHealer28/Inqalaab). 💻" = "Új profil létrehozása a [számítógép-alkalmazásban](https://github.com/TheHealer28/Inqalaab). 💻";
 
 /* No comment provided by engineer. */
 "Create profile" = "Profil létrehozása";
@@ -2958,7 +2958,7 @@ snd error text */
 "Initial role" = "Kezdeti szerepkör";
 
 /* No comment provided by engineer. */
-"Install [Inqalaab for terminal](https://github.com/simplex-chat/simplex-chat)" = "A [Inqalaab terminálhoz] telepítése (https://github.com/simplex-chat/simplex-chat)";
+"Install [Inqalaab for terminal](https://github.com/TheHealer28/Inqalaab)" = "A [Inqalaab terminálhoz] telepítése (https://github.com/TheHealer28/Inqalaab)";
 
 /* No comment provided by engineer. */
 "Instant" = "Azonnali";
@@ -4238,16 +4238,16 @@ new chat action */
 "Read more" = "Tudjon meg többet";
 
 /* No comment provided by engineer. */
-"Read more in [User Guide](https://simplex.chat/docs/guide/chat-profiles.html#incognito-mode)." = "További információ a [Használati útmutatóban](https://simplex.chat/docs/guide/chat-profiles.html#incognito-mode).";
+"Read more in [User Guide](https://github.com/TheHealer28/Inqalaab)." = "További információ a [Használati útmutatóban](https://github.com/TheHealer28/Inqalaab).";
 
 /* No comment provided by engineer. */
-"Read more in [User Guide](https://simplex.chat/docs/guide/making-connections.html#comparison-of-1-time-invitation-links-and-simplex-contact-addresses)." = "További információ a [Használati útmutatóban](https://simplex.chat/docs/guide/making-connections.html#comparison-of-1-time-invitation-links-and-simplex-contact-addresses).";
+"Read more in [User Guide](https://github.com/TheHealer28/Inqalaab)." = "További információ a [Használati útmutatóban](https://github.com/TheHealer28/Inqalaab).";
 
 /* No comment provided by engineer. */
-"Read more in [User Guide](https://simplex.chat/docs/guide/readme.html#connect-to-friends)." = "További információ a [Használati útmutatóban](https://simplex.chat/docs/guide/readme.html#connect-to-friends).";
+"Read more in [User Guide](https://github.com/TheHealer28/Inqalaab)." = "További információ a [Használati útmutatóban](https://github.com/TheHealer28/Inqalaab).";
 
 /* No comment provided by engineer. */
-"Read more in our [GitHub repository](https://github.com/simplex-chat/simplex-chat#readme)." = "További információ a [GitHub-tárolónkban](https://github.com/simplex-chat/simplex-chat#readme).";
+"Read more in our [GitHub repository](https://github.com/TheHealer28/Inqalaab#readme)." = "További információ a [GitHub-tárolónkban](https://github.com/TheHealer28/Inqalaab#readme).";
 
 /* No comment provided by engineer. */
 "Receipts are disabled" = "A kézbesítési jelentések le vannak tiltva";
@@ -4292,7 +4292,7 @@ new chat action */
 "Receiving via" = "Fogadás a következőn keresztül:";
 
 /* No comment provided by engineer. */
-"Recent history and improved [directory bot](simplex:/contact#/?v=1-4&smp=smp%3A%2F%2Fu2dS9sG8nMNURyZwqASV4yROM28Er0luVTx5X1CsMrU%3D%40smp4.simplex.im%2FeXSPwqTkKyDO3px4fLf1wx3MvPdjdLW3%23%2F%3Fv%3D1-2%26dh%3DMCowBQYDK2VuAyEAaiv6MkMH44L2TcYrt_CsX3ZvM11WgbMEUn0hkIKTOho%253D%26srv%3Do5vmywmrnaxalvz6wi3zicyftgio6psuvyniis6gco6bp6ekl4cqj4id.onion)." = "Legutóbbi előzmények és továbbfejlesztett [könyvtárbot](simplex:/contact#/?v=1-4&smp=smp%3A%2F%2Fu2dS9sG8nMNURyZwqASV4yROM28Er0luVTx5X1CsMrU%3D%40smp4.simplex.im%2FeXSPwqTkKyDO3px4fLf1wx3MvPdjdLW3%23%2F%3Fv%3D1-2%26dh%3DMCowBQYDK2VuAyEAaiv6MkMH44L2TcYrt_CsX3ZvM11WgbMEUn0hkIKTOho%253D%26srv%3Do5vmywmrnaxalvz6wi3zicyftgio6psuvyniis6gco6bp6ekl4cqj4id.onion).";
+"Recent history and improved [directory bot](https://github.com/TheHealer28/Inqalaab)." = "Legutóbbi előzmények és továbbfejlesztett [könyvtárbot](https://github.com/TheHealer28/Inqalaab).";
 
 /* No comment provided by engineer. */
 "Recipient(s) can't see who this message is from." = "A címzett(ek) nem látja(k), hogy kitől származik ez az üzenet.";
@@ -5341,7 +5341,7 @@ report reason */
 "Thank you for installing Inqalaab!" = "Köszönjük, hogy telepítette a Inqalaabet!";
 
 /* No comment provided by engineer. */
-"Thanks to the users – [contribute via Weblate](https://github.com/simplex-chat/simplex-chat/tree/stable#help-translating-simplex-chat)!" = "Köszönet a felhasználóknak [a Weblate-en való közreműködésért](https://github.com/simplex-chat/simplex-chat/tree/stable#help-translating-simplex-chat)!";
+"Thanks to the users – [contribute via Weblate](https://github.com/TheHealer28/Inqalaab/tree/stable#contribute)!" = "Köszönet a felhasználóknak [a Weblate-en való közreműködésért](https://github.com/TheHealer28/Inqalaab/tree/stable#contribute)!";
 
 /* No comment provided by engineer. */
 "Thanks to the users – contribute via Weblate!" = "Köszönet a felhasználóknak a Weblate-en való közreműködésért!";

@@ -8,7 +8,7 @@
 
 import Foundation
 import SwiftUI
-import SimpleXChat
+import InqalaabChat
 
 struct ChatViewBackground: ViewModifier {
     @Environment(\.colorScheme) var colorScheme

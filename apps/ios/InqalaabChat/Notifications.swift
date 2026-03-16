@@ -19,7 +19,7 @@ public let ntfCategoryConnectionEvent = "NTF_CAT_CONNECTION_EVENT"
 public let ntfCategoryManyEvents = "NTF_CAT_MANY_EVENTS"
 public let ntfCategoryCheckMessage = "NTF_CAT_CHECK_MESSAGE"
 
-public let appNotificationId = "chat.simplex.app.notification"
+public let appNotificationId = "com.inqalaab.app.notification"
 
 let contactHidden = NSLocalizedString("Contact hidden:", comment: "notification")
 

@@ -8,7 +8,7 @@
 
 import SwiftUI
 import CoreImage.CIFilterBuiltins
-import SimpleXChat
+import InqalaabChat
 
 struct MutableQRCode: View {
     @Binding var uri: String
@@ -18,11 +18,11 @@ struct MutableQRCode: View {
 
     var body: some View {
         QRCode(uri: uri, small: small, withLogo: withLogo, tintColor: tintColor)
-            .id("simplex-qrcode-view-for-\(uri)")
+            .id("inqalaab-qrcode-view-for-\(uri)")
     }
 }
 
-struct SimpleXCreatedLinkQRCode: View {
+struct InqalaabCreatedLinkQRCode: View {
     let link: CreatedConnLink
     @Binding var short: Bool
     var onShare: (() -> Void)? = nil
@@ -32,7 +32,7 @@ struct SimpleXCreatedLinkQRCode: View {
     }
 }
 
-struct SimpleXLinkQRCode: View {
+struct InqalaabLinkQRCode: View {
     let uri: String
     var withLogo: Bool = true
     var tintColor = UIColor(red: 0.023, green: 0.176, blue: 0.337, alpha: 1)

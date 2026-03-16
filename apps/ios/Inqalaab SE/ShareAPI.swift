@@ -8,7 +8,7 @@
 
 import OSLog
 import Foundation
-import SimpleXChat
+import InqalaabChat
 
 let logger = Logger()
 

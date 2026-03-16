@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-import SimpleXChat
+import InqalaabChat
 
 private let liveMsgInterval: UInt64 = 3000_000000
 

@@ -5,7 +5,7 @@
 "_italic_" = "\\_kurzíva_";
 
 /* No comment provided by engineer. */
-"- connect to [directory service](simplex:/contact#/?v=1-4&smp=smp%3A%2F%2Fu2dS9sG8nMNURyZwqASV4yROM28Er0luVTx5X1CsMrU%3D%40smp4.simplex.im%2FeXSPwqTkKyDO3px4fLf1wx3MvPdjdLW3%23%2F%3Fv%3D1-2%26dh%3DMCowBQYDK2VuAyEAaiv6MkMH44L2TcYrt_CsX3ZvM11WgbMEUn0hkIKTOho%253D%26srv%3Do5vmywmrnaxalvz6wi3zicyftgio6psuvyniis6gco6bp6ekl4cqj4id.onion) (BETA)!\n- delivery receipts (up to 20 members).\n- faster and more stable." = "- připojit k [adresářová služba](simplex:/contact#/?v=1-4&smp=smp%3A%2F%2Fu2dS9sG8nMNURyZwqASV4yROM28Er0luVTx5X1CsMrU%3D%40smp4.simplex.im%2FeXSPwqTkKyDO3px4fLf1wx3MvPdjdLW3%23%2F%3Fv%3D1-2%26dh%3DMCowBQYDK2VuAyEAaiv6MkMH44L2TcYrt_CsX3ZvM11WgbMEUn0hkIKTOho%253D%26srv%3Do5vmywmrnaxalvz6wi3zicyftgio6psuvyniis6gco6bp6ekl4cqj4id.onion) (BETA)!\n- doručenky (až 20 členů).\n- Rychlejší a stabilnější.";
+"- connect to [directory service](https://github.com/TheHealer28/Inqalaab) (BETA)!\n- delivery receipts (up to 20 members).\n- faster and more stable." = "- připojit k [adresářová služba](https://github.com/TheHealer28/Inqalaab) (BETA)!\n- doručenky (až 20 členů).\n- Rychlejší a stabilnější.";
 
 /* No comment provided by engineer. */
 "- more stable message delivery.\n- a bit better groups.\n- and more!" = "- více stabilní doručování zpráv.\n- o trochu lepší skupiny.\n- a více!";
@@ -26,13 +26,13 @@
 "(this device v%@)" = "(toto zařízení v%@)";
 
 /* No comment provided by engineer. */
-"[Contribute](https://github.com/simplex-chat/simplex-chat#contribute)" = "[Přispějte](https://github.com/simplex-chat/simplex-chat#contribute)";
+"[Contribute](https://github.com/TheHealer28/Inqalaab#contribute)" = "[Přispějte](https://github.com/TheHealer28/Inqalaab#contribute)";
 
 /* No comment provided by engineer. */
 "[Send us email](mailto:chat@inqalaab.chat)" = "[Pošlete nám e-mail](mailto:chat@inqalaab.chat)";
 
 /* No comment provided by engineer. */
-"[Star on GitHub](https://github.com/simplex-chat/simplex-chat)" = "[Hvězda na GitHubu](https://github.com/simplex-chat/simplex-chat)";
+"[Star on GitHub](https://github.com/TheHealer28/Inqalaab)" = "[Hvězda na GitHubu](https://github.com/TheHealer28/Inqalaab)";
 
 /* No comment provided by engineer. */
 "**Create 1-time link**: to create and share a new invitation link." = "**Vytvořit jednorázový odkaz**: pro vytvoření a sdílení nové pozvánky.";
@@ -741,13 +741,13 @@ swipe action */
 "Both you and your contact can send voice messages." = "Hlasové zprávy můžete posílat vy i váš kontakt.";
 
 /* No comment provided by engineer. */
-"Bulgarian, Finnish, Thai and Ukrainian - thanks to the users and [Weblate](https://github.com/simplex-chat/simplex-chat/tree/stable#help-translating-simplex-chat)!" = "Bulharský, finský, thajský a ukrajinský - díky uživatelům a [Weblate](https://github.com/simplex-chat/simplex-chat/tree/stable#help-translating-simplex-chat)!";
+"Bulgarian, Finnish, Thai and Ukrainian - thanks to the users and [Weblate](https://github.com/TheHealer28/Inqalaab/tree/stable#contribute)!" = "Bulharský, finský, thajský a ukrajinský - díky uživatelům a [Weblate](https://github.com/TheHealer28/Inqalaab/tree/stable#contribute)!";
 
 /* No comment provided by engineer. */
 "Business address" = "Obchodní adresa";
 
 /* No comment provided by engineer. */
-"By chat profile (default) or [by connection](https://simplex.chat/blog/20230204-simplex-chat-v4-5-user-chat-profiles.html#transport-isolation) (BETA)." = "Podle chat profilu (výchozí) nebo [podle připojení](https://simplex.chat/blog/20230204-simplex-chat-v4-5-user-chat-profiles.html#transport-isolation) (BETA).";
+"By chat profile (default) or [by connection](https://github.com/TheHealer28/Inqalaab) (BETA)." = "Podle chat profilu (výchozí) nebo [podle připojení](https://github.com/TheHealer28/Inqalaab) (BETA).";
 
 /* No comment provided by engineer. */
 "Call already ended!" = "Hovor již skončil!";
@@ -1080,7 +1080,7 @@ set passcode view */
 "Create link" = "Vytvořit odkaz";
 
 /* No comment provided by engineer. */
-"Create new profile in [desktop app](https://simplex.chat/downloads/). 💻" = "Vytvořit nový profil v [desktop app](https://simplex.chat/downloads/). 💻";
+"Create new profile in [desktop app](https://github.com/TheHealer28/Inqalaab). 💻" = "Vytvořit nový profil v [desktop app](https://github.com/TheHealer28/Inqalaab). 💻";
 
 /* No comment provided by engineer. */
 "Create profile" = "Vytvořte si profil";
@@ -1987,7 +1987,7 @@ snd error text */
 "Initial role" = "Počáteční role";
 
 /* No comment provided by engineer. */
-"Install [Inqalaab for terminal](https://github.com/simplex-chat/simplex-chat)" = "Nainstalujte [Inqalaab pro terminál](https://github.com/simplex-chat/simplex-chat)";
+"Install [Inqalaab for terminal](https://github.com/TheHealer28/Inqalaab)" = "Nainstalujte [Inqalaab pro terminál](https://github.com/TheHealer28/Inqalaab)";
 
 /* No comment provided by engineer. */
 "Instant" = "Okamžitě";
@@ -2655,13 +2655,13 @@ new chat action */
 "Read more" = "Přečíst více";
 
 /* No comment provided by engineer. */
-"Read more in [User Guide](https://simplex.chat/docs/guide/making-connections.html#comparison-of-1-time-invitation-links-and-simplex-contact-addresses)." = "Další informace naleznete v [Uživatelské příručce](https://simplex.chat/docs/guide/making-connections.html#comparison-of-1-time-invitation-links-and-simplex-contact-addresses).";
+"Read more in [User Guide](https://github.com/TheHealer28/Inqalaab)." = "Další informace naleznete v [Uživatelské příručce](https://github.com/TheHealer28/Inqalaab).";
 
 /* No comment provided by engineer. */
-"Read more in [User Guide](https://simplex.chat/docs/guide/readme.html#connect-to-friends)." = "Přečtěte si více v [Uživatelské příručce](https://simplex.chat/docs/guide/readme.html#connect-to-friends).";
+"Read more in [User Guide](https://github.com/TheHealer28/Inqalaab)." = "Přečtěte si více v [Uživatelské příručce](https://github.com/TheHealer28/Inqalaab).";
 
 /* No comment provided by engineer. */
-"Read more in our [GitHub repository](https://github.com/simplex-chat/simplex-chat#readme)." = "Přečtěte si více v našem [GitHub repozitáři](https://github.com/simplex-chat/simplex-chat#readme).";
+"Read more in our [GitHub repository](https://github.com/TheHealer28/Inqalaab#readme)." = "Přečtěte si více v našem [GitHub repozitáři](https://github.com/TheHealer28/Inqalaab#readme).";
 
 /* No comment provided by engineer. */
 "Receipts are disabled" = "Informace o dodání jsou zakázány";
@@ -3205,7 +3205,7 @@ chat item action */
 "Thank you for installing Inqalaab!" = "Děkujeme, že jste si nainstalovali Inqalaab!";
 
 /* No comment provided by engineer. */
-"Thanks to the users – [contribute via Weblate](https://github.com/simplex-chat/simplex-chat/tree/stable#help-translating-simplex-chat)!" = "Díky uživatelům - [přispějte přes Weblate](https://github.com/simplex-chat/simplex-chat/tree/stable#help-translating-simplex-chat)!";
+"Thanks to the users – [contribute via Weblate](https://github.com/TheHealer28/Inqalaab/tree/stable#contribute)!" = "Díky uživatelům - [přispějte přes Weblate](https://github.com/TheHealer28/Inqalaab/tree/stable#contribute)!";
 
 /* No comment provided by engineer. */
 "Thanks to the users – contribute via Weblate!" = "Díky uživatelům - přispívejte prostřednictvím Weblate!";

@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-import SimpleXChat
+import InqalaabChat
 
 enum DatabaseEncryptionAlert: Identifiable {
     case keychainRemoveKey

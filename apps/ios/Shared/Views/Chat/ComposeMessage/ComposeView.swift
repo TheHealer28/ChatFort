@@ -1,6 +1,6 @@
 
 import SwiftUI
-import SimpleXChat
+import InqalaabChat
 import SwiftyGif
 import PhotosUI
 
@@ -330,7 +330,7 @@ struct ComposeView: View {
     var disabledText: LocalizedStringKey? = nil
 
     @State var linkUrl: String? = nil
-    @State var hasSimplexLink: Bool = false
+    @State var hasInqalaabLink: Bool = false
     @State var prevLinkUrl: String? = nil
     @State var pendingLinkUrl: String? = nil
     @State var cancelledLinks: Set<String> = []
@@ -388,11 +388,11 @@ struct ComposeView: View {
                 Divider()
             }
             // preference checks should match checks in forwarding list
-            let simplexLinkProhibited = im.secondaryIMFilter == nil && hasSimplexLink && !chat.groupFeatureEnabled(.simplexLinks)
+            let inqalaabLinkProhibited = im.secondaryIMFilter == nil && hasInqalaabLink && !chat.groupFeatureEnabled(.simplexLinks)
             let fileProhibited = im.secondaryIMFilter == nil && composeState.attachmentPreview && !chat.groupFeatureEnabled(.files)
             let voiceProhibited = composeState.voicePreview && !chat.chatInfo.featureEnabled(.voice)
-            let disableSendButton = simplexLinkProhibited || fileProhibited || voiceProhibited
-            if simplexLinkProhibited {
+            let disableSendButton = inqalaabLinkProhibited || fileProhibited || voiceProhibited
+            if inqalaabLinkProhibited {
                 msgNotAllowedView("Inqalaab links not allowed", icon: "link")
                 Divider()
             } else if fileProhibited {
@@ -485,12 +485,12 @@ struct ComposeView: View {
                     showLinkPreview(parsedMsg)
                 } else {
                     resetLinkPreview()
-                    hasSimplexLink = false
+                    hasInqalaabLink = false
                     composeState = composeState.copy(preview: .noPreview)
                 }
             } else {
                 resetLinkPreview()
-                hasSimplexLink = !msg.isEmpty && !chat.groupFeatureEnabled(.simplexLinks) && getMessageLinks(parsedMsg).hasSimplexLink
+                hasInqalaabLink = !msg.isEmpty && !chat.groupFeatureEnabled(.simplexLinks) && getMessageLinks(parsedMsg).hasInqalaabLink
                 if composeState.linkPreviewAllowed {
                     composeState = composeState.copy(preview: .noPreview)
                 }
@@ -1475,7 +1475,7 @@ struct ComposeView: View {
 
     private func showLinkPreview(_ parsedMsg: [FormattedText]?) {
         prevLinkUrl = linkUrl
-        (linkUrl, hasSimplexLink) = getMessageLinks(parsedMsg)
+        (linkUrl, hasInqalaabLink) = getMessageLinks(parsedMsg)
         if let url = linkUrl {
             if url != composeState.linkPreview?.uri && url != pendingLinkUrl {
                 pendingLinkUrl = url
@@ -1492,18 +1492,18 @@ struct ComposeView: View {
         }
     }
 
-    private func getMessageLinks(_ parsedMsg: [FormattedText]?) -> (url: String?, hasSimplexLink: Bool) {
+    private func getMessageLinks(_ parsedMsg: [FormattedText]?) -> (url: String?, hasInqalaabLink: Bool) {
         guard let parsedMsg else { return (nil, false) }
-        let simplexLink = parsedMsgHasSimplexLink(parsedMsg)
+        let inqalaabLink = parsedMsgHasSimplexLink(parsedMsg)
         for ft in parsedMsg {
-            if let link = ft.linkUri, !cancelledLinks.contains(link) && !isSimplexLink(link) {
-                return (link, simplexLink)
+            if let link = ft.linkUri, !cancelledLinks.contains(link) && !isInqalaabLink(link) {
+                return (link, inqalaabLink)
             }
         }
-        return (nil, simplexLink)
+        return (nil, inqalaabLink)
     }
 
-    private func isSimplexLink(_ link: String) -> Bool {
+    private func isInqalaabLink(_ link: String) -> Bool {
         link.starts(with: "https://simplex.chat") || link.starts(with: "http://simplex.chat") || link.starts(with: "simplex:/") || link.starts(with: "https://example.net") || link.starts(with: "http://example.net")
     }
 

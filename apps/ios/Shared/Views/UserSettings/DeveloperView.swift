@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-import SimpleXChat
+import InqalaabChat
 
 struct DeveloperView: View {
     @EnvironmentObject var theme: AppTheme

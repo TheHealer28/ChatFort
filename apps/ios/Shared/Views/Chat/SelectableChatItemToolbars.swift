@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-import SimpleXChat
+import InqalaabChat
 
 struct SelectedItemsTopToolbar: View {
     @Environment(\.colorScheme) var colorScheme

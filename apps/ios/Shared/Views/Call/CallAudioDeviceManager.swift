@@ -8,7 +8,7 @@
 
 import Foundation
 import SwiftUI
-import SimpleXChat
+import InqalaabChat
 import AVKit
 import WebRTC
 

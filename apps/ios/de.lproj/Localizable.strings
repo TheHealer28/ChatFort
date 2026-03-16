@@ -5,7 +5,7 @@
 "_italic_" = "\\_kursiv_";
 
 /* No comment provided by engineer. */
-"- connect to [directory service](simplex:/contact#/?v=1-4&smp=smp%3A%2F%2Fu2dS9sG8nMNURyZwqASV4yROM28Er0luVTx5X1CsMrU%3D%40smp4.simplex.im%2FeXSPwqTkKyDO3px4fLf1wx3MvPdjdLW3%23%2F%3Fv%3D1-2%26dh%3DMCowBQYDK2VuAyEAaiv6MkMH44L2TcYrt_CsX3ZvM11WgbMEUn0hkIKTOho%253D%26srv%3Do5vmywmrnaxalvz6wi3zicyftgio6psuvyniis6gco6bp6ekl4cqj4id.onion) (BETA)!\n- delivery receipts (up to 20 members).\n- faster and more stable." = "- Verbinden mit dem [Directory-Service](simplex:/contact#/?v=1-4&smp=smp%3A%2F%2Fu2dS9sG8nMNURyZwqASV4yROM28Er0luVTx5X1CsMrU%3D%40smp4.simplex.im%2FeXSPwqTkKyDO3px4fLf1wx3MvPdjdLW3%23%2F%3Fv%3D1-2%26dh%3DMCowBQYDK2VuAyEAaiv6MkMH44L2TcYrt_CsX3ZvM11WgbMEUn0hkIKTOho%253D%26srv%3Do5vmywmrnaxalvz6wi3zicyftgio6psuvyniis6gco6bp6ekl4cqj4id.onion) (BETA)!\n- Empfangsbestätigungen (für bis zu 20 Mitglieder).\n- Schneller und stabiler.";
+"- connect to [directory service](https://github.com/TheHealer28/Inqalaab) (BETA)!\n- delivery receipts (up to 20 members).\n- faster and more stable." = "- Verbinden mit dem [Directory-Service](https://github.com/TheHealer28/Inqalaab) (BETA)!\n- Empfangsbestätigungen (für bis zu 20 Mitglieder).\n- Schneller und stabiler.";
 
 /* No comment provided by engineer. */
 "- more stable message delivery.\n- a bit better groups.\n- and more!" = "- stabilere Zustellung von Nachrichten.\n- ein bisschen verbesserte Gruppen.\n- und mehr!";
@@ -26,13 +26,13 @@
 "(this device v%@)" = "(Dieses Gerät hat v%@)";
 
 /* No comment provided by engineer. */
-"[Contribute](https://github.com/simplex-chat/simplex-chat#contribute)" = "[Unterstützen Sie uns](https://github.com/simplex-chat/simplex-chat#contribute)";
+"[Contribute](https://github.com/TheHealer28/Inqalaab#contribute)" = "[Unterstützen Sie uns](https://github.com/TheHealer28/Inqalaab#contribute)";
 
 /* No comment provided by engineer. */
 "[Send us email](mailto:chat@inqalaab.chat)" = "[Senden Sie uns eine E-Mail](mailto:chat@inqalaab.chat)";
 
 /* No comment provided by engineer. */
-"[Star on GitHub](https://github.com/simplex-chat/simplex-chat)" = "[Stern auf GitHub vergeben](https://github.com/simplex-chat/simplex-chat)";
+"[Star on GitHub](https://github.com/TheHealer28/Inqalaab)" = "[Stern auf GitHub vergeben](https://github.com/TheHealer28/Inqalaab)";
 
 /* No comment provided by engineer. */
 "**Create 1-time link**: to create and share a new invitation link." = "**Kontakt hinzufügen**: Um einen neuen Einladungslink zu erstellen.";
@@ -889,7 +889,7 @@ marked deleted chat item preview text */
 "Both you and your contact can send voice messages." = "Sowohl Ihr Kontakt, als auch Sie können Sprachnachrichten senden.";
 
 /* No comment provided by engineer. */
-"Bulgarian, Finnish, Thai and Ukrainian - thanks to the users and [Weblate](https://github.com/simplex-chat/simplex-chat/tree/stable#help-translating-simplex-chat)!" = "Bulgarisch, Finnisch, Thailändisch und Ukrainisch - Dank der Nutzer und [Weblate](https://github.com/simplex-chat/simplex-chat/tree/stable#help-translating-simplex-chat)!";
+"Bulgarian, Finnish, Thai and Ukrainian - thanks to the users and [Weblate](https://github.com/TheHealer28/Inqalaab/tree/stable#contribute)!" = "Bulgarisch, Finnisch, Thailändisch und Ukrainisch - Dank der Nutzer und [Weblate](https://github.com/TheHealer28/Inqalaab/tree/stable#contribute)!";
 
 /* No comment provided by engineer. */
 "Business address" = "Geschäftliche Adresse";
@@ -904,7 +904,7 @@ marked deleted chat item preview text */
 "Businesses" = "Unternehmen";
 
 /* No comment provided by engineer. */
-"By chat profile (default) or [by connection](https://simplex.chat/blog/20230204-simplex-chat-v4-5-user-chat-profiles.html#transport-isolation) (BETA)." = "Per Chat-Profil (Voreinstellung) oder [per Verbindung](https://simplex.chat/blog/20230204-simplex-chat-v4-5-user-chat-profiles.html#transport-isolation) (BETA).";
+"By chat profile (default) or [by connection](https://github.com/TheHealer28/Inqalaab) (BETA)." = "Per Chat-Profil (Voreinstellung) oder [per Verbindung](https://github.com/TheHealer28/Inqalaab) (BETA).";
 
 /* No comment provided by engineer. */
 "By using Inqalaab you agree to:\n- send only legal content in public groups.\n- respect other users – no spam." = "Durch die Nutzung von Inqalaab erklären Sie sich damit einverstanden:\n- nur legale Inhalte in öffentlichen Gruppen zu versenden.\n- andere Nutzer zu respektieren - kein Spam.";
@@ -1486,7 +1486,7 @@ set passcode view */
 "Create list" = "Liste erstellen";
 
 /* No comment provided by engineer. */
-"Create new profile in [desktop app](https://simplex.chat/downloads/). 💻" = "Neues Profil in der [Desktop-App] erstellen (https://simplex.chat/downloads/). 💻";
+"Create new profile in [desktop app](https://github.com/TheHealer28/Inqalaab). 💻" = "Neues Profil in der [Desktop-App] erstellen (https://github.com/TheHealer28/Inqalaab). 💻";
 
 /* No comment provided by engineer. */
 "Create profile" = "Profil erstellen";
@@ -2958,7 +2958,7 @@ snd error text */
 "Initial role" = "Anfängliche Rolle";
 
 /* No comment provided by engineer. */
-"Install [Inqalaab for terminal](https://github.com/simplex-chat/simplex-chat)" = "Installieren Sie [Inqalaab als Terminalanwendung](https://github.com/simplex-chat/simplex-chat)";
+"Install [Inqalaab for terminal](https://github.com/TheHealer28/Inqalaab)" = "Installieren Sie [Inqalaab als Terminalanwendung](https://github.com/TheHealer28/Inqalaab)";
 
 /* No comment provided by engineer. */
 "Instant" = "Sofort";
@@ -4238,16 +4238,16 @@ new chat action */
 "Read more" = "Mehr erfahren";
 
 /* No comment provided by engineer. */
-"Read more in [User Guide](https://simplex.chat/docs/guide/chat-profiles.html#incognito-mode)." = "Lesen Sie mehr dazu im [Benutzerhandbuch](https://simplex.chat/docs/guide/chat-profiles.html#incognito-mode).";
+"Read more in [User Guide](https://github.com/TheHealer28/Inqalaab)." = "Lesen Sie mehr dazu im [Benutzerhandbuch](https://github.com/TheHealer28/Inqalaab).";
 
 /* No comment provided by engineer. */
-"Read more in [User Guide](https://simplex.chat/docs/guide/making-connections.html#comparison-of-1-time-invitation-links-and-simplex-contact-addresses)." = "Mehr dazu in der [Benutzeranleitung](https://simplex.chat/docs/guide/making-connections.html#comparison-of-1-time-invitation-links-and-simplex-contact-addresses) lesen.";
+"Read more in [User Guide](https://github.com/TheHealer28/Inqalaab)." = "Mehr dazu in der [Benutzeranleitung](https://github.com/TheHealer28/Inqalaab) lesen.";
 
 /* No comment provided by engineer. */
-"Read more in [User Guide](https://simplex.chat/docs/guide/readme.html#connect-to-friends)." = "Mehr dazu in der [Benutzeranleitung](https://simplex.chat/docs/guide/readme.html#connect-to-friends) lesen.";
+"Read more in [User Guide](https://github.com/TheHealer28/Inqalaab)." = "Mehr dazu in der [Benutzeranleitung](https://github.com/TheHealer28/Inqalaab) lesen.";
 
 /* No comment provided by engineer. */
-"Read more in our [GitHub repository](https://github.com/simplex-chat/simplex-chat#readme)." = "Erfahren Sie in unserem [GitHub-Repository](https://github.com/simplex-chat/simplex-chat#readme) mehr dazu.";
+"Read more in our [GitHub repository](https://github.com/TheHealer28/Inqalaab#readme)." = "Erfahren Sie in unserem [GitHub-Repository](https://github.com/TheHealer28/Inqalaab#readme) mehr dazu.";
 
 /* No comment provided by engineer. */
 "Receipts are disabled" = "Bestätigungen sind deaktiviert";
@@ -4292,7 +4292,7 @@ new chat action */
 "Receiving via" = "Empfangen über";
 
 /* No comment provided by engineer. */
-"Recent history and improved [directory bot](simplex:/contact#/?v=1-4&smp=smp%3A%2F%2Fu2dS9sG8nMNURyZwqASV4yROM28Er0luVTx5X1CsMrU%3D%40smp4.simplex.im%2FeXSPwqTkKyDO3px4fLf1wx3MvPdjdLW3%23%2F%3Fv%3D1-2%26dh%3DMCowBQYDK2VuAyEAaiv6MkMH44L2TcYrt_CsX3ZvM11WgbMEUn0hkIKTOho%253D%26srv%3Do5vmywmrnaxalvz6wi3zicyftgio6psuvyniis6gco6bp6ekl4cqj4id.onion)." = "Aktueller Nachrichtenverlauf und verbesserter [Gruppenverzeichnis-Bot](simplex:/contact#/?v=1-4&smp=smp%3A%2F%2Fu2dS9sG8nMNURyZwqASV4yROM28Er0luVTx5X1CsMrU%3D%40smp4.simplex.im%2FeXSPwqTkKyDO3px4fLf1wx3MvPdjdLW3%23%2F%3Fv%3D1-2%26dh%3DMCowBQYDK2VuAyEAaiv6MkMH44L2TcYrt_CsX3ZvM11WgbMEUn0hkIKTOho%253D%26srv%3Do5vmywmrnaxalvz6wi3zicyftgio6psuvyniis6gco6bp6ekl4cqj4id.onion).";
+"Recent history and improved [directory bot](https://github.com/TheHealer28/Inqalaab)." = "Aktueller Nachrichtenverlauf und verbesserter [Gruppenverzeichnis-Bot](https://github.com/TheHealer28/Inqalaab).";
 
 /* No comment provided by engineer. */
 "Recipient(s) can't see who this message is from." = "Empfänger können nicht sehen, von wem die Nachricht stammt.";
@@ -5341,7 +5341,7 @@ report reason */
 "Thank you for installing Inqalaab!" = "Vielen Dank, dass Sie Inqalaab installiert haben!";
 
 /* No comment provided by engineer. */
-"Thanks to the users – [contribute via Weblate](https://github.com/simplex-chat/simplex-chat/tree/stable#help-translating-simplex-chat)!" = "Dank der Nutzer - [Tragen Sie per Weblate bei](https://github.com/simplex-chat/simplex-chat/tree/stable#help-translating-simplex-chat)!";
+"Thanks to the users – [contribute via Weblate](https://github.com/TheHealer28/Inqalaab/tree/stable#contribute)!" = "Dank der Nutzer - [Tragen Sie per Weblate bei](https://github.com/TheHealer28/Inqalaab/tree/stable#contribute)!";
 
 /* No comment provided by engineer. */
 "Thanks to the users – contribute via Weblate!" = "Dank der Nutzer - Tragen Sie per Weblate bei!";

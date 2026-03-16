@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-import SimpleXChat
+import InqalaabChat
 
 enum UserPickerSheet: Identifiable {
     case address
@@ -145,8 +145,8 @@ struct ChatListView: View {
     @State private var searchMode = false
     @FocusState private var searchFocussed
     @State private var searchText = ""
-    @State private var searchShowingSimplexLink = false
-    @State private var searchChatFilteredBySimplexLink: String? = nil
+    @State private var searchShowingInqalaabLink = false
+    @State private var searchChatFilteredByInqalaabLink: String? = nil
     @State private var scrollToSearchBar = false
     @State private var userPickerShown: Bool = false
     @State private var sheet: SomeSheet<AnyView>? = nil
@@ -400,8 +400,8 @@ struct ChatListView: View {
                             searchMode: $searchMode,
                             searchFocussed: $searchFocussed,
                             searchText: $searchText,
-                            searchShowingSimplexLink: $searchShowingSimplexLink,
-                            searchChatFilteredBySimplexLink: $searchChatFilteredBySimplexLink,
+                            searchShowingInqalaabLink: $searchShowingInqalaabLink,
+                            searchChatFilteredByInqalaabLink: $searchChatFilteredByInqalaabLink,
                             parentSheet: $sheet
                         )
                         .scaleEffect(x: 1, y: oneHandUI ? -1 : 1, anchor: .center)
@@ -460,7 +460,7 @@ struct ChatListView: View {
             Text("Show this QR code to connect")
                 .font(.subheadline)
                 .foregroundColor(theme.colors.secondary)
-            SimpleXCreatedLinkQRCode(link: userAddress.connLinkContact, short: .constant(false))
+            InqalaabCreatedLinkQRCode(link: userAddress.connLinkContact, short: .constant(false))
                 .frame(maxWidth: 260, maxHeight: 260)
                 .padding(.horizontal, 24)
             Text("Scan each other's code to chat securely")
@@ -522,7 +522,7 @@ struct ChatListView: View {
     private func filteredChats() -> [Chat] {
         let allChats = chatModel.chats
         let activeFilter = chatTagsModel.activeFilter
-        if let linkChatId = searchChatFilteredBySimplexLink {
+        if let linkChatId = searchChatFilteredByInqalaabLink {
             return chatModel.chats.filter { $0.id == linkChatId }
         } else {
             let s = searchString()
@@ -572,7 +572,7 @@ struct ChatListView: View {
     }
     
     func searchString() -> String {
-        searchShowingSimplexLink ? "" : searchText.trimmingCharacters(in: .whitespaces).localizedLowercase
+        searchShowingInqalaabLink ? "" : searchText.trimmingCharacters(in: .whitespaces).localizedLowercase
     }
 }
 
@@ -645,8 +645,8 @@ struct ChatListSearchBar: View {
     @Binding var searchMode: Bool
     @FocusState.Binding var searchFocussed: Bool
     @Binding var searchText: String
-    @Binding var searchShowingSimplexLink: Bool
-    @Binding var searchChatFilteredBySimplexLink: String?
+    @Binding var searchShowingInqalaabLink: Bool
+    @Binding var searchChatFilteredByInqalaabLink: String?
     @Binding var parentSheet: SomeSheet<AnyView>?
     @State private var ignoreSearchTextChange = false
 
@@ -657,8 +657,8 @@ struct ChatListSearchBar: View {
                 HStack(spacing: 4) {
                     Image(systemName: "magnifyingglass")
                     TextField("Search or paste Inqalaab link", text: $searchText)
-                        .foregroundColor(searchShowingSimplexLink ? theme.colors.secondary : theme.colors.onBackground)
-                        .disabled(searchShowingSimplexLink)
+                        .foregroundColor(searchShowingInqalaabLink ? theme.colors.secondary : theme.colors.onBackground)
+                        .disabled(searchShowingInqalaabLink)
                         .focused($searchFocussed)
                         .frame(maxWidth: .infinity)
                     if connectProgressManager.showConnectProgress != nil {
@@ -695,14 +695,14 @@ struct ChatListSearchBar: View {
             if ignoreSearchTextChange {
                 ignoreSearchTextChange = false
             } else {
-                if let link = strHasSingleSimplexLink(t.trimmingCharacters(in: .whitespaces)) { // if SimpleX link is pasted, show connection dialogue
+                if let link = strHasSingleInqalaabLink(t.trimmingCharacters(in: .whitespaces)) { // if SimpleX link is pasted, show connection dialogue
                     searchFocussed = false
                     if case let .simplexLink(_, linkType, _, smpHosts) = link.format {
                         ignoreSearchTextChange = true
-                        searchText = simplexLinkText(linkType, smpHosts)
+                        searchText = inqalaabLinkText(linkType, smpHosts)
                     }
-                    searchShowingSimplexLink = true
-                    searchChatFilteredBySimplexLink = nil
+                    searchShowingInqalaabLink = true
+                    searchChatFilteredByInqalaabLink = nil
                     connect(link.text)
                 } else {
                     if t != "" { // if some other text is pasted, enter search mode
@@ -710,8 +710,8 @@ struct ChatListSearchBar: View {
                     } else {
                         ConnectProgressManager.shared.cancelConnectProgress()
                     }
-                    searchShowingSimplexLink = false
-                    searchChatFilteredBySimplexLink = nil
+                    searchShowingInqalaabLink = false
+                    searchChatFilteredByInqalaabLink = nil
                 }
             }
         }
@@ -749,8 +749,8 @@ struct ChatListSearchBar: View {
                 searchText = ""
                 searchFocussed = false
             },
-            filterKnownContact: { searchChatFilteredBySimplexLink = $0.id },
-            filterKnownGroup: { searchChatFilteredBySimplexLink = $0.id }
+            filterKnownContact: { searchChatFilteredByInqalaabLink = $0.id },
+            filterKnownGroup: { searchChatFilteredByInqalaabLink = $0.id }
         )
     }
 }
@@ -1057,7 +1057,7 @@ private struct ChatListQROverlay: View {
                 Text("Show this QR code to connect")
                     .font(.subheadline)
                     .foregroundColor(theme.colors.secondary)
-                SimpleXCreatedLinkQRCode(link: userAddress.connLinkContact, short: .constant(false))
+                InqalaabCreatedLinkQRCode(link: userAddress.connLinkContact, short: .constant(false))
                     .frame(maxWidth: 260, maxHeight: 260)
                     .padding(.horizontal, 24)
                 Text("Scan each other's code to chat securely")

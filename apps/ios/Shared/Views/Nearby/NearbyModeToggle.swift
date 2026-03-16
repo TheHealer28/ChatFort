@@ -1,5 +1,5 @@
 import SwiftUI
-import SimpleXChat
+import InqalaabChat
 
 /// Segmented control to toggle between WiFi (server) and Nearby (P2P) modes.
 /// Placed at the top of the Chats tab.

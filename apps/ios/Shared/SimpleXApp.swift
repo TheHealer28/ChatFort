@@ -1,5 +1,5 @@
 //
-//  SimpleXApp.swift
+//  InqalaabApp.swift
 //  Shared
 //
 //  Created by Evgeny Poberezkin on 17/01/2022.
@@ -7,12 +7,12 @@
 
 import SwiftUI
 import OSLog
-import SimpleXChat
+import InqalaabChat
 
 let logger = Logger()
 
 @main
-struct SimpleXApp: App {
+struct InqalaabApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     @StateObject private var chatModel = ChatModel.shared
     @ObservedObject var alertManager = AlertManager.shared
@@ -54,7 +54,7 @@ struct SimpleXApp: App {
                     // Present screen for continue migration if it wasn't finished yet
                     if chatModel.migrationState != nil {
                         // It's important, otherwise, user may be locked in undefined state
-                        onboardingStageDefault.set(.step1_SimpleXInfo)
+                        onboardingStageDefault.set(.step1_InqalaabInfo)
                         chatModel.onboardingStage = onboardingStageDefault.get()
                     } else if kcAppPassword.get() == nil || kcSelfDestructPassword.get() == nil {
                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.15) {
@@ -136,12 +136,12 @@ struct SimpleXApp: App {
         if legacyDatabase, case .documents = dbContainerGroupDefault.get() {
             dbContainerGroupDefault.set(.documents)
             setMigrationState(.offer)
-            logger.debug("SimpleXApp init: using legacy DB in documents folder: \(getAppDatabasePath())*.db")
+            logger.debug("InqalaabApp init: using legacy DB in documents folder: \(getAppDatabasePath())*.db")
         } else {
             dbContainerGroupDefault.set(.group)
             setMigrationState(.ready)
-            logger.debug("SimpleXApp init: using DB in app group container: \(getAppDatabasePath())*.db")
-            logger.debug("SimpleXApp init: legacy DB\(legacyDatabase ? "" : " not") present")
+            logger.debug("InqalaabApp init: using DB in app group container: \(getAppDatabasePath())*.db")
+            logger.debug("InqalaabApp init: legacy DB\(legacyDatabase ? "" : " not") present")
         }
     }
 

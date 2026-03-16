@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-import SimpleXChat
+import InqalaabChat
 
 struct AddressCreationCard: View {
     @EnvironmentObject var theme: AppTheme

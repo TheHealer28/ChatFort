@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-import SimpleXChat
+import InqalaabChat
 
 struct SecondaryChatView: View {
     @Environment(\.dismiss) var dismiss

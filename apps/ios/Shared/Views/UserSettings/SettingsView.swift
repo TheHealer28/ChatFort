@@ -8,7 +8,7 @@
 
 import SwiftUI
 import StoreKit
-import SimpleXChat
+import InqalaabChat
 
 // Inqalaab: removed simplexTeamURL (SimpleX team contact link)
 
@@ -29,7 +29,7 @@ let DEFAULT_WEBRTC_ICE_SERVERS = "webrtcICEServers"
 let DEFAULT_CALL_KIT_CALLS_IN_RECENTS = "callKitCallsInRecents"
 let DEFAULT_PRIVACY_ACCEPT_IMAGES = "privacyAcceptImages" // unused. Use GROUP_DEFAULT_PRIVACY_ACCEPT_IMAGES instead
 let DEFAULT_PRIVACY_LINK_PREVIEWS = "privacyLinkPreviews" // deprecated, moved to app group
-let DEFAULT_PRIVACY_SIMPLEX_LINK_MODE = "privacySimplexLinkMode"
+let DEFAULT_PRIVACY_INQALAAB_LINK_MODE = "privacySimplexLinkMode"
 let DEFAULT_PRIVACY_SHOW_CHAT_PREVIEWS = "privacyShowChatPreviews"
 let DEFAULT_PRIVACY_SAVE_LAST_DRAFT = "privacySaveLastDraft"
 let DEFAULT_PRIVACY_PROTECT_SCREEN = "privacyProtectScreen"
@@ -96,7 +96,7 @@ let appDefaults: [String: Any] = [
     DEFAULT_CALL_KIT_CALLS_IN_RECENTS: false,
     DEFAULT_PRIVACY_ACCEPT_IMAGES: true,
     DEFAULT_PRIVACY_LINK_PREVIEWS: true,
-    DEFAULT_PRIVACY_SIMPLEX_LINK_MODE: SimpleXLinkMode.description.rawValue,
+    DEFAULT_PRIVACY_INQALAAB_LINK_MODE: InqalaabLinkMode.description.rawValue,
     DEFAULT_PRIVACY_SHOW_CHAT_PREVIEWS: true,
     DEFAULT_PRIVACY_SAVE_LAST_DRAFT: true,
     DEFAULT_PRIVACY_PROTECT_SCREEN: false,
@@ -155,12 +155,12 @@ enum ConnectViaLinkTab: String {
     case paste
 }
 
-enum SimpleXLinkMode: String, Identifiable {
+enum InqalaabLinkMode: String, Identifiable {
     case description
     case full
     case browser
 
-    static var values: [SimpleXLinkMode] = [.description, .full]
+    static var values: [InqalaabLinkMode] = [.description, .full]
 
     public var id: Self { self }
 
@@ -183,7 +183,7 @@ let encryptionStartedAtDefault = DateDefault(defaults: UserDefaults.standard, fo
 
 let connectViaLinkTabDefault = EnumDefault<ConnectViaLinkTab>(defaults: UserDefaults.standard, forKey: DEFAULT_CONNECT_VIA_LINK_TAB, withDefault: .scan)
 
-let privacySimplexLinkModeDefault = EnumDefault<SimpleXLinkMode>(defaults: UserDefaults.standard, forKey: DEFAULT_PRIVACY_SIMPLEX_LINK_MODE, withDefault: .description)
+let privacyInqalaabLinkModeDefault = EnumDefault<InqalaabLinkMode>(defaults: UserDefaults.standard, forKey: DEFAULT_PRIVACY_INQALAAB_LINK_MODE, withDefault: .description)
 
 let privacyLocalAuthModeDefault = EnumDefault<LAMode>(defaults: UserDefaults.standard, forKey: DEFAULT_LA_MODE, withDefault: .system)
 
@@ -413,7 +413,7 @@ struct SettingsView: View {
                     settingsRow("plus", color: theme.colors.secondary) { Text("What's new") }
                 }
                 NavigationLink {
-                    SimpleXInfo(onboarding: false)
+                    InqalaabInfo(onboarding: false)
                         .navigationBarTitle("About Inqalaab", displayMode: .inline)
                         .modifier(ThemedBackground())
                         .frame(maxHeight: .infinity, alignment: .top)

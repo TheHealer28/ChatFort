@@ -4,7 +4,7 @@
 //
 
 import SwiftUI
-import SimpleXChat
+import InqalaabChat
 
 struct UserPicker: View {
     @EnvironmentObject var m: ChatModel

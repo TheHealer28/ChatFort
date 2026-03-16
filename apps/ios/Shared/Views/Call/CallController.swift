@@ -11,7 +11,7 @@ import CallKit
 import StoreKit
 import PushKit
 import AVFoundation
-import SimpleXChat
+import InqalaabChat
 import WebRTC
 
 class CallController: NSObject, CXProviderDelegate, PKPushRegistryDelegate, ObservableObject {
@@ -162,7 +162,7 @@ class CallController: NSObject, CXProviderDelegate, PKPushRegistryDelegate, Obse
     func suspendOnEndCall() {
         if shouldSuspendChat {
             // The delay allows to accept the second call before suspending a chat
-            // see `.onChange(of: scenePhase)` in SimpleXApp
+            // see `.onChange(of: scenePhase)` in InqalaabApp
             DispatchQueue.main.asyncAfter(deadline: .now() + 3) { [weak self] in
                 logger.debug("CallController: shouldSuspendChat \(String(describing: self?.shouldSuspendChat))")
                 if ChatModel.shared.activeCall == nil && self?.shouldSuspendChat == true {

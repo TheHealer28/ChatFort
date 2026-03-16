@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-import SimpleXChat
+import InqalaabChat
 
 let SMALL_GROUPS_RCPS_MEM_LIMIT: Int = 20
 

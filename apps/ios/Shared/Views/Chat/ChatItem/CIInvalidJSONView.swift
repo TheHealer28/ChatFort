@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-import SimpleXChat
+import InqalaabChat
 
 struct CIInvalidJSONView: View {
     @EnvironmentObject var theme: AppTheme

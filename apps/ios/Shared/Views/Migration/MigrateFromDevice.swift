@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-import SimpleXChat
+import InqalaabChat
 
 private enum MigrationFromState: Equatable {
     case chatStopInProgress
@@ -339,7 +339,7 @@ struct MigrateFromDevice: View {
                 .font(.callout)
             }
             Section(header: Text("Show QR code").foregroundColor(theme.colors.secondary)) {
-                SimpleXLinkQRCode(uri: link)
+                InqalaabLinkQRCode(uri: link)
                     .padding()
                     .background(
                         RoundedRectangle(cornerRadius: 12, style: .continuous)

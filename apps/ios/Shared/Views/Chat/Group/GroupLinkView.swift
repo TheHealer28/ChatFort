@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-import SimpleXChat
+import InqalaabChat
 
 struct GroupLinkView: View {
     @EnvironmentObject var theme: AppTheme
@@ -78,8 +78,8 @@ struct GroupLinkView: View {
                         }
                     }
                     .frame(height: 36)
-                    SimpleXCreatedLinkQRCode(link: groupLink.connLinkContact, short: $showShortLink)
-                        .id("simplex-qrcode-view-for-\(groupLink.connLinkContact.simplexChatUri(short: showShortLink))")
+                    InqalaabCreatedLinkQRCode(link: groupLink.connLinkContact, short: $showShortLink)
+                        .id("inqalaab-qrcode-view-for-\(groupLink.connLinkContact.simplexChatUri(short: showShortLink))")
                     if groupLink.shouldBeUpgraded {
                         Button {
                             upgradeAndShareLinkAlert()

@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-import SimpleXChat
+import InqalaabChat
 
 /// Modifier, which provides clipping mask for ``ChatItemWithMenu`` view 
 /// and it's previews: (drag interaction, context menu, etc.)

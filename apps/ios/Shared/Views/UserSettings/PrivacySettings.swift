@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-import SimpleXChat
+import InqalaabChat
 
 struct PrivacySettings: View {
     @EnvironmentObject var m: ChatModel
@@ -51,17 +51,17 @@ struct PrivacySettings: View {
             List {
                 Section(header: Text("Device").foregroundColor(theme.colors.secondary)) {
                     NavigationLink {
-                        SimplexLockView(prefPerformLA: $prefPerformLA, currentLAMode: $currentLAMode)
+                        InqalaabLockView(prefPerformLA: $prefPerformLA, currentLAMode: $currentLAMode)
                             .navigationTitle("Inqalaab Lock")
                             .modifier(ThemedBackground(grouped: true))
                     } label: {
                         if prefPerformLA {
                             settingsRow("lock.fill", color: .green) {
-                                simplexLockRow(currentLAMode.text)
+                                inqalaabLockRow(currentLAMode.text)
                             }
                         } else {
                             settingsRow("lock", color: theme.colors.secondary) {
-                                simplexLockRow("Off")
+                                inqalaabLockRow("Off")
                             }
                         }
                     }
@@ -366,7 +366,7 @@ struct PrivacySettings: View {
         }
     }
 
-    private func simplexLockRow(_ value: LocalizedStringKey) -> some View {
+    private func inqalaabLockRow(_ value: LocalizedStringKey) -> some View {
         HStack {
             Text("Inqalaab Lock")
             Spacer()
@@ -389,7 +389,7 @@ enum LAMode: String, Identifiable, CaseIterable {
     }
 }
 
-struct SimplexLockView: View {
+struct InqalaabLockView: View {
     @Binding var prefPerformLA: Bool
     @Binding var currentLAMode: LAMode
     @EnvironmentObject var m: ChatModel

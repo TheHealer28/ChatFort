@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-import SimpleXChat
+import InqalaabChat
 
 let USER_ROW_SIZE: CGFloat = 60
 let MAX_VISIBLE_USER_ROWS: CGFloat = 4.8

@@ -8,7 +8,7 @@
 
 import SwiftUI
 import MessageUI
-@preconcurrency import SimpleXChat
+@preconcurrency import InqalaabChat
 
 struct UserAddressView: View {
     @Environment(\.dismiss) var dismiss: DismissAction
@@ -136,8 +136,8 @@ struct UserAddressView: View {
 
     @ViewBuilder private func existingAddressView(_ userAddress: UserContactLink) -> some View {
         Section {
-            SimpleXCreatedLinkQRCode(link: userAddress.connLinkContact, short: $showShortLink)
-                .id("simplex-contact-address-qrcode-\(userAddress.connLinkContact.simplexChatUri(short: showShortLink))")
+            InqalaabCreatedLinkQRCode(link: userAddress.connLinkContact, short: $showShortLink)
+                .id("inqalaab-contact-address-qrcode-\(userAddress.connLinkContact.simplexChatUri(short: showShortLink))")
             if userAddress.shouldBeUpgraded {
                 upgradeAddressButton()
             }

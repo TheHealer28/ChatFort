@@ -5,7 +5,7 @@
 "_italic_" = "\\_斜体_";
 
 /* No comment provided by engineer. */
-"- connect to [directory service](simplex:/contact#/?v=1-4&smp=smp%3A%2F%2Fu2dS9sG8nMNURyZwqASV4yROM28Er0luVTx5X1CsMrU%3D%40smp4.simplex.im%2FeXSPwqTkKyDO3px4fLf1wx3MvPdjdLW3%23%2F%3Fv%3D1-2%26dh%3DMCowBQYDK2VuAyEAaiv6MkMH44L2TcYrt_CsX3ZvM11WgbMEUn0hkIKTOho%253D%26srv%3Do5vmywmrnaxalvz6wi3zicyftgio6psuvyniis6gco6bp6ekl4cqj4id.onion) (BETA)!\n- delivery receipts (up to 20 members).\n- faster and more stable." = "- [ディレクトリサービス](simplex:/contact#/?v=1-4&smp=smp%3A%2F%2Fu2dS9sG8nMNURyZwqASV4yROM28Er0luVTx5X1CsMrU%3D%40smp4.simplex.im%2FeXSPwqTkKyDO3px4fLf1wx3MvPdjdLW3%23%2F%3Fv%3D1-2%26dh%3DMCowBQYDK2VuAyEAaiv6MkMH44L2TcYrt_CsX3ZvM11WgbMEUn0hkIKTOho%253D%26srv%3Do5vmywmrnaxalvz6wi3zicyftgio6psuvyniis6gco6bp6ekl4cqj4id.onion) に接続 (ベータ)!\n- 配信証明を送信する (最大 20 人まで)。\n- より速く、より安定。";
+"- connect to [directory service](https://github.com/TheHealer28/Inqalaab) (BETA)!\n- delivery receipts (up to 20 members).\n- faster and more stable." = "- [ディレクトリサービス](https://github.com/TheHealer28/Inqalaab) に接続 (ベータ)!\n- 配信証明を送信する (最大 20 人まで)。\n- より速く、より安定。";
 
 /* No comment provided by engineer. */
 "- more stable message delivery.\n- a bit better groups.\n- and more!" = "- より安定したメッセージ配信。\n- 改良されたグループ。\n- などなど！";
@@ -26,13 +26,13 @@
 "(this device v%@)" = "(このデバイス v%@)";
 
 /* No comment provided by engineer. */
-"[Contribute](https://github.com/simplex-chat/simplex-chat#contribute)" = "[貢献する](https://github.com/simplex-chat/simplex-chat#contribute)";
+"[Contribute](https://github.com/TheHealer28/Inqalaab#contribute)" = "[貢献する](https://github.com/TheHealer28/Inqalaab#contribute)";
 
 /* No comment provided by engineer. */
 "[Send us email](mailto:chat@inqalaab.chat)" = "[メールを送信](mailto:chat@inqalaab.chat)";
 
 /* No comment provided by engineer. */
-"[Star on GitHub](https://github.com/simplex-chat/simplex-chat)" = "[GitHub でスターを付ける](https://github.com/simplex-chat/simplex-chat)";
+"[Star on GitHub](https://github.com/TheHealer28/Inqalaab)" = "[GitHub でスターを付ける](https://github.com/TheHealer28/Inqalaab)";
 
 /* No comment provided by engineer. */
 "**Create 1-time link**: to create and share a new invitation link." = "**コンタクトの追加**: 新しい招待リンクを作成するか、受け取ったリンクから接続します。";
@@ -648,10 +648,10 @@ swipe action */
 "Both you and your contact can send voice messages." = "あなたと連絡相手が音声メッセージを送信できます。";
 
 /* No comment provided by engineer. */
-"Bulgarian, Finnish, Thai and Ukrainian - thanks to the users and [Weblate](https://github.com/simplex-chat/simplex-chat/tree/stable#help-translating-simplex-chat)!" = "ブルガリア語、フィンランド語、タイ語、ウクライナ語 - ユーザーと [Weblate](https://github.com/simplex-chat/simplex-chat/tree/stable#help-translating-simplex-chat)に感謝します！";
+"Bulgarian, Finnish, Thai and Ukrainian - thanks to the users and [Weblate](https://github.com/TheHealer28/Inqalaab/tree/stable#contribute)!" = "ブルガリア語、フィンランド語、タイ語、ウクライナ語 - ユーザーと [Weblate](https://github.com/TheHealer28/Inqalaab/tree/stable#contribute)に感謝します！";
 
 /* No comment provided by engineer. */
-"By chat profile (default) or [by connection](https://simplex.chat/blog/20230204-simplex-chat-v4-5-user-chat-profiles.html#transport-isolation) (BETA)." = "チャット プロファイル経由 (デフォルト) または [接続経由](https://simplex.chat/blog/20230204-simplex-chat-v4-5-user-chat-profiles.html#transport-isolation) (BETA).";
+"By chat profile (default) or [by connection](https://github.com/TheHealer28/Inqalaab) (BETA)." = "チャット プロファイル経由 (デフォルト) または [接続経由](https://github.com/TheHealer28/Inqalaab) (BETA).";
 
 /* No comment provided by engineer. */
 "Call already ended!" = "通話は既に終了してます！";
@@ -981,7 +981,7 @@ set passcode view */
 "Create link" = "リンクを生成する";
 
 /* No comment provided by engineer. */
-"Create new profile in [desktop app](https://simplex.chat/downloads/). 💻" = "[デスクトップアプリ](https://simplex.chat/downloads/)で新しいプロファイルを作成します。 💻";
+"Create new profile in [desktop app](https://github.com/TheHealer28/Inqalaab). 💻" = "[デスクトップアプリ](https://github.com/TheHealer28/Inqalaab)で新しいプロファイルを作成します。 💻";
 
 /* No comment provided by engineer. */
 "Create profile" = "プロフィールを作成する";
@@ -1897,7 +1897,7 @@ snd error text */
 "Initial role" = "初期の役割";
 
 /* No comment provided by engineer. */
-"Install [Inqalaab for terminal](https://github.com/simplex-chat/simplex-chat)" = "インストール [ターミナル用Inqalaab](https://github.com/simplex-chat/simplex-chat)";
+"Install [Inqalaab for terminal](https://github.com/TheHealer28/Inqalaab)" = "インストール [ターミナル用Inqalaab](https://github.com/TheHealer28/Inqalaab)";
 
 /* No comment provided by engineer. */
 "Instant" = "即時";
@@ -2574,13 +2574,13 @@ new chat action */
 "Read more" = "続きを読む";
 
 /* No comment provided by engineer. */
-"Read more in [User Guide](https://simplex.chat/docs/guide/making-connections.html#comparison-of-1-time-invitation-links-and-simplex-contact-addresses)." = "詳しくは[ユーザーガイド](https://simplex.chat/docs/guide/making-connections.html#comparison-of-1-time-invitation-links-and-simplex-contact-addresses)をご覧ください。";
+"Read more in [User Guide](https://github.com/TheHealer28/Inqalaab)." = "詳しくは[ユーザーガイド](https://github.com/TheHealer28/Inqalaab)をご覧ください。";
 
 /* No comment provided by engineer. */
-"Read more in [User Guide](https://simplex.chat/docs/guide/readme.html#connect-to-friends)." = "詳しくは[ユーザーガイド](https://simplex.chat/docs/guide/readme.html#connect-to-friends)をご覧ください。";
+"Read more in [User Guide](https://github.com/TheHealer28/Inqalaab)." = "詳しくは[ユーザーガイド](https://github.com/TheHealer28/Inqalaab)をご覧ください。";
 
 /* No comment provided by engineer. */
-"Read more in our [GitHub repository](https://github.com/simplex-chat/simplex-chat#readme)." = "詳しくは[GitHubリポジトリ](https://github.com/simplex-chat/simplex-chat#readme)をご覧ください。";
+"Read more in our [GitHub repository](https://github.com/TheHealer28/Inqalaab#readme)." = "詳しくは[GitHubリポジトリ](https://github.com/TheHealer28/Inqalaab#readme)をご覧ください。";
 
 /* No comment provided by engineer. */
 "received answer…" = "回答を受け取りました…";
@@ -3046,7 +3046,7 @@ chat item action */
 "Submit" = "送信";
 
 /* No comment provided by engineer. */
-"Support Inqalaab" = "Simplex Chatを支援";
+"Support Inqalaab" = "Inqalaabを支援";
 
 /* No comment provided by engineer. */
 "System" = "システム";
@@ -3097,7 +3097,7 @@ chat item action */
 "Thank you for installing Inqalaab!" = "Inqalaabをインストールしていただき、ありがとうございます！";
 
 /* No comment provided by engineer. */
-"Thanks to the users – [contribute via Weblate](https://github.com/simplex-chat/simplex-chat/tree/stable#help-translating-simplex-chat)!" = "ユーザーに感謝します – [Weblate 経由で貢献してください](https://github.com/simplex-chat/simplex-chat/tree/stable#help-translation-simplex-chat)！";
+"Thanks to the users – [contribute via Weblate](https://github.com/TheHealer28/Inqalaab/tree/stable#contribute)!" = "ユーザーに感謝します – [Weblate 経由で貢献してください](https://github.com/TheHealer28/Inqalaab/tree/stable#contribute)！";
 
 /* No comment provided by engineer. */
 "Thanks to the users – contribute via Weblate!" = "ユーザーに感謝します – Weblate 経由で貢献してください!";

@@ -6,7 +6,7 @@
 //  Copyright © 2025 SimpleX Chat. All rights reserved.
 //
 
-import SimpleXChat
+import InqalaabChat
 import SwiftUI
 
 // some constructors are used in SEChatCommand or NSEChatCommand types as well - they must be syncronised
@@ -910,7 +910,7 @@ enum ChatResponse2: Decodable, ChatAPIResult {
     case userAcceptedGroupSent(user: UserRef, groupInfo: GroupInfo, hostContact: Contact?)
     case userDeletedMembers(user: UserRef, groupInfo: GroupInfo, members: [GroupMember], withMessages: Bool)
     case leftMemberUser(user: UserRef, groupInfo: GroupInfo)
-    case groupMembers(user: UserRef, group: SimpleXChat.Group)
+    case groupMembers(user: UserRef, group: InqalaabChat.Group)
     case memberAccepted(user: UserRef, groupInfo: GroupInfo, member: GroupMember)
     case memberSupportChatRead(user: UserRef, groupInfo: GroupInfo, member: GroupMember)
     case memberSupportChatDeleted(user: UserRef, groupInfo: GroupInfo, member: GroupMember)
@@ -1423,13 +1423,13 @@ struct UserMsgReceiptSettings: Codable {
     var clearOverrides: Bool
 }
 
-protocol SimplexAddress {
+protocol InqalaabAddress {
     var connLinkContact: CreatedConnLink { get }
     var shortLinkDataSet: Bool { get }
     var shortLinkLargeDataSet: Bool { get }
 }
 
-extension SimplexAddress {
+extension InqalaabAddress {
     var shouldBeUpgraded: Bool {
         connLinkContact.connShortLink == nil || !shortLinkDataSet || !shortLinkLargeDataSet
     }
@@ -1439,7 +1439,7 @@ extension SimplexAddress {
     }
 }
 
-struct UserContactLink: Decodable, Hashable, SimplexAddress {
+struct UserContactLink: Decodable, Hashable, InqalaabAddress {
     var connLinkContact: CreatedConnLink
     var shortLinkDataSet: Bool
     var shortLinkLargeDataSet: Bool
@@ -1464,7 +1464,7 @@ struct AutoAccept: Codable, Hashable {
     var acceptIncognito: Bool
 }
 
-struct GroupLink: Decodable, Hashable, SimplexAddress {
+struct GroupLink: Decodable, Hashable, InqalaabAddress {
     var userContactLinkId: Int64
     var connLinkContact: CreatedConnLink
     var shortLinkDataSet: Bool
@@ -2130,7 +2130,7 @@ struct AppSettings: Codable, Equatable {
             uiChatItemRoundness: 0.75,
             uiChatItemTail: true,
             uiColorScheme: DefaultTheme.SYSTEM_THEME_NAME,
-            uiDarkColorScheme: DefaultTheme.SIMPLEX.themeName,
+            uiDarkColorScheme: DefaultTheme.CLASSIC.themeName,
             uiCurrentThemeIds: nil as [String: String]?,
             uiThemes: nil as [ThemeOverrides]?,
             oneHandUI: true,

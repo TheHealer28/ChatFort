@@ -8,12 +8,14 @@
 
 import Foundation
 import UIKit
-import SimpleXChat
+import InqalaabChat
 import SwiftUI
+import FirebaseCore
 
 class AppDelegate: NSObject, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         logger.debug("AppDelegate: didFinishLaunchingWithOptions")
+        FirebaseApp.configure()
         // Initialize CallController early so PushKit (VoIP push) is registered
         // before the system tries to deliver payloads from reportNewIncomingVoIPPushPayload.
         // Apple requires PKPushRegistry to be created in didFinishLaunchingWithOptions.

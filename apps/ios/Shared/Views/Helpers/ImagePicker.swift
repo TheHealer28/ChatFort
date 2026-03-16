@@ -9,7 +9,7 @@
 import SwiftUI
 import PhotosUI
 import SwiftyGif
-import SimpleXChat
+import InqalaabChat
 
 struct LibraryImagePicker: View {
     @Binding var image: UIImage?
@@ -39,7 +39,7 @@ struct LibraryMediaListPicker: UIViewControllerRepresentable {
 
     class Coordinator: PHPickerViewControllerDelegate {
         let parent: LibraryMediaListPicker
-        let dispatchQueue = DispatchQueue(label: "chat.simplex.app.LibraryMediaListPicker")
+        let dispatchQueue = DispatchQueue(label: "com.inqalaab.app.LibraryMediaListPicker")
 
         init(_ parent: LibraryMediaListPicker) {
             self.parent = parent

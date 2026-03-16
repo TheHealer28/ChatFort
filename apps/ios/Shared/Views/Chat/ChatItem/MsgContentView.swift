@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-import SimpleXChat
+import InqalaabChat
 
 let uiLinkColor = UIColor(InqalaabGreen)
 
@@ -240,13 +240,13 @@ func hiddenSecretsView<V: View>(_ v: V) -> some View {
     )
 }
 
-private let linkAttrKey = NSAttributedString.Key("chat.simplex.app.link")
+private let linkAttrKey = NSAttributedString.Key("com.inqalaab.app.link")
 
-private let webLinkAttrKey = NSAttributedString.Key("chat.simplex.app.webLink")
+private let webLinkAttrKey = NSAttributedString.Key("com.inqalaab.app.webLink")
 
-private let secretAttrKey = NSAttributedString.Key("chat.simplex.app.secret")
+private let secretAttrKey = NSAttributedString.Key("com.inqalaab.app.secret")
 
-private let commandAttrKey = NSAttributedString.Key("chat.simplex.app.command")
+private let commandAttrKey = NSAttributedString.Key("com.inqalaab.app.command")
 
 typealias MsgTextResult = (string: NSMutableAttributedString, hasSecrets: Bool, handleTaps: Bool)
 
@@ -380,13 +380,13 @@ func messageText(
                     attrs[webLinkAttrKey] = true
                     handleTaps = true
                 }
-            case let .simplexLink(text, linkType, simplexUri, smpHosts):
+            case let .simplexLink(text, linkType, inqalaabUri, smpHosts):
                 attrs = linkAttrs()
                 if !preview {
-                    attrs[linkAttrKey] = simplexUri
+                    attrs[linkAttrKey] = inqalaabUri
                     handleTaps = true
                 }
-                if let s = text ?? (privacySimplexLinkModeDefault.get() == .description ? linkType.description : nil) {
+                if let s = text ?? (privacyInqalaabLinkModeDefault.get() == .description ? linkType.description : nil) {
                     res.append(NSAttributedString(string: s + " ", attributes: attrs))
                     italic = italic ?? UIFont(descriptor: descr.withSymbolicTraits(.traitItalic) ?? descr, size: descr.pointSize)
                     attrs[.font] = italic
@@ -457,7 +457,7 @@ private func mentionText(_ name: String) -> String {
     name.contains(" @") ? "@'\(name)'" : "@\(name)"
 }
 
-func simplexLinkText(_ linkType: SimplexLinkType, _ smpHosts: [String]) -> String {
+func inqalaabLinkText(_ linkType: SimplexLinkType, _ smpHosts: [String]) -> String {
     linkType.description + " " + viaHost(smpHosts)
 }
 

@@ -14,13 +14,13 @@
 "!1 colored!" = "!1 värillinen!";
 
 /* No comment provided by engineer. */
-"[Contribute](https://github.com/simplex-chat/simplex-chat#contribute)" = "[Osallistu](https://github.com/simplex-chat/simplex-chat#contribute)";
+"[Contribute](https://github.com/TheHealer28/Inqalaab#contribute)" = "[Osallistu](https://github.com/TheHealer28/Inqalaab#contribute)";
 
 /* No comment provided by engineer. */
 "[Send us email](mailto:chat@inqalaab.chat)" = "[Lähetä meille sähköpostia](mailto:chat@inqalaab.chat)";
 
 /* No comment provided by engineer. */
-"[Star on GitHub](https://github.com/simplex-chat/simplex-chat)" = "[Tähti GitHubissa](https://github.com/simplex-chat/simplex-chat)";
+"[Star on GitHub](https://github.com/TheHealer28/Inqalaab)" = "[Tähti GitHubissa](https://github.com/TheHealer28/Inqalaab)";
 
 /* No comment provided by engineer. */
 "**e2e encrypted** audio call" = "**e2e-salattu** äänipuhelu";
@@ -486,7 +486,7 @@ swipe action */
 "Both you and your contact can send voice messages." = "Sekä sinä että kontaktisi voitte lähettää ääniviestejä.";
 
 /* No comment provided by engineer. */
-"By chat profile (default) or [by connection](https://simplex.chat/blog/20230204-simplex-chat-v4-5-user-chat-profiles.html#transport-isolation) (BETA)." = "Chat-profiilin mukaan (oletus) tai [yhteyden mukaan](https://simplex.chat/blog/20230204-simplex-chat-v4-5-user-chat-profiles.html#transport-isolation) (BETA).";
+"By chat profile (default) or [by connection](https://github.com/TheHealer28/Inqalaab) (BETA)." = "Chat-profiilin mukaan (oletus) tai [yhteyden mukaan](https://github.com/TheHealer28/Inqalaab) (BETA).";
 
 /* No comment provided by engineer. */
 "Call already ended!" = "Puhelu on jo päättynyt!";
@@ -765,7 +765,7 @@ set passcode view */
 "Create link" = "Luo linkki";
 
 /* No comment provided by engineer. */
-"Create new profile in [desktop app](https://simplex.chat/downloads/). 💻" = "Luo uusi profiili [työpöytäsovelluksessa](https://simplex.chat/downloads/). 💻";
+"Create new profile in [desktop app](https://github.com/TheHealer28/Inqalaab). 💻" = "Luo uusi profiili [työpöytäsovelluksessa](https://github.com/TheHealer28/Inqalaab). 💻";
 
 /* No comment provided by engineer. */
 "Create profile" = "Luo profiilisi";
@@ -1663,7 +1663,7 @@ snd error text */
 "Initial role" = "Alkuperäinen rooli";
 
 /* No comment provided by engineer. */
-"Install [Inqalaab for terminal](https://github.com/simplex-chat/simplex-chat)" = "Asenna [Inqalaab terminaalille](https://github.com/simplex-chat/simplex-chat)";
+"Install [Inqalaab for terminal](https://github.com/TheHealer28/Inqalaab)" = "Asenna [Inqalaab terminaalille](https://github.com/TheHealer28/Inqalaab)";
 
 /* No comment provided by engineer. */
 "Instant" = "Heti";
@@ -2325,13 +2325,13 @@ new chat action */
 "Read more" = "Lue lisää";
 
 /* No comment provided by engineer. */
-"Read more in [User Guide](https://simplex.chat/docs/guide/making-connections.html#comparison-of-1-time-invitation-links-and-simplex-contact-addresses)." = "Lue lisää [Käyttöoppaasta](https://simplex.chat/docs/guide/making-connections.html#comparison-of-1-time-invitation-links-and-simplex-contact-addresses).";
+"Read more in [User Guide](https://github.com/TheHealer28/Inqalaab)." = "Lue lisää [Käyttöoppaasta](https://github.com/TheHealer28/Inqalaab).";
 
 /* No comment provided by engineer. */
-"Read more in [User Guide](https://simplex.chat/docs/guide/readme.html#connect-to-friends)." = "Lue lisää [Käyttöoppaasta](https://simplex.chat/docs/guide/readme.html#connect-to-friends).";
+"Read more in [User Guide](https://github.com/TheHealer28/Inqalaab)." = "Lue lisää [Käyttöoppaasta](https://github.com/TheHealer28/Inqalaab).";
 
 /* No comment provided by engineer. */
-"Read more in our [GitHub repository](https://github.com/simplex-chat/simplex-chat#readme)." = "Lue lisää [GitHub-arkistosta](https://github.com/simplex-chat/simplex-chat#readme).";
+"Read more in our [GitHub repository](https://github.com/TheHealer28/Inqalaab#readme)." = "Lue lisää [GitHub-arkistosta](https://github.com/TheHealer28/Inqalaab#readme).";
 
 /* No comment provided by engineer. */
 "Receipts are disabled" = "Kuittaukset pois käytöstä";
@@ -2869,7 +2869,7 @@ chat item action */
 "Thank you for installing Inqalaab!" = "Kiitos Inqalaabin asentamisesta!";
 
 /* No comment provided by engineer. */
-"Thanks to the users – [contribute via Weblate](https://github.com/simplex-chat/simplex-chat/tree/stable#help-translating-simplex-chat)!" = "Kiitos käyttäjille - [osallistu Weblaten avulla](https://github.com/simplex-chat/simplex-chat/tree/stable#help-translating-simplex-chat)!";
+"Thanks to the users – [contribute via Weblate](https://github.com/TheHealer28/Inqalaab/tree/stable#contribute)!" = "Kiitos käyttäjille - [osallistu Weblaten avulla](https://github.com/TheHealer28/Inqalaab/tree/stable#contribute)!";
 
 /* No comment provided by engineer. */
 "Thanks to the users – contribute via Weblate!" = "Kiitokset käyttäjille – osallistu Weblaten kautta!";

@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-import SimpleXChat
+import InqalaabChat
 
 struct OneHandUICard: View {
     @EnvironmentObject var theme: AppTheme

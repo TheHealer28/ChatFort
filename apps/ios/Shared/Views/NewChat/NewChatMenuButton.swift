@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-import SimpleXChat
+import InqalaabChat
 
 struct NewChatMenuButton: View {
     // do not use chatModel here because it prevents showing AddGroupMembersView after group creation and QR code after link creation on iOS 16
@@ -39,8 +39,8 @@ struct NewChatSheet: View {
     @State private var searchMode = false
     @FocusState var searchFocussed: Bool
     @State private var searchText = ""
-    @State private var searchShowingSimplexLink = false
-    @State private var searchChatFilteredBySimplexLink: String? = nil
+    @State private var searchShowingInqalaabLink = false
+    @State private var searchChatFilteredByInqalaabLink: String? = nil
     @State private var alert: SomeAlert?
 
     // Sheet height management
@@ -86,14 +86,32 @@ struct NewChatSheet: View {
                     searchMode: $searchMode,
                     searchFocussed: $searchFocussed,
                     searchText: $searchText,
-                    searchShowingSimplexLink: $searchShowingSimplexLink,
-                    searchChatFilteredBySimplexLink: $searchChatFilteredBySimplexLink
+                    searchShowingInqalaabLink: $searchShowingInqalaabLink,
+                    searchChatFilteredByInqalaabLink: $searchChatFilteredByInqalaabLink
                 )
                 .frame(maxWidth: .infinity)
             }
             .listRowSeparator(.hidden)
             .listRowBackground(Color.clear)
             .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
+
+            // Inqalaab: always show user's permanent QR code for easy sharing
+            if searchText.isEmpty, let userAddress = chatModel.userAddress {
+                Section {
+                    VStack(spacing: 8) {
+                        Text("Your Inqalaab Address")
+                            .font(.subheadline.weight(.medium))
+                        InqalaabCreatedLinkQRCode(link: userAddress.connLinkContact, short: .constant(false))
+                            .frame(maxWidth: 180, maxHeight: 180)
+                            .padding(.horizontal, 20)
+                        Text("Show this QR code to connect")
+                            .font(.caption2)
+                            .foregroundColor(theme.colors.secondary)
+                    }
+                    .frame(maxWidth: .infinity)
+                    .padding(.vertical, 4)
+                }
+            }
 
             if (searchText.isEmpty) {
                 Section {
@@ -144,8 +162,8 @@ struct NewChatSheet: View {
                 searchText: $searchText,
                 header: "Your Contacts",
                 searchFocussed: $searchFocussed,
-                searchShowingSimplexLink: $searchShowingSimplexLink,
-                searchChatFilteredBySimplexLink: $searchChatFilteredBySimplexLink,
+                searchShowingInqalaabLink: $searchShowingInqalaabLink,
+                searchChatFilteredByInqalaabLink: $searchChatFilteredByInqalaabLink,
                 showDeletedChatIcon: true
             )
         }
@@ -210,8 +228,8 @@ struct ContactsList: View {
     @Binding var searchText: String
     var header: String? = nil
     @FocusState.Binding var searchFocussed: Bool
-    @Binding var searchShowingSimplexLink: Bool
-    @Binding var searchChatFilteredBySimplexLink: String?
+    @Binding var searchShowingInqalaabLink: Bool
+    @Binding var searchChatFilteredByInqalaabLink: String?
     var showDeletedChatIcon: Bool
     @AppStorage(DEFAULT_SHOW_UNREAD_AND_FAVORITES) private var showUnreadAndFavorites = false
     
@@ -219,8 +237,8 @@ struct ContactsList: View {
         let contactChats = chatModel.chats.filter { chat in chatPredicate(chat, !searchText.isEmpty) }
         let filteredContactChats = filteredContactChats(
             showUnreadAndFavorites: showUnreadAndFavorites,
-            searchShowingSimplexLink: searchShowingSimplexLink,
-            searchChatFilteredBySimplexLink: searchChatFilteredBySimplexLink,
+            searchShowingInqalaabLink: searchShowingInqalaabLink,
+            searchChatFilteredByInqalaabLink: searchChatFilteredByInqalaabLink,
             searchText: searchText,
             contactChats: contactChats
         )
@@ -290,13 +308,13 @@ struct ContactsList: View {
     
     func filteredContactChats(
         showUnreadAndFavorites: Bool,
-        searchShowingSimplexLink: Bool,
-        searchChatFilteredBySimplexLink: String?,
+        searchShowingInqalaabLink: Bool,
+        searchChatFilteredByInqalaabLink: String?,
         searchText: String,
         contactChats: [Chat]
     ) -> [Chat] {
-        let linkChatId = searchChatFilteredBySimplexLink
-        let s = searchShowingSimplexLink ? "" : searchText.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
+        let linkChatId = searchChatFilteredByInqalaabLink
+        let s = searchShowingInqalaabLink ? "" : searchText.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
 
         let filteredChats: [Chat]
 
@@ -319,8 +337,8 @@ struct ContactsListSearchBar: View {
     @Binding var searchMode: Bool
     @FocusState.Binding var searchFocussed: Bool
     @Binding var searchText: String
-    @Binding var searchShowingSimplexLink: Bool
-    @Binding var searchChatFilteredBySimplexLink: String?
+    @Binding var searchShowingInqalaabLink: Bool
+    @Binding var searchChatFilteredByInqalaabLink: String?
     @State private var ignoreSearchTextChange = false
     @AppStorage(DEFAULT_SHOW_UNREAD_AND_FAVORITES) private var showUnreadAndFavorites = false
 
@@ -334,8 +352,8 @@ struct ContactsListSearchBar: View {
                     .scaledToFit()
                     .frame(width: 16, height: 16)
                 TextField("Search or paste Inqalaab link", text: $searchText)
-                    .foregroundColor(searchShowingSimplexLink ? theme.colors.secondary : theme.colors.onBackground)
-                    .disabled(searchShowingSimplexLink)
+                    .foregroundColor(searchShowingInqalaabLink ? theme.colors.secondary : theme.colors.onBackground)
+                    .disabled(searchShowingInqalaabLink)
                     .focused($searchFocussed)
                     .frame(maxWidth: .infinity)
                 if connectProgressManager.showConnectProgress != nil {
@@ -375,14 +393,14 @@ struct ContactsListSearchBar: View {
             if ignoreSearchTextChange {
                 ignoreSearchTextChange = false
             } else {
-                if let link = strHasSingleSimplexLink(t.trimmingCharacters(in: .whitespaces)) { // if SimpleX link is pasted, show connection dialogue
+                if let link = strHasSingleInqalaabLink(t.trimmingCharacters(in: .whitespaces)) { // if SimpleX link is pasted, show connection dialogue
                     searchFocussed = false
                     if case let .simplexLink(_, linkType, _, smpHosts) = link.format {
                         ignoreSearchTextChange = true
-                        searchText = simplexLinkText(linkType, smpHosts)
+                        searchText = inqalaabLinkText(linkType, smpHosts)
                     }
-                    searchShowingSimplexLink = true
-                    searchChatFilteredBySimplexLink = nil
+                    searchShowingInqalaabLink = true
+                    searchChatFilteredByInqalaabLink = nil
                     connect(link.text)
                 } else {
                     if t != "" { // if some other text is pasted, enter search mode
@@ -390,8 +408,8 @@ struct ContactsListSearchBar: View {
                     } else {
                         connectProgressManager.cancelConnectProgress()
                     }
-                    searchShowingSimplexLink = false
-                    searchChatFilteredBySimplexLink = nil
+                    searchShowingInqalaabLink = false
+                    searchChatFilteredByInqalaabLink = nil
                 }
             }
         }
@@ -421,7 +439,7 @@ struct ContactsListSearchBar: View {
                 searchText = ""
                 searchFocussed = false
             },
-            filterKnownContact: { searchChatFilteredBySimplexLink = $0.id }
+            filterKnownContact: { searchChatFilteredByInqalaabLink = $0.id }
         )
     }
 }
@@ -431,8 +449,8 @@ struct DeletedChats: View {
     @State private var searchMode = false
     @FocusState var searchFocussed: Bool
     @State private var searchText = ""
-    @State private var searchShowingSimplexLink = false
-    @State private var searchChatFilteredBySimplexLink: String? = nil
+    @State private var searchShowingInqalaabLink = false
+    @State private var searchChatFilteredByInqalaabLink: String? = nil
     
     var body: some View {
         List {
@@ -440,8 +458,8 @@ struct DeletedChats: View {
                 searchMode: $searchMode,
                 searchFocussed: $searchFocussed,
                 searchText: $searchText,
-                searchShowingSimplexLink: $searchShowingSimplexLink,
-                searchChatFilteredBySimplexLink: $searchChatFilteredBySimplexLink
+                searchShowingInqalaabLink: $searchShowingInqalaabLink,
+                searchChatFilteredByInqalaabLink: $searchChatFilteredByInqalaabLink
             )
             .listRowSeparator(.hidden)
             .listRowBackground(Color.clear)
@@ -453,8 +471,8 @@ struct DeletedChats: View {
                 searchMode: $searchMode,
                 searchText: $searchText,
                 searchFocussed: $searchFocussed,
-                searchShowingSimplexLink: $searchShowingSimplexLink,
-                searchChatFilteredBySimplexLink: $searchChatFilteredBySimplexLink,
+                searchShowingInqalaabLink: $searchShowingInqalaabLink,
+                searchChatFilteredByInqalaabLink: $searchChatFilteredByInqalaabLink,
                 showDeletedChatIcon: false
             )
         }

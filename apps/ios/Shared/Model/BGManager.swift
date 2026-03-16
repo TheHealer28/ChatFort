@@ -8,9 +8,9 @@
 
 import Foundation
 import BackgroundTasks
-import SimpleXChat
+import InqalaabChat
 
-private let receiveTaskId = "chat.simplex.app.receive"
+private let receiveTaskId = "com.inqalaab.app.receive"
 
 // TCP timeout + 2 sec
 private let waitForMessages: TimeInterval = 6

@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-import SimpleXChat
+import InqalaabChat
 
 struct StorageView: View {
     @State var appGroupFiles: [String: Int64] = [:]

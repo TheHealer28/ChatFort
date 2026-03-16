@@ -4,7 +4,7 @@
 //
 
 import SwiftUI
-import SimpleXChat
+import InqalaabChat
 
 struct UserProfilesView: View {
     @EnvironmentObject private var m: ChatModel
@@ -308,8 +308,8 @@ struct UserProfilesView: View {
                     try await changeActiveUserAsync_(nil, viewPwd: nil)
                     try? await stopChatAsync()
                     await MainActor.run {
-                        onboardingStageDefault.set(.step1_SimpleXInfo)
-                        m.onboardingStage = .step1_SimpleXInfo
+                        onboardingStageDefault.set(.step1_InqalaabInfo)
+                        m.onboardingStage = .step1_InqalaabInfo
                         dismissAllSheets()
                     }
                 }

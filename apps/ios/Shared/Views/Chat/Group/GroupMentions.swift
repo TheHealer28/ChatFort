@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-import SimpleXChat
+import InqalaabChat
 
 let MENTION_START: Character = "@"
 let QUOTE: Character = "'"

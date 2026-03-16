@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-@preconcurrency import SimpleXChat
+@preconcurrency import InqalaabChat
 
 func infoRow(_ title: LocalizedStringKey, _ value: String) -> some View {
     HStack {
@@ -219,7 +219,7 @@ struct ChatInfoView: View {
 
                     if let contactLink = contact.contactLink {
                         Section {
-                            SimpleXLinkQRCode(uri: contactLink)
+                            InqalaabLinkQRCode(uri: contactLink)
                             Button {
                                 showShareSheet(items: [simplexChatLink(contactLink)])
                             } label: {

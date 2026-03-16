@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-import SimpleXChat
+import InqalaabChat
 
 typealias DynamicSizes = (
     rowHeight: CGFloat,

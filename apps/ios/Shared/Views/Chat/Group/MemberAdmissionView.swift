@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-import SimpleXChat
+import InqalaabChat
 
 private let memberCriterias: [(criteria: MemberCriteria?, text: LocalizedStringKey)] = [
     (nil, "off"),

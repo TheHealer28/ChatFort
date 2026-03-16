@@ -11,11 +11,11 @@ import UIKit
 import Dispatch
 import BackgroundTasks
 import SwiftUI
-@preconcurrency import SimpleXChat
+@preconcurrency import InqalaabChat
 
 private var chatController: chat_ctrl?
 
-private let networkStatusesLock = DispatchQueue(label: "chat.simplex.app.network-statuses.lock")
+private let networkStatusesLock = DispatchQueue(label: "com.inqalaab.app.network-statuses.lock")
 
 enum TerminalItem: Identifiable {
     case cmd(Date, ChatCommand)
@@ -2030,9 +2030,9 @@ func initializeChat(start: Bool, confirmStart: Bool = false, dbKey: String? = ni
         }
     }
     if m.currentUser == nil {
-        onboardingStageDefault.set(.step1_SimpleXInfo)
+        onboardingStageDefault.set(.step1_InqalaabInfo)
         privacyDeliveryReceiptsSet.set(true)
-        m.onboardingStage = .step1_SimpleXInfo
+        m.onboardingStage = .step1_InqalaabInfo
     } else if confirmStart {
         showStartChatAfterRestartAlert { start in
             do {
@@ -2095,7 +2095,7 @@ func startChat(refreshInvitations: Bool = true, onboarding: Bool = false) throws
         if !onboarding {
             withAnimation {
                 let savedOnboardingStage = onboardingStageDefault.get()
-                m.onboardingStage = [.step1_SimpleXInfo, .step2_CreateProfile].contains(savedOnboardingStage) && m.users.count == 1
+                m.onboardingStage = [.step1_InqalaabInfo, .step2_CreateProfile].contains(savedOnboardingStage) && m.users.count == 1
                 ? .step3_ChooseServerOperators
                 : savedOnboardingStage
                 if m.onboardingStage == .onboardingComplete && !privacyDeliveryReceiptsSet.get() {

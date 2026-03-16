@@ -8,10 +8,10 @@
 
 import Foundation
 import UIKit
-import SimpleXChat
+import InqalaabChat
 import SwiftUI
 
-private let suspendLockQueue = DispatchQueue(label: "chat.simplex.app.suspend.lock")
+private let suspendLockQueue = DispatchQueue(label: "com.inqalaab.app.suspend.lock")
 
 let bgSuspendTimeout: Int = 5 // seconds
 

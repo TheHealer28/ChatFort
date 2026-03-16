@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-import SimpleXChat
+import InqalaabChat
 
 // SEStateGroupDefault must not be used in the share extension directly, only via this singleton
 class SEChatState {

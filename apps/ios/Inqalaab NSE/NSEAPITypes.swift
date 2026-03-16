@@ -6,7 +6,7 @@
 //  Copyright © 2025 SimpleX Chat. All rights reserved.
 //
 
-import SimpleXChat
+import InqalaabChat
 
 enum NSEChatCommand: ChatCmdProtocol {
     case showActiveUser

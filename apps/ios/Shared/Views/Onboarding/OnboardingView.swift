@@ -14,8 +14,8 @@ struct OnboardingView: View {
     var body: some View {
         NavigationView {
             switch onboarding {
-            case .step1_SimpleXInfo:
-                SimpleXInfo(onboarding: true)
+            case .step1_InqalaabInfo:
+                InqalaabInfo(onboarding: true)
                     .modifier(ThemedBackground())
             case .step1b_InqalaabMission:
                 InqalaabMissionView()
@@ -26,8 +26,8 @@ struct OnboardingView: View {
             case .step2_CreateProfile: // deprecated
                 CreateFirstProfile()
                     .modifier(ThemedBackground())
-            case .step3_CreateSimpleXAddress: // deprecated
-                CreateSimpleXAddress()
+            case .step3_CreateInqalaabAddress: // deprecated
+                CreateInqalaabAddress()
             case .step3_ChooseServerOperators:
                 OnboardingConditionsView()
                     .navigationBarBackButtonHidden(true)
@@ -47,11 +47,11 @@ func onboardingButtonPlaceholder() -> some View {
 }
 
 enum OnboardingStage: String, Identifiable {
-    case step1_SimpleXInfo          // Inqalaab: Welcome screen
+    case step1_InqalaabInfo          // Inqalaab: Welcome screen
     case step1b_InqalaabMission     // Inqalaab: Mission statement (NEW)
     case step1c_SecurityPledge      // Inqalaab: Security pledge (NEW)
     case step2_CreateProfile        // deprecated
-    case step3_CreateSimpleXAddress // deprecated
+    case step3_CreateInqalaabAddress // deprecated
     case step3_ChooseServerOperators // simplified conditions
     case step4_SetNotificationsMode
     case onboardingComplete
@@ -61,6 +61,6 @@ enum OnboardingStage: String, Identifiable {
 
 struct OnboardingStepsView_Previews: PreviewProvider {
     static var previews: some View {
-        OnboardingView(onboarding: .step1_SimpleXInfo)
+        OnboardingView(onboarding: .step1_InqalaabInfo)
     }
 }

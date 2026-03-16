@@ -9,7 +9,7 @@
 import Foundation
 import Combine
 import SwiftUI
-import SimpleXChat
+import InqalaabChat
 
 actor TerminalItems {
     private var terminalItems: [TerminalItem] = []
@@ -616,7 +616,7 @@ final class ChatModel: ObservableObject {
         popChatCollector.clear()
     }
 
-//    func addGroup(_ group: SimpleXChat.Group) {
+//    func addGroup(_ group: InqalaabChat.Group) {
 //        groups[group.groupInfo.id] = group
 //    }
 

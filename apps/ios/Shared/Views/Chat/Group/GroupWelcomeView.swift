@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-import SimpleXChat
+import InqalaabChat
 
 struct GroupWelcomeView: View {
     @Environment(\.dismiss) var dismiss: DismissAction

@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-import SimpleXChat
+import InqalaabChat
 
 struct IntegrityErrorItemView: View {
     @ObservedObject var chat: Chat

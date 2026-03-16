@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-import SimpleXChat
+import InqalaabChat
 
 struct NotificationsView: View {
     @EnvironmentObject var m: ChatModel

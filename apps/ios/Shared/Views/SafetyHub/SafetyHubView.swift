@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-import SimpleXChat
+import InqalaabChat
 
 struct SafetyHubView: View {
     @EnvironmentObject var theme: AppTheme
@@ -221,9 +221,9 @@ struct SafetyHubView: View {
 
                 // SECTION 2: Security Checklist (Interactive)
                 Section {
-                    // App Lock — NavigationLink to full SimplexLockView
+                    // App Lock — NavigationLink to full InqalaabLockView
                     NavigationLink {
-                        SimplexLockView(prefPerformLA: $appLockEnabled, currentLAMode: $currentLAMode)
+                        InqalaabLockView(prefPerformLA: $appLockEnabled, currentLAMode: $currentLAMode)
                             .navigationTitle("Inqalaab Lock")
                             .modifier(ThemedBackground(grouped: true))
                     } label: {

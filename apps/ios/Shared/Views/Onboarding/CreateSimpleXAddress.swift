@@ -1,5 +1,5 @@
 //
-//  CreateSimpleXAddress.swift
+//  CreateInqalaabAddress.swift
 //  SimpleX (iOS)
 //
 //  Created by spaced4ndy on 28.04.2023.
@@ -10,9 +10,9 @@ import SwiftUI
 import Contacts
 import ContactsUI
 import MessageUI
-import SimpleXChat
+import InqalaabChat
 
-struct CreateSimpleXAddress: View {
+struct CreateInqalaabAddress: View {
     @EnvironmentObject var m: ChatModel
     @State private var progressIndicator = false
     @State private var showMailView = false
@@ -31,7 +31,7 @@ struct CreateSimpleXAddress: View {
                         Spacer()
 
                         if let userAddress = m.userAddress {
-                            SimpleXCreatedLinkQRCode(link: userAddress.connLinkContact, short: Binding.constant(false))
+                            InqalaabCreatedLinkQRCode(link: userAddress.connLinkContact, short: Binding.constant(false))
                                 .frame(maxHeight: g.size.width)
                             shareQRCodeButton(userAddress)
                                 .frame(maxWidth: .infinity)
@@ -84,7 +84,7 @@ struct CreateSimpleXAddress: View {
                         }
                         await MainActor.run { progressIndicator = false }
                     } catch let error {
-                        logger.error("CreateSimpleXAddress create address: \(responseError(error))")
+                        logger.error("CreateInqalaabAddress create address: \(responseError(error))")
                         await MainActor.run { progressIndicator = false }
                         let a = getErrorAlert(error, "Error creating address")
                         AlertManager.shared.showAlertMsg(
@@ -154,7 +154,7 @@ struct CreateSimpleXAddress: View {
                     default: ()
                     }
                 case let .failure(error):
-                    logger.error("CreateSimpleXAddress share via email: \(responseError(error))")
+                    logger.error("CreateInqalaabAddress share via email: \(responseError(error))")
                     let a = getErrorAlert(error, "Error sending email")
                     AlertManager.shared.showAlertMsg(
                         title: a.title,
@@ -200,8 +200,8 @@ struct SendAddressMailView: View {
     }
 }
 
-struct CreateSimpleXAddress_Previews: PreviewProvider {
+struct CreateInqalaabAddress_Previews: PreviewProvider {
     static var previews: some View {
-        CreateSimpleXAddress()
+        CreateInqalaabAddress()
     }
 }

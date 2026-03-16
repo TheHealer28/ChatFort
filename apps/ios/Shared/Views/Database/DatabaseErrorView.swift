@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-import SimpleXChat
+import InqalaabChat
 
 struct DatabaseErrorView: View {
     @EnvironmentObject var m: ChatModel

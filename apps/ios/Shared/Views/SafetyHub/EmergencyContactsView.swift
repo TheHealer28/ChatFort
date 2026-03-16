@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-import SimpleXChat
+import InqalaabChat
 
 let INQALAAB_EMERGENCY_CONTACT_IDS = "inqalaab_emergency_contact_ids"
 let INQALAAB_CHECKIN_MESSAGE = "inqalaab_checkin_message"

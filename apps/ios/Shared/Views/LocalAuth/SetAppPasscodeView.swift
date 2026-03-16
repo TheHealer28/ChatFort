@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-import SimpleXChat
+import InqalaabChat
 
 struct SetAppPasscodeView: View {
     var passcodeKeychain: KeyChainItem = kcAppPassword

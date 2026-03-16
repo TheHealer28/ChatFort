@@ -9,7 +9,7 @@
 import UniformTypeIdentifiers
 import AVFoundation
 import SwiftUI
-import SimpleXChat
+import InqalaabChat
 
 /// Maximum size of hex encoded media previews
 private let MAX_DATA_SIZE: Int64 = 14000

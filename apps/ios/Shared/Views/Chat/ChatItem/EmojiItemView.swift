@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-import SimpleXChat
+import InqalaabChat
 
 struct EmojiItemView: View {
     @ObservedObject var chat: Chat

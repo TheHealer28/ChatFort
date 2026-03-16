@@ -84,3 +84,7 @@ apps/multiplatform/.kotlin/sessions
 # Xcode build output
 build/
 CLAUDE.md
+
+# Server configuration (contains hardcoded server addresses - fetched from Firebase at runtime)
+apps/ios/Shared/InqalaabServers.swift
+apps/multiplatform/android/src/main/java/chat/simplex/app/InqalaabServers.kt

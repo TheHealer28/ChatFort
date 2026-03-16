@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-import SimpleXChat
+import InqalaabChat
 
 struct CILinkView: View {
     @EnvironmentObject var theme: AppTheme

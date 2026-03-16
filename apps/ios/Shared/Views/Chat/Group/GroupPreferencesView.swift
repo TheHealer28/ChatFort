@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-import SimpleXChat
+import InqalaabChat
 
 private let featureRoles: [(role: GroupMemberRole?, text: LocalizedStringKey)] = [
     (nil, "all members"),

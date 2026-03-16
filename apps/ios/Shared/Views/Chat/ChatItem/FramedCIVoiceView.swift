@@ -9,7 +9,7 @@
 import SwiftUI
 
 import SwiftUI
-import SimpleXChat
+import InqalaabChat
 
 struct FramedCIVoiceView: View {
     @EnvironmentObject var theme: AppTheme

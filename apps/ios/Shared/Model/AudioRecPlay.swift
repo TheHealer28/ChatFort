@@ -9,7 +9,7 @@
 import Foundation
 import AVFoundation
 import SwiftUI
-import SimpleXChat
+import InqalaabChat
 
 class AudioRecorder {
     var onTimer: ((TimeInterval) -> Void)?

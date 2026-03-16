@@ -59,37 +59,37 @@ public enum PresetWallpaper: CaseIterable {
         case .cats: [
             DefaultTheme.LIGHT: "#ffefdca6".colorFromReadableHex(),
             DefaultTheme.DARK: "#ff4b3b0e".colorFromReadableHex(),
-            DefaultTheme.SIMPLEX: "#ff51400f".colorFromReadableHex(),
+            DefaultTheme.CLASSIC: "#ff51400f".colorFromReadableHex(),
             DefaultTheme.BLACK: "#ff4b3b0e".colorFromReadableHex()
         ]
         case .flowers: [
             DefaultTheme.LIGHT: "#ff9CEA59".colorFromReadableHex(),
             DefaultTheme.DARK: "#ff31560D".colorFromReadableHex(),
-            DefaultTheme.SIMPLEX: "#ff36600f".colorFromReadableHex(),
+            DefaultTheme.CLASSIC: "#ff36600f".colorFromReadableHex(),
             DefaultTheme.BLACK: "#ff31560D".colorFromReadableHex()
         ]
         case .hearts: [
             DefaultTheme.LIGHT: "#fffde0e0".colorFromReadableHex(),
             DefaultTheme.DARK: "#ff3c0f0f".colorFromReadableHex(),
-            DefaultTheme.SIMPLEX: "#ff411010".colorFromReadableHex(),
+            DefaultTheme.CLASSIC: "#ff411010".colorFromReadableHex(),
             DefaultTheme.BLACK: "#ff3C0F0F".colorFromReadableHex()
         ]
         case .kids: [
             DefaultTheme.LIGHT: "#ffadeffc".colorFromReadableHex(),
             DefaultTheme.DARK: "#ff16404B".colorFromReadableHex(),
-            DefaultTheme.SIMPLEX: "#ff184753".colorFromReadableHex(),
+            DefaultTheme.CLASSIC: "#ff184753".colorFromReadableHex(),
             DefaultTheme.BLACK: "#ff16404B".colorFromReadableHex()
         ]
         case .school: [
             DefaultTheme.LIGHT: "#ffCEEBFF".colorFromReadableHex(),
             DefaultTheme.DARK: "#ff0F293B".colorFromReadableHex(),
-            DefaultTheme.SIMPLEX: "#ff112f43".colorFromReadableHex(),
+            DefaultTheme.CLASSIC: "#ff112f43".colorFromReadableHex(),
             DefaultTheme.BLACK: "#ff0F293B".colorFromReadableHex()
         ]
         case .travel: [
             DefaultTheme.LIGHT: "#ffeedbfe".colorFromReadableHex(),
             DefaultTheme.DARK: "#ff311E48".colorFromReadableHex(),
-            DefaultTheme.SIMPLEX: "#ff35204e".colorFromReadableHex(),
+            DefaultTheme.CLASSIC: "#ff35204e".colorFromReadableHex(),
             DefaultTheme.BLACK: "#ff311E48".colorFromReadableHex()
         ]
         }
@@ -110,7 +110,7 @@ public enum PresetWallpaper: CaseIterable {
                 receivedMessage: "#ff272624",
                 receivedQuote: "#ff373633"
             ),
-            DefaultTheme.SIMPLEX: ThemeColors.from(
+            DefaultTheme.CLASSIC: ThemeColors.from(
                 sentMessage: "#ff41371b",
                 sentQuote: "#ff654f1c",
                 receivedMessage: "#ff272624",
@@ -136,7 +136,7 @@ public enum PresetWallpaper: CaseIterable {
                 receivedMessage: "#ff242523",
                 receivedQuote: "#ff353733"
             ),
-            DefaultTheme.SIMPLEX: ThemeColors.from(
+            DefaultTheme.CLASSIC: ThemeColors.from(
                 sentMessage: "#ff184739",
                 sentQuote: "#ff1F6F4B",
                 receivedMessage: "#ff242523",
@@ -162,7 +162,7 @@ public enum PresetWallpaper: CaseIterable {
                 receivedMessage: "#ff242121",
                 receivedQuote: "#ff3b3535"
             ),
-            DefaultTheme.SIMPLEX: ThemeColors.from(
+            DefaultTheme.CLASSIC: ThemeColors.from(
                 sentMessage: "#ff491A28",
                 sentQuote: "#ff761F29",
                 receivedMessage: "#ff242121",
@@ -188,7 +188,7 @@ public enum PresetWallpaper: CaseIterable {
                 receivedMessage: "#ff252626",
                 receivedQuote: "#ff373A39"
             ),
-            DefaultTheme.SIMPLEX: ThemeColors.from(
+            DefaultTheme.CLASSIC: ThemeColors.from(
                 sentMessage: "#ff1a4745",
                 sentQuote: "#ff1d6b69",
                 receivedMessage: "#ff252626",
@@ -214,7 +214,7 @@ public enum PresetWallpaper: CaseIterable {
                 receivedMessage: "#ff26282c",
                 receivedQuote: "#ff393c40"
             ),
-            DefaultTheme.SIMPLEX: ThemeColors.from(
+            DefaultTheme.CLASSIC: ThemeColors.from(
                 sentMessage: "#ff1A3C5D",
                 sentQuote: "#ff235b80",
                 receivedMessage: "#ff26282c",
@@ -240,7 +240,7 @@ public enum PresetWallpaper: CaseIterable {
                 receivedMessage: "#ff272528",
                 receivedQuote: "#ff3B373E"
             ),
-            DefaultTheme.SIMPLEX: ThemeColors.from(
+            DefaultTheme.CLASSIC: ThemeColors.from(
                 sentMessage: "#ff3C255D",
                 sentQuote: "#ff623485",
                 receivedMessage: "#ff26273B",
@@ -273,7 +273,7 @@ func wallpaperBackgrounds(light: String) -> [DefaultTheme : Color] {
     [
         DefaultTheme.LIGHT: light.colorFromReadableHex(),
         DefaultTheme.DARK: "#ff121212".colorFromReadableHex(),
-        DefaultTheme.SIMPLEX: "#ff111528".colorFromReadableHex(),
+        DefaultTheme.CLASSIC: "#ff111528".colorFromReadableHex(),
         DefaultTheme.BLACK: "#ff070707".colorFromReadableHex()
     ]
 }

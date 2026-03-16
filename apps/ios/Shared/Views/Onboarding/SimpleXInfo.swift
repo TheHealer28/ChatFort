@@ -1,5 +1,5 @@
 //
-//  SimpleXInfo.swift → Inqalaab Welcome Screen
+//  InqalaabInfo.swift → Inqalaab Welcome Screen
 //  Inqalaab (iOS)
 //
 //  Completely redesigned from SimpleX Chat.
@@ -7,9 +7,9 @@
 //
 
 import SwiftUI
-import SimpleXChat
+import InqalaabChat
 
-struct SimpleXInfo: View {
+struct InqalaabInfo: View {
     @EnvironmentObject var m: ChatModel
     @Environment(\.colorScheme) var colorScheme: ColorScheme
     @State private var createProfileNavLinkActive = false
@@ -185,8 +185,8 @@ let textSpace = Text(verbatim: " ")
 
 let textNewLine = Text(verbatim: "\n")
 
-struct SimpleXInfo_Previews: PreviewProvider {
+struct InqalaabInfo_Previews: PreviewProvider {
     static var previews: some View {
-        SimpleXInfo(onboarding: true)
+        InqalaabInfo(onboarding: true)
     }
 }

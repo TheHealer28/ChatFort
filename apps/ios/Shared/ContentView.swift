@@ -7,7 +7,7 @@
 
 import SwiftUI
 import Intents
-import SimpleXChat
+import InqalaabChat
 
 private enum NoticesSheet: Identifiable {
     case whatsNew(updatedConditions: Bool)
@@ -121,7 +121,7 @@ struct ContentView: View {
             logger.debug("scenePhase was \(String(describing: scenePhase)), now \(String(describing: phase))")
             switch (phase) {
             case .background:
-                // also see .onChange(of: scenePhase) in SimpleXApp: on entering background
+                // also see .onChange(of: scenePhase) in InqalaabApp: on entering background
                 // it remembers enteredBackgroundAuthenticated and sets chatModel.contentViewAccessAuthenticated to false
                 automaticAuthenticationAttempted = false
                 canConnectViewCall = false
@@ -478,7 +478,7 @@ struct ContentView: View {
             m.appOpenUrl = nil
             connectViaUrl_(url)
         } else if let url = m.appOpenUrlLater, AppChatState.shared.value == .active, scenePhase == .active {
-            // correcting branch in case .onChange(of: scenePhase) in SimpleXApp doesn't trigger and transfer appOpenUrlLater into appOpenUrl
+            // correcting branch in case .onChange(of: scenePhase) in InqalaabApp doesn't trigger and transfer appOpenUrlLater into appOpenUrl
             m.appOpenUrlLater = nil
             connectViaUrl_(url)
         }

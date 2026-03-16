@@ -8,7 +8,7 @@
 
 import UIKit
 import SwiftUI
-import SimpleXChat
+import InqalaabChat
 
 /// Extension Entry point
 /// System will create this controller each time share sheet is invoked

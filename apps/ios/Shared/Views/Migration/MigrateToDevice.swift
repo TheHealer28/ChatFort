@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-import SimpleXChat
+import InqalaabChat
 
 enum MigrationToDeviceState: Codable, Equatable {
     case downloadProgress(link: String, archiveName: String)
@@ -204,7 +204,7 @@ struct MigrateToDevice: View {
                         switch resp {
                         case let .success(r):
                             let link = r.string
-                            if strHasSimplexFileLink(link.trimmingCharacters(in: .whitespaces)) {
+                            if strHasInqalaabFileLink(link.trimmingCharacters(in: .whitespaces)) {
                                 migrationState = .linkDownloading(link: link.trimmingCharacters(in: .whitespaces))
                             } else {
                                 alert = .error(title: "Invalid link", error: "The text you pasted is not a valid link.")
@@ -231,7 +231,7 @@ struct MigrateToDevice: View {
     private func pasteLinkView() -> some View {
         Button {
             if let str = UIPasteboard.general.string {
-                if strHasSimplexFileLink(str.trimmingCharacters(in: .whitespaces)) {
+                if strHasInqalaabFileLink(str.trimmingCharacters(in: .whitespaces)) {
                     migrationState = .linkDownloading(link: str.trimmingCharacters(in: .whitespaces))
                 } else {
                     alert = .error(title: "Invalid link", error: "The text you pasted is not a valid link.")
@@ -637,7 +637,7 @@ struct MigrateToDevice: View {
         dismiss()
     }
 
-    private func strHasSimplexFileLink(_ text: String) -> Bool {
+    private func strHasInqalaabFileLink(_ text: String) -> Bool {
         text.starts(with: "simplex:/file") || text.starts(with: "https://simplex.chat/file") || text.starts(with: "https://example.net/file")
     }
 

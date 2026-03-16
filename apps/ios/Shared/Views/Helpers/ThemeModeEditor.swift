@@ -8,7 +8,7 @@
 
 import Foundation
 import SwiftUI
-import SimpleXChat
+import InqalaabChat
 
 struct UserWallpaperEditor: View {
     @EnvironmentObject var theme: AppTheme

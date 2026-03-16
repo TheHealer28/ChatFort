@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-import SimpleXChat
+import InqalaabChat
 
 struct DeletedItemView: View {
     @EnvironmentObject var theme: AppTheme

@@ -6,7 +6,7 @@
 import WebRTC
 import LZString
 import SwiftUI
-import SimpleXChat
+import InqalaabChat
 
 final class WebRTCClient: NSObject, RTCVideoViewDelegate, RTCFrameEncryptorDelegate, RTCFrameDecryptorDelegate {
     private static let factory: RTCPeerConnectionFactory = {
@@ -58,7 +58,7 @@ final class WebRTCClient: NSObject, RTCVideoViewDelegate, RTCFrameEncryptorDeleg
     }
 
     private let rtcAudioSession =  RTCAudioSession.sharedInstance()
-    private let audioQueue = DispatchQueue(label: "chat.simplex.app.audio")
+    private let audioQueue = DispatchQueue(label: "com.inqalaab.app.audio")
     private var sendCallResponse: (WVAPIMessage) async -> Void
     var activeCall: Call?
     var notConnectedCall: NotConnectedCall?

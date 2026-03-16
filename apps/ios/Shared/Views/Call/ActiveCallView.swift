@@ -8,7 +8,7 @@
 
 import SwiftUI
 import WebKit
-import SimpleXChat
+import InqalaabChat
 import AVFoundation
 
 struct ActiveCallView: View {

@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-import SimpleXChat
+import InqalaabChat
 import Yams
 
 let colorModesLocalized: [LocalizedStringKey] = ["System", "Light", "Dark"]

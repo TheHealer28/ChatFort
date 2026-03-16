@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-import SimpleXChat
+import InqalaabChat
 
 private let secondsLabel =  NSLocalizedString("sec", comment: "network option")
 

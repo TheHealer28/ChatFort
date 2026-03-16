@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-import SimpleXChat
+import InqalaabChat
 
 struct MarkedDeletedItemView: View {
     @EnvironmentObject var m: ChatModel

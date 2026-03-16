@@ -8,7 +8,7 @@
 //
 
 import SwiftUI
-import SimpleXChat
+import InqalaabChat
 
 struct NearbyTabView: View {
     @EnvironmentObject var nearbyModel: NearbyModel

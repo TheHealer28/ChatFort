@@ -10,7 +10,7 @@ import UserNotifications
 import OSLog
 import StoreKit
 import CallKit
-import SimpleXChat
+import InqalaabChat
 
 let logger = Logger()
 
@@ -78,7 +78,7 @@ public enum NSENotificationData {
 // or when background notification is received.
 class NSEThreads {
     static let shared = NSEThreads()
-    private let queue = DispatchQueue(label: "chat.simplex.app.SimpleX-NSE.notification-threads.lock")
+    private let queue = DispatchQueue(label: "com.inqalaab.app.Inqalaab-NSE.notification-threads.lock")
     private var allThreads: Set<UUID> = []
     private var activeThreads: [(threadId: UUID, nse: NotificationService)] = []
     private var droppedNotifications: [(entityId: ChatId, ntf: NSENotificationData)] = []

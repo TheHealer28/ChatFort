@@ -6,7 +6,7 @@
 //  Copyright © 2024 SimpleX Chat. All rights reserved.
 //
 
-import SimpleXChat
+import InqalaabChat
 import SwiftUI
 
 let TRIM_KEEP_COUNT = 200

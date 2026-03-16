@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-import SimpleXChat
+import InqalaabChat
 
 struct CIFeaturePreferenceView: View {
     @ObservedObject var chat: Chat

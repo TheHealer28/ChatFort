@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-import SimpleXChat
+import InqalaabChat
 
 let INQALAAB_LOCKDOWN_ENABLED = "inqalaab_lockdown_enabled"
 // Keys for saving pre-lockdown values

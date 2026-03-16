@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-import SimpleXChat
+import InqalaabChat
 
 let INQALAAB_PANIC_ENABLED = "inqalaab_panic_enabled"
 let INQALAAB_PANIC_SHAKE_COUNT = "inqalaab_panic_shake_count"

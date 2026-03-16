@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import SimpleXChat
+import InqalaabChat
 import SwiftUI
 
 extension AppSettings {

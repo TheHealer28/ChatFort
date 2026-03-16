@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-import SimpleXChat
+import InqalaabChat
 
 enum UserProfileAlert: Identifiable {
     case duplicateUserError

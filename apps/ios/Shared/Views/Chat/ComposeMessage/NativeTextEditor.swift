@@ -8,7 +8,7 @@
 
 import SwiftUI
 import SwiftyGif
-import SimpleXChat
+import InqalaabChat
 import PhotosUI
 
 struct NativeTextEditor: UIViewRepresentable {

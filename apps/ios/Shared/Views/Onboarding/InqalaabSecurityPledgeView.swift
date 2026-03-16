@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-import SimpleXChat
+import InqalaabChat
 
 struct InqalaabSecurityPledgeView: View {
     @State private var createProfileActive = false

@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-import SimpleXChat
+import InqalaabChat
 
 private let terminalFont = Font.custom("Menlo", size: 16)
 

@@ -10,7 +10,7 @@ import Foundation
 import Security
 
 private let ACCESS_POLICY: CFString = kSecAttrAccessibleAfterFirstUnlockThisDeviceOnly
-private let ACCESS_GROUP: String = "5NN7GUYB6T.chat.simplex.app"
+private let ACCESS_GROUP: String = "C7P2NWA933.com.inqalaab.app"
 private let DATABASE_PASSWORD_ITEM: String = "databasePassword"
 private let APP_PASSWORD_ITEM: String = "appPassword"
 private let SELF_DESTRUCT_PASSWORD_ITEM: String = "selfDestructPassword"

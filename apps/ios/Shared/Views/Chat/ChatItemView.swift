@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-import SimpleXChat
+import InqalaabChat
 
 extension EnvironmentValues {
     struct ShowTimestamp: EnvironmentKey {

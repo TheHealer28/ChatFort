@@ -7,10 +7,10 @@
 //
 
 import SwiftUI
-import SimpleXChat
+import InqalaabChat
 import CodeScanner
 import AVFoundation
-import SimpleXChat
+import InqalaabChat
 
 struct SomeAlert: Identifiable {
     var alert: Alert
@@ -310,8 +310,8 @@ private struct InviteView: View {
 
     private func qrCodeView() -> some View {
         Section {
-            SimpleXCreatedLinkQRCode(link: connLinkInvitation, short: $showShortLink, onShare: setInvitationUsed)
-                .id("simplex-qrcode-view-for-\(connLinkInvitation.simplexChatUri(short: showShortLink))")
+            InqalaabCreatedLinkQRCode(link: connLinkInvitation, short: $showShortLink, onShare: setInvitationUsed)
+                .id("inqalaab-qrcode-view-for-\(connLinkInvitation.simplexChatUri(short: showShortLink))")
                 .padding()
                 .background(
                     RoundedRectangle(cornerRadius: 12, style: .continuous)
@@ -613,7 +613,7 @@ private struct ConnectView: View {
             ZStack(alignment: .trailing) {
                 Button {
                     if let str = UIPasteboard.general.string {
-                        if let link = strHasSingleSimplexLink(str.trimmingCharacters(in: .whitespaces)) {
+                        if let link = strHasSingleInqalaabLink(str.trimmingCharacters(in: .whitespaces)) {
                             pastedLink = link.text
                             // It would be good to hide it, but right now it is not clear how to release camera in CodeScanner
                             // https://github.com/twostraws/CodeScanner/issues/121
@@ -650,7 +650,7 @@ private struct ConnectView: View {
         switch resp {
         case let .success(r):
             let link = r.string
-            if strIsSimplexLink(r.string) {
+            if strIsInqalaabLink(r.string) {
                 connect(link)
             } else {
                 alert = .newChatSomeAlert(alert: SomeAlert(
@@ -789,7 +789,7 @@ struct InfoSheetButton<Content: View>: View {
     }
 }
 
-func strIsSimplexLink(_ str: String) -> Bool {
+func strIsInqalaabLink(_ str: String) -> Bool {
     if let parsedMd = parseSimpleXMarkdown(str),
        parsedMd.count == 1,
        case .simplexLink = parsedMd[0].format {
@@ -799,7 +799,7 @@ func strIsSimplexLink(_ str: String) -> Bool {
     }
 }
 
-func strHasSingleSimplexLink(_ str: String) -> FormattedText? {
+func strHasSingleInqalaabLink(_ str: String) -> FormattedText? {
     if let parsedMd = parseSimpleXMarkdown(str) {
        let parsedLinks = parsedMd.filter({ $0.format?.isSimplexLink ?? false })
         if parsedLinks.count == 1 {

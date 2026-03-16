@@ -8,7 +8,7 @@
 
 import SwiftUI
 import LocalAuthentication
-import SimpleXChat
+import InqalaabChat
 
 enum LAResult {
     case success

@@ -8,7 +8,7 @@
 
 import SwiftUI
 import AVKit
-import SimpleXChat
+import InqalaabChat
 import Combine
 
 struct CIVideoView: View {

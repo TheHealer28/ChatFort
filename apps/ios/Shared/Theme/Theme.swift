@@ -8,7 +8,7 @@
 
 import Foundation
 import SwiftUI
-import SimpleXChat
+import InqalaabChat
 
 var CurrentColors: ThemeManager.ActiveTheme = ThemeManager.currentColors(nil, nil, ChatModel.shared.currentUser?.uiThemes, themeOverridesDefault.get())
 
@@ -60,7 +60,7 @@ struct ThemedBackground: ViewModifier {
     func body(content: Content) -> some View {
         content
             .background(
-                theme.base == DefaultTheme.SIMPLEX
+                theme.base == DefaultTheme.CLASSIC
                 ? LinearGradient(
                     colors: [
                         grouped
@@ -80,7 +80,7 @@ struct ThemedBackground: ViewModifier {
                 )
             )
             .background(
-                theme.base == DefaultTheme.SIMPLEX
+                theme.base == DefaultTheme.CLASSIC
                 ? Color.clear
                 : grouped
                 ? theme.colors.background.asGroupedBackground(theme.base.mode)

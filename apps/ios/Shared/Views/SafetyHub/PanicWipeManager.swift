@@ -8,7 +8,7 @@
 
 import Foundation
 import SwiftUI
-import SimpleXChat
+import InqalaabChat
 
 class PanicWipeManager: ObservableObject {
     static let shared = PanicWipeManager()
@@ -121,7 +121,7 @@ class PanicWipeManager: ObservableObject {
                 await MainActor.run {
                     self.wipeInProgress = false
                     // Fallback: reset to onboarding so app can restart fresh
-                    onboardingStageDefault.set(.step1_SimpleXInfo)
+                    onboardingStageDefault.set(.step1_InqalaabInfo)
                     ChatModel.shared.chatDbChanged = true
                 }
             }

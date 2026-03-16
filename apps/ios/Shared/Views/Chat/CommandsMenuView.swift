@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-import SimpleXChat
+import InqalaabChat
 
 let COMMAND_ROW_SIZE: CGFloat = 48
 let MAX_VISIBLE_COMMAND_ROWS: CGFloat = 5.8

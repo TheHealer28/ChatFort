@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-import SimpleXChat
+import InqalaabChat
 
 struct ContactConnectionInfo: View {
     @EnvironmentObject var m: ChatModel
@@ -63,8 +63,8 @@ struct ContactConnectionInfo: View {
 
                     if contactConnection.initiated,
                        let connLinkInv = contactConnection.connLinkInv {
-                        SimpleXCreatedLinkQRCode(link: connLinkInv, short: $showShortLink)
-                            .id("simplex-invitation-qrcode-\(connLinkInv.simplexChatUri(short: showShortLink))")
+                        InqalaabCreatedLinkQRCode(link: connLinkInv, short: $showShortLink)
+                            .id("inqalaab-invitation-qrcode-\(connLinkInv.simplexChatUri(short: showShortLink))")
                         incognitoEnabled()
                         shareLinkButton(connLinkInv, short: showShortLink)
                         oneTimeLinkLearnMoreButton()

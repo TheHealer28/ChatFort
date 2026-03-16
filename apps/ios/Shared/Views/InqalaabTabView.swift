@@ -11,7 +11,7 @@
 //
 
 import SwiftUI
-import SimpleXChat
+import InqalaabChat
 
 struct InqalaabTabView: View {
     @Binding var activeUserPickerSheet: UserPickerSheet?

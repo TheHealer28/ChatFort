@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import SimpleXChat
+import InqalaabChat
 
 let pushEnvironment: PushEnvironment = {
     guard let provisioningProfile = try? provisioningProfile(),

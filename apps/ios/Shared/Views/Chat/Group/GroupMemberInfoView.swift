@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-import SimpleXChat
+import InqalaabChat
 
 struct GroupMemberInfoView: View {
     @EnvironmentObject var chatModel: ChatModel
@@ -120,7 +120,7 @@ struct GroupMemberInfoView: View {
 
                     if let contactLink = member.contactLink {
                         Section {
-                            SimpleXLinkQRCode(uri: contactLink)
+                            InqalaabLinkQRCode(uri: contactLink)
                             Button {
                                 showShareSheet(items: [simplexChatLink(contactLink)])
                             } label: {

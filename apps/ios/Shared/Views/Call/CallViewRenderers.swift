@@ -5,7 +5,7 @@
 
 import SwiftUI
 import WebRTC
-import SimpleXChat
+import InqalaabChat
 import AVKit
 
 struct CallViewRemote: UIViewRepresentable {

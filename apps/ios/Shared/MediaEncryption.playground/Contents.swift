@@ -1,5 +1,5 @@
 import UIKit
-import SimpleXChat
+import InqalaabChat
 
 hs_init(0, nil)
 

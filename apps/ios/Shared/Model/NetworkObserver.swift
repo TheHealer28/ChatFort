@@ -8,14 +8,14 @@
 
 import Foundation
 import Network
-import SimpleXChat
+import InqalaabChat
 
 class NetworkObserver {
     static let shared = NetworkObserver()
-    private let queue: DispatchQueue = DispatchQueue(label: "chat.simplex.app.NetworkObserver")
+    private let queue: DispatchQueue = DispatchQueue(label: "com.inqalaab.app.NetworkObserver")
     private var prevInfo: UserNetworkInfo? = nil
     private var monitor: NWPathMonitor?
-    private let monitorLock: DispatchQueue = DispatchQueue(label: "chat.simplex.app.monitorLock")
+    private let monitorLock: DispatchQueue = DispatchQueue(label: "com.inqalaab.app.monitorLock")
 
     func restartMonitor() {
         monitorLock.sync {
