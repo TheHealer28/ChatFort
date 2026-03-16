@@ -88,3 +88,7 @@ CLAUDE.md
 # Server configuration (contains hardcoded server addresses - fetched from Firebase at runtime)
 apps/ios/Shared/InqalaabServers.swift
 apps/multiplatform/android/src/main/java/chat/simplex/app/InqalaabServers.kt
+
+# Firebase config (contains API keys)
+GoogleService-Info.plist
+google-services.json
