@@ -1,7 +1,7 @@
 {
   description = "nix flake for simplex-chat";
   inputs.haskellNix.url = "github:input-output-hk/haskell.nix/armv7a";
-  inputs.nixpkgs.follows = "haskellNix/nixpkgs-2305";
+  inputs.nixpkgs.follows = "haskellNix/nixpkgs-2411";
   inputs.mac2ios.url = "github:zw3rk/mobile-core-tools";
   inputs.hackage = {
     url = "github:input-output-hk/hackage.nix";
@@ -9,18 +9,7 @@
   };
   inputs.haskellNix.inputs.hackage.follows = "hackage";
   inputs.flake-utils.url = "github:numtide/flake-utils";
-  # Source repository packages (for inputMap to avoid nix-prefetch-git issues)
-  inputs.simplexmq-src = { url = "github:simplex-chat/simplexmq/9346b85c3f34f8b12fefef4631ba21087cf5f0e3"; flake = false; };
-  inputs.hs-socks-src = { url = "github:simplex-chat/hs-socks/a30cc7a79a08d8108316094f8f2f82a0c5e1ac51"; flake = false; };
-  inputs.direct-sqlcipher-src = { url = "github:simplex-chat/direct-sqlcipher/f814ee68b16a9447fbb467ccc8f29bdd3546bfd9"; flake = false; };
-  inputs.sqlcipher-simple-src = { url = "github:simplex-chat/sqlcipher-simple/a46bd361a19376c5211f1058908fc0ae6bf42446"; flake = false; };
-  inputs.aeson-src = { url = "github:simplex-chat/aeson/aab7b5a14d6c5ea64c64dcaee418de1bb00dcc2b"; flake = false; };
-  inputs.haskell-terminal-src = { url = "github:simplex-chat/haskell-terminal/f708b00009b54890172068f168bf98508ffcd495"; flake = false; };
-  inputs.android-support-src = { url = "github:simplex-chat/android-support/9aa09f148089d6752ce563b14c2df1895718d806"; flake = false; };
-  inputs.zip-src = { url = "github:simplex-chat/zip/2eff156c3aac389e35d38bf10a52733d7061640a"; flake = false; };
-  inputs.wai-yesod-src = { url = "github:yesodweb/wai/ec5e017d896a78e787a5acea62b37a4e677dec2e"; flake = false; };
-  inputs.wai-simplex-src = { url = "github:simplex-chat/wai/2f6e5aa5f05ba9140ac99e195ee647b4f7d926b0"; flake = false; };
-  outputs = { self, haskellNix, nixpkgs, flake-utils, mac2ios, simplexmq-src, hs-socks-src, direct-sqlcipher-src, sqlcipher-simple-src, aeson-src, haskell-terminal-src, android-support-src, zip-src, wai-yesod-src, wai-simplex-src, ... }:
+  outputs = { self, haskellNix, nixpkgs, flake-utils, mac2ios, ... }:
     let systems = [ "x86_64-linux" "x86_64-darwin" "aarch64-linux" "aarch64-darwin" ]; in
     flake-utils.lib.eachSystem systems (system:
       # this android26 overlay makes the pkgsCross.{aarch64-android,armv7a-android-prebuilt} to set stdVer to 26 (Android 8).
@@ -40,10 +29,15 @@
       }; in
       # `appendOverlays` with a singleton is identical to `extend`.
       let pkgs = haskellNix.legacyPackages.${system}.appendOverlays [android26]; in
-      # Fix: wrap plan-to-nix to include nix-prefetch-url in PATH
+      # plan-to-nix needs nix, nix-prefetch-git, nix-prefetch-url in PATH
       let original-nix-tools = pkgs.haskell-nix.nix-tools-unchecked;
-          fixed-plan-to-nix = pkgs.symlinkJoin { name = "plan-to-nix-with-nix"; paths = [ original-nix-tools.exes.plan-to-nix pkgs.nix pkgs.nix-prefetch-git ]; };
-          fixed-nix-tools = original-nix-tools // { exes = original-nix-tools.exes // { plan-to-nix = fixed-plan-to-nix; }; }; in
+          fixed-plan-to-nix = pkgs.symlinkJoin {
+            name = "plan-to-nix-with-nix";
+            paths = [ original-nix-tools.exes.plan-to-nix pkgs.nix pkgs.nix-prefetch-git ];
+          };
+          fixed-nix-tools = original-nix-tools // {
+            exes = original-nix-tools.exes // { plan-to-nix = fixed-plan-to-nix; };
+          }; in
       let drv' = { extra-modules, pkgs', ... }: pkgs'.haskell-nix.project {
         compiler-nix-name = "ghc963";
         index-state = "2023-12-12T00:00:00Z";
@@ -56,19 +50,6 @@
         };
         sha256map = import ./scripts/nix/sha256map.nix;
         nix-tools = fixed-nix-tools;
-        # Provide pre-fetched source repos via inputMap to avoid nix-prefetch-git issues
-        inputMap = {
-          "https://github.com/simplex-chat/simplexmq.git" = simplexmq-src;
-          "https://github.com/simplex-chat/hs-socks.git" = hs-socks-src;
-          "https://github.com/simplex-chat/direct-sqlcipher.git" = direct-sqlcipher-src;
-          "https://github.com/simplex-chat/sqlcipher-simple.git" = sqlcipher-simple-src;
-          "https://github.com/simplex-chat/aeson.git" = aeson-src;
-          "https://github.com/simplex-chat/haskell-terminal.git" = haskell-terminal-src;
-          "https://github.com/simplex-chat/android-support.git" = android-support-src;
-          "https://github.com/simplex-chat/zip.git" = zip-src;
-          "https://github.com/yesodweb/wai.git" = wai-yesod-src;
-          "https://github.com/simplex-chat/wai.git" = wai-simplex-src;
-        };
         modules = [
         ({ pkgs, lib, ...}: lib.mkIf (!pkgs.stdenv.hostPlatform.isWindows) {
           # This patch adds `dl` as an extra-library to direct-sqlciper, which is needed
