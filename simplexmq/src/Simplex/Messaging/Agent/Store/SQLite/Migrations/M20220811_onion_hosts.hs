@@ -10,7 +10,5 @@ m20220811_onion_hosts =
   [sql|
 ALTER TABLE conn_confirmations ADD COLUMN smp_client_version INTEGER;
 
-UPDATE ntf_servers
-SET ntf_host = 'ntf.example.org'
-WHERE ntf_host = 'ntf2.simplex.im';
+UPDATE ntf_servers SET ntf_host = ntf_host WHERE 0;
 |]
