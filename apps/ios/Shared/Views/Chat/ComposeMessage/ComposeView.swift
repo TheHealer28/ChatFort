@@ -1504,7 +1504,7 @@ struct ComposeView: View {
     }
 
     private func isInqalaabLink(_ link: String) -> Bool {
-        link.starts(with: "https://inqalaab.chat") || link.starts(with: "http://inqalaab.chat") || link.starts(with: "simplex:/") || link.starts(with: "https://example.net") || link.starts(with: "http://example.net")
+        link.starts(with: "https://inqalaab.chat") || link.starts(with: "http://inqalaab.chat") || link.starts(with: "inqalbi:/") || link.starts(with: "simplex:/") || link.starts(with: "https://example.net") || link.starts(with: "http://example.net")
     }
 
     private func cancelLinkPreview() {

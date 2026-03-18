@@ -2060,7 +2060,7 @@ public struct GroupDirectInvitation: Decodable, Hashable {
     }
 
     public static let sampleData = GroupDirectInvitation(
-        groupDirectInvLink: "simplex_link",
+        groupDirectInvLink: "inqalbi_link",
         fromGroupId_: 1,
         fromGroupMemberId_: 1,
         fromGroupMemberConnId_: 1,
@@ -4701,11 +4701,11 @@ public enum SimplexLinkType: String, Decodable, Hashable {
 
     public var description: String {
         switch self {
-        case .contact: return NSLocalizedString("Inqalaab contact address", comment: "simplex link type")
-        case .invitation: return NSLocalizedString("Inqalaab one-time invitation", comment: "simplex link type")
-        case .group: return NSLocalizedString("Inqalaab group link", comment: "simplex link type")
-        case .channel: return NSLocalizedString("Inqalaab channel link", comment: "simplex link type")
-        case .relay: return NSLocalizedString("Inqalaab relay link", comment: "simplex link type")
+        case .contact: return NSLocalizedString("Inqalaab contact address", comment: "inqalbi link type")
+        case .invitation: return NSLocalizedString("Inqalaab one-time invitation", comment: "inqalbi link type")
+        case .group: return NSLocalizedString("Inqalaab group link", comment: "inqalbi link type")
+        case .channel: return NSLocalizedString("Inqalaab channel link", comment: "inqalbi link type")
+        case .relay: return NSLocalizedString("Inqalaab relay link", comment: "inqalbi link type")
         }
     }
 }

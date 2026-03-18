@@ -79,32 +79,31 @@ class PanicWipeManager: ObservableObject {
                 _ = kcAppPassword.remove()
                 _ = kcSelfDestructPassword.remove()
 
-                // Step 9: Reset and reinitialize chat controller
-                await MainActor.run {
+                // Steps 9-12 must run on main thread (initializeChat accesses ChatModel @Published properties)
+                try await MainActor.run {
                     m.chatDbChanged = true
                     m.chatInitialized = false
-                }
-                resetChatCtrl()
-                try initializeChat(start: true)
 
-                await MainActor.run {
+                    // Step 9: Reset and reinitialize chat controller
+                    resetChatCtrl()
+                    try initializeChat(start: true)
+
                     m.chatDbChanged = false
+                    AppChatState.shared.set(.active)
+
+                    // Step 10: Create a fresh empty user profile
+                    if m.currentUser == nil && m.chatInitialized {
+                        m.currentUser = try apiCreateActiveUser(nil, pastTimestamp: true)
+                        onboardingStageDefault.set(.onboardingComplete)
+                        m.onboardingStage = .onboardingComplete
+                        try startChat()
+                    }
+
+                    // Step 11: Reset InqalaabServers flags so it fully reconfigures
+                    UserDefaults.standard.removeObject(forKey: "inqalaab_servers_configured_v11")
+                    UserDefaults.standard.removeObject(forKey: "inqalaab_contacts_cleaned")
+                    UserDefaults.standard.removeObject(forKey: "inqalaab_address_created")
                 }
-
-                AppChatState.shared.set(.active)
-
-                // Step 10: Create a fresh empty user profile
-                if m.currentUser == nil && m.chatInitialized {
-                    m.currentUser = try apiCreateActiveUser(nil, pastTimestamp: true)
-                    onboardingStageDefault.set(.onboardingComplete)
-                    m.onboardingStage = .onboardingComplete
-                    try startChat()
-                }
-
-                // Step 11: Reset InqalaabServers flags so it fully reconfigures
-                UserDefaults.standard.removeObject(forKey: "inqalaab_servers_configured_v2")
-                UserDefaults.standard.removeObject(forKey: "inqalaab_contacts_cleaned")
-                UserDefaults.standard.removeObject(forKey: "inqalaab_address_created")
 
                 // Step 12: Configure Inqalaab servers for the fresh profile
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
@@ -114,7 +113,6 @@ class PanicWipeManager: ObservableObject {
                 await MainActor.run {
                     self.wipeInProgress = false
                     self.panicTriggered = false
-                    // Restart shake detector for the fresh profile
                     InqalaabShakeDetector.shared.start()
                 }
 

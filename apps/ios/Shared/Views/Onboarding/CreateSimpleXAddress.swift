@@ -31,7 +31,7 @@ struct CreateInqalaabAddress: View {
                         Spacer()
 
                         if let userAddress = m.userAddress {
-                            InqalaabCreatedLinkQRCode(link: userAddress.connLinkContact, short: Binding.constant(false))
+                            InqalaabCreatedLinkQRCode(link: userAddress.connLinkContact, short: Binding.constant(false), withLogo: false)
                                 .frame(maxHeight: g.size.width)
                             shareQRCodeButton(userAddress)
                                 .frame(maxWidth: .infinity)
@@ -122,9 +122,9 @@ struct CreateInqalaabAddress: View {
 
     private func shareQRCodeButton(_ userAddress: UserContactLink) -> some View {
         Button {
-            showShareSheet(items: [inqalaabChatLink(userAddress.connLinkContact.inqalaabChatUri(short: false))])
+            userAddress.shareAddress(short: false)
         } label: {
-            Label("Share", systemImage: "square.and.arrow.up")
+            Label("Share your Inqalaab address", systemImage: "square.and.arrow.up")
         }
     }
 

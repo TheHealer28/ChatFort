@@ -166,9 +166,13 @@ public struct CreatedConnLink: Decodable, Hashable {
 }
 
 public func inqalaabChatLink(_ uri: String) -> String {
-    uri.starts(with: "simplex:/")
-    ? uri.replacingOccurrences(of: "simplex:/", with: "https://inqalaab.chat/")
-    : uri
+    if uri.starts(with: "inqalbi:/") {
+        return uri.replacingOccurrences(of: "inqalbi:/", with: "https://inqalaab.chat/")
+    } else if uri.starts(with: "simplex:/") {
+        // Compatibility: accept legacy simplex:/ URIs
+        return uri.replacingOccurrences(of: "simplex:/", with: "https://inqalaab.chat/")
+    }
+    return uri
 }
 
 public struct ComposedMessage: Encodable {
@@ -238,8 +242,8 @@ public struct NetCfg: Codable, Equatable {
     public var hostMode: HostMode = .publicHost
     public var requiredHostMode = true
     public var sessionMode = TransportSessionMode.user
-    public var smpProxyMode: SMPProxyMode = .always
-    public var smpProxyFallback: SMPProxyFallback = .allowProtected
+    public var smpProxyMode: SMPProxyMode = .never
+    public var smpProxyFallback: SMPProxyFallback = .allow
     public var smpWebPortServers: SMPWebPortServers = .preset
     public var tcpConnectTimeout: NetworkTimeout
     public var tcpTimeout: NetworkTimeout

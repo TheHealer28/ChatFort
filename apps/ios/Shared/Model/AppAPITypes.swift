@@ -1435,7 +1435,7 @@ extension InqalaabAddress {
     }
 
     func shareAddress(short: Bool) {
-        showShareSheet(items: [inqalaabChatLink(connLinkContact.inqalaabChatUri(short: short))])
+        showAddressShareSheet(link: inqalaabChatLink(connLinkContact.inqalaabChatUri(short: short)))
     }
 }
 
@@ -1564,8 +1564,8 @@ struct AppVersionRange: Decodable {
 
 struct CoreVersionInfo: Decodable {
     var version: String
-    var simplexmqVersion: String
-    var simplexmqCommit: String
+    var inqalbimqVersion: String
+    var inqalbimqCommit: String
 }
 
 struct ArchiveConfig: Encodable {
@@ -1908,7 +1908,7 @@ struct UserServer: Identifiable, Equatable, Codable, Hashable {
     static var sampleData = SampleData(
         preset: UserServer(
             serverId: 1,
-            server: "smp://abcd@smp8.simplex.im",
+            server: "smp://abcd@smp.inqalaab.app",
             preset: true,
             tested: true,
             enabled: true,
@@ -1916,7 +1916,7 @@ struct UserServer: Identifiable, Equatable, Codable, Hashable {
         ),
         custom: UserServer(
             serverId: 2,
-            server: "smp://abcd@smp9.simplex.im",
+            server: "smp://abcd@smp.inqalaab.app",
             preset: false,
             tested: false,
             enabled: false,
@@ -1924,7 +1924,7 @@ struct UserServer: Identifiable, Equatable, Codable, Hashable {
         ),
         untested: UserServer(
             serverId: 3,
-            server: "smp://abcd@smp10.simplex.im",
+            server: "smp://abcd@smp2.inqalaab.app",
             preset: false,
             tested: nil,
             enabled: true,
@@ -1932,7 +1932,7 @@ struct UserServer: Identifiable, Equatable, Codable, Hashable {
         ),
         xftpPreset: UserServer(
             serverId: 4,
-            server: "xftp://abcd@xftp8.simplex.im",
+            server: "xftp://abcd@xftp.inqalaab.app",
             preset: true,
             tested: true,
             enabled: true,

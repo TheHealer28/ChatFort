@@ -638,7 +638,7 @@ struct MigrateToDevice: View {
     }
 
     private func strHasInqalaabFileLink(_ text: String) -> Bool {
-        text.starts(with: "simplex:/file") || text.starts(with: "https://inqalaab.chat/file") || text.starts(with: "https://example.net/file")
+        text.starts(with: "inqalbi:/file") || text.starts(with: "simplex:/file") || text.starts(with: "https://inqalaab.chat/file") || text.starts(with: "https://example.net/file")
     }
 
     private static func urlForTemporaryDatabase() -> URL {

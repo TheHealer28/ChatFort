@@ -137,7 +137,7 @@ fileprivate struct CreateUpdateAddressShortLink: View {
                             }
                         }
                     } else {
-                        Button("Share your address") { addr.shareAddress(short: true) }
+                        Button("Share your Inqalaab address") { addr.shareAddress(short: true) }
                     }
                 } else {
                     Button("Create your address") { showAddressSheet = true }

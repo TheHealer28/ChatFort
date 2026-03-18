@@ -431,7 +431,7 @@ public struct ThemeOverrides: Codable, Equatable, Hashable {
         let baseColors = switch base {
             case DefaultTheme.LIGHT: LightColorPalette
             case DefaultTheme.DARK: DarkColorPalette
-            case DefaultTheme.CLASSIC: SimplexColorPalette
+            case DefaultTheme.CLASSIC: ClassicColorPalette
             case DefaultTheme.BLACK: BlackColorPalette
         }
         let c = baseColors.clone()
@@ -448,7 +448,7 @@ public struct ThemeOverrides: Codable, Equatable, Hashable {
         let baseColors = switch base {
         case DefaultTheme.LIGHT: LightColorPaletteApp
         case DefaultTheme.DARK: DarkColorPaletteApp
-        case DefaultTheme.CLASSIC: SimplexColorPaletteApp
+        case DefaultTheme.CLASSIC: ClassicColorPaletteApp
         case DefaultTheme.BLACK: BlackColorPaletteApp
         }
 
@@ -659,7 +659,7 @@ public let LightColorPaletteApp = AppColors(
     receivedQuote: Color(0xffececee)
 )
 
-public let SimplexColorPalette = Colors(
+public let ClassicColorPalette = Colors(
     primary: InqalaabTeal,
     primaryVariant: InqalaabGreen,
     secondary: HighOrLowlight,
@@ -671,7 +671,7 @@ public let SimplexColorPalette = Colors(
     onSurface: Color.white,
     isLight: false
 )
-public let SimplexColorPaletteApp = AppColors(
+public let ClassicColorPaletteApp = AppColors(
     title: .white,
     primaryVariant2: Color(0xFF0F2E1A),
     sentMessage: Color(0xFF0F2E1A),

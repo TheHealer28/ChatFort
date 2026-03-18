@@ -13,7 +13,7 @@ extern void hs_init_with_rtsopts(int * argc, char **argv[]);
 void haskell_init(void) {
     int argc = 5;
     char *argv[] = {
-        "simplex",
+        "inqalaab",
         "+RTS", // requires `hs_init_with_rtsopts`
         "-A64m", // chunk size for new allocations
         "-H64m", // initial heap size
@@ -27,7 +27,7 @@ void haskell_init(void) {
 void haskell_init_nse(void) {
     int argc = 7;
     char *argv[] = {
-        "simplex",
+        "inqalaab",
         "+RTS", // requires `hs_init_with_rtsopts`
         "-A256k", // chunk size for new allocations
         "-H512k", // initial heap size
@@ -43,7 +43,7 @@ void haskell_init_nse(void) {
 void haskell_init_se(void) {
     int argc = 7;
     char *argv[] = {
-        "simplex",
+        "inqalaab",
         "+RTS", // requires `hs_init_with_rtsopts`
         "-A1m", // chunk size for new allocations
         "-H1m", // initial heap size

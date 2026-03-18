@@ -108,7 +108,16 @@ struct CreateProfile: View {
         let m = ChatModel.shared
         do {
             AppChatState.shared.set(.active)
-            m.currentUser = try apiCreateActiveUser(profile)
+            do {
+                m.currentUser = try apiCreateActiveUser(profile)
+            } catch {
+                // Stale app group container: user already exists from previous install
+                if let existingUser = try? apiGetActiveUser() {
+                    m.currentUser = existingUser
+                } else {
+                    throw error
+                }
+            }
             // .isEmpty check is redundant here, but it makes it clearer what is going on
             if m.users.isEmpty || m.users.allSatisfy({ $0.user.hidden }) {
                 try startChat()
@@ -253,7 +262,16 @@ struct CreateFirstProfile: View {
         let m = ChatModel.shared
         do {
             AppChatState.shared.set(.active)
-            m.currentUser = try apiCreateActiveUser(profile)
+            do {
+                m.currentUser = try apiCreateActiveUser(profile)
+            } catch {
+                // Stale app group container: user already exists from previous install
+                if let existingUser = try? apiGetActiveUser() {
+                    m.currentUser = existingUser
+                } else {
+                    throw error
+                }
+            }
             try startChat(onboarding: true)
             onboardingStageDefault.set(.step3_ChooseServerOperators)
             nextStepNavLinkActive = true
@@ -270,6 +288,7 @@ private func showCreateProfileAlert(
     let m = ChatModel.shared
     switch error as? ChatError {
     case .errorStore(.duplicateName),
+         .errorStore(.uniqueID),
          .error(.userExists):
         if m.currentUser == nil {
             AlertManager.shared.showAlert(duplicateUserAlert)

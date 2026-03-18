@@ -29,6 +29,7 @@ struct InqalaabApp: App {
         setGroupDefaults()
         registerGroupDefaults()
         setDbContainer()
+        cleanStaleDatabase()
         BGManager.shared.register()
         NtfManager.shared.registerCategories()
         // Inqalaab: Start shake detector for panic mode
@@ -124,6 +125,26 @@ struct InqalaabApp: App {
                     }
                 }
         }
+    }
+
+    /// Delete stale database files left in the app group container from a previous install.
+    /// iOS does not always clean app group containers when the app is deleted and reinstalled.
+    private func cleanStaleDatabase() {
+        let key = "inqalaab_db_initialized_build"
+        let lastBuild = UserDefaults.standard.string(forKey: key)
+        let fm = FileManager.default
+        if lastBuild == nil {
+            // First launch after install — clean any stale files from app group container
+            // including SQLite WAL/SHM files that deleteAppDatabaseAndFiles() misses
+            let dbPath = getAppDatabasePath().path
+            for suffix in ["_chat.db", "_agent.db", "_chat.db.bak", "_agent.db.bak",
+                           "_chat.db-wal", "_agent.db-wal", "_chat.db-shm", "_agent.db-shm"] {
+                try? fm.removeItem(atPath: dbPath + suffix)
+            }
+            logger.debug("Inqalaab: cleaned stale database files from app group container")
+        }
+        let currentBuild = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String ?? "0"
+        UserDefaults.standard.set(currentBuild, forKey: key)
     }
 
     private func setDbContainer() {

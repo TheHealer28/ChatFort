@@ -1,5 +1,5 @@
 {
-  description = "nix flake for simplex-chat";
+  description = "nix flake for inqalaab";
   inputs.haskellNix.url = "github:input-output-hk/haskell.nix/armv7a";
   inputs.nixpkgs.follows = "haskellNix/nixpkgs-2411";
   inputs.mac2ios.url = "github:zw3rk/mobile-core-tools";
@@ -27,25 +27,37 @@
           };
         };
       }; in
-      # `appendOverlays` with a singleton is identical to `extend`.
+      # Use ghc966 to match nixpkgs-2411's boot GHC (also 9.6.6).
+      # Building ghc963 from source failed because boot GHC 9.6.6 has different
+      # library versions (bytestring-0.11.5.3, ghc-boot-th-9.6.6) than GHC 9.6.3's
+      # in-tree copies, causing cascading type mismatches in stage0 haddock builds.
+      # GHC 9.6.6 is a compatible patch release (same base 4.18, same ABI).
       let pkgs = haskellNix.legacyPackages.${system}.appendOverlays [android26]; in
       # plan-to-nix needs nix, nix-prefetch-git, nix-prefetch-url in PATH
       let original-nix-tools = pkgs.haskell-nix.nix-tools-unchecked;
+          # Wrap nix-prefetch-git to use the system SSL cert bundle
+          # (the Nix daemon sets NIX_SSL_CERT_FILE=/no-cert-file.crt which breaks git)
+          fixed-nix-prefetch-git = pkgs.writeShellScriptBin "nix-prefetch-git" ''
+            export NIX_SSL_CERT_FILE="${pkgs.cacert}/etc/ssl/certs/ca-bundle.crt"
+            export GIT_SSL_CAINFO="${pkgs.cacert}/etc/ssl/certs/ca-bundle.crt"
+            exec ${pkgs.nix-prefetch-git}/bin/nix-prefetch-git "$@"
+          '';
           fixed-plan-to-nix = pkgs.symlinkJoin {
             name = "plan-to-nix-with-nix";
-            paths = [ original-nix-tools.exes.plan-to-nix pkgs.nix pkgs.nix-prefetch-git ];
+            paths = [ original-nix-tools.exes.plan-to-nix pkgs.nix fixed-nix-prefetch-git pkgs.nix-prefetch-git ];
           };
           fixed-nix-tools = original-nix-tools // {
             exes = original-nix-tools.exes // { plan-to-nix = fixed-plan-to-nix; };
-          }; in
+          };
+          in
       let drv' = { extra-modules, pkgs', ... }: pkgs'.haskell-nix.project {
-        compiler-nix-name = "ghc963";
+        compiler-nix-name = "ghc966";
         index-state = "2023-12-12T00:00:00Z";
         # We need this, to specify we want the cabal project.
         # If the stack.yaml was dropped, this would not be necessary.
         projectFileName = "cabal.project";
         src = pkgs.haskell-nix.haskellLib.cleanGit {
-          name = "simplex-chat";
+          name = "inqalaab";
           src = ./.;
         };
         sha256map = import ./scripts/nix/sha256map.nix;
@@ -57,7 +69,7 @@
           packages.direct-sqlcipher.patches = [ ./scripts/nix/direct-sqlcipher-2.3.27.patch ];
         })
         ({ pkgs,lib, ... }: lib.mkIf (pkgs.stdenv.hostPlatform.isAndroid) {
-          packages.simplex-chat.components.library.ghcOptions = [ "-pie" ];
+          packages.inqalaab.components.library.ghcOptions = [ "-pie" ];
         })] ++ extra-modules;
       }; in
       # by defualt we don't need to pass extra-modules.
@@ -119,8 +131,8 @@
       }; in
       rec {
         packages = {
-            "lib:simplex-chat" = (drv pkgs).simplex-chat.components.library;
-            "exe:simplex-chat" = (drv pkgs).simplex-chat.components.exes.simplex-chat;
+            "lib:inqalaab" = (drv pkgs).inqalaab.components.library;
+            "exe:inqalaab" = (drv pkgs).inqalaab.components.exes.inqalaab;
         } // ({
             "x86_64-linux" =
               let
@@ -148,9 +160,9 @@
                   }
               );in {
               # STATIC x86_64-linux
-              "${pkgs.pkgsCross.musl64.hostPlatform.system}-static:exe:simplex-chat" = (drv pkgs.pkgsCross.musl64).simplex-chat.components.exes.simplex-chat;
+              "${pkgs.pkgsCross.musl64.hostPlatform.system}-static:exe:inqalaab" = (drv pkgs.pkgsCross.musl64).inqalaab.components.exes.inqalaab;
               # STATIC i686-linux
-              "${pkgs.pkgsCross.musl32.hostPlatform.system}-static:exe:simplex-chat" = (drv' {
+              "${pkgs.pkgsCross.musl32.hostPlatform.system}-static:exe:inqalaab" = (drv' {
                 pkgs' = pkgs.pkgsCross.musl32;
                 extra-modules = [{
                   # 32 bit patches
@@ -161,9 +173,9 @@
                     ./scripts/nix/memory-pr-99.patch
                   ];
                 }];
-              }).simplex-chat.components.exes.simplex-chat;
+              }).inqalaab.components.exes.inqalaab;
               # WINDOWS x86_64-mingwW64
-              "${pkgs.pkgsCross.mingwW64.hostPlatform.system}:exe:simplex-chat" = (drv' {
+              "${pkgs.pkgsCross.mingwW64.hostPlatform.system}:exe:inqalaab" = (drv' {
                 pkgs' = pkgs.pkgsCross.mingwW64;
                 extra-modules = [{
                   packages.direct-sqlcipher.flags.openssl = true;
@@ -181,21 +193,21 @@
                     sed -i 's/mingwex//g' unix-time.cabal
                   '';
                  }];
-                }).simplex-chat.components.exes.simplex-chat.override {
+                }).inqalaab.components.exes.inqalaab.override {
                 postInstall = ''
                   set -x
                   ${pkgs.tree}/bin/tree $out
                   mkdir -p $out/_pkg
                   cp $out/bin/* $out/_pkg
                   ${pkgs.tree}/bin/tree $out/_pkg
-                  (cd $out/_pkg; ${pkgs.zip}/bin/zip -r -9 $out/${pkgs.pkgsCross.mingwW64.hostPlatform.system}-simplex-chat.zip *)
+                  (cd $out/_pkg; ${pkgs.zip}/bin/zip -r -9 $out/${pkgs.pkgsCross.mingwW64.hostPlatform.system}-inqalaab.zip *)
                   rm -fR $out/_pkg
                   mkdir -p $out/nix-support
                   echo "file binary-dist \"$(echo $out/*.zip)\"" \
                       > $out/nix-support/hydra-build-products
                 '';
               };
-              "${pkgs.pkgsCross.mingwW64.hostPlatform.system}:lib:simplex-chat" = (drv' rec {
+              "${pkgs.pkgsCross.mingwW64.hostPlatform.system}:lib:inqalaab" = (drv' rec {
                 pkgs' = pkgs.pkgsCross.mingwW64;
                 extra-modules = [{
                   packages.direct-sqlcipher.flags.openssl = true;
@@ -208,7 +220,7 @@
                   packages.direct-sqlcipher.components.library.libs = pkgs.lib.mkForce [
                     pkgs.pkgsCross.mingwW64.openssl
                   ];
-                  packages.simplex-chat.flags.client_library = true;
+                  packages.inqalaab.flags.client_library = true;
                   packages.simplexmq.flags.client_library = true;
                   packages.simplexmq.components.library.libs = pkgs.lib.mkForce [
                     pkgs.pkgsCross.mingwW64.openssl
@@ -217,7 +229,7 @@
                     sed -i 's/mingwex//g' unix-time.cabal
                   '';
                 }];
-              }).simplex-chat.components.library
+              }).inqalaab.components.library
               .override (p: {
                 # enableShared = false;
                 setupBuildFlags = p.component.setupBuildFlags ++ map (x: "--ghc-option=${x}") [
@@ -270,13 +282,13 @@
                       > $out/nix-support/hydra-build-products
                 '';
               });
-              # "${pkgs.pkgsCross.muslpi.hostPlatform.system}-static:exe:simplex-chat" = (drv pkgs.pkgsCross.muslpi).simplex-chat.components.exes.simplex-chat;
+              # "${pkgs.pkgsCross.muslpi.hostPlatform.system}-static:exe:inqalaab" = (drv pkgs.pkgsCross.muslpi).inqalaab.components.exes.inqalaab;
 
               # STATIC aarch64-linux
-              "${pkgs.pkgsCross.aarch64-multiplatform-musl.hostPlatform.system}-static:exe:simplex-chat" = (drv pkgs.pkgsCross.aarch64-multiplatform-musl).simplex-chat.components.exes.simplex-chat;
+              "${pkgs.pkgsCross.aarch64-multiplatform-musl.hostPlatform.system}-static:exe:inqalaab" = (drv pkgs.pkgsCross.aarch64-multiplatform-musl).inqalaab.components.exes.inqalaab;
               "armv7a-android:lib:support" = (drv android32Pkgs).android-support.components.library.override (p: {
                 smallAddressSpace = true;
-                # we won't want -dyamic (see aarch64-android:lib:simplex-chat)
+                # we won't want -dyamic (see aarch64-android:lib:inqalaab)
                 enableShared = false;
                 # we also do not want to have any dependencies listed (especially no rts!)
                 enableStatic = false;
@@ -337,7 +349,7 @@
                         > $out/nix-support/hydra-build-products
                 '';
               });
-              "armv7a-android:lib:simplex-chat" = (drv' {
+              "armv7a-android:lib:inqalaab" = (drv' {
                 pkgs' = android32Pkgs;
                 extra-modules = [{
                   packages.text.flags.simdutf = false;
@@ -348,7 +360,7 @@
                   packages.direct-sqlcipher.patches = [
                     ./scripts/nix/direct-sqlcipher-android-log.patch
                   ];
-                  packages.simplex-chat.flags.client_library = true;
+                  packages.inqalaab.flags.client_library = true;
                   packages.simplexmq.flags.client_library = true;
                   packages.simplexmq.components.library.libs = pkgs.lib.mkForce [
                     (android32Pkgs.openssl.override { static = true; enableKTLS = false; })
@@ -361,7 +373,7 @@
                     ./scripts/nix/memory-pr-99.patch
                   ];
                 }];
-              }).simplex-chat.components.library.override (p: {
+              }).inqalaab.components.library.override (p: {
                 smallAddressSpace = true;
                 # we want -shared, but not -dyanmic, hence `enableShared = false`.
                 enableShared = false;
@@ -450,7 +462,7 @@
                       > $out/nix-support/hydra-build-products
                 '';
               });
-              "aarch64-android:lib:simplex-chat" = (drv' {
+              "aarch64-android:lib:inqalaab" = (drv' {
                 pkgs' = androidPkgs;
                 extra-modules = [{
                   packages.text.flags.simdutf = false;
@@ -461,13 +473,13 @@
                   packages.direct-sqlcipher.patches = [
                     ./scripts/nix/direct-sqlcipher-android-log.patch
                   ];
-                  packages.simplex-chat.flags.client_library = true;
+                  packages.inqalaab.flags.client_library = true;
                   packages.simplexmq.flags.client_library = true;
                   packages.simplexmq.components.library.libs = pkgs.lib.mkForce [
                     (androidPkgs.openssl.override { static = true; })
                   ];
                 }];
-              }).simplex-chat.components.library.override (p: {
+              }).inqalaab.components.library.override (p: {
                 smallAddressSpace = true;
                 # we do not want a dynamically linked object, even though we _do_
                 # want to produce a _shared_ object. But `shared` implied -dyanmic
@@ -564,70 +576,70 @@
             # builds for iOS and iOS simulator
             "aarch64-darwin" = {
               # aarch64-darwin iOS build (to be patched with mac2ios)
-              "aarch64-darwin-ios:lib:simplex-chat" = (drv' {
+              "aarch64-darwin-ios:lib:inqalaab" = (drv' {
                 pkgs' = pkgs;
                 extra-modules = [{
-                  packages.simplex-chat.flags.swift = true;
+                  packages.inqalaab.flags.swift = true;
                   packages.simplexmq.flags.swift = true;
                   packages.direct-sqlcipher.flags.commoncrypto = true;
                   packages.entropy.flags.DoNotGetEntropy = true;
-                  packages.simplex-chat.flags.client_library = true;
+                  packages.inqalaab.flags.client_library = true;
                   packages.simplexmq.flags.client_library = true;
                   packages.simplexmq.components.library.libs = pkgs.lib.mkForce [
                     # TODO: have a cross override for iOS, that sets this.
                     ((pkgs.openssl.override { static = true; }).overrideDerivation (old: { CFLAGS = "-mcpu=apple-a7 -march=armv8-a+norcpc" ;}))
                   ];
                 }];
-              }).simplex-chat.components.library.override (
+              }).inqalaab.components.library.override (
                 iosOverrides "pkg-ios-aarch64-swift-json"
               );
 	            # aarch64-darwin build with tagged JSON format (for Mac & Flutter)
-              "aarch64-darwin:lib:simplex-chat" = (drv' {
+              "aarch64-darwin:lib:inqalaab" = (drv' {
                 pkgs' = pkgs;
                 extra-modules = [{
                   packages.direct-sqlcipher.flags.commoncrypto = true;
                   packages.entropy.flags.DoNotGetEntropy = true;
-                  packages.simplex-chat.flags.client_library = true;
+                  packages.inqalaab.flags.client_library = true;
                   packages.simplexmq.flags.client_library = true;
                   packages.simplexmq.components.library.libs = pkgs.lib.mkForce [
                     ((pkgs.openssl.override { static = true; }).overrideDerivation (old: { CFLAGS = "-mcpu=apple-a7 -march=armv8-a+norcpc" ;}))
                   ];
                 }];
-              }).simplex-chat.components.library.override (
+              }).inqalaab.components.library.override (
                 iosOverrides "pkg-ios-aarch64-tagged-json"
               );
             };
             "x86_64-darwin" = {
               # x86_64-darwin iOS simulator build (to be patched with mac2ios)
-              "x86_64-darwin-ios:lib:simplex-chat" = (drv' {
+              "x86_64-darwin-ios:lib:inqalaab" = (drv' {
                 pkgs' = pkgs;
                 extra-modules = [{
-                  packages.simplex-chat.flags.swift = true;
+                  packages.inqalaab.flags.swift = true;
                   packages.simplexmq.flags.swift = true;
                   packages.direct-sqlcipher.flags.commoncrypto = true;
                   packages.entropy.flags.DoNotGetEntropy = true;
-                  packages.simplex-chat.flags.client_library = true;
+                  packages.inqalaab.flags.client_library = true;
                   packages.simplexmq.flags.client_library = true;
                   packages.simplexmq.components.library.libs = pkgs.lib.mkForce [
                     (pkgs.openssl.override { static = true; })
                   ];
                 }];
-              }).simplex-chat.components.library.override (
+              }).inqalaab.components.library.override (
                 iosOverrides "pkg-ios-x86_64-swift-json"
               );
               # x86_64-darwin build with tagged JSON format (for Mac & Flutter iOS simulator)
-              "x86_64-darwin:lib:simplex-chat" = (drv' {
+              "x86_64-darwin:lib:inqalaab" = (drv' {
                 pkgs' = pkgs;
                 extra-modules = [{
                   packages.direct-sqlcipher.flags.commoncrypto = true;
                   packages.entropy.flags.DoNotGetEntropy = true;
-                  packages.simplex-chat.flags.client_library = true;
+                  packages.inqalaab.flags.client_library = true;
                   packages.simplexmq.flags.client_library = true;
                   packages.simplexmq.components.library.libs = pkgs.lib.mkForce [
                     (pkgs.openssl.override { static = true; })
                   ];
                 }];
-              }).simplex-chat.components.library.override (
+              }).inqalaab.components.library.override (
                 iosOverrides "pkg-ios-x86_64-tagged-json"
               );
             };

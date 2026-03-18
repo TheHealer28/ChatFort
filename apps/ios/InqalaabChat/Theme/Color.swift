@@ -15,7 +15,7 @@ import SwiftUI
 //let Teal200 = Color(0xFF03DAC5)
 //let Gray = Color(0x22222222)
 //let Indigo = Color(0xFF9966FF)
-let SimplexBlue = Color(0, 136, 255, a: 255)
+let ClassicBlue = Color(0, 136, 255, a: 255)
 // Inqalaab color palette
 public let InqalaabGreen = Color(30, 142, 62, a: 255)       // #1E8E3E - primary green
 public let InqalaabDarkGreen = Color(20, 100, 45, a: 255)    // Deeper green variant

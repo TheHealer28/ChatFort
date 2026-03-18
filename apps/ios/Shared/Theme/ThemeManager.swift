@@ -26,9 +26,9 @@ class ThemeManager {
     private static func systemDarkThemeColors() -> (Colors, DefaultTheme) {
         switch systemDarkThemeDefault.get() {
         case DefaultTheme.DARK.themeName: (DarkColorPalette, DefaultTheme.DARK)
-        case DefaultTheme.CLASSIC.themeName: (SimplexColorPalette, DefaultTheme.CLASSIC)
+        case DefaultTheme.CLASSIC.themeName: (ClassicColorPalette, DefaultTheme.CLASSIC)
         case DefaultTheme.BLACK.themeName: (BlackColorPalette, DefaultTheme.BLACK)
-        default: (SimplexColorPalette, DefaultTheme.CLASSIC)
+        default: (ClassicColorPalette, DefaultTheme.CLASSIC)
         }
     }
 
@@ -64,7 +64,7 @@ class ThemeManager {
         let baseTheme = switch nonSystemThemeName {
         case DefaultTheme.LIGHT.themeName: ActiveTheme(name: DefaultTheme.LIGHT.themeName, base: DefaultTheme.LIGHT, colors: LightColorPalette.clone(), appColors: LightColorPaletteApp.clone(), wallpaper: AppWallpaper(background: nil, tint: nil, type: .empty))
         case DefaultTheme.DARK.themeName: ActiveTheme(name: DefaultTheme.DARK.themeName, base: DefaultTheme.DARK, colors: DarkColorPalette.clone(), appColors: DarkColorPaletteApp.clone(), wallpaper: AppWallpaper(background: nil, tint: nil, type: .empty))
-        case DefaultTheme.CLASSIC.themeName: ActiveTheme(name: DefaultTheme.CLASSIC.themeName, base: DefaultTheme.CLASSIC, colors: SimplexColorPalette.clone(), appColors: SimplexColorPaletteApp.clone(), wallpaper: AppWallpaper(background: nil, tint: nil, type: .empty))
+        case DefaultTheme.CLASSIC.themeName: ActiveTheme(name: DefaultTheme.CLASSIC.themeName, base: DefaultTheme.CLASSIC, colors: ClassicColorPalette.clone(), appColors: ClassicColorPaletteApp.clone(), wallpaper: AppWallpaper(background: nil, tint: nil, type: .empty))
         case DefaultTheme.BLACK.themeName: ActiveTheme(name: DefaultTheme.BLACK.themeName, base: DefaultTheme.BLACK, colors: BlackColorPalette.clone(), appColors: BlackColorPaletteApp.clone(), wallpaper: AppWallpaper(background: nil, tint: nil, type: .empty))
         default: ActiveTheme(name: DefaultTheme.LIGHT.themeName, base: DefaultTheme.LIGHT, colors: LightColorPalette.clone(), appColors: LightColorPaletteApp.clone(), wallpaper: AppWallpaper(background: nil, tint: nil, type: .empty))
         }
@@ -140,7 +140,7 @@ class ThemeManager {
 //        let baseColors = switch theme.base {
 //        case DefaultTheme.LIGHT: LightColorPaletteApp
 //        case DefaultTheme.DARK: DarkColorPaletteApp
-//        case DefaultTheme.CLASSIC: SimplexColorPaletteApp
+//        case DefaultTheme.CLASSIC: ClassicColorPaletteApp
 //        case DefaultTheme.BLACK: BlackColorPaletteApp
 //        }
 //        let isDefaultColor = baseColors.title == theme.appColors.title

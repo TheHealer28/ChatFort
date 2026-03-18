@@ -7,6 +7,56 @@
 //
 
 import SwiftUI
+import LinkPresentation
+
+private final class ShareSheetItemSource: NSObject, UIActivityItemSource {
+    private let item: Any
+    private let subject: String
+    private let metadataTitle: String
+    private let icon: UIImage?
+
+    init(item: Any, subject: String, metadataTitle: String? = nil, icon: UIImage? = nil) {
+        self.item = item
+        self.subject = subject
+        self.metadataTitle = metadataTitle ?? subject
+        self.icon = icon
+    }
+
+    func activityViewControllerPlaceholderItem(_ activityViewController: UIActivityViewController) -> Any {
+        item
+    }
+
+    func activityViewController(_ activityViewController: UIActivityViewController, itemForActivityType activityType: UIActivity.ActivityType?) -> Any? {
+        item
+    }
+
+    func activityViewController(_ activityViewController: UIActivityViewController, subjectForActivityType activityType: UIActivity.ActivityType?) -> String {
+        subject
+    }
+
+    func activityViewControllerLinkMetadata(_ activityViewController: UIActivityViewController) -> LPLinkMetadata? {
+        let metadata = LPLinkMetadata()
+        metadata.title = metadataTitle
+        if let icon {
+            metadata.iconProvider = NSItemProvider(object: icon)
+        }
+        if let url = shareURL {
+            metadata.originalURL = url
+            metadata.url = url
+        }
+        return metadata
+    }
+
+    private var shareURL: URL? {
+        if let url = item as? URL {
+            return url
+        }
+        if let string = item as? String {
+            return URL(string: string)
+        }
+        return nil
+    }
+}
 
 func getTopViewController() -> UIViewController? {
     let keyWindowScene = UIApplication.shared.connectedScenes.first { $0.activationState == .foregroundActive } as? UIWindowScene
@@ -32,6 +82,16 @@ func showShareSheet(items: [Any], completed: (() -> Void)? = nil) {
         }        
         topController.present(activityViewController, animated: true)
     }
+}
+
+func showAddressShareSheet(link: String, completed: (() -> Void)? = nil) {
+    let item = ShareSheetItemSource(
+        item: URL(string: link) ?? link,
+        subject: NSLocalizedString("Share your Inqalaab address", comment: "share sheet subject"),
+        metadataTitle: NSLocalizedString("Inqalaab address", comment: "share sheet title"),
+        icon: UIImage(systemName: "qrcode")
+    )
+    showShareSheet(items: [item], completed: completed)
 }
 
 func showAlert(

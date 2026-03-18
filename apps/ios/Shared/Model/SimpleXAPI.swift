@@ -995,6 +995,10 @@ func apiConnectPlan(connLink: String, inProgress: BoxedValue<Bool>) async -> ((C
     }
     let r: APIResult<ChatResponse1>? = await chatApiSendCmdWithRetry(.apiConnectPlan(userId: userId, connLink: connLink), inProgress: inProgress)
     if case let .result(.connectionPlan(_, connLink, connPlan)) = r { return ((connLink, connPlan), nil) }
+    // Debug: log full error details for apiConnectPlan failures
+    if let r {
+        logger.error("apiConnectPlan FULL ERROR: \(String(describing: r))")
+    }
     let alert: Alert? = if let r { apiConnectResponseAlert(r) } else { nil }
     return (nil, alert)
 }

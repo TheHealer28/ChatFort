@@ -101,7 +101,7 @@ struct NewChatSheet: View {
                     VStack(spacing: 8) {
                         Text("Your Inqalaab Address")
                             .font(.subheadline.weight(.medium))
-                        InqalaabCreatedLinkQRCode(link: userAddress.connLinkContact, short: .constant(false))
+                        InqalaabCreatedLinkQRCode(link: userAddress.connLinkContact, short: .constant(false), withLogo: false)
                             .frame(maxWidth: 180, maxHeight: 180)
                             .padding(.horizontal, 20)
                         Text("Show this QR code to connect")
