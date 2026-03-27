@@ -161,6 +161,8 @@ public struct CreatedConnLink: Decodable, Hashable {
     }
 
     public func inqalaabChatUri(short: Bool = true) -> String {
+        // Short links MUST keep the SMP server domain — the server resolves the hash
+        // Only full links (simplex:/ or inqalbi:/) get domain conversion
         short ? (connShortLink ?? inqalaabChatLink(connFullLink)) : inqalaabChatLink(connFullLink)
     }
 }
@@ -169,9 +171,9 @@ public func inqalaabChatLink(_ uri: String) -> String {
     if uri.starts(with: "inqalbi:/") {
         return uri.replacingOccurrences(of: "inqalbi:/", with: "https://inqalaab.chat/")
     } else if uri.starts(with: "simplex:/") {
-        // Compatibility: accept legacy simplex:/ URIs
         return uri.replacingOccurrences(of: "simplex:/", with: "https://inqalaab.chat/")
     }
+    // Do NOT convert HTTPS short links — the SMP server domain is needed to resolve the hash
     return uri
 }
 

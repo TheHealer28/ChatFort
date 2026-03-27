@@ -163,6 +163,18 @@ struct ChatListView: View {
     @AppStorage(GROUP_DEFAULT_ONE_HAND_UI, store: groupDefaults) private var oneHandUI = true
     @AppStorage(DEFAULT_ONE_HAND_UI_CARD_SHOWN) private var oneHandUICardShown = false
     @AppStorage(DEFAULT_TOOLBAR_MATERIAL) private var toolbarMaterial = ToolbarMaterial.defaultMaterial
+
+    private var showOneHandSearchBar: Bool {
+        oneHandUI && !chatModel.chats.isEmpty
+    }
+
+    private var oneHandSearchBarBottomPadding: CGFloat {
+        Self.hasHomeIndicator ? 102 : 90
+    }
+
+    private var oneHandSearchBarReservedHeight: CGFloat {
+        oneHandSearchBarBottomPadding + 82
+    }
     
     var body: some View {
         if #available(iOS 16.0, *) {
@@ -245,13 +257,46 @@ struct ChatListView: View {
                 NearbyPeerListView()
                     .background(theme.colors.background)
             } else {
-                withToolbar(tm) {
-                    chatList
-                        .background(theme.colors.background)
-                        .navigationBarTitleDisplayMode(.inline)
-                        .navigationBarHidden(searchMode || oneHandUI)
+                ZStack(alignment: .bottom) {
+                    withToolbar(tm) {
+                        chatList
+                            .background(theme.colors.background)
+                            .navigationBarTitleDisplayMode(.inline)
+                            .navigationBarHidden(searchMode || oneHandUI)
+                    }
+                    .scaleEffect(x: 1, y: oneHandUI ? -1 : 1, anchor: .center)
+                    .overlay(alignment: oneHandUI ? .topTrailing : .bottomTrailing) {
+                        // Inqalaab: FAB outside the flipped container so it stays in correct position
+                        if chatModel.chatRunning == true {
+                            Button {
+                                ConnectProgressManager.shared.cancelConnectProgress()
+                                showNewChatSheet = true
+                            } label: {
+                                Image(systemName: "plus.message.fill")
+                                    .font(.system(size: 22))
+                                    .foregroundColor(.white)
+                                    .frame(width: 56, height: 56)
+                                    .background(Circle().fill(InqalaabGreen))
+                                    .shadow(color: InqalaabGreen.opacity(0.4), radius: 8, x: 0, y: 4)
+                            }
+                            .padding(.trailing, 20)
+                            .padding(oneHandUI ? .top : .bottom, oneHandUI ? 60 : 24)
+                        }
+                    }
+
+                    if showOneHandSearchBar {
+                        ChatListSearchBar(
+                            searchMode: $searchMode,
+                            searchFocussed: $searchFocussed,
+                            searchText: $searchText,
+                            searchShowingInqalaabLink: $searchShowingInqalaabLink,
+                            searchChatFilteredByInqalaabLink: $searchChatFilteredByInqalaabLink,
+                            parentSheet: $sheet
+                        )
+                        .padding(.horizontal, 16)
+                        .padding(.bottom, oneHandSearchBarBottomPadding)
+                    }
                 }
-                .scaleEffect(x: 1, y: oneHandUI ? -1 : 1, anchor: .center)
             }
         }
         .onAppear {
@@ -260,7 +305,7 @@ struct ChatListView: View {
             }
             // Inqalaab: Ensure servers are configured when chat list appears
             // This catches the case where onboarding trigger didn't fire
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 7.0) {
                 if chatModel.chatRunning == true && chatModel.currentUser != nil {
                     InqalaabServers.shared.configureIfNeeded()
                 }
@@ -341,28 +386,26 @@ struct ChatListView: View {
     }
     
     @ToolbarContentBuilder var bottomToolbar: some ToolbarContent {
-        let padding: Double = Self.hasHomeIndicator ? 0 : 14
         ToolbarItem(placement: .bottomBar) {
             HStack {
-                leadingToolbarItem.padding(.bottom, padding)
+                leadingToolbarItem
                 Spacer()
-                SubsStatusIndicator().padding(.bottom, padding)
+                SubsStatusIndicator()
                 Spacer()
-                trailingToolbarItem.padding(.bottom, padding)
+                trailingToolbarItem
             }
             .contentShape(Rectangle())
             .onTapGesture { scrollToSearchBar = true }
         }
     }
-    
+
     @ToolbarContentBuilder func bottomToolbarGroup() -> some ToolbarContent {
-        let padding: Double = Self.hasHomeIndicator ? 0 : 14
         ToolbarItemGroup(placement: viewOnScreen ? .bottomBar : .principal) {
-            leadingToolbarItem.padding(.bottom, padding)
+            leadingToolbarItem
             Spacer()
-            SubsStatusIndicator().padding(.bottom, padding)
+            SubsStatusIndicator()
             Spacer()
-            trailingToolbarItem.padding(.bottom, padding)
+            trailingToolbarItem
         }
     }
     
@@ -385,7 +428,7 @@ struct ChatListView: View {
     
     @ViewBuilder var trailingToolbarItem: some View {
         switch chatModel.chatRunning {
-        case .some(true): NewChatMenuButton(showNewChatSheet: $showNewChatSheet)
+        case .some(true): EmptyView() // FAB replaces toolbar compose button
         case .some(false): chatStoppedIcon()
         case .none: EmptyView()
         }
@@ -396,20 +439,26 @@ struct ChatListView: View {
             ScrollViewReader { scrollProxy in
                 List {
                     if !chatModel.chats.isEmpty {
-                        ChatListSearchBar(
-                            searchMode: $searchMode,
-                            searchFocussed: $searchFocussed,
-                            searchText: $searchText,
-                            searchShowingInqalaabLink: $searchShowingInqalaabLink,
-                            searchChatFilteredByInqalaabLink: $searchChatFilteredByInqalaabLink,
-                            parentSheet: $sheet
-                        )
-                        .scaleEffect(x: 1, y: oneHandUI ? -1 : 1, anchor: .center)
-                        .listRowSeparator(.hidden)
-                        .listRowBackground(Color.clear)
-                        .frame(maxWidth: .infinity)
-                        .padding(.top, oneHandUI ? 8 : 0)
-                        .id("searchBar")
+                        if oneHandUI {
+                            Color.clear
+                                .frame(height: oneHandSearchBarReservedHeight)
+                                .id("searchBar")
+                                .listRowSeparator(.hidden)
+                                .listRowBackground(Color.clear)
+                        } else {
+                            ChatListSearchBar(
+                                searchMode: $searchMode,
+                                searchFocussed: $searchFocussed,
+                                searchText: $searchText,
+                                searchShowingInqalaabLink: $searchShowingInqalaabLink,
+                                searchChatFilteredByInqalaabLink: $searchChatFilteredByInqalaabLink,
+                                parentSheet: $sheet
+                            )
+                            .listRowSeparator(.hidden)
+                            .listRowBackground(Color.clear)
+                            .frame(maxWidth: .infinity)
+                            .id("searchBar")
+                        }
                     }
                     // Inqalaab: ChatListRows is a separate View struct with its own
                     // @EnvironmentObject observation. This ensures SwiftUI re-evaluates
@@ -439,7 +488,11 @@ struct ChatListView: View {
                 .onChange(of: scrollToSearchBar) { scrollToSearchBar in
                     if scrollToSearchBar {
                         Task { self.scrollToSearchBar = false }
-                        withAnimation { scrollProxy.scrollTo("searchBar") }
+                        if oneHandUI {
+                            searchFocussed = true
+                        } else {
+                            withAnimation { scrollProxy.scrollTo("searchBar") }
+                        }
                     }
                 }
             }
@@ -588,16 +641,21 @@ struct SubsStatusIndicator: View {
         Button {
             showServersSummary = true
         } label: {
-            HStack(spacing: 6) {
-                Text("Inqalaab")
-                    .foregroundStyle(InqalaabGreen)
+            // Inqalaab: Security status pill — shows connection state
+            HStack(spacing: 5) {
+                Image(systemName: hasSess ? "lock.shield.fill" : "arrow.triangle.2.circlepath")
+                    .font(.system(size: 12, weight: .semibold))
+                Text(hasSess ? "Protected" : "Connecting…")
+                    .font(.system(size: 13, weight: .medium))
                     .fixedSize()
-                    .font(.system(size: 18, weight: .bold, design: .rounded))
-                SubscriptionStatusIndicatorView(subs: subs, hasSess: hasSess)
-                if showSubscriptionPercentage {
-                    SubscriptionStatusPercentageView(subs: subs, hasSess: hasSess)
-                }
             }
+            .foregroundColor(hasSess ? InqalaabGreen : .secondary)
+            .padding(.horizontal, 12)
+            .padding(.vertical, 6)
+            .background(
+                Capsule()
+                    .fill(hasSess ? InqalaabGreen.opacity(0.12) : Color.secondary.opacity(0.1))
+            )
         }
         .disabled(ChatModel.shared.chatRunning != true)
         .onAppear {
@@ -792,17 +850,26 @@ struct TagsView: View {
             ZStack {
                 HStack(spacing: 4) {
                     if let emoji = tag.chatTagEmoji {
-                        Text(emoji)
+                        Text(emoji).font(.system(size: 12))
                     } else {
                         Image(systemName: current ? "tag.fill" : "tag")
-                            .foregroundColor(color)
+                            .foregroundColor(current ? .white : color)
+                            .font(.system(size: 12))
                     }
                     ZStack {
                         let badge = Text(verbatim: (chatTagsModel.unreadTags[tag.chatTagId] ?? 0) > 0 ? " ●" : "").font(.footnote)
                         (Text(tag.chatTagText).fontWeight(.semibold) + badge).foregroundColor(.clear)
-                        Text(tag.chatTagText).fontWeight(current ? .semibold : .regular).foregroundColor(color) + badge.foregroundColor(theme.colors.primary)
+                        Text(tag.chatTagText).fontWeight(current ? .semibold : .regular)
+                            .foregroundColor(current ? .white : color) + badge.foregroundColor(current ? .white.opacity(0.8) : theme.colors.primary)
                     }
+                    .font(.system(size: 13))
                 }
+                .padding(.horizontal, 10)
+                .padding(.vertical, 5)
+                .background(
+                    Capsule()
+                        .fill(current ? InqalaabGreen : theme.colors.secondary.opacity(0.1))
+                )
                 .onTapGesture {
                     setActiveFilter(filter: .userTag(tag))
                 }
@@ -864,12 +931,21 @@ struct TagsView: View {
 
         HStack(spacing: 4) {
             Image(systemName: icon)
-                .foregroundColor(color)
+                .foregroundColor(active ? .white : color)
+                .font(.system(size: 12))
             ZStack {
                 Text(text).fontWeight(.semibold).foregroundColor(.clear)
-                Text(text).fontWeight(active ? .semibold : .regular).foregroundColor(color)
+                Text(text).fontWeight(active ? .semibold : .regular)
+                    .foregroundColor(active ? .white : color)
             }
+            .font(.system(size: 13))
         }
+        .padding(.horizontal, 10)
+        .padding(.vertical, 5)
+        .background(
+            Capsule()
+                .fill(active ? InqalaabGreen : theme.colors.secondary.opacity(0.1))
+        )
         .onTapGesture {
             setActiveFilter(filter: .presetTag(tag))
         }
@@ -1048,27 +1124,39 @@ private struct ChatListQROverlay: View {
             return !chat.chatInfo.chatDeleted && !chat.chatInfo.contactCard
         }
         if !hasRealChats, let userAddress = chatModel.userAddress {
-            VStack(spacing: 12) {
+            VStack(spacing: 16) {
                 Spacer()
-                Text("Your Inqalaab Address")
+                // Shield icon with background circle
+                ZStack {
+                    Circle()
+                        .fill(InqalaabGreen.opacity(0.15))
+                        .frame(width: 100, height: 100)
+                    Image(systemName: "shield.checkered")
+                        .font(.system(size: 44))
+                        .foregroundColor(InqalaabGreen)
+                }
+                .padding(.bottom, 4)
+
+                Text("Ready to Connect Securely")
                     .font(.title2)
                     .fontWeight(.bold)
                     .foregroundColor(theme.colors.onBackground)
-                Text("Show this QR code to connect")
+                Text("Share your QR code or scan a friend's code to start chatting")
                     .font(.subheadline)
                     .foregroundColor(theme.colors.secondary)
-                InqalaabCreatedLinkQRCode(link: userAddress.connLinkContact, short: .constant(false), withLogo: false)
-                    .frame(maxWidth: 260, maxHeight: 260)
-                    .padding(.horizontal, 24)
-                Text("Scan each other's code to chat securely")
-                    .font(.caption)
-                    .foregroundColor(theme.colors.secondary)
                     .multilineTextAlignment(.center)
+                    .padding(.horizontal, 24)
+
+                InqalaabCreatedLinkQRCode(link: userAddress.connLinkContact, short: .constant(false), withLogo: false)
+                    .frame(maxWidth: 180, maxHeight: 180)
+                    .padding(.horizontal, 24)
+                    .padding(.vertical, 8)
+
                 Spacer()
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .padding(.horizontal, 16)
-            .padding(.bottom, 300)
+            .padding(.bottom, oneHandUI ? 450 : 300)
             .scaleEffect(x: 1, y: oneHandUI ? -1 : 1, anchor: .center)
         }
     }

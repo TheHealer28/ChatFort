@@ -2116,7 +2116,7 @@ struct AppSettings: Codable, Equatable {
             privacyMediaBlurRadius: 0,
             notificationMode: AppSettingsNotificationMode.instant,
             notificationPreviewMode: NotificationPreviewMode.message,
-            webrtcPolicyRelay: true,
+            webrtcPolicyRelay: false,
             webrtcICEServers: [],
             confirmRemoteSessions: false,
             connectRemoteViaMulticast: true,

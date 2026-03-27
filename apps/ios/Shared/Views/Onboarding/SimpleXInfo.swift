@@ -44,7 +44,7 @@ struct InqalaabInfo: View {
 
                     Spacer().frame(height: 8)
 
-                    Text("Secure communication for the resistance")
+                    Text("Secure Communication for All")
                         .font(.title3)
                         .fontWeight(.medium)
                         .foregroundColor(.white.opacity(0.6))
@@ -58,8 +58,8 @@ struct InqalaabInfo: View {
                         inqalaabFeatureRow(
                             icon: "hand.raised.fill",
                             color: .green,
-                            title: "Built for activists",
-                            detail: "Designed for those who fight for freedom and justice"
+                            title: "Built for security",
+                            detail: "Designed for those who value privacy and freedom"
                         )
                         inqalaabFeatureRow(
                             icon: "eye.slash.fill",

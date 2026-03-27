@@ -47,8 +47,8 @@ private let versionDescriptions: [VersionDescription] = [
         features: [
             .feature(Description(
                 icon: "shield.checkered",
-                title: "Built for activists",
-                description: "Inqalaab is purpose-built for activists, journalists, and organizers in South Asia."
+                title: "Built for security",
+                description: "Inqalaab is purpose-built for anyone who values privacy and secure communication."
             )),
             .feature(Description(
                 icon: "eye.slash.fill",

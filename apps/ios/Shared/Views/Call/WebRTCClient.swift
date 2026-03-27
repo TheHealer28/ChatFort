@@ -631,6 +631,7 @@ final class WebRTCClient: NSObject, RTCVideoViewDelegate, RTCFrameEncryptorDeleg
     }
 
     func endCall() {
+        NotificationCenter.default.post(name: .stopCallPiP, object: nil)
         if #available(iOS 16.0, *) {
             _endCall()
         } else {

@@ -21,6 +21,7 @@ struct SafetyHubView: View {
     @State private var currentLAMode = privacyLocalAuthModeDefault.get()
     @State private var showPanicConfirm = false
     @AppStorage(INQALAAB_LOCKDOWN_ENABLED) private var lockdownEnabled = false
+    @AppStorage(DEFAULT_CALL_FEATURE_HINT_SHOWN) private var callFeatureHintShown = false
     @State private var emergencyContactIds: Set<Int64> = []
     // Inqalaab: In-app language toggle
     @State private var selectedLanguage: String = UserDefaults.standard.string(forKey: "inqalaab_selected_language")
@@ -103,6 +104,39 @@ struct SafetyHubView: View {
                 } footer: {
                     Text("Restart the app after changing language")
                         .font(.caption2)
+                }
+
+                // CALL FEATURE HINT (first launch only)
+                if !callFeatureHintShown {
+                    Section {
+                        HStack(alignment: .top, spacing: 12) {
+                            Image(systemName: "phone.fill")
+                                .font(.title2)
+                                .foregroundColor(.white)
+                                .frame(width: 40, height: 40)
+                                .background(Color(red: 0.0, green: 0.6, blue: 0.4))
+                                .clipShape(Circle())
+
+                            VStack(alignment: .leading, spacing: 4) {
+                                Text("Make Encrypted Calls")
+                                    .font(.headline)
+                                Text("Connect with someone in the **Chats** tab, then tap the phone icon to start a secure voice or video call.")
+                                    .font(.subheadline)
+                                    .foregroundColor(.secondary)
+                            }
+
+                            Spacer()
+
+                            Button {
+                                withAnimation { callFeatureHintShown = true }
+                            } label: {
+                                Image(systemName: "xmark")
+                                    .font(.caption)
+                                    .foregroundColor(.secondary)
+                            }
+                        }
+                        .padding(.vertical, 4)
+                    }
                 }
 
                 // NETWORK STATUS WIDGET

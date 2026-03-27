@@ -89,6 +89,7 @@ class CallManager {
 
     func endCall(call: Call, completed: @escaping () -> Void) {
         let m = ChatModel.shared
+        NotificationCenter.default.post(name: .stopCallPiP, object: nil)
         if case .ended = call.callState {
             logger.debug("CallManager.endCall: call ended")
             m.activeCall = nil

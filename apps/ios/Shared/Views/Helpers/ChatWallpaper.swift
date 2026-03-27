@@ -46,7 +46,14 @@ struct ChatViewBackground: ViewModifier {
                 context.fill(Path(rect), with: .color(background))
                 switch imageType {
                 case let WallpaperType.preset(filename, scale):
-                    repeatDraw(CGFloat((scale ?? 1) * (PresetWallpaper.from(filename)?.scale ?? 1)))
+                    if let preset = PresetWallpaper.from(filename), preset.isFillMode {
+                        let fillScale = WallpaperScaleType.fill.computeScaleFactor(image.size, size)
+                        let scaledWidth = image.size.width * fillScale.0
+                        let scaledHeight = image.size.height * fillScale.1
+                        context.draw(image, in: CGRectMake((size.width - scaledWidth) / 2, (size.height - scaledHeight) / 2, scaledWidth, scaledHeight), style: FillStyle())
+                    } else {
+                        repeatDraw(CGFloat((scale ?? 1) * (PresetWallpaper.from(filename)?.scale ?? 1)))
+                    }
                 case let WallpaperType.image(_, scale, scaleType):
                     let scaleType = scaleType ?? WallpaperScaleType.fill
                     switch scaleType {

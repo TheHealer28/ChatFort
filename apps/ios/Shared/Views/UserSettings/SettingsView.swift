@@ -51,6 +51,7 @@ let DEFAULT_PROFILE_IMAGE_CORNER_RADIUS = "profileImageCornerRadius"
 let DEFAULT_CHAT_ITEM_ROUNDNESS = "chatItemRoundness"
 let DEFAULT_CHAT_ITEM_TAIL = "chatItemTail"
 let DEFAULT_ONE_HAND_UI_CARD_SHOWN = "oneHandUICardShown"
+let DEFAULT_CALL_FEATURE_HINT_SHOWN = "callFeatureHintShown"
 let DEFAULT_ADDRESS_CREATION_CARD_SHOWN = "addressCreationCardShown"
 let DEFAULT_TOOLBAR_MATERIAL = "toolbarMaterial"
 let DEFAULT_CONNECT_VIA_LINK_TAB = "connectViaLinkTab"
@@ -92,7 +93,7 @@ let appDefaults: [String: Any] = [
     DEFAULT_LA_LOCK_DELAY: 30,
     DEFAULT_LA_SELF_DESTRUCT: false,
     DEFAULT_NOTIFICATION_ALERT_SHOWN: false,
-    DEFAULT_WEBRTC_POLICY_RELAY: true,
+    DEFAULT_WEBRTC_POLICY_RELAY: false,
     DEFAULT_CALL_KIT_CALLS_IN_RECENTS: false,
     DEFAULT_PRIVACY_ACCEPT_IMAGES: true,
     DEFAULT_PRIVACY_LINK_PREVIEWS: true,
@@ -110,6 +111,7 @@ let appDefaults: [String: Any] = [
     DEFAULT_CHAT_ITEM_ROUNDNESS: defaultChatItemRoundness,
     DEFAULT_CHAT_ITEM_TAIL: true,
     DEFAULT_ONE_HAND_UI_CARD_SHOWN: false,
+    DEFAULT_CALL_FEATURE_HINT_SHOWN: false,
     DEFAULT_ADDRESS_CREATION_CARD_SHOWN: false,
     DEFAULT_TOOLBAR_MATERIAL: ToolbarMaterial.defaultMaterial,
     DEFAULT_CONNECT_VIA_LINK_TAB: ConnectViaLinkTab.scan.rawValue,
@@ -130,7 +132,7 @@ let appDefaults: [String: Any] = [
     ANDROID_DEFAULT_CALL_ON_LOCK_SCREEN: AppSettingsLockScreenCalls.show.rawValue,
 
     DEFAULT_THEME_OVERRIDES: "{}",
-    DEFAULT_CURRENT_THEME: DefaultTheme.SYSTEM_THEME_NAME,
+    DEFAULT_CURRENT_THEME: DefaultTheme.DARK.themeName,
     DEFAULT_SYSTEM_DARK_THEME: DefaultTheme.DARK.themeName,
     DEFAULT_CURRENT_THEME_IDS: "{}"
 ]
@@ -146,7 +148,8 @@ let hintDefaults = [
     DEFAULT_SHOW_MUTE_PROFILE_ALERT,
     DEFAULT_SHOW_REPORTS_IN_SUPPORT_CHAT_ALERT,
     DEFAULT_SHOW_DELETE_CONVERSATION_NOTICE,
-    DEFAULT_SHOW_DELETE_CONTACT_NOTICE
+    DEFAULT_SHOW_DELETE_CONTACT_NOTICE,
+    DEFAULT_CALL_FEATURE_HINT_SHOWN
 ]
 
 // not used anymore
@@ -200,7 +203,7 @@ let showReportsInSupportChatAlertDefault = BoolDefault(defaults: UserDefaults.st
 
 /// after importing new database, this flag will be set and unset only after importing app settings in `initializeChat` */
 let shouldImportAppSettingsDefault = BoolDefault(defaults: UserDefaults.standard, forKey: DEFAULT_SHOULD_IMPORT_APP_SETTINGS)
-let currentThemeDefault = StringDefault(defaults: UserDefaults.standard, forKey: DEFAULT_CURRENT_THEME, withDefault: DefaultTheme.SYSTEM_THEME_NAME)
+let currentThemeDefault = StringDefault(defaults: UserDefaults.standard, forKey: DEFAULT_CURRENT_THEME, withDefault: DefaultTheme.DARK.themeName)
 let systemDarkThemeDefault = StringDefault(defaults: UserDefaults.standard, forKey: DEFAULT_SYSTEM_DARK_THEME, withDefault: DefaultTheme.DARK.themeName)
 let currentThemeIdsDefault = CodableDefault<[String: String]>(defaults: UserDefaults.standard, forKey: DEFAULT_CURRENT_THEME_IDS, withDefault: [:] )
 let themeOverridesDefault: CodableDefault<[ThemeOverrides]> = CodableDefault(defaults: UserDefaults.standard, forKey: DEFAULT_THEME_OVERRIDES, withDefault: [])

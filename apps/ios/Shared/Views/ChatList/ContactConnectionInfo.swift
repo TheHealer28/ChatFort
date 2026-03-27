@@ -14,7 +14,7 @@ struct ContactConnectionInfo: View {
     @EnvironmentObject var theme: AppTheme
     @Environment(\.dismiss) var dismiss: DismissAction
     @State var contactConnection: PendingContactConnection
-    @State private var showShortLink: Bool = true
+    @State private var showShortLink: Bool = false
     @State private var alert: CCInfoAlert?
     @State private var localAlias = ""
     @State private var showIncognitoSheet = false

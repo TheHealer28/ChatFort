@@ -10,6 +10,7 @@ import Foundation
 import SwiftUI
 
 public enum PresetWallpaper: CaseIterable {
+    case quantum
     case cats
     case flowers
     case hearts
@@ -23,6 +24,7 @@ public enum PresetWallpaper: CaseIterable {
 
     public var filename: String {
         switch self {
+        case .quantum: "quantum"
         case .cats: "cats"
         case .flowers: "flowers"
         case .hearts: "hearts"
@@ -32,8 +34,17 @@ public enum PresetWallpaper: CaseIterable {
         }
     }
 
+    /// Quantum preset uses fill mode (full-screen image); all others tile/repeat.
+    public var isFillMode: Bool {
+        switch self {
+        case .quantum: true
+        default: false
+        }
+    }
+
     public var scale: Float {
         switch self {
+        case .quantum: 1.0
         case .cats: 0.63
         case .flowers: 0.53
         case .hearts: 0.59
@@ -45,6 +56,7 @@ public enum PresetWallpaper: CaseIterable {
 
     public var background: [DefaultTheme: Color] {
         switch self {
+        case .quantum: wallpaperBackgrounds(light: "#ff0a1a0f")
         case .cats: wallpaperBackgrounds(light: "#ffF8F6EA")
         case .flowers: wallpaperBackgrounds(light: "#ffE2FFE4")
         case .hearts: wallpaperBackgrounds(light: "#ffFDECEC")
@@ -56,6 +68,12 @@ public enum PresetWallpaper: CaseIterable {
 
     public var tint: [DefaultTheme: Color] {
         switch self {
+        case .quantum: [
+            DefaultTheme.LIGHT: Color.clear,
+            DefaultTheme.DARK: Color.clear,
+            DefaultTheme.CLASSIC: Color.clear,
+            DefaultTheme.BLACK: Color.clear
+        ]
         case .cats: [
             DefaultTheme.LIGHT: "#ffefdca6".colorFromReadableHex(),
             DefaultTheme.DARK: "#ff4b3b0e".colorFromReadableHex(),
@@ -97,6 +115,32 @@ public enum PresetWallpaper: CaseIterable {
 
     public var colors: [DefaultTheme: ThemeColors] {
         switch self {
+        case .quantum: [
+            DefaultTheme.LIGHT: ThemeColors.from(
+                sentMessage: "#cc1a3a2a",
+                sentQuote: "#cc0f2a1a",
+                receivedMessage: "#cc1a1a1a",
+                receivedQuote: "#cc2a2a2a"
+            ),
+            DefaultTheme.DARK: ThemeColors.from(
+                sentMessage: "#cc1a3a2a",
+                sentQuote: "#cc0f2a1a",
+                receivedMessage: "#cc1a1a1a",
+                receivedQuote: "#cc2a2a2a"
+            ),
+            DefaultTheme.CLASSIC: ThemeColors.from(
+                sentMessage: "#cc1a3a2a",
+                sentQuote: "#cc0f2a1a",
+                receivedMessage: "#cc1a1a1a",
+                receivedQuote: "#cc2a2a2a"
+            ),
+            DefaultTheme.BLACK: ThemeColors.from(
+                sentMessage: "#cc1a3a2a",
+                sentQuote: "#cc0f2a1a",
+                receivedMessage: "#cc1a1a1a",
+                receivedQuote: "#cc2a2a2a"
+            )
+        ]
         case .cats: [
             DefaultTheme.LIGHT: ThemeColors.from(
                 sentMessage: "#fffffaed",
@@ -258,6 +302,7 @@ public enum PresetWallpaper: CaseIterable {
 
     public static func from(_ filename: String) -> PresetWallpaper? {
         switch filename {
+        case PresetWallpaper.quantum.filename: PresetWallpaper.quantum
         case PresetWallpaper.cats.filename: PresetWallpaper.cats
         case PresetWallpaper.flowers.filename: PresetWallpaper.flowers
         case PresetWallpaper.hearts.filename: PresetWallpaper.hearts

@@ -16,7 +16,7 @@ struct UserAddressView: View {
     @EnvironmentObject var theme: AppTheme
     @State var shareViaProfile = false
     @State var autoCreate = false
-    @State private var showShortLink = true
+    @State private var showShortLink = false
     @State private var settings = AddressSettingsState()
     @State private var savedSettings = AddressSettingsState()
     @State private var showMailView = false

@@ -17,7 +17,7 @@ struct GroupLinkView: View {
     var showTitle: Bool = false
     var creatingGroup: Bool = false
     var linkCreatedCb: (() -> Void)? = nil
-    @State private var showShortLink = true
+    @State private var showShortLink = false
     @State private var creatingLink = false
     @State private var alert: GroupLinkAlert?
     @State private var shouldCreate = true

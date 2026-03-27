@@ -47,7 +47,7 @@ struct InqalaabTabView: View {
             // Tab 3: Chats (messaging — secondary, not primary)
             ChatListView(activeUserPickerSheet: $activeUserPickerSheet)
                 .tabItem {
-                    Label("Chats", systemImage: "bubble.left.and.bubble.right.fill")
+                    Label("Chats", systemImage: "ellipsis.message.fill")
                 }
                 .tag(3)
 

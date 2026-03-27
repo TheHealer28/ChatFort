@@ -147,6 +147,7 @@ class SceneDelegate: NSObject, ObservableObject, UIWindowSceneDelegate {
         window = windowScene.keyWindow
         SceneDelegate.windowStatic = windowScene.keyWindow
         migrateAccentColorAndTheme()
+        migrateWallpaperToQuantum()
         ThemeManager.applyTheme(currentThemeDefault.get())
         ThemeManager.adjustWindowStyle()
     }
@@ -174,22 +175,22 @@ class SceneDelegate: NSObject, ObservableObject, UIWindowSceneDelegate {
             var themeIds = currentThemeIdsDefault.get()
             switch userInterfaceStyle {
             case .light:
-                let light = ThemeOverrides(base: DefaultTheme.LIGHT, colors: colors, wallpaper: ThemeWallpaper(preset: PresetWallpaper.school.filename))
+                let light = ThemeOverrides(base: DefaultTheme.LIGHT, colors: colors, wallpaper: ThemeWallpaper(preset: PresetWallpaper.quantum.filename))
                 overrides.append(light)
                 themeOverridesDefault.set(overrides)
                 themeIds[DefaultTheme.LIGHT.themeName] = light.themeId
                 currentThemeIdsDefault.set(themeIds)
                 ThemeManager.applyTheme(DefaultTheme.LIGHT.themeName)
             case .dark:
-                let dark = ThemeOverrides(base: DefaultTheme.DARK, colors: colors, wallpaper: ThemeWallpaper(preset: PresetWallpaper.school.filename))
+                let dark = ThemeOverrides(base: DefaultTheme.DARK, colors: colors, wallpaper: ThemeWallpaper(preset: PresetWallpaper.quantum.filename))
                 overrides.append(dark)
                 themeOverridesDefault.set(overrides)
                 themeIds[DefaultTheme.DARK.themeName] = dark.themeId
                 currentThemeIdsDefault.set(themeIds)
                 ThemeManager.applyTheme(DefaultTheme.DARK.themeName)
             case .unspecified:
-                let light = ThemeOverrides(base: DefaultTheme.LIGHT, colors: colors, wallpaper: ThemeWallpaper(preset: PresetWallpaper.school.filename))
-                let dark = ThemeOverrides(base: DefaultTheme.DARK, colors: colors, wallpaper: ThemeWallpaper(preset: PresetWallpaper.school.filename))
+                let light = ThemeOverrides(base: DefaultTheme.LIGHT, colors: colors, wallpaper: ThemeWallpaper(preset: PresetWallpaper.quantum.filename))
+                let dark = ThemeOverrides(base: DefaultTheme.DARK, colors: colors, wallpaper: ThemeWallpaper(preset: PresetWallpaper.quantum.filename))
                 overrides.append(light)
                 overrides.append(dark)
                 themeOverridesDefault.set(overrides)
@@ -211,5 +212,43 @@ class SceneDelegate: NSObject, ObservableObject, UIWindowSceneDelegate {
         defs.removeObject(forKey: DEFAULT_ACCENT_COLOR_GREEN)
         defs.removeObject(forKey: DEFAULT_ACCENT_COLOR_BLUE)
         defs.removeObject(forKey: DEFAULT_USER_INTERFACE_STYLE)
+    }
+
+    private func migrateWallpaperToQuantum() {
+        let key = "inqalaab_wallpaper_migrated_quantum"
+        guard !UserDefaults.standard.bool(forKey: key) else { return }
+        UserDefaults.standard.set(true, forKey: key)
+
+        var overrides = themeOverridesDefault.get()
+        var changed = false
+
+        // Update existing "school" wallpapers to "quantum"
+        for i in overrides.indices {
+            if overrides[i].wallpaper?.preset == PresetWallpaper.school.filename {
+                overrides[i].wallpaper?.preset = PresetWallpaper.quantum.filename
+                changed = true
+            }
+        }
+
+        // If no overrides have any wallpaper set (fresh install), create defaults with quantum
+        let hasWallpaper = overrides.contains { $0.wallpaper?.preset != nil || $0.wallpaper?.imageFile != nil }
+        if !hasWallpaper {
+            let quantumWallpaper = ThemeWallpaper(preset: PresetWallpaper.quantum.filename)
+            var themeIds = currentThemeIdsDefault.get()
+            for base in [DefaultTheme.LIGHT, DefaultTheme.DARK, DefaultTheme.CLASSIC, DefaultTheme.BLACK] {
+                let existing = overrides.first(where: { $0.base == base })
+                if existing == nil {
+                    let override = ThemeOverrides(base: base, wallpaper: quantumWallpaper)
+                    overrides.append(override)
+                    themeIds[base.themeName] = override.themeId
+                }
+            }
+            currentThemeIdsDefault.set(themeIds)
+            changed = true
+        }
+
+        if changed {
+            themeOverridesDefault.set(overrides)
+        }
     }
 }

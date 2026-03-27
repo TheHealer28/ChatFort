@@ -91,7 +91,7 @@ struct InqalaabApp: App {
                             startChatAndActivate {
                                 if chatModel.chatRunning == true {
                                     // Inqalaab: Configure servers after chat is running
-                                    DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+                                    DispatchQueue.main.asyncAfter(deadline: .now() + 6.0) {
                                         if chatModel.chatRunning == true && chatModel.currentUser != nil {
                                             InqalaabServers.shared.configureIfNeeded()
                                         }

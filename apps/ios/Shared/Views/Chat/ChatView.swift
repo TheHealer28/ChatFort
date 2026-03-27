@@ -535,6 +535,8 @@ struct ChatView: View {
                     let callsPrefEnabled = contact.mergedPreferences.calls.enabled.forUser
                     if callsPrefEnabled {
                         if chatModel.activeCall == nil {
+                            callButton(contact, .video, imageName: "video")
+                                .disabled(!contact.ready || !contact.active)
                             callButton(contact, .audio, imageName: "phone")
                                 .disabled(!contact.ready || !contact.active)
                         } else if let call = chatModel.activeCall, call.contact.id == cInfo.id {
@@ -1231,12 +1233,12 @@ struct ChatView: View {
         }
     }
 
-    // Inqalaab: green background call button
+    // Inqalaab: green background call buttons
     private func callButton(_ contact: Contact, _ media: CallMediaType, imageName: String) -> some View {
         Button {
             CallController.shared.startCall(contact, media)
         } label: {
-            Image(systemName: "phone.fill")
+            Image(systemName: media == .video ? "video.fill" : "phone.fill")
                 .font(.system(size: 14, weight: .semibold))
                 .foregroundColor(.white)
                 .frame(width: 32, height: 32)

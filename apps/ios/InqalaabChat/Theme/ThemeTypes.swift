@@ -612,7 +612,7 @@ public struct ThemeModeOverride: Codable, Equatable, Hashable {
         ThemeModeOverride(
             mode: mode,
             colors: ThemeOverrides(base: base).withFilledColors(base, nil, nil, nil, nil, nil),
-            wallpaper: ThemeWallpaper(preset: PresetWallpaper.school.filename)
+            wallpaper: ThemeWallpaper(preset: PresetWallpaper.quantum.filename)
         )
     }
 }

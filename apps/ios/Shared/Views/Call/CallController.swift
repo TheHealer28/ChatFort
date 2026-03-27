@@ -19,7 +19,9 @@ class CallController: NSObject, CXProviderDelegate, PKPushRegistryDelegate, Obse
     static let isInChina = SKStorefront().countryCode == "CHN"
     static func useCallKit() -> Bool { !isInChina && callKitEnabledGroupDefault.get() }
 
-    private let provider = CXProvider(configuration: {
+    // Lazy: never created in China where CallKit is prohibited
+    private lazy var provider: CXProvider? = {
+        guard !CallController.isInChina else { return nil }
         let configuration = CXProviderConfiguration()
         configuration.supportsVideo = true
         configuration.supportedHandleTypes = [.generic]
@@ -27,9 +29,12 @@ class CallController: NSObject, CXProviderDelegate, PKPushRegistryDelegate, Obse
         configuration.maximumCallGroups = 1
         configuration.maximumCallsPerCallGroup = 1
         configuration.iconTemplateImageData = UIImage(named: "icon-transparent")?.pngData()
-        return configuration
-    }())
-    private let controller = CXCallController()
+        return CXProvider(configuration: configuration)
+    }()
+    private lazy var controller: CXCallController? = {
+        guard !CallController.isInChina else { return nil }
+        return CXCallController()
+    }()
     private let callManager = CallManager()
     @Published var activeCallInvitation: RcvCallInvitation?
     var shouldSuspendChat: Bool = false
@@ -40,7 +45,7 @@ class CallController: NSObject, CXProviderDelegate, PKPushRegistryDelegate, Obse
 
     override init() {
         super.init()
-        provider.setDelegate(self, queue: nil)
+        provider?.setDelegate(self, queue: nil)
         registry.delegate = self
         registry.desiredPushTypes = [.voIP]
     }
@@ -220,7 +225,7 @@ class CallController: NSObject, CXProviderDelegate, PKPushRegistryDelegate, Obse
             logger.debug("Inqalaab CallController: parsed call from \(displayName), callAge=\(callAge)s, uuid=\(callUUID)")
             if callAge >= -180 {
                 logger.debug("Inqalaab CallController: REPORTING incoming call to CallKit (full-screen UI)")
-                self.provider.reportNewIncomingCall(with: uuid, update: update) { error in
+                self.provider?.reportNewIncomingCall(with: uuid, update: update) { error in
                     if let error = error {
                         logger.error("Inqalaab CallController: reportNewIncomingCall FAILED: \(error.localizedDescription)")
                         m.callInvitations.removeValue(forKey: contactId)
@@ -265,10 +270,10 @@ class CallController: NSObject, CXProviderDelegate, PKPushRegistryDelegate, Obse
     private func reportExpiredCall(update: CXCallUpdate, _ completion: @escaping () -> Void) {
         logger.debug("CallController: report expired pushkit call via CallKit")
         let uuid = UUID()
-        provider.reportNewIncomingCall(with: uuid, update: update) { error in
+        provider?.reportNewIncomingCall(with: uuid, update: update) { error in
             if error == nil {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                    self.provider.reportCall(with: uuid, endedAt: nil, reason: .remoteEnded)
+                    self.provider?.reportCall(with: uuid, endedAt: nil, reason: .remoteEnded)
                 }
             }
             completion()
@@ -289,7 +294,7 @@ class CallController: NSObject, CXProviderDelegate, PKPushRegistryDelegate, Obse
         if CallController.useCallKit(), let callUUID = invitation.callUUID, let uuid = UUID(uuidString: callUUID) {
             if invitation.callTs.timeIntervalSinceNow >= -180 {
                 let update = cxCallUpdate(invitation: invitation)
-                provider.reportNewIncomingCall(with: uuid, update: update, completion: completion)
+                provider?.reportNewIncomingCall(with: uuid, update: update, completion: completion)
             }
         } else {
             NtfManager.shared.notifyCallInvitation(invitation)
@@ -327,14 +332,14 @@ class CallController: NSObject, CXProviderDelegate, PKPushRegistryDelegate, Obse
     func reportOutgoingCall(call: Call, connectedAt dateConnected: Date?) {
         logger.debug("CallController: reporting outgoing call connected")
         if CallController.useCallKit(), let callUUID = call.callUUID, let uuid = UUID(uuidString: callUUID) {
-            provider.reportOutgoingCall(with: uuid, connectedAt: dateConnected)
+            provider?.reportOutgoingCall(with: uuid, connectedAt: dateConnected)
         }
     }
 
     func reportCallRemoteEnded(invitation: RcvCallInvitation) {
         logger.debug("CallController: reporting remote ended")
         if CallController.useCallKit(), let callUUID = invitation.callUUID, let uuid = UUID(uuidString: callUUID) {
-            provider.reportCall(with: uuid, endedAt: nil, reason: .remoteEnded)
+            provider?.reportCall(with: uuid, endedAt: nil, reason: .remoteEnded)
         } else if invitation.contact.id == activeCallInvitation?.contact.id {
             activeCallInvitation = nil
         }
@@ -343,7 +348,7 @@ class CallController: NSObject, CXProviderDelegate, PKPushRegistryDelegate, Obse
     func reportCallRemoteEnded(call: Call) {
         logger.debug("CallController: reporting remote ended")
         if CallController.useCallKit(), let callUUID = call.callUUID, let uuid = UUID(uuidString: callUUID) {
-            provider.reportCall(with: uuid, endedAt: nil, reason: .remoteEnded)
+            provider?.reportCall(with: uuid, endedAt: nil, reason: .remoteEnded)
         }
     }
 
@@ -362,7 +367,7 @@ class CallController: NSObject, CXProviderDelegate, PKPushRegistryDelegate, Obse
                 update.remoteHandle = CXHandle(type: .generic, value: contact.id)
                 update.hasVideo = media == .video
                 update.localizedCallerName = contact.displayName
-                self.provider.reportCall(with: uuid, updated: update)
+                self.provider?.reportCall(with: uuid, updated: update)
             }
         } else if callManager.startOutgoingCall(callUUID: callUUID) {
             logger.debug("CallController.startCall: call started")
@@ -425,17 +430,18 @@ class CallController: NSObject, CXProviderDelegate, PKPushRegistryDelegate, Obse
     }
 
     func showInRecents(_ show: Bool) {
+        guard let provider = provider else { return }
         let conf = provider.configuration
         conf.includesCallsInRecents = show
         provider.configuration = conf
     }
 
     func hasActiveCalls() -> Bool {
-        controller.callObserver.calls.count > 0
+        controller?.callObserver.calls.count ?? 0 > 0
     }
 
     private func requestTransaction(with action: CXAction, onSuccess: @escaping () -> Void = {}) {
-        controller.request(CXTransaction(action: action)) { error in
+        controller?.request(CXTransaction(action: action)) { error in
             if let error = error {
                 logger.error("CallController.requestTransaction error requesting transaction: \(error.localizedDescription)")
             } else {

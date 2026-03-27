@@ -23,6 +23,9 @@ struct ActiveCallView: View {
     @State var prevColorScheme: ColorScheme = .dark
     @State var pipShown = false
     @State var wasConnected = false
+    // Draggable local video
+    @State private var selectedCorner: VideoCorner = .topTrailing
+    @State private var dragOffset: CGSize = .zero
 
     var body: some View {
         ZStack(alignment: .topLeading) {
@@ -30,7 +33,12 @@ struct ActiveCallView: View {
                 if let client = client, call.hasVideo {
                     GeometryReader { g in
                         let width = g.size.width * 0.3
-                        ZStack(alignment: .topTrailing) {
+                        let localHeight = localRendererAspectRatio == nil
+                            ? (g.size.width < g.size.height ? width * 1.33 : width / 1.33)
+                            : width / (localRendererAspectRatio ?? 1)
+                        let padding: CGFloat = 17
+
+                        ZStack {
                             ZStack(alignment: .center) {
                                 // For some reason, when the view in GeometryReader and ZStack is visible, it steals clicks on a back button, so showing something on top like this with background color helps (.clear color doesn't work)
                             }
@@ -54,8 +62,30 @@ struct ActiveCallView: View {
                                 }
                             }
                             .cornerRadius(10)
-                            .frame(width: width, height: localRendererAspectRatio == nil ? (g.size.width < g.size.height ? width * 1.33 : width / 1.33) : width / (localRendererAspectRatio ?? 1))
-                            .padding([.top, .trailing], 17)
+                            .frame(width: width, height: localHeight)
+                            .position(selectedCorner.position(in: g.size, videoSize: CGSize(width: width, height: localHeight), padding: padding))
+                            .offset(dragOffset)
+                            .gesture(
+                                DragGesture()
+                                    .onChanged { value in
+                                        dragOffset = value.translation
+                                    }
+                                    .onEnded { value in
+                                        let currentPos = CGPoint(
+                                            x: selectedCorner.position(in: g.size, videoSize: CGSize(width: width, height: localHeight), padding: padding).x + value.translation.width,
+                                            y: selectedCorner.position(in: g.size, videoSize: CGSize(width: width, height: localHeight), padding: padding).y + value.translation.height
+                                        )
+                                        let nearest = VideoCorner.nearest(to: currentPos, in: g.size, videoSize: CGSize(width: width, height: localHeight), padding: padding)
+                                        withAnimation(.spring(response: 0.35, dampingFraction: 0.75)) {
+                                            selectedCorner = nearest
+                                            dragOffset = .zero
+                                        }
+                                    }
+                            )
+                        }
+                        .onChange(of: g.size) { _ in
+                            // Re-anchor on rotation/size change
+                            dragOffset = .zero
                         }
                     }
                 }
@@ -83,6 +113,12 @@ struct ActiveCallView: View {
         }
         .onChange(of: m.activeCallViewIsCollapsed) { _ in
             hideKeyboard()
+        }
+        .onChange(of: scenePhase) { phase in
+            // Restore call view when returning from background, only if PiP is no longer shown
+            if phase == .active, m.activeCall != nil, !pipShown {
+                m.activeCallViewIsCollapsed = false
+            }
         }
         .onDisappear {
             logger.debug("ActiveCallView: disappear")
@@ -519,5 +555,40 @@ struct ActiveCallOverlay_Previews: PreviewProvider {
             ActiveCallOverlay(call: Call(direction: .incoming, contact: Contact.sampleData, callUUID: UUID().uuidString.lowercased(), callState: .offerSent, initialCallType: .audio), client: WebRTCClient({ _ in }, Binding.constant(nil)))
                 .background(.black)
         }
+    }
+}
+
+// MARK: - Draggable Local Video Corner
+
+enum VideoCorner: CaseIterable {
+    case topLeading, topTrailing, bottomLeading, bottomTrailing
+
+    func position(in containerSize: CGSize, videoSize: CGSize, padding: CGFloat) -> CGPoint {
+        let halfW = videoSize.width / 2
+        let halfH = videoSize.height / 2
+        switch self {
+        case .topLeading:
+            return CGPoint(x: padding + halfW, y: padding + halfH)
+        case .topTrailing:
+            return CGPoint(x: containerSize.width - padding - halfW, y: padding + halfH)
+        case .bottomLeading:
+            return CGPoint(x: padding + halfW, y: containerSize.height - 92 - halfH)
+        case .bottomTrailing:
+            return CGPoint(x: containerSize.width - padding - halfW, y: containerSize.height - 92 - halfH)
+        }
+    }
+
+    static func nearest(to point: CGPoint, in containerSize: CGSize, videoSize: CGSize, padding: CGFloat) -> VideoCorner {
+        var closest = VideoCorner.topTrailing
+        var minDist = CGFloat.greatestFiniteMagnitude
+        for corner in VideoCorner.allCases {
+            let pos = corner.position(in: containerSize, videoSize: videoSize, padding: padding)
+            let dist = hypot(point.x - pos.x, point.y - pos.y)
+            if dist < minDist {
+                minDist = dist
+                closest = corner
+            }
+        }
+        return closest
     }
 }

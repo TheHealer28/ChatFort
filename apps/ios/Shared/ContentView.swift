@@ -127,6 +127,14 @@ struct ContentView: View {
                 canConnectViewCall = false
                 // Suspend Nearby P2P service on background
                 NearbyModel.shared.onBackground()
+                // Request PiP start for active video calls
+                let hasVideo = chatModel.activeCall?.hasVideo == true
+                let showCall = chatModel.showCallView
+                logger.debug("Inqalaab PiP: background check — hasVideo=\(hasVideo), showCallView=\(showCall), activeCall=\(chatModel.activeCall != nil)")
+                if hasVideo && showCall {
+                    logger.debug("Inqalaab PiP: posting startCallPiP notification")
+                    NotificationCenter.default.post(name: .startCallPiP, object: nil)
+                }
             case .active:
                 // Resume Nearby P2P service on foreground
                 NearbyModel.shared.onForeground()
@@ -168,10 +176,18 @@ struct ContentView: View {
         .onChange(of: theme.name) { _ in
             ThemeManager.adjustWindowStyle()
         }
+        .onChange(of: chatModel.showCallView) { showCall in
+            if !showCall {
+                NotificationCenter.default.post(name: .stopCallPiP, object: nil)
+            }
+        }
     }
 
     // Inqalaab: Deadman's switch — if user hasn't opened app within configured hours, trigger panic wipe
     private func checkDeadmanSwitch() {
+        // Don't run before chat is fully initialized
+        guard ChatModel.shared.chatInitialized else { return }
+
         let now = Date()
 
         // Check deadman's switch BEFORE updating timestamp

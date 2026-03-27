@@ -80,7 +80,7 @@ struct NewChatView: View {
     @State var showQRCodeScanner = false
     @State private var invitationUsed: Bool = false
     @State private var connLinkInvitation: CreatedConnLink = CreatedConnLink(connFullLink: "", connShortLink: nil)
-    @State private var showShortLink = true
+    @State private var showShortLink = false
     @State private var creatingConnReq = false
     @State var choosingProfile = false
     @State private var pastedLink: String = ""

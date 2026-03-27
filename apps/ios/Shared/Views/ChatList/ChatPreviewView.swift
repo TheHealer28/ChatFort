@@ -25,12 +25,52 @@ struct ChatPreviewView: View {
     var dynamicMediaSize: CGFloat { dynamicSize(userFont).mediaSize }
     var dynamicChatInfoSize: CGFloat { dynamicSize(userFont).chatInfoSize }
 
+    // Inqalaab: whether the contact is actively connected
+    private var isContactConnected: Bool {
+        if case let .direct(contact) = chat.chatInfo {
+            return contact.active && contact.activeConn?.connStatus == .ready
+        }
+        return false
+    }
+
+    // Inqalaab: accent strip color based on contact/group state
+    private var accentStripColor: Color {
+        switch chat.chatInfo {
+        case let .direct(contact):
+            if contact.active, let conn = contact.activeConn, conn.connStatus == .ready || conn.connStatus == .sndReady {
+                return InqalaabGreen
+            } else if contact.activeConn != nil {
+                return InqalaabAmber
+            } else {
+                return theme.colors.secondary.opacity(0.3)
+            }
+        case .group:
+            return InqalaabGreen
+        case .local:
+            return theme.colors.secondary.opacity(0.3)
+        default:
+            return InqalaabAmber
+        }
+    }
+
     var body: some View {
         let cItem = chat.chatItems.last
         return ZStack {
-            HStack(spacing: 8) {
+            HStack(spacing: 0) {
+                // Inqalaab: left accent strip showing connection status
+                RoundedRectangle(cornerRadius: 1.5)
+                    .fill(accentStripColor)
+                    .frame(width: 3, height: dynamicSize(userFont).profileImageSize * 0.7)
+                    .padding(.leading, 2)
+                HStack(spacing: 8) {
                 ZStack(alignment: .bottomTrailing) {
                     ChatInfoImage(chat: chat, size: dynamicSize(userFont).profileImageSize)
+                        .overlay(
+                            // Inqalaab: online ring for connected contacts
+                            Circle()
+                                .strokeBorder(InqalaabGreen, lineWidth: 2)
+                                .opacity(isContactConnected ? 1 : 0)
+                        )
                     chatPreviewImageOverlayIcon()
                         .padding([.bottom, .trailing], 1)
                 }
@@ -92,7 +132,8 @@ struct ChatPreviewView: View {
                     Spacer()
                 }
                 .frame(maxHeight: .infinity)
-            }
+            } // end inner HStack(spacing: 8)
+            } // end outer HStack(spacing: 0) with accent strip
             .opacity(deleting ? 0.4 : 1)
             .padding(.bottom, -8)
 
