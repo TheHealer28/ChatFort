@@ -92,12 +92,6 @@ fun ResourcesView() {
                 click = { uriHandler.openUriCatching("https://privacyinternational.org/") },
                 textColor = MaterialTheme.colors.primary
             )
-            SettingsActionItem(
-                painterResource(MR.images.ic_shield),
-                "Digital Rights Foundation",
-                click = { uriHandler.openUriCatching("https://digitalrightsfoundation.pk/") },
-                textColor = MaterialTheme.colors.primary
-            )
         }
         SectionDividerSpaced()
 
