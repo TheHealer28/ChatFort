@@ -431,10 +431,10 @@ struct SafetyHubView: View {
                         url: "https://ooni.org/"
                     )
                     SafetyResourceLink(
-                        title: "Emergency: Digital Rights",
-                        detail: "Legal help for digital rights",
-                        icon: "phone.fill",
-                        url: "https://digitalrightsfoundation.pk/"
+                        title: "Report Surveillance",
+                        detail: "Privacy International",
+                        icon: "exclamationmark.shield.fill",
+                        url: "https://privacyinternational.org/"
                     )
                 } header: {
                     Label("Safety Resources", systemImage: "books.vertical")
