@@ -113,7 +113,7 @@ struct ContentView: View {
             }
         }
         .alert(isPresented: $alertManager.presentAlert) { alertManager.alertView! }
-        .confirmationDialog("Inqalaab Lock mode", isPresented: $showChooseLAMode, titleVisibility: .visible) {
+        .confirmationDialog("ChatFort Lock mode", isPresented: $showChooseLAMode, titleVisibility: .visible) {
             Button("System authentication") { initialEnableLA() }
             Button("Passcode entry") { showSetPasscode = true }
         }
@@ -298,6 +298,10 @@ struct ContentView: View {
             InqalaabTabView(activeUserPickerSheet: $chatListUserPickerSheet)
                 .redacted(reason: appSheetState.redactionReasons(protectScreen))
             .onAppear {
+                // Inqalaab: if a notification tap is pending and everything is already
+                // ready by the time the main UI mounts, open the chat now.
+                NtfManager.shared.processPendingNtfResponseIfReady()
+                MeshLinkBridge.refresh()
 
                 requestNtfAuthorization()
                 // Local Authentication notice is to be shown on next start after onboarding is complete
@@ -322,6 +326,14 @@ struct ContentView: View {
             }
             .onChange(of: chatModel.appOpenUrl) { _ in connectViaUrl() }
             .onChange(of: chatModel.reRegisterTknStatus) { _ in showReRegisterTokenAlert() }
+            // Inqalaab: cold-launch-from-notification retry — process the pending tap the
+            // instant the chat engine + active user become ready (drives navigation via
+            // loadOpenChat's deferred chatId set, so the NavigationStack is bound first).
+            .onChange(of: chatModel.chatRunning) { _ in
+                NtfManager.shared.processPendingNtfResponseIfReady()
+                MeshLinkBridge.refresh()
+            }
+            .onChange(of: chatModel.currentUser?.userId) { _ in NtfManager.shared.processPendingNtfResponseIfReady() }
             .sheet(item: $noticesSheetItem) { item in
                 switch item {
                 case let .whatsNew(updatedConditions):
@@ -438,8 +450,8 @@ struct ContentView: View {
 
     func laNoticeAlert() -> Alert {
         Alert(
-            title: Text("Inqalaab Lock"),
-            message: Text("To protect your information, turn on Inqalaab Lock.\nYou will be prompted to complete authentication before this feature is enabled."),
+            title: Text("ChatFort Lock"),
+            message: Text("To protect your information, turn on ChatFort Lock.\nYou will be prompted to complete authentication before this feature is enabled."),
             primaryButton: .default(Text("Turn on")) { showChooseLAMode = true },
             secondaryButton: .cancel()
          )
@@ -447,7 +459,7 @@ struct ContentView: View {
 
     private func initialEnableLA () {
         privacyLocalAuthModeDefault.set(.system)
-        authenticate(reason: NSLocalizedString("Enable Inqalaab Lock", comment: "authentication reason")) { laResult in
+        authenticate(reason: NSLocalizedString("Enable ChatFort Lock", comment: "authentication reason")) { laResult in
             switch laResult {
             case .success:
                 chatModel.contentViewAccessAuthenticated = true

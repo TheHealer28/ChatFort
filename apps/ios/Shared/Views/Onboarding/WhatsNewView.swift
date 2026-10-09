@@ -48,7 +48,7 @@ private let versionDescriptions: [VersionDescription] = [
             .feature(Description(
                 icon: "shield.checkered",
                 title: "Built for security",
-                description: "Inqalaab is purpose-built for anyone who values privacy and secure communication."
+                description: "ChatFort is purpose-built for anyone who values privacy and secure communication."
             )),
             .feature(Description(
                 icon: "eye.slash.fill",
@@ -93,7 +93,7 @@ private let versionDescriptions: [VersionDescription] = [
             )),
             .view(FeatureView(
                 icon: nil,
-                title: "Short Inqalaab address",
+                title: "Short ChatFort address",
                 view: { CreateUpdateAddressShortLink() }
             )),
         ]
@@ -125,7 +125,7 @@ fileprivate struct CreateUpdateAddressShortLink: View {
                     .symbolRenderingMode(.monochrome)
                     .foregroundColor(theme.colors.secondary)
                     .frame(minWidth: 30, alignment: .center)
-                Text("Short Inqalaab address").font(.title3).bold()
+                Text("Short ChatFort address").font(.title3).bold()
             }
             Group {
                 if let addr = chatModel.userAddress {
@@ -137,7 +137,7 @@ fileprivate struct CreateUpdateAddressShortLink: View {
                             }
                         }
                     } else {
-                        Button("Share your Inqalaab address") { addr.shareAddress(short: true) }
+                        Button("Share your ChatFort address") { addr.shareAddress(short: true) }
                     }
                 } else {
                     Button("Create your address") { showAddressSheet = true }
@@ -149,7 +149,7 @@ fileprivate struct CreateUpdateAddressShortLink: View {
         .sheet(isPresented: $showAddressSheet) {
             NavigationView {
                 UserAddressView(autoCreate: true)
-                    .navigationTitle("Inqalaab address")
+                    .navigationTitle("ChatFort address")
                     .navigationBarTitleDisplayMode(.large)
                     .modifier(ThemedBackground(grouped: true))
             }

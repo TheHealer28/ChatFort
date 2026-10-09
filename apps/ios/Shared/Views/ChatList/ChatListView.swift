@@ -21,7 +21,7 @@ enum UserPickerSheet: Identifiable {
 
     var navigationTitle: LocalizedStringKey {
         switch self {
-        case .address: "Inqalaab address"
+        case .address: "ChatFort address"
         case .chatPreferences: "Your preferences"
         case .chatProfiles: "Your chat profiles"
         case .currentProfile: "Your current profile"
@@ -160,7 +160,7 @@ struct ChatListView: View {
     // iOS 15 is required it to show/hide toolbar while chat is hidden/visible
     @State private var viewOnScreen = true
 
-    @AppStorage(GROUP_DEFAULT_ONE_HAND_UI, store: groupDefaults) private var oneHandUI = true
+    @AppStorage(GROUP_DEFAULT_ONE_HAND_UI, store: groupDefaults) private var oneHandUI = false
     @AppStorage(DEFAULT_ONE_HAND_UI_CARD_SHOWN) private var oneHandUICardShown = false
     @AppStorage(DEFAULT_TOOLBAR_MATERIAL) private var toolbarMaterial = ToolbarMaterial.defaultMaterial
 
@@ -303,13 +303,8 @@ struct ChatListView: View {
             if #unavailable(iOS 16.0), !viewOnScreen {
                 viewOnScreen = true
             }
-            // Inqalaab: Ensure servers are configured when chat list appears
-            // This catches the case where onboarding trigger didn't fire
-            DispatchQueue.main.asyncAfter(deadline: .now() + 7.0) {
-                if chatModel.chatRunning == true && chatModel.currentUser != nil {
-                    InqalaabServers.shared.configureIfNeeded()
-                }
-            }
+            // Catches missed onboarding triggers without duplicating first-launch setup work.
+            InqalaabServers.shared.scheduleConfigureIfNeeded(after: 20, reason: "chat list appeared")
         }
         .onDisappear {
             activeUserPickerSheet = nil
@@ -465,13 +460,7 @@ struct ChatListView: View {
                     // the ForEach when chatModel.chats changes, even though the parent
                     // NavStackCompat closure is not re-evaluated.
                     ChatListRows(parentSheet: $sheet, oneHandUI: oneHandUI)
-                    if !oneHandUICardShown {
-                        OneHandUICard()
-                            .padding(.vertical, 6)
-                            .scaleEffect(x: 1, y: oneHandUI ? -1 : 1, anchor: .center)
-                            .listRowSeparator(.hidden)
-                            .listRowBackground(Color.clear)
-                    }
+                    // OneHandUI toggle removed from chat list — available in Settings > Appearance
                     // Inqalaab: AddressCreationCard removed — Safety Hub handles address creation
                 }
                 .listStyle(.plain)
@@ -496,17 +485,14 @@ struct ChatListView: View {
                     }
                 }
             }
-            // Inqalaab: ChatListQROverlay is a separate reactive View that observes
-            // chatModel directly, so it updates when chats change (e.g. hides QR
-            // code when a real chat connects).
-            ChatListQROverlay(oneHandUI: oneHandUI)
+            // QR overlay removed from here — now rendered inside ChatListRows
         }
     }
 
     @ViewBuilder private func inqalaabAddressQRCode(_ userAddress: UserContactLink) -> some View {
         VStack(spacing: 12) {
             Spacer()
-            Text("Your Inqalaab Address")
+            Text("Your ChatFort Address")
                 .font(.title2)
                 .fontWeight(.bold)
                 .foregroundColor(theme.colors.onBackground)
@@ -714,7 +700,7 @@ struct ChatListSearchBar: View {
             HStack(spacing: 12) {
                 HStack(spacing: 4) {
                     Image(systemName: "magnifyingglass")
-                    TextField("Search or paste Inqalaab link", text: $searchText)
+                    TextField("Search or paste ChatFort link", text: $searchText)
                         .foregroundColor(searchShowingInqalaabLink ? theme.colors.secondary : theme.colors.onBackground)
                         .disabled(searchShowingInqalaabLink)
                         .focused($searchFocussed)
@@ -874,7 +860,7 @@ struct TagsView: View {
                     setActiveFilter(filter: .userTag(tag))
                 }
                 .onLongPressGesture {
-                    let screenHeight = UIScreen.main.bounds.height
+                    let screenHeight = activeWindowHeight()
                     let reservedSpace: Double = 4 * 44 // 2 for padding, 1 for "Create list" and another for extra tag
                     let tagsSpace = Double(max(chatTagsModel.userTags.count, 3)) * 44
                     let fraction = min((reservedSpace + tagsSpace) / screenHeight, 0.62)
@@ -1099,6 +1085,46 @@ private struct ChatListRows: View {
                     .disabled(chatModel.chatRunning != true || chatModel.deletedChats.contains(chat.chatInfo.id))
             }
         }
+
+        // Inqalaab: QR code shown inline as a list item (not overlay) when no real chats exist
+        if !hasRealChats, let userAddress = chatModel.userAddress {
+            VStack(spacing: 12) {
+                ZStack {
+                    Circle()
+                        .fill(Color(red: 0, green: 0.6, blue: 0.4).opacity(0.15))
+                        .frame(width: 80, height: 80)
+                    Image(systemName: "shield.checkered")
+                        .font(.system(size: 36))
+                        .foregroundColor(Color(red: 0, green: 0.6, blue: 0.4))
+                }
+
+                Text("Ready to Connect Securely")
+                    .font(.title3)
+                    .fontWeight(.bold)
+                    .foregroundColor(theme.colors.onBackground)
+                Text("Share your QR code or scan a friend's code to start chatting")
+                    .font(.caption)
+                    .foregroundColor(theme.colors.secondary)
+                    .multilineTextAlignment(.center)
+                    .padding(.horizontal, 24)
+
+                InqalaabCreatedLinkQRCode(link: userAddress.connLinkContact, short: .constant(false), withLogo: false)
+                    .frame(maxWidth: 180, maxHeight: 180)
+                    .padding(.horizontal, 24)
+            }
+            .padding(.vertical, 24)
+            .frame(maxWidth: .infinity)
+            .listRowBackground(Color.clear)
+            .listRowSeparator(.hidden)
+            .scaleEffect(x: 1, y: oneHandUI ? -1 : 1, anchor: .center)
+        }
+    }
+
+    private var hasRealChats: Bool {
+        chatModel.chats.contains { chat in
+            if case .local = chat.chatInfo { return false }
+            return !chat.chatInfo.chatDeleted && !chat.chatInfo.contactCard
+        }
     }
 
     private func tagFilterMatch(_ chat: Chat) -> Bool {
@@ -1124,39 +1150,33 @@ private struct ChatListQROverlay: View {
             return !chat.chatInfo.chatDeleted && !chat.chatInfo.contactCard
         }
         if !hasRealChats, let userAddress = chatModel.userAddress {
-            VStack(spacing: 16) {
-                Spacer()
+            VStack(spacing: 12) {
                 // Shield icon with background circle
                 ZStack {
                     Circle()
                         .fill(InqalaabGreen.opacity(0.15))
-                        .frame(width: 100, height: 100)
+                        .frame(width: 80, height: 80)
                     Image(systemName: "shield.checkered")
-                        .font(.system(size: 44))
+                        .font(.system(size: 36))
                         .foregroundColor(InqalaabGreen)
                 }
-                .padding(.bottom, 4)
 
                 Text("Ready to Connect Securely")
-                    .font(.title2)
+                    .font(.title3)
                     .fontWeight(.bold)
                     .foregroundColor(theme.colors.onBackground)
                 Text("Share your QR code or scan a friend's code to start chatting")
-                    .font(.subheadline)
+                    .font(.caption)
                     .foregroundColor(theme.colors.secondary)
                     .multilineTextAlignment(.center)
                     .padding(.horizontal, 24)
 
                 InqalaabCreatedLinkQRCode(link: userAddress.connLinkContact, short: .constant(false), withLogo: false)
-                    .frame(maxWidth: 180, maxHeight: 180)
+                    .frame(maxWidth: 160, maxHeight: 160)
                     .padding(.horizontal, 24)
-                    .padding(.vertical, 8)
-
-                Spacer()
             }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .padding(.horizontal, 16)
-            .padding(.bottom, oneHandUI ? 450 : 300)
+            .padding(.vertical, 16)
+            .frame(maxWidth: .infinity)
             .scaleEffect(x: 1, y: oneHandUI ? -1 : 1, anchor: .center)
         }
     }

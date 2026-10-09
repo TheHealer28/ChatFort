@@ -14,7 +14,7 @@
 /* ============================================ */
 /* Onboarding                                    */
 /* ============================================ */
-"Welcome to Inqalaab" = "انقلاب میں خوش آمدید";
+"Welcome to ChatFort" = "چیٹ فورٹ میں خوش آمدید";
 "Secure communication for the resistance" = "مزاحمت کے لیے محفوظ مواصلات";
 "Built for Activists" = "سرگرم کارکنوں کے لیے بنایا گیا";
 "Built for activists and journalists facing surveillance" = "نگرانی کا سامنا کرنے والے کارکنوں اور صحافیوں کے لیے بنایا گیا";
@@ -194,10 +194,12 @@
 "Discovered" = "دریافت ہوا";
 "Offline" = "آف لائن";
 "Nearby Conversations" = "قریبی بات چیت";
+"Nearby chats are NOT private: anyone close by with the right tools can pretend to be someone else and read what you send. Don't share names, locations or plans here." = "قریبی چیٹس نجی نہیں ہیں: قریب موجود کوئی بھی شخص مناسب آلات سے کسی اور کا روپ دھار کر آپ کے بھیجے گئے پیغامات پڑھ سکتا ہے۔ یہاں نام، مقامات یا منصوبے شیئر نہ کریں۔";
+"Others nearby see you as %@." = "قریب موجود لوگ آپ کو %@ کے نام سے دیکھتے ہیں۔";
 "No nearby peers found" = "کوئی قریبی ساتھی نہیں ملا";
 "Make sure Bluetooth and Wi-Fi are enabled" = "یقینی بنائیں کہ بلوٹوتھ اور وائی فائی فعال ہیں";
 "Offline Communication" = "آف لائن مواصلات";
-"Connect directly with nearby Inqalaab users via Bluetooth and WiFi — no internet needed." = "بلوٹوتھ اور وائی فائی کے ذریعے قریبی انقلاب صارفین سے براہ راست جڑیں — انٹرنیٹ کی ضرورت نہیں۔";
+"Connect directly with nearby Inqalaab users via Bluetooth and WiFi — no internet needed." = "بلوٹوتھ اور وائی فائی کے ذریعے قریبی چیٹ فورٹ صارفین سے براہ راست جڑیں — انٹرنیٹ کی ضرورت نہیں۔";
 "No Internet Required" = "انٹرنیٹ کی ضرورت نہیں";
 "Works during shutdowns & blackouts" = "شٹ ڈاؤن اور بلیک آؤٹ کے دوران کام کرتا ہے";
 "Encrypted P2P" = "انکرپٹڈ P2P";
@@ -260,8 +262,8 @@
 "Help" = "مدد";
 "How to use it" = "استعمال کا طریقہ";
 "What's new" = "نیا کیا ہے";
-"About Inqalaab" = "انقلاب کے بارے میں";
-"Support Inqalaab" = "انقلاب کی حمایت کریں";
+"About ChatFort" = "چیٹ فورٹ کے بارے میں";
+"Support ChatFort" = "چیٹ فورٹ کی حمایت کریں";
 "Rate the app" = "ایپ کی درجہ بندی کریں";
 "Star on GitHub" = "گٹ ہب پر ستارہ دیں";
 "Develop" = "ترقی";
@@ -277,7 +279,7 @@
 /* ============================================ */
 "Your privacy" = "آپ کی رازداری";
 "Device" = "آلہ";
-"Inqalaab Lock" = "انقلاب لاک";
+"ChatFort Lock" = "چیٹ فورٹ لاک";
 "Off" = "بند";
 "Protect app screen" = "ایپ سکرین محفوظ کریں";
 "Send link previews" = "لنک پیش نظارہ بھیجیں";
@@ -371,7 +373,7 @@
 /* ============================================ */
 /* Chat List                                     */
 /* ============================================ */
-"Your Inqalaab Address" = "آپ کا انقلاب ایڈریس";
+"Your ChatFort Address" = "آپ کا چیٹ فورٹ ایڈریس";
 "Show this QR code to connect" = "جڑنے کے لیے یہ QR کوڈ دکھائیں";
 "Scan each other's code to chat securely" = "محفوظ بات چیت کے لیے ایک دوسرے کا کوڈ سکین کریں";
 "No filtered chats" = "کوئی فلٹر شدہ بات چیت نہیں";
@@ -381,7 +383,7 @@
 "No chats found" = "کوئی بات چیت نہیں ملی";
 "Add list" = "فہرست شامل کریں";
 "All" = "سب";
-"Inqalaab address" = "انقلاب ایڈریس";
+"ChatFort address" = "چیٹ فورٹ ایڈریس";
 "Reconnect servers?" = "سرورز دوبارہ جوڑیں؟";
 "Reconnect all connected servers to force message delivery" = "پیغامات کی ترسیل کے لیے تمام سرورز دوبارہ جوڑیں";
 "Start a secure conversation" = "ایک محفوظ بات چیت شروع کریں";
@@ -579,6 +581,10 @@
 "Incognito" = "پوشیدہ";
 "Incognito mode" = "پوشیدہ موڈ";
 "Your real profile will not be sent to contacts" = "آپ کا اصل پروفائل رابطوں کو نہیں بھیجا جائے گا";
+"Connect via contact address" = "رابطہ ایڈریس سے جڑیں";
+"Connect via one-time link" = "ایک بار کے لنک سے جڑیں";
+"Use current profile" = "موجودہ پروفائل استعمال کریں";
+"Use new incognito profile" = "نیا پوشیدہ پروفائل استعمال کریں";
 
 /* ============================================ */
 /* Media & Files                                 */
@@ -614,3 +620,172 @@
 "now" = "ابھی";
 "today" = "آج";
 "yesterday" = "کل";
+
+/* Group calls (v1.6.0) */
+"Start group call" = "گروپ کال شروع کریں";
+"Group call" = "گروپ کال";
+"Group call from %@" = "%@ کی طرف سے گروپ کال";
+"Incoming group call from %@ — open ChatFort to join" = "%@ کی طرف سے گروپ کال — شامل ہونے کے لیے ChatFort کھولیں";
+"Incoming group call — open ChatFort to join" = "آنے والی گروپ کال — شامل ہونے کے لیے ChatFort کھولیں";
+"%lld of %lld on the call" = "%2$lld میں سے %1$lld کال پر";
+"End" = "ختم";
+"Decline" = "مسترد کریں";
+"Connecting…" = "منسلک ہو رہا ہے…";
+"invited…" = "مدعو…";
+"connecting…" = "منسلک ہو رہا ہے…";
+"failed" = "ناکام";
+"left" = "چھوڑ گئے";
+"not connected" = "منسلک نہیں";
+"Group member" = "گروپ ممبر";
+
+/* Nearby consent + delete (v1.6.0) */
+"Message requests" = "پیغام کی درخواستیں";
+"Wants to message you. Accept only if you recognise them." = "آپ کو پیغام بھیجنا چاہتے ہیں۔ صرف اس صورت قبول کریں جب آپ انہیں پہچانتے ہوں۔";
+"Delete chat" = "چیٹ حذف کریں";
+"Delete this chat?" = "یہ چیٹ حذف کریں؟";
+"This removes all messages with this person from this device." = "اس سے اس شخص کے ساتھ تمام پیغامات اس ڈیوائس سے حذف ہو جائیں گے۔";
+"Searching for nearby devices… If none appear: turn on Local Network (Settings → Privacy & Security → Local Network), put both devices on the same Wi-Fi with Bluetooth on, and keep the app open on both." = "قریبی ڈیوائسز تلاش کی جا رہی ہیں… اگر کوئی نظر نہ آئے: Local Network آن کریں (Settings → Privacy & Security → Local Network)، دونوں ڈیوائسز کو ایک ہی Wi-Fi پر رکھیں، Bluetooth آن کریں، اور دونوں پر ایپ کھلی رکھیں۔";
+"Couldn't start Nearby (%@). Enable Local Network in Settings → Privacy & Security → Local Network, then reopen the app." = "Nearby شروع نہیں ہو سکا (%@)۔ Settings → Privacy & Security → Local Network میں Local Network فعال کریں، پھر ایپ دوبارہ کھولیں۔";
+
+/* ============================================ */
+/* Crowd mesh                                    */
+/* ============================================ */
+"Crowd mesh" = "کراؤڈ میش";
+"Stop" = "بند کریں";
+"Stop the crowd mesh?" = "کراؤڈ میش بند کریں؟";
+"Keep running" = "چلنے دیں";
+"Your phone stops passing on messages for the people around you, and you stop receiving them." = "آپ کا فون آس پاس کے لوگوں کے پیغامات آگے پہنچانا بند کر دے گا، اور آپ کو بھی پیغامات ملنا بند ہو جائیں گے۔";
+"Looking for phones nearby…" = "قریبی فون تلاش کیے جا رہے ہیں…";
+"Linked to 1 phone" = "1 فون سے جڑا ہوا";
+"Linked to %lld phones" = "%lld فونز سے جڑا ہوا";
+"Keep ChatFort open for the best reach." = "زیادہ سے زیادہ لوگوں تک پہنچنے کے لیے ChatFort کھلا رکھیں۔";
+"In the background, this iPhone can still reach phones nearby, but most phones can't find it until ChatFort is open again." = "بیک گراؤنڈ میں بھی یہ iPhone قریبی فونز تک پہنچ سکتا ہے، لیکن ChatFort دوبارہ کھلنے تک زیادہ تر فون اسے نہیں ڈھونڈ سکتے۔";
+"Why keep ChatFort open" = "ChatFort کھلا کیوں رکھیں";
+"Everyone" = "سب";
+"Teams" = "ٹیمیں";
+"People" = "لوگ";
+"%lld unread" = "%lld نہ پڑھے گئے";
+"Reach everyone nearby, up to 7 hops, no internet" = "انٹرنیٹ کے بغیر قریب موجود سب تک پہنچیں، زیادہ سے زیادہ 7 فونز کے ذریعے";
+"Each phone passes messages on to the next: roughly 100–300 m through a crowd. The more people run it, the further it reaches." = "ہر فون پیغامات اگلے فون تک پہنچاتا ہے: ہجوم میں تقریباً 100 سے 300 میٹر تک۔ جتنے زیادہ لوگ اسے چلائیں گے، یہ اتنی ہی دور تک پہنچے گا۔";
+"Your crowd nickname" = "آپ کا کراؤڈ نک نیم";
+"Random nickname" = "رینڈم نک نیم";
+"Leave it blank to get a random nickname." = "خالی چھوڑ دیں تو آپ کو رینڈم نک نیم مل جائے گا۔";
+"Don't use your real name. Anyone nearby can see your nickname." = "اپنا اصل نام استعمال نہ کریں۔ قریب موجود کوئی بھی آپ کا نک نیم دیکھ سکتا ہے۔";
+"Anyone nearby can read it. Never post names, plans or where people at risk are." = "قریب موجود کوئی بھی اسے پڑھ سکتا ہے۔ کبھی نام، منصوبے یا خطرے میں موجود لوگوں کی جگہ نہ لکھیں۔";
+"Only team members can read it. Share team codes face to face." = "صرف ٹیم کے ارکان اسے پڑھ سکتے ہیں۔ ٹیم کوڈ آمنے سامنے شیئر کریں۔";
+"Private messages: only the person you write to can read them." = "نجی پیغامات: انہیں صرف وہی شخص پڑھ سکتا ہے جسے آپ لکھیں۔";
+"Bluetooth" = "Bluetooth";
+"Bluetooth makes your phone detectable nearby. Stop the crowd mesh when you don't need it." = "Bluetooth کی وجہ سے آپ کا فون قریب موجود لوگوں کو نظر آ سکتا ہے۔ ضرورت نہ ہو تو کراؤڈ میش بند کر دیں۔";
+"Battery" = "بیٹری";
+"It uses extra battery. Carry a power bank if you can." = "یہ زیادہ بیٹری استعمال کرتا ہے۔ ہو سکے تو پاور بینک ساتھ رکھیں۔";
+"Start crowd mesh" = "کراؤڈ میش شروع کریں";
+"Starting…" = "شروع ہو رہا ہے…";
+"Waiting for Bluetooth…" = "Bluetooth کا انتظار…";
+"Bluetooth is off" = "Bluetooth بند ہے";
+"Turn on Bluetooth in Control Centre." = "Control Centre میں Bluetooth آن کریں۔";
+"Bluetooth isn't allowed" = "Bluetooth کی اجازت نہیں ہے";
+"Allow Bluetooth for ChatFort in Settings." = "Settings میں ChatFort کے لیے Bluetooth کی اجازت دیں۔";
+"Bluetooth isn't available" = "Bluetooth دستیاب نہیں ہے";
+"This device has no Bluetooth LE, which the crowd mesh needs." = "اس ڈیوائس میں Bluetooth LE نہیں ہے، جو کراؤڈ میش کے لیے ضروری ہے۔";
+"Everyone nearby can read this. Don't share names, locations or plans." = "قریب موجود ہر شخص اسے پڑھ سکتا ہے۔ نام، مقامات یا منصوبے شیئر نہ کریں۔";
+"Message everyone nearby" = "قریب موجود سب کو پیغام لکھیں";
+"The crowd mesh is stopped." = "کراؤڈ میش بند ہے۔";
+"No messages yet." = "ابھی کوئی پیغام نہیں۔";
+"You" = "آپ";
+"You:" = "آپ:";
+"Delivered" = "پہنچ گیا";
+"On its way" = "راستے میں ہے";
+"Right next to you" = "بالکل آپ کے پاس";
+"Through 1 phone" = "1 فون کے ذریعے";
+"Through %lld phones" = "%lld فونز کے ذریعے";
+"Length: %lld of %lld" = "لمبائی: %2$lld میں سے %1$lld";
+"Too long. Shorten your message to send it." = "بہت لمبا ہے۔ بھیجنے کے لیے پیغام مختصر کریں۔";
+"The crowd mesh isn't running. Start it to send messages." = "کراؤڈ میش نہیں چل رہا۔ پیغام بھیجنے کے لیے اسے شروع کریں۔";
+"Can't reach this person yet." = "یہ شخص ابھی رابطے میں نہیں ہے۔";
+"A team is a group chat for people you trust: friends, medics, marshals. Only team members can read its messages. Everyone joins with the same team code." = "ٹیم ان لوگوں کی گروپ چیٹ ہے جن پر آپ بھروسہ کرتے ہیں: دوست، طبی عملہ، منتظمین۔ اس کے پیغامات صرف ٹیم کے ارکان پڑھ سکتے ہیں۔ سب ایک ہی ٹیم کوڈ سے شامل ہوتے ہیں۔";
+"Create team" = "ٹیم بنائیں";
+"Join with code" = "کوڈ سے شامل ہوں";
+"You're not in a team yet." = "آپ ابھی کسی ٹیم میں نہیں ہیں۔";
+"Your teams" = "آپ کی ٹیمیں";
+"Create a team" = "نئی ٹیم بنائیں";
+"Team name" = "ٹیم کا نام";
+"e.g. Medics north" = "مثلاً شمالی طبی ٹیم";
+"Pick a name your team will recognise. Don't include real names." = "ایسا نام رکھیں جسے آپ کی ٹیم پہچان لے۔ اس میں اصل نام شامل نہ کریں۔";
+"Team code" = "ٹیم کوڈ";
+"Join a team" = "ٹیم میں شامل ہوں";
+"Scan the team code on a teammate's phone, or paste a code they gave you." = "ٹیم کے کسی رکن کے فون پر ٹیم کوڈ سکین کریں، یا ان کا دیا ہوا کوڈ پیسٹ کریں۔";
+"Or paste a code" = "یا کوڈ پیسٹ کریں";
+"Join team" = "ٹیم میں شامل ہوں";
+"That isn't a ChatFort team code." = "یہ ChatFort کا ٹیم کوڈ نہیں ہے۔";
+"You're already in this team." = "آپ پہلے ہی اس ٹیم میں ہیں۔";
+"This team's code isn't available." = "اس ٹیم کا کوڈ دستیاب نہیں۔";
+"Anyone with this code can read the team's messages from today on." = "یہ کوڈ جس کے پاس بھی ہو، وہ آج سے ٹیم کے پیغامات پڑھ سکتا ہے۔";
+"Let people you trust scan it in ChatFort: Crowd mesh › Teams › Join with code. Show it face to face." = "جن لوگوں پر آپ بھروسہ کرتے ہیں انہیں ChatFort میں سکین کرنے دیں: کراؤڈ میش › ٹیمیں › کوڈ سے شامل ہوں۔ اسے آمنے سامنے دکھائیں۔";
+"Copy code" = "کوڈ کاپی کریں";
+"Copied" = "کاپی ہو گیا";
+"Team code QR" = "ٹیم کوڈ کا QR";
+"Team: only team members can read this." = "ٹیم: اسے صرف ٹیم کے ارکان پڑھ سکتے ہیں۔";
+"Message %@" = "%@ کو پیغام لکھیں";
+"Share team code" = "ٹیم کوڈ شیئر کریں";
+"More" = "مزید";
+"Leave team" = "ٹیم چھوڑیں";
+"Leave %@?" = "%@ چھوڑ دیں؟";
+"Its messages and code are removed from this phone. To come back, you need the code again." = "اس کے پیغامات اور کوڈ اس فون سے ہٹا دیے جائیں گے۔ واپس آنے کے لیے آپ کو دوبارہ کوڈ درکار ہوگا۔";
+"Your nickname: %@" = "آپ کا نک نیم: %@";
+"Change" = "تبدیل کریں";
+"Crowd nickname" = "کراؤڈ نک نیم";
+"Nearby now" = "ابھی قریب";
+"Nobody in reach yet. People appear here when they run ChatFort's crowd mesh nearby." = "ابھی کوئی رابطے میں نہیں۔ جب قریب کوئی ChatFort کا کراؤڈ میش چلائے گا تو وہ یہاں نظر آئے گا۔";
+"Tap someone to send a private message only they can read." = "کسی پر ٹیپ کر کے نجی پیغام بھیجیں جسے صرف وہی پڑھ سکے۔";
+"Opens a private chat" = "نجی چیٹ کھولتا ہے";
+"Private chats" = "نجی چیٹس";
+"Private: only they can read it." = "نجی: اسے صرف وہی پڑھ سکتے ہیں۔";
+"Private message" = "نجی پیغام";
+"Not nearby right now" = "ابھی قریب نہیں";
+"Delete conversation" = "گفتگو حذف کریں";
+"Delete this conversation?" = "یہ گفتگو حذف کریں؟";
+"Its messages are removed from this phone." = "اس کے پیغامات اس فون سے ہٹا دیے جائیں گے۔";
+"Connection log (for testing)" = "کنکشن لاگ (ٹیسٹنگ کے لیے)";
+"Nothing logged yet." = "ابھی کچھ لاگ نہیں ہوا۔";
+"Copy log" = "لاگ کاپی کریں";
+"Scan team code" = "ٹیم کوڈ سکین کریں";
+"Point the camera at a team QR code." = "کیمرہ ٹیم کے QR کوڈ کی طرف کریں۔";
+"New team message" = "ٹیم کا نیا پیغام";
+"New private message" = "نیا نجی پیغام";
+"Reach everyone nearby, up to 7 hops" = "قریب موجود سب تک پہنچیں، زیادہ سے زیادہ 7 فونز کے ذریعے";
+"On" = "آن";
+"Opens the Crowd mesh" = "کراؤڈ میش کھولتا ہے";
+"Or chat directly with iPhones right next to you:" = "یا اپنے بالکل قریب موجود iPhones سے براہ راست چیٹ کریں:";
+"On · linked to %lld phones" = "آن · %lld فونز سے جڑا ہوا";
+"On · looking for phones nearby" = "آن · قریبی فون تلاش کیے جا رہے ہیں";
+
+/* ============================================ */
+/* Crowd mesh v3: ChatFort contacts, photos, voice notes */
+/* ============================================ */
+"Your ChatFort contacts" = "آپ کے ChatFort رابطے";
+"None yet. Your ChatFort contacts appear here once both phones have been online with an updated ChatFort." = "ابھی کوئی نہیں۔ آپ کے ChatFort رابطے یہاں تب نظر آئیں گے جب دونوں فون اپ ڈیٹ شدہ ChatFort کے ساتھ آن لائن ہو چکے ہوں۔";
+"Chat with them here without internet, with photos and voice notes. Only they can read it." = "یہاں ان سے انٹرنیٹ کے بغیر چیٹ کریں، تصاویر اور وائس نوٹس کے ساتھ۔ صرف وہی اسے پڑھ سکتے ہیں۔";
+"Opens your chat with this contact over the mesh" = "میش پر اس رابطے کے ساتھ آپ کی چیٹ کھولتا ہے";
+"Last nearby %@ ago" = "آخری بار %@ پہلے قریب تھے";
+"Not seen nearby" = "قریب نظر نہیں آئے";
+"Your ChatFort contact. Only they can read this." = "آپ کا ChatFort رابطہ۔ صرف وہی اسے پڑھ سکتے ہیں۔";
+"Message" = "پیغام";
+"Messages wait and are sent when they're nearby (up to 24 h)." = "پیغامات انتظار کرتے ہیں اور جب وہ قریب ہوں تو بھیج دیے جاتے ہیں (24 گھنٹے تک)۔";
+"Couldn't receive this photo." = "یہ تصویر موصول نہیں ہو سکی۔";
+"Couldn't receive this voice note." = "یہ وائس نوٹ موصول نہیں ہو سکا۔";
+"Voice note" = "وائس نوٹ";
+"Receiving %lld/%lld" = "موصول ہو رہا ہے %lld/%lld";
+"Play voice note" = "وائس نوٹ چلائیں";
+"Photo library" = "تصویری لائبریری";
+"Send a photo" = "تصویر بھیجیں";
+"Hold to record a voice note" = "وائس نوٹ ریکارڈ کرنے کے لیے دبا کر رکھیں";
+"Release to cancel" = "منسوخ کرنے کے لیے چھوڑ دیں";
+"Release to send · slide away to cancel" = "بھیجنے کے لیے چھوڑ دیں · منسوخ کرنے کے لیے انگلی ہٹا کر لے جائیں";
+"You can't record during a call." = "کال کے دوران ریکارڈ نہیں کیا جا سکتا۔";
+"Allow the microphone for ChatFort in Settings." = "سیٹنگز میں ChatFort کے لیے مائیکروفون کی اجازت دیں۔";
+"Couldn't record." = "ریکارڈ نہیں ہو سکا۔";
+"Hold the button while you speak." = "بولتے وقت بٹن دبا کر رکھیں۔";
+"Too long for the mesh. Record a shorter voice note." = "میش کے لیے بہت لمبا ہے۔ چھوٹا وائس نوٹ ریکارڈ کریں۔";
+"Couldn't make this photo small enough for the mesh." = "یہ تصویر میش کے لیے کافی چھوٹی نہیں بن سکی۔";
+"Nearby iPhones" = "قریبی iPhones";
+"Chat directly with iPhones right next to you, without the crowd mesh." = "کراؤڈ میش کے بغیر، اپنے بالکل قریب موجود iPhones سے براہ راست چیٹ کریں۔";

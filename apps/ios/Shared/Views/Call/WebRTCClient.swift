@@ -13,6 +13,12 @@ final class WebRTCClient: NSObject, RTCVideoViewDelegate, RTCFrameEncryptorDeleg
         RTCInitializeSSL()
         let videoEncoderFactory = RTCDefaultVideoEncoderFactory()
         let videoDecoderFactory = RTCDefaultVideoDecoderFactory()
+        // Inqalaab: MUST stay VP8. SimpleX negotiates 1:1 video on VP8; this is
+        // the known-good `stable` baseline. An H.264 experiment (and then removing
+        // this line entirely, leaving the factory default) both broke video —
+        // local camera rendered but nothing transmitted in either direction
+        // because the video codec failed to negotiate. Do not change without
+        // on-device A/B verification that remote video actually flows.
         videoEncoderFactory.preferredCodec = RTCVideoCodecInfo(name: kRTCVp8CodecName)
         return RTCPeerConnectionFactory(encoderFactory: videoEncoderFactory, decoderFactory: videoDecoderFactory)
     }()
@@ -60,8 +66,37 @@ final class WebRTCClient: NSObject, RTCVideoViewDelegate, RTCFrameEncryptorDeleg
     private let rtcAudioSession =  RTCAudioSession.sharedInstance()
     private let audioQueue = DispatchQueue(label: "com.inqalaab.app.audio")
     private var sendCallResponse: (WVAPIMessage) async -> Void
+    // Inqalaab: when this client is one leg of a group call (N clients at once),
+    // ending it must NOT deactivate the shared RTCAudioSession or close PiP —
+    // that would mute/kill the other live legs. The group-call coordinator owns
+    // those shared resources and restores them when the LAST leg ends.
+    // Default false → 1:1 behavior unchanged.
+    var groupLegMode = false
     var activeCall: Call?
     var notConnectedCall: NotConnectedCall?
+    // Temporary call-quality stats logger (see startStatsDiagnostics()).
+    var statsDiagnosticsTask: Task<Void, Never>? = nil
+    // Inqalaab: calls survive network drops (same protocol as Android). After the
+    // call has connected once, ICE `disconnected` or `failed` starts one grace
+    // timer instead of ending the call. Meanwhile the side that made the original
+    // offer (the `.start` command) restarts ICE over the chat channel (see "ICE
+    // restart" below). The call ends only if it hasn't recovered when the timer
+    // fires. `reconnect` is guarded by `reconnectLock`: the ICE delegate runs on
+    // WebRTC's signaling thread, the timer on main, restart steps in tasks.
+    static let reconnectGraceSeconds: TimeInterval = 30
+    private struct Reconnect {
+        var wasConnected = false
+        var graceTimer: DispatchWorkItem?
+        var isOfferer = false
+        var restartLoop: Task<Void, Never>?
+        var restartOpsTail: Task<Void, Never>?
+        var gen = 0             // offerer: last restart generation sent
+        var sentOfferGen: Int?  // offerer: generation of the offer currently set locally
+        var answeredGen = 0     // answerer: last generation answered
+        var newestOfferGen = 0  // answerer: newest generation received
+    }
+    private let reconnectLock = NSLock()
+    private var reconnect = Reconnect()
     private var localRendererAspectRatio: Binding<CGFloat?>
 
     var cameraRenderers: [RTCVideoRenderer] = []
@@ -72,11 +107,18 @@ final class WebRTCClient: NSObject, RTCVideoViewDelegate, RTCFrameEncryptorDeleg
         fatalError("Unimplemented")
     }
 
-    required init(_ sendCallResponse: @escaping (WVAPIMessage) async -> Void, _ localRendererAspectRatio: Binding<CGFloat?>) {
+    required init(_ sendCallResponse: @escaping (WVAPIMessage) async -> Void, _ localRendererAspectRatio: Binding<CGFloat?>, groupLegMode: Bool = false) {
         self.sendCallResponse = sendCallResponse
         self.localRendererAspectRatio = localRendererAspectRatio
-        rtcAudioSession.useManualAudio = CallController.useCallKit()
-        rtcAudioSession.isAudioEnabled = !CallController.useCallKit()
+        self.groupLegMode = groupLegMode
+        if !groupLegMode {
+            rtcAudioSession.useManualAudio = CallController.useCallKit()
+            rtcAudioSession.isAudioEnabled = !CallController.useCallKit()
+        }
+        // Group legs must NOT touch the shared session flags: legs are created at
+        // unpredictable times (some AFTER CallKit's didActivate enabled audio), and
+        // this reset silenced the whole group call. The coordinator (non-CallKit)
+        // or CallKit didActivate/didDeactivate own these flags for group calls.
         logger.debug("WebRTCClient: rtcAudioSession has manual audio \(self.rtcAudioSession.useManualAudio) and audio enabled \(self.rtcAudioSession.isAudioEnabled)")
         super.init()
     }
@@ -183,6 +225,8 @@ final class WebRTCClient: NSObject, RTCVideoViewDelegate, RTCFrameEncryptorDeleg
             let encryption = WebRTCClient.enableEncryption
             let call = initializeCall(iceServers?.toWebRTCIceServers(), media, encryption ? aesKey : nil, relay)
             activeCall = call
+            // This side makes the original offer, so it drives ICE restarts.
+            withReconnect { $0.isOfferer = true }
             setupLocalTracks(true, call)
             let (offer, error) = await call.connection.offer()
             if let offer = offer {
@@ -205,6 +249,7 @@ final class WebRTCClient: NSObject, RTCVideoViewDelegate, RTCFrameEncryptorDeleg
                       let remoteIceCandidates: [RTCIceCandidate] = decodeJSON(decompressFromBase64(input: iceCandidates)) {
                 let call = initializeCall(iceServers?.toWebRTCIceServers(), media, WebRTCClient.enableEncryption ? aesKey : nil, relay)
                 activeCall = call
+                withReconnect { $0.isOfferer = false }
                 let pc = call.connection
                 if let type = offer.type, let sdp = offer.sdp {
                     if (try? await pc.setRemoteDescription(RTCSessionDescription(type: type.toWebRTCSdpType(), sdp: sdp))) != nil {
@@ -243,7 +288,9 @@ final class WebRTCClient: NSObject, RTCVideoViewDelegate, RTCFrameEncryptorDeleg
                       let pc = pc {
                 if (try? await pc.setRemoteDescription(RTCSessionDescription(type: type.toWebRTCSdpType(), sdp: sdp))) != nil {
                     var currentDirection: RTCRtpTransceiverDirection = .sendOnly
-                    pc.transceivers[2].currentDirection(&currentDirection)
+                    if pc.transceivers.count > 2 {
+                        pc.transceivers[2].currentDirection(&currentDirection)
+                    }
                     await adaptToOldVersion(currentDirection == .sendOnly)
                     addIceCandidates(pc, remoteIceCandidates)
                     resp = .ok
@@ -252,8 +299,12 @@ final class WebRTCClient: NSObject, RTCVideoViewDelegate, RTCFrameEncryptorDeleg
                 }
             }
         case let .ice(iceCandidates):
-            if let pc = pc,
-               let remoteIceCandidates: [RTCIceCandidate] = decodeJSON(decompressFromBase64(input: iceCandidates)) {
+            let extraInfo = decompressFromBase64(input: iceCandidates)
+            if let pc = pc, let restart: IceRestartMessage = decodeJSON(extraInfo) {
+                receiveIceRestart(restart, pc)
+                resp = .ok
+            } else if let pc = pc,
+               let remoteIceCandidates: [RTCIceCandidate] = decodeJSON(extraInfo) {
                 addIceCandidates(pc, remoteIceCandidates)
                 resp = .ok
             } else {
@@ -314,7 +365,7 @@ final class WebRTCClient: NSObject, RTCVideoViewDelegate, RTCFrameEncryptorDeleg
                 let stat = stats.statistics.values.first(where: { stat in stat.type == "inbound-rtp"})
                 if let stat {
                     //logger.debug("Stat \(stat.debugDescription)")
-                    let bytes = stat.values["bytesReceived"] as! Int64
+                    let bytes = stat.values["bytesReceived"] as? Int64 ?? 0
                     if bytes <= lastBytesReceived {
                         mutedSeconds += 1
                         if mutedSeconds == 3 {
@@ -370,7 +421,9 @@ final class WebRTCClient: NSObject, RTCVideoViewDelegate, RTCFrameEncryptorDeleg
             }
             if ChatModel.shared.activeCall?.localMediaSources.camera == true && ChatModel.shared.activeCall?.peerMediaSources.camera == false {
                 logger.debug("Stopping video track for the old version")
-                activeCall?.connection.senders[1].track = nil
+                if let senders = activeCall?.connection.senders, senders.count > 1 {
+                    senders[1].track = nil
+                }
                 ChatModel.shared.activeCall?.localMediaSources.camera = false
                 (activeCall?.localCamera as? RTCCameraVideoCapturer)?.stopCapture()
                 activeCall?.localCamera = nil
@@ -442,6 +495,20 @@ final class WebRTCClient: NSObject, RTCVideoViewDelegate, RTCFrameEncryptorDeleg
             pc.addTransceiver(of: .audio, init: screenAudioVideoInit)
             // mid = 3, screenVideo
             pc.addTransceiver(of: .video, init: screenAudioVideoInit)
+            // Inqalaab group legs: mids 4+ are pre-negotiated audio "forward
+            // slots". The group-call HOST plugs other participants' live audio
+            // tracks into these senders (sender.track is replaceable at runtime,
+            // no renegotiation), so every participant hears everyone through
+            // their single leg to the host. Negotiated in the initial offer —
+            // the answering side inherits them from SDP. Idle (nil track) unless
+            // the host fills them. 1:1 calls (groupLegMode=false) are untouched.
+            if groupLegMode {
+                let forwardInit = RTCRtpTransceiverInit()
+                forwardInit.streamIds = ["groupForward"]
+                for _ in 0..<(GROUP_CALL_MAX_PARTICIPANTS - 2) {
+                    pc.addTransceiver(of: .audio, init: forwardInit)
+                }
+            }
         } else {
             // new version
             if transceivers.count > 2 {
@@ -470,6 +537,32 @@ final class WebRTCClient: NSObject, RTCVideoViewDelegate, RTCFrameEncryptorDeleg
                     let sender = pc.add(localVideoTrack, streamIds: ["micCamera"])
                     sender?.track = nil
                 }
+            }
+        }
+    }
+
+    // MARK: - Group-call audio forwarding (host side)
+
+    /// The live remote audio track of this leg (the participant's voice), used
+    /// by the group-call host to forward into other legs' slots.
+    var remoteAudioTrackForForwarding: RTCAudioTrack? {
+        activeCall?.remoteAudioTrack
+    }
+
+    /// Host side: plug other participants' audio tracks into this leg's
+    /// pre-negotiated forward slots (mids 4+, audio, "groupForward" stream).
+    /// sender.track replacement needs no renegotiation; frames re-encode and
+    /// pass through this leg's frame encryptor like the host's own mic.
+    func setForwardedAudioTracks(_ tracks: [RTCAudioTrack]) {
+        guard groupLegMode, let call = activeCall else { return }
+        let slotMids: Set<String> = Set((4..<(4 + GROUP_CALL_MAX_PARTICIPANTS - 2)).map { String($0) })
+        let slots = call.connection.transceivers.filter { t in
+            t.mediaType == .audio && t.mid != nil && slotMids.contains(t.mid)
+        }
+        for (i, slot) in slots.enumerated() {
+            let track = i < tracks.count ? tracks[i] : nil
+            if slot.sender.track !== track {
+                slot.sender.track = track
             }
         }
     }
@@ -589,7 +682,16 @@ final class WebRTCClient: NSObject, RTCVideoViewDelegate, RTCFrameEncryptorDeleg
 
         let supported = RTCCameraVideoCapturer.supportedFormats(for: camera)
         let height: (AVCaptureDevice.Format) -> Int32 = { (format: AVCaptureDevice.Format) in CMVideoFormatDescriptionGetDimensions(format.formatDescription).height }
-        let format = supported.first(where: { height($0) == 1280 })
+        let width: (AVCaptureDevice.Format) -> Int32 = { (format: AVCaptureDevice.Format) in CMVideoFormatDescriptionGetDimensions(format.formatDescription).width }
+        // Inqalaab: capture real 720p. Camera formats are landscape-native
+        // (width x height, e.g. 1280x720), so the old `height == 1280` test never
+        // matched and the `height >= 480` fallback picked the FIRST ascending
+        // format — 640x480. Verified on-device via CallQuality logs ("camera
+        // capturing 640x480"). Prefer 1280x720 explicitly; keep the old
+        // fallbacks for cameras without it. WebRTC still adapts down if CPU or
+        // bandwidth can't sustain it, so this only raises the ceiling.
+        let format = supported.first(where: { width($0) == 1280 && height($0) == 720 })
+                    ?? supported.first(where: { height($0) == 1280 })
                     ?? supported.first(where: { height($0) >= 480 && height($0) < 1280 })
                     ?? supported.first(where: { height($0) > 1280 })
         guard
@@ -631,16 +733,30 @@ final class WebRTCClient: NSObject, RTCVideoViewDelegate, RTCFrameEncryptorDeleg
     }
 
     func endCall() {
-        NotificationCenter.default.post(name: .stopCallPiP, object: nil)
-        if #available(iOS 16.0, *) {
-            _endCall()
-        } else {
-            // Fixes `connection.close()` getting locked up in iOS15
-            DispatchQueue.global(qos: .utility).async { self._endCall() }
+        if !groupLegMode {
+            NotificationCenter.default.post(name: .stopCallPiP, object: nil)
         }
+        let (graceTimer, restartLoop) = withReconnect { r in
+            let running = (r.graceTimer, r.restartLoop)
+            r = Reconnect()
+            return running
+        }
+        graceTimer?.cancel()
+        restartLoop?.cancel()
+        // Stop the stats loop before close so it never races a closing connection.
+        statsDiagnosticsTask?.cancel()
+        statsDiagnosticsTask = nil
+        // Inqalaab: always run teardown off the main thread. `connection.close()`
+        // is slow (upstream already dispatched it on iOS 15 for lockups); at 720p
+        // a video call has noticeably more to drain, and running it sync on main
+        // froze the UI for a moment at call end. The iOS 15 path has shipped this
+        // async pattern for years, so ordering is already tolerated by callers.
+        DispatchQueue.global(qos: .utility).async { self._endCall() }
     }
 
     private func _endCall() {
+        statsDiagnosticsTask?.cancel()
+        statsDiagnosticsTask = nil
         (notConnectedCall?.localCameraAndTrack?.0 as? RTCCameraVideoCapturer)?.stopCapture()
         guard let call = activeCall else { return }
         logger.debug("WebRTCClient: ending the call")
@@ -649,7 +765,11 @@ final class WebRTCClient: NSObject, RTCVideoViewDelegate, RTCFrameEncryptorDeleg
         call.frameEncryptor?.delegate = nil
         call.frameDecryptor?.delegate = nil
         (call.localCamera as? RTCCameraVideoCapturer)?.stopCapture()
-        audioSessionToDefaults()
+        if !groupLegMode {
+            // Group legs share the audio session; the coordinator restores it
+            // once, after the last leg closes.
+            audioSessionToDefaults()
+        }
         activeCall = nil
     }
 
@@ -664,17 +784,29 @@ final class WebRTCClient: NSObject, RTCVideoViewDelegate, RTCFrameEncryptorDeleg
 }
 
 
+/// Inqalaab: ICE restart message, sent as the `rtcIceCandidates` string of call
+/// extra info (x.call.extra), same format as Android: LZString base64 of
+/// {"chatfortIceRestart": "offer" | "answer", "gen": n, "sdp": "..."}.
+/// Normal extra info is a JSON array of candidates, so the two can't be confused.
+struct IceRestartMessage: Codable {
+    var chatfortIceRestart: String
+    var gen: Int
+    var sdp: String
+}
+
 extension WebRTC.RTCPeerConnection {
-    func mediaConstraints() -> RTCMediaConstraints {
-        RTCMediaConstraints(
-            mandatoryConstraints: [kRTCMediaConstraintsOfferToReceiveAudio: kRTCMediaConstraintsValueTrue,
-                                   kRTCMediaConstraintsOfferToReceiveVideo: kRTCMediaConstraintsValueTrue],
-            optionalConstraints: nil)
+    func mediaConstraints(iceRestart: Bool = false) -> RTCMediaConstraints {
+        var mandatory = [kRTCMediaConstraintsOfferToReceiveAudio: kRTCMediaConstraintsValueTrue,
+                         kRTCMediaConstraintsOfferToReceiveVideo: kRTCMediaConstraintsValueTrue]
+        if iceRestart {
+            mandatory[kRTCMediaConstraintsIceRestart] = kRTCMediaConstraintsValueTrue
+        }
+        return RTCMediaConstraints(mandatoryConstraints: mandatory, optionalConstraints: nil)
     }
 
-    func offer() async -> (RTCSessionDescription?, Error?) {
+    func offer(iceRestart: Bool = false) async -> (RTCSessionDescription?, Error?) {
         await withCheckedContinuation { cont in
-            offer(for: mediaConstraints()) { (sdp, error) in
+            offer(for: mediaConstraints(iceRestart: iceRestart)) { (sdp, error) in
                 self.processSDP(cont, sdp, error)
             }
         }
@@ -743,7 +875,14 @@ extension WebRTCClient: RTCPeerConnectionDelegate {
                         self.activeCall?.remoteScreenVideoTrack?.add(renderer)
                     })
                     self.screenRenderers.removeAll()
-                case .unknown: ()
+                case .unknown:
+                    // Group-call forward slots (mids 4+): another participant's
+                    // audio relayed by the host. Attach this leg's frame
+                    // decryptor so the forwarded audio decrypts (it's encrypted
+                    // with this leg's key), then it auto-plays and mixes.
+                    if self.groupLegMode, let decryptor = self.activeCall?.frameDecryptor {
+                        transceiver.receiver.setRtcFrameDecryptor(decryptor)
+                    }
                 }
             }
             self.setupMuteUnmuteListener(transceiver, track)
@@ -760,6 +899,8 @@ extension WebRTCClient: RTCPeerConnectionDelegate {
         else {
             return
         }
+        // Decided here, in delegate order: the Task below can run out of order.
+        let (endNow, beforeFirstConnect) = connectionStateChanged(newState, connection)
         Task {
             await sendCallResponse(.init(
                 corrId: nil,
@@ -773,17 +914,217 @@ extension WebRTCClient: RTCPeerConnectionDelegate {
             )
 
             switch newState {
-            case .checking:
+            // Initial setup only: an ICE restart passes through `checking` again,
+            // and redoing this would reset the user's speaker choice.
+            case .checking where beforeFirstConnect:
                 if let frameDecryptor = activeCall?.frameDecryptor {
                     connection.receivers.forEach { $0.setRtcFrameDecryptor(frameDecryptor) }
                 }
                 let enableSpeaker: Bool = ChatModel.shared.activeCall?.localMediaSources.hasVideo == true
                 setSpeakerEnabledAndConfigureSession(enableSpeaker)
             case .connected: sendConnectedEvent(connection)
-            case .disconnected, .failed: endCall()
             default: ()
             }
+            if endNow { endCall() }
         }
+    }
+
+    private func withReconnect<T>(_ f: (inout Reconnect) -> T) -> T {
+        reconnectLock.lock()
+        defer { reconnectLock.unlock() }
+        return f(&reconnect)
+    }
+
+    private static func isUp(_ connection: RTCPeerConnection) -> Bool {
+        connection.iceConnectionState == .connected || connection.iceConnectionState == .completed
+    }
+
+    /// Inqalaab: whether the call must end now, and whether it has never connected
+    /// yet. Before the first connect, `disconnected`/`failed` end the call at once
+    /// (unchanged). After it, they start one grace timer, plus ICE restarts on the
+    /// offerer; reconnecting cancels both.
+    private func connectionStateChanged(_ state: RTCIceConnectionState, _ connection: RTCPeerConnection) -> (endNow: Bool, beforeFirstConnect: Bool) {
+        var stop: (DispatchWorkItem?, Task<Void, Never>?) = (nil, nil)
+        var startGraceTimer: DispatchWorkItem?
+        let result: (Bool, Bool) = withReconnect { r in
+            let beforeFirstConnect = !r.wasConnected
+            switch state {
+            case .connected, .completed:
+                r.wasConnected = true
+                stop = (r.graceTimer, r.restartLoop)
+                r.graceTimer = nil
+                r.restartLoop = nil
+                return (false, beforeFirstConnect)
+            case .disconnected, .failed:
+                if !r.wasConnected {
+                    stop = (r.graceTimer, nil)
+                    r.graceTimer = nil
+                    return (true, beforeFirstConnect)
+                }
+                if r.graceTimer == nil {
+                    let timer = graceTimer(connection)
+                    r.graceTimer = timer
+                    startGraceTimer = timer
+                    if r.isOfferer { r.restartLoop = iceRestartLoop(connection) }
+                }
+                return (false, beforeFirstConnect)
+            default:
+                return (false, beforeFirstConnect)
+            }
+        }
+        stop.0?.cancel()
+        stop.1?.cancel()
+        if let startGraceTimer {
+            logger.debug("WebRTCClient: connection lost, waiting up to \(Int(WebRTCClient.reconnectGraceSeconds))s to recover")
+            DispatchQueue.main.asyncAfter(deadline: .now() + WebRTCClient.reconnectGraceSeconds, execute: startGraceTimer)
+        }
+        return result
+    }
+
+    private func graceTimer(_ connection: RTCPeerConnection) -> DispatchWorkItem {
+        DispatchWorkItem { [weak self, weak connection] in
+            guard let self, let connection else { return }
+            let restartLoop = self.withReconnect { r in
+                let loop = r.restartLoop
+                r.graceTimer = nil
+                r.restartLoop = nil
+                return loop
+            }
+            restartLoop?.cancel()
+            // A newer call may have replaced this one within the grace window.
+            guard self.activeCall?.connection === connection, !WebRTCClient.isUp(connection) else { return }
+            logger.debug("WebRTCClient: connection did not recover, ending the call")
+            self.endCall()
+        }
+    }
+
+    // MARK: ICE restart (Inqalaab, same protocol as Android)
+    // After a real network loss WebRTC can't recover without new ICE credentials.
+    // While in the grace period the offerer re-offers with `IceRestart` every 3 s;
+    // the answerer answers. Both travel as call extra info (x.call.extra).
+
+    private func iceRestartLoop(_ connection: RTCPeerConnection) -> Task<Void, Never> {
+        Task { [weak self, weak connection] in
+            while !Task.isCancelled {
+                try? await Task.sleep(nanoseconds: 3_000_000_000)
+                guard !Task.isCancelled, let self, let connection,
+                      self.activeCall?.connection === connection, !WebRTCClient.isUp(connection)
+                else { return }
+                await self.enqueueIceRestartStep { await self.sendIceRestartOffer(connection) }.value
+            }
+        }
+    }
+
+    /// Restart steps run one at a time, in order: the loop's offers, and incoming
+    /// restart messages (several queued ones can arrive together).
+    @discardableResult
+    private func enqueueIceRestartStep(_ step: @escaping () async -> Void) -> Task<Void, Never> {
+        withReconnect { r in
+            let previous = r.restartOpsTail
+            let task = Task {
+                await previous?.value
+                await step()
+            }
+            r.restartOpsTail = task
+            return task
+        }
+    }
+
+    /// Offerer: one restart attempt. Sends nothing while there is no network yet
+    /// (no candidates in the new offer); the loop tries again.
+    private func sendIceRestartOffer(_ connection: RTCPeerConnection) async {
+        guard activeCall?.connection === connection, !WebRTCClient.isUp(connection) else { return }
+        // From here an answer to an older offer is stale.
+        withReconnect { $0.sentOfferGen = nil }
+        if connection.signalingState == .haveLocalOffer {
+            do {
+                try await connection.setLocalDescription(RTCSessionDescription(type: .rollback, sdp: ""))
+            } catch {
+                logger.error("WebRTCClient: ICE restart rollback error: \(error.localizedDescription)")
+            }
+        }
+        let (offer, error) = await connection.offer(iceRestart: true)
+        guard offer != nil else {
+            logger.error("WebRTCClient: ICE restart offer error: \(error?.localizedDescription ?? "unknown error")")
+            return
+        }
+        await waitForIceGathering(connection)
+        guard let sdp = connection.localDescription?.sdp, sdp.contains("a=candidate:") else {
+            logger.debug("WebRTCClient: ICE restart: no network yet")
+            return
+        }
+        let gen = withReconnect { r in
+            r.gen += 1
+            r.sentOfferGen = r.gen
+            return r.gen
+        }
+        logger.debug("WebRTCClient: ICE restart: sending offer \(gen)")
+        await sendIceRestart(IceRestartMessage(chatfortIceRestart: "offer", gen: gen, sdp: sdp))
+    }
+
+    private func receiveIceRestart(_ msg: IceRestartMessage, _ connection: RTCPeerConnection) {
+        if msg.chatfortIceRestart == "offer" {
+            withReconnect { $0.newestOfferGen = max($0.newestOfferGen, msg.gen) }
+        }
+        enqueueIceRestartStep { [weak self] in await self?.processIceRestart(msg, connection) }
+    }
+
+    private func processIceRestart(_ msg: IceRestartMessage, _ connection: RTCPeerConnection) async {
+        guard activeCall?.connection === connection else { return }
+        switch msg.chatfortIceRestart {
+        case "offer":
+            // Answerer only; skip already-answered and superseded (queued) offers.
+            let answer = withReconnect { r in
+                guard !r.isOfferer, msg.gen > r.answeredGen, msg.gen >= r.newestOfferGen else { return false }
+                r.answeredGen = msg.gen
+                return true
+            }
+            guard answer else { return }
+            do {
+                try await connection.setRemoteDescription(RTCSessionDescription(type: .offer, sdp: msg.sdp))
+            } catch {
+                logger.error("WebRTCClient: ICE restart: remote offer error: \(error.localizedDescription)")
+                return
+            }
+            let (localAnswer, error) = await connection.answer()
+            guard localAnswer != nil else {
+                logger.error("WebRTCClient: ICE restart answer error: \(error?.localizedDescription ?? "unknown error")")
+                return
+            }
+            await waitForIceGathering(connection)
+            guard let sdp = connection.localDescription?.sdp else { return }
+            logger.debug("WebRTCClient: ICE restart: sending answer \(msg.gen)")
+            await sendIceRestart(IceRestartMessage(chatfortIceRestart: "answer", gen: msg.gen, sdp: sdp))
+        case "answer":
+            // Offerer only; anything but the answer to the offer set now is stale.
+            let current = withReconnect { r in r.isOfferer && r.sentOfferGen == msg.gen }
+            guard current, connection.signalingState == .haveLocalOffer else { return }
+            do {
+                try await connection.setRemoteDescription(RTCSessionDescription(type: .answer, sdp: msg.sdp))
+                logger.debug("WebRTCClient: ICE restart: applied answer \(msg.gen)")
+            } catch {
+                logger.error("WebRTCClient: ICE restart: remote answer error: \(error.localizedDescription)")
+            }
+        default: ()
+        }
+    }
+
+    /// Until ICE gathering completes, at most 4 s. With continual gathering it may
+    /// never "complete"; candidates gathered so far are in the local description.
+    private func waitForIceGathering(_ connection: RTCPeerConnection) async {
+        var waitedMs = 0
+        while connection.iceGatheringState != .complete && waitedMs < 4000 {
+            try? await Task.sleep(nanoseconds: 200_000_000)
+            waitedMs += 200
+        }
+    }
+
+    private func sendIceRestart(_ msg: IceRestartMessage) async {
+        await sendCallResponse(.init(
+            corrId: nil,
+            resp: .ice(iceCandidates: compressToBase64(input: encodeJSON(msg))),
+            command: nil)
+        )
     }
 
     func peerConnection(_ connection: RTCPeerConnection, didChange newState: RTCIceGatheringState) {
@@ -811,7 +1152,70 @@ extension WebRTCClient: RTCPeerConnectionDelegate {
 //        logger.debug("Connection changed candidate \(reason) \(remote.debugDescription) \(remote.description)")
     }
 
+    // Inqalaab: call-quality diagnostics, DEBUG BUILDS ONLY (no-op in release).
+    // Logs every 5s what the video encoder is actually doing: capture resolution
+    // vs encoded/sent resolution, and qualityLimitationReason ("cpu" = software
+    // VP8 encode can't keep up; "bandwidth" = network estimate is throttling;
+    // "none" = sending at full quality). This evidence found the 640x480-capture
+    // and 685kbps-cap bugs — keep it for development.
+    private func startStatsDiagnostics() {
+        #if !DEBUG
+        return
+        #endif
+        statsDiagnosticsTask?.cancel()
+        statsDiagnosticsTask = Task { [weak self] in
+            while !Task.isCancelled {
+                try? await Task.sleep(nanoseconds: 5_000_000_000)
+                guard !Task.isCancelled,
+                      let connection = self?.activeCall?.connection,
+                      connection.signalingState != .closed
+                else { return }
+                let report: RTCStatisticsReport = await withCheckedContinuation { cont in
+                    connection.statistics { cont.resume(returning: $0) }
+                }
+                for stat in report.statistics.values {
+                    let kind = stat.values["kind"] as? String
+                    if stat.type == "outbound-rtp", kind == "video" {
+                        let w = (stat.values["frameWidth"] as? NSNumber)?.intValue ?? 0
+                        let h = (stat.values["frameHeight"] as? NSNumber)?.intValue ?? 0
+                        let fps = (stat.values["framesPerSecond"] as? NSNumber)?.intValue ?? 0
+                        let target = (stat.values["targetBitrate"] as? NSNumber)?.intValue ?? 0
+                        let reason = stat.values["qualityLimitationReason"] as? String ?? "?"
+                        logger.debug("CallQuality: SENDING video \(w)x\(h) @\(fps)fps target \(target / 1000) kbps — limited by: \(reason)")
+                    } else if stat.type == "media-source", kind == "video" {
+                        let w = (stat.values["width"] as? NSNumber)?.intValue ?? 0
+                        let h = (stat.values["height"] as? NSNumber)?.intValue ?? 0
+                        let fps = (stat.values["framesPerSecond"] as? NSNumber)?.intValue ?? 0
+                        logger.debug("CallQuality: camera capturing \(w)x\(h) @\(fps)fps")
+                    } else if stat.type == "inbound-rtp", kind == "video" {
+                        let w = (stat.values["frameWidth"] as? NSNumber)?.intValue ?? 0
+                        let h = (stat.values["frameHeight"] as? NSNumber)?.intValue ?? 0
+                        let fps = (stat.values["framesPerSecond"] as? NSNumber)?.intValue ?? 0
+                        logger.debug("CallQuality: receiving video \(w)x\(h) @\(fps)fps")
+                    }
+                }
+            }
+        }
+    }
+
+    // Inqalaab: raise the camera video sender's bitrate ceiling once connected.
+    // On-device CallQuality logs showed sending capped at ~685 kbps target,
+    // "limited by: bandwidth", which forces 480x360 even on good networks —
+    // libwebrtc's default video cap is conservative. 2 Mbps comfortably carries
+    // VP8 720p@24. This is a CEILING for the congestion estimator, not a fixed
+    // rate: on genuinely weak networks the estimator still ramps down as before.
+    // Only the camera transceiver (mid "1") is touched — not screen share.
+    private func applyVideoSenderQuality(_ connection: WebRTC.RTCPeerConnection) {
+        guard let sender = connection.transceivers.first(where: { $0.mid == "1" })?.sender else { return }
+        let params = sender.parameters
+        params.encodings.forEach { $0.maxBitrateBps = NSNumber(value: 2_000_000) }
+        sender.parameters = params
+        logger.debug("WebRTCClient: video sender max bitrate raised to 2 Mbps")
+    }
+
     func sendConnectedEvent(_ connection: WebRTC.RTCPeerConnection) {
+        applyVideoSenderQuality(connection)
+        startStatsDiagnostics()
         connection.statistics { (stats: RTCStatisticsReport) in
             stats.statistics.values.forEach { stat in
 //                logger.debug("Stat \(stat.debugDescription)")
@@ -826,14 +1230,14 @@ extension WebRTCClient: RTCPeerConnectionDelegate {
                             corrId: nil,
                             resp: .connected(connectionInfo: ConnectionInfo(
                                 localCandidate: RTCIceCandidate(
-                                    candidateType: RTCIceCandidateType.init(rawValue: localStats.values["candidateType"] as! String),
+                                    candidateType: RTCIceCandidateType.init(rawValue: (localStats.values["candidateType"] as? String) ?? "unknown"),
                                     protocol: localStats.values["protocol"] as? String,
                                     sdpMid: nil,
                                     sdpMLineIndex: nil,
                                     candidate: ""
                                 ),
                                 remoteCandidate: RTCIceCandidate(
-                                    candidateType: RTCIceCandidateType.init(rawValue: remoteStats.values["candidateType"] as! String),
+                                    candidateType: RTCIceCandidateType.init(rawValue: (remoteStats.values["candidateType"] as? String) ?? "unknown"),
                                     protocol: remoteStats.values["protocol"] as? String,
                                     sdpMid: nil,
                                     sdpMLineIndex: nil,

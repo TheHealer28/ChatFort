@@ -107,7 +107,7 @@ public func registerGroupDefaults() {
         GROUP_DEFAULT_CONFIRM_DB_UPGRADES: false,
         GROUP_DEFAULT_CALL_KIT_ENABLED: true,
         GROUP_DEFAULT_PQ_EXPERIMENTAL_ENABLED: false,
-        GROUP_DEFAULT_ONE_HAND_UI: true,
+        GROUP_DEFAULT_ONE_HAND_UI: false,
         GROUP_DEFAULT_CHAT_BOTTOM_BAR: true
     ])
 }
@@ -215,7 +215,7 @@ public let chatLastBackgroundRunGroupDefault = DateDefault(defaults: groupDefaul
 public let ntfPreviewModeGroupDefault = EnumDefault<NotificationPreviewMode>(
     defaults: groupDefaults,
     forKey: GROUP_DEFAULT_NTF_PREVIEW_MODE,
-    withDefault: .message
+    withDefault: .hidden
 )
 
 public let incognitoGroupDefault = BoolDefault(defaults: groupDefaults, forKey: GROUP_DEFAULT_INCOGNITO)

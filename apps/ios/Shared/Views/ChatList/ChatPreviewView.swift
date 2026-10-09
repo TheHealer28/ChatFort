@@ -54,7 +54,8 @@ struct ChatPreviewView: View {
     }
 
     var body: some View {
-        let cItem = chat.chatItems.last
+        // ChatFort: a hidden Crowd mesh link message not deleted yet is never the preview.
+        let cItem = chat.chatItems.last.flatMap { $0.content.msgContent?.isChatfortMeshLink == true ? nil : $0 }
         return ZStack {
             HStack(spacing: 0) {
                 // Inqalaab: left accent strip showing connection status
@@ -96,7 +97,7 @@ struct ChatPreviewView: View {
 
                     ZStack(alignment: .topTrailing) {
                         let chat = activeContentPreview?.chat ?? chat
-                        let ci = activeContentPreview?.ci ?? chat.chatItems.last
+                        let ci = activeContentPreview?.ci ?? chat.chatItems.last.flatMap { $0.content.msgContent?.isChatfortMeshLink == true ? nil : $0 }
                         let mc = ci?.content.msgContent
                         HStack(alignment: .top) {
                             let deleted = ci?.isDeletedContent == true || ci?.meta.itemDeleted != nil
@@ -431,7 +432,7 @@ struct ChatPreviewView: View {
         case let .link(_, preview):
             smallContentPreview(size: dynamicMediaSize) {
                 ZStack(alignment: .topTrailing) {
-                    Image(uiImage: imageFromBase64(preview.image) ?? UIImage(systemName: "arrow.up.right")!)
+                    Image(uiImage: previewImageFromBase64(preview.image) ?? UIImage(systemName: "arrow.up.right")!)
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                         .frame(width: dynamicMediaSize, height: dynamicMediaSize)
@@ -452,11 +453,11 @@ struct ChatPreviewView: View {
             }
         case let .image(_, image):
             smallContentPreview(size: dynamicMediaSize) {
-                CIImageView(chatItem: ci, preview: imageFromBase64(image), maxWidth: dynamicMediaSize, smallView: true, showFullScreenImage: $showFullscreenGallery)
+                CIImageView(chatItem: ci, preview: previewImageFromBase64(image), maxWidth: dynamicMediaSize, smallView: true, showFullScreenImage: $showFullscreenGallery)
             }
         case let .video(_,image, duration):
             smallContentPreview(size: dynamicMediaSize) {
-                CIVideoView(chatItem: ci, preview: imageFromBase64(image), duration: duration, maxWidth: dynamicMediaSize, videoWidth: nil, smallView: true, showFullscreenPlayer: $showFullscreenGallery)
+                CIVideoView(chatItem: ci, preview: previewImageFromBase64(image), duration: duration, maxWidth: dynamicMediaSize, videoWidth: nil, smallView: true, showFullscreenPlayer: $showFullscreenGallery)
             }
         case let .voice(_, duration):
             smallContentPreviewVoice(size: dynamicMediaSize) {

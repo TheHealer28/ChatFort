@@ -45,7 +45,7 @@ struct NearbyEmptyState: View {
                         .foregroundColor(theme.colors.onBackground)
                 }
 
-                Text("Other Inqalaab users nearby will appear here. Both devices must have Nearby mode enabled.")
+                Text("Other ChatFort users nearby will appear here. Both devices must have Nearby mode enabled.")
                     .font(.subheadline)
                     .foregroundColor(.secondary)
                     .multilineTextAlignment(.center)
@@ -65,7 +65,7 @@ struct NearbyEmptyState: View {
                     Image(systemName: "lock.shield")
                         .foregroundColor(theme.colors.primary)
                         .frame(width: 24)
-                    Text("Encrypted peer-to-peer")
+                    Text("Encrypted link — you approve who can message you")
                         .font(.subheadline)
                         .foregroundColor(.secondary)
                 }

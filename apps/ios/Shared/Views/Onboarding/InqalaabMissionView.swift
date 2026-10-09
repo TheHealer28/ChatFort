@@ -29,7 +29,7 @@ struct InqalaabMissionView: View {
                         .foregroundColor(.white)
                         .padding(.bottom, 8)
 
-                    Text("Inqalaab exists because secure communication is a fundamental right — especially for those who risk everything to speak truth to power.")
+                    Text("ChatFort exists because secure communication is a fundamental right — especially for those who risk everything to speak truth to power.")
                         .font(.body)
                         .foregroundColor(.white.opacity(0.6))
                         .multilineTextAlignment(.center)

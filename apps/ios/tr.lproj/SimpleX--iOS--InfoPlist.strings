@@ -1,5 +1,5 @@
 /* Bundle name */
-"CFBundleName" = "Inqalaab";
+"CFBundleName" = "ChatFort";
 
 /* Privacy - Camera Usage Description */
 "NSCameraUsageDescription" = "Inqalaab, diğer kullanıcılara bağlanmak amacıyla QR kodlarını taramak ve görüntülü aramalar için kamera erişimine ihtiyaç duyar.";

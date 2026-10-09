@@ -128,7 +128,7 @@ struct ActiveCallView: View {
             CallSoundsPlayer.shared.stop()
             try? AVAudioSession.sharedInstance().setCategory(.soloAmbient)
             if (wasConnected) {
-                CallSoundsPlayer.shared.vibrate(long: true)
+                CallSoundsPlayer.shared.playCallDisconnect()
             }
         }
         .background(m.activeCallViewIsCollapsed ? .clear : .black)
@@ -206,11 +206,16 @@ struct ActiveCallView: View {
             case let .connection(state):
                 if let callStatus = WebRTCCallStatus.init(rawValue: state.connectionState),
                    case .connected = callStatus {
-                    call.direction == .outgoing
-                    ? CallController.shared.reportOutgoingCall(call: call, connectedAt: nil)
-                    : CallController.shared.reportIncomingCall(call: call, connectedAt: nil)
+                    // Inqalaab: this also fires when the call recovers from a short
+                    // network drop. Keep the first start time and report "connected"
+                    // to CallKit once, so neither call timer resets.
+                    if call.connectedAt == nil {
+                        call.direction == .outgoing
+                        ? CallController.shared.reportOutgoingCall(call: call, connectedAt: nil)
+                        : CallController.shared.reportIncomingCall(call: call, connectedAt: nil)
+                        call.connectedAt = .now
+                    }
                     call.callState = .connected
-                    call.connectedAt = .now
                     if !wasConnected {
                         CallSoundsPlayer.shared.vibrate(long: false)
                         wasConnected = true
@@ -224,17 +229,28 @@ struct ActiveCallView: View {
                     m.activeCall = nil
                     m.activeCallViewIsCollapsed = false
                 }
-                Task {
-                    do {
-                        try await apiCallStatus(call.contact, state.connectionState)
-                    } catch {
-                        logger.error("apiCallStatus \(responseError(error))")
+                // Inqalaab: once connected, "disconnected" and "failed" are drops the
+                // call may recover from (WebRTCClient waits 30 s and restarts ICE), but
+                // the backend marks the call ended in history on them and ignores later
+                // updates. Report the end when the connection actually closes instead.
+                let status = state.connectionState
+                let reportedStatus: String? =
+                    status == "disconnected" || (status == "failed" && call.connectedAt != nil)
+                    ? nil
+                    : status == "closed" ? "disconnected" : status
+                if let reportedStatus {
+                    Task {
+                        do {
+                            try await apiCallStatus(call.contact, reportedStatus)
+                        } catch {
+                            logger.error("apiCallStatus \(responseError(error))")
+                        }
                     }
                 }
             case let .connected(connectionInfo):
                 call.callState = .connected
                 call.connectionInfo = connectionInfo
-                call.connectedAt = .now
+                if call.connectedAt == nil { call.connectedAt = .now }
                 if !wasConnected {
                     CallSoundsPlayer.shared.vibrate(long: false)
                     wasConnected = true
@@ -393,7 +409,11 @@ struct ActiveCallOverlay: View {
                 .font(.title)
                 .frame(maxWidth: .infinity, alignment: .center)
             Group {
-                Text(call.callState.text)
+                if let connectedAt = call.connectedAt {
+                    callDurationView(connectedAt)
+                } else {
+                    Text(call.callState.text)
+                }
                 HStack {
                     Text(call.encryptionStatus)
                     if let connInfo = call.connectionInfo {
@@ -422,7 +442,11 @@ struct ActiveCallOverlay: View {
                 }
             }
             Group {
-                Text(call.callState.text)
+                if let connectedAt = call.connectedAt {
+                    callDurationView(connectedAt)
+                } else {
+                    Text(call.callState.text)
+                }
                 HStack {
                     Text(call.encryptionStatus)
                     if let connInfo = call.connectionInfo {
@@ -432,6 +456,20 @@ struct ActiveCallOverlay: View {
             }
             .font(.subheadline)
             .frame(maxWidth: .infinity, alignment: .leading)
+        }
+    }
+
+    private func callDurationView(_ connectedAt: Date) -> some View {
+        TimelineView(.periodic(from: connectedAt, by: 1)) { context in
+            let duration = Int(context.date.timeIntervalSince(connectedAt))
+            let hours = duration / 3600
+            let minutes = (duration % 3600) / 60
+            let seconds = duration % 60
+            if hours > 0 {
+                Text(String(format: "%d:%02d:%02d", hours, minutes, seconds))
+            } else {
+                Text(String(format: "%02d:%02d", minutes, seconds))
+            }
         }
     }
 

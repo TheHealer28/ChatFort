@@ -339,7 +339,7 @@ struct DatabaseView: View {
 
     private func authStopChat(_ onStop: (() -> Void)? = nil) {
         if UserDefaults.standard.bool(forKey: DEFAULT_PERFORM_LA) {
-            authenticate(reason: NSLocalizedString("Stop Inqalaab", comment: "authentication reason")) { laResult in
+            authenticate(reason: NSLocalizedString("Stop ChatFort", comment: "authentication reason")) { laResult in
                 switch laResult {
                 case .success: stopChat(onStop)
                 case .unavailable: stopChat(onStop)
@@ -638,6 +638,8 @@ func deleteChatAsync() async throws {
     // Clean state so when creating new user the app will start chat automatically (see CreateProfile:createProfile())
     DispatchQueue.main.async {
         ChatModel.shared.users = []
+        // ChatFort: the contacts are gone, so are their Crowd mesh links and mesh chats.
+        CrowdMesh.shared.wipeContactLinks()
     }
 }
 

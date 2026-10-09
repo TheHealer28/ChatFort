@@ -402,28 +402,64 @@ extension UIImage {
     }
 }
 
+// Inqalaab: extreme-abuse backstop only. The largest legitimate caller is a custom
+// wallpaper (resized to 5MB binary in saveWallpaperFile -> ~6.8MB base64), so this cap
+// is deliberately high. Per-feature thumbnail/preview limits live at the call sites via
+// previewImageFromBase64. Full-res chat images load from disk (getLoadedImage), not here.
+private let MAX_BASE64_IMAGE_LENGTH = 8_000_000
+
 public func imageFromBase64(_ base64Encoded: String?) -> UIImage? {
-    if let base64Encoded {
-        if let img = imageCache.object(forKey: base64Encoded as NSString) {
-            return img
-        } else if let data = Data(base64Encoded: dropImagePrefix(base64Encoded)),
-            let img = UIImage(data: data) {
-            imageCacheQueue.async {
-                imageCache.setObject(img, forKey: base64Encoded as NSString)
-            }
-            return img
-        } else {
-            return nil
-        }
-    } else {
+    guard let base64Encoded else { return nil }
+    // Fast abuse guard before any hashing/decoding (utf8.count is O(1) for native strings).
+    if base64Encoded.utf8.count > MAX_BASE64_IMAGE_LENGTH {
+        logger.debug("imageFromBase64 rejected oversized image len=\(base64Encoded.utf8.count)")
         return nil
     }
+    let key = base64Encoded as NSString
+    if let img = imageCache.object(forKey: key) {
+        return img
+    }
+    // Negative cache: a corrupt/undecodable string must NOT be retried on every SwiftUI
+    // body pass (this was the chat-open freeze). Remember the failure and bail fast.
+    if imageDecodeFailureCache.object(forKey: key) != nil {
+        return nil
+    }
+    if let data = Data(base64Encoded: dropImagePrefix(base64Encoded)),
+       let img = UIImage(data: data) {
+        imageCacheQueue.async {
+            imageCache.setObject(img, forKey: key)
+        }
+        return img
+    } else {
+        logger.debug("imageFromBase64 decode failed len=\(base64Encoded.utf8.count)")
+        imageDecodeFailureCache.setObject(NSNumber(value: true), forKey: key)
+        return nil
+    }
+}
+
+// Inqalaab: previews/thumbnails are tiny (generated link previews are <= 14000 bytes,
+// ~19KB base64). Reject anything larger before decode so a corrupt/oversized embedded
+// preview on a RECEIVED message cannot stall scrolling chat cells. Full images are loaded
+// from file (getLoadedImage), so this never affects full-resolution media.
+public let MAX_PREVIEW_BASE64_LENGTH = 128_000
+
+public func previewImageFromBase64(_ base64Encoded: String?) -> UIImage? {
+    guard let base64Encoded, base64Encoded.utf8.count <= MAX_PREVIEW_BASE64_LENGTH else { return nil }
+    return imageFromBase64(base64Encoded)
 }
 
 private let imageCacheQueue = DispatchQueue.global(qos: .background)
 
 private var imageCache: NSCache<NSString, UIImage> = {
     var cache = NSCache<NSString, UIImage>()
+    cache.countLimit = 1000
+    return cache
+}()
+
+// Inqalaab: remembers base64 strings that failed to decode so they are not re-decoded on
+// every SwiftUI body pass. NSCache auto-evicts under memory pressure; bounded like imageCache.
+private var imageDecodeFailureCache: NSCache<NSString, NSNumber> = {
+    let cache = NSCache<NSString, NSNumber>()
     cache.countLimit = 1000
     return cache
 }()

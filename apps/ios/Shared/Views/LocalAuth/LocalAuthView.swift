@@ -45,6 +45,8 @@ struct LocalAuthView: View {
 
     private func deleteStorageAndRestart(_ password: String, completed: @escaping (LAResult) -> Void) {
         Task {
+            // Inqalaab: first, so a failing step below can't leave the Crowd mesh team keys behind.
+            await MainActor.run { CrowdMesh.shared.wipe() }
             do {
                 /** Waiting until [initializeChat] finishes */
                 while (m.ctrlInitInProgress) {
@@ -93,10 +95,7 @@ struct LocalAuthView: View {
                 onboardingStageDefault.set(.onboardingComplete)
                 m.onboardingStage = .onboardingComplete
                 try startChat()
-                // Inqalaab: Configure servers after onboarding
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-                    InqalaabServers.shared.configureIfNeeded()
-                }
+                InqalaabServers.shared.scheduleConfigureIfNeeded(reason: "local auth onboarding complete")
                 completed(.success)
             } catch {
                 completed(.failed(authError: NSLocalizedString("Incorrect passcode", comment: "PIN entry")))

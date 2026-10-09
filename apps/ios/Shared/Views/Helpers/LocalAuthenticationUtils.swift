@@ -82,15 +82,15 @@ func systemAuthenticate(_ reason: String, _ completed: @escaping (LAResult) -> V
 
 func laTurnedOnAlert() -> Alert {
     mkAlert(
-        title: "Inqalaab Lock turned on",
+        title: "ChatFort Lock turned on",
         message: "You will be required to authenticate when you start or resume the app after 30 seconds in background."
     )
 }
 
 func laPasscodeNotSetAlert() -> Alert {
     mkAlert(
-        title: "Inqalaab Lock not enabled!",
-        message: "You can turn on Inqalaab Lock via Settings."
+        title: "ChatFort Lock not enabled!",
+        message: "You can turn on ChatFort Lock via Settings."
     )
 }
 
@@ -104,14 +104,14 @@ func laFailedAlert() -> Alert {
 func laUnavailableInstructionAlert() -> Alert {
     mkAlert(
         title: "Authentication unavailable",
-        message: "Device authentication is not enabled. You can turn on Inqalaab Lock via Settings, once you enable device authentication."
+        message: "Device authentication is not enabled. You can turn on ChatFort Lock via Settings, once you enable device authentication."
     )
 }
 
 func laUnavailableTurningOffAlert() -> Alert {
     mkAlert(
         title: "Authentication unavailable",
-        message: "Device authentication is disabled. Turning off Inqalaab Lock."
+        message: "Device authentication is disabled. Turning off ChatFort Lock."
     )
 }
 

@@ -33,12 +33,12 @@ struct InqalaabInfo: View {
                     Spacer().frame(height: 24)
 
                     // App Name
-                    Text("Inqalaab")
+                    Text("ChatFort")
                         .font(.system(size: 42, weight: .bold, design: .rounded))
                         .foregroundColor(.white)
 
                     // Urdu subtitle
-                    Text("انقلاب")
+                    Text("چیٹ فورٹ")
                         .font(.system(size: 28, weight: .medium, design: .serif))
                         .foregroundColor(InqalaabGreen)
 

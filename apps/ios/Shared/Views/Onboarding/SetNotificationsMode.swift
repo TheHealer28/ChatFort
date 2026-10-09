@@ -45,10 +45,8 @@ struct SetNotificationsMode: View {
                             }
                             onboardingStageDefault.set(.onboardingComplete)
                             m.onboardingStage = .onboardingComplete
-                            // Inqalaab: Configure servers now that onboarding is done and currentUser exists
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-                                InqalaabServers.shared.configureIfNeeded()
-                            }
+                            // Defer first-run server validation until after the first chat UI render.
+                            InqalaabServers.shared.scheduleConfigureIfNeeded(reason: "notification onboarding complete")
                         } label: {
                             if case .off = notificationMode {
                                 Text("Use chat")

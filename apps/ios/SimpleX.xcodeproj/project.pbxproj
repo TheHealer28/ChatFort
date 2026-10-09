@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0525B1CB2F72D06600F4DFC1 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = FB000001000000000000000D /* FirebaseCore */; };
-		0525B1CC2F72D06600F4DFC1 /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = FB000001000000000000000E /* FirebaseRemoteConfig */; };
 		184152CEF68D2336FC2EBCB0 /* CallViewRenderers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18415B08031E8FB0F7FC27F9 /* CallViewRenderers.swift */; };
 		1841538E296606C74533367C /* UserPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18415835CBD939A9ABDC108A /* UserPicker.swift */; };
 		1841560FD1CD447955474C1D /* UserProfilesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18415845648CA4F5A8BCA272 /* UserProfilesView.swift */; };
@@ -272,7 +270,28 @@
 		E5DCF9982C5906FF007928CC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E5DCF9962C5906FF007928CC /* InfoPlist.strings */; };
 		E5DDBE6E2DC4106800A0EFF0 /* AppAPITypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DDBE6D2DC4106200A0EFF0 /* AppAPITypes.swift */; };
 		E5DDBE702DC4217900A0EFF0 /* NSEAPITypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DDBE6F2DC4217900A0EFF0 /* NSEAPITypes.swift */; };
-		FB000001000000000000000A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FB000001000000000000000B /* GoogleService-Info.plist */; };
+		F08CE62C80C09BC080FB0B2A /* CrowdMesh.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08CE62C80C09BC080FB0B2B /* CrowdMesh.swift */; };
+		F2102FE1E7967A5988FBD80A /* CrowdMeshPeopleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2102FE1E7967A5988FBD80B /* CrowdMeshPeopleView.swift */; };
+		F51A56D27D27076741711E3A /* CrowdMeshIntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51A56D27D27076741711E3B /* CrowdMeshIntroView.swift */; };
+		F5D2039E3051DFACF393B9FA /* CrowdMeshModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D2039E3051DFACF393B9FB /* CrowdMeshModel.swift */; };
+		F8B686F245FAA7334D6B9F3A /* MeshRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B686F245FAA7334D6B9F3B /* MeshRouter.swift */; };
+		C22B7325548356DE76BC3C4A /* MeshLinkBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22B7325548356DE76BC3C4B /* MeshLinkBridge.swift */; };
+		5C46A79FD0B7687B75E9E9CA /* CrowdMeshContactViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C46A79FD0B7687B75E9E9CB /* CrowdMeshContactViews.swift */; };
+		E3F3FFD53C70E97A52E6930A /* MeshMediaCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F3FFD53C70E97A52E6930B /* MeshMediaCapture.swift */; };
+		FDA1B5488572A14C7892A8DA /* MeshStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA1B5488572A14C7892A8DB /* MeshStore.swift */; };
+		3AD67533B23A3E0247B4D33A /* MeshContactLinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD67533B23A3E0247B4D33B /* MeshContactLinks.swift */; };
+		E87E86F07AE3368B424F7D8A /* MeshV3.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87E86F07AE3368B424F7D8B /* MeshV3.swift */; };
+		F9FE5A2052D4A45F797497AA /* MeshBleLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FE5A2052D4A45F797497AB /* MeshBleLink.swift */; };
+		FA1655602DEAC4BD81199D0A /* CrowdMeshTeamsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1655602DEAC4BD81199D0B /* CrowdMeshTeamsView.swift */; };
+		FB000002000000000000000A /* GroupCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB000002000000000000000B /* GroupCall.swift */; };
+		FB000003000000000000000A /* GroupCallCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB000003000000000000000B /* GroupCallCoordinator.swift */; };
+		FB000004000000000000000A /* GroupCallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB000004000000000000000B /* GroupCallView.swift */; };
+		FB6B8251CD41602CEA41BBCA /* CrowdMeshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6B8251CD41602CEA41BBCB /* CrowdMeshView.swift */; };
+		FD82E051FA85DE90C60064CA /* MeshCodeScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD82E051FA85DE90C60064CB /* MeshCodeScanner.swift */; };
+		FDC0EAC83D932233358CBEDA /* CrowdMeshViewHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC0EAC83D932233358CBEDB /* CrowdMeshViewHelpers.swift */; };
+		FF1A1A3BFBC68AC6FA84B35A /* MeshWire.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1A1A3BFBC68AC6FA84B35B /* MeshWire.swift */; };
+		FF6432D7E978A10B9B10D2AA /* MeshCrypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6432D7E978A10B9B10D2AB /* MeshCrypto.swift */; };
+		FF914CAEE9B0CC2742A2CCDA /* CrowdMeshChatViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF914CAEE9B0CC2742A2CCDB /* CrowdMeshChatViews.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -445,7 +464,7 @@
 		5CA059C3279559F40002BEB4 /* SimpleXApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleXApp.swift; sourceTree = "<group>"; };
 		5CA059C4279559F40002BEB4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5CA059C5279559F40002BEB4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		5CA059CA279559F40002BEB4 /* Inqalaab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Inqalaab.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5CA059CA279559F40002BEB4 /* ChatFort.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatFort.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CA059D7279559F40002BEB4 /* Tests iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CA059DB279559F40002BEB4 /* Tests_iOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_iOS.swift; sourceTree = "<group>"; };
 		5CA059DD279559F40002BEB4 /* Tests_iOSLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_iOSLaunchTests.swift; sourceTree = "<group>"; };
@@ -701,7 +720,28 @@
 		E5DCF9A82C590732007928CC /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E5DDBE6D2DC4106200A0EFF0 /* AppAPITypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAPITypes.swift; sourceTree = "<group>"; };
 		E5DDBE6F2DC4217900A0EFF0 /* NSEAPITypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSEAPITypes.swift; sourceTree = "<group>"; };
-		FB000001000000000000000B /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F08CE62C80C09BC080FB0B2B /* CrowdMesh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrowdMesh.swift; sourceTree = "<group>"; };
+		F2102FE1E7967A5988FBD80B /* CrowdMeshPeopleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrowdMeshPeopleView.swift; sourceTree = "<group>"; };
+		F51A56D27D27076741711E3B /* CrowdMeshIntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrowdMeshIntroView.swift; sourceTree = "<group>"; };
+		F5D2039E3051DFACF393B9FB /* CrowdMeshModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrowdMeshModel.swift; sourceTree = "<group>"; };
+		F8B686F245FAA7334D6B9F3B /* MeshRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeshRouter.swift; sourceTree = "<group>"; };
+		C22B7325548356DE76BC3C4B /* MeshLinkBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeshLinkBridge.swift; sourceTree = "<group>"; };
+		5C46A79FD0B7687B75E9E9CB /* CrowdMeshContactViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrowdMeshContactViews.swift; sourceTree = "<group>"; };
+		E3F3FFD53C70E97A52E6930B /* MeshMediaCapture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeshMediaCapture.swift; sourceTree = "<group>"; };
+		FDA1B5488572A14C7892A8DB /* MeshStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeshStore.swift; sourceTree = "<group>"; };
+		3AD67533B23A3E0247B4D33B /* MeshContactLinks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeshContactLinks.swift; sourceTree = "<group>"; };
+		E87E86F07AE3368B424F7D8B /* MeshV3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeshV3.swift; sourceTree = "<group>"; };
+		F9FE5A2052D4A45F797497AB /* MeshBleLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeshBleLink.swift; sourceTree = "<group>"; };
+		FA1655602DEAC4BD81199D0B /* CrowdMeshTeamsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrowdMeshTeamsView.swift; sourceTree = "<group>"; };
+		FB000002000000000000000B /* GroupCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCall.swift; sourceTree = "<group>"; };
+		FB000003000000000000000B /* GroupCallCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCallCoordinator.swift; sourceTree = "<group>"; };
+		FB000004000000000000000B /* GroupCallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCallView.swift; sourceTree = "<group>"; };
+		FB6B8251CD41602CEA41BBCB /* CrowdMeshView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrowdMeshView.swift; sourceTree = "<group>"; };
+		FD82E051FA85DE90C60064CB /* MeshCodeScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeshCodeScanner.swift; sourceTree = "<group>"; };
+		FDC0EAC83D932233358CBEDB /* CrowdMeshViewHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrowdMeshViewHelpers.swift; sourceTree = "<group>"; };
+		FF1A1A3BFBC68AC6FA84B35B /* MeshWire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeshWire.swift; sourceTree = "<group>"; };
+		FF6432D7E978A10B9B10D2AB /* MeshCrypto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeshCrypto.swift; sourceTree = "<group>"; };
+		FF914CAEE9B0CC2742A2CCDB /* CrowdMeshChatViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrowdMeshChatViews.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -709,8 +749,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0525B1CC2F72D06600F4DFC1 /* FirebaseRemoteConfig in Frameworks */,
-				0525B1CB2F72D06600F4DFC1 /* FirebaseCore in Frameworks */,
 				5CE2BA702845308900EC33A6 /* InqalaabChat.framework in Frameworks */,
 				B728945B2D0C62BF00F7A19A /* ElegantEmojiPicker in Frameworks */,
 				8C8118722C220B5B00E6FC94 /* Yams in Frameworks */,
@@ -770,6 +808,9 @@
 			isa = PBXGroup;
 			children = (
 				5C9D13A2282187BB00AB8B43 /* WebRTC.swift */,
+				FB000002000000000000000B /* GroupCall.swift */,
+				FB000003000000000000000B /* GroupCallCoordinator.swift */,
+				FB000004000000000000000B /* GroupCallView.swift */,
 				5C5E5D3A2824468B00B0488A /* ActiveCallView.swift */,
 				5C029EA9283942EA004A9677 /* CallController.swift */,
 				5C55A91E283AD0E400C4E99E /* CallManager.swift */,
@@ -933,10 +974,10 @@
 				A1B2C3D4E5F6A7B8C9D0E1F2 /* InqalaabServers.swift */,
 				5C764E87279CBC8E000C6508 /* Model */,
 				C1D2E3F4A5B6C7D8E9F0A116 /* Nearby */,
+				FC00000000000000000000C0 /* CrowdMesh */,
 				5C2E260D27A30E2400F70299 /* Views */,
 				5CA059C5279559F40002BEB4 /* Assets.xcassets */,
 				D1A2B3C4D5E6F7A8B9C0E202 /* PrivacyInfo.xcprivacy */,
-				FB000001000000000000000B /* GoogleService-Info.plist */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -944,7 +985,7 @@
 		5CA059CB279559F40002BEB4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5CA059CA279559F40002BEB4 /* Inqalaab.app */,
+				5CA059CA279559F40002BEB4 /* ChatFort.app */,
 				5CA059D7279559F40002BEB4 /* Tests iOS.xctest */,
 				5CDCAD452818589900503DA2 /* Inqalaab NSE.appex */,
 				5CE2BA682845308900EC33A6 /* InqalaabChat.framework */,
@@ -1279,6 +1320,32 @@
 			path = "Inqalaab SE";
 			sourceTree = "<group>";
 		};
+		FC00000000000000000000C0 /* CrowdMesh */ = {
+			isa = PBXGroup;
+			children = (
+				F08CE62C80C09BC080FB0B2B /* CrowdMesh.swift */,
+				FF914CAEE9B0CC2742A2CCDB /* CrowdMeshChatViews.swift */,
+				F51A56D27D27076741711E3B /* CrowdMeshIntroView.swift */,
+				F5D2039E3051DFACF393B9FB /* CrowdMeshModel.swift */,
+				F2102FE1E7967A5988FBD80B /* CrowdMeshPeopleView.swift */,
+				FA1655602DEAC4BD81199D0B /* CrowdMeshTeamsView.swift */,
+				FB6B8251CD41602CEA41BBCB /* CrowdMeshView.swift */,
+				FDC0EAC83D932233358CBEDB /* CrowdMeshViewHelpers.swift */,
+				F9FE5A2052D4A45F797497AB /* MeshBleLink.swift */,
+				FD82E051FA85DE90C60064CB /* MeshCodeScanner.swift */,
+				FF6432D7E978A10B9B10D2AB /* MeshCrypto.swift */,
+				F8B686F245FAA7334D6B9F3B /* MeshRouter.swift */,
+				C22B7325548356DE76BC3C4B /* MeshLinkBridge.swift */,
+				5C46A79FD0B7687B75E9E9CB /* CrowdMeshContactViews.swift */,
+				E3F3FFD53C70E97A52E6930B /* MeshMediaCapture.swift */,
+				FDA1B5488572A14C7892A8DB /* MeshStore.swift */,
+				3AD67533B23A3E0247B4D33B /* MeshContactLinks.swift */,
+				E87E86F07AE3368B424F7D8B /* MeshV3.swift */,
+				FF1A1A3BFBC68AC6FA84B35B /* MeshWire.swift */,
+			);
+			path = CrowdMesh;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -1322,11 +1389,9 @@
 				8C8118712C220B5B00E6FC94 /* Yams */,
 				8CB3476B2CF5CFFA006787A5 /* Ink */,
 				B728945A2D0C62BF00F7A19A /* ElegantEmojiPicker */,
-				FB000001000000000000000D /* FirebaseCore */,
-				FB000001000000000000000E /* FirebaseRemoteConfig */,
 			);
 			productName = "Inqalaab (iOS)";
-			productReference = 5CA059CA279559F40002BEB4 /* Inqalaab.app */;
+			productReference = 5CA059CA279559F40002BEB4 /* ChatFort.app */;
 			productType = "com.apple.product-type.application";
 		};
 		5CA059D6279559F40002BEB4 /* Tests iOS */ = {
@@ -1470,7 +1535,6 @@
 				8C73C1162C21E17B00892670 /* XCRemoteSwiftPackageReference "Yams" */,
 				8CB3476A2CF5CFFA006787A5 /* XCRemoteSwiftPackageReference "ink" */,
 				B72894592D0C62BF00F7A19A /* XCRemoteSwiftPackageReference "Elegant-Emoji-Picker" */,
-				FB000001000000000000000C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 5CA059CB279559F40002BEB4 /* Products */;
 			projectDirPath = "";
@@ -1493,7 +1557,6 @@
 				5C55A92E283D0FDE00C4E99E /* sounds in Resources */,
 				5CA059EF279559F40002BEB4 /* Assets.xcassets in Resources */,
 				D1A2B3C4D5E6F7A8B9C0E201 /* PrivacyInfo.xcprivacy in Resources */,
-				FB000001000000000000000A /* GoogleService-Info.plist in Resources */,
 				5CC2C0FC2809BF11000C35E3 /* Localizable.strings in Resources */,
 				5CC2C0FF2809BF11000C35E3 /* SimpleX--iOS--InfoPlist.strings in Resources */,
 			);
@@ -1600,6 +1663,9 @@
 				8C7F8F0E2C19C0C100D16888 /* ViewModifiers.swift in Sources */,
 				5C35CFCB27B2E91D00FB6C6D /* NtfManager.swift in Sources */,
 				5C9D13A3282187BB00AB8B43 /* WebRTC.swift in Sources */,
+				FB000002000000000000000A /* GroupCall.swift in Sources */,
+				FB000003000000000000000A /* GroupCallCoordinator.swift in Sources */,
+				FB000004000000000000000A /* GroupCallView.swift in Sources */,
 				8CBC14862D357CDB00BBD901 /* StorageView.swift in Sources */,
 				5C9A5BDB2871E05400A5B906 /* SetNotificationsMode.swift in Sources */,
 				5CB0BA8E2827126500B3292C /* OnboardingView.swift in Sources */,
@@ -1656,6 +1722,25 @@
 				8CAD466F2D15A8100078D18F /* ChatScrollHelpers.swift in Sources */,
 				644EFFDE292BCD9D00525D5B /* ComposeVoiceView.swift in Sources */,
 				5CA059EB279559F40002BEB4 /* SimpleXApp.swift in Sources */,
+				F08CE62C80C09BC080FB0B2A /* CrowdMesh.swift in Sources */,
+				FF914CAEE9B0CC2742A2CCDA /* CrowdMeshChatViews.swift in Sources */,
+				F51A56D27D27076741711E3A /* CrowdMeshIntroView.swift in Sources */,
+				F5D2039E3051DFACF393B9FA /* CrowdMeshModel.swift in Sources */,
+				F2102FE1E7967A5988FBD80A /* CrowdMeshPeopleView.swift in Sources */,
+				FA1655602DEAC4BD81199D0A /* CrowdMeshTeamsView.swift in Sources */,
+				FB6B8251CD41602CEA41BBCA /* CrowdMeshView.swift in Sources */,
+				FDC0EAC83D932233358CBEDA /* CrowdMeshViewHelpers.swift in Sources */,
+				F9FE5A2052D4A45F797497AA /* MeshBleLink.swift in Sources */,
+				FD82E051FA85DE90C60064CA /* MeshCodeScanner.swift in Sources */,
+				FF6432D7E978A10B9B10D2AA /* MeshCrypto.swift in Sources */,
+				F8B686F245FAA7334D6B9F3A /* MeshRouter.swift in Sources */,
+				C22B7325548356DE76BC3C4A /* MeshLinkBridge.swift in Sources */,
+				5C46A79FD0B7687B75E9E9CA /* CrowdMeshContactViews.swift in Sources */,
+				E3F3FFD53C70E97A52E6930A /* MeshMediaCapture.swift in Sources */,
+				FDA1B5488572A14C7892A8DA /* MeshStore.swift in Sources */,
+				3AD67533B23A3E0247B4D33A /* MeshContactLinks.swift in Sources */,
+				E87E86F07AE3368B424F7D8A /* MeshV3.swift in Sources */,
+				FF1A1A3BFBC68AC6FA84B35A /* MeshWire.swift in Sources */,
 				A1B2C3D4E5F6A7B8C9D0E1F3 /* InqalaabServers.swift in Sources */,
 				B1B2C3D4E5F6A7B8C9D0E101 /* InqalaabTabView.swift in Sources */,
 				B1B2C3D4E5F6A7B8C9D0E103 /* SafetyHubView.swift in Sources */,
@@ -2110,7 +2195,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Inqalaab (iOS).entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 5;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = C7P2NWA933;
 				ENABLE_BITCODE = NO;
@@ -2118,12 +2203,13 @@
 				GCC_OPTIMIZATION_LEVEL = s;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "SimpleX--iOS--Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = Inqalaab;
+				INFOPLIST_KEY_CFBundleDisplayName = ChatFort;
 				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "ChatFort uses Bluetooth to reach nearby phones directly, so Nearby chats and the Crowd mesh work without internet.";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Inqalaab needs camera access to scan QR codes to connect to other users and for video calls.";
 				INFOPLIST_KEY_NSFaceIDUsageDescription = "Inqalaab uses Face ID for local authentication";
-				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Inqalaab uses local network access to allow using user chat profile via desktop app on the same network.";
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Inqalaab uses your local network to discover and communicate with nearby users when internet is unavailable.";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Inqalaab needs microphone access for audio and video calls, and to record voice messages.";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Inqalaab needs access to Photo Library for saving captured and received media";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -2137,10 +2223,10 @@
 					"@executable_path/Frameworks",
 				);
 				LLVM_LTO = YES_THIN;
-				MARKETING_VERSION = 1.3.0;
+				MARKETING_VERSION = 1.6.4;
 				OTHER_LDFLAGS = "-Wl,-stack_size,0x1000000";
 				PRODUCT_BUNDLE_IDENTIFIER = com.inqalaab.app;
-				PRODUCT_NAME = Inqalaab;
+				PRODUCT_NAME = ChatFort;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -2164,7 +2250,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Inqalaab (iOS).entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 5;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = C7P2NWA933;
 				ENABLE_BITCODE = NO;
@@ -2172,12 +2258,13 @@
 				ENABLE_PREVIEWS = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "SimpleX--iOS--Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = Inqalaab;
+				INFOPLIST_KEY_CFBundleDisplayName = ChatFort;
 				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "ChatFort uses Bluetooth to reach nearby phones directly, so Nearby chats and the Crowd mesh work without internet.";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Inqalaab needs camera access to scan QR codes to connect to other users and for video calls.";
 				INFOPLIST_KEY_NSFaceIDUsageDescription = "Inqalaab uses Face ID for local authentication";
-				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Inqalaab uses local network access to allow using user chat profile via desktop app on the same network.";
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Inqalaab uses your local network to discover and communicate with nearby users when internet is unavailable.";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Inqalaab needs microphone access for audio and video calls, and to record voice messages.";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Inqalaab needs access to Photo Library for saving captured and received media";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -2191,10 +2278,10 @@
 					"@executable_path/Frameworks",
 				);
 				LLVM_LTO = YES;
-				MARKETING_VERSION = 1.3.0;
+				MARKETING_VERSION = 1.6.4;
 				OTHER_LDFLAGS = "-Wl,-stack_size,0x1000000";
 				PRODUCT_BUNDLE_IDENTIFIER = com.inqalaab.app;
-				PRODUCT_NAME = Inqalaab;
+				PRODUCT_NAME = ChatFort;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -2209,11 +2296,11 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = C7P2NWA933;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				MARKETING_VERSION = 1.3.0;
+				MARKETING_VERSION = 1.6.4;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.inqalaab.Tests-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -2229,11 +2316,11 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = C7P2NWA933;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				MARKETING_VERSION = 1.3.0;
+				MARKETING_VERSION = 1.6.4;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.inqalaab.Tests-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -2254,7 +2341,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Inqalaab NSE/Inqalaab NSE.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = C7P2NWA933;
 				ENABLE_BITCODE = NO;
 				GCC_OPTIMIZATION_LEVEL = s;
@@ -2269,7 +2356,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				LLVM_LTO = YES;
-				MARKETING_VERSION = 1.3.0;
+				MARKETING_VERSION = 1.6.4;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.inqalaab.app.Inqalaab-NSE";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2291,7 +2378,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Inqalaab NSE/Inqalaab NSE.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = C7P2NWA933;
 				ENABLE_BITCODE = NO;
 				ENABLE_CODE_COVERAGE = NO;
@@ -2306,7 +2393,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				LLVM_LTO = YES;
-				MARKETING_VERSION = 1.3.0;
+				MARKETING_VERSION = 1.6.4;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.inqalaab.app.Inqalaab-NSE";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2328,7 +2415,7 @@
 				CLANG_TIDY_BUGPRONE_REDUNDANT_BRANCH_CONDITION = YES;
 				CLANG_TIDY_MISC_REDUNDANT_EXPRESSION = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 5;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = C7P2NWA933;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -2354,7 +2441,7 @@
 					"$(PROJECT_DIR)/Libraries/sim",
 				);
 				LLVM_LTO = YES;
-				MARKETING_VERSION = 1.3.0;
+				MARKETING_VERSION = 1.6.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.inqalaab.InqalaabChat;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
@@ -2379,7 +2466,7 @@
 				CLANG_TIDY_BUGPRONE_REDUNDANT_BRANCH_CONDITION = YES;
 				CLANG_TIDY_MISC_REDUNDANT_EXPRESSION = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 5;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = C7P2NWA933;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -2405,7 +2492,7 @@
 					"$(PROJECT_DIR)/Libraries/sim",
 				);
 				LLVM_LTO = YES;
-				MARKETING_VERSION = 1.3.0;
+				MARKETING_VERSION = 1.6.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.inqalaab.InqalaabChat;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
@@ -2430,7 +2517,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_ENTITLEMENTS = "Inqalaab SE/Inqalaab SE.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = C7P2NWA933;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
@@ -2445,7 +2532,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MARKETING_VERSION = 1.3.0;
+				MARKETING_VERSION = 1.6.4;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.inqalaab.app.Inqalaab-SE";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -2464,7 +2551,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_ENTITLEMENTS = "Inqalaab SE/Inqalaab SE.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = C7P2NWA933;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
@@ -2479,7 +2566,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MARKETING_VERSION = 1.3.0;
+				MARKETING_VERSION = 1.6.4;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.inqalaab.app.Inqalaab-SE";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -2606,14 +2693,6 @@
 				revision = 7f62f21de5b18582a950e1753b775cc614722407;
 			};
 		};
-		FB000001000000000000000C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 11.0.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -2656,16 +2735,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D7F0E33729964E7D0068AF69 /* XCRemoteSwiftPackageReference "lzstring-swift" */;
 			productName = LZString;
-		};
-		FB000001000000000000000D /* FirebaseCore */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = FB000001000000000000000C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseCore;
-		};
-		FB000001000000000000000E /* FirebaseRemoteConfig */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = FB000001000000000000000C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseRemoteConfig;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

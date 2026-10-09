@@ -622,8 +622,8 @@ private struct ConnectView: View {
                             connect(pastedLink)
                         } else {
                             alert = .newChatSomeAlert(alert: SomeAlert(
-                                alert: mkAlert(title: "Invalid link", message: "The text you pasted is not an Inqalaab link."),
-                                id: "pasteLinkView: code is not an Inqalaab link"
+                                alert: mkAlert(title: "Invalid link", message: "The text you pasted is not a ChatFort link."),
+                                id: "pasteLinkView: code is not a ChatFort link"
                             ))
                         }
                     }
@@ -651,11 +651,11 @@ private struct ConnectView: View {
         case let .success(r):
             let link = r.string
             if strIsInqalaabLink(r.string) {
-                connect(link)
+                connect(link, scanned: true)
             } else {
                 alert = .newChatSomeAlert(alert: SomeAlert(
-                    alert: mkAlert(title: "Invalid QR code", message: "The code you scanned is not an Inqalaab link QR code."),
-                    id: "processQRCode: code is not an Inqalaab link"
+                    alert: mkAlert(title: "Invalid QR code", message: "The code you scanned is not a ChatFort link QR code."),
+                    id: "processQRCode: code is not a ChatFort link"
                 ))
             }
         case let .failure(e):
@@ -667,7 +667,7 @@ private struct ConnectView: View {
         }
     }
 
-    private func connect(_ link: String) {
+    private func connect(_ link: String, scanned: Bool = false) {
         scannerPaused = true
         planAndConnect(
             link,
@@ -676,7 +676,8 @@ private struct ConnectView: View {
             cleanup: {
                 pastedLink = ""
                 scannerPaused = false
-            }
+            },
+            scannedInApp: scanned
         )
     }
 }
@@ -1051,23 +1052,32 @@ private func showPrepareContactAlert(
         confirmTitle: NSLocalizedString("Open new chat", comment: "new chat action"),
         onCancel: { cleanup?() },
         onConfirm: {
-            Task {
-                do {
-                    let chat = try await apiPrepareContact(connLink: connectionLink, contactShortLinkData: contactShortLinkData)
-                    await MainActor.run {
-                        ChatModel.shared.addChat(Chat(chat))
-                        openKnownChat(chat.id, dismiss: dismiss, cleanup: cleanup)
-                    }
-                } catch let error {
-                    logger.error("showPrepareContactAlert apiPrepareContact error: \(error.localizedDescription)")
-                    showAlert(NSLocalizedString("Error opening chat", comment: ""), message: responseError(error))
-                    await MainActor.run {
-                        cleanup?()
-                    }
-                }
-            }
+            prepareAndOpenContact(connectionLink: connectionLink, contactShortLinkData: contactShortLinkData, dismiss: dismiss, cleanup: cleanup)
         }
     )
+}
+
+private func prepareAndOpenContact(
+    connectionLink: CreatedConnLink,
+    contactShortLinkData: ContactShortLinkData,
+    dismiss: Bool,
+    cleanup: (() -> Void)?
+) {
+    Task {
+        do {
+            let chat = try await apiPrepareContact(connLink: connectionLink, contactShortLinkData: contactShortLinkData)
+            await MainActor.run {
+                ChatModel.shared.addChat(Chat(chat))
+                openKnownChat(chat.id, dismiss: dismiss, cleanup: cleanup)
+            }
+        } catch let error {
+            logger.error("prepareAndOpenContact apiPrepareContact error: \(error.localizedDescription)")
+            showAlert(NSLocalizedString("Error opening chat", comment: ""), message: responseError(error))
+            await MainActor.run {
+                cleanup?()
+            }
+        }
+    }
 }
 
 private func showPrepareGroupAlert(
@@ -1169,8 +1179,14 @@ func planAndConnect(
     dismiss: Bool,
     cleanup: (() -> Void)? = nil,
     filterKnownContact: ((Contact) -> Void)? = nil,
-    filterKnownGroup: ((GroupInfo) -> Void)? = nil
+    filterKnownGroup: ((GroupInfo) -> Void)? = nil,
+    scannedInApp: Bool = false
 ) {
+    // Inqalaab (same as Android): a QR code scanned with the in-app scanner
+    // connects without the confirmation, but only when Incognito is off. Pasted
+    // links, links opened from other apps (including the iPhone Camera app) and
+    // Incognito all keep the confirmation, so a link can't silently connect you.
+    let connectNow = scannedInApp && !incognitoGroupDefault.get()
     ConnectProgressManager.shared.cancelConnectProgress()
     let inProgress = BoxedValue(true)
     connectTask(inProgress)
@@ -1191,7 +1207,14 @@ func planAndConnect(
                 case let .invitationLink(ilp):
                     switch ilp {
                     case let .ok(contactSLinkData_):
-                        if let contactSLinkData = contactSLinkData_ {
+                        if connectNow {
+                            logger.debug("planAndConnect, .invitationLink, .ok, scanned, connecting without confirmation")
+                            if let contactSLinkData = contactSLinkData_ {
+                                prepareAndOpenContact(connectionLink: connectionLink, contactShortLinkData: contactSLinkData, dismiss: dismiss, cleanup: cleanup)
+                            } else {
+                                connectViaLink(connectionLink, connectionPlan: connectionPlan, dismiss: dismiss, incognito: false, cleanup: cleanup)
+                            }
+                        } else if let contactSLinkData = contactSLinkData_ {
                             logger.debug("planAndConnect, .invitationLink, .ok, short link data present")
                             await MainActor.run {
                                 showPrepareContactAlert(
@@ -1252,17 +1275,30 @@ func planAndConnect(
                 case let .contactAddress(cap):
                     switch cap {
                     case let .ok(contactSLinkData_):
-                        // Inqalaab: skip the "prepare contact card" step and directly connect.
+                        // Inqalaab: never the "prepare contact card" step; connect directly.
                         // The original SimpleX shows a contact card first, requiring the user
                         // to manually tap "Connect". For activists, we want instant connections.
-                        logger.debug("planAndConnect, .contactAddress, .ok, connecting directly")
-                        connectViaLink(connectionLink, connectionPlan: connectionPlan, dismiss: dismiss, incognito: false, cleanup: cleanup)
+                        if connectNow {
+                            logger.debug("planAndConnect, .contactAddress, .ok, scanned, connecting directly")
+                            connectViaLink(connectionLink, connectionPlan: connectionPlan, dismiss: dismiss, incognito: false, cleanup: cleanup)
+                        } else {
+                            logger.debug("planAndConnect, .contactAddress, .ok, asking first")
+                            await MainActor.run {
+                                showAskCurrentOrIncognitoProfileSheet(
+                                    title: NSLocalizedString("Connect via contact address", comment: "new chat sheet title"),
+                                    connectionLink: connectionLink,
+                                    connectionPlan: connectionPlan,
+                                    dismiss: dismiss,
+                                    cleanup: cleanup
+                                )
+                            }
+                        }
                         let _ = contactSLinkData_ // suppress unused warning
                     case .ownLink:
                         logger.debug("planAndConnect, .contactAddress, .ownLink")
                         await MainActor.run {
                             showAskCurrentOrIncognitoProfileSheet(
-                                title: NSLocalizedString("Connect to yourself?\nThis is your own Inqalaab address!", comment: "new chat sheet title"),
+                                title: NSLocalizedString("Connect to yourself?\nThis is your own ChatFort address!", comment: "new chat sheet title"),
                                 actionStyle: .destructive,
                                 connectionLink: connectionLink,
                                 connectionPlan: connectionPlan,

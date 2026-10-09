@@ -37,6 +37,9 @@ class PanicWipeManager: ObservableObject {
 
         // Step 1: Immediately wipe Nearby P2P data (sync, fast)
         NearbyModel.shared.clearAllData()
+        // …and the Crowd mesh: stop Bluetooth, erase team keys, nickname and messages.
+        // performPanicWipe() always runs this on the main queue.
+        MainActor.assumeIsolated { CrowdMesh.shared.wipe() }
 
         Task {
             do {
@@ -100,15 +103,17 @@ class PanicWipeManager: ObservableObject {
                     }
 
                     // Step 11: Reset InqalaabServers flags so it fully reconfigures
-                    UserDefaults.standard.removeObject(forKey: "inqalaab_servers_configured_v11")
+                    // Remove all versioned keys to ensure clean reconfiguration
+                    for version in 11...20 {
+                        UserDefaults.standard.removeObject(forKey: "inqalaab_servers_configured_v\(version)")
+                    }
                     UserDefaults.standard.removeObject(forKey: "inqalaab_contacts_cleaned")
                     UserDefaults.standard.removeObject(forKey: "inqalaab_address_created")
+                    UserDefaults.standard.removeObject(forKey: InqalaabServers.KEY_ADDRESS_PENDING)
                 }
 
-                // Step 12: Configure Inqalaab servers for the fresh profile
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-                    InqalaabServers.shared.configureIfNeeded()
-                }
+                // Step 12: Configure ChatFort servers for the fresh profile after UI settles.
+                InqalaabServers.shared.scheduleConfigureIfNeeded(reason: "panic wipe fresh profile")
 
                 await MainActor.run {
                     self.wipeInProgress = false

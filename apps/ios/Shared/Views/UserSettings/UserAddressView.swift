@@ -188,7 +188,7 @@ struct UserAddressView: View {
         Button {
             createAddress()
         } label: {
-            Label("Create Inqalaab address", systemImage: "qrcode")
+            Label("Create ChatFort address", systemImage: "qrcode")
         }
     }
 
@@ -252,7 +252,7 @@ struct UserAddressView: View {
             }
         } label: {
             settingsRow("square.and.arrow.up", color: theme.colors.secondary) {
-                Text("Share your Inqalaab address")
+                Text("Share your ChatFort address")
             }
         }
     }
@@ -306,7 +306,7 @@ struct UserAddressView: View {
                 .navigationBarTitleDisplayMode(.inline)
         } label: {
             settingsRow("info.circle", color: theme.colors.secondary) {
-                Text("Inqalaab address or 1-time link?")
+                Text("ChatFort address or 1-time link?")
             }
         }
     }
@@ -360,6 +360,12 @@ struct ToggleShortLinkHeader: View {
     @Binding var short: Bool
 
     var body: some View {
+        // Inqalaab: short links are hidden again. ChatFort's short links point at
+        // the SMP server host (e.g. smp4.example.org/i#…), which has no web page
+        // or apple-app-site-association, so they don't open in a browser — a
+        // confusing trap when shared. The full link opens everywhere; keep that as
+        // the only sharing format. Toggle stays behind developer tools (upstream
+        // default).
         if link.connShortLink == nil || !developerTools {
             text.foregroundColor(theme.colors.secondary)
         } else {
@@ -442,7 +448,7 @@ struct UserAddressSettingsView: View {
                     .onDisappear {
                         if savedSettings != settings {
                             showAlert(
-                                title: NSLocalizedString("Inqalaab address settings", comment: "alert title"),
+                                title: NSLocalizedString("ChatFort address settings", comment: "alert title"),
                                 message: NSLocalizedString("Settings were changed.", comment: "alert message"),
                                 buttonTitle: NSLocalizedString("Save", comment: "alert button"),
                                 buttonAction: { saveAddressSettings(settings, $savedSettings) },

@@ -40,11 +40,11 @@ operatorFlux =
       xftpRoles = ServerRoles {storage = False, proxy = True}
     }
 
--- Inqalaab: 4 SMP + 4 XFTP self-hosted servers.
+-- Inqalaab self-hosted servers.
 -- CRITICAL: Each (host, port) pair can only appear ONCE across ALL operator
 -- server lists due to UNIQUE(user_id, host, port) on protocol_servers table.
--- The original SimpleX code had ~10 different SMP servers spread across
--- enabled/disabled/flux lists. We have 4 unique SMP servers — all go in
+-- The original SimpleX code had different SMP servers spread across
+-- enabled/disabled/flux lists. Our unique SMP servers all go in
 -- enabledInqalaabSMPServers. disabledInqalaabSMPServers and
 -- fluxSMPServers_ must NOT duplicate any of these.
 
@@ -55,13 +55,17 @@ inqalaabSMPServers :: [NewUserServer 'PSMP]
 inqalaabSMPServers =
   map (presetServer' True) (L.toList enabledInqalaabSMPServers)
 
--- All 4 Inqalaab SMP servers (enabled)
+-- All Inqalaab SMP servers (enabled)
 enabledInqalaabSMPServers :: NonEmpty SMPServer
 enabledInqalaabSMPServers =
   [ "smp://0000000000000000000000000000000000000000003=@smp.example.net:5223",
     "smp://0000000000000000000000000000000000000000015=@smp1.example.org:5223",
-    "smp://0000000000000000000000000000000000000000006=@smp2.example.org",
-    "smp://0000000000000000000000000000000000000000002=@smp3.example.org"
+    "smp://0000000000000000000000000000000000000000006=@smp2.example.org:5223",
+    "smp://0000000000000000000000000000000000000000002=@smp3.example.org:5223",
+    "smp://0000000000000000000000000000000000000000012=@smp4.example.org:5223",
+    "smp://0000000000000000000000000000000000000000011=@smp5.example.org:5223",
+    "smp://0000000000000000000000000000000000000000009=@smp6.example.org:5223",
+    "smp://0000000000000000000000000000000000000000017=@smp7.example.org:5223"
   ]
 
 -- No disabled servers (would duplicate enabled list and violate UNIQUE constraint)
@@ -76,13 +80,16 @@ fluxSMPServers = []
 fluxSMPServers_ :: NonEmpty SMPServer
 fluxSMPServers_ = enabledInqalaabSMPServers
 
--- All 4 Inqalaab XFTP servers
+-- Inqalaab XFTP servers that are currently reachable on their public ports.
 fluxXFTPServers :: [NewUserServer 'PXFTP]
 fluxXFTPServers =
   map
     (presetServer True)
     [ "xftp://0000000000000000000000000000000000000000008=@xftp.example.net:5233",
-      "xftp://0000000000000000000000000000000000000000016=@xftp1.example.org",
+      "xftp://0000000000000000000000000000000000000000007=@xftp1.example.org:443",
       "xftp://0000000000000000000000000000000000000000004=@xftp2.example.org:5233",
-      "xftp://0000000000000000000000000000000000000000019=@xftp3.example.org:5233"
+      "xftp://0000000000000000000000000000000000000000019=@xftp3.example.org:5233",
+      "xftp://0000000000000000000000000000000000000000010=@xftp4.example.org:443",
+      "xftp://0000000000000000000000000000000000000000018=@xftp5.example.org:443",
+      "xftp://0000000000000000000000000000000000000000001=@xftp6.example.org:443"
     ]

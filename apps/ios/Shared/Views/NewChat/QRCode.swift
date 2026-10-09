@@ -54,12 +54,13 @@ struct QRCode: View {
     var onShare: (() -> Void)? = nil
     @State private var image: UIImage? = nil
     @State private var makeScreenshotFunc: () -> Void = {}
-    @State private var width: CGFloat = .infinity
+    @State private var width: CGFloat = 0
+    @Environment(\.displayScale) private var displayScale
 
     var body: some View {
         ZStack {
             if let image = image {
-                qrCodeImage(image).frame(width: width, height: width)
+                qrCodeImage(image).frame(width: width > 0 ? width : nil, height: width > 0 ? width : nil)
                 GeometryReader { g in
                     let w = g.size.width * (small ? smallQRRatio : 1)
                     let l = w * (small ? 0.195 : 0.16)
@@ -78,7 +79,7 @@ struct QRCode: View {
                     .onAppear {
                         width = w
                         makeScreenshotFunc = {
-                            let size = CGSizeMake(1024 / UIScreen.main.scale, 1024 / UIScreen.main.scale)
+                            let size = CGSizeMake(1024 / displayScale, 1024 / displayScale)
                             showShareSheet(items: [makeScreenshot(g.frame(in: .local).origin, size)])
                             onShare?()
                         }

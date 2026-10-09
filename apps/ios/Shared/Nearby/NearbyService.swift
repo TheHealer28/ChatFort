@@ -7,10 +7,20 @@ protocol NearbyServiceDelegate: AnyObject {
     func nearbyService(_ service: NearbyService, didLose peer: MCPeerID)
     func nearbyService(_ service: NearbyService, peer: MCPeerID, didChangeState state: MCSessionState)
     func nearbyService(_ service: NearbyService, didReceive message: NearbyMessage, from peer: MCPeerID)
+    /// Advertising or browsing failed to start. The most common cause is the
+    /// Local Network permission being denied — surfaced so the UI can stop
+    /// spinning forever and tell the user what to fix.
+    func nearbyService(_ service: NearbyService, didFailToStart what: String, error: Error)
 }
 
 /// Wraps MultipeerConnectivity for peer-to-peer messaging without internet.
 /// Both advertises and browses simultaneously. Auto-connects with tie-breaking.
+///
+/// Consent model: the *connection* is automatic (peers link up on discovery).
+/// The consent gate lives one layer up, in NearbyModel: a peer's FIRST inbound
+/// message becomes a "message request" that the user must accept before any
+/// conversation opens. So linking is frictionless, but nobody can actually
+/// message you without your approval.
 class NearbyService: NSObject {
     static let shared = NearbyService()
 
@@ -66,7 +76,7 @@ class NearbyService: NSObject {
         browser = mcBrowser
 
         isRunning = true
-        print("NearbyService: Started as '\(displayName)'")
+        logger.debug("NearbyService: started advertising + browsing")
     }
 
     /// Stop all MultipeerConnectivity activity.
@@ -80,7 +90,7 @@ class NearbyService: NSObject {
         session = nil
         myPeerID = nil
         isRunning = false
-        print("NearbyService: Stopped")
+        logger.debug("NearbyService: stopped")
     }
 
     // MARK: - Send Message
@@ -131,14 +141,9 @@ class NearbyService: NSObject {
 
 extension NearbyService: MCSessionDelegate {
     func session(_ session: MCSession, peer peerID: MCPeerID, didChange state: MCSessionState) {
-        let stateStr: String
-        switch state {
-        case .notConnected: stateStr = "disconnected"
-        case .connecting: stateStr = "connecting"
-        case .connected: stateStr = "connected"
-        @unknown default: stateStr = "unknown"
-        }
-        print("NearbyService: Peer '\(peerID.displayName)' state → \(stateStr)")
+        // Note: peer display names are intentionally NOT logged (they carry the
+        // user's profile name — a metadata leak in the unified log / sysdiagnose).
+        logger.debug("NearbyService: a peer changed session state (\(state.rawValue))")
         delegate?.nearbyService(self, peer: peerID, didChangeState: state)
     }
 
@@ -148,10 +153,9 @@ extension NearbyService: MCSessionDelegate {
             decoder.dateDecodingStrategy = .iso8601
             var message = try decoder.decode(NearbyMessage.self, from: data)
             message.isOutgoing = false // We received it
-            print("NearbyService: Received message from '\(peerID.displayName)'")
             delegate?.nearbyService(self, didReceive: message, from: peerID)
         } catch {
-            print("NearbyService: Failed to decode message from '\(peerID.displayName)': \(error)")
+            logger.error("NearbyService: failed to decode a received message: \(error.localizedDescription)")
         }
     }
 
@@ -165,19 +169,25 @@ extension NearbyService: MCSessionDelegate {
 
 extension NearbyService: MCNearbyServiceBrowserDelegate {
     func browser(_ browser: MCNearbyServiceBrowser, foundPeer peerID: MCPeerID, withDiscoveryInfo info: [String: String]?) {
-        print("NearbyService: Discovered peer '\(peerID.displayName)'")
+        logger.debug("NearbyService: discovered a peer")
         delegate?.nearbyService(self, didDiscover: peerID, withInfo: info)
 
-        // Auto-invite using tie-breaking rule
+        // Auto-connect using tie-breaking rule. The conversation-level consent
+        // gate (first-message acceptance) lives in NearbyModel, not here.
         if shouldInvite(peerID), let session = session {
-            print("NearbyService: Inviting '\(peerID.displayName)'")
             browser.invitePeer(peerID, to: session, withContext: nil, timeout: 30)
         }
     }
 
     func browser(_ browser: MCNearbyServiceBrowser, lostPeer peerID: MCPeerID) {
-        print("NearbyService: Lost peer '\(peerID.displayName)'")
+        logger.debug("NearbyService: lost a peer")
         delegate?.nearbyService(self, didLose: peerID)
+    }
+
+    /// Fires when browsing can't start — most often Local Network permission denied.
+    func browser(_ browser: MCNearbyServiceBrowser, didNotStartBrowsingForPeers error: Error) {
+        logger.error("NearbyService: browsing failed to start: \(error.localizedDescription)")
+        delegate?.nearbyService(self, didFailToStart: NSLocalizedString("browsing", comment: "nearby failure"), error: error)
     }
 }
 
@@ -185,8 +195,16 @@ extension NearbyService: MCNearbyServiceBrowserDelegate {
 
 extension NearbyService: MCNearbyServiceAdvertiserDelegate {
     func advertiser(_ advertiser: MCNearbyServiceAdvertiser, didReceiveInvitationFromPeer peerID: MCPeerID, withContext context: Data?, invitationHandler: @escaping (Bool, MCSession?) -> Void) {
-        print("NearbyService: Received invitation from '\(peerID.displayName)' — auto-accepting")
+        // Accept the link automatically — consent is enforced at the message layer
+        // (NearbyModel holds a peer's first message as a request until approved).
+        logger.debug("NearbyService: accepted a peer link (message consent gated in model)")
         invitationHandler(true, session)
+    }
+
+    /// Fires when advertising can't start — most often Local Network permission denied.
+    func advertiser(_ advertiser: MCNearbyServiceAdvertiser, didNotStartAdvertisingPeer error: Error) {
+        logger.error("NearbyService: advertising failed to start: \(error.localizedDescription)")
+        delegate?.nearbyService(self, didFailToStart: NSLocalizedString("advertising", comment: "nearby failure"), error: error)
     }
 }
 

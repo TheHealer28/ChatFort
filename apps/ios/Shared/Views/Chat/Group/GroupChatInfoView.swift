@@ -91,6 +91,10 @@ struct GroupChatInfoView: View {
                         .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
 
                     Section {
+                        // Inqalaab: audio group call (up to 5 members who are mutual contacts).
+                        if GroupCallCoordinator.isEnabled && groupInfo.membership.memberActive {
+                            startGroupCallButton()
+                        }
                         if groupInfo.canAddMembers && groupInfo.businessChat == nil {
                             groupLinkButton()
                         }
@@ -532,6 +536,16 @@ struct GroupChatInfoView: View {
                 .kerning(-2)
                 .foregroundColor(theme.colors.secondary)
         }
+    }
+
+    private func startGroupCallButton() -> some View {
+        Button {
+            GroupCallCoordinator.shared.startGroupCall(groupInfo: groupInfo, media: .audio)
+            dismiss()
+        } label: {
+            Label("Start group call", systemImage: "phone.connection")
+        }
+        .disabled(GroupCallCoordinator.shared.activeGroupCall != nil)
     }
 
     private func groupLinkButton() -> some View {

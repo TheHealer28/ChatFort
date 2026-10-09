@@ -300,7 +300,7 @@ struct SettingsView: View {
                         .frame(width: 44, height: 44)
                         .clipShape(RoundedRectangle(cornerRadius: 10))
                     VStack(alignment: .leading, spacing: 2) {
-                        Text("Inqalaab")
+                        Text("ChatFort")
                             .font(.system(size: 20, weight: .bold, design: .rounded))
                             .foregroundColor(.white)
                         Text("v\(appVersion ?? "?") (\(appBuild ?? "?"))")
@@ -417,15 +417,15 @@ struct SettingsView: View {
                 }
                 NavigationLink {
                     InqalaabInfo(onboarding: false)
-                        .navigationBarTitle("About Inqalaab", displayMode: .inline)
+                        .navigationBarTitle("About ChatFort", displayMode: .inline)
                         .modifier(ThemedBackground())
                         .frame(maxHeight: .infinity, alignment: .top)
                 } label: {
-                    settingsRow("info", color: theme.colors.secondary) { Text("About Inqalaab") }
+                    settingsRow("info", color: theme.colors.secondary) { Text("About ChatFort") }
                 }
             }
 
-            Section(header: Text("Support Inqalaab").foregroundColor(theme.colors.secondary)) {
+            Section(header: Text("Support ChatFort").foregroundColor(theme.colors.secondary)) {
                 settingsRow("star", color: theme.colors.secondary) {
                     Button("Rate the app") {
                         if let scene = sceneDelegate.windowScene {

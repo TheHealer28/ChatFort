@@ -58,6 +58,25 @@ private final class ShareSheetItemSource: NSObject, UIActivityItemSource {
     }
 }
 
+/// The app's active window. Inqalaab: `UIScreen.main` is ambiguous on phones with two screens
+/// (iPhone Duo) and is being deprecated, so size and scale come from the window we're shown in.
+func activeWindow() -> UIWindow? {
+    let scene = (UIApplication.shared.connectedScenes.first { $0.activationState == .foregroundActive }
+                 ?? UIApplication.shared.connectedScenes.first) as? UIWindowScene
+    return scene?.windows.first(where: \.isKeyWindow) ?? scene?.windows.first
+}
+
+/// Height of the app's window (not the screen: it can share the screen with another app).
+func activeWindowHeight() -> CGFloat {
+    activeWindow()?.bounds.height ?? 800
+}
+
+/// One physical pixel on the screen the app is shown on.
+func hairlineWidth() -> CGFloat {
+    let scale = activeWindow()?.windowScene?.screen.scale ?? 3
+    return 1 / max(scale, 1)
+}
+
 func getTopViewController() -> UIViewController? {
     let keyWindowScene = UIApplication.shared.connectedScenes.first { $0.activationState == .foregroundActive } as? UIWindowScene
     if let keyWindow = keyWindowScene?.windows.filter(\.isKeyWindow).first,
@@ -87,8 +106,8 @@ func showShareSheet(items: [Any], completed: (() -> Void)? = nil) {
 func showAddressShareSheet(link: String, completed: (() -> Void)? = nil) {
     let item = ShareSheetItemSource(
         item: URL(string: link) ?? link,
-        subject: NSLocalizedString("Share your Inqalaab address", comment: "share sheet subject"),
-        metadataTitle: NSLocalizedString("Inqalaab address", comment: "share sheet title"),
+        subject: NSLocalizedString("Share your ChatFort address", comment: "share sheet subject"),
+        metadataTitle: NSLocalizedString("ChatFort address", comment: "share sheet title"),
         icon: UIImage(systemName: "qrcode")
     )
     showShareSheet(items: [item], completed: completed)
@@ -298,14 +317,14 @@ class OpenChatAlertViewController: UIViewController {
                 buttonDivider.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
                 buttonDivider.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
                 buttonDivider.centerYAnchor.constraint(equalTo: buttonStack.centerYAnchor),
-                buttonDivider.heightAnchor.constraint(equalToConstant: 1 / UIScreen.main.scale)
+                buttonDivider.heightAnchor.constraint(equalToConstant: hairlineWidth())
             ]
         } else {
             [
                 buttonDivider.topAnchor.constraint(equalTo: buttonStack.topAnchor),
                 buttonDivider.bottomAnchor.constraint(equalTo: containerView.bottomAnchor),
                 buttonDivider.centerXAnchor.constraint(equalTo: buttonStack.centerXAnchor),
-                buttonDivider.widthAnchor.constraint(equalToConstant: 1 / UIScreen.main.scale)
+                buttonDivider.widthAnchor.constraint(equalToConstant: hairlineWidth())
             ]
         }
 
@@ -328,7 +347,7 @@ class OpenChatAlertViewController: UIViewController {
             horizontalDivider.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
             horizontalDivider.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
             horizontalDivider.bottomAnchor.constraint(equalTo: buttonStack.topAnchor),
-            horizontalDivider.heightAnchor.constraint(equalToConstant: 1 / UIScreen.main.scale)
+            horizontalDivider.heightAnchor.constraint(equalToConstant: hairlineWidth())
         ] + buttonDividerConstraints)
     }
 

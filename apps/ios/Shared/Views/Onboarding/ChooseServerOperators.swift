@@ -122,7 +122,12 @@ struct OnboardingConditionsView: View {
 
     private func continueToNextStep() {
         onboardingStageDefault.set(.step4_SetNotificationsMode)
-        notificationsModeNavLinkActive = true
+        // ChatFort: auto-accept finishes while this screen is still being pushed. The stack
+        // navigation style (wide screens, e.g. iPhone Duo unfolded) drops a push requested
+        // during another push's animation, leaving onboarding stuck here: wait for it to end.
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.7) {
+            notificationsModeNavLinkActive = true
+        }
     }
 
     func notificationsModeNavLinkButton(_ button: @escaping (() -> some View)) -> some View {

@@ -16,7 +16,19 @@ struct NearbyPeerListView: View {
                     .listRowBackground(Color.clear)
                     .listRowSeparator(.hidden)
 
-                // Connected peers with conversations
+                // Message requests: peers who messaged you but aren't accepted yet.
+                // The conversation only opens once you accept.
+                if !nearbyModel.messageRequests.isEmpty {
+                    Section {
+                        ForEach(nearbyModel.sortedMessageRequests) { req in
+                            messageRequestRow(req)
+                        }
+                    } header: {
+                        Text("Message requests")
+                    }
+                }
+
+                // Peers and existing conversations.
                 let items = mergedPeerList
                 ForEach(items, id: \.peerId) { item in
                     NavigationLink(
@@ -24,10 +36,25 @@ struct NearbyPeerListView: View {
                             .environmentObject(nearbyModel)
                             .environmentObject(theme)
                     ) {
-                        NearbyPeerRow(
-                            peer: item.peer,
-                            conversation: item.conversation
-                        )
+                        NearbyPeerRow(peer: item.peer, conversation: item.conversation)
+                    }
+                    .swipeActions(edge: .trailing, allowsFullSwipe: true) {
+                        if item.conversation != nil {
+                            Button(role: .destructive) {
+                                nearbyModel.deleteConversation(peerId: item.peerId)
+                            } label: {
+                                Label("Delete chat", systemImage: "trash")
+                            }
+                        }
+                    }
+                    .contextMenu {
+                        if item.conversation != nil {
+                            Button(role: .destructive) {
+                                nearbyModel.deleteConversation(peerId: item.peerId)
+                            } label: {
+                                Label("Delete chat", systemImage: "trash")
+                            }
+                        }
                     }
                 }
             }
@@ -63,6 +90,46 @@ struct NearbyPeerListView: View {
         .padding(.vertical, 4)
     }
 
+    // MARK: - Message Request Row
+
+    @ViewBuilder
+    private func messageRequestRow(_ req: NearbyMessageRequest) -> some View {
+        VStack(alignment: .leading, spacing: 8) {
+            Text(req.displayName)
+                .font(.body)
+                .fontWeight(.medium)
+                .foregroundColor(theme.colors.onBackground)
+            if !req.preview.isEmpty {
+                Text(req.preview)
+                    .font(.subheadline)
+                    .foregroundColor(.secondary)
+                    .lineLimit(2)
+            }
+            Text("Wants to message you. Accept only if you recognise them.")
+                .font(.caption)
+                .foregroundColor(.secondary)
+            HStack(spacing: 12) {
+                Button {
+                    nearbyModel.acceptMessageRequest(req.id)
+                } label: {
+                    Text("Accept").fontWeight(.semibold)
+                }
+                .buttonStyle(.borderedProminent)
+                .tint(theme.colors.primary)
+
+                Button(role: .destructive) {
+                    nearbyModel.declineMessageRequest(req.id)
+                } label: {
+                    Text("Decline")
+                }
+                .buttonStyle(.bordered)
+
+                Spacer()
+            }
+        }
+        .padding(.vertical, 6)
+    }
+
     // MARK: - Merged Peer List
 
     /// Combines peers and conversations into a single sorted list.
@@ -86,7 +153,7 @@ struct NearbyPeerListView: View {
         // Then: discovered peers without conversations (sorted by connection state)
         let connectedFirst: [NearbyConnectionState] = [.connected, .connecting, .discovered, .disconnected]
         let remainingPeers = nearbyModel.peers
-            .filter { !seen.contains($0.id) }
+            .filter { !seen.contains($0.id) && nearbyModel.messageRequests[$0.id] == nil && !nearbyModel.isHidden($0.id) }
             .sorted { lhs, rhs in
                 let lhsOrder = connectedFirst.firstIndex(of: lhs.connectionState) ?? 99
                 let rhsOrder = connectedFirst.firstIndex(of: rhs.connectionState) ?? 99

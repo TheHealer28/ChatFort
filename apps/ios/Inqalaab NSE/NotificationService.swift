@@ -8,7 +8,6 @@
 
 import UserNotifications
 import OSLog
-import StoreKit
 import CallKit
 import InqalaabChat
 
@@ -28,6 +27,10 @@ public enum NSENotificationData {
     case contactRequest(_ user: any UserLike, _ contactRequest: UserContactRequest)
     case messageReceived(_ user: any UserLike, _ cInfo: ChatInfo, _ cItem: ChatItem)
     case callInvitation(_ invitation: RcvCallInvitation)
+    // Inqalaab: a group-call start control received while the app is killed —
+    // ring-style notification; the app rings properly on open via the
+    // persisted handoff record.
+    case groupCallStart(groupName: String, callerName: String, chatId: String)
     case msgInfo(NtfMsgAckInfo)
     case noNtf
 
@@ -46,6 +49,7 @@ public enum NSENotificationData {
         case let .contactRequest(user, contactRequest): createContactRequestNtf(user, contactRequest, badgeCount)
         case let .messageReceived(user, cInfo, cItem): createMessageReceivedNtf(user, cInfo, cItem, badgeCount)
         case let .callInvitation(invitation): createCallInvitationNtf(invitation, badgeCount)
+        case let .groupCallStart(groupName, callerName, chatId): createGroupCallStartNtf(groupName: groupName, callerName: callerName, chatId: chatId, badgeCount: badgeCount)
         case .msgInfo: UNMutableNotificationContent()
         case .noNtf: UNMutableNotificationContent()
         }
@@ -59,6 +63,7 @@ public enum NSENotificationData {
         case .contactRequest: self
         case .messageReceived: self
         case .callInvitation: self
+        case .groupCallStart: self
         case .msgInfo: nil
         case .noNtf: nil
         }
@@ -983,9 +988,9 @@ func chatRecvMsg() async -> APIResult<NSEChatEvent>? {
 }
 
 private let isInChina: Bool = {
-    let cc = SKStorefront().countryCode
-    let result = cc == "CHN"
-    logger.debug("Inqalaab NSE: SKStorefront countryCode=\(cc), isInChina=\(result)")
+    let cc = Locale.current.regionCode ?? "unknown"
+    let result = cc == "CN"
+    logger.debug("Inqalaab NSE: Locale regionCode=\(cc), isInChina=\(result)")
     return result
 }()
 
@@ -1016,15 +1021,36 @@ func receivedMsgNtf(_ res: NSEChatEvent) async -> (String, NSENotificationData)?
         if let chatItem = chatItems.first {
             let cInfo = chatItem.chatInfo
             var cItem = chatItem.chatItem
-            if let file = cItem.autoReceiveFile() {
-                cItem = autoReceiveFile(file) ?? cItem
-            }
-            let ntf: NSENotificationData = (cInfo.ntfsEnabled(chatItem: cItem) && cItem.showNotification) ? .messageReceived(user, cInfo, cItem) : .noNtf
             let chatIdOrMemberId = if case let .groupRcv(groupMember) = chatItem.chatItem.chatDir {
                 groupMember.id
             } else {
                 chatItem.chatInfo.id
             }
+            // Inqalaab: hidden group-call control messages must never surface as
+            // "message" notifications. A fresh `.start` becomes a ring-style
+            // notification + a persisted handoff record so the app rings the
+            // group call on open (instead of its leg invitations degrading into
+            // 1:1 calls); join/leave/stale controls are silenced.
+            // ChatFort: hidden Crowd mesh link messages are never notified (the app handles them).
+            if cItem.content.msgContent?.isChatfortMeshLink == true {
+                return (chatIdOrMemberId, .noNtf)
+            }
+            if let gc = GroupCallControl.parse(cItem.content.text) {
+                if gc.kind == .start, cItem.meta.itemTs.timeIntervalSinceNow > -120 {
+                    savePendingGroupCallStart(gc, at: cItem.meta.itemTs)
+                    let callerName = if case let .groupRcv(groupMember) = cItem.chatDir {
+                        groupMember.displayName
+                    } else {
+                        cInfo.chatViewName
+                    }
+                    return (chatIdOrMemberId, .groupCallStart(groupName: cInfo.chatViewName, callerName: callerName, chatId: cInfo.id))
+                }
+                return (chatIdOrMemberId, .noNtf)
+            }
+            if let file = cItem.autoReceiveFile() {
+                cItem = autoReceiveFile(file) ?? cItem
+            }
+            let ntf: NSENotificationData = (cInfo.ntfsEnabled(chatItem: cItem) && cItem.showNotification) ? .messageReceived(user, cInfo, cItem) : .noNtf
             return (chatIdOrMemberId, ntf)
         } else {
             return nil

@@ -1596,8 +1596,8 @@ struct ServerOperatorInfo {
 let operatorsInfo: Dictionary<OperatorTag, ServerOperatorInfo> = [
     .simplex: ServerOperatorInfo(
         description: [
-            "Inqalaab is a private messenger for activists that has no user profile IDs of any kind, not even random numbers or identity keys.",
-            "Inqalaab uses end-to-end encryption for maximum privacy and security."
+            "ChatFort is a private messenger for activists that has no user profile IDs of any kind, not even random numbers or identity keys.",
+            "ChatFort uses end-to-end encryption for maximum privacy and security."
         ],
         website: URL(string: "https://github.com/TheHealer28/Inqalaab")!,
         logo: "decentralized",
@@ -1730,8 +1730,8 @@ struct ServerOperator: Identifiable, Equatable, Codable {
     static var sampleData1 = ServerOperator(
         operatorId: 1,
         operatorTag: .simplex,
-        tradeName: "Inqalaab",
-        legalName: "Inqalaab",
+        tradeName: "ChatFort",
+        legalName: "ChatFort",
         serverDomains: ["example.net"],
         conditionsAcceptance: .accepted(acceptedAt: nil, autoAccepted: false),
         enabled: true,
@@ -2133,7 +2133,7 @@ struct AppSettings: Codable, Equatable {
             uiDarkColorScheme: DefaultTheme.CLASSIC.themeName,
             uiCurrentThemeIds: nil as [String: String]?,
             uiThemes: nil as [ThemeOverrides]?,
-            oneHandUI: true,
+            oneHandUI: false,
             chatBottomBar: true
         )
     }

@@ -16,14 +16,14 @@ struct HowItWorks: View {
 
     var body: some View {
         VStack(alignment: .leading) {
-            Text("How Inqalaab works")
+            Text("How ChatFort works")
                 .font(.largeTitle)
                 .bold()
                 .padding(.vertical)
             ScrollView {
                 VStack(alignment: .leading) {
                     Group {
-                        Text("To protect your privacy, Inqalaab uses separate IDs for each of your contacts.")
+                        Text("To protect your privacy, ChatFort uses separate IDs for each of your contacts.")
                         Text("Only client devices store user profiles, contacts, groups, and messages.")
                         Text("All messages and files are sent **end-to-end encrypted**, with post-quantum security in direct messages.")
                         if !onboarding {

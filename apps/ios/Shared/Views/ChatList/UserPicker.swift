@@ -65,7 +65,7 @@ struct UserPicker: View {
                 .onPreferenceChange(DetermineWidth.Key.self) { frameWidth = $0 }
             }
             VStack(spacing: 0) {
-                openSheetOnTap("qrcode", title: m.userAddress == nil ? "Create Inqalaab address" : "Your Inqalaab address", sheet: .address, disabled: stopped)
+                openSheetOnTap("qrcode", title: m.userAddress == nil ? "Create ChatFort address" : "Your ChatFort address", sheet: .address, disabled: stopped)
                 openSheetOnTap("switch.2", title: "Preferences", sheet: .chatPreferences, disabled: stopped)
                 openSheetOnTap("person.crop.rectangle.stack", title: "Profiles", sheet: .chatProfiles, disabled: stopped)
                 ZStack(alignment: .trailing) {

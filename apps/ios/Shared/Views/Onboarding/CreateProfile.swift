@@ -118,6 +118,8 @@ struct CreateProfile: View {
                     throw error
                 }
             }
+            // ChatFort: an added profile gets its own address too (the first one gets it in setup).
+            if let userId = m.currentUser?.userId { InqalaabServers.shared.newProfileCreated(userId: userId) }
             // .isEmpty check is redundant here, but it makes it clearer what is going on
             if m.users.isEmpty || m.users.allSatisfy({ $0.user.hidden }) {
                 try startChat()
@@ -128,10 +130,7 @@ struct CreateProfile: View {
             } else {
                 onboardingStageDefault.set(.onboardingComplete)
                 m.onboardingStage = .onboardingComplete
-                // Inqalaab: Configure servers after onboarding
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-                    InqalaabServers.shared.configureIfNeeded()
-                }
+                InqalaabServers.shared.scheduleConfigureIfNeeded(reason: "profile onboarding complete")
                 dismiss()
                 m.users = try listUsers()
                 try getUserChatData()

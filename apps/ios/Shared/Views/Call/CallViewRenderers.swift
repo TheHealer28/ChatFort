@@ -133,8 +133,8 @@ struct CallViewRemote: UIViewRepresentable {
 
     func updateUIView(_ view: UIView, context: Context) {
         logger.debug("CallView.updateUIView remote")
-        let camera = view.subviews.first(where: { $0.tag == 0 })!
-        let screen = view.subviews.first(where: { $0.tag == 1 })!
+        guard let camera = view.subviews.first(where: { $0.tag == 0 }),
+              let screen = view.subviews.first(where: { $0.tag == 1 }) else { return }
         let screenVideo = call.peerMediaSources.screenVideo
         if screenVideo && screen.alpha == 0 {
             screen.alpha = 1
@@ -143,8 +143,12 @@ struct CallViewRemote: UIViewRepresentable {
             screen.alpha = 0
             addSubviewAndResize(camera, screen, into: view)
         }
-        (view.subviews[0] as! RTCMTLVideoView).videoContentMode = contentMode
-        (view.subviews[1] as! RTCMTLVideoView).videoContentMode = .scaleAspectFill
+        if let primary = view.subviews.first as? RTCMTLVideoView {
+            primary.videoContentMode = contentMode
+        }
+        if view.subviews.count > 1, let secondary = view.subviews[1] as? RTCMTLVideoView {
+            secondary.videoContentMode = .scaleAspectFill
+        }
 
         camera.alpha = call.peerMediaSources.camera ? 1 : 0
         screen.alpha = call.peerMediaSources.screenVideo ? 1 : 0
@@ -376,7 +380,7 @@ struct CallViewRemote: UIViewRepresentable {
             defer { CVPixelBufferUnlockBaseAddress(pb, []) }
 
             // Copy Y plane
-            let yDst = CVPixelBufferGetBaseAddressOfPlane(pb, 0)!
+            guard let yDst = CVPixelBufferGetBaseAddressOfPlane(pb, 0) else { return nil }
             let yDstStride = CVPixelBufferGetBytesPerRowOfPlane(pb, 0)
             let ySrc = i420.dataY
             let ySrcStride = Int(i420.strideY)
@@ -385,7 +389,7 @@ struct CallViewRemote: UIViewRepresentable {
             }
 
             // Interleave U+V into NV12 UV plane
-            let uvDst = CVPixelBufferGetBaseAddressOfPlane(pb, 1)!
+            guard let uvDst = CVPixelBufferGetBaseAddressOfPlane(pb, 1) else { return nil }
             let uvDstStride = CVPixelBufferGetBytesPerRowOfPlane(pb, 1)
             let uSrc = i420.dataU
             let vSrc = i420.dataV

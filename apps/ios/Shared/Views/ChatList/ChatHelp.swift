@@ -19,7 +19,7 @@ struct ChatHelp: View {
 
     func chatHelp() -> some View {
         VStack(alignment: .leading, spacing: 10) {
-            Text("Welcome to Inqalaab!")
+            Text("Welcome to ChatFort!")
 
             VStack(alignment: .leading, spacing: 0) {
                 Text("Secure, private messaging for the people.")

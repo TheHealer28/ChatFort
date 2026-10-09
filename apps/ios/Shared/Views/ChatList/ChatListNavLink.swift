@@ -401,7 +401,7 @@ struct ChatListNavLink: View {
     }
     
     private func setTagChatSheet(_ chat: Chat) {
-        let screenHeight = UIScreen.main.bounds.height
+        let screenHeight = activeWindowHeight()
         let reservedSpace: Double = 4 * 44 // 2 for padding, 1 for "Create list" and another for extra tag
         let tagsSpace = Double(max(chatTagsModel.userTags.count, 3)) * 44
         let fraction = min((reservedSpace + tagsSpace) / screenHeight, 0.62)

@@ -1943,7 +1943,8 @@ public struct Contact: Identifiable, Decodable, NamedChat, Hashable {
     public var chatSettings: ChatSettings
     public var userPreferences: Preferences
     public var mergedPreferences: ContactUserPreferences
-    var createdAt: Date
+    /// Public for ChatFort's Crowd mesh contact binding (a reused contact ID never matches).
+    public internal(set) var createdAt: Date
     var updatedAt: Date
     var chatTs: Date?
     public var preparedContact: PreparedContact?
@@ -4439,8 +4440,16 @@ public enum MsgContent: Equatable, Hashable {
     case file(String)
     case report(text: String, reason: ReportReason)
     case chat(text: String, chatLink: MsgChatLink)
+    /// ChatFort: hidden link message for the Crowd mesh (offline contacts). Never shown, never
+    /// notified; deleted locally once handled. `text` is the fallback older apps show.
+    case chatfortMeshLink(text: String, link: MeshLinkContent)
     // TODO include original JSON, possibly using https://github.com/zoul/generic-json-swift
     case unknown(type: String, text: String)
+
+    public var isChatfortMeshLink: Bool {
+        if case .chatfortMeshLink = self { return true }
+        return false
+    }
 
     public var text: String {
         switch self {
@@ -4452,6 +4461,7 @@ public enum MsgContent: Equatable, Hashable {
         case let .file(text): return text
         case let .report(text, _): return text
         case let .chat(text, _): return text
+        case let .chatfortMeshLink(text, _): return text
         case let .unknown(_, text): return text
         }
     }
@@ -4526,6 +4536,7 @@ public enum MsgContent: Equatable, Hashable {
         case let (.file(lf), .file(rf)): return lf == rf
         case let (.report(lt, lr), .report(rt, rr)): return lt == rt && lr == rr
         case let (.chat(lt, ll), .chat(rt, rl)): return lt == rt && ll == rl
+        case let (.chatfortMeshLink(lt, ll), .chatfortMeshLink(rt, rl)): return lt == rt && ll == rl
         case let (.unknown(lType, lt), .unknown(rType, rt)): return lType == rType && lt == rt
         default: return false
         }
@@ -4569,6 +4580,13 @@ extension MsgContent: Decodable {
                 let text = try container.decode(String.self, forKey: CodingKeys.text)
                 let chatLink = try container.decode(MsgChatLink.self, forKey: CodingKeys.chatLink)
                 self = .chat(text: text, chatLink: chatLink)
+            case MeshLinkContent.type:
+                let text = (try? container.decode(String.self, forKey: CodingKeys.text)) ?? ""
+                if let link = try? MeshLinkContent(from: decoder) {
+                    self = .chatfortMeshLink(text: text, link: link)
+                } else {
+                    self = .unknown(type: type, text: text)
+                }
             default:
                 let text = try? container.decode(String.self, forKey: CodingKeys.text)
                 self = .unknown(type: type, text: text ?? "unknown message format")
@@ -4614,11 +4632,38 @@ extension MsgContent: Encodable {
             try container.encode("chat", forKey: .type)
             try container.encode(text, forKey: .text)
             try container.encode(chatLink, forKey: .chatLink)
+        case let .chatfortMeshLink(text, link):
+            try container.encode(MeshLinkContent.type, forKey: .type)
+            try container.encode(text, forKey: .text)
+            try link.encode(to: encoder)
         // TODO use original JSON and type
         case let .unknown(_, text):
             try container.encode("text", forKey: .type)
             try container.encode(text, forKey: .text)
         }
+    }
+}
+
+/// The fields of a ChatFort mesh link message besides type and text:
+/// {"type":"chatfortMeshLink","text":…,"v":3,"seed":"<base64url, 32 bytes>","day":<days since 1970>,"ack":<bool>}
+public struct MeshLinkContent: Codable, Equatable, Hashable {
+    public static let type = "chatfortMeshLink"
+    /// What older apps show instead. Deliberately names no app (user decision).
+    public static let fallbackText = "This message needs a newer app version."
+    /// Every fallback text ever sent (the first Android test builds used the old one).
+    public static let knownFallbackTexts = [fallbackText, "Offline contact link (update ChatFort to use it)",
+                                            "آف لائن رابطہ لنک (استعمال کے لیے چیٹ فورٹ اپ ڈیٹ کریں)"]
+
+    public var v: Int
+    public var seed: String
+    public var day: Int64
+    public var ack: Bool
+
+    public init(v: Int, seed: String, day: Int64, ack: Bool) {
+        self.v = v
+        self.seed = seed
+        self.day = day
+        self.ack = ack
     }
 }
 

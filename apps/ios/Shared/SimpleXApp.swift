@@ -41,6 +41,10 @@ struct InqalaabApp: App {
             // contentAccessAuthenticationExtended has to be passed to ContentView on view initialization,
             // so that it's computed by the time view renders, and not on event after rendering
             ContentView(contentAccessAuthenticationExtended: !authenticationExpired())
+                // Inqalaab: on wide screens (iPhone Duo unfolded) NavigationView defaults to two
+                // columns, which put every screen in a narrow left column with an empty right side.
+                // One full-width column, as on every iPhone. Applies to all NavigationViews below.
+                .navigationViewStyle(.stack)
                 .environmentObject(chatModel)
                 .environmentObject(AppTheme.shared)
                 .onOpenURL { url in
@@ -52,6 +56,13 @@ struct InqalaabApp: App {
                     }
                 }
                 .onAppear() {
+                    // Inqalaab: seed screen-protection redaction state from the CURRENT scene phase.
+                    // `.onChange(of: scenePhase)` only fires on a *transition*; when the app launches
+                    // straight into .active, onChange never fires and AppSheetState.scenePhaseActive
+                    // stays at its default `false` — which, with "Protect app screen" enabled, leaves
+                    // the whole UI stuck as a redacted placeholder skeleton. Seeding it here clears
+                    // that launch race. The existing onChange still handles foreground↔background.
+                    AppSheetState.shared.scenePhaseActive = scenePhase == .active
                     // Present screen for continue migration if it wasn't finished yet
                     if chatModel.migrationState != nil {
                         // It's important, otherwise, user may be locked in undefined state
@@ -90,16 +101,12 @@ struct InqalaabApp: App {
                         if appState != .stopped {
                             startChatAndActivate {
                                 if chatModel.chatRunning == true {
-                                    // Inqalaab: Configure servers after chat is running
-                                    DispatchQueue.main.asyncAfter(deadline: .now() + 6.0) {
-                                        if chatModel.chatRunning == true && chatModel.currentUser != nil {
-                                            InqalaabServers.shared.configureIfNeeded()
-                                        }
-                                    }
-                                    if let ntfResponse = chatModel.notificationResponse {
-                                        chatModel.notificationResponse = nil
-                                        NtfManager.shared.processNotificationResponse(ntfResponse)
-                                    }
+                                    // Defer and debounce server setup so first launch can render quickly.
+                                    InqalaabServers.shared.scheduleConfigureIfNeeded(reason: "app became active")
+                                    NtfManager.shared.processPendingNtfResponseIfReady()
+                                    // Ring a group call whose start arrived while the app was
+                                    // killed (persisted by the NSE handoff).
+                                    GroupCallCoordinator.shared.checkPersistedGroupCallStart()
                                     if appState.inactive {
                                         Task {
                                             await updateChats()
@@ -183,7 +190,10 @@ struct InqalaabApp: App {
     private func updateChats() async {
         do {
             let chats = try await apiGetChatsAsync()
-            await MainActor.run { chatModel.updateChats(chats) }
+            await MainActor.run {
+                chatModel.updateChats(chats)
+                MeshLinkBridge.refresh()
+            }
             if let id = chatModel.chatId,
                let chat = chatModel.getChat(id),
                !NtfManager.shared.navigatingToChat {

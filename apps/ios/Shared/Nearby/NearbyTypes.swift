@@ -118,6 +118,13 @@ enum NearbyDisplayName {
     /// Create a peer-safe display name with random suffix to avoid MCPeerID conflicts
     static func create(from profileName: String) -> String {
         let suffix = String((0..<4).map { _ in "abcdefghijklmnopqrstuvwxyz0123456789".randomElement()! })
+        return create(from: profileName, suffix: suffix)
+    }
+
+    /// Create a peer-safe display name with a CALLER-SUPPLIED suffix. Used so the
+    /// suffix can be persisted and kept stable across toggles/relaunches —
+    /// otherwise the same device appears as a new peer every session (duplicates).
+    static func create(from profileName: String, suffix: String) -> String {
         let truncated = String(profileName.prefix(11)) // MCPeerID has 63 char limit, leave room
         return "\(truncated)-\(suffix)"
     }

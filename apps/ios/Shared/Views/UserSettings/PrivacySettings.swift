@@ -52,7 +52,7 @@ struct PrivacySettings: View {
                 Section(header: Text("Device").foregroundColor(theme.colors.secondary)) {
                     NavigationLink {
                         InqalaabLockView(prefPerformLA: $prefPerformLA, currentLAMode: $currentLAMode)
-                            .navigationTitle("Inqalaab Lock")
+                            .navigationTitle("ChatFort Lock")
                             .modifier(ThemedBackground(grouped: true))
                     } label: {
                         if prefPerformLA {
@@ -368,7 +368,7 @@ struct PrivacySettings: View {
 
     private func inqalaabLockRow(_ value: LocalizedStringKey) -> some View {
         HStack {
-            Text("Inqalaab Lock")
+            Text("ChatFort Lock")
             Spacer()
             Text(value)
         }
@@ -474,7 +474,7 @@ struct InqalaabLockView: View {
                 }
 
                 if performLA {
-                    Section("Share to Inqalaab") {
+                    Section("Share to ChatFort") {
                         Toggle("Allow sharing", isOn: $allowShareExtension)
                     }
                 }
@@ -649,7 +649,7 @@ struct InqalaabLockView: View {
                 switch laMode {
                 case .system:
                     updateLAMode()
-                    authenticate(reason: NSLocalizedString("Enable Inqalaab Lock", comment: "authentication reason")) { laResult in
+                    authenticate(reason: NSLocalizedString("Enable ChatFort Lock", comment: "authentication reason")) { laResult in
                         switch laResult {
                         case .success:
                             _ = kcAppPassword.remove()
@@ -711,7 +711,7 @@ struct InqalaabLockView: View {
 
     private func enableLA() {
         resetLA()
-        authenticate(reason: NSLocalizedString("Enable Inqalaab Lock", comment: "authentication reason")) { laResult in
+        authenticate(reason: NSLocalizedString("Enable ChatFort Lock", comment: "authentication reason")) { laResult in
             switch laResult {
             case .success:
                 m.contentViewAccessAuthenticated = true
@@ -734,7 +734,7 @@ struct InqalaabLockView: View {
     }
 
     private func disableLA() {
-        authenticate(reason: NSLocalizedString("Disable Inqalaab Lock", comment: "authentication reason")) { laResult in
+        authenticate(reason: NSLocalizedString("Disable ChatFort Lock", comment: "authentication reason")) { laResult in
             switch (laResult) {
             case .success:
                 prefPerformLA = false

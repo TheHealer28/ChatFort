@@ -107,3 +107,93 @@ public enum WebRTCCallStatus: String, Encodable {
     case disconnected = "disconnected"
     case failed = "failed"
 }
+
+// MARK: - Group call control (Inqalaab)
+// Lives in the framework so BOTH the app and the NSE can parse the hidden
+// group-call control messages (the NSE must suppress them / surface an
+// incoming-call notification instead of a generic "message" notification).
+
+public enum GroupCallControlKind: String, Codable {
+    case start   // a member announces a new call instance + participant roster
+    case join    // a member announces they are joining an existing instance
+    case leave   // a member announces they are leaving
+}
+
+public struct GroupCallControl: Codable, Equatable {
+    /// Zero-width space + namespaced, versioned tag. Bump GC1→GC2 on format change.
+    public static let marker = "\u{200B}ICF-GC1"
+
+    public var kind: GroupCallControlKind
+    /// Unique per call session — distinguishes concurrent/sequential calls in one group.
+    public var instanceId: String
+    public var groupId: Int64
+    /// Sender's stable memberId within the group.
+    public var fromMemberId: String
+    /// Media type, present on `.start`.
+    public var media: CallMediaType?
+    /// Roster of participant memberIds, present on `.start`.
+    public var participantMemberIds: [String]?
+
+    public init(kind: GroupCallControlKind, instanceId: String, groupId: Int64, fromMemberId: String, media: CallMediaType? = nil, participantMemberIds: [String]? = nil) {
+        self.kind = kind
+        self.instanceId = instanceId
+        self.groupId = groupId
+        self.fromMemberId = fromMemberId
+        self.media = media
+        self.participantMemberIds = participantMemberIds
+    }
+
+    /// Serialize to a sentinel-prefixed text payload suitable for a `.text` message.
+    public func encodedText() -> String {
+        let json = (try? JSONEncoder().encode(self))
+            .flatMap { String(data: $0, encoding: .utf8) } ?? "{}"
+        return "\(GroupCallControl.marker) \(json)"
+    }
+
+    /// Parse a received message's text. Returns nil for any normal message — the
+    /// receive interceptors use nil to mean "not a control message, leave it
+    /// alone", so this must never match ordinary user text (the marker guards that).
+    public static func parse(_ text: String) -> GroupCallControl? {
+        guard text.hasPrefix(marker) else { return nil }
+        let jsonPart = text.dropFirst(marker.count).trimmingCharacters(in: .whitespaces)
+        guard let data = jsonPart.data(using: .utf8) else { return nil }
+        return try? JSONDecoder().decode(GroupCallControl.self, from: data)
+    }
+}
+
+// MARK: - Cold-start handoff (NSE → app) for incoming group calls
+// When the app is killed, the NSE receives the `.start` control. It persists it
+// here (app group defaults) so the app rings the group call on next launch
+// instead of letting the leg invitations degrade into 1:1 calls.
+
+let GROUP_CALL_PENDING_JSON = "inqalaabPendingGroupCallControlJson"
+let GROUP_CALL_PENDING_TS = "inqalaabPendingGroupCallControlTs"
+
+public func savePendingGroupCallStart(_ control: GroupCallControl, at ts: Date) {
+    if let data = try? JSONEncoder().encode(control), let json = String(data: data, encoding: .utf8) {
+        groupDefaults.set(json, forKey: GROUP_CALL_PENDING_JSON)
+        groupDefaults.set(ts.timeIntervalSince1970, forKey: GROUP_CALL_PENDING_TS)
+    }
+}
+
+public func takePendingGroupCallStart(maxAge: TimeInterval) -> (control: GroupCallControl, ts: Date)? {
+    guard let json = groupDefaults.string(forKey: GROUP_CALL_PENDING_JSON) else { return nil }
+    let ts = Date(timeIntervalSince1970: groupDefaults.double(forKey: GROUP_CALL_PENDING_TS))
+    clearPendingGroupCallStart()
+    guard ts.timeIntervalSinceNow > -maxAge,
+          let data = json.data(using: .utf8),
+          let control = try? JSONDecoder().decode(GroupCallControl.self, from: data)
+    else { return nil }
+    return (control, ts)
+}
+
+public func hasFreshPendingGroupCallStart(maxAge: TimeInterval) -> Bool {
+    guard groupDefaults.string(forKey: GROUP_CALL_PENDING_JSON) != nil else { return false }
+    let ts = Date(timeIntervalSince1970: groupDefaults.double(forKey: GROUP_CALL_PENDING_TS))
+    return ts.timeIntervalSinceNow > -maxAge
+}
+
+public func clearPendingGroupCallStart() {
+    groupDefaults.removeObject(forKey: GROUP_CALL_PENDING_JSON)
+    groupDefaults.removeObject(forKey: GROUP_CALL_PENDING_TS)
+}

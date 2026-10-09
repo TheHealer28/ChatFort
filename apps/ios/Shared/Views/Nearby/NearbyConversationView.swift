@@ -5,7 +5,9 @@ struct NearbyConversationView: View {
     let peerId: String
     @EnvironmentObject var nearbyModel: NearbyModel
     @EnvironmentObject var theme: AppTheme
+    @Environment(\.dismiss) private var dismiss
     @State private var messageText = ""
+    @State private var showDeleteConfirm = false
 
     var body: some View {
         VStack(spacing: 0) {
@@ -56,8 +58,28 @@ struct NearbyConversationView: View {
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
-                connectionStatusBadge
+                HStack(spacing: 12) {
+                    connectionStatusBadge
+                    Menu {
+                        Button(role: .destructive) {
+                            showDeleteConfirm = true
+                        } label: {
+                            Label("Delete chat", systemImage: "trash")
+                        }
+                    } label: {
+                        Image(systemName: "ellipsis.circle")
+                    }
+                }
             }
+        }
+        .confirmationDialog("Delete this chat?", isPresented: $showDeleteConfirm, titleVisibility: .visible) {
+            Button("Delete chat", role: .destructive) {
+                nearbyModel.deleteConversation(peerId: peerId)
+                dismiss()
+            }
+            Button("Cancel", role: .cancel) {}
+        } message: {
+            Text("This removes all messages with this person from this device.")
         }
     }
 

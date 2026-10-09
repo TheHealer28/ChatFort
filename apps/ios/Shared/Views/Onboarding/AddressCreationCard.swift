@@ -31,7 +31,7 @@ struct AddressCreationCard: View {
                     .frame(width: envelopeSize, height: envelopeSize)
                     .foregroundColor(.accentColor)
                 VStack(alignment: .leading) {
-                    Text("Your Inqalaab address")
+                    Text("Your ChatFort address")
                         .font(.title3)
                     Spacer()
                     Text("How to use it") + textSpace + Text(Image(systemName: "info.circle")).foregroundColor(theme.colors.secondary)
@@ -61,8 +61,8 @@ struct AddressCreationCard: View {
         .frame(height: dynamicSize(userFont).rowHeight)
         .alert(isPresented: $showAddressCreationAlert) {
             Alert(
-                title: Text("Inqalaab address"),
-                message: Text("Tap Create Inqalaab address in the menu to create it later."),
+                title: Text("ChatFort address"),
+                message: Text("Tap Create ChatFort address in the menu to create it later."),
                 dismissButton: .default(Text("Ok")) {
                     withAnimation {
                         addressCreationCardShown = true
@@ -73,7 +73,7 @@ struct AddressCreationCard: View {
         .sheet(isPresented: $showAddressSheet) {
             NavigationView {
                 UserAddressView(autoCreate: true)
-                    .navigationTitle("Inqalaab address")
+                    .navigationTitle("ChatFort address")
                     .navigationBarTitleDisplayMode(.large)
                     .modifier(ThemedBackground(grouped: true))
             }

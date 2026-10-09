@@ -320,6 +320,8 @@ func setUserPrivacy_(_ cmd: ChatCommand) async throws -> User {
 
 func apiDeleteUser(_ userId: Int64, _ delSMPQueues: Bool, viewPwd: String?) async throws {
     try await sendCommandOkResp(.apiDeleteUser(userId: userId, delSMPQueues: delSMPQueues, viewPwd: viewPwd))
+    // ChatFort: the profile's Crowd mesh contact links, mesh chats and media go with it.
+    await MainActor.run { CrowdMesh.shared.profileDeleted(userId: userId) }
 }
 
 func apiStartChat(ctrl: chat_ctrl? = nil) throws -> Bool {
@@ -1179,7 +1181,15 @@ func apiDeleteContact(id: Int64, chatDeleteMode: ChatDeleteMode = .full(notify: 
         }
     }
     let r: ChatResponse1 = try await chatSendCmd(.apiDeleteChat(type: type, id: id, chatDeleteMode: chatDeleteMode), bgTask: false)
-    if case let .contactDeleted(_, contact) = r { return contact }
+    if case let .contactDeleted(user, contact) = r {
+        // ChatFort: a deleted contact (not just its messages) loses its Crowd mesh link and mesh chat.
+        if case .messages = chatDeleteMode {} else {
+            await MainActor.run {
+                CrowdMesh.shared.contactDeleted(MeshLinkBridge.binding(userId: user.userId, contact: contact))
+            }
+        }
+        return contact
+    }
     throw r.unexpected
 }
 
@@ -2169,6 +2179,8 @@ func getUserChatData() throws {
     tm.activeFilter = nil
     tm.userTags = tags
     tm.updateChatTags(m.chats)
+    // ChatFort: the active profile's contacts are loaded: Crowd mesh contact links.
+    DispatchQueue.main.async { MeshLinkBridge.refresh() }
 }
 
 private func getUserChatDataAsync(keepingChatId: String?) async throws {
@@ -2186,6 +2198,8 @@ private func getUserChatDataAsync(keepingChatId: String?) async throws {
             tm.activeFilter = nil
             tm.userTags = tags
             tm.updateChatTags(m.chats)
+            // ChatFort: this profile's contacts are loaded (also after a profile switch).
+            MeshLinkBridge.refresh()
         }
     } else {
         await MainActor.run {
@@ -2262,6 +2276,8 @@ func processReceivedMsg(_ res: ChatEvent) async {
                     m.dismissConnReqView(conn.id)
                     m.removeChat(conn.id)
                 }
+                // ChatFort: a new ready contact gets a Crowd mesh link offer.
+                MeshLinkBridge.refresh()
             }
         }
         if contact.directOrUsed {
@@ -2376,6 +2392,37 @@ func processReceivedMsg(_ res: ChatEvent) async {
         for chatItem in chatItems {
             let cInfo = chatItem.chatInfo
             let cItem = chatItem.chatItem
+            // ChatFort: hidden Crowd mesh link messages (offline contacts) are never shown, counted
+            // or notified. The active profile's are handled and deleted now; another profile's stay
+            // in its database until that profile is active (MeshLinkBridge sweeps them then).
+            if case let .rcvMsgContent(.chatfortMeshLink(_, link)) = cItem.content {
+                if case let .direct(contact) = cInfo, active(user) {
+                    await MainActor.run { MeshLinkBridge.received(link, item: cItem, contact: contact, userId: user.userId) }
+                }
+                continue
+            }
+            if cItem.content.msgContent?.isChatfortMeshLink == true { continue }
+            // Inqalaab: hidden group-call control signals ride as marker-tagged
+            // text messages. Never show them as bubbles or notify; route to the
+            // group-call coordinator (only acts when the feature is enabled).
+            if let groupCallControl = GroupCallControl.parse(cItem.content.text) {
+                await MainActor.run {
+                    if GroupCallCoordinator.isEnabled {
+                        GroupCallCoordinator.shared.handleControl(groupCallControl, groupInfo: cInfo.groupInfo, at: cItem.meta.itemTs)
+                    }
+                }
+                // Purge the control row from the database — suppressing only the
+                // live event left these as visible bubbles when chat history
+                // loaded (field-reported). Internal delete, no peer notification.
+                let delType = cInfo.chatType
+                let delId = cInfo.apiId
+                let delItemId = cItem.id
+                Task {
+                    do { _ = try await apiDeleteChatItems(type: delType, id: delId, scope: nil, itemIds: [delItemId], mode: .cidmInternal) }
+                    catch { logger.error("group-call control item delete error: \(responseError(error))") }
+                }
+                continue
+            }
             await MainActor.run {
                 if active(user) {
                     m.addChatItem(cInfo, cItem)
@@ -2399,7 +2446,8 @@ func processReceivedMsg(_ res: ChatEvent) async {
         for chatItem in chatItems {
             let cInfo = chatItem.chatInfo
             let cItem = chatItem.chatItem
-            if !cItem.isDeletedContent && active(user) {
+            // ChatFort: a status update for a hidden mesh link message must not add it back.
+            if !cItem.isDeletedContent && active(user) && cItem.content.msgContent?.isChatfortMeshLink != true {
                 _ = await MainActor.run { m.upsertChatItem(cInfo, cItem) }
             }
             if let endTask = m.messageDelivery[cItem.id] {
@@ -2650,11 +2698,15 @@ func processReceivedMsg(_ res: ChatEvent) async {
             await chatItemSimpleUpdate(user, aChatItem)
         }
     case let .callInvitation(invitation):
+        // Inqalaab: a group-call leg invitation must not ring as a 1:1 call —
+        // offer it to the coordinator first (no-op unless a group call is active).
+        if await GroupCallCoordinator.shared.claimInvitation(invitation) { break }
         await MainActor.run {
             m.callInvitations[invitation.contact.id] = invitation
         }
         activateCall(invitation)
     case let .callOffer(_, contact, callType, offer, sharedKey, _):
+        if await GroupCallCoordinator.shared.claimOffer(contact, offer: offer, sharedKey: sharedKey) { break }
         await withCall(contact) { call in
             await MainActor.run {
                 call.callState = .offerReceived
@@ -2673,6 +2725,7 @@ func processReceivedMsg(_ res: ChatEvent) async {
             ))
         }
     case let .callAnswer(_, contact, answer):
+        if await GroupCallCoordinator.shared.claimAnswer(contact, answer: answer) { break }
         await withCall(contact) { call in
             await MainActor.run {
                 call.callState = .answerReceived
@@ -2680,10 +2733,12 @@ func processReceivedMsg(_ res: ChatEvent) async {
             await m.callCommand.processCommand(.answer(answer: answer.rtcSession, iceCandidates: answer.rtcIceCandidates))
         }
     case let .callExtraInfo(_, contact, extraInfo):
+        if await GroupCallCoordinator.shared.claimExtraInfo(contact, extraInfo: extraInfo) { break }
         await withCall(contact) { _ in
             await m.callCommand.processCommand(.ice(iceCandidates: extraInfo.rtcIceCandidates))
         }
     case let .callEnded(_, contact):
+        if await GroupCallCoordinator.shared.claimCallEnded(contact) { break }
         if let invitation = await MainActor.run(body: { m.callInvitations.removeValue(forKey: contact.id) }) {
             CallController.shared.reportCallRemoteEnded(invitation: invitation)
         }
@@ -2817,6 +2872,8 @@ func chatItemSimpleUpdate(_ user: any UserLike, _ aChatItem: AChatItem) async {
     let m = ChatModel.shared
     let cInfo = aChatItem.chatInfo
     let cItem = aChatItem.chatItem
+    // ChatFort: hidden Crowd mesh link messages are never shown or notified.
+    if cItem.content.msgContent?.isChatfortMeshLink == true { return }
     if active(user) {
         if await MainActor.run(body: { m.upsertChatItem(cInfo, cItem) }) {
             if cItem.showNotification {
@@ -2867,12 +2924,17 @@ func refreshCallInvitations() async throws {
     let m = ChatModel.shared
     let callInvitations = try await apiGetCallInvitations()
     await MainActor.run {
-        m.callInvitations = callsByChat(callInvitations)
+        // Inqalaab: invitations restored from the backend on launch bypass
+        // processReceivedMsg, so group-call leg invitations must be claimed
+        // here too — otherwise they ring (and connect) as 1:1 calls after a
+        // cold-start group call. Claimed ones never reach the 1:1 ring.
+        let remaining = callInvitations.filter { !GroupCallCoordinator.shared.claimInvitation($0) }
+        m.callInvitations = callsByChat(remaining)
         if let (chatId, ntfAction) = m.ntfCallInvitationAction,
            let invitation = m.callInvitations.removeValue(forKey: chatId) {
             m.ntfCallInvitationAction = nil
             CallController.shared.callAction(invitation: invitation, action: ntfAction)
-        } else if let invitation = callInvitations.last(where: { $0.user.showNotifications }) {
+        } else if let invitation = remaining.last(where: { $0.user.showNotifications }) {
             activateCall(invitation)
         }
     }
@@ -2881,7 +2943,8 @@ func refreshCallInvitations() async throws {
 func justRefreshCallInvitations() async throws {
     let callInvitations = try apiGetCallInvitationsSync()
     await MainActor.run {
-        ChatModel.shared.callInvitations = callsByChat(callInvitations)
+        let remaining = callInvitations.filter { !GroupCallCoordinator.shared.claimInvitation($0) }
+        ChatModel.shared.callInvitations = callsByChat(remaining)
     }
 }
 

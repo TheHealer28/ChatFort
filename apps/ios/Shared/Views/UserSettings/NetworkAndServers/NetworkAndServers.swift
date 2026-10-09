@@ -28,6 +28,9 @@ struct NetworkAndServers: View {
     @EnvironmentObject var ss: SaveableSettings
     @State private var justOpened = true
     @State private var testing = false
+    @State private var showAddSMPServer = false
+    @State private var showAddXFTPServer = false
+    @State private var newServerURI = ""
 
     var body: some View {
         VStack {
@@ -64,6 +67,21 @@ struct NetworkAndServers: View {
                         testAllServers()
                     }
                     .disabled(testing)
+                }
+
+                Section(header: Text("Add your own servers").foregroundColor(theme.colors.secondary)) {
+                    Button {
+                        newServerURI = ""
+                        showAddSMPServer = true
+                    } label: {
+                        Label("Add message server", systemImage: "plus.circle")
+                    }
+                    Button {
+                        newServerURI = ""
+                        showAddXFTPServer = true
+                    } label: {
+                        Label("Add media server", systemImage: "plus.circle")
+                    }
                 }
 
                 Section {
@@ -104,6 +122,24 @@ struct NetworkAndServers: View {
             }
         }
         .allowsHitTesting(!testing)
+        .alert("Add message server", isPresented: $showAddSMPServer) {
+            TextField("smp://...", text: $newServerURI)
+                .autocapitalization(.none)
+                .disableAutocorrection(true)
+            Button("Add") { addCustomServer(uri: newServerURI, protocol: .smp) }
+            Button("Cancel", role: .cancel) {}
+        } message: {
+            Text("Paste your SMP server address")
+        }
+        .alert("Add media server", isPresented: $showAddXFTPServer) {
+            TextField("xftp://...", text: $newServerURI)
+                .autocapitalization(.none)
+                .disableAutocorrection(true)
+            Button("Add") { addCustomServer(uri: newServerURI, protocol: .xftp) }
+            Button("Cancel", role: .cancel) {}
+        } message: {
+            Text("Paste your XFTP server address")
+        }
         .task {
             if justOpened {
                 do {
@@ -111,7 +147,12 @@ struct NetworkAndServers: View {
                         justOpened = false
                         return
                     }
-                    let servers = try await getUserServers()
+                    let servers: [UserOperatorServers]
+                    if let managedServers = await InqalaabServers.shared.replaceManagedServersForSettings() {
+                        servers = managedServers
+                    } else {
+                        servers = try await getUserServers()
+                    }
                     await MainActor.run {
                         ss.servers.currUserServers = servers
                         ss.servers.userServers = servers
@@ -130,8 +171,7 @@ struct NetworkAndServers: View {
         }
     }
 
-    private func testAllServers() {
-        // Reset test status for all enabled servers
+    @MainActor private func resetServerTestStatus() {
         for groupIdx in 0..<ss.servers.userServers.count {
             for srvIdx in 0..<ss.servers.userServers[groupIdx].smpServers.count {
                 if ss.servers.userServers[groupIdx].smpServers[srvIdx].enabled {
@@ -144,9 +184,90 @@ struct NetworkAndServers: View {
                 }
             }
         }
+    }
 
+    private func addCustomServer(uri: String, protocol serverProtocol: ServerProtocol) {
+        let trimmed = uri.trimmingCharacters(in: .whitespacesAndNewlines)
+        let prefix = serverProtocol == .smp ? "smp://" : "xftp://"
+        guard !trimmed.isEmpty, trimmed.hasPrefix(prefix) else {
+            showAlert(
+                NSLocalizedString("Invalid server address", comment: "alert title"),
+                message: NSLocalizedString("Server address must start with \(prefix)", comment: "alert message")
+            )
+            return
+        }
+
+        guard !ss.servers.userServers.isEmpty else { return }
+        let groupIdx = 0
+        let newServer = UserServer(
+            serverId: nil,
+            server: trimmed,
+            preset: false,
+            tested: nil,
+            enabled: true,
+            deleted: false
+        )
+
+        if serverProtocol == .smp {
+            ss.servers.userServers[groupIdx].smpServers.append(newServer)
+        } else {
+            ss.servers.userServers[groupIdx].xftpServers.append(newServer)
+        }
+
+        Task {
+            do {
+                let validationErrors = try await validateServers(userServers: ss.servers.userServers)
+                if validationErrors.isEmpty {
+                    try await setUserServers(userServers: ss.servers.userServers)
+                    await MainActor.run {
+                        ss.servers.currUserServers = ss.servers.userServers
+                    }
+                } else {
+                    // Revert
+                    await MainActor.run {
+                        if serverProtocol == .smp {
+                            ss.servers.userServers[groupIdx].smpServers.removeLast()
+                        } else {
+                            ss.servers.userServers[groupIdx].xftpServers.removeLast()
+                        }
+                    }
+                    showAlert(
+                        NSLocalizedString("Invalid server", comment: "alert title"),
+                        message: NSLocalizedString("Server validation failed. Please check the address.", comment: "alert message")
+                    )
+                }
+            } catch {
+                await MainActor.run {
+                    if serverProtocol == .smp {
+                        ss.servers.userServers[groupIdx].smpServers.removeLast()
+                    } else {
+                        ss.servers.userServers[groupIdx].xftpServers.removeLast()
+                    }
+                }
+                showAlert(
+                    NSLocalizedString("Error", comment: "alert title"),
+                    message: responseError(error)
+                )
+            }
+        }
+    }
+
+    private func testAllServers() {
         testing = true
         Task {
+            if let servers = await InqalaabServers.shared.replaceManagedServersForSettings() {
+                await MainActor.run {
+                    ss.servers.currUserServers = servers
+                    ss.servers.userServers = servers
+                    ss.servers.serverErrors = []
+                    resetServerTestStatus()
+                }
+            } else {
+                await MainActor.run {
+                    resetServerTestStatus()
+                }
+            }
+
             var failures: [String: ProtocolTestFailure] = [:]
 
             for groupIdx in 0..<ss.servers.userServers.count {

@@ -103,4 +103,15 @@ class CallSoundsPlayer {
             UIImpactFeedbackGenerator(style: .heavy).impactOccurred()
         }
     }
+
+    /// Play a disconnect tone + vibration to alert user that call has ended.
+    /// Audible even when phone is on speaker or earpiece.
+    func playCallDisconnect() {
+        // System "call ended" tone (three short beeps)
+        AudioServicesPlayAlertSound(SystemSoundID(1112))
+        // Also vibrate for when phone is on silent
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+            AudioServicesPlayAlertSound(kSystemSoundID_Vibrate)
+        }
+    }
 }

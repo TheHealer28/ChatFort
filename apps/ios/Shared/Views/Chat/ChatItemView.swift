@@ -71,7 +71,10 @@ struct ChatItemView: View {
 
     var body: some View {
         let ci = chatItem
-        if chatItem.meta.itemDeleted != nil && (!revealed || chatItem.isDeletedContent) {
+        if ci.content.msgContent?.isChatfortMeshLink == true {
+            // ChatFort: a hidden Crowd mesh link message not handled yet (MeshLinkBridge deletes it).
+            EmptyView()
+        } else if chatItem.meta.itemDeleted != nil && (!revealed || chatItem.isDeletedContent) {
             MarkedDeletedItemView(chat: chat, im: im, chatItem: chatItem)
         } else if ci.quotedItem == nil && ci.meta.itemForwarded == nil && ci.meta.itemDeleted == nil && !ci.meta.isLive {
             if let mc = ci.content.msgContent, mc.isText && isShortEmoji(ci.content.text) {

@@ -8,7 +8,6 @@
 
 import Foundation
 import CallKit
-import StoreKit
 import PushKit
 import AVFoundation
 import InqalaabChat
@@ -16,7 +15,10 @@ import WebRTC
 
 class CallController: NSObject, CXProviderDelegate, PKPushRegistryDelegate, ObservableObject {
     static let shared = CallController()
-    static let isInChina = SKStorefront().countryCode == "CHN"
+    static let isInChina: Bool = {
+        // Check device locale/region — safe, no StoreKit dependency
+        Locale.current.regionCode == "CN"
+    }()
     static func useCallKit() -> Bool { !isInChina && callKitEnabledGroupDefault.get() }
 
     // Lazy: never created in China where CallKit is prohibited
@@ -56,6 +58,12 @@ class CallController: NSObject, CXProviderDelegate, PKPushRegistryDelegate, Obse
 
     func provider(_ provider: CXProvider, perform action: CXStartCallAction) {
         logger.debug("CallController.provider CXStartCallAction")
+        // Inqalaab: a group call is one CXCall; legs are managed by the coordinator.
+        if GroupCallKitRegistry.contains(action.callUUID) {
+            action.fulfill()
+            provider.reportOutgoingCall(with: action.callUUID, startedConnectingAt: nil)
+            return
+        }
         if callManager.startOutgoingCall(callUUID: action.callUUID.uuidString.lowercased()) {
             action.fulfill()
             provider.reportOutgoingCall(with: action.callUUID, startedConnectingAt: nil)
@@ -66,6 +74,15 @@ class CallController: NSObject, CXProviderDelegate, PKPushRegistryDelegate, Obse
 
     func provider(_ provider: CXProvider, perform action: CXAnswerCallAction) {
         logger.debug("CallController.provider CXAnswerCallAction")
+        // Inqalaab: answering an incoming group call (rings via the chat
+        // connection, so chat is already running — no wait needed).
+        if GroupCallKitRegistry.contains(action.callUUID) {
+            Task { @MainActor in
+                GroupCallCoordinator.shared.acceptPendingCall()
+                action.fulfill()
+            }
+            return
+        }
         Task {
             let chatIsReady = await waitUntilChatStarted(timeoutMs: 30_000, stepMs: 500)
             logger.debug("CallController chat started \(chatIsReady) \(ChatModel.shared.chatInitialized) \(ChatModel.shared.chatRunning == true) \(String(describing: AppChatState.shared.value))")
@@ -95,6 +112,14 @@ class CallController: NSObject, CXProviderDelegate, PKPushRegistryDelegate, Obse
 
     func provider(_ provider: CXProvider, perform action: CXEndCallAction) {
         logger.debug("CallController.provider CXEndCallAction")
+        // Inqalaab: ending/declining a group call routes to the coordinator.
+        if GroupCallKitRegistry.contains(action.callUUID) {
+            Task { @MainActor in
+                _ = GroupCallCoordinator.shared.handleCallKitEnd(uuid: action.callUUID)
+                action.fulfill()
+            }
+            return
+        }
         // Should be nil here if connection was in connected state
         fulfillOnConnect?.fail()
         fulfillOnConnect = nil
@@ -109,6 +134,14 @@ class CallController: NSObject, CXProviderDelegate, PKPushRegistryDelegate, Obse
     }
 
     func provider(_ provider: CXProvider, perform action: CXSetMutedCallAction) {
+        // Inqalaab: group-call mute toggles all legs via the coordinator.
+        if GroupCallKitRegistry.contains(action.callUUID) {
+            Task { @MainActor in
+                GroupCallCoordinator.shared.setMicEnabled(!action.isMuted)
+                action.fulfill()
+            }
+            return
+        }
         if callManager.enableMedia(source: .mic, enable: !action.isMuted, callUUID:  action.callUUID.uuidString.lowercased()) {
             action.fulfill()
         } else {
@@ -427,6 +460,56 @@ class CallController: NSObject, CXProviderDelegate, PKPushRegistryDelegate, Obse
         case .accept: answerCall(invitation: invitation)
         case .reject: endCall(invitation: invitation)
         }
+    }
+
+    // MARK: - Group calls (one CXCall per group call; legs live in GroupCallCoordinator)
+
+    /// Register an outgoing group call with CallKit as a single call.
+    func startGroupCallKit(uuid: UUID, groupId: Int64, groupName: String) {
+        guard CallController.useCallKit() else { return }
+        let handle = CXHandle(type: .generic, value: "group:\(groupId)")
+        let action = CXStartCallAction(call: uuid, handle: handle)
+        action.isVideo = false
+        requestTransaction(with: action) {
+            let update = CXCallUpdate()
+            update.remoteHandle = handle
+            update.hasVideo = false
+            update.localizedCallerName = groupName
+            self.provider?.reportCall(with: uuid, updated: update)
+        }
+    }
+
+    /// Ring an incoming group call through CallKit (system ring UI).
+    func reportNewIncomingGroupCall(uuid: UUID, groupName: String, callerName: String, completion: @escaping (Error?) -> Void) {
+        guard CallController.useCallKit() else { completion(nil); return }
+        let update = CXCallUpdate()
+        update.remoteHandle = CXHandle(type: .generic, value: "group")
+        update.hasVideo = false
+        update.localizedCallerName = String.localizedStringWithFormat(
+            NSLocalizedString("%@ (group call from %@)", comment: "callkit group call caption"),
+            groupName, callerName
+        )
+        provider?.reportNewIncomingCall(with: uuid, update: update, completion: completion)
+    }
+
+    func reportGroupCallConnected(uuid: UUID) {
+        guard CallController.useCallKit() else { return }
+        provider?.reportOutgoingCall(with: uuid, connectedAt: Date())
+    }
+
+    func reportGroupCallEnded(uuid: UUID, reason: CXCallEndedReason) {
+        guard CallController.useCallKit() else { return }
+        provider?.reportCall(with: uuid, endedAt: nil, reason: reason)
+    }
+
+    /// End the group call through CallKit; the CXEndCallAction handler routes
+    /// back to the coordinator for the actual teardown.
+    func requestEndGroupCallKit(uuid: UUID) {
+        guard CallController.useCallKit() else {
+            Task { @MainActor in _ = GroupCallCoordinator.shared.handleCallKitEnd(uuid: uuid) }
+            return
+        }
+        requestTransaction(with: CXEndCallAction(call: uuid))
     }
 
     func showInRecents(_ show: Bool) {

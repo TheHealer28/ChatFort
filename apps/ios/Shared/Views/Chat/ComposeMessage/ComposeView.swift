@@ -393,7 +393,7 @@ struct ComposeView: View {
             let voiceProhibited = composeState.voicePreview && !chat.chatInfo.featureEnabled(.voice)
             let disableSendButton = inqalaabLinkProhibited || fileProhibited || voiceProhibited
             if inqalaabLinkProhibited {
-                msgNotAllowedView("Inqalaab links not allowed", icon: "link")
+                msgNotAllowedView("ChatFort links not allowed", icon: "link")
                 Divider()
             } else if fileProhibited {
                 msgNotAllowedView("Files and media not allowed", icon: "doc")
@@ -1238,6 +1238,9 @@ struct ComposeView: View {
             // TODO [short links] update chat link
             case let .chat(_, chatLink):
                 return .chat(text: msgText, chatLink: chatLink)
+            case .chatfortMeshLink:
+                // Hidden link messages are never shown, so never edited.
+                return msgContent
             case .unknown(let type, _):
                 return .unknown(type: type, text: msgText)
             }

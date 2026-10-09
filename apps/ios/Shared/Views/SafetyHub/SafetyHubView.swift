@@ -258,7 +258,7 @@ struct SafetyHubView: View {
                     // App Lock — NavigationLink to full InqalaabLockView
                     NavigationLink {
                         InqalaabLockView(prefPerformLA: $appLockEnabled, currentLAMode: $currentLAMode)
-                            .navigationTitle("Inqalaab Lock")
+                            .navigationTitle("ChatFort Lock")
                             .modifier(ThemedBackground(grouped: true))
                     } label: {
                         SecurityCheckRow(

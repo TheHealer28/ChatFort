@@ -48,6 +48,30 @@ class NtfManager: NSObject, UNUserNotificationCenterDelegate, ObservableObject {
         handler()
     }
 
+    // Inqalaab: durable, ready-gated consumption of a pending notification tap.
+    // The pending response (stored when the tap arrives before the app is active) was
+    // previously consumed in exactly one place — the SimpleXApp scenePhase .active completion,
+    // gated on chatRunning == true at that instant. On a cold launch that completion can run
+    // before the chat engine is up, dropping the tap with no retry → app opens but no chat.
+    // This helper is safe to call from multiple readiness signals (scenePhase, chatRunning /
+    // currentUser onChange, mainView onAppear); the capture-then-nil keeps it strictly once-only
+    // and prevents a double changeActiveUser. Must be called on the main thread.
+    func processPendingNtfResponseIfReady() {
+        let m = ChatModel.shared
+        guard let pending = m.notificationResponse else { return }
+        let ready: Bool = { if case .onboardingComplete = m.onboardingStage { return m.currentUser != nil && m.chatRunning == true }; return false }()
+        guard ready else {
+            // Diagnostic: a tap is pending but the app isn't ready yet — it will be retried.
+            logger.debug("NtfManager: pending ntf deferred (onboardingComplete=\(m.onboardingStage == .onboardingComplete), currentUser=\(m.currentUser != nil), chatRunning=\(m.chatRunning == true))")
+            return
+        }
+        let ntfResponse = pending
+        m.notificationResponse = nil
+        let targetId = ntfResponse.notification.request.content.targetContentIdentifier ?? "nil"
+        logger.debug("NtfManager: processing pending notification response, target=\(targetId)")
+        processNotificationResponse(ntfResponse)
+    }
+
     func processNotificationResponse(_ ntfResponse: UNNotificationResponse) {
         let chatModel = ChatModel.shared
         let content = ntfResponse.notification.request.content
@@ -71,6 +95,13 @@ class NtfManager: NSObject, UNUserNotificationCenterDelegate, ObservableObject {
             } else {
                 chatModel.ntfCallInvitationAction = (chatId, ntfAction)
             }
+        } else if content.categoryIdentifier == ntfCategoryContactRequest {
+            // Default tap on a contact-request notification: targetContentIdentifier
+            // is nil (the request UI lives inline in the chat list, not as a pushed
+            // chat). Just bring the user to the Chats tab so they can see the entry
+            // and accept/reject. Do not set chatModel.chatId — pushing ChatView
+            // for a .contactRequest chatInfo would render an empty/broken screen.
+            NotificationCenter.default.post(name: .inqalaabOpenChatsTab, object: nil)
         } else {
             if let chatId = content.targetContentIdentifier {
                 self.navigatingToChat = true
@@ -196,7 +227,7 @@ class NtfManager: NSObject, UNUserNotificationCenterDelegate, ObservableObject {
                 identifier: ntfCategoryConnectionEvent,
                 actions: [],
                 intentIdentifiers: [],
-                hiddenPreviewsBodyPlaceholder: NSLocalizedString("Inqalaab encrypted message or connection event", comment: "notification")
+                hiddenPreviewsBodyPlaceholder: NSLocalizedString("ChatFort encrypted message or connection event", comment: "notification")
             ),
             UNNotificationCategory(
                 identifier: ntfCategoryManyEvents,
@@ -207,25 +238,32 @@ class NtfManager: NSObject, UNUserNotificationCenterDelegate, ObservableObject {
         ])
     }
 
-    func requestAuthorization(onDeny denied: (()-> Void)? = nil, onAuthorized authorized: (()-> Void)? = nil) {
+    func requestAuthorization(onDeny denied: (() -> Void)? = nil, onAuthorized authorized: (() -> Void)? = nil) {
         logger.debug("NtfManager.requestAuthorization")
         let center = UNUserNotificationCenter.current()
         center.getNotificationSettings { settings in
             switch settings.authorizationStatus {
             case .denied:
-                denied?()
+                Task { @MainActor in denied?() }
             case .authorized:
-                self.granted = true
-                authorized?()
+                Task { @MainActor in
+                    self.granted = true
+                    authorized?()
+                }
             default:
                 var opts: UNAuthorizationOptions = [.alert, .sound, .badge]
                 if #available(iOS 15.0, *) { opts.insert(.timeSensitive) }
                 center.requestAuthorization(options: opts) { granted, error in
                     if let error = error {
                         logger.error("NtfManager.requestAuthorization error \(error.localizedDescription)")
-                    } else {
+                    }
+                    Task { @MainActor in
                         self.granted = granted
-                        authorized?()
+                        if granted {
+                            authorized?()
+                        } else {
+                            denied?()
+                        }
                     }
                 }
             }

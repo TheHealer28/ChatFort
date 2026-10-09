@@ -163,7 +163,7 @@ struct PanicModeView: View {
                         HStack(spacing: 8) {
                             Image(systemName: "info.circle")
                                 .foregroundColor(.secondary)
-                            Text("If you don't open Inqalaab within \(deadmanHours) hours, all data will be wiped on next launch.")
+                            Text("If you don't open ChatFort within \(deadmanHours) hours, all data will be wiped on next launch.")
                                 .font(.caption)
                                 .foregroundColor(.secondary)
                         }

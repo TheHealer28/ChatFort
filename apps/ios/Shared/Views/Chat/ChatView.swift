@@ -13,6 +13,26 @@ import Combine
 
 private let memberImageSize: CGFloat = 34
 
+// Inqalaab: Xcode 27 made `@State` a macro, so `@State @ObservedObject var chat`
+// no longer compiles (both synthesize `_chat`). This keeps the exact same storage,
+// a State holding an ObservedObject, and still lets the view reassign `chat`.
+@propertyWrapper
+struct StateObservedObject<T: ObservableObject>: DynamicProperty {
+    private var storage: State<ObservedObject<T>>
+
+    init(wrappedValue: T) {
+        storage = State(wrappedValue: ObservedObject(wrappedValue: wrappedValue))
+    }
+
+    var wrappedValue: T {
+        get { storage.wrappedValue.wrappedValue }
+        nonmutating set { storage.wrappedValue = ObservedObject(wrappedValue: newValue) }
+    }
+
+    // Same `$chat` as before: subviews take `@Binding @ObservedObject var chat`.
+    var projectedValue: Binding<ObservedObject<T>> { storage.projectedValue }
+}
+
 struct ChatView: View {
     @EnvironmentObject var chatModel: ChatModel
     @StateObject private var connectProgressManager = ConnectProgressManager.shared
@@ -22,7 +42,7 @@ struct ChatView: View {
     @Environment(\.colorScheme) var colorScheme
     @Environment(\.presentationMode) var presentationMode
     @Environment(\.scenePhase) var scenePhase
-    @State @ObservedObject var chat: Chat
+    @StateObservedObject var chat: Chat
     @ObservedObject var im: ItemsModel
     @State var mergedItems: BoxedValue<MergedItems>
     @State var floatingButtonModel: FloatingButtonModel
@@ -954,7 +974,7 @@ struct ChatView: View {
                         contact.profile.contactLink
                     }
                     if let connLink {
-                        return ("Inqalaab address", connLink)
+                        return ("ChatFort address", connLink)
                     }
                 }
             case let .group(groupInfo, _):

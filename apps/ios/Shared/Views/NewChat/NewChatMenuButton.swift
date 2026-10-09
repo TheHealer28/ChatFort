@@ -49,7 +49,7 @@ struct NewChatSheet: View {
     @State private var isLargeSheet = false
     @State private var allowSmallSheet = true
 
-    @AppStorage(GROUP_DEFAULT_ONE_HAND_UI, store: groupDefaults) private var oneHandUI = true
+    @AppStorage(GROUP_DEFAULT_ONE_HAND_UI, store: groupDefaults) private var oneHandUI = false
 
     var body: some View {
         let showArchive = chatModel.chats.contains { $0.chatInfo.contact?.chatDeleted == true }
@@ -99,7 +99,7 @@ struct NewChatSheet: View {
             if searchText.isEmpty, let userAddress = chatModel.userAddress {
                 Section {
                     VStack(spacing: 8) {
-                        Text("Your Inqalaab Address")
+                        Text("Your ChatFort Address")
                             .font(.subheadline.weight(.medium))
                         InqalaabCreatedLinkQRCode(link: userAddress.connLinkContact, short: .constant(false), withLogo: false)
                             .frame(maxWidth: 180, maxHeight: 180)
@@ -351,7 +351,7 @@ struct ContactsListSearchBar: View {
                     .resizable()
                     .scaledToFit()
                     .frame(width: 16, height: 16)
-                TextField("Search or paste Inqalaab link", text: $searchText)
+                TextField("Search or paste ChatFort link", text: $searchText)
                     .foregroundColor(searchShowingInqalaabLink ? theme.colors.secondary : theme.colors.onBackground)
                     .disabled(searchShowingInqalaabLink)
                     .focused($searchFocussed)

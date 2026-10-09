@@ -82,6 +82,27 @@ public func createMessageReceivedNtf(_ user: any UserLike, _ cInfo: ChatInfo, _ 
 /// Unique notification identifier for call invitations (avoids reusing the shared appNotificationId)
 public let callInvitationNtfId = "com.inqalaab.app.call-invitation"
 
+/// Incoming GROUP call detected by the NSE while the app is not running.
+/// Rings like a call notification; opening the app rings the group call
+/// properly via the persisted cold-start record (savePendingGroupCallStart).
+public func createGroupCallStartNtf(groupName: String, callerName: String, chatId: String, badgeCount: Int) -> UNMutableNotificationContent {
+    let hideContent = ntfPreviewModeGroupDefault.get() == .hidden
+    let content = createNotification(
+        categoryIdentifier: ntfCategoryMessageReceived,
+        title: hideContent ? contactHidden : groupName,
+        body: hideContent
+            ? NSLocalizedString("Incoming group call — open ChatFort to join", comment: "notification")
+            : String.localizedStringWithFormat(NSLocalizedString("Incoming group call from %@ — open ChatFort to join", comment: "notification"), callerName),
+        targetContentIdentifier: chatId,
+        badgeCount: badgeCount
+    )
+    content.sound = UNNotificationSound(named: UNNotificationSoundName("sounds/ringtone.caf"))
+    if #available(iOS 15.0, *) {
+        content.interruptionLevel = .timeSensitive
+    }
+    return content
+}
+
 public func createCallInvitationNtf(_ invitation: RcvCallInvitation, _ badgeCount: Int) -> UNMutableNotificationContent {
     let text = invitation.callType.media == .video
                 ? NSLocalizedString("Incoming video call", comment: "notification")

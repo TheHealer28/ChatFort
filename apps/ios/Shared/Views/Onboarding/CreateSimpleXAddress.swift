@@ -23,7 +23,7 @@ struct CreateInqalaabAddress: View {
             ScrollView {
                 ZStack {
                     VStack(alignment: .leading) {
-                        Text("Inqalaab Address")
+                        Text("ChatFort Address")
                             .font(.largeTitle)
                             .bold()
                             .frame(maxWidth: .infinity)
@@ -94,9 +94,9 @@ struct CreateInqalaabAddress: View {
                     }
                 }
             } label: {
-                Text("Create Inqalaab address").font(.title)
+                Text("Create ChatFort address").font(.title)
             }
-            Text("You can make it visible to your Inqalaab contacts via Settings.")
+            Text("You can make it visible to your ChatFort contacts via Settings.")
                 .multilineTextAlignment(.center)
                 .font(.footnote)
                 .padding(.horizontal, 32)
@@ -124,7 +124,7 @@ struct CreateInqalaabAddress: View {
         Button {
             userAddress.shareAddress(short: false)
         } label: {
-            Label("Share your Inqalaab address", systemImage: "square.and.arrow.up")
+            Label("Share your ChatFort address", systemImage: "square.and.arrow.up")
         }
     }
 
@@ -189,12 +189,12 @@ struct SendAddressMailView: View {
     var body: some View {
         let messageBody = String(format: NSLocalizedString("""
             <p>Hi!</p>
-            <p><a href="%@">Connect to me via Inqalaab</a></p>
+            <p><a href="%@">Connect to me via ChatFort</a></p>
             """, comment: "email text"), inqalaabChatLink(userAddress.connLinkContact.inqalaabChatUri(short: false)))
         MailView(
             isShowing: self.$showMailView,
             result: $mailViewResult,
-            subject: NSLocalizedString("Let's talk in Inqalaab", comment: "email subject"),
+            subject: NSLocalizedString("Let's talk in ChatFort", comment: "email subject"),
             messageBody: messageBody
         )
     }
