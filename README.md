@@ -68,8 +68,8 @@ The iOS app is on the [App Store](https://apps.apple.com/app/id6759920785).
 ### Steps
 
 ```bash
-git clone https://github.com/TheHealer28/Inqalaab.git
-cd Inqalaab
+git clone https://github.com/TheHealer28/ChatFort.git
+cd ChatFort
 
 # 1. Build the core library for iOS devices (Haskell, via Nix)
 nix build ".#packages.aarch64-darwin.\"aarch64-darwin-ios:lib:inqalaab\""
@@ -86,12 +86,12 @@ Capabilities, and build.
 
 **Server configuration isn't included.** To protect users, this repository doesn't publish ChatFort's server addresses. `apps/ios/Shared/InqalaabServers.swift` is left out, and server addresses and keys elsewhere are replaced with placeholders (`example.org`, `example.net`). To build a working app, add that file with your own servers and replace the placeholders.
 
-Some internal names (the repository, the Xcode project and schemes, the bundle ID and the core
+Some internal names (the Xcode project and schemes, the bundle ID and the core
 library) still use the project's earlier name. They have to match the build files, so they weren't
 renamed.
 
 ### Android
-The Android app is on the [`android-updates`](https://github.com/TheHealer28/Inqalaab/tree/android-updates)
+The Android app is on the [`android-updates`](https://github.com/TheHealer28/ChatFort/tree/android-updates)
 branch, under `apps/multiplatform`.
 
 ---
