@@ -1336,6 +1336,14 @@ func apiCreateUserAddress() async throws -> CreatedConnLink? {
     if let r { throw r.unexpected } else { return nil }
 }
 
+/// For background upkeep: shows no alert on a network error (the caller tries again later).
+func apiCreateUserAddressQuietly() async throws -> CreatedConnLink {
+    let userId = try currentUserId("apiCreateUserAddressQuietly")
+    let r: APIResult<ChatResponse1> = await chatApiSendCmd(.apiCreateMyAddress(userId: userId))
+    if case let .result(.userContactLinkCreated(_, connLink)) = r { return connLink }
+    throw r.unexpected
+}
+
 func apiDeleteUserAddress() async throws -> User? {
     let userId = try currentUserId("apiDeleteUserAddress")
     let r: APIResult<ChatResponse1>? = await chatApiSendCmdWithRetry(.apiDeleteMyAddress(userId: userId))
