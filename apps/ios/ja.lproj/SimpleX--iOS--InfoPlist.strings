@@ -1,0 +1,15 @@
+/* Bundle name */
+"CFBundleName" = "Inqalaab";
+
+/* Privacy - Camera Usage Description */
+"NSCameraUsageDescription" = "Inqalaabは他のユーザーに接続したりビデオ通話する際にQRコード読み取りのためにカメラにアクセスする必要があります。";
+
+/* Privacy - Face ID Usage Description */
+"NSFaceIDUsageDescription" = "Inqalaabはローカル認証にFace IDを使用します";
+
+/* Privacy - Microphone Usage Description */
+"NSMicrophoneUsageDescription" = "Inqalaabは音声通話やビデオ通話および音声メッセージの録音のためにマイクにアクセスする必要があります。";
+
+/* Privacy - Photo Library Additions Usage Description */
+"NSPhotoLibraryAddUsageDescription" = "Inqalaabはキャプチャおよび受信したメディアを保存するためにフォトライブラリにアクセスする必要があります";
+

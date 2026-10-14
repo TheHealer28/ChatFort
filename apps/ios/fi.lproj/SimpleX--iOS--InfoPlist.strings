@@ -1,0 +1,15 @@
+/* Bundle name */
+"CFBundleName" = "Inqalaab";
+
+/* Privacy - Camera Usage Description */
+"NSCameraUsageDescription" = "Inqalaab tarvitsee pääsyn kameraan, jotta se voi skannata QR-koodeja muodostaakseen yhteyden muihin käyttäjiin ja videopuheluita varten.";
+
+/* Privacy - Face ID Usage Description */
+"NSFaceIDUsageDescription" = "Inqalaab käyttää Face ID:tä paikalliseen todennukseen";
+
+/* Privacy - Microphone Usage Description */
+"NSMicrophoneUsageDescription" = "Inqalaab tarvitsee mikrofonia ääni- ja videopuheluita ja ääniviestien tallentamista varten.";
+
+/* Privacy - Photo Library Additions Usage Description */
+"NSPhotoLibraryAddUsageDescription" = "Inqalaab tarvitsee pääsyn valokuvakirjastoon kuvattujen ja vastaanotettujen medioiden tallentamista varten";
+

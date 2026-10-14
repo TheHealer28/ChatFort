@@ -1,0 +1,4 @@
+{
+  "template": "Commits:\n${{UNCATEGORIZED}}",
+  "pr_template": "- ${{TITLE}}"
+}

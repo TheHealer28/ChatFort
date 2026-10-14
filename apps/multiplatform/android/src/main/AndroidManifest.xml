@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="chat.simplex.app">
+
+  <uses-feature android:name="android.hardware.camera" android:required="false" />
+
+  <uses-permission android:name="android.permission.CAMERA" />
+  <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+  <uses-permission android:name="android.permission.RECORD_AUDIO" />
+  <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+  <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+  <uses-permission android:name="android.permission.WAKE_LOCK" />
+  <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+  <uses-permission android:name="android.permission.VIBRATE" />
+  <uses-permission android:name="android.permission.INTERNET" />
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+      android:maxSdkVersion="29"
+      tools:ignore="ScopedStorage" />
+  <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
+  <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" />
+
+  <!-- Nearby Chat: Bluetooth LE discovery -->
+  <uses-permission android:name="android.permission.BLUETOOTH" android:maxSdkVersion="30" />
+  <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" android:maxSdkVersion="30" />
+  <!-- Scan results are never used for location, so Android 12+ needs neither Location permission
+       nor the Location toggle for Bluetooth (the crowd mesh must work with Location off). -->
+  <uses-permission android:name="android.permission.BLUETOOTH_SCAN"
+      android:usesPermissionFlags="neverForLocation"
+      tools:targetApi="s" />
+  <uses-permission android:name="android.permission.BLUETOOTH_ADVERTISE" />
+  <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+
+  <!-- Nearby Chat: Wi-Fi Direct messaging -->
+  <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+  <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+  <uses-permission android:name="android.permission.NEARBY_WIFI_DEVICES" />
+
+  <!-- Nearby Chat: Location (required for Wi-Fi Direct peer discovery) -->
+  <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+  <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+  <!-- Nearby Chat: optional hardware features -->
+  <uses-feature android:name="android.hardware.bluetooth_le" android:required="false" />
+  <uses-feature android:name="android.hardware.wifi.direct" android:required="false" />
+
+  <!-- Requirements that allows to specify foreground service types -->
+  <uses-permission android:name="android.permission.FOREGROUND_SERVICE_REMOTE_MESSAGING" />
+  <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MICROPHONE" />
+  <uses-permission android:name="android.permission.FOREGROUND_SERVICE_CAMERA" />
+  <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK" />
+
+  <!-- Allows to query app name and icon that can open specific file type -->
+  <queries>
+    <intent>
+      <action android:name="android.intent.action.VIEW" />
+      <data android:mimeType="*/*" />
+    </intent>
+  </queries>
+
+  <application
+      android:name="chat.simplex.app.SimplexApp"
+      android:allowBackup="false"
+      android:fullBackupOnly="false"
+      android:icon="@mipmap/icon"
+      android:label="${app_name}"
+      android:largeHeap="true"
+      android:extractNativeLibs="${extract_native_libs}"
+      android:supportsRtl="true"
+      android:theme="@style/Theme.ChatFort">
+    <!--      android:localeConfig="@xml/locales_config"-->
+
+    <!-- Main activity -->
+    <activity
+        android:name="chat.simplex.app.MainActivity"
+        android:launchMode="singleTask"
+        android:exported="true"
+        android:label="${app_name}"
+        android:windowSoftInputMode="adjustResize"
+        android:configChanges="uiMode"
+        android:theme="@style/Theme.ChatFort">
+      <intent-filter>
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+
+      <!-- open simplex:/ connection URI -->
+      <intent-filter>
+        <action android:name="android.intent.action.VIEW" />
+
+        <category android:name="android.intent.category.DEFAULT" />
+        <category android:name="android.intent.category.BROWSABLE" />
+
+        <data android:scheme="simplex" />
+      </intent-filter>
+      <!-- Verified App Links for inqalaab.chat -->
+      <intent-filter android:autoVerify="true">
+        <action android:name="android.intent.action.VIEW" />
+
+        <category android:name="android.intent.category.DEFAULT" />
+        <category android:name="android.intent.category.BROWSABLE" />
+
+        <data android:scheme="https" />
+        <data android:host="inqalaab.chat" />
+        <data android:pathPrefix="/invitation" />
+        <data android:pathPrefix="/contact" />
+        <data android:pathPrefix="/a" />
+        <data android:pathPrefix="/c" />
+        <data android:pathPrefix="/g" />
+        <data android:pathPrefix="/i" />
+      </intent-filter>
+      <!-- Receive files from other apps -->
+      <intent-filter>
+        <action android:name="android.intent.action.SEND" />
+        <category android:name="android.intent.category.DEFAULT" />
+        <data android:mimeType="*/*" />
+      </intent-filter>
+      <intent-filter>
+        <action android:name="android.intent.action.SEND_MULTIPLE" />
+        <category android:name="android.intent.category.DEFAULT" />
+        <data android:mimeType="image/*" />
+      </intent-filter>
+    </activity>
+
+    <activity-alias
+        android:name="chat.simplex.app.MainActivity_default"
+        android:exported="true"
+        android:icon="@mipmap/icon"
+        android:enabled="true"
+        android:targetActivity="chat.simplex.app.MainActivity">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+    </activity-alias>
+
+    <activity-alias
+        android:name="chat.simplex.app.MainActivity_dark_blue"
+        android:exported="true"
+        android:icon="@mipmap/icon_dark_blue"
+        android:enabled="false"
+        android:targetActivity="chat.simplex.app.MainActivity">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+    </activity-alias>
+
+    <activity android:name="chat.simplex.app.views.call.CallActivity"
+        android:showOnLockScreen="true"
+        android:exported="false"
+        android:launchMode="singleInstance"
+        android:supportsPictureInPicture="true"
+        android:autoRemoveFromRecents="true"
+        android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation"/>
+
+    <provider
+        android:name="androidx.core.content.FileProvider"
+        android:authorities="${provider_authorities}"
+        android:exported="false"
+        android:grantUriPermissions="true">
+      <meta-data
+          android:name="android.support.FILE_PROVIDER_PATHS"
+          android:resource="@xml/file_paths" />
+    </provider>
+
+    <!-- NtfManager action processing (buttons in notifications) -->
+    <receiver
+        android:name="chat.simplex.app.model.NtfManager$NtfActionReceiver"
+        android:enabled="true"
+        android:exported="false" />
+
+    <!-- SimplexService foreground service -->
+    <service
+        android:name="chat.simplex.app.SimplexService"
+        android:enabled="true"
+        android:exported="false"
+        android:stopWithTask="false"
+        android:foregroundServiceType="remoteMessaging"
+    />
+
+    <!-- SimplexService restart on reboot -->
+
+    <service
+        android:name="chat.simplex.app.CallService"
+        android:enabled="true"
+        android:exported="false"
+        android:stopWithTask="false"
+        android:foregroundServiceType="mediaPlayback|microphone|camera|remoteMessaging"
+    />
+
+    <receiver
+        android:name="chat.simplex.app.CallService$CallActionReceiver"
+        android:enabled="true"
+        android:exported="false" />
+
+    <receiver
+        android:name="chat.simplex.app.SimplexService$StartReceiver"
+        android:enabled="true"
+        android:exported="true">
+      <intent-filter>
+        <action android:name="android.intent.action.BOOT_COMPLETED" />
+      </intent-filter>
+    </receiver>
+
+    <!-- SimplexService restart on destruction -->
+    <receiver
+        android:name="chat.simplex.app.SimplexService$AutoRestartReceiver"
+        android:enabled="true"
+        android:exported="false" />
+
+    <!-- SimplexService restart on app update -->
+    <receiver
+        android:name="chat.simplex.app.SimplexService$AppUpdateReceiver"
+        android:enabled="true"
+        android:exported="false">
+      <intent-filter>
+        <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
+      </intent-filter>
+    </receiver>
+
+    <!-- Emergency Wipe Quick Settings Tile -->
+    <service
+        android:name="chat.simplex.app.EmergencyWipeTileService"
+        android:label="Reset App"
+        android:icon="@drawable/ntf_icon"
+        android:exported="true"
+        android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+      <intent-filter>
+        <action android:name="android.service.quicksettings.action.QS_TILE" />
+      </intent-filter>
+    </service>
+
+    <!-- Emergency Wipe Confirmation Activity -->
+    <activity
+        android:name="chat.simplex.app.EmergencyWipeConfirmActivity"
+        android:exported="false"
+        android:theme="@android:style/Theme.Translucent.NoTitleBar"
+        android:excludeFromRecents="true" />
+
+  </application>
+</manifest>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="crowd_mesh_title">ChatFort کراؤڈ میش</string>
+  <plurals name="crowd_mesh_service_text">
+    <item quantity="one">پیغامات آگے بھیجے جا رہے ہیں · قریب کے %1$d فون سے جڑا ہوا</item>
+    <item quantity="other">پیغامات آگے بھیجے جا رہے ہیں · قریب کے %1$d فونز سے جڑا ہوا</item>
+  </plurals>
+  <string name="crowd_mesh_stop">بند کریں</string>
+  <string name="crowd_mesh_service_channel">کراؤڈ میش</string>
+  <string name="crowd_mesh_messages_channel">کراؤڈ میش کے پیغامات</string>
+  <!-- ChatFort Crowd mesh -->
+  <string name="crowd_mesh_new_team_message">ٹیم کا نیا پیغام</string>
+  <string name="crowd_mesh_new_private_message">نیا نجی پیغام</string>
+</resources>

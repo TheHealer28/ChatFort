@@ -1,0 +1,15 @@
+/* notification body */
+"%d new events" = "%d yeni olaylar";
+
+/* notification body */
+"From %d chat(s)" = "%d 'dan sohbetler";
+
+/* notification body */
+"From: %@" = "Şuradan: %@@";
+
+/* notification */
+"New events" = "Yeni etkinlikler";
+
+/* notification */
+"New messages" = "Yeni mesajlar";
+

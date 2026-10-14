@@ -1,0 +1,12 @@
+/* notification body */
+"%d new events" = "%d nouveaux événements";
+
+/* notification body */
+"From: %@" = "De : %@";
+
+/* notification */
+"New events" = "Nouveaux événements";
+
+/* notification */
+"New messages" = "Nouveaux messages";
+

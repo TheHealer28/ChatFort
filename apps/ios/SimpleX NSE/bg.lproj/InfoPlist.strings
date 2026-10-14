@@ -1,0 +1,9 @@
+/* Bundle display name */
+"CFBundleDisplayName" = "Inqalaab NSE";
+
+/* Bundle name */
+"CFBundleName" = "Inqalaab NSE";
+
+/* Copyright (human-readable) */
+"NSHumanReadableCopyright" = "Авторско право © 2022 Inqalaab. Всички права запазени.";
+

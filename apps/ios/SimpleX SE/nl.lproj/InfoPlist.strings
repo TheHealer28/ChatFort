@@ -1,0 +1,9 @@
+/* Bundle display name */
+"CFBundleDisplayName" = "Inqalaab SE";
+
+/* Bundle name */
+"CFBundleName" = "Inqalaab SE";
+
+/* Copyright (human-readable) */
+"NSHumanReadableCopyright" = "Copyright © 2024 Inqalaab. All rights reserved.";
+

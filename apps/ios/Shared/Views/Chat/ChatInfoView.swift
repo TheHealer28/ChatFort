@@ -1,0 +1,1373 @@
+//
+//  ChatInfoView.swift
+//  SimpleX
+//
+//  Created by Evgeny Poberezkin on 05/02/2022.
+//  Copyright © 2022 SimpleX Chat. All rights reserved.
+//
+
+import SwiftUI
+@preconcurrency import SimpleXChat
+
+func infoRow(_ title: LocalizedStringKey, _ value: String) -> some View {
+    HStack {
+        Text(title)
+        Spacer()
+        Text(value)
+            .foregroundStyle(.secondary)
+    }
+}
+
+func infoRow(_ title: Text, _ value: String) -> some View {
+    HStack {
+        title
+        Spacer()
+        Text(value)
+            .foregroundStyle(.secondary)
+    }
+}
+
+func localizedInfoRow(_ title: LocalizedStringKey, _ value: LocalizedStringKey) -> some View {
+    HStack {
+        Text(title)
+        Spacer()
+        Text(value)
+            .foregroundStyle(.secondary)
+    }
+}
+
+@ViewBuilder func smpServers(_ title: LocalizedStringKey, _ servers: [String], _ secondaryColor: Color) -> some View {
+    if servers.count > 0 {
+        HStack {
+            Text(title).frame(width: 120, alignment: .leading)
+            Button(serverHost(servers[0])) {
+                UIPasteboard.general.string = servers.joined(separator: ";")
+            }
+            .foregroundColor(secondaryColor)
+            .lineLimit(1)
+        }
+    }
+}
+
+func serverHost(_ s: String) -> String {
+    if let i = s.range(of: "@")?.lowerBound {
+        return String(s[i...].dropFirst())
+    } else {
+        return s
+    }
+}
+
+enum SendReceipts: Identifiable, Hashable {
+    case yes
+    case no
+    case userDefault(Bool)
+
+    var id: Self { self }
+
+    var text: LocalizedStringKey {
+        switch self {
+        case .yes: return "yes"
+        case .no: return "no"
+        case let .userDefault(on): return on ? "default (yes)" : "default (no)"
+        }
+    }
+
+    func bool() -> Bool? {
+        switch self {
+        case .yes: return true
+        case .no: return false
+        case .userDefault: return nil
+        }
+    }
+
+    static func fromBool(_ enable: Bool?, userDefault def: Bool) -> SendReceipts {
+        if let enable = enable {
+            return enable ? .yes : .no
+        }
+        return .userDefault(def)
+    }
+}
+
+struct ChatInfoView: View {
+    @EnvironmentObject var chatModel: ChatModel
+    @EnvironmentObject var theme: AppTheme
+    @Environment(\.dismiss) var dismiss: DismissAction
+    @ObservedObject var networkModel = NetworkModel.shared
+    @ObservedObject var chat: Chat
+    @State var contact: Contact
+    @State var localAlias: String
+    @State var featuresAllowed: ContactFeaturesAllowed
+    @State var currentFeaturesAllowed: ContactFeaturesAllowed
+    var onSearch: () -> Void
+    @State private var connectionStats: ConnectionStats? = nil
+    @State private var customUserProfile: Profile? = nil
+    @State private var connectionCode: String? = nil
+    @FocusState private var aliasTextFieldFocused: Bool
+    @State private var alert: ChatInfoViewAlert? = nil
+    @State private var actionSheet: SomeActionSheet? = nil
+    @State private var sheet: SomeSheet<AnyView>? = nil
+    @State private var showConnectContactViaAddressDialog = false
+    @State private var sendReceipts = SendReceipts.userDefault(true)
+    @State private var sendReceiptsUserDefault = true
+    @State private var progressIndicator = false
+    @AppStorage(DEFAULT_DEVELOPER_TOOLS) private var developerTools = false
+    @State private var showSecrets: Set<Int> = []
+
+    enum ChatInfoViewAlert: Identifiable {
+        case clearChatAlert
+        case networkStatusAlert
+        case switchAddressAlert
+        case abortSwitchAddressAlert
+        case syncConnectionForceAlert
+        case queueInfo(info: String)
+        case someAlert(alert: SomeAlert)
+        case error(title: LocalizedStringKey, error: LocalizedStringKey?)
+
+        var id: String {
+            switch self {
+            case .clearChatAlert: return "clearChatAlert"
+            case .networkStatusAlert: return "networkStatusAlert"
+            case .switchAddressAlert: return "switchAddressAlert"
+            case .abortSwitchAddressAlert: return "abortSwitchAddressAlert"
+            case .syncConnectionForceAlert: return "syncConnectionForceAlert"
+            case let .queueInfo(info): return "queueInfo \(info)"
+            case let .someAlert(alert): return "chatInfoSomeAlert \(alert.id)"
+            case let .error(title, _): return "error \(title)"
+            }
+        }
+    }
+
+    var body: some View {
+        NavigationView {
+            ZStack {
+                List {
+                    contactInfoHeader()
+                        .listRowBackground(Color.clear)
+                        .contentShape(Rectangle())
+                        .onTapGesture {
+                            aliasTextFieldFocused = false
+                        }
+
+                    localAliasTextEdit()
+                        .listRowBackground(Color.clear)
+                        .listRowSeparator(.hidden)
+                        .padding(.bottom, 18)
+
+                    GeometryReader { g in
+                        HStack(alignment: .center, spacing: 8) {
+                            let buttonWidth = g.size.width / 4
+                            searchButton(width: buttonWidth)
+                            AudioCallButton(chat: chat, contact: contact, connectionStats: $connectionStats, width: buttonWidth) { alert = .someAlert(alert: $0) }
+                            VideoButton(chat: chat, contact: contact, connectionStats: $connectionStats, width: buttonWidth) { alert = .someAlert(alert: $0) }
+                            if let nextNtfMode = chat.chatInfo.nextNtfMode {
+                                muteButton(width: buttonWidth, nextNtfMode: nextNtfMode)
+                            }
+                        }
+                    }
+                    .padding(.trailing)
+                    .frame(maxWidth: .infinity)
+                    .frame(height: infoViewActionButtonHeight)
+                    .listRowBackground(Color.clear)
+                    .listRowSeparator(.hidden)
+                    .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 8))
+
+                    if let customUserProfile = customUserProfile {
+                        Section(header: Text("Incognito").foregroundColor(theme.colors.secondary)) {
+                            HStack {
+                                Text("Your random profile")
+                                Spacer()
+                                Text(customUserProfile.chatViewName)
+                                    .foregroundStyle(.indigo)
+                            }
+                        }
+                    }
+
+                    Section {
+                        if let code = connectionCode { verifyCodeButton(code) }
+                        contactPreferencesButton()
+                        sendReceiptsOption()
+                        if let connStats = connectionStats,
+                           connStats.ratchetSyncAllowed {
+                            synchronizeConnectionButton()
+                        }
+                        // } else if developerTools {
+                        //     synchronizeConnectionButtonForce()
+                        // }
+
+                        NavigationLink {
+                            ChatWallpaperEditorSheet(chat: chat)
+                        } label: {
+                            Label("Chat theme", systemImage: "photo")
+                        }
+                        //                    } else if developerTools {
+                        //                        synchronizeConnectionButtonForce()
+                        //                    }
+                    }
+                    .disabled(!contact.ready || !contact.active)
+
+                    Section {
+                        ChatTTLOption(chat: chat, progressIndicator: $progressIndicator)
+                    } footer: {
+                        Text("Delete chat messages from your device.")
+                    }
+
+                    if let conn = contact.activeConn {
+                        Section {
+                            infoRow(Text(String("E2E encryption")), conn.connPQEnabled ? "Quantum resistant" : "Standard")
+                        }
+                    }
+
+                    if let contactLink = contact.contactLink {
+                        Section {
+                            SimpleXLinkQRCode(uri: contactLink)
+                            Button {
+                                showShareSheet(items: [simplexChatLink(contactLink)])
+                            } label: {
+                                Label("Share address", systemImage: "square.and.arrow.up")
+                            }
+                        } header: {
+                            Text("Address")
+                                .foregroundColor(theme.colors.secondary)
+                        } footer: {
+                            Text("You can share this address with your contacts to let them connect with **\(contact.displayName)**.")
+                                .foregroundColor(theme.colors.secondary)
+                        }
+                    }
+
+                    if contact.ready && contact.active {
+                        Section(header: Text("Servers").foregroundColor(theme.colors.secondary)) {
+                            networkStatusRow()
+                                .onTapGesture {
+                                    alert = .networkStatusAlert
+                                }
+                            if let connStats = connectionStats {
+                                Button("Change receiving address") {
+                                    alert = .switchAddressAlert
+                                }
+                                .disabled(
+                                    connStats.rcvQueuesInfo.contains { $0.rcvSwitchStatus != nil }
+                                    || connStats.ratchetSyncSendProhibited
+                                )
+                                if connStats.rcvQueuesInfo.contains(where: { $0.rcvSwitchStatus != nil }) {
+                                    Button("Abort changing address") {
+                                        alert = .abortSwitchAddressAlert
+                                    }
+                                    .disabled(
+                                        connStats.rcvQueuesInfo.contains { $0.rcvSwitchStatus != nil && !$0.canAbortSwitch }
+                                        || connStats.ratchetSyncSendProhibited
+                                    )
+                                }
+                                smpServers("Receiving via", connStats.rcvQueuesInfo.map { $0.rcvServer }, theme.colors.secondary)
+                                smpServers("Sending via", connStats.sndQueuesInfo.map { $0.sndServer }, theme.colors.secondary)
+                            }
+                        }
+                    }
+
+                    Section {
+                        clearChatButton()
+                        deleteContactButton()
+                    }
+
+                    if developerTools {
+                        Section(header: Text("For console").foregroundColor(theme.colors.secondary)) {
+                            infoRow("Local name", chat.chatInfo.localDisplayName)
+                            infoRow("Database ID", "\(chat.chatInfo.apiId)")
+                            Button ("Debug delivery") {
+                                Task {
+                                    do {
+                                        if let info = try await apiContactQueueInfo(chat.chatInfo.apiId) {
+                                            await MainActor.run { alert = .queueInfo(info: queueInfoText(info)) }
+                                        }
+                                    } catch let e {
+                                        logger.error("apiContactQueueInfo error: \(responseError(e))")
+                                        let a = getErrorAlert(e, "Error")
+                                        await MainActor.run { alert = .error(title: a.title, error: a.message) }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .modifier(ThemedBackground(grouped: true))
+                .navigationBarHidden(true)
+                .disabled(progressIndicator)
+                .opacity(progressIndicator ? 0.6 : 1)
+
+                if progressIndicator {
+                    ProgressView().scaleEffect(2)
+                }
+            }
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+        .onAppear {
+            if let currentUser = chatModel.currentUser {
+                sendReceiptsUserDefault = currentUser.sendRcptsContacts
+            }
+            sendReceipts = SendReceipts.fromBool(contact.chatSettings.sendRcpts, userDefault: sendReceiptsUserDefault)
+
+            Task {
+                do {
+                    let (stats, profile) = try await apiContactInfo(chat.chatInfo.apiId)
+                    let (ct, code) = try await apiGetContactCode(chat.chatInfo.apiId)
+                    await MainActor.run {
+                        connectionStats = stats
+                        customUserProfile = profile
+                        connectionCode = code
+                        if contact.activeConn?.connectionCode != ct.activeConn?.connectionCode {
+                            chat.chatInfo = .direct(contact: ct)
+                        }
+                    }
+                } catch let error {
+                    logger.error("apiContactInfo or apiGetContactCode error: \(responseError(error))")
+                }
+            }
+        }
+        .alert(item: $alert) { alertItem in
+            switch(alertItem) {
+            case .clearChatAlert: return clearChatAlert()
+            case .networkStatusAlert: return networkStatusAlert()
+            case .switchAddressAlert: return switchAddressAlert(switchContactAddress)
+            case .abortSwitchAddressAlert: return abortSwitchAddressAlert(abortSwitchContactAddress)
+            case .syncConnectionForceAlert:
+                return syncConnectionForceAlert({
+                    Task {
+                        if let stats = await syncContactConnection(contact, force: true, showAlert: { alert = .someAlert(alert: $0) }) {
+                            connectionStats = stats
+                            dismiss()
+                        }
+                    }
+                })
+            case let .queueInfo(info): return queueInfoAlert(info)
+            case let .someAlert(a): return a.alert
+            case let .error(title, error): return mkAlert(title: title, message: error)
+            }
+        }
+        .actionSheet(item: $actionSheet) { $0.actionSheet }
+        .sheet(item: $sheet) {
+            if #available(iOS 16.0, *) {
+                $0.content
+                    .presentationDetents([.fraction($0.fraction)])
+            } else {
+                $0.content
+            }
+        }
+        .onDisappear {
+            if currentFeaturesAllowed != featuresAllowed {
+                showAlert(
+                    title: NSLocalizedString("Save preferences?", comment: "alert title"),
+                    buttonTitle: NSLocalizedString("Save and notify contact", comment: "alert button"),
+                    buttonAction: { savePreferences() },
+                    cancelButton: true
+                )
+            }
+        }
+    }
+
+    private func contactInfoHeader() -> some View {
+        VStack(spacing: 8) {
+            let cInfo = chat.chatInfo
+            ChatInfoImage(chat: chat, size: 192, color: Color(uiColor: .tertiarySystemFill))
+                .padding(.vertical, 12)
+            // show actual display name, alias can be edited in this view
+            let displayName = contact.profile.displayName.trimmingCharacters(in: .whitespacesAndNewlines)
+            let fullName = cInfo.fullName.trimmingCharacters(in: .whitespacesAndNewlines)
+            if contact.verified {
+                (
+                    Text(Image(systemName: "checkmark.shield"))
+                        .foregroundColor(theme.colors.secondary)
+                        .font(.title2)
+                    + textSpace
+                    + Text(displayName)
+                        .font(.largeTitle)
+                )
+                .multilineTextAlignment(.center)
+                .lineLimit(2)
+                .padding(.bottom, 2)
+            } else {
+                Text(displayName)
+                    .font(.largeTitle)
+                    .multilineTextAlignment(.center)
+                    .lineLimit(2)
+                    .padding(.bottom, 2)
+            }
+            if fullName != "" && fullName != displayName && fullName != cInfo.displayName.trimmingCharacters(in: .whitespacesAndNewlines)  {
+                Text(cInfo.fullName)
+                    .font(.title2)
+                    .multilineTextAlignment(.center)
+                    .lineLimit(3)
+                    .padding(.bottom, 2)
+            }
+            if let descr = cInfo.shortDescr?.trimmingCharacters(in: .whitespacesAndNewlines), descr != "" {
+                let r = markdownText(descr, textStyle: .subheadline, showSecrets: showSecrets, backgroundColor: theme.colors.background)
+                msgTextResultView(r, Text(AttributedString(r.string)), showSecrets: $showSecrets, centered: true, smallFont: true)
+                    .multilineTextAlignment(.center)
+                    .lineLimit(4)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+        }
+        .frame(maxWidth: .infinity, alignment: .center)
+    }
+
+    private func localAliasTextEdit() -> some View {
+        TextField("Set contact name…", text: $localAlias)
+            .disableAutocorrection(true)
+            .focused($aliasTextFieldFocused)
+            .submitLabel(.done)
+            .onChange(of: aliasTextFieldFocused) { focused in
+                if !focused {
+                    setContactAlias()
+                }
+            }
+            .onSubmit {
+                setContactAlias()
+            }
+            .multilineTextAlignment(.center)
+            .foregroundColor(theme.colors.secondary)
+    }
+
+    private func setContactAlias() {
+        Task {
+            do {
+                if let contact = try await apiSetContactAlias(contactId: chat.chatInfo.apiId, localAlias: localAlias) {
+                    await MainActor.run {
+                        chatModel.updateContact(contact)
+                    }
+                }
+            } catch {
+                logger.error("setContactAlias error: \(responseError(error))")
+            }
+        }
+    }
+
+    private func searchButton(width: CGFloat) -> some View {
+        InfoViewButton(image: "magnifyingglass", title: "search", width: width) {
+            dismiss()
+            onSearch()
+        }
+        .disabled(!contact.ready || chat.chatItems.isEmpty)
+    }
+
+    private func muteButton(width: CGFloat, nextNtfMode: MsgFilter) -> some View {
+        return InfoViewButton(
+            image: nextNtfMode.iconFilled,
+            title: "\(nextNtfMode.text(mentions: false))",
+            width: width
+        ) {
+            toggleNotifications(chat, enableNtfs: nextNtfMode)
+        }
+        .disabled(!contact.ready || !contact.active)
+    }
+
+    private func verifyCodeButton(_ code: String) -> some View {
+        NavigationLink {
+            VerifyCodeView(
+                displayName: contact.displayName,
+                connectionCode: code,
+                connectionVerified: contact.verified,
+                verify: { code in
+                    if let r = apiVerifyContact(chat.chatInfo.apiId, connectionCode: code) {
+                        let (verified, existingCode) = r
+                        contact.activeConn?.connectionCode = verified ? SecurityCode(securityCode: existingCode, verifiedAt: .now) : nil
+                        connectionCode = existingCode
+                        DispatchQueue.main.async {
+                            chat.chatInfo = .direct(contact: contact)
+                        }
+                        return r
+                    }
+                    return nil
+                }
+            )
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationTitle("Security code")
+            .modifier(ThemedBackground(grouped: true))
+        } label: {
+            Label(
+                contact.verified ? "View security code" : "Verify security code",
+                systemImage: contact.verified ? "checkmark.shield" : "shield"
+            )
+        }
+    }
+
+    private func contactPreferencesButton() -> some View {
+        NavigationLink {
+            ContactPreferencesView(
+                contact: $contact,
+                featuresAllowed: $featuresAllowed,
+                currentFeaturesAllowed: $currentFeaturesAllowed,
+                savePreferences: savePreferences
+            )
+            .navigationBarTitle("Contact preferences")
+            .modifier(ThemedBackground(grouped: true))
+            .navigationBarTitleDisplayMode(.large)
+        } label: {
+            Label("Contact preferences", systemImage: "switch.2")
+        }
+    }
+
+    private func sendReceiptsOption() -> some View {
+        WrappedPicker(selection: $sendReceipts) {
+            ForEach([.yes, .no, .userDefault(sendReceiptsUserDefault)]) { (opt: SendReceipts) in
+                Text(opt.text)
+            }
+        } label: {
+            Label("Send receipts", systemImage: "checkmark.message")
+        }
+        .onChange(of: sendReceipts) { _ in
+            setSendReceipts()
+        }
+    }
+
+    private func setSendReceipts() {
+        var chatSettings = chat.chatInfo.chatSettings ?? ChatSettings.defaults
+        chatSettings.sendRcpts = sendReceipts.bool()
+        updateChatSettings(chat, chatSettings: chatSettings)
+    }
+
+    private func synchronizeConnectionButton() -> some View {
+        Button {
+            Task {
+                if let stats = await syncContactConnection(contact, force: false, showAlert: { alert = .someAlert(alert: $0) }) {
+                    connectionStats = stats
+                    dismiss()
+                }
+            }
+        } label: {
+            Label("Fix connection", systemImage: "exclamationmark.arrow.triangle.2.circlepath")
+                .foregroundColor(.orange)
+        }
+    }
+
+    private func synchronizeConnectionButtonForce() -> some View {
+        Button {
+            alert = .syncConnectionForceAlert
+        } label: {
+            Label("Renegotiate encryption", systemImage: "exclamationmark.triangle")
+                .foregroundColor(.red)
+        }
+    }
+
+    private func networkStatusRow() -> some View {
+        HStack {
+            Text("Network status")
+            Image(systemName: "info.circle")
+                .foregroundColor(theme.colors.primary)
+                .font(.system(size: 14))
+            Spacer()
+            Text(networkModel.contactNetworkStatus(contact).statusString)
+                .foregroundColor(theme.colors.secondary)
+            serverImage()
+        }
+    }
+
+    private func serverImage() -> some View {
+        let status = networkModel.contactNetworkStatus(contact)
+        return Image(systemName: status.imageName)
+            .foregroundColor(status == .connected ? .green : theme.colors.secondary)
+            .font(.system(size: 12))
+    }
+
+    private func deleteContactButton() -> some View {
+        Button(role: .destructive) {
+            deleteContactDialog(
+                chat,
+                contact,
+                dismissToChatList: true,
+                showAlert: { alert = .someAlert(alert: $0) },
+                showActionSheet: { actionSheet = $0 },
+                showSheetContent: { sheet = $0 }
+            )
+        } label: {
+            Label("Delete contact", systemImage: "person.badge.minus")
+                .foregroundColor(Color.red)
+        }
+    }
+
+    private func clearChatButton() -> some View {
+        Button() {
+            alert = .clearChatAlert
+        } label: {
+            Label("Clear conversation", systemImage: "gobackward")
+                .foregroundColor(Color.orange)
+        }
+    }
+
+    private func clearChatAlert() -> Alert {
+        Alert(
+            title: Text("Clear conversation?"),
+            message: Text("All messages will be deleted - this cannot be undone! The messages will be deleted ONLY for you."),
+            primaryButton: .destructive(Text("Clear")) {
+                Task {
+                    await clearChat(chat)
+                    await MainActor.run { dismiss() }
+                }
+            },
+            secondaryButton: .cancel()
+        )
+    }
+
+    private func networkStatusAlert() -> Alert {
+        Alert(
+            title: Text("Network status"),
+            message: Text(networkModel.contactNetworkStatus(contact).statusExplanation)
+        )
+    }
+
+    private func switchContactAddress() {
+        Task {
+            do {
+                let stats = try apiSwitchContact(contactId: contact.apiId)
+                connectionStats = stats
+                await MainActor.run {
+                    chatModel.updateContactConnectionStats(contact, stats)
+                    dismiss()
+                }
+            } catch let error {
+                logger.error("switchContactAddress apiSwitchContact error: \(responseError(error))")
+                let a = getErrorAlert(error, "Error changing address")
+                await MainActor.run {
+                    alert = .error(title: a.title, error: a.message)
+                }
+            }
+        }
+    }
+
+    private func abortSwitchContactAddress() {
+        Task {
+            do {
+                let stats = try apiAbortSwitchContact(contact.apiId)
+                connectionStats = stats
+                await MainActor.run {
+                    chatModel.updateContactConnectionStats(contact, stats)
+                }
+            } catch let error {
+                logger.error("abortSwitchContactAddress apiAbortSwitchContact error: \(responseError(error))")
+                let a = getErrorAlert(error, "Error aborting address change")
+                await MainActor.run {
+                    alert = .error(title: a.title, error: a.message)
+                }
+            }
+        }
+    }
+
+    private func savePreferences() {
+        Task {
+            do {
+                let prefs = contactFeaturesAllowedToPrefs(featuresAllowed)
+                if let toContact = try await apiSetContactPrefs(contactId: contact.contactId, preferences: prefs) {
+                    await MainActor.run {
+                        contact = toContact
+                        chatModel.updateContact(toContact)
+                        currentFeaturesAllowed = featuresAllowed
+                    }
+                }
+            } catch {
+                logger.error("ContactPreferencesView apiSetContactPrefs error: \(responseError(error))")
+            }
+        }
+    }
+}
+
+struct ChatTTLOption: View {
+    @ObservedObject var chat: Chat
+    @Binding var progressIndicator: Bool
+    @State private var currentChatItemTTL: ChatTTL = ChatTTL.userDefault(.seconds(0))
+    @State private var chatItemTTL: ChatTTL = ChatTTL.chat(.seconds(0))
+
+    var body: some View {
+        WrappedPicker("Delete messages after", selection: $chatItemTTL) {
+            ForEach(ChatItemTTL.values) { ttl in
+                Text(ttl.deleteAfterText).tag(ChatTTL.chat(ttl))
+            }
+            let defaultTTL = ChatTTL.userDefault(ChatModel.shared.chatItemTTL)
+            Text(defaultTTL.text).tag(defaultTTL)
+
+            if case .chat(let ttl) = chatItemTTL, case .seconds = ttl {
+                Text(ttl.deleteAfterText).tag(chatItemTTL)
+            }
+        }
+        .disabled(progressIndicator)
+        .onChange(of: chatItemTTL) { ttl in
+            if ttl == currentChatItemTTL { return }
+            setChatTTL(
+                ttl,
+                hasPreviousTTL: !currentChatItemTTL.neverExpires,
+                onCancel: { chatItemTTL = currentChatItemTTL }
+            ) {
+                progressIndicator = true
+                Task {
+                    let m = ChatModel.shared
+                    do {
+                        try await setChatTTL(chatType: chat.chatInfo.chatType, id: chat.chatInfo.apiId, ttl)
+                        await loadChat(chat: chat, im: ItemsModel.shared, clearItems: true)
+                        await MainActor.run {
+                            progressIndicator = false
+                            currentChatItemTTL = chatItemTTL
+                            if ItemsModel.shared.reversedChatItems.isEmpty && m.chatId == chat.id,
+                               let chat = m.getChat(chat.id) {
+                                chat.chatItems = []
+                                m.replaceChat(chat.id, chat)
+                            }
+                        }
+                    }
+                    catch let error {
+                        logger.error("setChatTTL error \(responseError(error))")
+                        await loadChat(chat: chat, im: ItemsModel.shared, clearItems: true)
+                        await MainActor.run {
+                            chatItemTTL = currentChatItemTTL
+                            progressIndicator = false
+                        }
+                    }
+                }
+            }
+        }
+        .onAppear {
+            let sm = ChatModel.shared
+            let ttl = chat.chatInfo.ttl(sm.chatItemTTL)
+            chatItemTTL = ttl
+            currentChatItemTTL = ttl
+        }
+    }
+}
+
+func syncContactConnection(_ contact: Contact, force: Bool, showAlert: (SomeAlert) -> Void) async -> ConnectionStats? {
+    do {
+        let stats = try apiSyncContactRatchet(contact.apiId, force)
+        await MainActor.run {
+            ChatModel.shared.updateContactConnectionStats(contact, stats)
+        }
+        return stats
+    } catch let error {
+        logger.error("syncContactConnection apiSyncContactRatchet error: \(responseError(error))")
+        let a = getErrorAlert(error, "Error synchronizing connection")
+        await MainActor.run {
+            showAlert(
+                SomeAlert(
+                    alert: mkAlert(title: a.title, message: a.message),
+                    id: "syncContactConnection error"
+                )
+            )
+        }
+        return nil
+    }
+}
+
+struct AudioCallButton: View {
+    var chat: Chat
+    var contact: Contact
+    @Binding var connectionStats: ConnectionStats?
+    var width: CGFloat
+    var showAlert: (SomeAlert) -> Void
+
+    var body: some View {
+        CallButton(
+            chat: chat,
+            contact: contact,
+            connectionStats: $connectionStats,
+            image: "phone.fill",
+            title: "call",
+            mediaType: .audio,
+            width: width,
+            showAlert: showAlert
+        )
+    }
+}
+
+struct VideoButton: View {
+    var chat: Chat
+    var contact: Contact
+    @Binding var connectionStats: ConnectionStats?
+    var width: CGFloat
+    var showAlert: (SomeAlert) -> Void
+
+    var body: some View {
+        CallButton(
+            chat: chat,
+            contact: contact,
+            connectionStats: $connectionStats,
+            image: "video.fill",
+            title: "video",
+            mediaType: .video,
+            width: width,
+            showAlert: showAlert
+        )
+    }
+}
+
+private struct CallButton: View {
+    var chat: Chat
+    var contact: Contact
+    @Binding var connectionStats: ConnectionStats?
+    var image: String
+    var title: LocalizedStringKey
+    var mediaType: CallMediaType
+    var width: CGFloat
+    var showAlert: (SomeAlert) -> Void
+
+    var body: some View {
+        let canCall = contact.ready && contact.active && chat.chatInfo.featureEnabled(.calls) && ChatModel.shared.activeCall == nil
+
+        InfoViewButton(image: image, title: title, disabledLook: !canCall, width: width) {
+            if canCall {
+                if let connStats = connectionStats {
+                    if connStats.ratchetSyncState == .ok {
+                        if CallController.useCallKit() {
+                            CallController.shared.startCall(contact, mediaType)
+                        } else {
+                            // When CallKit is not used, colorscheme will be changed and it will be visible if not hiding sheets first
+                            dismissAllSheets(animated: true) {
+                                CallController.shared.startCall(contact, mediaType)
+                            }
+                        }
+                    } else if connStats.ratchetSyncAllowed {
+                        showAlert(SomeAlert(
+                            alert: Alert(
+                                title: Text("Fix connection?"),
+                                message: Text("Connection requires encryption renegotiation."),
+                                primaryButton: .default(Text("Fix")) {
+                                    Task {
+                                        if let stats = await syncContactConnection(contact, force: false, showAlert: showAlert) {
+                                            connectionStats = stats
+                                        }
+                                    }
+                                },
+                                secondaryButton: .cancel()
+                            ),
+                            id: "can't call contact, fix connection"
+                        ))
+                    } else {
+                        showAlert(SomeAlert(
+                            alert: mkAlert(
+                                title: "Can't call contact",
+                                message: "Encryption renegotiation in progress."
+                            ),
+                            id: "can't call contact, encryption renegotiation in progress"
+                        ))
+                    }
+                }
+            } else if contact.sendMsgToConnect {
+                showAlert(SomeAlert(
+                    alert: mkAlert(
+                        title: "Can't call contact",
+                        message: "Send message to enable calls."
+                    ),
+                    id: "can't call contact, send message"
+                ))
+            } else if !contact.active {
+                showAlert(SomeAlert(
+                    alert: mkAlert(
+                        title: "Can't call contact",
+                        message: "Contact is deleted."
+                    ),
+                    id: "can't call contact, contact deleted"
+                ))
+            } else if !contact.ready {
+                showAlert(SomeAlert(
+                    alert: mkAlert(
+                        title: "Can't call contact",
+                        message: "Connecting to contact, please wait or check later!"
+                    ),
+                    id: "can't call contact, contact not ready"
+                ))
+            } else if !chat.chatInfo.featureEnabled(.calls) {
+                switch chat.chatInfo.showEnableCallsAlert {
+                case .userEnable:
+                    showAlert(SomeAlert(
+                        alert: Alert(
+                            title: Text("Allow calls?"),
+                            message: Text("You need to allow your contact to call to be able to call them."),
+                            primaryButton: .default(Text("Allow")) {
+                                allowFeatureToContact(contact, .calls)
+                            },
+                            secondaryButton: .cancel()
+                        ),
+                        id: "allow calls"
+                    ))
+                case .askContact:
+                    showAlert(SomeAlert(
+                        alert: mkAlert(
+                            title: "Calls prohibited!",
+                            message: "Please ask your contact to enable calls."
+                        ),
+                        id: "calls prohibited, ask contact"
+                    ))
+                case .other:
+                    showAlert(SomeAlert(
+                        alert: mkAlert(
+                            title: "Calls prohibited!",
+                            message: "Please check yours and your contact preferences."
+                        )
+                        , id: "calls prohibited, other"
+                    ))
+                }
+            } else {
+                showAlert(SomeAlert(
+                    alert: mkAlert(title: "Can't call contact"),
+                    id: "can't call contact"
+                ))
+            }
+        }
+        .disabled(ChatModel.shared.activeCall != nil)
+    }
+}
+
+let infoViewActionButtonHeight: CGFloat = 60
+
+struct InfoViewButton: View {
+    var image: String
+    var title: LocalizedStringKey
+    var disabledLook: Bool = false
+    var width: CGFloat
+    var action: () -> Void
+
+    var body: some View {
+        VStack(spacing: 4) {
+            Image(systemName: image)
+                .resizable()
+                .scaledToFit()
+                .frame(width: 20, height: 20)
+            Text(title)
+                .font(.caption)
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .foregroundColor(.accentColor)
+        .background(Color(.secondarySystemGroupedBackground))
+        .cornerRadius(10.0)
+        .frame(width: width, height: infoViewActionButtonHeight)
+        .disabled(disabledLook)
+        .onTapGesture(perform: action)
+    }
+}
+
+struct ChatWallpaperEditorSheet: View {
+    @Environment(\.dismiss) var dismiss
+    @EnvironmentObject var theme: AppTheme
+    @State private var globalThemeUsed: Bool = false
+    @State var chat: Chat
+    @State private var themes: ThemeModeOverrides
+
+    init(chat: Chat) {
+        self.chat = chat
+        self.themes = if case let ChatInfo.direct(contact) = chat.chatInfo, let uiThemes = contact.uiThemes {
+            uiThemes
+        } else if case let ChatInfo.group(groupInfo, _) = chat.chatInfo, let uiThemes = groupInfo.uiThemes {
+            uiThemes
+        } else {
+            ThemeModeOverrides()
+        }
+    }
+
+    var body: some View {
+        let preferred = themes.preferredMode(!theme.colors.isLight)
+        let initialTheme = preferred ?? ThemeManager.defaultActiveTheme(ChatModel.shared.currentUser?.uiThemes, themeOverridesDefault.get())
+        ChatWallpaperEditor(
+            initialTheme: initialTheme,
+            themeModeOverride: initialTheme,
+            applyToMode: themes.light == themes.dark ? nil : initialTheme.mode,
+            globalThemeUsed: $globalThemeUsed,
+            save: { applyToMode, newTheme in
+                await save(applyToMode, newTheme, $chat)
+            }
+        )
+        .navigationTitle("Chat theme")
+        .modifier(ThemedBackground(grouped: true))
+        .navigationBarTitleDisplayMode(.inline)
+        .onAppear {
+            globalThemeUsed = preferred == nil
+        }
+        .onChange(of: theme.base.mode) { _ in
+            globalThemeUsed = themesFromChat(chat).preferredMode(!theme.colors.isLight) == nil
+        }
+        .onChange(of: ChatModel.shared.chatId) { _ in
+            dismiss()
+        }
+    }
+
+    private func themesFromChat(_ chat: Chat) -> ThemeModeOverrides {
+        if case let ChatInfo.direct(contact) = chat.chatInfo, let uiThemes = contact.uiThemes {
+            uiThemes
+        } else if case let ChatInfo.group(groupInfo, _) = chat.chatInfo, let uiThemes = groupInfo.uiThemes {
+            uiThemes
+        } else {
+            ThemeModeOverrides()
+        }
+    }
+
+    private static var updateBackendTask: Task = Task {}
+    private func save(
+        _ applyToMode: DefaultThemeMode?,
+        _ newTheme: ThemeModeOverride?,
+        _ chat: Binding<Chat>
+    ) async {
+        let unchangedThemes: ThemeModeOverrides = themesFromChat(chat.wrappedValue)
+        var wallpaperFiles = Set([unchangedThemes.light?.wallpaper?.imageFile, unchangedThemes.dark?.wallpaper?.imageFile])
+        var changedThemes: ThemeModeOverrides? = unchangedThemes
+        let light: ThemeModeOverride? = if let newTheme {
+            ThemeModeOverride(mode: DefaultThemeMode.light, colors: newTheme.colors, wallpaper: newTheme.wallpaper?.withFilledWallpaperPath())
+        } else {
+            nil
+        }
+        let dark: ThemeModeOverride? = if let newTheme {
+            ThemeModeOverride(mode: DefaultThemeMode.dark, colors: newTheme.colors, wallpaper: newTheme.wallpaper?.withFilledWallpaperPath())
+        } else {
+            nil
+        }
+
+        if let applyToMode {
+            switch applyToMode {
+            case DefaultThemeMode.light:
+                changedThemes?.light = light
+            case DefaultThemeMode.dark:
+                changedThemes?.dark = dark
+            }
+        } else {
+            changedThemes?.light = light
+            changedThemes?.dark = dark
+        }
+        if changedThemes?.light != nil || changedThemes?.dark != nil {
+            let light = changedThemes?.light
+            let dark = changedThemes?.dark
+            let currentMode = CurrentColors.base.mode
+            // same image file for both modes, copy image to make them as different files
+            if var light, var dark, let lightWallpaper = light.wallpaper, let darkWallpaper = dark.wallpaper, let lightImageFile = lightWallpaper.imageFile, let darkImageFile = darkWallpaper.imageFile, lightWallpaper.imageFile == darkWallpaper.imageFile {
+                let imageFile = if currentMode == DefaultThemeMode.light {
+                    darkImageFile
+                } else {
+                    lightImageFile
+                }
+                let filePath = saveWallpaperFile(url: getWallpaperFilePath(imageFile))
+                if currentMode == DefaultThemeMode.light {
+                    dark.wallpaper?.imageFile = filePath
+                    changedThemes = ThemeModeOverrides(light: changedThemes?.light, dark: dark)
+                } else {
+                    light.wallpaper?.imageFile = filePath
+                    changedThemes = ThemeModeOverrides(light: light, dark: changedThemes?.dark)
+                }
+            }
+        } else {
+            changedThemes = nil
+        }
+        wallpaperFiles.remove(changedThemes?.light?.wallpaper?.imageFile)
+        wallpaperFiles.remove(changedThemes?.dark?.wallpaper?.imageFile)
+        wallpaperFiles.forEach(removeWallpaperFile)
+
+        let changedThemesConstant = changedThemes
+        ChatWallpaperEditorSheet.updateBackendTask.cancel()
+        ChatWallpaperEditorSheet.updateBackendTask = Task {
+            do {
+                try await Task.sleep(nanoseconds: 300_000000)
+                if await apiSetChatUIThemes(chatId: chat.id, themes: changedThemesConstant) {
+                    if case var ChatInfo.direct(contact) = chat.wrappedValue.chatInfo {
+                        contact.uiThemes = changedThemesConstant
+                        await MainActor.run {
+                            ChatModel.shared.updateChatInfo(ChatInfo.direct(contact: contact))
+                            chat.wrappedValue = Chat.init(chatInfo: ChatInfo.direct(contact: contact))
+                            themes = themesFromChat(chat.wrappedValue)
+                        }
+                    } else if case var ChatInfo.group(groupInfo, _) = chat.wrappedValue.chatInfo {
+                        groupInfo.uiThemes = changedThemesConstant
+
+                        await MainActor.run {
+                            ChatModel.shared.updateChatInfo(ChatInfo.group(groupInfo: groupInfo, groupChatScope: nil))
+                            chat.wrappedValue = Chat.init(chatInfo: ChatInfo.group(groupInfo: groupInfo, groupChatScope: nil))
+                            themes = themesFromChat(chat.wrappedValue)
+                        }
+                    }
+                }
+            } catch {
+                // canceled task
+            }
+        }
+    }
+}
+
+func switchAddressAlert(_ switchAddress: @escaping () -> Void) -> Alert {
+    Alert(
+        title: Text("Change receiving address?"),
+        message: Text("Receiving address will be changed to a different server. Address change will complete after sender comes online."),
+        primaryButton: .default(Text("Change"), action: switchAddress),
+        secondaryButton: .cancel()
+    )
+}
+
+func abortSwitchAddressAlert(_ abortSwitchAddress: @escaping () -> Void) -> Alert {
+    Alert(
+        title: Text("Abort changing address?"),
+        message: Text("Address change will be aborted. Old receiving address will be used."),
+        primaryButton: .destructive(Text("Abort"), action: abortSwitchAddress),
+        secondaryButton: .cancel()
+    )
+}
+
+func syncConnectionForceAlert(_ syncConnectionForce: @escaping () -> Void) -> Alert {
+    Alert(
+        title: Text("Renegotiate encryption?"),
+        message: Text("The encryption is working and the new encryption agreement is not required. It may result in connection errors!"),
+        primaryButton: .destructive(Text("Renegotiate"), action: syncConnectionForce),
+        secondaryButton: .cancel()
+    )
+}
+
+func queueInfoText(_ info: (RcvMsgInfo?, ServerQueueInfo)) -> String {
+    let (rcvMsgInfo, qInfo) = info
+    var msgInfo: String
+    if let rcvMsgInfo { msgInfo = encodeJSON(rcvMsgInfo) } else { msgInfo = "none" }
+    return String.localizedStringWithFormat(NSLocalizedString("server queue info: %@\n\nlast received msg: %@", comment: "queue info"), encodeJSON(qInfo), msgInfo)
+}
+
+func queueInfoAlert(_ info: String) -> Alert {
+    Alert(
+        title: Text("Message queue info"),
+        message: Text(info),
+        primaryButton: .default(Text("Ok")),
+        secondaryButton: .default(Text("Copy")) { UIPasteboard.general.string = info }
+    )
+}
+
+func deleteContactDialog(
+    _ chat: Chat,
+    _ contact: Contact,
+    dismissToChatList: Bool,
+    showAlert: @escaping (SomeAlert) -> Void,
+    showActionSheet: @escaping (SomeActionSheet) -> Void,
+    showSheetContent: @escaping (SomeSheet<AnyView>) -> Void
+) {
+    if contact.sndReady && contact.active && !contact.chatDeleted {
+        deleteContactOrConversationDialog(chat, contact, dismissToChatList, showAlert, showActionSheet, showSheetContent)
+    } else if contact.sndReady && contact.active && contact.chatDeleted {
+        deleteContactWithoutConversation(chat, contact, dismissToChatList, showAlert, showActionSheet)
+    } else { // !(contact.sndReady && contact.active)
+        deleteNotReadyContact(chat, contact, dismissToChatList, showAlert, showActionSheet)
+    }
+}
+
+func setChatTTL(_ ttl: ChatTTL, hasPreviousTTL: Bool, onCancel: @escaping () -> Void, onConfirm: @escaping () -> Void) {
+    let title = if ttl.neverExpires {
+        NSLocalizedString("Disable automatic message deletion?", comment: "alert title")
+    } else if ttl.usingDefault || hasPreviousTTL {
+        NSLocalizedString("Change automatic message deletion?", comment: "alert title")
+    } else {
+        NSLocalizedString("Enable automatic message deletion?", comment: "alert title")
+    }
+
+    let message = if ttl.neverExpires {
+        NSLocalizedString("Messages in this chat will never be deleted.", comment: "alert message")
+    } else {
+        NSLocalizedString("This action cannot be undone - the messages sent and received in this chat earlier than selected will be deleted.", comment: "alert message")
+    }
+
+    showAlert(title, message: message) {
+        [
+            UIAlertAction(
+                title: ttl.neverExpires ?  NSLocalizedString("Disable delete messages", comment: "alert button") : NSLocalizedString("Delete messages", comment: "alert button"),
+                style: .destructive,
+                handler: { _ in onConfirm() }
+            ),
+            UIAlertAction(title: NSLocalizedString("Cancel", comment: "alert button"), style: .cancel, handler: { _ in onCancel() })
+        ]
+    }
+}
+
+private func deleteContactOrConversationDialog(
+    _ chat: Chat,
+    _ contact: Contact,
+    _ dismissToChatList: Bool,
+    _ showAlert: @escaping (SomeAlert) -> Void,
+    _ showActionSheet: @escaping (SomeActionSheet) -> Void,
+    _ showSheetContent: @escaping (SomeSheet<AnyView>) -> Void
+) {
+    showActionSheet(SomeActionSheet(
+        actionSheet: ActionSheet(
+            title: Text("Delete contact?"),
+            buttons: [
+                .destructive(Text("Only delete conversation")) {
+                    deleteContactMaybeErrorAlert(chat, contact, chatDeleteMode: .messages, dismissToChatList, showAlert)
+                },
+                .destructive(Text("Delete contact")) {
+                    showSheetContent(SomeSheet(
+                        content: { AnyView(
+                            DeleteActiveContactDialog(
+                                chat: chat,
+                                contact: contact,
+                                dismissToChatList: dismissToChatList,
+                                showAlert: showAlert
+                            )
+                        ) },
+                        id: "DeleteActiveContactDialog"
+                    ))
+                },
+                .cancel()
+            ]
+        ),
+        id: "deleteContactOrConversationDialog"
+    ))
+}
+
+private func deleteContactMaybeErrorAlert(
+    _ chat: Chat,
+    _ contact: Contact,
+    chatDeleteMode: ChatDeleteMode,
+    _ dismissToChatList: Bool,
+    _ showAlert: @escaping (SomeAlert) -> Void
+) {
+    Task {
+        let alert_ = await deleteContactChat(chat, chatDeleteMode: chatDeleteMode)
+        if let alert = alert_ {
+            showAlert(SomeAlert(alert: alert, id: "deleteContactMaybeErrorAlert, error"))
+        } else {
+            if dismissToChatList {
+                await MainActor.run {
+                    ChatModel.shared.chatId = nil
+                }
+                DispatchQueue.main.async {
+                    dismissAllSheets(animated: true) {
+                        if case .messages = chatDeleteMode, showDeleteConversationNoticeDefault.get() {
+                            AlertManager.shared.showAlert(deleteConversationNotice(contact))
+                        } else if chatDeleteMode.isEntity, showDeleteContactNoticeDefault.get() {
+                            AlertManager.shared.showAlert(deleteContactNotice(contact))
+                        }
+                    }
+                }
+            } else {
+                if case .messages = chatDeleteMode, showDeleteConversationNoticeDefault.get() {
+                    showAlert(SomeAlert(alert: deleteConversationNotice(contact), id: "deleteContactMaybeErrorAlert, deleteConversationNotice"))
+                } else if chatDeleteMode.isEntity, showDeleteContactNoticeDefault.get() {
+                    showAlert(SomeAlert(alert: deleteContactNotice(contact), id: "deleteContactMaybeErrorAlert, deleteContactNotice"))
+                }
+            }
+        }
+    }
+}
+
+private func deleteConversationNotice(_ contact: Contact) -> Alert {
+    return Alert(
+        title: Text("Conversation deleted!"),
+        message: Text("You can send messages to \(contact.displayName) from Archived contacts."),
+        primaryButton: .default(Text("Don't show again")) {
+            showDeleteConversationNoticeDefault.set(false)
+        },
+        secondaryButton: .default(Text("Ok"))
+    )
+}
+
+private func deleteContactNotice(_ contact: Contact) -> Alert {
+    return Alert(
+        title: Text("Contact deleted!"),
+        message: Text("You can still view conversation with \(contact.displayName) in the list of chats."),
+        primaryButton: .default(Text("Don't show again")) {
+            showDeleteContactNoticeDefault.set(false)
+        },
+        secondaryButton: .default(Text("Ok"))
+    )
+}
+
+enum ContactDeleteMode {
+    case full
+    case entity
+
+    public func toChatDeleteMode(notify: Bool) -> ChatDeleteMode {
+        switch self {
+        case .full: .full(notify: notify)
+        case .entity: .entity(notify: notify)
+        }
+    }
+}
+
+struct DeleteActiveContactDialog: View {
+    @Environment(\.dismiss) var dismiss
+    @EnvironmentObject var theme: AppTheme
+    var chat: Chat
+    var contact: Contact
+    var dismissToChatList: Bool
+    var showAlert: (SomeAlert) -> Void
+    @State private var keepConversation = false
+
+    var body: some View {
+        NavigationView {
+            List {
+                Section {
+                    Toggle("Keep conversation", isOn: $keepConversation)
+
+                    Button(role: .destructive) {
+                        dismiss()
+                        deleteContactMaybeErrorAlert(chat, contact, chatDeleteMode: contactDeleteMode.toChatDeleteMode(notify: false), dismissToChatList, showAlert)
+                    } label: {
+                        Text("Delete without notification")
+                    }
+
+                    Button(role: .destructive) {
+                        dismiss()
+                        deleteContactMaybeErrorAlert(chat, contact, chatDeleteMode: contactDeleteMode.toChatDeleteMode(notify: true), dismissToChatList, showAlert)
+                    } label: {
+                        Text("Delete and notify contact")
+                    }
+                } footer: {
+                    Text("Contact will be deleted - this cannot be undone!")
+                        .foregroundColor(theme.colors.secondary)
+                }
+            }
+            .modifier(ThemedBackground(grouped: true))
+        }
+    }
+
+    var contactDeleteMode: ContactDeleteMode {
+        keepConversation ? .entity : .full
+    }
+}
+
+private func deleteContactWithoutConversation(
+    _ chat: Chat,
+    _ contact: Contact,
+    _ dismissToChatList: Bool,
+    _ showAlert: @escaping (SomeAlert) -> Void,
+    _ showActionSheet: @escaping (SomeActionSheet) -> Void
+) {
+    showActionSheet(SomeActionSheet(
+        actionSheet: ActionSheet(
+            title: Text("Confirm contact deletion?"),
+            buttons: [
+                .destructive(Text("Delete and notify contact")) {
+                    deleteContactMaybeErrorAlert(chat, contact, chatDeleteMode: .full(notify: true), dismissToChatList, showAlert)
+                },
+                .destructive(Text("Delete without notification")) {
+                    deleteContactMaybeErrorAlert(chat, contact, chatDeleteMode: .full(notify: false), dismissToChatList, showAlert)
+                },
+                .cancel()
+            ]
+        ),
+        id: "deleteContactWithoutConversation"
+    ))
+}
+
+private func deleteNotReadyContact(
+    _ chat: Chat,
+    _ contact: Contact,
+    _ dismissToChatList: Bool,
+    _ showAlert: @escaping (SomeAlert) -> Void,
+    _ showActionSheet: @escaping (SomeActionSheet) -> Void
+) {
+    showActionSheet(SomeActionSheet(
+        actionSheet: ActionSheet(
+            title: Text("Confirm contact deletion?"),
+            buttons: [
+                .destructive(Text("Confirm")) {
+                    deleteContactMaybeErrorAlert(chat, contact, chatDeleteMode: .full(notify: false), dismissToChatList, showAlert)
+                },
+                .cancel()
+            ]
+        ),
+        id: "deleteNotReadyContact"
+    ))
+}
+
+struct ChatInfoView_Previews: PreviewProvider {
+    static var previews: some View {
+        ChatInfoView(
+            chat: Chat(chatInfo: ChatInfo.sampleData.direct, chatItems: []),
+            contact: Contact.sampleData,
+            localAlias: "",
+            featuresAllowed: contactUserPrefsToFeaturesAllowed(Contact.sampleData.mergedPreferences),
+            currentFeaturesAllowed: contactUserPrefsToFeaturesAllowed(Contact.sampleData.mergedPreferences),
+             onSearch: {}
+        )
+    }
+}

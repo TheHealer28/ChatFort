@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ChatFort Feature Graphic</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1024px;
+    height: 500px;
+    overflow: hidden;
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  .container {
+    width: 1024px;
+    height: 500px;
+    background: linear-gradient(135deg, #0a0f1a 0%, #0d1b2a 30%, #1b2d45 60%, #162a3a 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Subtle grid pattern overlay */
+  .container::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image:
+      linear-gradient(rgba(74, 222, 128, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(74, 222, 128, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    z-index: 1;
+  }
+
+  /* Glowing orb behind the fist */
+  .glow-orb {
+    position: absolute;
+    width: 380px;
+    height: 380px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(74, 222, 128, 0.12) 0%, rgba(74, 222, 128, 0.04) 40%, transparent 70%);
+    left: 80px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+  }
+
+  .content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 0 60px;
+    position: relative;
+    z-index: 3;
+  }
+
+  /* Left side - fist icon */
+  .icon-area {
+    flex-shrink: 0;
+    width: 240px;
+    height: 240px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 50px;
+  }
+
+  .fist-icon {
+    width: 200px;
+    height: 200px;
+    position: relative;
+  }
+
+  /* SVG raised fist */
+  .fist-icon svg {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 0 30px rgba(74, 222, 128, 0.3));
+  }
+
+  /* Shield behind fist */
+  .shield-ring {
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    width: 240px;
+    height: 240px;
+    border: 2px solid rgba(74, 222, 128, 0.25);
+    border-radius: 50%;
+  }
+
+  .shield-ring-2 {
+    position: absolute;
+    top: -35px;
+    left: -35px;
+    width: 270px;
+    height: 270px;
+    border: 1px solid rgba(74, 222, 128, 0.1);
+    border-radius: 50%;
+  }
+
+  /* Right side - text */
+  .text-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .app-name {
+    font-size: 72px;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: 2px;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .app-name span {
+    background: linear-gradient(135deg, #4ade80 0%, #22c55e 50%, #16a34a 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .urdu-name {
+    font-size: 38px;
+    color: rgba(74, 222, 128, 0.6);
+    font-weight: 300;
+    letter-spacing: 4px;
+    margin-bottom: 24px;
+    direction: rtl;
+    font-family: 'Segoe UI', 'Noto Nastaliq Urdu', serif;
+  }
+
+  .tagline {
+    font-size: 22px;
+    color: rgba(255, 255, 255, 0.75);
+    font-weight: 400;
+    line-height: 1.4;
+    max-width: 480px;
+  }
+
+  .tagline strong {
+    color: #4ade80;
+    font-weight: 600;
+  }
+
+  /* Feature pills */
+  .features {
+    display: flex;
+    gap: 12px;
+    margin-top: 28px;
+    flex-wrap: wrap;
+  }
+
+  .feature-pill {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    border-radius: 20px;
+    background: rgba(74, 222, 128, 0.08);
+    border: 1px solid rgba(74, 222, 128, 0.2);
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+  }
+
+  .feature-pill .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #4ade80;
+    flex-shrink: 0;
+  }
+
+  /* Corner accents */
+  .corner-accent {
+    position: absolute;
+    z-index: 2;
+  }
+
+  .corner-accent.top-right {
+    top: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    border-top: 2px solid rgba(74, 222, 128, 0.2);
+    border-right: 2px solid rgba(74, 222, 128, 0.2);
+  }
+
+  .corner-accent.bottom-left {
+    bottom: 30px;
+    left: 30px;
+    width: 60px;
+    height: 60px;
+    border-bottom: 2px solid rgba(74, 222, 128, 0.2);
+    border-left: 2px solid rgba(74, 222, 128, 0.2);
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="glow-orb"></div>
+
+  <div class="corner-accent top-right"></div>
+  <div class="corner-accent bottom-left"></div>
+
+  <div class="content">
+    <!-- Left: Fist icon with shield rings -->
+    <div class="icon-area">
+      <div class="fist-icon">
+        <div class="shield-ring"></div>
+        <div class="shield-ring-2"></div>
+        <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Raised fist -->
+          <g transform="translate(30, 10) scale(0.7)">
+            <!-- Wrist/arm -->
+            <rect x="65" y="195" width="70" height="65" rx="8" fill="#4ade80"/>
+            <rect x="55" y="245" width="90" height="20" rx="6" fill="#22c55e"/>
+
+            <!-- Palm -->
+            <rect x="50" y="100" width="100" height="100" rx="16" fill="#4ade80"/>
+
+            <!-- Thumb -->
+            <rect x="35" y="130" width="30" height="55" rx="14" fill="#22c55e"/>
+
+            <!-- Fingers (folded over) -->
+            <rect x="52" y="75" width="28" height="50" rx="13" fill="#16a34a"/>
+            <rect x="82" y="68" width="28" height="55" rx="13" fill="#16a34a"/>
+            <rect x="112" y="75" width="28" height="50" rx="13" fill="#16a34a"/>
+
+            <!-- Finger tops (knuckle highlights) -->
+            <rect x="52" y="85" width="28" height="30" rx="13" fill="#4ade80"/>
+            <rect x="82" y="78" width="28" height="30" rx="13" fill="#4ade80"/>
+            <rect x="112" y="85" width="28" height="30" rx="13" fill="#4ade80"/>
+
+            <!-- Knuckle line -->
+            <line x1="55" y1="108" x2="145" y2="108" stroke="#16a34a" stroke-width="3" stroke-linecap="round"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Right: Text content -->
+    <div class="text-area">
+      <div class="app-name"><span>ChatFort</span></div>
+      <div class="urdu-name">انقلاب</div>
+      <div class="tagline">
+        Secure messaging for those who <strong>stand up</strong>.<br>
+        No servers. No metadata. No compromises.
+      </div>
+      <div class="features">
+        <div class="feature-pill"><div class="dot"></div>End-to-End Encrypted</div>
+        <div class="feature-pill"><div class="dot"></div>Offline Messaging</div>
+        <div class="feature-pill"><div class="dot"></div>Panic Wipe</div>
+        <div class="feature-pill"><div class="dot"></div>No Phone Number</div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

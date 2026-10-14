@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="crowd_mesh_title">ChatFort Crowd mesh</string>
+  <plurals name="crowd_mesh_service_text">
+    <item quantity="one">Relaying messages · linked to %1$d phone nearby</item>
+    <item quantity="other">Relaying messages · linked to %1$d phones nearby</item>
+  </plurals>
+  <string name="crowd_mesh_stop">Stop</string>
+  <string name="crowd_mesh_service_channel">Crowd mesh</string>
+  <string name="crowd_mesh_messages_channel">Crowd mesh messages</string>
+  <!-- ChatFort Crowd mesh -->
+  <string name="crowd_mesh_new_team_message">New team message</string>
+  <string name="crowd_mesh_new_private_message">New private message</string>
+</resources>

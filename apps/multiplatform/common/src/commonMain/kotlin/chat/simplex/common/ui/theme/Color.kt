@@ -1,0 +1,36 @@
+package chat.simplex.common.ui.theme
+
+import androidx.compose.material.LocalContentColor
+import androidx.compose.material.MaterialTheme
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.ui.graphics.*
+import chat.simplex.common.views.helpers.mixWith
+import kotlin.math.min
+
+val Purple200 = Color(0xFFA5D6A7)
+val Purple500 = Color(0xFF2E7D32)
+val Purple700 = Color(0xFF1B5E20)
+val Teal200 = Color(0xFF69F0AE)
+val Gray = Color(0x22222222)
+val Indigo = Color(0xFF43A047)
+val SimplexBlue = Color(30, 142, 62, 255)  // Inqalaab Green - primary brand colour
+val SimplexGreen = Color(77, 218, 103, 255)
+val SecretColor = Color(0x40808080)
+val LightGray = Color(241, 242, 246, 255)
+val DarkGray = Color(43, 44, 46, 255)
+val HighOrLowlight = Color(139, 135, 134, 255)
+val MessagePreviewDark = Color(179, 175, 174, 255)
+val MessagePreviewLight = Color(49, 45, 44, 255)
+val ToolbarLight = Color(220, 220, 220, 12)
+val ToolbarDark = Color(80, 80, 80, 12)
+val SettingsSecondaryLight = Color(200, 196, 195, 90)
+val GroupDark = Color(80, 80, 80, 60)
+val IncomingCallLight = Color(239, 237, 236, 255)
+val WarningOrange = Color(255, 127, 0, 255)
+val WarningYellow = Color(255, 192, 0, 255)
+val FileLight = Color(183, 190, 199, 255)
+val FileDark = Color(101, 101, 106, 255)
+
+val MenuTextColor: Color @Composable get () = if (isInDarkTheme()) LocalContentColor.current.copy(alpha = 0.8f) else Color.Black
+val NoteFolderIconColor: Color @Composable get() = MaterialTheme.appColors.primaryVariant2

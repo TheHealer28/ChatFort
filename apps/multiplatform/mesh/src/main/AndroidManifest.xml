@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <!-- Bluetooth, location and notification permissions are declared by the ChatFort app manifest. -->
+  <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+  <uses-permission android:name="android.permission.FOREGROUND_SERVICE_CONNECTED_DEVICE" />
+  <!-- No FOREGROUND_SERVICE_LOCATION: the location type below is only used on Android 10-11, where
+       that permission doesn't exist. From Android 12 the mesh never uses location. -->
+  <uses-feature android:name="android.hardware.bluetooth_le" android:required="false" />
+
+  <application>
+    <!-- Keeps the crowd mesh relaying while the screen is off -->
+    <service
+        android:name="chat.simplex.mesh.CrowdMeshService"
+        android:enabled="true"
+        android:exported="false"
+        android:foregroundServiceType="connectedDevice|location" />
+  </application>
+</manifest>

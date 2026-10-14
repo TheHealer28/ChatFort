@@ -1,0 +1,18 @@
+/* Bundle name */
+"CFBundleName" = "Inqalaab";
+
+/* Privacy - Camera Usage Description */
+"NSCameraUsageDescription" = "Inqalaab benötigt Zugriff auf die Kamera, um QR Codes für die Verbindung mit anderen Benutzern zu scannen und Videoanrufe durchzuführen.";
+
+/* Privacy - Face ID Usage Description */
+"NSFaceIDUsageDescription" = "Face ID wird von Inqalaab für die lokale Authentifizierung genutzt";
+
+/* Privacy - Local Network Usage Description */
+"NSLocalNetworkUsageDescription" = "Inqalaab nutzt den lokalen Netzwerkzugriff, um die Nutzung von Benutzer-Chatprofilen über eine Desktop-App im gleichen Netzwerk zu erlauben.";
+
+/* Privacy - Microphone Usage Description */
+"NSMicrophoneUsageDescription" = "Inqalaab benötigt Zugriff auf das Mikrofon, um Audio- und Videoanrufe und die Aufnahme von Sprachnachrichten zu ermöglichen.";
+
+/* Privacy - Photo Library Additions Usage Description */
+"NSPhotoLibraryAddUsageDescription" = "Inqalaab benötigt Zugriff auf das Fotoalbum, um selbst gemachte oder heruntergeladene Bilder zu speichern";
+
