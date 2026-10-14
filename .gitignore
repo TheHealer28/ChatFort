@@ -99,3 +99,6 @@ result-*
 soul.md
 cloudflare-worker.js
 Cloudflare worker Backup dont edit
+
+# Server configuration (not published, protects users)
+apps/ios/Shared/InqalaabServers.swift

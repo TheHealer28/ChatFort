@@ -84,6 +84,8 @@ open apps/ios/SimpleX.xcodeproj
 In Xcode, choose the **Inqalaab (iOS)** scheme, set your own team and bundle ID under Signing &
 Capabilities, and build.
 
+**Server configuration isn't included.** To protect users, this repository doesn't publish ChatFort's server addresses. `apps/ios/Shared/InqalaabServers.swift` is left out, and server addresses and keys elsewhere are replaced with placeholders (`example.org`, `example.net`). To build a working app, add that file with your own servers and replace the placeholders.
+
 Some internal names (the repository, the Xcode project and schemes, the bundle ID and the core
 library) still use the project's earlier name. They have to match the build files, so they weren't
 renamed.
