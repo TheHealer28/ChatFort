@@ -46,6 +46,9 @@ final class CrowdMesh: ObservableObject {
     @Published private(set) var linkedContacts: [MeshLinkedContact] = []
     /// Every profile's contact chats (saved); only the active profile's are shown.
     @Published private var contactChats: [String: MeshContactChatState] = [:]
+    /// People the user blocked (their messages are dropped) and the rules agreement (Keychain).
+    @Published private(set) var blockList = MeshBlockList()
+    @Published private(set) var rulesAccepted = false
 
     var totalUnread: Int {
         unreadPublic + teams.reduce(0) { $0 + $1.unread } + privateChats.reduce(0) { $0 + $1.unread }
@@ -74,6 +77,8 @@ final class CrowdMesh: ObservableObject {
     /// False while the Keychain / store can't be read (before the first unlock after a restart):
     /// nothing is created or saved over the real state until it has been read.
     private var contactLinksLoaded = false
+    /// Read from the Keychain; before that (e.g. before the first unlock) nothing is saved over it.
+    private var moderationLoaded = false
     private var contactChatsLoaded = false
     /// Briefly after a wipe, late link events must not recreate state.
     private var linksFrozenUntil = Date.distantPast
@@ -92,6 +97,7 @@ final class CrowdMesh: ObservableObject {
         userChoseNickname = saved != nil
         nickname = saved ?? CrowdMesh.randomNickname()
         loadTeams()
+        loadModeration()
         MeshStore.deleteVoiceTempFiles()
         loadContactLinks()
         engine.host = self
@@ -103,6 +109,7 @@ final class CrowdMesh: ObservableObject {
         // Only from stopped: with Bluetooth off the engine is already running and waiting for it.
         guard status == .stopped else { return }
         if !userChoseNickname { nickname = CrowdMesh.randomNickname() }
+        loadModeration()
         status = .starting
         let teams = Array(teamKeys.values)
         let nick = nickname
@@ -150,6 +157,8 @@ final class CrowdMesh: ObservableObject {
     func sendPublic(_ text: String) -> Result<Void, CrowdMeshError> {
         guard let text = checkedText(text) else { return .failure(.tooLong) }
         guard status == .running else { return .failure(.notRunning) }
+        // Everyone is public: offensive words aren't posted there (App Review 1.2).
+        guard !MeshContentFilter.isObjectionable(text) else { return .failure(.offensive) }
         let messageId = MeshCrypto.randomBytes(16)
         let nick = nickname
         engine.run { $0.sendPublic(text: text, nickname: nick, messageId: messageId) }
@@ -256,6 +265,90 @@ final class CrowdMesh: ObservableObject {
 
     func markRead(privateChat chatId: String) { updateChat(chatId) { $0.unread = 0 } }
 
+    // MARK: - Moderation (App Review 1.2)
+
+    func acceptRules() {
+        rulesAccepted = true
+        saveModeration()
+    }
+
+    /// Blocks a person (from a message, the people list or a private chat). Their messages are no
+    /// longer stored or shown, their private chat goes, and they leave the people list. The contact
+    /// entry stays (without our future keys) so their handovers keep matching the block.
+    func block(nickname: String, peerId: String?, contactId: String?) {
+        var cid = contactId
+        if cid == nil, let p = peerId, let key = peerKeys[p] {
+            cid = contacts.values.first { $0.currentKey == key || $0.retiredKeys.contains(key) }?.id
+        }
+        var peerIds = [peerId].compactMap { $0 }.filter { !$0.isEmpty }
+        if let cid, let c = contacts[cid] { peerIds += [c.peerId] + c.retiredPeerIds }
+        blockList.block(nickname: nickname, peerIds: peerIds, contactId: cid)
+        publicFeed.removeAll { !$0.isMine && blockList.blocks(peerId: $0.senderId, nickname: $0.senderName) }
+        unreadPublic = min(unreadPublic, publicFeed.filter { !$0.isMine }.count)
+        for (teamId, list) in teamMessageStore {
+            let kept = list.filter { $0.isMine || !blockList.blocks(peerId: $0.senderId, nickname: $0.senderName) }
+            guard kept.count != list.count else { continue }
+            teamMessageStore[teamId] = kept
+            if let i = teams.firstIndex(where: { $0.id == teamId }) {
+                teams[i].lastMessage = kept.last
+                teams[i].unread = min(teams[i].unread, kept.filter { !$0.isMine }.count)
+            }
+        }
+        for chat in privateChats where chat.id == cid || blockList.blocks(peerId: chat.peerId, nickname: chat.nickname) {
+            privateMessageStore[chat.id] = nil
+            privateChats.removeAll { $0.id == chat.id }
+        }
+        publishPeople()
+        syncContactKeys()
+        saveModeration()
+        addLog("Blocked someone")
+    }
+
+    func unblock(_ entryId: String) {
+        guard let entry = blockList.entries.first(where: { $0.id == entryId }) else { return }
+        blockList.unblock(entryId)
+        if let cid = entry.contactId, let c = contacts[cid], !privateChats.contains(where: { $0.id == cid }) {
+            privateChats.append(MeshPrivateChat(id: cid, nickname: c.nickname, peerId: c.peerId, unread: 0,
+                                                lastMessage: nil, isNearby: allPeople[c.peerId] != nil))
+        }
+        publishPeople()
+        syncContactKeys()
+        saveModeration()
+    }
+
+    private func isBlocked(_ key: Data, _ nick: String) -> Bool {
+        guard !blockList.isEmpty else { return false }
+        let peerId = MeshCrypto.origin(of: key).meshHex
+        let cid = contacts.values.first { $0.currentKey == key || $0.retiredKeys.contains(key) }?.id
+        return blockList.blocks(peerId: peerId, nickname: nick.isEmpty ? nil : nick, contactId: cid)
+    }
+
+    private func loadModeration() {
+        guard !moderationLoaded else { return }
+        switch MeshKeychain.read(account: MeshKeychain.moderationAccount) {
+        case let .found(data):
+            if let saved = try? JSONDecoder().decode(MeshModerationState.self, from: data) {
+                blockList = saved.blockList
+                rulesAccepted = saved.rulesAccepted
+            }
+            moderationLoaded = true
+        case .notFound:
+            moderationLoaded = true
+        case .failed:
+            break
+        }
+    }
+
+    private func saveModeration() {
+        guard moderationLoaded else { return }
+        let state = MeshModerationState(blockList: blockList, rulesAccepted: rulesAccepted)
+        if state == MeshModerationState() {
+            MeshKeychain.delete(account: MeshKeychain.moderationAccount)
+        } else if let data = try? JSONEncoder().encode(state) {
+            MeshKeychain.save(data, account: MeshKeychain.moderationAccount)
+        }
+    }
+
     // MARK: - Panic wipe
 
     /// Part of the emergency wipe: stops the mesh and erases team keys, nickname, messages and contacts.
@@ -277,6 +370,9 @@ final class CrowdMesh: ObservableObject {
         teamMessageStore = [:]
         privateMessageStore = [:]
         unreadPublic = 0
+        blockList = MeshBlockList()
+        rulesAccepted = false
+        moderationLoaded = true
         wipeContactLinks()
         log = []
         userChoseNickname = false
@@ -318,18 +414,20 @@ final class CrowdMesh: ObservableObject {
         case let .announce(key, nick, hops):
             seen(key, nick, hops)
         case let .publicPost(messageId, key, nick, text, timestamp, hops):
+            guard !isBlocked(key, nick) else { return }
             seen(key, nick, hops)
             let m = received(messageId, key, nick, text, timestamp, hops)
             guard !CrowdMesh.contains(m, publicFeed) else { return }
             publicFeed = CrowdMesh.adding(m, to: publicFeed)
             if CrowdMesh.contains(m, publicFeed) { unreadPublic += 1 }
         case let .team(teamId, messageId, key, nick, text, timestamp, hops):
-            guard teamKeys[teamId] != nil else { return }
+            guard teamKeys[teamId] != nil, !isBlocked(key, nick) else { return }
             seen(key, nick, hops)
             if addTeamMessage(teamId, received(messageId, key, nick, text, timestamp, hops), countUnread: true) {
                 notify(NSLocalizedString("New team message", comment: "crowd mesh notification"))
             }
         case let .direct(messageId, key, nick, text, timestamp, hops):
+            guard !isBlocked(key, nick) else { return }
             seen(key, nick, hops)
             let chatId = contactId(for: key, nickname: nick)
             if addPrivateMessage(chatId, received(messageId, key, nick, text, timestamp, hops), countUnread: true) {
@@ -352,7 +450,7 @@ final class CrowdMesh: ObservableObject {
         case let .contactMediaHeader(binding, uid, header, timestamp, hops, fresh):
             contactMessage(binding, uid: uid, text: header.caption, media: header, timestamp: timestamp, hops: hops, fresh: fresh)
         case let .teamMediaHeader(teamId, uid, key, header, timestamp, hops):
-            guard teamKeys[teamId] != nil else { return }
+            guard teamKeys[teamId] != nil, !isBlocked(key, header.nick) else { return }
             seen(key, header.nick, hops)
             var m = received(uid, key, header.nick, header.caption, timestamp, hops)
             m.media = MeshMediaInfo(header)
@@ -406,12 +504,20 @@ final class CrowdMesh: ObservableObject {
         }
         let peerId = contacts[id]?.peerId ?? ""
         updateChat(id) { $0.peerId = peerId }
+        if blockList.entry(forContact: id) != nil {
+            blockList.addPeerId(peerId, toContact: id)
+            saveModeration()
+        }
         syncContactKeys()
         addLog("Contact moved to a new key")
     }
 
     private func mergeChat(_ otherId: String, into id: String) {
         guard let other = contacts.removeValue(forKey: otherId) else { return }
+        if blockList.entry(forContact: otherId) != nil {
+            blockList.moveContact(from: otherId, to: id)
+            saveModeration()
+        }
         contacts[id]?.absorb(other.retiredKeys + [other.currentKey])
         var list = privateMessageStore[id] ?? []
         for m in privateMessageStore.removeValue(forKey: otherId) ?? [] { list = CrowdMesh.adding(m, to: list) }
@@ -963,7 +1069,8 @@ final class CrowdMesh: ObservableObject {
     }
 
     private func publishPeople() {
-        people = allPeople.values.sorted { ($0.hops, $0.nickname.lowercased()) < ($1.hops, $1.nickname.lowercased()) }
+        people = allPeople.values.filter { !blockList.blocks(peerId: $0.id, nickname: $0.nickname) }
+            .sorted { ($0.hops, $0.nickname.lowercased()) < ($1.hops, $1.nickname.lowercased()) }
         for chat in privateChats {
             let nearby = allPeople[chat.peerId] != nil
             if chat.isNearby != nearby { updateChat(chat.id) { $0.isNearby = nearby } }
@@ -989,7 +1096,9 @@ final class CrowdMesh: ObservableObject {
 
     /// The engine sends a REKEY to every contact before it rotates the identity.
     private func syncContactKeys() {
-        let keys = contacts.values.map(\.currentKey).filter(MeshCrypto.isValidPublicKey)
+        // A blocked contact isn't told our next key, so they can't follow us after a rotation.
+        let keys = contacts.values.filter { blockList.entry(forContact: $0.id) == nil }
+            .map(\.currentKey).filter(MeshCrypto.isValidPublicKey)
         engine.run { $0.setContactKeys(keys) }
     }
 
@@ -1145,6 +1254,7 @@ enum MeshKeychain {
     static let teamsAccount = "teams"
     static let nicknameAccount = "nickname"
     static let contactLinksAccount = "contact-links"
+    static let moderationAccount = "moderation"
 
     static func save(_ data: Data, account: String) {
         delete(account: account)

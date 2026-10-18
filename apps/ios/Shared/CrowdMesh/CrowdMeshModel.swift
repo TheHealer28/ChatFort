@@ -115,4 +115,6 @@ enum CrowdMeshError: Error, Equatable {
     case alreadyInTeam
     case notRunning
     case tooLong
+    /// Everyone only: the message has offensive words.
+    case offensive
 }

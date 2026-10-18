@@ -21,6 +21,8 @@ struct CrowdMeshPeopleView: View {
     @State private var editingNickname = false
     @State private var showLog = false
     @State private var chatToDelete: MeshPrivateChat?
+    @State private var personToBlock: MeshPerson?
+    @State private var showRules = false
 
     var body: some View {
         List {
@@ -30,10 +32,28 @@ struct CrowdMeshPeopleView: View {
             if !mesh.privateChats.isEmpty {
                 chatsSection
             }
+            safetySection
+            if !mesh.blockList.isEmpty {
+                blockedSection
+            }
             logSection
         }
         .listStyle(.insetGrouped)
         .sheet(isPresented: $editingNickname) { CrowdMeshNicknameSheet() }
+        .sheet(isPresented: $showRules) { CrowdMeshRulesSheet(agreeing: false) }
+        .confirmationDialog(
+            Text("Block this person?"),
+            isPresented: Binding(get: { personToBlock != nil }, set: { if !$0 { personToBlock = nil } }),
+            titleVisibility: .visible,
+            presenting: personToBlock
+        ) { person in
+            Button("Block \(person.nickname)", role: .destructive) {
+                mesh.block(nickname: person.nickname, peerId: person.id, contactId: nil)
+            }
+            Button("Cancel", role: .cancel) {}
+        } message: { _ in
+            Text("You won't see their messages in the crowd mesh, and they can't message you privately. Messages from anyone using this nickname are hidden too.")
+        }
         .confirmationDialog(
             Text("Delete this conversation?"),
             isPresented: Binding(get: { chatToDelete != nil }, set: { if !$0 { chatToDelete = nil } }),
@@ -98,6 +118,18 @@ struct CrowdMeshPeopleView: View {
                 } label: {
                     CrowdMeshPersonRow(person: person)
                 }
+                .swipeActions(edge: .trailing) {
+                    // No destructive role: that removes the row before the confirmation is answered.
+                    Button { personToBlock = person } label: {
+                        Label("Block", systemImage: "hand.raised")
+                    }
+                    .tint(.red)
+                }
+                .contextMenu {
+                    Button(role: .destructive) { personToBlock = person } label: {
+                        Label("Block", systemImage: "hand.raised")
+                    }
+                }
             }
         } header: {
             Text("Nearby now")
@@ -124,6 +156,39 @@ struct CrowdMeshPeopleView: View {
             }
         } header: {
             Text("Private chats")
+        }
+    }
+
+    private var safetySection: some View {
+        Section {
+            Button { showRules = true } label: {
+                Label("Community rules", systemImage: "checkmark.shield")
+            }
+            if let url = CrowdMeshUI.mailURL(subject: "ChatFort crowd mesh") {
+                Link(destination: url) {
+                    Label("Contact us", systemImage: "envelope")
+                }
+            }
+        } header: {
+            Text("Safety")
+        } footer: {
+            Text("Long-press a message to report it or block the sender.")
+        }
+    }
+
+    private var blockedSection: some View {
+        Section {
+            ForEach(mesh.blockList.entries) { entry in
+                HStack {
+                    Text(verbatim: entry.nickname)
+                    Spacer(minLength: 8)
+                    Button("Unblock") { mesh.unblock(entry.id) }
+                        .buttonStyle(.borderless)
+                        .foregroundColor(InqalaabGreen)
+                }
+            }
+        } header: {
+            Text("Blocked")
         }
     }
 
@@ -282,6 +347,7 @@ struct CrowdMeshPrivateChatView: View {
     let name: String
     @State private var draft = ""
     @State private var confirmDelete = false
+    @State private var confirmBlock = false
     @State private var wasListed = false
     @State private var closing = false
 
@@ -293,7 +359,7 @@ struct CrowdMeshPrivateChatView: View {
         VStack(spacing: 0) {
             CrowdMeshStatusNotice()
             CrowdMeshBanner(icon: "lock.fill", text: Text("Private: only they can read it."), detail: reach, tint: InqalaabGreen)
-            CrowdMeshMessageList(messages: messages)
+            CrowdMeshMessageList(messages: messages, moderation: CrowdMeshModeration(place: "Private chat", contactId: chatId))
             CrowdMeshComposeBar(text: $draft, placeholder: "Private message") { mesh.sendPrivate(chatId, text: $0) }
         }
         .navigationTitle(Text(verbatim: displayName))
@@ -301,6 +367,9 @@ struct CrowdMeshPrivateChatView: View {
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Menu {
+                    Button(role: .destructive) { confirmBlock = true } label: {
+                        Label("Block", systemImage: "hand.raised")
+                    }
                     Button(role: .destructive) { confirmDelete = true } label: {
                         Label("Delete conversation", systemImage: "trash")
                     }
@@ -318,6 +387,15 @@ struct CrowdMeshPrivateChatView: View {
             Button("Cancel", role: .cancel) {}
         } message: {
             Text("Its messages are removed from this phone.")
+        }
+        .confirmationDialog(Text("Block \(displayName)?"), isPresented: $confirmBlock, titleVisibility: .visible) {
+            Button("Block", role: .destructive) {
+                mesh.block(nickname: displayName, peerId: chat?.peerId, contactId: chatId)
+                close()
+            }
+            Button("Cancel", role: .cancel) {}
+        } message: {
+            Text("You won't see their messages in the crowd mesh, and they can't message you privately. Messages from anyone using this nickname are hidden too.")
         }
         .modifier(CrowdMeshMarkRead(newestId: messages.last?.id) { mesh.markRead(privateChat: chatId) })
         .onAppear { if chat != nil { wasListed = true } }

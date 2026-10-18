@@ -403,7 +403,7 @@ struct CrowdMeshTeamChatView: View {
         VStack(spacing: 0) {
             CrowdMeshStatusNotice()
             CrowdMeshBanner(icon: "lock.fill", text: Text("Team: only team members can read this."), tint: InqalaabGreen)
-            CrowdMeshMessageList(messages: messages)
+            CrowdMeshMessageList(messages: messages, moderation: CrowdMeshModeration(place: "Team"))
             CrowdMeshComposeBar(text: $draft, placeholder: "Message \(name)", attachments: {
                 CrowdMeshMediaButtons { type, data, durationMs, width, height in
                     mesh.sendTeamMedia(teamId, type, data: data, durationMs: durationMs, width: width, height: height)

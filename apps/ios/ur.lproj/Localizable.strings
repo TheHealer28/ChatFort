@@ -789,3 +789,37 @@
 "Couldn't make this photo small enough for the mesh." = "یہ تصویر میش کے لیے کافی چھوٹی نہیں بن سکی۔";
 "Nearby iPhones" = "قریبی iPhones";
 "Chat directly with iPhones right next to you, without the crowd mesh." = "کراؤڈ میش کے بغیر، اپنے بالکل قریب موجود iPhones سے براہ راست چیٹ کریں۔";
+
+/* ===== Crowd mesh: safety (report, block, filter, rules) ===== */
+"Report this message?" = "اس پیغام کی رپورٹ کریں؟";
+"Report" = "رپورٹ کریں";
+"Report and block" = "رپورٹ اور بلاک کریں";
+"This opens an email to the ChatFort team with the message, the sender's nickname and the time. We review every report." = "اس سے ChatFort ٹیم کے لیے ایک ای میل کھلے گی جس میں پیغام، بھیجنے والے کا نک نیم اور وقت ہوگا۔ ہم ہر رپورٹ کا جائزہ لیتے ہیں۔";
+"Block this person?" = "اس شخص کو بلاک کریں؟";
+"Block %@" = "%@ کو بلاک کریں";
+"Block %@?" = "%@ کو بلاک کریں؟";
+"You won't see their messages in the crowd mesh, and they can't message you privately. Messages from anyone using this nickname are hidden too." = "کراؤڈ میش میں آپ کو ان کے پیغامات نظر نہیں آئیں گے، اور وہ آپ کو نجی پیغام نہیں بھیج سکیں گے۔ اس نک نیم والے ہر شخص کے پیغامات بھی چھپ جائیں گے۔";
+"No email app" = "کوئی ای میل ایپ نہیں";
+"Copy report" = "رپورٹ کاپی کریں";
+"Copy the report and send it to %@ when you're online." = "رپورٹ کاپی کریں اور آن لائن ہونے پر %@ پر بھیج دیں۔";
+"Block" = "بلاک کریں";
+"Hidden: may be offensive" = "چھپایا گیا: ممکنہ طور پر نامناسب";
+"Show" = "دکھائیں";
+"Not sent. Offensive words aren't allowed in Everyone." = "نہیں بھیجا گیا۔ \"سب\" میں نامناسب الفاظ کی اجازت نہیں۔";
+"The crowd mesh connects you with people nearby. Keep it safe for everyone." = "کراؤڈ میش آپ کو قریب موجود لوگوں سے جوڑتا ہے۔ اسے سب کے لیے محفوظ رکھیں۔";
+"Be respectful. No harassment, threats, hate speech or bullying." = "احترام سے پیش آئیں۔ ہراسانی، دھمکیوں، نفرت انگیز باتوں یا دھونس کی اجازت نہیں۔";
+"No sexual content. Never share intimate images of anyone without their consent." = "جنسی مواد کی اجازت نہیں۔ کسی کی نجی تصاویر ان کی رضامندی کے بغیر کبھی شیئر نہ کریں۔";
+"Nothing that exploits children, promotes violence or terrorism, or helps human trafficking." = "ایسا کچھ نہیں جو بچوں کا استحصال کرے، تشدد یا دہشت گردی کو فروغ دے، یا انسانی اسمگلنگ میں مدد کرے۔";
+"Everyone is public: anyone nearby can read it. Don't share names, locations or plans." = "\"سب\" عوامی ہے: قریب موجود کوئی بھی اسے پڑھ سکتا ہے۔ نام، مقامات یا منصوبے شیئر نہ کریں۔";
+"Long-press any message to report it or block the sender. Offensive words are filtered." = "کسی بھی پیغام کو دبا کر رکھیں تاکہ اس کی رپورٹ کریں یا بھیجنے والے کو بلاک کریں۔ نامناسب الفاظ فلٹر کیے جاتے ہیں۔";
+"We have zero tolerance for objectionable content and abusive users. Reports go to the ChatFort team at %@." = "قابلِ اعتراض مواد اور بدسلوکی کرنے والوں کے لیے ہماری برداشت صفر ہے۔ رپورٹس ChatFort ٹیم کو %@ پر جاتی ہیں۔";
+"Terms of Use" = "شرائطِ استعمال";
+"Community Guidelines" = "کمیونٹی رہنما اصول";
+"I agree" = "میں متفق ہوں";
+"Crowd mesh rules" = "کراؤڈ میش کے اصول";
+"Community rules" = "کمیونٹی کے اصول";
+"Contact us" = "ہم سے رابطہ کریں";
+"Safety" = "حفاظت";
+"Long-press a message to report it or block the sender." = "پیغام کو دبا کر رکھیں تاکہ اس کی رپورٹ کریں یا بھیجنے والے کو بلاک کریں۔";
+"Blocked" = "بلاک شدہ";
+"Unblock" = "ان بلاک کریں";

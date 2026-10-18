@@ -26,6 +26,48 @@ enum CrowdMeshRoute: Hashable {
 
 @MainActor
 enum CrowdMeshUI {
+    /// Reports and questions (shown in the rules, Settings › Contact us and the report email).
+    static let supportEmail = "chatfort@yourhealingartist.com"
+    static let termsURL = URL(string: "https://github.com/TheHealer28/ChatFort/blob/android-updates/TERMS_OF_USE.md")!
+    static let guidelinesURL = URL(string: "https://github.com/TheHealer28/ChatFort/blob/android-updates/COMMUNITY_GUIDELINES.md")!
+
+    /// What a report says (English, for the team that reads it). The user sees it in their email app.
+    static func reportBody(_ m: MeshChatMessage, place: String) -> String {
+        let time = ISO8601DateFormatter().string(from: m.date)
+        let content: String
+        switch m.media?.kind {
+        case .photo?: content = "[photo] " + m.text
+        case .voice?: content = "[voice note] " + m.text
+        case nil: content = m.text
+        }
+        let info = Bundle.main.infoDictionary
+        let version = "\(info?["CFBundleShortVersionString"] as? String ?? "?") (\(info?["CFBundleVersion"] as? String ?? "?"))"
+        return """
+        ChatFort crowd mesh report
+
+        Where: \(place)
+        Nickname: \(m.senderName)
+        Sender ID: \(m.senderId.prefix(16))
+        Time: \(time)
+        Message: \(content)
+        App: ChatFort \(version), iOS \(UIDevice.current.systemVersion)
+
+        Anything else we should know:
+
+        """
+    }
+
+    static func reportURL(body: String) -> URL? {
+        mailURL(subject: "ChatFort crowd mesh report", body: body)
+    }
+
+    static func mailURL(subject: String, body: String = "") -> URL? {
+        let allowed = CharacterSet(charactersIn: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-._~")
+        guard let s = subject.addingPercentEncoding(withAllowedCharacters: allowed),
+              let b = body.addingPercentEncoding(withAllowedCharacters: allowed) else { return nil }
+        return URL(string: "mailto:\(supportEmail)?subject=\(s)" + (body.isEmpty ? "" : "&body=\(b)"))
+    }
+
     /// Same as Android; `CrowdMesh.setNickname` trims to this too.
     static let maxNicknameCharacters = 24
     /// Nicknames travel as at most 32 UTF-8 bytes (MeshWire.maxNickBytes); an Urdu letter takes 2.
@@ -82,12 +124,14 @@ enum CrowdMeshUI {
                 ? Text("Can't reach this person yet.")
                 : Text("The crowd mesh isn't running. Start it to send messages.")
         case .tooLong: return Text("Too long. Shorten your message to send it.")
+        case .offensive: return Text("Not sent. Offensive words aren't allowed in Everyone.")
         }
     }
 
     /// Last-message line for team rows (with the sender) and private chat rows. Message text is never localized.
     static func preview(_ message: MeshChatMessage?, showSender: Bool) -> Text {
         guard let m = message else { return Text("No messages yet.") }
+        if !m.isMine, MeshContentFilter.isObjectionable(m.text) { return Text("Hidden: may be offensive") }
         var text = Text(verbatim: m.text.replacingOccurrences(of: "\n", with: " "))
         if let media = m.media {
             let kind = media.kind == .photo ? Text("Photo") : Text("Voice note")

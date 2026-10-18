@@ -17,6 +17,7 @@ struct CrowdMeshIntroView: View {
     /// Blank means a random nickname (see `CrowdMeshUI.editableNickname`).
     @State private var nickname = CrowdMeshUI.editableNickname(CrowdMesh.shared.nickname)
     @FocusState private var nicknameFocused: Bool
+    @State private var showRules = false
     @ScaledMetric(relativeTo: .largeTitle) private var heroSize: CGFloat = 72
 
     var body: some View {
@@ -42,6 +43,12 @@ struct CrowdMeshIntroView: View {
             }
             Divider()
             bottomBar
+        }
+        .sheet(isPresented: $showRules) {
+            CrowdMeshRulesSheet(agreeing: true) {
+                mesh.acceptRules()
+                start()
+            }
         }
     }
 
@@ -272,8 +279,85 @@ struct CrowdMeshIntroView: View {
 
     private func start() {
         nicknameFocused = false
+        // The rules come first, once (App Review 1.2: users agree to them before chatting).
+        guard mesh.rulesAccepted else {
+            showRules = true
+            return
+        }
         // Blank = random for this session (Android v2: random per session unless the user picks one).
         mesh.setNickname(nickname)
         mesh.start()
+    }
+}
+
+/// The crowd mesh rules: agreed to before the first start, and readable any time from People.
+struct CrowdMeshRulesSheet: View {
+    @Environment(\.dismiss) private var dismiss
+    /// True before the first start: "I agree" / "Cancel". False: just "Done".
+    let agreeing: Bool
+    var onAgree: () -> Void = {}
+
+    var body: some View {
+        NavigationView {
+            ScrollView {
+                VStack(alignment: .leading, spacing: 16) {
+                    Text("The crowd mesh connects you with people nearby. Keep it safe for everyone.")
+                        .font(.body)
+                        .fixedSize(horizontal: false, vertical: true)
+                    rule("hand.raised.fill", Text("Be respectful. No harassment, threats, hate speech or bullying."))
+                    rule("eye.slash.fill", Text("No sexual content. Never share intimate images of anyone without their consent."))
+                    rule("exclamationmark.octagon.fill", Text("Nothing that exploits children, promotes violence or terrorism, or helps human trafficking."))
+                    rule("megaphone.fill", Text("Everyone is public: anyone nearby can read it. Don't share names, locations or plans."))
+                    rule("exclamationmark.bubble.fill", Text("Long-press any message to report it or block the sender. Offensive words are filtered."))
+                    rule("checkmark.shield.fill", Text("We have zero tolerance for objectionable content and abusive users. Reports go to the ChatFort team at \(CrowdMeshUI.supportEmail)."))
+                    HStack(spacing: 20) {
+                        Link(destination: CrowdMeshUI.termsURL) { Text("Terms of Use") }
+                        Link(destination: CrowdMeshUI.guidelinesURL) { Text("Community Guidelines") }
+                    }
+                    .font(.subheadline.weight(.semibold))
+                    .foregroundColor(InqalaabGreen)
+                    .padding(.top, 4)
+                }
+                .padding(20)
+            }
+            .safeAreaInset(edge: .bottom) {
+                if agreeing {
+                    Button {
+                        onAgree()
+                        dismiss()
+                    } label: {
+                        Text("I agree")
+                            .font(.headline)
+                            .foregroundColor(.white)
+                            .frame(maxWidth: .infinity)
+                            .padding(.vertical, 14)
+                            .background(RoundedRectangle(cornerRadius: 14, style: .continuous).fill(InqalaabGreen))
+                    }
+                    .padding(.horizontal, 20)
+                    .padding(.vertical, 10)
+                    .background(.bar)
+                }
+            }
+            .navigationTitle(Text("Crowd mesh rules"))
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: agreeing ? .cancellationAction : .confirmationAction) {
+                    Button(agreeing ? "Cancel" : "Done") { dismiss() }
+                }
+            }
+        }
+        .navigationViewStyle(.stack)
+    }
+
+    private func rule(_ icon: String, _ text: Text) -> some View {
+        HStack(alignment: .top, spacing: 12) {
+            Image(systemName: icon)
+                .foregroundColor(InqalaabGreen)
+                .frame(width: 24)
+                .accessibilityHidden(true)
+            text
+                .font(.subheadline)
+                .fixedSize(horizontal: false, vertical: true)
+        }
     }
 }

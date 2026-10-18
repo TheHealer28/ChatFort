@@ -423,6 +423,13 @@ struct SettingsView: View {
                 } label: {
                     settingsRow("info", color: theme.colors.secondary) { Text("About ChatFort") }
                 }
+                // Published contact for reports and questions (App Review 1.2).
+                if let url = CrowdMeshUI.mailURL(subject: "ChatFort") {
+                    settingsRow("envelope", color: theme.colors.secondary) {
+                        Link(destination: url) { Text("Contact us") }
+                            .foregroundColor(theme.colors.onBackground)
+                    }
+                }
             }
 
             Section(header: Text("Support ChatFort").foregroundColor(theme.colors.secondary)) {

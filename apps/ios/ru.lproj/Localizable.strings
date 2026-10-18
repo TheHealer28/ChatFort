@@ -29,7 +29,7 @@
 "[Contribute](https://github.com/TheHealer28/Inqalaab#contribute)" = "[Внести свой вклад](https://github.com/TheHealer28/Inqalaab#contribute)";
 
 /* No comment provided by engineer. */
-"[Send us email](mailto:chat@inqalaab.chat)" = "[Отправить email](mailto:chat@inqalaab.chat)";
+"[Send us email](mailto:chatfort@yourhealingartist.com)" = "[Отправить email](mailto:chatfort@yourhealingartist.com)";
 
 /* No comment provided by engineer. */
 "[Star on GitHub](https://github.com/TheHealer28/Inqalaab)" = "[Поставить звездочку в GitHub](https://github.com/TheHealer28/Inqalaab)";
@@ -3465,7 +3465,7 @@ snd error text */
 "Migration error:" = "Ошибка при перемещении данных:";
 
 /* No comment provided by engineer. */
-"Migration failed. Tap **Skip** below to continue using the current database. Please report the issue to the app developers via chat or email [chat@inqalaab.chat](mailto:chat@inqalaab.chat)." = "Ошибка при перемещении данных. Нажмите **Отложить** внизу чтобы продолжить использовать предыдущую версию данных. Пожалуйста, сообщите об этой ошибке разработчикам через чат или email [chat@inqalaab.chat](mailto:chat@inqalaab.chat).";
+"Migration failed. Tap **Skip** below to continue using the current database. Please report the issue to the app developers via chat or email [chatfort@yourhealingartist.com](mailto:chatfort@yourhealingartist.com)." = "Ошибка при перемещении данных. Нажмите **Отложить** внизу чтобы продолжить использовать предыдущую версию данных. Пожалуйста, сообщите об этой ошибке разработчикам через чат или email [chatfort@yourhealingartist.com](mailto:chatfort@yourhealingartist.com).";
 
 /* No comment provided by engineer. */
 "Migration is completed" = "Перемещение данных завершено";

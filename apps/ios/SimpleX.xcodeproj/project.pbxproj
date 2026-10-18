@@ -281,6 +281,7 @@
 		FDA1B5488572A14C7892A8DA /* MeshStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA1B5488572A14C7892A8DB /* MeshStore.swift */; };
 		3AD67533B23A3E0247B4D33A /* MeshContactLinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD67533B23A3E0247B4D33B /* MeshContactLinks.swift */; };
 		E87E86F07AE3368B424F7D8A /* MeshV3.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87E86F07AE3368B424F7D8B /* MeshV3.swift */; };
+		839F69492660C7D5B208804D /* MeshModeration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C42B389503358218EA5D9DE /* MeshModeration.swift */; };
 		F9FE5A2052D4A45F797497AA /* MeshBleLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FE5A2052D4A45F797497AB /* MeshBleLink.swift */; };
 		FA1655602DEAC4BD81199D0A /* CrowdMeshTeamsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1655602DEAC4BD81199D0B /* CrowdMeshTeamsView.swift */; };
 		FB000002000000000000000A /* GroupCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB000002000000000000000B /* GroupCall.swift */; };
@@ -731,6 +732,7 @@
 		FDA1B5488572A14C7892A8DB /* MeshStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeshStore.swift; sourceTree = "<group>"; };
 		3AD67533B23A3E0247B4D33B /* MeshContactLinks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeshContactLinks.swift; sourceTree = "<group>"; };
 		E87E86F07AE3368B424F7D8B /* MeshV3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeshV3.swift; sourceTree = "<group>"; };
+		5C42B389503358218EA5D9DE /* MeshModeration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeshModeration.swift; sourceTree = "<group>"; };
 		F9FE5A2052D4A45F797497AB /* MeshBleLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeshBleLink.swift; sourceTree = "<group>"; };
 		FA1655602DEAC4BD81199D0B /* CrowdMeshTeamsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrowdMeshTeamsView.swift; sourceTree = "<group>"; };
 		FB000002000000000000000B /* GroupCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCall.swift; sourceTree = "<group>"; };
@@ -1341,6 +1343,7 @@
 				FDA1B5488572A14C7892A8DB /* MeshStore.swift */,
 				3AD67533B23A3E0247B4D33B /* MeshContactLinks.swift */,
 				E87E86F07AE3368B424F7D8B /* MeshV3.swift */,
+				5C42B389503358218EA5D9DE /* MeshModeration.swift */,
 				FF1A1A3BFBC68AC6FA84B35B /* MeshWire.swift */,
 			);
 			path = CrowdMesh;
@@ -1740,6 +1743,7 @@
 				FDA1B5488572A14C7892A8DA /* MeshStore.swift in Sources */,
 				3AD67533B23A3E0247B4D33A /* MeshContactLinks.swift in Sources */,
 				E87E86F07AE3368B424F7D8A /* MeshV3.swift in Sources */,
+				839F69492660C7D5B208804D /* MeshModeration.swift in Sources */,
 				FF1A1A3BFBC68AC6FA84B35A /* MeshWire.swift in Sources */,
 				A1B2C3D4E5F6A7B8C9D0E1F3 /* InqalaabServers.swift in Sources */,
 				B1B2C3D4E5F6A7B8C9D0E101 /* InqalaabTabView.swift in Sources */,
@@ -2195,7 +2199,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Inqalaab (iOS).entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = C7P2NWA933;
 				ENABLE_BITCODE = NO;
@@ -2250,7 +2254,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Inqalaab (iOS).entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = C7P2NWA933;
 				ENABLE_BITCODE = NO;
@@ -2296,7 +2300,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = C7P2NWA933;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -2316,7 +2320,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = C7P2NWA933;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -2341,7 +2345,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Inqalaab NSE/Inqalaab NSE.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = C7P2NWA933;
 				ENABLE_BITCODE = NO;
 				GCC_OPTIMIZATION_LEVEL = s;
@@ -2378,7 +2382,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Inqalaab NSE/Inqalaab NSE.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = C7P2NWA933;
 				ENABLE_BITCODE = NO;
 				ENABLE_CODE_COVERAGE = NO;
@@ -2415,7 +2419,7 @@
 				CLANG_TIDY_BUGPRONE_REDUNDANT_BRANCH_CONDITION = YES;
 				CLANG_TIDY_MISC_REDUNDANT_EXPRESSION = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = C7P2NWA933;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -2466,7 +2470,7 @@
 				CLANG_TIDY_BUGPRONE_REDUNDANT_BRANCH_CONDITION = YES;
 				CLANG_TIDY_MISC_REDUNDANT_EXPRESSION = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = C7P2NWA933;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -2517,7 +2521,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_ENTITLEMENTS = "Inqalaab SE/Inqalaab SE.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = C7P2NWA933;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
@@ -2551,7 +2555,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_ENTITLEMENTS = "Inqalaab SE/Inqalaab SE.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = C7P2NWA933;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
