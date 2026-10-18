@@ -118,7 +118,7 @@ ChatFort collects no data and has no analytics or advertising. See the
 
 ## Security
 
-Please report vulnerabilities privately to **chat@inqalaab.chat**. Don't open a public issue.
+Please report vulnerabilities privately to **chatfort@yourhealingartist.com**. Don't open a public issue.
 
 ## Contributing
 
