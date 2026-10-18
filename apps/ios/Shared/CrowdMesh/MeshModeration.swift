@@ -175,5 +175,6 @@ enum MeshContentFilter {
     ]
 
     static let words: Set<String> = Set(wordList.flatMap { tokens(of: $0) })
-    private static let squeezedWords: Set<String> = Set(words.map { squeezed($0, keep: 1) }.filter { $0.count >= 4 })
+    /// Only words without a doubled letter: squeezing "nigger" or "tatte" would catch "Niger" and "Tate".
+    private static let squeezedWords: Set<String> = Set(words.filter { $0.count >= 4 && squeezed($0, keep: 1) == $0 })
 }
