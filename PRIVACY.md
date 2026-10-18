@@ -85,4 +85,4 @@ We may update this privacy policy from time to time. Any changes will be reflect
 
 ## 12. Contact
 
-If you have questions about this privacy policy, you can reach us at [chat@inqalaab.chat](mailto:chat@inqalaab.chat).
+If you have questions about this privacy policy, you can reach us at [chatfort@yourhealingartist.com](mailto:chatfort@yourhealingartist.com).

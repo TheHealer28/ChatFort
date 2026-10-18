@@ -104,8 +104,8 @@ We may update this privacy policy from time to time. Any changes will be reflect
 
 If you have questions or concerns about this privacy policy:
 
-- **GitHub:** [https://github.com/TheHealer28/Inqalaab](https://github.com/TheHealer28/Inqalaab)
-- **Email:** Open an issue on our GitHub repository
+- **GitHub:** [https://github.com/TheHealer28/ChatFort](https://github.com/TheHealer28/ChatFort)
+- **Email:** [chatfort@yourhealingartist.com](mailto:chatfort@yourhealingartist.com)
 
 ## Open Source
 
