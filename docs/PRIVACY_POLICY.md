@@ -96,7 +96,7 @@ We may update this privacy policy from time to time. Any changes will be reflect
 
 If you have questions or concerns about this privacy policy:
 
-- **Email:** [chat@inqalaab.chat](mailto:chat@inqalaab.chat)
+- **Email:** [chatfort@yourhealingartist.com](mailto:chatfort@yourhealingartist.com)
 - **GitHub:** [https://github.com/TheHealer28/ChatFort](https://github.com/TheHealer28/ChatFort)
 
 ## Open Source

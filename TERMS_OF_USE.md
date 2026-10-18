@@ -1,7 +1,7 @@
 # ChatFort — Terms of Use
 
 **Effective Date:** March 6, 2026
-**Last Updated:** March 6, 2026
+**Last Updated:** October 18, 2026
 
 ## 1. Acceptance of Terms
 
@@ -36,7 +36,7 @@ ChatFort is built for activists, organizers, and communities who need secure com
 - **Respect others.** Treat fellow users with dignity regardless of background, identity, or beliefs.
 - **Protect privacy.** Do not share private conversations, screenshots, or personal information of others without their consent.
 - **Use responsibly.** The security features in ChatFort exist to protect people facing real threats. Do not misuse them.
-- **Report abuse.** If you encounter abusive behavior in a group, use the in-app reporting feature to flag messages to group administrators.
+- **Report abuse.** If you encounter abusive behavior in a group, use the in-app reporting feature to flag messages to group administrators. In the crowd mesh, long-press a message to report it to the ChatFort team or block the sender.
 
 ## 6. User-Generated Content
 
@@ -50,6 +50,16 @@ Because ChatFort uses end-to-end encryption, we cannot access, read, moderate, o
 - **Block & Delete:** You can block and delete any 1:1 contact, which permanently severs the connection, deletes all messages, and prevents the contact from messaging you again. They are not notified.
 - **Leaving:** You can leave any group at any time.
 - **Clear chat:** You can clear the message history of any conversation.
+
+### Crowd mesh
+
+The crowd mesh lets you chat over Bluetooth with people nearby, without internet: in the public "Everyone" channel, in teams, and in private chats. People there appear under nicknames, often random ones. Before you first start the crowd mesh, you must agree to its rules, which match these Terms and our [Community Guidelines](COMMUNITY_GUIDELINES.md). In the crowd mesh:
+
+- **Report:** Long-press a message from someone else and tap **Report**. This opens an email to the ChatFort team at [chatfort@yourhealingartist.com](mailto:chatfort@yourhealingartist.com) with the message, the sender's nickname and part of their mesh ID, and the time. You send it from your own email app, so we also see your email address. If your phone has no email app, you can copy the report and send it later.
+- **Block:** Long-press a message, a person in the People list, or use **Block** in a private chat. Their messages are removed from your phone and no longer shown or notified, their private chat is closed, and they can no longer message you privately. Messages from anyone using the same nickname are hidden too. You can unblock people in People › Blocked.
+- **Word filter:** Your phone checks crowd mesh messages for offensive words (English, Roman Urdu, Urdu and Hindi). The Everyone channel refuses to send a message that contains them, and received messages that contain them are hidden until you tap **Show**. The check runs only on your phone; nothing is sent to us.
+
+**We have zero tolerance for objectionable content and abusive users.** We review every report and respond promptly. The crowd mesh has no servers or accounts, so we cannot delete messages from other people's phones or ban a person from it; blocking takes effect on your phone at once.
 
 ## 7. Intellectual Property
 
@@ -114,5 +124,5 @@ If any provision of these Terms is found to be unenforceable, the remaining prov
 
 If you have questions about these Terms of Use:
 
-- **Email:** [chat@inqalaab.chat](mailto:chat@inqalaab.chat)
+- **Email:** [chatfort@yourhealingartist.com](mailto:chatfort@yourhealingartist.com)
 - **GitHub:** [https://github.com/TheHealer28/ChatFort](https://github.com/TheHealer28/ChatFort)

@@ -1,6 +1,7 @@
 # ChatFort — Community Guidelines
 
 **Effective Date:** March 6, 2026
+**Last Updated:** October 18, 2026
 
 ChatFort is a secure messaging app built for activists, organizers, journalists, and communities who need private communication. These guidelines exist to ensure the platform remains safe and respectful for everyone.
 
@@ -20,7 +21,7 @@ ChatFort is a secure messaging app built for activists, organizers, journalists,
 - Treat all users with respect and dignity.
 - Protect the privacy of others — do not share private conversations or personal information without consent.
 - Use group features responsibly — respect group rules set by administrators.
-- Report abusive content or behavior using the in-app tools.
+- Report abusive content or behavior using the in-app tools: in groups, and in the crowd mesh.
 - Use security features (emergency wipe, app lock) for their intended protective purpose.
 
 ---
@@ -60,9 +61,11 @@ The following are strictly prohibited on ChatFort:
 
 ChatFort uses end-to-end encryption. This means:
 
-- **We cannot read your messages.** Content moderation relies entirely on user-driven tools.
-- **We do not monitor conversations.** There is no automated content scanning.
+- **We cannot read your messages.** Content moderation relies on user-driven tools.
+- **We do not monitor conversations.** There is no scanning on any server. The crowd mesh word filter (below) runs only on your phone and sends nothing to us.
 - **We do not have access to your data.** Enforcement depends on community participation.
+
+**We have zero tolerance for objectionable content and abusive users.**
 
 ### Tools Available to Users
 
@@ -75,13 +78,25 @@ ChatFort uses end-to-end encryption. This means:
 | **Group permissions** | Groups | Administrators can control who can send messages, add members, or share content. |
 | **Block & Delete** | 1:1 chats | Permanently blocks a contact, deletes all messages, and prevents them from messaging you again. They are not notified. |
 | **Clear chat** | Any chat | Permanently removes message history from your device. |
+| **Report message** | Crowd mesh | Long-press a message from someone else: opens an email to the ChatFort team with the message, the sender's nickname and the time. |
+| **Block** | Crowd mesh | Long-press a message or a person, or use Block in a private chat. Removes their messages from your phone, hides them from People and stops them messaging you privately. Messages from anyone using the same nickname are hidden too. Unblock in People › Blocked. |
+| **Word filter** | Crowd mesh | The Everyone channel won't send a message with offensive words (English, Roman Urdu, Urdu, Hindi). Received messages with such words are hidden until you tap Show. |
+| **Community rules** | Crowd mesh | You agree to the crowd mesh rules before you first start it. Read them again in People › Safety. |
 
 ### What Happens When You Report
+
+**In groups:**
 
 - Reports are visible to **group administrators only** (not to ChatFort developers or server operators).
 - Group administrators can take action including blocking or removing the reported member from the group.
 - ChatFort does not receive, store, or process report data on any server.
-- Reporting is currently available in group conversations. For unwanted 1:1 contacts, use the delete contact feature.
+- For unwanted 1:1 contacts, use Block & Delete.
+
+**In the crowd mesh:**
+
+- A report is an email to the ChatFort team at [chatfort@yourhealingartist.com](mailto:chatfort@yourhealingartist.com), sent from your own email app. It contains the message (for a photo or voice note, its caption), the sender's nickname, the first part of their mesh ID, the time, and the app version. We also see your email address. The team name is not included.
+- With no email app, you can copy the report and send it when you're online.
+- We review every report and respond promptly. The crowd mesh has no servers or accounts, so we cannot delete messages from other people's phones or ban a person from the mesh. Block the sender to stop seeing them at once.
 
 ---
 
@@ -97,6 +112,12 @@ ChatFort uses end-to-end encryption. This means:
 1. **Block & Delete the contact** to permanently stop all messages from that person.
 2. **Document evidence** — take screenshots before deleting if you may need them for authorities.
 3. **Contact local authorities** if you face credible threats of violence or illegal activity.
+
+### In the crowd mesh
+1. **Report the message** (long-press it, then Report). Choose **Report and block** to block the sender at the same time.
+2. **Block the person** (long-press their message or their name in People, or use Block in a private chat).
+3. **Document evidence** before blocking: blocking removes their messages from your phone.
+4. **Contact local authorities** if you face credible threats of violence or illegal activity.
 
 If you are in immediate danger, contact your local emergency services.
 
@@ -123,5 +144,5 @@ We may update these Community Guidelines as needed. Changes will be reflected in
 
 If you have questions about these guidelines:
 
-- **Email:** [chat@inqalaab.chat](mailto:chat@inqalaab.chat)
+- **Email:** [chatfort@yourhealingartist.com](mailto:chatfort@yourhealingartist.com)
 - **GitHub:** [https://github.com/TheHealer28/ChatFort](https://github.com/TheHealer28/ChatFort)

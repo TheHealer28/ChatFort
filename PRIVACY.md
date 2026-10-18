@@ -87,4 +87,4 @@ ChatFort is open source under the AGPLv3 license. You can review the complete so
 
 ## 13. Contact
 
-If you have questions about this privacy policy, you can reach us at [chat@inqalaab.chat](mailto:chat@inqalaab.chat).
+If you have questions about this privacy policy, you can reach us at [chatfort@yourhealingartist.com](mailto:chatfort@yourhealingartist.com).
