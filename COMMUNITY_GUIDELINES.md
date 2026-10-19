@@ -1,7 +1,7 @@
 # ChatFort — Community Guidelines
 
 **Effective Date:** March 6, 2026
-**Last Updated:** October 18, 2026
+**Last Updated:** October 19, 2026
 
 ChatFort is a secure messaging app built for activists, organizers, journalists, and communities who need private communication. These guidelines exist to ensure the platform remains safe and respectful for everyone.
 
@@ -31,7 +31,7 @@ ChatFort is a secure messaging app built for activists, organizers, journalists,
 The following are strictly prohibited on ChatFort:
 
 ### Exploitation and Abuse
-- Child sexual abuse material (CSAM) or any content exploiting minors.
+- Child sexual abuse material (CSAM), grooming, or any other sexual abuse or exploitation of children (see [Child Safety Standards](#child-safety-standards)).
 - Human trafficking, slavery, or exploitation of persons.
 - Non-consensual intimate imagery ("revenge porn").
 
@@ -54,6 +54,46 @@ The following are strictly prohibited on ChatFort:
 - Sending unsolicited bulk messages.
 - Creating groups solely for advertising or commercial spam.
 - Automated or bot-driven messaging without user consent.
+
+---
+
+## Child Safety Standards
+
+ChatFort, published by Your Healing Artist Limited, has **zero tolerance for child sexual abuse and exploitation (CSAE)**. These standards apply everywhere in ChatFort: private chats, groups, calls, files, Nearby rooms and the crowd mesh.
+
+### Age
+
+ChatFort is only for people aged **18 and over**. On Google Play, ChatFort is restricted to adults.
+
+### What is prohibited
+
+You must not use ChatFort to:
+
+- Create, share, request, store or link to child sexual abuse material (CSAM), including drawn, edited or AI-generated material.
+- Groom a child, sexualise a child, or contact a child for sexual purposes, online or in person.
+- Sexually extort a child ("sextortion"), or threaten or coerce a child in any way.
+- Traffic, sell or exploit children.
+- Advertise, promote, organise or help with any of the above.
+
+### How to report
+
+- **Crowd mesh:** long-press the message, then tap **Report**. This opens an email to the ChatFort team with the message, the sender's nickname and the time. Tap **Report and block** to block the sender at the same time.
+- **Groups:** long-press the message and report it to the group's administrators, and email us as well.
+- **Any chat:** email us from **Settings › Send us email**, or write to [chatfort@yourhealingartist.com](mailto:chatfort@yourhealingartist.com) with the subject "Child safety". Use **Block & Delete** to cut off a contact.
+- **If a child is in immediate danger, contact your local police or emergency services first.**
+
+### What we do
+
+- We review every child safety report first, ahead of other reports.
+- Messages are end-to-end encrypted, so we cannot see them unless someone reports them to us. When we learn of CSAM, for example from a report, we act on it.
+- Where the material, or a link to it, is on servers we operate, we remove it or block access to it.
+- We report confirmed CSAM to the National Center for Missing & Exploited Children (NCMEC) or the relevant authority, such as the UK National Crime Agency.
+- We cooperate with law enforcement, within what we hold. ChatFort has no accounts, phone numbers or message content to hand over.
+- The crowd mesh has no servers. Content there stays on the phones that received it, and we cannot delete it from them. Block the sender, and report them to us and to the police.
+
+### Child safety contact
+
+Our child safety point of contact can be reached at [chatfort@yourhealingartist.com](mailto:chatfort@yourhealingartist.com) (subject "Child safety"). They can answer questions about these standards and how we enforce them.
 
 ---
 

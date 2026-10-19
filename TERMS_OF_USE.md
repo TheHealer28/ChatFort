@@ -1,7 +1,7 @@
 # ChatFort — Terms of Use
 
 **Effective Date:** March 6, 2026
-**Last Updated:** October 18, 2026
+**Last Updated:** October 19, 2026
 
 ## 1. Acceptance of Terms
 
@@ -13,13 +13,13 @@ ChatFort is a free, open-source, end-to-end encrypted messaging application. The
 
 ## 3. Eligibility
 
-You must be at least 13 years old to use ChatFort. By using the App, you confirm that you meet this age requirement.
+You must be at least 18 years old to use ChatFort. By using the App, you confirm that you are 18 or older.
 
 ## 4. Acceptable Use
 
 You agree to use ChatFort only for lawful purposes. You may **not** use ChatFort to:
 
-- Distribute child sexual abuse material (CSAM) or any content that exploits minors.
+- Distribute child sexual abuse material (CSAM), or groom, sexually exploit or endanger children in any way. See our [Child Safety Standards](COMMUNITY_GUIDELINES.md#child-safety-standards).
 - Coordinate, plan, or carry out acts of terrorism or violent extremism.
 - Distribute malware, spyware, or other software designed to harm devices or users.
 - Engage in human trafficking, slavery, or exploitation of persons.
