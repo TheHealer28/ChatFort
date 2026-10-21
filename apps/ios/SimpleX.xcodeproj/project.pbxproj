@@ -71,6 +71,7 @@
 		5C9CC7A928C532AB00BEF955 /* DatabaseErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9CC7A828C532AB00BEF955 /* DatabaseErrorView.swift */; };
 		5C9CC7AD28C55D7800BEF955 /* DatabaseEncryptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9CC7AC28C55D7800BEF955 /* DatabaseEncryptionView.swift */; };
 		5C9D13A3282187BB00AB8B43 /* WebRTC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9D13A2282187BB00AB8B43 /* WebRTC.swift */; };
+		495873B97591E4A1B10790C3 /* CallIceServers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7161D69C22C61466C5E6B9 /* CallIceServers.swift */; };
 		5C9D811A2AA8727A001D49FD /* CryptoFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9D81182AA7A4F1001D49FD /* CryptoFile.swift */; };
 		5C9FD96E27A5D6ED0075386C /* SendMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9FD96D27A5D6ED0075386C /* SendMessageView.swift */; };
 		5CA059DC279559F40002BEB4 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA059DB279559F40002BEB4 /* Tests_iOS.swift */; };
@@ -459,6 +460,7 @@
 		5C9CC7A828C532AB00BEF955 /* DatabaseErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseErrorView.swift; sourceTree = "<group>"; };
 		5C9CC7AC28C55D7800BEF955 /* DatabaseEncryptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseEncryptionView.swift; sourceTree = "<group>"; };
 		5C9D13A2282187BB00AB8B43 /* WebRTC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebRTC.swift; sourceTree = "<group>"; };
+		1E7161D69C22C61466C5E6B9 /* CallIceServers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallIceServers.swift; sourceTree = "<group>"; };
 		5C9D81182AA7A4F1001D49FD /* CryptoFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoFile.swift; sourceTree = "<group>"; };
 		5C9FD96A27A56D4D0075386C /* JSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
 		5C9FD96D27A5D6ED0075386C /* SendMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMessageView.swift; sourceTree = "<group>"; };
@@ -810,6 +812,7 @@
 			isa = PBXGroup;
 			children = (
 				5C9D13A2282187BB00AB8B43 /* WebRTC.swift */,
+				1E7161D69C22C61466C5E6B9 /* CallIceServers.swift */,
 				FB000002000000000000000B /* GroupCall.swift */,
 				FB000003000000000000000B /* GroupCallCoordinator.swift */,
 				FB000004000000000000000B /* GroupCallView.swift */,
@@ -1666,6 +1669,7 @@
 				8C7F8F0E2C19C0C100D16888 /* ViewModifiers.swift in Sources */,
 				5C35CFCB27B2E91D00FB6C6D /* NtfManager.swift in Sources */,
 				5C9D13A3282187BB00AB8B43 /* WebRTC.swift in Sources */,
+				495873B97591E4A1B10790C3 /* CallIceServers.swift in Sources */,
 				FB000002000000000000000A /* GroupCall.swift in Sources */,
 				FB000003000000000000000A /* GroupCallCoordinator.swift in Sources */,
 				FB000004000000000000000A /* GroupCallView.swift in Sources */,
@@ -2199,7 +2203,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Inqalaab (iOS).entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = C7P2NWA933;
 				ENABLE_BITCODE = NO;
@@ -2227,7 +2231,7 @@
 					"@executable_path/Frameworks",
 				);
 				LLVM_LTO = YES_THIN;
-				MARKETING_VERSION = 1.6.6;
+				MARKETING_VERSION = 1.6.7;
 				OTHER_LDFLAGS = "-Wl,-stack_size,0x1000000";
 				PRODUCT_BUNDLE_IDENTIFIER = com.inqalaab.app;
 				PRODUCT_NAME = ChatFort;
@@ -2254,7 +2258,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Inqalaab (iOS).entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = C7P2NWA933;
 				ENABLE_BITCODE = NO;
@@ -2282,7 +2286,7 @@
 					"@executable_path/Frameworks",
 				);
 				LLVM_LTO = YES;
-				MARKETING_VERSION = 1.6.6;
+				MARKETING_VERSION = 1.6.7;
 				OTHER_LDFLAGS = "-Wl,-stack_size,0x1000000";
 				PRODUCT_BUNDLE_IDENTIFIER = com.inqalaab.app;
 				PRODUCT_NAME = ChatFort;
@@ -2300,11 +2304,11 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = C7P2NWA933;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				MARKETING_VERSION = 1.6.6;
+				MARKETING_VERSION = 1.6.7;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.inqalaab.Tests-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -2320,11 +2324,11 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = C7P2NWA933;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				MARKETING_VERSION = 1.6.6;
+				MARKETING_VERSION = 1.6.7;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.inqalaab.Tests-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -2345,7 +2349,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Inqalaab NSE/Inqalaab NSE.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = C7P2NWA933;
 				ENABLE_BITCODE = NO;
 				GCC_OPTIMIZATION_LEVEL = s;
@@ -2360,7 +2364,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				LLVM_LTO = YES;
-				MARKETING_VERSION = 1.6.6;
+				MARKETING_VERSION = 1.6.7;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.inqalaab.app.Inqalaab-NSE";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2382,7 +2386,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Inqalaab NSE/Inqalaab NSE.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = C7P2NWA933;
 				ENABLE_BITCODE = NO;
 				ENABLE_CODE_COVERAGE = NO;
@@ -2397,7 +2401,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				LLVM_LTO = YES;
-				MARKETING_VERSION = 1.6.6;
+				MARKETING_VERSION = 1.6.7;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.inqalaab.app.Inqalaab-NSE";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2419,7 +2423,7 @@
 				CLANG_TIDY_BUGPRONE_REDUNDANT_BRANCH_CONDITION = YES;
 				CLANG_TIDY_MISC_REDUNDANT_EXPRESSION = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = C7P2NWA933;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -2445,7 +2449,7 @@
 					"$(PROJECT_DIR)/Libraries/sim",
 				);
 				LLVM_LTO = YES;
-				MARKETING_VERSION = 1.6.6;
+				MARKETING_VERSION = 1.6.7;
 				PRODUCT_BUNDLE_IDENTIFIER = com.inqalaab.InqalaabChat;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
@@ -2470,7 +2474,7 @@
 				CLANG_TIDY_BUGPRONE_REDUNDANT_BRANCH_CONDITION = YES;
 				CLANG_TIDY_MISC_REDUNDANT_EXPRESSION = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = C7P2NWA933;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -2496,7 +2500,7 @@
 					"$(PROJECT_DIR)/Libraries/sim",
 				);
 				LLVM_LTO = YES;
-				MARKETING_VERSION = 1.6.6;
+				MARKETING_VERSION = 1.6.7;
 				PRODUCT_BUNDLE_IDENTIFIER = com.inqalaab.InqalaabChat;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
@@ -2521,7 +2525,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_ENTITLEMENTS = "Inqalaab SE/Inqalaab SE.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = C7P2NWA933;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
@@ -2536,7 +2540,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MARKETING_VERSION = 1.6.6;
+				MARKETING_VERSION = 1.6.7;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.inqalaab.app.Inqalaab-SE";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -2555,7 +2559,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_ENTITLEMENTS = "Inqalaab SE/Inqalaab SE.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = C7P2NWA933;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
@@ -2570,7 +2574,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MARKETING_VERSION = 1.6.6;
+				MARKETING_VERSION = 1.6.7;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.inqalaab.app.Inqalaab-SE";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;

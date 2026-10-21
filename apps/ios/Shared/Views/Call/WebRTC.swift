@@ -28,6 +28,10 @@ class Call: ObservableObject, Equatable {
     @Published var speakerEnabled = false
     @Published var connectionInfo: ConnectionInfo?
     @Published var connectedAt: Date? = nil
+    /// Their offer is waiting for call servers or the relay question: extra ICE candidates are held
+    /// (in order) until the offer has reached WebRTC. Main actor only.
+    var offerPending = false
+    var heldIce: [String] = []
 
     init(
         direction: CallDirection,
@@ -493,11 +497,49 @@ func parseRTCIceServers(_ servers: [String]) -> [RTCIceServer]? {
     return iceServers.isEmpty ? nil : iceServers
 }
 
-func getIceServers() -> [RTCIceServer]? {
-    if let servers = UserDefaults.standard.stringArray(forKey: DEFAULT_WEBRTC_ICE_SERVERS) {
-        return parseRTCIceServers(servers)
+/// The relay setting for this call. With "Always use relay" on but no relay server available (none
+/// fetched, login expired, or the user's own servers have no TURN), the user is asked first, because a
+/// direct call shows their IP address. Nil: they chose to end the call, didn't answer in time, or the
+/// call no longer needs it (`stillNeeded` turned false).
+func relayPolicy(for iceServers: [RTCIceServer]?, while stillNeeded: @escaping @MainActor () -> Bool) async -> Bool? {
+    guard UserDefaults.standard.bool(forKey: DEFAULT_WEBRTC_POLICY_RELAY) else { return false }
+    let hasRelay = iceServers?.contains { $0.urls.contains { $0.lowercased().hasPrefix("turn:") || $0.lowercased().hasPrefix("turns:") } } ?? false
+    if hasRelay { return true }
+    logger.warning("No relay server available: asking before connecting directly")
+    return await RelayFallbackPrompt.shared.ask(while: stillNeeded) ? false : nil
+}
+
+/// How long an outgoing call rings before it stops by itself.
+let outgoingCallNoAnswerTimeout: TimeInterval = 45
+
+/// A declined call stops the caller's phone right away; this covers calls nobody answers (away, offline,
+/// or an app that only rejects locally), which would otherwise ring until the caller hangs up.
+func endIfUnanswered(_ call: Call) {
+    DispatchQueue.main.asyncAfter(deadline: .now() + outgoingCallNoAnswerTimeout) {
+        guard ChatModel.shared.activeCall === call, call.callState == .invitationSent else { return }
+        logger.debug("Outgoing call not answered in \(Int(outgoingCallNoAnswerTimeout)) s: ending it")
+        hangUp(call)
     }
-    return nil
+}
+
+/// Ends a call the same way as the hang-up button.
+func hangUp(_ call: Call) {
+    DispatchQueue.main.async {
+        if let uuid = call.callUUID {
+            CallController.shared.endCall(callUUID: uuid)
+        } else {
+            CallController.shared.endCall(call: call) {}
+        }
+    }
+}
+
+/// The user's own servers (Settings › Calls) if set, otherwise ChatFort's call servers.
+func getIceServers() -> [RTCIceServer]? {
+    if let servers = UserDefaults.standard.stringArray(forKey: DEFAULT_WEBRTC_ICE_SERVERS),
+       let parsed = parseRTCIceServers(servers) {
+        return parsed
+    }
+    return CallIceServers.shared.current()
 }
 
 func getWebRTCIceServers() -> [WebRTC.RTCIceServer]? {

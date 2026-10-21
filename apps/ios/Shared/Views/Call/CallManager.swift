@@ -48,16 +48,20 @@ class CallManager {
             sharedKey: invitation.sharedKey
         )
         call.speakerEnabled = invitation.callType.media == .video
-        let useRelay = UserDefaults.standard.bool(forKey: DEFAULT_WEBRTC_POLICY_RELAY)
-        let iceServers = getIceServers()
-        logger.debug("answerIncomingCall useRelay: \(useRelay)")
-        logger.debug("answerIncomingCall iceServers: \(String(describing: iceServers))")
         // When in active call user wants to accept another call, this can only work after delay (to hide and show activeCallView)
         DispatchQueue.main.asyncAfter(deadline: .now() + (m.activeCall == nil ? 0 : 1)) {
             m.activeCall = call
             m.showCallView = true
 
             Task {
+                await CallIceServers.shared.prepareForCall()
+                // Ended while the call servers were being fetched.
+                guard m.activeCall === call else { return }
+                let iceServers = getIceServers()
+                let useRelay = await relayPolicy(for: iceServers, while: { m.activeCall === call })
+                guard m.activeCall === call else { return }
+                guard let useRelay else { hangUp(call); return }
+                logger.debug("answerIncomingCall useRelay: \(useRelay), iceServers: \(iceServers?.count ?? 0)")
                 await m.callCommand.processCommand(.start(
                 media: invitation.callType.media,
                 aesKey: invitation.sharedKey,
@@ -118,10 +122,12 @@ class CallManager {
     func endCall(invitation: RcvCallInvitation, completed: @escaping () -> Void) {
         ChatModel.shared.callInvitations.removeValue(forKey: invitation.contact.id)
         Task {
+            // Ending (not just rejecting) tells the caller, so their phone stops ringing right away. A plain
+            // reject only marks the call on this phone. Here the call shows as missed.
             do {
-                try await apiRejectCall(invitation.contact)
+                try await apiEndCall(invitation.contact)
             } catch {
-                logger.error("CallController.provider apiRejectCall error: \(responseError(error))")
+                logger.error("CallController.provider apiEndCall (decline) error: \(responseError(error))")
             }
             completed()
         }

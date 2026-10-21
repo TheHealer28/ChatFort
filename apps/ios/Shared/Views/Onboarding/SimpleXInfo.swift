@@ -70,8 +70,8 @@ struct InqalaabInfo: View {
                         inqalaabFeatureRow(
                             icon: "server.rack",
                             color: .cyan,
-                            title: "Independent infrastructure",
-                            detail: "Routed through community-run servers outside your country"
+                            title: "Relay servers",
+                            detail: "Runs on relay servers that hold no accounts or contact lists, and can't read your messages or listen to your calls."
                         )
                     }
                     .padding(.horizontal, 30)

@@ -1703,6 +1703,7 @@ func rejectContactRequest(_ contactRequestId: Int64, dismissToChatList: Bool = f
 }
 
 func apiSendCallInvitation(_ contact: Contact, _ callType: CallType) async throws {
+    CallIceServers.shared.refreshIfStale()
     try await sendCommandOkResp(.apiSendCallInvitation(contact: contact, callType: callType))
 }
 
@@ -2709,6 +2710,7 @@ func processReceivedMsg(_ res: ChatEvent) async {
         // Inqalaab: a group-call leg invitation must not ring as a 1:1 call —
         // offer it to the coordinator first (no-op unless a group call is active).
         if await GroupCallCoordinator.shared.claimInvitation(invitation) { break }
+        CallIceServers.shared.refreshIfStale()
         await MainActor.run {
             m.callInvitations[invitation.contact.id] = invitation
         }
@@ -2719,18 +2721,37 @@ func processReceivedMsg(_ res: ChatEvent) async {
             await MainActor.run {
                 call.callState = .offerReceived
                 call.sharedKey = sharedKey
+                call.offerPending = true
             }
-            let useRelay = UserDefaults.standard.bool(forKey: DEFAULT_WEBRTC_POLICY_RELAY)
-            let iceServers = getIceServers()
-            logger.debug(".callOffer useRelay \(useRelay)")
-            logger.debug(".callOffer iceServers \(String(describing: iceServers))")
-            await m.callCommand.processCommand(.offer(
-                offer: offer.rtcSession,
-                iceCandidates: offer.rtcIceCandidates,
-                media: callType.media, aesKey: sharedKey,
-                iceServers: iceServers,
-                relay: useRelay
-            ))
+            // Off the receive loop: waiting for call servers or the relay question must not hold up
+            // other events (messages, the other side hanging up).
+            Task {
+                await CallIceServers.shared.prepareForCall()
+                let iceServers = getIceServers()
+                let useRelay = await relayPolicy(for: iceServers, while: { m.activeCall === call })
+                guard m.activeCall === call else { return }
+                guard let useRelay else { hangUp(call); return }
+                logger.debug(".callOffer useRelay \(useRelay)")
+                logger.debug(".callOffer iceServers \(iceServers?.count ?? 0)")
+                await m.callCommand.processCommand(.offer(
+                    offer: offer.rtcSession,
+                    iceCandidates: offer.rtcIceCandidates,
+                    media: callType.media, aesKey: sharedKey,
+                    iceServers: iceServers,
+                    relay: useRelay
+                ))
+                // Extra candidates that arrived meanwhile, in order, after the offer.
+                while true {
+                    let held = await MainActor.run { () -> [String] in
+                        let h = call.heldIce
+                        call.heldIce = []
+                        if h.isEmpty { call.offerPending = false }
+                        return h
+                    }
+                    if held.isEmpty { break }
+                    for ice in held { await m.callCommand.processCommand(.ice(iceCandidates: ice)) }
+                }
+            }
         }
     case let .callAnswer(_, contact, answer):
         if await GroupCallCoordinator.shared.claimAnswer(contact, answer: answer) { break }
@@ -2742,8 +2763,13 @@ func processReceivedMsg(_ res: ChatEvent) async {
         }
     case let .callExtraInfo(_, contact, extraInfo):
         if await GroupCallCoordinator.shared.claimExtraInfo(contact, extraInfo: extraInfo) { break }
-        await withCall(contact) { _ in
-            await m.callCommand.processCommand(.ice(iceCandidates: extraInfo.rtcIceCandidates))
+        await withCall(contact) { call in
+            let held = await MainActor.run { () -> Bool in
+                guard call.offerPending else { return false }
+                call.heldIce.append(extraInfo.rtcIceCandidates)
+                return true
+            }
+            if !held { await m.callCommand.processCommand(.ice(iceCandidates: extraInfo.rtcIceCandidates)) }
         }
     case let .callEnded(_, contact):
         if await GroupCallCoordinator.shared.claimCallEnded(contact) { break }

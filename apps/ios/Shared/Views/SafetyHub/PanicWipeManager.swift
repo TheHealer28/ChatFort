@@ -110,6 +110,7 @@ class PanicWipeManager: ObservableObject {
                     UserDefaults.standard.removeObject(forKey: "inqalaab_contacts_cleaned")
                     UserDefaults.standard.removeObject(forKey: "inqalaab_address_created")
                     UserDefaults.standard.removeObject(forKey: InqalaabServers.KEY_ADDRESS_PENDING)
+                    CallIceServers.shared.clear()
                 }
 
                 // Step 12: Configure ChatFort servers for the fresh profile after UI settles.

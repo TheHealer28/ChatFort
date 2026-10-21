@@ -57,8 +57,8 @@ private let versionDescriptions: [VersionDescription] = [
             )),
             .feature(Description(
                 icon: "server.rack",
-                title: "Independent servers",
-                description: "Messages routed through community-run servers outside your country."
+                title: "Relay servers",
+                description: "Runs on relay servers that hold no accounts or contact lists, and can't read your messages or listen to your calls."
             )),
             .feature(Description(
                 icon: "key",

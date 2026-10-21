@@ -781,6 +781,9 @@ final class GroupCallLeg {
     /// Lost after connecting; shown as failed if the leg then closes.
     private var dropped = false
     private var connectTimeoutTask: Task<Void, Never>? = nil
+    /// Their offer is waiting for call servers or the relay question; extra ICE candidates are held until it's in.
+    private var offerPending = false
+    private var heldIce: [String] = []
 
     /// Withdraw an unanswered outgoing leg after this long, so a callee who
     /// opens the app much later doesn't find a dangling invitation that rings
@@ -827,9 +830,15 @@ final class GroupCallLeg {
     func startIncoming(_ invitation: RcvCallInvitation) {
         sharedKey = invitation.sharedKey
         makeClient()
-        let useRelay = UserDefaults.standard.bool(forKey: DEFAULT_WEBRTC_POLICY_RELAY)
-        let iceServers = getIceServers()
         Task {
+            await CallIceServers.shared.prepareForCall()
+            if await MainActor.run(body: { self.shuttingDown }) { return }
+            let iceServers = getIceServers()
+            guard let useRelay = await relayPolicy(for: iceServers, while: { [weak self] in self.map { !$0.shuttingDown } ?? false }) else {
+                refuseWithoutRelay()
+                return
+            }
+            if shuttingDown { return }
             await processor.processCommand(.start(
                 media: invitation.callType.media,
                 aesKey: invitation.sharedKey,
@@ -842,9 +851,17 @@ final class GroupCallLeg {
     /// Their WebRTC offer arrived (we are the inviter side of this leg).
     func handleRemoteOffer(_ offer: WebRTCSession, sharedKey: String?) {
         self.sharedKey = sharedKey
-        let useRelay = UserDefaults.standard.bool(forKey: DEFAULT_WEBRTC_POLICY_RELAY)
-        let iceServers = getIceServers()
+        offerPending = true
         Task {
+            defer { offerPending = false; heldIce = [] }
+            await CallIceServers.shared.prepareForCall()
+            if shuttingDown { return }
+            let iceServers = getIceServers()
+            guard let useRelay = await relayPolicy(for: iceServers, while: { [weak self] in self.map { !$0.shuttingDown } ?? false }) else {
+                refuseWithoutRelay()
+                return
+            }
+            if shuttingDown { return }
             await processor.processCommand(.offer(
                 offer: offer.rtcSession,
                 iceCandidates: offer.rtcIceCandidates,
@@ -853,7 +870,21 @@ final class GroupCallLeg {
                 iceServers: iceServers,
                 relay: useRelay
             ))
+            // Extra candidates that arrived meanwhile, in order, after the offer.
+            while !heldIce.isEmpty {
+                let held = heldIce
+                heldIce = []
+                for ice in held { await processor.processCommand(.ice(iceCandidates: ice)) }
+            }
         }
+    }
+
+    /// "Always use relay" with no relay available, and the user didn't choose to connect directly.
+    private func refuseWithoutRelay() {
+        guard !shuttingDown else { return }
+        logger.debug("GroupCallLeg: no relay available and the user chose not to connect directly")
+        coordinator?.legClosed(self, failed: true)
+        shutdown(notifyPeer: true)
     }
 
     func handleRemoteAnswer(_ answer: WebRTCSession) {
@@ -861,6 +892,11 @@ final class GroupCallLeg {
     }
 
     func handleRemoteIce(_ extraInfo: WebRTCExtraInfo) {
+        // Their offer is still waiting (call servers or the relay question): keep these until it's in.
+        if offerPending {
+            heldIce.append(extraInfo.rtcIceCandidates)
+            return
+        }
         Task { await processor.processCommand(.ice(iceCandidates: extraInfo.rtcIceCandidates)) }
     }
 

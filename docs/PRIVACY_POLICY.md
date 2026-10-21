@@ -1,112 +1,170 @@
-# Inqalaab Privacy Policy
+# ChatFort Privacy Policy
 
-**Effective Date:** March 2, 2026
-**Last Updated:** March 6, 2026
+**Effective date:** March 2, 2026
+**Last updated:** October 21, 2026
 
-## Overview
+## Summary
 
-Inqalaab is a private, end-to-end encrypted messaging application built on the SimpleX protocol. Your privacy is our highest priority. Inqalaab is designed so that we have **no access to your data** — we cannot read your messages, see your contacts, or identify you in any way.
+ChatFort is a private messenger for iPhone and Android. You don't need a phone number, an email
+address or an account. Messages and calls are end-to-end encrypted, and your messages, contacts and
+settings are kept on your own phone. We can't read your messages or see who you talk to. The app
+contains no analytics, advertising or tracking.
 
-## Data Collection
+## 1. What we collect
 
-**Inqalaab collects no user data.** Specifically:
+- **No account data.** ChatFort doesn't ask for a phone number, email address or username. It doesn't
+  assign you a user ID.
+- **No analytics or tracking.** There is no usage tracking, crash reporting, advertising, tracking SDKs
+  or cookies.
+- **What you choose to email us.** If you write to us, including when you report a crowd mesh message
+  (section 7), we receive what you send and your email address. We use it only to reply and to improve
+  safety, for example the word filter. We don't share it, except to report child sexual abuse material
+  to the authorities (see the Child Safety Standards) or when the law requires it. We delete it on
+  request.
 
-- **No account creation** — Inqalaab does not require an email address, phone number, username, or any identifier to use the app.
-- **No user identifiers** — There are no user IDs assigned by the app or shared with any server.
-- **No analytics or telemetry** — Inqalaab does not collect usage statistics, crash reports, or behavioral data.
-- **No tracking** — Inqalaab contains no advertising SDKs, tracking pixels, or third-party analytics tools.
-- **No cookies** — Inqalaab does not use cookies or similar tracking technologies.
+## 2. Messages, calls and files
 
-## Data Storage
+- Messages, photos, files and voice messages are encrypted on your phone before they're sent.
+  Encryption keys are agreed directly between the phones in a conversation.
+- ChatFort uses an open-source messaging protocol with no user identifiers, so no permanent ID links you
+  to your conversations.
+- Messages and files pass through ChatFort's servers, which can't read them. Messages are deleted once
+  they're delivered, and files are deleted when they expire.
+- Your messages, contacts, groups and profile are stored only on your device. Your profile is shared
+  only with the contacts you connect with, and there is no directory of users.
+- Audio and video calls are end-to-end encrypted. They connect directly between the two phones when
+  they can; otherwise they pass through ChatFort's own relay servers, which can't hear or see the call.
+- To set up a call, your phone contacts connection servers (ChatFort's, and Cloudflare's public STUN
+  server), which see your IP address.
+- On a direct call, the other person's phone sees your IP address. You can choose to always use the
+  relay in the call settings, so the other person never sees it.
 
-All data is stored **locally on your device only**:
+## 3. ChatFort's servers
 
-- **Messages** — All messages are end-to-end encrypted using the SimpleX protocol. Messages are stored only on your device and the recipient's device. No server retains message content after delivery.
-- **Contacts and groups** — Your contact list and group memberships are stored exclusively on your device.
-- **Media and files** — Photos, videos, voice messages, and files shared through Inqalaab are encrypted and stored on your device.
-- **Preferences and settings** — App settings (including language preference, appearance, Safety Hub configuration, Lockdown Mode state, and emergency contact selections) are stored locally using iOS standard preferences.
-- **Emergency contacts** — Your selection of emergency contacts is stored locally on your device as a list of contact identifiers. This data never leaves your device.
+- ChatFort runs its own servers for messages, files, notifications and calls. They can't read message
+  content or hear calls, hold no user accounts or IDs, and don't keep messages after delivery.
+- Our messaging and call servers don't log your IP address or who you talk to.
+- The app downloads the current list of ChatFort's servers from our own web service, and, when you make
+  or receive a call, the list of call servers with a temporary login. As with any web request, that
+  service sees your IP address. Nothing else about you is sent. The service runs on Cloudflare, which may
+  keep standard request logs, such as IP addresses, for a few days.
+- The server software is open source.
 
-## Encryption
+## 4. Notifications
 
-Inqalaab uses the SimpleX protocol for end-to-end encryption:
+- Notifications are optional. On iPhone, if you turn on instant or periodic notifications, the app
+  registers a device token with ChatFort's notification server. That server uses Apple's push service
+  to wake your phone when a message arrives.
+- The notification server sees the token, but not your messages or contacts.
+- Turning notifications off removes the token. You can hide message previews in Settings.
+- On Android, ChatFort uses no push service and registers no token: the app checks for new messages
+  itself, with a background service (shown as an ongoing notification) or periodically.
 
-- All messages are encrypted before leaving your device.
-- Encryption keys are negotiated directly between communicating devices.
-- The SimpleX protocol uses **no user identifiers** — unlike other messaging apps, there is no permanent identifier that links you to your conversations.
-- Message relay servers cannot decrypt message content and do not store messages after delivery.
+## 5. Crowd mesh (messaging without internet)
 
-## Nearby Peer-to-Peer Communication
+- The crowd mesh is optional. It runs only after you start it in the Nearby tab, and you can stop it at
+  any time.
+- Phones running ChatFort connect directly over Bluetooth Low Energy and pass messages on, up to 7 phones
+  away. No server is involved.
+- People nearby see the nickname you choose, or a random one, never your ChatFort profile name. Your crowd mesh identity
+  changes regularly and isn't linked to your profile.
+- **Everyone** is public: anyone nearby who runs the crowd mesh can read it. Private chats and team chats
+  are end-to-end encrypted.
+- Your phone also passes on other people's messages. It can't read the private and team messages it
+  passes on.
+- To let your ChatFort contacts reach you offline, the app sends them a hidden link message through your
+  normal encrypted chat.
+- While the crowd mesh is on, the app keeps using Bluetooth in the background so that messages can still
+  arrive.
+- Crowd mesh messages, the people you've blocked and your agreement to the crowd mesh rules stay on your
+  device. The emergency wipe erases them.
 
-Inqalaab includes a Nearby P2P feature for local communication when internet is unavailable:
+## 6. Nearby
 
-- Uses Apple's Multipeer Connectivity framework over local Wi-Fi and Bluetooth.
-- **No data leaves your local network** — all P2P communication stays between nearby devices.
-- No data from P2P sessions is transmitted to any external server.
+The optional Nearby feature lets you chat directly with phones next to you. No server is involved,
+and no location data is collected.
 
-## Device Permissions
+- **iPhone:** uses Multipeer Connectivity (Wi-Fi and Bluetooth); messages are encrypted between the
+  phones.
+- **Android:** Nearby rooms use Wi-Fi Direct, and Bluetooth to find rooms. Nearby room messages aren't
+  end-to-end encrypted: anyone nearby with the right tools can read them. The app shows this warning
+  too.
 
-Inqalaab requests the following device permissions, each used only for the stated purpose:
+## 7. Reporting and blocking
+
+- In the crowd mesh, long-press a message to report it or to block the sender. Blocking happens only on
+  your phone.
+- **Reporting opens an email in your own email app,** addressed to us. It contains:
+  - the message
+  - the sender's nickname
+  - a short sender ID
+  - the time
+  - your app version and phone system version (for example iOS 27 or Android 16)
+
+  You can read and change it before sending, and nothing is sent unless you send it. We receive your
+  email address with it.
+- The crowd mesh has no accounts and no servers, so we can't identify anyone or delete messages from
+  other people's phones. We use reports to help the person who reported and to improve the word filter.
+- The offensive-word filter runs on your phone. Nothing about it is sent to us.
+
+## 8. Safety features
+
+All of these run on your device and send nothing to us:
+
+- **App lock and screen protection:** the app lock uses a local passcode or biometrics (Face ID, Touch
+  ID or fingerprint).
+- **Panic Mode (iPhone):** shake the phone to wipe all ChatFort data.
+- **Emergency Wipe**, and an optional **self-destruct code**.
+- **Deadman's Switch (iPhone):** wipes the app if it isn't opened within a time you choose. The last-opened time is
+  stored only on your device.
+- **Lockdown Mode (iPhone):** one tap applies the strictest privacy settings, and restores them later.
+- **Emergency contacts and alerts:** your choice of contacts is stored on your device. Check-ins and
+  alerts are sent as normal end-to-end encrypted messages.
+- **Quick Settings "Reset App" tile (Android):** wipes all data from the notification shade.
+
+## 9. Device permissions
+
+Each permission is optional and is used only for its stated purpose.
 
 | Permission | Purpose |
 |---|---|
-| **Camera** | Scanning QR codes to connect with contacts; video calls |
-| **Microphone** | Audio and video calls; recording voice messages |
-| **Photo Library** | Saving and sharing photos and media |
-| **Face ID / Touch ID** | Optional local app authentication |
-| **Bluetooth** | Nearby P2P communication for offline messaging |
-| **Local Network** | Nearby P2P communication; desktop app pairing |
-| **Notifications** | Receiving message notifications |
+| Camera | Scanning QR codes, taking photos to send, video calls |
+| Microphone | Calls, voice messages and voice notes |
+| Photos | Sharing and saving photos |
+| Face ID, Touch ID or fingerprint | Optional app lock |
+| Bluetooth | The crowd mesh and Nearby |
+| Local Network (iPhone) | Nearby, and pairing with a desktop |
+| Nearby devices (Android 12 and later) | Finding phones for the crowd mesh and Nearby rooms (Bluetooth and Wi-Fi Direct) |
+| Notifications | Message notifications |
+| Battery optimisation exemption (Android, optional) | Keeps messages and the crowd mesh running in the background |
+| Location (older Android versions) | Required by those versions to scan for Bluetooth and Wi-Fi Direct devices. ChatFort doesn't use it to locate you. |
 
-These permissions are never used to collect, transmit, or store data beyond their stated purpose.
+## 10. Deleting your data
 
-## Third-Party Services
+Your data is on your device, so you control it. You can delete everything with:
 
-Inqalaab does not integrate any third-party services, SDKs, or analytics platforms. The app communicates only with SimpleX protocol relay servers for message delivery, and these servers:
+- Emergency Wipe, or Panic Mode (iPhone)
+- the self-destruct code
+- deleting the database in Settings
+- uninstalling the app
 
-- Cannot identify users
-- Cannot read message content
-- Do not retain messages after delivery
-- Do not log user activity
+To have anything you emailed us deleted, ask us.
 
-## Safety Hub & Security Features
+## 11. Children
 
-Inqalaab includes a Safety Hub (Protection tab) with several security features. All of these operate entirely on your device:
+ChatFort is for people aged 18 and over (see the Terms of Use). It collects no personal data from anyone.
+How we handle child safety reports is set out in the Child Safety Standards in our Community Guidelines.
 
-### Panic Mode
-- When triggered (via shake gesture), Panic Mode permanently deletes all local data including messages, contacts, files, and settings.
-- This deletion is irreversible and happens entirely on your device.
-- No data about Panic Mode usage is transmitted to any server.
+## 12. Changes to this policy
 
-### Deadman's Switch
-- If enabled, automatically triggers data wipe if the app is not opened within a user-configured time period.
-- The last-opened timestamp is stored locally on your device only.
+When this policy changes, the new version appears here with a new "Last updated" date.
 
-### Lockdown Mode
-- Applies maximum privacy settings (hides previews, enables incognito mode, activates screen protection) with one tap.
-- All settings are stored and restored locally. No data is transmitted.
+## 13. Contact
 
-### Emergency Contacts & Alerts
-- You can mark existing contacts as "emergency contacts" for one-tap check-in messaging.
-- Emergency contact selections are stored locally on your device as contact identifiers.
-- Check-in and alert messages are sent through the same end-to-end encrypted SimpleX protocol channels as regular messages.
-- No special data about emergency contacts or alerts is transmitted to any server beyond the encrypted messages themselves.
-
-## Children's Privacy
-
-Inqalaab does not knowingly collect any data from children under 13. Since the app collects no personal data from any user, no special provisions for children's data are necessary.
-
-## Changes to This Policy
-
-We may update this privacy policy from time to time. Any changes will be reflected in the "Last Updated" date above and in updated versions of the app. As Inqalaab collects no user data, changes will primarily reflect new features or clarifications.
-
-## Contact
-
-If you have questions or concerns about this privacy policy:
-
-- **GitHub:** [https://github.com/TheHealer28/ChatFort](https://github.com/TheHealer28/ChatFort)
 - **Email:** [chatfort@yourhealingartist.com](mailto:chatfort@yourhealingartist.com)
+- **GitHub:** [https://github.com/TheHealer28/ChatFort](https://github.com/TheHealer28/ChatFort)
 
-## Open Source
+## 14. Open source
 
-Inqalaab is open source under the AGPLv3 license. You can review the complete source code to verify our privacy practices at the GitHub link above.
+ChatFort is open source under the AGPLv3 licence, and you can check how it handles your data in the
+source code on GitHub. To protect users, the server addresses aren't published there.

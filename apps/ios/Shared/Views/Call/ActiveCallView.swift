@@ -169,6 +169,7 @@ struct ActiveCallView: View {
                     }
                     CallSoundsPlayer.shared.startConnectingCallSound()
                     activeCallWaitDeliveryReceipt()
+                    endIfUnanswered(call)
                 }
             case let .offer(offer, iceCandidates, capabilities):
                 Task {

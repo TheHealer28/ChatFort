@@ -243,7 +243,7 @@ struct SafetyHubView: View {
                         VStack(alignment: .leading, spacing: 2) {
                             Text(chatModel.chatRunning == true ? "Connected & Secure" : "Connecting...")
                                 .font(.headline)
-                            Text("Routed through independent servers")
+                            Text("Routed through relay servers")
                                 .font(.caption)
                                 .foregroundColor(theme.colors.secondary)
                         }

@@ -54,8 +54,8 @@ struct InqalaabSecurityPledgeView: View {
                         )
                         pledgeRow(
                             number: "4",
-                            title: "Community-run servers",
-                            detail: "Your messages route through independent servers that no government controls."
+                            title: "Relay servers",
+                            detail: "Your messages go through relay servers. They hold no accounts or contact lists, and can't read your messages or listen to your calls."
                         )
                         pledgeRow(
                             number: "5",

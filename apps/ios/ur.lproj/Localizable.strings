@@ -18,8 +18,6 @@
 "Secure communication for the resistance" = "مزاحمت کے لیے محفوظ مواصلات";
 "Built for Activists" = "سرگرم کارکنوں کے لیے بنایا گیا";
 "Built for activists and journalists facing surveillance" = "نگرانی کا سامنا کرنے والے کارکنوں اور صحافیوں کے لیے بنایا گیا";
-"Community-run servers" = "کمیونٹی سرورز";
-"Your messages never touch corporate infrastructure" = "آپ کے پیغامات کبھی کارپوریٹ انفراسٹرکچر کو نہیں چھوتے";
 "Zero data collection" = "صفر ڈیٹا جمع";
 "We collect absolutely no user data" = "ہم بالکل کوئی صارف ڈیٹا جمع نہیں کرتے";
 "End-to-end encrypted" = "اینڈ ٹو اینڈ انکرپٹڈ";
@@ -81,7 +79,6 @@
 "Connection Status" = "کنکشن کی حالت";
 "Connected & Secure" = "منسلک اور محفوظ";
 "Connecting..." = "جڑ رہا ہے...";
-"Routed through independent servers" = "آزاد سرورز کے ذریعے روٹ کیا گیا";
 "Tap to configure" = "ترتیب دینے کے لیے ٹیپ کریں";
 "Biometric" = "بائیومیٹرک";
 "Hide content in app switcher" = "ایپ سوئچر میں مواد چھپائیں";
@@ -823,3 +820,13 @@
 "Long-press a message to report it or block the sender." = "پیغام کو دبا کر رکھیں تاکہ اس کی رپورٹ کریں یا بھیجنے والے کو بلاک کریں۔";
 "Blocked" = "بلاک شدہ";
 "Unblock" = "ان بلاک کریں";
+"Relay not available" = "ریلے دستیاب نہیں";
+"This call can't go through the relay right now. If you connect directly, the other person and anyone watching the network can see your IP address." = "یہ کال ابھی ریلے سے نہیں گزر سکتی۔ اگر آپ براہِ راست جڑیں تو دوسرا شخص اور نیٹ ورک کی نگرانی کرنے والا کوئی بھی آپ کا IP ایڈریس دیکھ سکتا ہے۔";
+"Connect directly" = "براہِ راست جوڑیں";
+"Always use relay" = "ہمیشہ ریلے استعمال کریں";
+"Relay server protects your IP address, but it can observe the duration of the call." = "ریلے سرور آپ کا IP ایڈریس چھپاتا ہے، لیکن کال کا دورانیہ دیکھ سکتا ہے۔";
+"Relay server is only used if necessary. Another party can observe your IP address." = "ریلے سرور صرف ضرورت پڑنے پر استعمال ہوتا ہے۔ دوسرا فریق آپ کا IP ایڈریس دیکھ سکتا ہے۔";
+"Relay servers" = "ریلے سرورز";
+"Your messages go through relay servers. They hold no accounts or contact lists, and can't read your messages or listen to your calls." = "آپ کے پیغامات ریلے سرورز سے گزرتے ہیں۔ ان پر کوئی اکاؤنٹ یا کانٹیکٹ لسٹ نہیں ہوتی، اور یہ نہ آپ کے پیغامات پڑھ سکتے ہیں نہ آپ کی کالز سن سکتے ہیں۔";
+"Runs on relay servers that hold no accounts or contact lists, and can't read your messages or listen to your calls." = "ریلے سرورز پر چلتا ہے جن پر کوئی اکاؤنٹ یا کانٹیکٹ لسٹ نہیں ہوتی، اور جو نہ آپ کے پیغامات پڑھ سکتے ہیں نہ آپ کی کالز سن سکتے ہیں۔";
+"Routed through relay servers" = "ریلے سرورز کے ذریعے روٹ کیا گیا";
